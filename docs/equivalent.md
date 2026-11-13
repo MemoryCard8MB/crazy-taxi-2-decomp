@@ -63526,6 +63526,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 41
 - the cases run 19 of 24 instructions
 
+### cvFsFinish (`0C16C42E`, 116 bytes, `src/gen_cx.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cx/cvFsFinish.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 156
+- case 45
+- case 140
+- case 81
+- case 79
+- case 152
+- case 87
+- case 50
+- case 149
+- case 134
+- case 35
+- case 115
+- case 144
+- case 49
+- case 155
+- case 142
+- case 91
+- case 93
+- the cases run 54 of 58 instructions
+
 ### cvFsGetDefDev (`0C16C74C`, 6 bytes, `src/gen_c.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_c/cvFsGetDefDev.json`
 - case 0
@@ -72061,6 +72101,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 112
 - the cases run 74 of 74 instructions
 
+### kmSetCheapShadowMode (`0C15B25C`, 96 bytes, `src/gen_cy.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cy/kmSetCheapShadowMode.json`
+- case 0
+- case 4
+- case 1
+- case 2
+- case 3
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 110
+- case 62
+- case 37
+- case 64
+- case 94
+- case 47
+- case 59
+- case 46
+- case 119
+- case 99
+- case 89
+- case 57
+- case 42
+- case 100
+- case 54
+- case 85
+- case 108
+- case 105
+- the cases run 21 of 21 instructions
+
 ### kmSetEORCallback (`0C155CFE`, 28 bytes, `src/gen_am.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_am/kmSetEORCallback.json`
 - case 0
@@ -72180,6 +72260,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 49
 - case 92
 - the cases run 14 of 14 instructions
+
+### kmSetFogTable (`0C147C90`, 104 bytes, `src/gen_cx.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_cx/kmSetFogTable.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 52 of 52 instructions
 
 ### kmSetForwardClipping (`0C1481AE`, 4 bytes, `src/gen_c.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_c/kmSetForwardClipping.json`
@@ -76396,6 +76482,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 159 of 170 instructions
 
+### kmiWriteRegister (`0C156D04`, 10 bytes, `src/gen_cx.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cx/kmiWriteRegister.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 110
+- case 47
+- case 75
+- case 37
+- case 68
+- case 43
+- case 101
+- case 97
+- case 83
+- case 99
+- case 93
+- case 113
+- case 77
+- case 62
+- case 72
+- case 56
+- case 71
+- case 52
+- the cases run 5 of 5 instructions
+
 ### kmiWriteRegisters (`0C156EA6`, 32 bytes, `src/libs_gen_q.c`)
 - equivalent on 10 development and 10 holdout cases, in `tests/libs_gen_q/kmiWriteRegisters.json`
 - case 7
@@ -79621,6 +79747,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 15 of 41 instructions
 
+### mwRnaCreate (`0C1637A4`, 238 bytes, `src/gen_cx.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cx/mwRnaCreate.json`
+- case 0
+- case 42
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 153
+- case 54
+- case 89
+- case 132
+- case 47
+- case 152
+- case 73
+- case 78
+- case 37
+- case 45
+- case 107
+- case 72
+- case 142
+- case 98
+- case 51
+- case 40
+- case 39
+- case 74
+- the cases run 45 of 118 instructions
+
 ### mwRnaDestroy (`0C163892`, 152 bytes, `src/gen_o.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_o/mwRnaDestroy.json`
 - rescue: empty case
@@ -79746,6 +79912,52 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 72
 - case 112
 - the cases run 15 of 15 instructions
+
+### mwRnaExecServer (`0C1641D8`, 72 bytes, `src/gen_cx.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_cx/mwRnaExecServer.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 34 of 36 instructions
+
+### mwRnaFinish (`0C163640`, 178 bytes, `src/gen_cx.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cx/mwRnaFinish.json`
+- case 0
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 18
+- case 149
+- case 59
+- case 48
+- case 152
+- case 41
+- case 158
+- case 91
+- case 87
+- case 62
+- case 84
+- case 95
+- case 154
+- case 90
+- case 112
+- case 55
+- case 98
+- case 131
+- case 105
+- the cases run 22 of 88 instructions
 
 ### mwRnaFlush (`0C1639CC`, 40 bytes, `src/gen_ak.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_ak/mwRnaFlush.json`
@@ -80307,6 +80519,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 48
 - the cases run 19 of 19 instructions
 
+### mwRnaInit (`0C163598`, 114 bytes, `src/gen_cx.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cx/mwRnaInit.json`
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 18
+- case 48
+- case 157
+- case 78
+- case 99
+- case 101
+- case 93
+- case 68
+- case 53
+- case 38
+- case 74
+- case 128
+- case 110
+- case 114
+- case 92
+- case 138
+- case 118
+- case 66
+- case 45
+- the cases run 16 of 54 instructions
+
 ### mwRnaIsOvrflw (`0C16495E`, 6 bytes, `src/gen_c.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_c/mwRnaIsOvrflw.json`
 - case 0
@@ -80392,6 +80644,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - rescue: empty case
 - the cases run 18 of 63 instructions
+
+### mwRnaSetBitPerSmpl (`0C1645C0`, 88 bytes, `src/gen_cy.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cy/mwRnaSetBitPerSmpl.json`
+- case 12
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 107
+- case 61
+- case 157
+- case 66
+- case 117
+- case 94
+- case 136
+- case 62
+- case 89
+- case 59
+- case 72
+- case 125
+- case 150
+- case 70
+- case 95
+- case 58
+- case 145
+- case 96
+- the cases run 38 of 44 instructions
 
 ### mwRnaSetDrctLvl (`0C1647DC`, 80 bytes, `src/gen_ac.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_ac/mwRnaSetDrctLvl.json`
@@ -80513,6 +80805,86 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 88
 - the cases run 54 of 54 instructions
 
+### mwRnaSetNumChan (`0C164518`, 136 bytes, `src/gen_cy.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cy/mwRnaSetNumChan.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 8
+- case 9
+- case 10
+- case 13
+- case 15
+- case 16
+- case 18
+- case 22
+- case 23
+- case 24
+- case 26
+- case 138
+- case 145
+- case 37
+- case 142
+- case 66
+- case 70
+- case 47
+- case 80
+- case 95
+- case 112
+- case 58
+- case 106
+- case 69
+- case 90
+- case 87
+- case 96
+- case 120
+- case 65
+- the cases run 49 of 67 instructions
+
+### mwRnaSetOutVol (`0C164652`, 90 bytes, `src/gen_cx.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cx/mwRnaSetOutVol.json`
+- case 27
+- case 27
+- case 0
+- case 30
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 98
+- case 71
+- case 151
+- case 122
+- case 57
+- case 82
+- case 63
+- case 40
+- case 141
+- case 155
+- case 56
+- case 75
+- case 89
+- case 156
+- case 114
+- case 127
+- case 53
+- case 80
+- the cases run 37 of 37 instructions
+
 ### mwRnaSetPitch (`0C16477C`, 96 bytes, `src/gen_y.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_y/mwRnaSetPitch.json`
 - rescue: empty case
@@ -80558,6 +80930,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 113
 - case 84
 - the cases run 16 of 16 instructions
+
+### mwRnaSetTransSw (`0C163CEE`, 216 bytes, `src/gen_cx.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_cx/mwRnaSetTransSw.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 19 of 95 instructions
 
 ### mwRnaSetupSnd (`0C1636F2`, 10 bytes, `src/gen_c.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_c/mwRnaSetupSnd.json`
@@ -88972,6 +89350,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 40
 - the cases run 3 of 3 instructions
 
+### syCfgExit (`0C14D37E`, 10 bytes, `src/gen_cx.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cx/syCfgExit.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 118
+- case 52
+- case 87
+- case 46
+- case 112
+- case 103
+- case 70
+- case 119
+- case 49
+- case 48
+- case 63
+- case 66
+- case 107
+- case 110
+- case 37
+- case 117
+- case 73
+- case 56
+- the cases run 5 of 5 instructions
+
 ### syCfgGetBroadcastType (`0C14D4C4`, 42 bytes, `src/libs_sdk_l.c`)
 - equivalent on 2 development and 2 holdout cases, in `tests/libs_sdk_l/syCfgGetBroadcastType.json`
 - block: byte (negative) stored
@@ -92270,6 +92688,726 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 113
 - case 54
 - case 92
+- the cases run 3 of 3 instructions
+
+### thunk_cvFsFinish (`0C162122`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_cvFsFinish.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 46
+- case 93
+- case 43
+- case 117
+- case 82
+- case 104
+- case 41
+- case 95
+- case 76
+- case 42
+- case 37
+- case 85
+- case 115
+- case 74
+- case 109
+- case 110
+- case 56
+- case 101
+- the cases run 3 of 3 instructions
+
+### thunk_kmSetCheapShadowMode (`0C075BC0`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_kmSetCheapShadowMode.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 109
+- case 68
+- case 46
+- case 84
+- case 79
+- case 56
+- case 94
+- case 87
+- case 51
+- case 86
+- case 77
+- case 100
+- case 117
+- case 74
+- case 85
+- case 61
+- case 110
+- case 41
+- the cases run 3 of 3 instructions
+
+### thunk_kmSetFogTable (`0C06F8A0`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_kmSetFogTable.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 80
+- case 59
+- case 45
+- case 55
+- case 41
+- case 64
+- case 88
+- case 114
+- case 113
+- case 72
+- case 87
+- case 46
+- case 104
+- case 115
+- case 43
+- case 110
+- case 101
+- case 84
+- the cases run 3 of 3 instructions
+
+### thunk_kmSetFogTable_0c071a70 (`0C071A70`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_kmSetFogTable_0c071a70.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 73
+- case 101
+- case 88
+- case 48
+- case 37
+- case 86
+- case 43
+- case 49
+- case 108
+- case 118
+- case 96
+- case 106
+- case 38
+- case 83
+- case 71
+- case 68
+- case 50
+- case 56
+- the cases run 3 of 3 instructions
+
+### thunk_kmiWriteRegister (`0C15594C`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_kmiWriteRegister.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 37
+- case 48
+- case 115
+- case 58
+- case 52
+- case 42
+- case 66
+- case 87
+- case 39
+- case 51
+- case 45
+- case 73
+- case 77
+- case 110
+- case 93
+- case 61
+- case 116
+- case 47
+- the cases run 3 of 3 instructions
+
+### thunk_mwRnaCreate (`0C161844`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_mwRnaCreate.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 66
+- case 114
+- case 87
+- case 48
+- case 70
+- case 88
+- case 76
+- case 101
+- case 44
+- case 112
+- case 40
+- case 57
+- case 77
+- case 94
+- case 99
+- case 97
+- case 90
+- case 111
+- the cases run 3 of 3 instructions
+
+### thunk_mwRnaExecServer (`0C16188C`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_mwRnaExecServer.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 73
+- case 98
+- case 87
+- case 109
+- case 114
+- case 95
+- case 91
+- case 50
+- case 107
+- case 81
+- case 82
+- case 118
+- case 49
+- case 70
+- case 63
+- case 46
+- case 60
+- case 53
+- the cases run 3 of 3 instructions
+
+### thunk_mwRnaFinish (`0C16183E`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_mwRnaFinish.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 55
+- case 44
+- case 111
+- case 46
+- case 59
+- case 90
+- case 114
+- case 82
+- case 49
+- case 69
+- case 113
+- case 107
+- case 85
+- case 106
+- case 105
+- case 94
+- case 108
+- case 117
+- the cases run 3 of 3 instructions
+
+### thunk_mwRnaGetTime (`0C161874`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_mwRnaGetTime.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 78
+- case 76
+- case 119
+- case 79
+- case 52
+- case 39
+- case 43
+- case 99
+- case 37
+- case 71
+- case 88
+- case 51
+- case 105
+- case 77
+- case 61
+- case 69
+- case 102
+- case 45
+- the cases run 3 of 3 instructions
+
+### thunk_mwRnaInit (`0C161838`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_mwRnaInit.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 110
+- case 37
+- case 94
+- case 52
+- case 84
+- case 44
+- case 54
+- case 43
+- case 68
+- case 40
+- case 39
+- case 91
+- case 106
+- case 83
+- case 77
+- case 60
+- case 89
+- case 118
+- the cases run 3 of 3 instructions
+
+### thunk_mwRnaSetBitPerSmpl (`0C1618B0`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_mwRnaSetBitPerSmpl.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 51
+- case 91
+- case 103
+- case 115
+- case 46
+- case 69
+- case 116
+- case 107
+- case 63
+- case 53
+- case 81
+- case 47
+- case 55
+- case 76
+- case 77
+- case 71
+- case 48
+- case 49
+- the cases run 3 of 3 instructions
+
+### thunk_mwRnaSetNumChan (`0C161898`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_mwRnaSetNumChan.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 56
+- case 97
+- case 58
+- case 76
+- case 46
+- case 115
+- case 54
+- case 72
+- case 86
+- case 92
+- case 63
+- case 99
+- case 79
+- case 106
+- case 117
+- case 107
+- case 88
+- case 102
+- the cases run 3 of 3 instructions
+
+### thunk_mwRnaSetOutPan (`0C1618AA`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_mwRnaSetOutPan.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 72
+- case 111
+- case 119
+- case 103
+- case 75
+- case 68
+- case 99
+- case 95
+- case 45
+- case 113
+- case 96
+- case 118
+- case 38
+- case 53
+- case 101
+- case 94
+- case 67
+- case 114
+- the cases run 3 of 3 instructions
+
+### thunk_mwRnaSetOutVol (`0C1618A4`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_mwRnaSetOutVol.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 69
+- case 60
+- case 57
+- case 55
+- case 95
+- case 56
+- case 68
+- case 115
+- case 111
+- case 77
+- case 40
+- case 86
+- case 101
+- case 51
+- case 107
+- case 41
+- case 119
+- case 38
+- the cases run 3 of 3 instructions
+
+### thunk_mwRnaSetPlaySw (`0C16186E`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_mwRnaSetPlaySw.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 117
+- case 62
+- case 111
+- case 93
+- case 108
+- case 43
+- case 85
+- case 101
+- case 114
+- case 53
+- case 50
+- case 105
+- case 84
+- case 54
+- case 86
+- case 76
+- case 45
+- case 116
+- the cases run 3 of 3 instructions
+
+### thunk_mwRnaSetSfreq (`0C16189E`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_mwRnaSetSfreq.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 45
+- case 104
+- case 108
+- case 55
+- case 103
+- case 77
+- case 82
+- case 84
+- case 40
+- case 75
+- case 94
+- case 43
+- case 76
+- case 60
+- case 90
+- case 58
+- case 80
+- case 91
+- the cases run 3 of 3 instructions
+
+### thunk_mwRnaSetTransSw (`0C161868`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_mwRnaSetTransSw.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 69
+- case 96
+- case 44
+- case 43
+- case 112
+- case 38
+- case 64
+- case 109
+- case 99
+- case 78
+- case 53
+- case 49
+- case 106
+- case 36
+- case 51
+- case 82
+- case 57
+- case 47
+- the cases run 3 of 3 instructions
+
+### thunk_syCfgExit (`0C03144C`, 6 bytes, `src/gen_cw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_cw/thunk_syCfgExit.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 93
+- case 64
+- case 62
+- case 85
+- case 60
+- case 116
+- case 90
+- case 101
+- case 83
+- case 99
+- case 109
+- case 106
+- case 72
+- case 98
+- case 52
+- case 76
+- case 51
+- case 70
 - the cases run 3 of 3 instructions
 
 ### trigger (`0C15F52A`, 206 bytes, `src/gen_cn.c`)

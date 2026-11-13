@@ -144,7 +144,6 @@ F0140000 areaPolyTable
 0C15402A kmytex_TXalloc
 0C154DC0 kmytex_GetSmallVQprofile
 0C154F66 VQEnQueueTop
-0C15594C thunk_kmiWriteRegister
 0C155A80 kmiMemCopy8
 0C155A9E kmiMemCopy4
 0C155AAE kmiPurgeCache
