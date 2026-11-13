@@ -1,0 +1,81 @@
+{
+ "dev": [
+  {
+   "about": "rescue: flips 0C044C38",
+   "regs": {},
+   "poke": {
+    "00000038": "01000000"
+   }
+  },
+  {
+   "about": "rescue: flips 0C044C38",
+   "regs": {},
+   "poke": {
+    "00000038": "ffffffff"
+   }
+  },
+  {
+   "about": "rescue: flips 0C044C5A",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0000001F"
+    }
+   ]
+  }
+ ],
+ "holdout": [
+  {
+   "about": "rescue: flips 0C044C38",
+   "regs": {},
+   "poke": {
+    "00000038": "ffff0b00"
+   }
+  },
+  {
+   "about": "rescue: flips 0C044C5A",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0000001E"
+    }
+   ]
+  },
+  {
+   "about": "rescue: flips 0C044C5A",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "7FFFFFFF"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "dev": [
+  {
+   "about": "rescue: flips 0C059B44",
+   "regs": {
+    "r4": "FFFFFFDC"
+   }
+  },
+  {
+   "about": "rescue: flips 0C059A34",
+   "regs": {
+    "r5": "00000003"
+   }
+  },
+  {
+   "about": "rescue: flips 0C059B1E",
+   "regs": {
+    "r4": "FFFFFFE8"
+   }
+  }
+ ],
+ "holdout": [
+  {
+   "about": "rescue: flips 0C059A34",
+   "regs": {
+    "r5": "00000002"
+   }
+  },
+  {
+   "about": "rescue: flips 0C059A98",
+   "regs": {
+    "r5": "00000004"
+   }
+  },
+  {
+   "about": "rescue: flips 0C059A98",
+   "regs": {
+    "r5": "00000002"
+   }
+  }
+ ]
+}
