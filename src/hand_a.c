@@ -85,3 +85,35 @@ int FUN_0c07d728(int a4, int a5, int a6, int a7)
     }
     return t0;
 }
+
+int mpdrv_setcmd(int, int, int, int, int, int);
+
+/* manual: mpdrv_setcmd takes two stack arguments (a8, a9); the generated C passed one. r6 is the address of the saved argument words */
+int FUN_0c16f700(int a4, int a5, int a6, int a7)
+{
+    int stk[3];
+    stk[0] = a5;
+    stk[1] = a6;
+    stk[2] = a7;
+    return mpdrv_setcmd(a4, 0x9, (int)stk, 0x1, a6, a7);
+}
+
+/* manual: as FUN_0c16f700; the buffer holds 0x800 and a5, the stack arguments are a5 and 1 */
+int FUN_0c16f752(int a4, int a5)
+{
+    int stk[2];
+    stk[0] = 0x800;
+    stk[1] = a5;
+    return mpdrv_setcmd(a4, 0x11, (int)stk, 0x1, a5, 0x1);
+}
+
+/* manual: as FUN_0c16f700; r5 is the signed low byte of a6, the buffer holds a5, that byte and a7, the stack arguments are a7 and a8 */
+int FUN_0c16f7aa(int a4, int a5, int a6, int a7, int a8)
+{
+    int stk[3];
+    signed char c = (signed char)a6;
+    stk[0] = a5;
+    *(signed char *)&stk[1] = c;
+    stk[2] = a7;
+    return mpdrv_setcmd(a4, (int)c, (int)stk, 0x1, a7, a8);
+}

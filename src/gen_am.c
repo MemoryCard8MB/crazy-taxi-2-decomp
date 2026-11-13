@@ -869,33 +869,6 @@ int cvFsSetSctLen(int a4, int a5, int a6, int a7)
     return cvFsError(0xC1727D4, a5, a6, a7);
 }
 
-int FUN_0c16f700(int a4, int a5, int a6, int a7)
-{
-    int stk[5];
-    register int t3;
-
-    *(unsigned int *)(((int)stk + 12)) = a6;
-    *(unsigned int *)(((int)stk + 16)) = a7;
-    *(unsigned int *)(((int)stk + 8)) = a5;
-    *(int *)((int)stk + 4) = ((*(int *)(((int)stk + 16))));
-    t3 = (*(int *)(((int)stk + 12)));
-    *(int *)((int)stk + 0) = t3;
-    return (mpdrv_setcmd(a4, 0x9, (((int)stk + 0) + 0x8), 0x1, t3));
-}
-
-int FUN_0c16f752(int a4, int a5)
-{
-    int stk[4];
-    register int t1;
-
-    *(unsigned int *)(((int)stk + 12)) = a5;
-    *(unsigned int *)(((int)stk + 8)) = 0x800;
-    *(int *)((int)stk + 4) = 0x1;
-    t1 = (*(int *)(((int)stk + 12)));
-    *(int *)((int)stk + 0) = t1;
-    return (mpdrv_setcmd(a4, 0x11, (((int)stk + 0) + 0x8), 0x1, t1));
-}
-
 int game_init(void)
 {
     register int t0;

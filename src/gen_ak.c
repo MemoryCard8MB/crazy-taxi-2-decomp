@@ -2061,20 +2061,6 @@ int mwRnaGetAutoSw(int a4)
     return (((0x4 & (unsigned char)(*(signed char *)((a4 + 0x1)))) >> 1) >> 1);
 }
 
-int FUN_0c16f7aa(int a4, int a5, int a6, int a7, int a8)
-{
-    int stk[5];
-    register int t1;
-
-    *(unsigned char *)(((int)stk + 12)) = a6;
-    *(unsigned int *)(((int)stk + 16)) = a7;
-    *(unsigned int *)(((int)stk + 8)) = a5;
-    *(int *)((int)stk + 4) = a8;
-    t1 = (*(int *)(((int)stk + 16)));
-    *(int *)((int)stk + 0) = t1;
-    return (mpdrv_setcmd(a4, (*(signed char *)(((int)stk + 12))), (((int)stk + 0) + 0x8), 0x1, t1));
-}
-
 int FUN_0c019d88(int a4, int a5, int a6, int a7)
 {
     register int t3;
