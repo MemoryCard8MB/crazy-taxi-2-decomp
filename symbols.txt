@@ -749,3 +749,5 @@ D4440C2B g_0c2a9328
 0C3C0000 g_8cbceeee
 0C440C2D g_8cc40c2b
 0C4C0C15 g_8ccc0c15
+0C07FDC8 _quick_evn_mvn
+0C07FF00 _quick_odd_mvn

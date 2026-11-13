@@ -3619,7 +3619,7 @@ F 0c16f454 204 syIntAdrChk_init
 F 0c16f520 178 syIntAdrChk_putchar
 F 0c16f5d2 58 syIntAdrChk_getchar
 F 0c16f60c 86 syIntAdrChk_finish
-F 0c16f662 54 send_message_in_current_mode(char*)
+F 0c16f662 54 send_message_in_current_mode
 F 0c16f698 60 syIntAdrChk_printh
 F 0c16f6d4 44 FUN_0c16f6d4
 F 0c16f700 38 FUN_0c16f700

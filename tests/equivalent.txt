@@ -217,6 +217,7 @@ FUN_0c01ba58
 FUN_0c01bc3a
 FUN_0c01bca2
 FUN_0c01bde2
+FUN_0c01bf10
 FUN_0c01c200
 FUN_0c01c290
 FUN_0c01c468
@@ -643,6 +644,7 @@ FUN_0c03ff4a
 FUN_0c0401d8
 FUN_0c04027a
 FUN_0c040704
+FUN_0c0408f2
 FUN_0c040bec
 FUN_0c040cbe
 FUN_0c040cf2
@@ -3090,6 +3092,7 @@ rtcGetSeconds
 saveBufferInit
 screenOutCheck
 selectLoadAxes
+send_message_in_current_mode
 setObjGroupOpen
 setObjHitBeach
 set_event
@@ -3154,6 +3157,7 @@ syIntAdrChk_finish
 syIntAdrChk_getchar
 syIntAdrChk_printh
 syIntAdrChk_putchar
+syIntChkDump
 syIntInit
 syMalloc
 syMallocChangeIF

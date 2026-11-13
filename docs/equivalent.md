@@ -6192,6 +6192,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 79
 - the cases run 11 of 11 instructions
 
+### FUN_0c01bf10 (`0C01BF10`, 510 bytes, `src/gen_cz.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_cz/FUN_0c01bf10.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 84 of 216 instructions
+
 ### FUN_0c01c200 (`0C01C200`, 42 bytes, `src/gen_ak.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_ak/FUN_0c01c200.json`
 - rescue: empty case
@@ -17120,6 +17126,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 122
 - case 40
 - the cases run 93 of 216 instructions
+
+### FUN_0c0408f2 (`0C0408F2`, 674 bytes, `src/gen_cz.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_cz/FUN_0c0408f2.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 68 of 271 instructions
 
 ### FUN_0c040bec (`0C040BEC`, 180 bytes, `src/gen_h.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_h/FUN_0c040bec.json`
@@ -88840,6 +88852,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 29 of 29 instructions
 
+### send_message_in_current_mode (`0C16F662`, 54 bytes, `src/gen_db.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_db/send_message_in_current_mode.json`
+- case 1
+- case 0
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 10
+- case 11
+- case 12
+- case 14
+- case 16
+- case 17
+- case 18
+- case 19
+- case 20
+- case 153
+- case 61
+- case 117
+- case 44
+- case 127
+- case 96
+- case 146
+- case 115
+- case 70
+- case 83
+- case 68
+- case 121
+- case 154
+- case 76
+- case 51
+- case 73
+- case 53
+- case 50
+- the cases run 12 of 12 instructions
+
 ### setObjGroupOpen (`0C02FE20`, 114 bytes, `src/gen_t.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_t/setObjGroupOpen.json`
 - rescue: empty case
@@ -90805,6 +90857,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 137
 - case 102
 - the cases run 11 of 67 instructions
+
+### syIntChkDump (`0C16D4BC`, 568 bytes, `src/gen_da.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_da/syIntChkDump.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 50
+- case 74
+- case 151
+- case 101
+- case 94
+- case 48
+- case 107
+- case 51
+- case 65
+- case 55
+- case 125
+- case 115
+- case 47
+- case 149
+- case 78
+- case 131
+- case 71
+- case 143
+- the cases run 36 of 209 instructions
 
 ### syIntInit (`0C15DED8`, 470 bytes, `src/gen_bs.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_bs/syIntInit.json`
