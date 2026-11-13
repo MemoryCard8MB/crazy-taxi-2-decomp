@@ -13307,9 +13307,10 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 44 of 48 instructions
 
 ### FUN_0c03e0dc (`0C03E0DC`, 70 bytes, `src/gen_ae.c`)
-- equivalent on 1 development and 0 holdout cases, in `tests/gen_ae/FUN_0c03e0dc.json`
-- case 1
-- the cases run 8 of 32 instructions
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_ae/FUN_0c03e0dc.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 32 of 34 instructions
 
 ### FUN_0c03e154 (`0C03E154`, 94 bytes, `src/gen_y.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_y/FUN_0c03e154.json`
