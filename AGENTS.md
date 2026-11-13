@@ -45,6 +45,28 @@ you are a guided agent: read this file, run `python3 tools/progress.py` to see w
 *(equivalent)* A function is only as proven as its cases: `equiv.py` prints how many of the original's instructions they ran. Aim for all of them; an
 instruction no case ran is a branch nobody checked. Details: the kickoff skill's `references/equivalent-pipeline.md` and `references/agentic-decomp.md`.
 
+## This repo's plan (step 6) *(equivalent)*
+
+State at hand-over (2026-11-13, commit e7d204e): 3,455 functions, 944 named by SDK signatures and 481 by the Crazy Taxi 1 sibling;
+3,122 of 3,272 that can be C are Equivalent (95.4%; 202 ported from CT1, the rest `gen_equiv`), 150 left (38,952 bytes), 183 have no C form;
+total test coverage 55.0%; `build.sh` prints MATCH. Nothing is hand-written yet.
+
+Work in this order. Run build/equiv tools with `DOCKER_CONTEXT=colima-x86` (the repo's `.env` sets it); never the arm64 context.
+
+1. **Missed code first** (`missed.txt`, 760 candidates). Check them with `tools/1-2-baseline/missed_funcs.py` and `checksizes.py --hidden`,
+   add real ones to `functions.txt` as `F <addr> <size> FUN_<addr>`, rebuild to MATCH, then let step 5 draw them. Must be done before step 8.
+2. **The 150 left**, from `build/gen_failed.txt` (`remaining.py --table` is slow on the last few functions; read the file instead):
+   - ~37 not drawn: 27 timeouts and 10 where the original never finishes on the cases. Needs hand cases (`gen_equiv --draw`) or a `"dump"` case
+     from a RAM snapshot (`gdbsnap.py`; the user starts Flycast with GDB).
+   - ~25 "DIFFERS": calls to jump-table or indirect targets (0C156D04, 0C15B25C), device accesses the C drops, runaway loops. Read with `diverge.py`, write by hand with `/* manual: <reason> */`.
+   - ~15 did not compile: SHC rejects generated code (`send_message_in_current_mode(char*)` names, `@@F` labels, `&` of an expression, `_quick_evn_mvn` undefined). Fix by hand, or name the runtime routine (`map_names.py`).
+   - Library (SDK) pocket: there is no SDK library source in the SDK images, so `sdk_source.py` does not apply; library functions go through the generator and hand C.
+3. **Names**: 1,872 of 3,455 are still `FUN_`. Name by reading, text-map strings and `model-map/`; only on unique evidence.
+4. **Coverage**: 55.0% total. After the 150, finish the `--retest` polish pass (stopped after `gen_a`..`gen_ae`, ~2 min per serial batch, 97 batches; split by name).
+5. **Before step 8**: the arity check (`state/arity_scan.json`) and `retcheck.py`, as in "Building from C".
+
+Boundary: the user decides whether to go on to step 7 (size reduction) after `python3 tools/progress.py`.
+
 ## Layout *(both)*
 - `functions.txt`: every function (`F <addr> <size> <name>`). The source of truth for names and
   boundaries: `asm/` is generated from it (`python3 tools/1-2-baseline/split_asm.py 1ST_READ.BIN "$(cat BASE)"
