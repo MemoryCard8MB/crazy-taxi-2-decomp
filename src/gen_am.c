@@ -166,7 +166,7 @@ int mpdrv_set_getminfo(void);
 int mpdrv_set_hreset(void);
 int mpdrv_set_setcond(void);
 int mpdrv_set_transagain(void);
-int mpdrv_setcmd(int, int, int, int, int);
+int mpdrv_setcmd(int, int, int, int, int, int);
 int nlArcTan2(int, float, float);
 int nlFree(int);
 int nlGetMatrix(int);
@@ -186,7 +186,7 @@ int ntInfExit(void);
 int pdGetPeripheralInfo(int);
 int strncpy(int, int, int);
 int syG2Read(int, int, int, int, int, int);
-int syG2Write(int, int, int, int, int);
+int syG2Write(int, int, int, int, int, int);
 int syRtcDateToCount(void);
 int syRtcGetDate(int);
 int vmsio_exit(void);
@@ -494,7 +494,7 @@ int syRtcAicaSetDateHi(int a4)
     *(unsigned int *)(((int)stk + 8)) = a4;
     *(int *)((int)stk + 4) = 0x0;
     *(int *)((int)stk + 0) = 0x0;
-    syG2Write((((int)stk + 0) + 0x8), 0xA0710000, 0x4, 0x1, 0x0);
+    syG2Write((((int)stk + 0) + 0x8), 0xA0710000, 0x4, 0x1, 0x0, 0x0);
     return 0x0;
 }
 
@@ -809,7 +809,7 @@ int mpdrv_set_getminfo_ns(int a4, int a5, int a6)
     *(unsigned int *)((((int)stk + 8) + 0x4)) = ((a6 << 16) << 8);
     *(int *)((int)stk + 4) = 0x0;
     *(int *)((int)stk + 0) = 0x0;
-    return (mpdrv_setcmd(a4, 0xA, ((int)stk + 8), 0x2, 0x0));
+    return (mpdrv_setcmd(a4, 0xA, ((int)stk + 8), 0x2, 0x0, 0x0));
 }
 
 int mwlSbAlloc(void)
@@ -2748,7 +2748,7 @@ int mpdrv_set_getcond_ns(int a4, int a5)
     *(unsigned int *)(((int)stk + 8)) = a5;
     *(int *)((int)stk + 4) = 0x0;
     *(int *)((int)stk + 0) = 0x0;
-    return (mpdrv_setcmd(a4, 0x9, (((int)stk + 0) + 0x8), 0x1, 0x0));
+    return (mpdrv_setcmd(a4, 0x9, (((int)stk + 0) + 0x8), 0x1, 0x0, 0x0));
 }
 
 int mwRnaErrEntryFunc(int a4, int a5)
@@ -2801,7 +2801,7 @@ int FUN_0c16f81c(int a4, int a5, int a6, int a7, int a8, int a9)
     *(unsigned char *)(((int)stk + 8)) = a5;
     *(int *)((int)stk + 4) = a9;
     *(int *)((int)stk + 0) = a8;
-    return (mpdrv_setcmd(a4, (*(signed char *)(((int)stk + 8))), a6, a7, a8));
+    return (mpdrv_setcmd(a4, (*(signed char *)(((int)stk + 8))), a6, a7, a8, a9));
 }
 
 int FUN_0c018b00(int a4)

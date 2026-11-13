@@ -98,7 +98,7 @@ int FUN_0c07fdc8(void);
 int FUN_0c07ff00(void);
 int FUN_0c08f87c(int, int);
 int FUN_0c095b84(int, int, int);
-int FUN_0c16137e(int, int, int, int);
+int FUN_0c16137e(int, int, int, int, int, int, int, int, int, int);
 int SetMotionBlurStrength(float);
 extern void _builtin_ftrv(float *, float *);
 extern int _builtin_get_imask(void);
@@ -977,7 +977,7 @@ int ADXB_DecodeHeaderAdx(int a4, int a5, int a6)
     *(int *)((int)stk + 8) = (a4 + 0xE);
     *(int *)((int)stk + 4) = (a4 + 0xF);
     *(int *)((int)stk + 0) = (a4 + 0xD);
-    t0 = FUN_0c16137e(a5, a6, (((int)stk + 0) + 0x18), (a4 + 0xC));
+    t0 = FUN_0c16137e(a5, a6, (((int)stk + 0) + 0x18), (a4 + 0xC), (a4 + 0xD), (a4 + 0xF), (a4 + 0xE), (a4 + 0x14), (a4 + 0x18), (a4 + 0x10));
     t20 = 0x0;
     if ((int)t0 >= 0) {
         t1 = ADX_DecodeInfoExADPCM2(a5, a6, (a4 + 0x1C));

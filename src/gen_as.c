@@ -31,7 +31,7 @@ int CheckAreaGrid(int, int);
 int FUN_0c010184(int);
 int FUN_0c010454(int);
 int FUN_0c0106f4(int);
-int FUN_0c0108fe(int, int, int, int, int, int, int, int, int, int, int, int);
+int FUN_0c0108fe(int);
 int FUN_0c010fd4(int);
 int FUN_0c011522(int);
 int FUN_0c0120cc(int);
@@ -44,7 +44,7 @@ int FUN_0c01b81c(int, int, int, float);
 extern int FUN_0c01b87a();
 int FUN_0c01b920(int, float, float);
 int FUN_0c01e13c(float);
-int FUN_0c020e6c(int, int, int, int);
+int FUN_0c020e6c(int, int, int, int, int);
 int FUN_0c027f28(int);
 int FUN_0c027fbe(float, float);
 int FUN_0c02803a(int, int, int, int);
@@ -179,7 +179,7 @@ int FUN_0c0148f4(void)
     } else {
         (((struct o30_uint *)0xC1759AC)->v) = 0x0;
     }
-    FUN_0c0108fe(0xC1758B4, 0x0, 0x0, 0x0, *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24), *(int *)((int)stk + 4 + 28));
+    FUN_0c0108fe(0xC1758B4);
     if (((((struct oC_int *)0xC1758FC)->v)) == 0) {
         (((struct o24_float *)0xC1759AC)->v) = (((((struct o24_float *)0xC1759AC)->v)) * 0.00999999978f);
     }
@@ -335,5 +335,5 @@ int FUN_0c0148f4(void)
     FUN_0c02e7a6(0xC175A58, 0xC1759B4);
     FUN_0c02f208();
     *(int *)((int)stk + 0) = 0x1;
-    return (FUN_0c020e6c(0xC175930, (((int)stk + 0) + 0x8), 0xC175914, 0xC175918));
+    return (FUN_0c020e6c(0xC175930, (((int)stk + 0) + 0x8), 0xC175914, 0xC175918, 0x1));
 }

@@ -88,12 +88,12 @@ int FUN_0c01e83e(int);
 int FUN_0c02d694(int, int);
 int FUN_0c031b94(int, int, int, int);
 int FUN_0c031e86(int, int, int, int);
-int FUN_0c032210(int, int, int, int);
+int FUN_0c032210(int, int, int, int, int, int, int);
 int FUN_0c033578(int, int, int, int, int, float, float, float);
 int FUN_0c033e38(int, int, int);
 int FUN_0c034320(int, int);
 int FUN_0c0343b8(int, int);
-int FUN_0c034928(int, int, int, int);
+int FUN_0c034928(int, int, int, int, int);
 int FUN_0c03e700(void);
 int FUN_0c040fb4(int, float, float, float);
 int FUN_0c04b586(void);
@@ -191,7 +191,7 @@ int kdSetCallback(int, int, int);
 int kdSetGetMediaInfoEx(int, int, int, int);
 int kmActivateFrameBuffer(int, int, int, int);
 extern int kmCreateFrameBufferSurface();
-int kmCreateVertexBuffer(int, int, int, int);
+int kmCreateVertexBuffer(int, int, int, int, int);
 int kmiCopyToFrameBuffer(int, int, int);
 int kmiFBinit(void);
 int kmiInitInterrupt(void);
@@ -825,20 +825,20 @@ int adxt_set_outpan(int a4)
         } else {
             *(volatile short *)(((a4 + 0x42) + 0x0));
         }
-        t0 = (mwRnaSetOutPan());
+        t0 = (thunk_mwRnaSetOutPan());
     } else {
         if (((((struct o42_short *)(a4))->v)) == -128) {
         } else {
             *(volatile short *)(((a4 + 0x42) + 0x0));
         }
         *(volatile int *)((a4 + 0xC));
-        mwRnaSetOutPan();
+        thunk_mwRnaSetOutPan();
         if (((((struct o44_short *)(a4))->v)) == -128) {
         } else {
             *(volatile short *)((a4 + 0x44));
         }
         *(volatile int *)((a4 + 0xC));
-        t0 = (mwRnaSetOutPan());
+        t0 = (thunk_mwRnaSetOutPan());
     }
     return t0;
 }
@@ -909,7 +909,7 @@ int FUN_0c03849a(void)
     if ((((((struct o0_int *)0xC2A4670)->v)) & 4) == 0) {
         FUN_0c033e38(0x1, 0x4, t2);
     }
-    FUN_0c034928(0x20020, 0xC0B3B78, 0x4, (*(int *)((((((((struct o3C_int *)0xC2A4670)->v)) << 2) + 0xC2A46B0) + 0x0))));
+    FUN_0c034928(0x20020, 0xC0B3B78, 0x4, (*(int *)((((((((struct o3C_int *)0xC2A4670)->v)) << 2) + 0xC2A46B0) + 0x0))), t2);
     FUN_0c033578(0x220, 0xC0C02C8, 0x0, 0x0, (t2), 310.0f, 62.0f, 1.20000005f);
     return FUN_0c0343b8(0x1, 0x14);
 }
@@ -1433,9 +1433,9 @@ int nlCreateVertexBuffer_clx16(int a4, int a5, int a6, int a7)
     register int t0;
 
     *(volatile int *)0xC2BB49C;
-    kmCreateVertexBuffer(0xC2BBAC8, a4, a5, a6);
-    t0 = ((int (*)(int, int, int, int))(kmCreateFrameBufferSurface))(0xC2BB4AC, 0x0, 0x0, 0x0);
-    t0 = ((int (*)(int, int, int, int, int, int, int))(kmCreateFrameBufferSurface))(0xC2BB4D4, 0x0, 0x0, 0x0, 0x0, 0x0, a7);
+    kmCreateVertexBuffer(0xC2BBAC8, a4, a5, a6, a7);
+    t0 = ((int (*)(int, int, int, int, int))(kmCreateFrameBufferSurface))(0xC2BB4AC, 0x0, 0x0, 0x0, 0x0);
+    t0 = ((int (*)(int, int, int, int, int))(kmCreateFrameBufferSurface))(0xC2BB4D4, 0x0, 0x0, 0x0, 0x0);
     kmActivateFrameBuffer(0xC2BB4AC, 0xC2BB4D4, 0x0, 0x1);
     if ((*(int *)0xC2BB528) == 0) {
         nlLoadDummyTexture();
@@ -1803,7 +1803,7 @@ int FUN_0c14edc8(void)
 
     FUN_0c161f64();
     (((struct o4_uint *)0xC173D74)->v) = 0x0;
-    mwRnaExecServer();
+    thunk_mwRnaExecServer();
     (((struct o8_uint *)0xC173D74)->v) = 0x0;
     ADXF_ExecServer();
     (((struct oC_uint *)0xC173D74)->v) = 0x0;
@@ -2154,7 +2154,7 @@ int FUN_0c0323d0(int a4, int a5, int a6, int a7)
     register int t1;
     register int t2;
 
-    t0 = FUN_0c032210(a4, a5, 0xC318000, 0x10000);
+    t0 = FUN_0c032210(a4, a5, 0xC318000, 0x10000, a7, 0x0, 0x0);
     t1 = t0;
     if (t0 == 0) {
         t2 = FUN_0c07ffbc(0xC3182B0, 0xC0B3034, 0xA);

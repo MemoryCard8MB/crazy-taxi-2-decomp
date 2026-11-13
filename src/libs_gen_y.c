@@ -63,7 +63,7 @@ int kmiBGPlaneCountWords(int);
 int kmiBGPlanePutWord(int, int, int);
 int kmiBGPlanePutColor(int, int, int);
 int kmiFBallocSub(int, int, int);
-int kmytex_ABSalloc(int, int, int, int);
+int kmytex_ABSalloc(int, int, int, int, int, int);
 int kmiMemCopy4(int, int, int);
 int kmiPurgeCache(int);
 int kmiModuleInitialize(void);
@@ -331,11 +331,11 @@ int kmiCBalloc(int a4, int a5, int a6)
     t0 = kmiFBallocSub(a4, a5, a6);
     t9 = 0x3;
     if (t0 != -1) {
-        t1 = kmytex_ABSalloc(0x0, t0, a4, a5);
+        t1 = kmytex_ABSalloc(0x0, t0, a4, a5, 0x1, 0x1);
         t7 = t1;
         if (t1 == 0) {
             t2 = *(int *)0xC177FB0;
-            t3 = kmytex_ABSalloc(0x1, (t2 + t0), a4, a6);
+            t3 = kmytex_ABSalloc(0x1, (t2 + t0), a4, a6, 0x1, 0x1);
             if (t3 != 0) {
                 t4 = *(int *)((a5 + 0x1C));
                 kmiFBfree(t4);

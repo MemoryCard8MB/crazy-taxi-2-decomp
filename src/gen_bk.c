@@ -107,7 +107,7 @@ int FUN_0c073360(void);
 int FUN_0c0739a0(int);
 int FUN_0c073a30(float, float, float);
 int FUN_0c073c40(int, int, float);
-int FUN_0c075740(int, int, int, int, int, int, int, int, int, int);
+int FUN_0c075740(int, int, int, int, int, int, int, int, int, int, float, float, float, float, float, float, float, float);
 int FUN_0c075a00(int, float, float, float);
 int FUN_0c076230(float, float, float);
 int FUN_0c078810(int, int, int);
@@ -1212,7 +1212,7 @@ int PutColliWall(int a4)
         *(int *)((int)stk + 8) = 0x0;
         *(int *)((int)stk + 4) = 0x0;
         *(int *)((int)stk + 0) = 0x0;
-        FUN_0c075740(0xC274048, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4);
+        FUN_0c075740(0xC274048, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x4, 0.5f, 0.5f, 0.0f, 5.0f, 1.0f, 0.0f, 0.0f, 0.0f);
         *(unsigned int *)0xC274068 = ((*(int *)0xC274068) | 0xC0);
         *(unsigned int *)0xC12945C = 0x0;
     }

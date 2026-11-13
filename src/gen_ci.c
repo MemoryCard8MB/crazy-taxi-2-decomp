@@ -1510,7 +1510,7 @@ int FUN_0c14ee68(int a4, int a5)
     } else {
         if ((*(int *)(((int)stk + 8))) == 1) {
             *(volatile int *)((a4 + 0xC));
-            mwRnaSetPlaySw();
+            thunk_mwRnaSetPlaySw();
             t7 = 0x7A120;
             for (;;) {
                 t7 = (t7 - 0x1);
@@ -1520,14 +1520,14 @@ int FUN_0c14ee68(int a4, int a5)
             }
             mwRnaAdjustBuf((*(int *)((a4 + 0xC))));
             *(volatile int *)((a4 + 0xC));
-            mwRnaGetTime();
+            thunk_mwRnaGetTime();
             (((struct o9C_uint *)(a4))->v) = (int)(((float)(*(int *)(((int)stk + 0))) / (float)(*(int *)(((int)stk + 4)))) * (float)(*(int *)0xC2D1BEC));
             t29 = 0x9C;
         } else {
             *(volatile int *)((a4 + 0xC));
-            mwRnaSetPlaySw();
+            thunk_mwRnaSetPlaySw();
             *(volatile int *)((a4 + 0xC));
-            mwRnaGetTime();
+            thunk_mwRnaGetTime();
             (((struct o9C_uint *)(a4))->v) = (int)(((float)(*(int *)(((int)stk + 0))) / (float)(*(int *)(((int)stk + 4)))) * (float)(*(int *)0xC2D1BEC));
             (((struct oA0_uint *)(a4))->v) = (*(int *)0xC173D68);
             t29 = 0xA0;

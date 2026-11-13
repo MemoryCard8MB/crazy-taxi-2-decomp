@@ -103,7 +103,7 @@ int FUN_0c073a60(int);
 int FUN_0c073c40(int, int, float);
 float FUN_0c073c80(int);
 int FUN_0c0755f0(int);
-int FUN_0c075740(int, int, int, int, int, int, int, int, int, int);
+int FUN_0c075740(int, int, int, int, int, int, int, int, int, int, float, float, float, float, float, float, float, float);
 int FUN_0c07ada0(int, int, int, int, float, float);
 int FUN_0c07fdc8(void);
 int FUN_0c07ff00(void);
@@ -566,15 +566,15 @@ int FUN_0c01d4ac(void)
             t64 = t52;
             if (t52 != 2) {
             } else {
-                t64 = (kmSetCheapShadowMode());
+                t64 = (thunk_kmSetCheapShadowMode());
             }
         } else {
-            t64 = (kmSetCheapShadowMode());
+            t64 = (thunk_kmSetCheapShadowMode());
         }
     } else {
         *(volatile int *)0xC175C84;
         
-        t64 = (kmSetCheapShadowMode());
+        t64 = (thunk_kmSetCheapShadowMode());
     }
     (((struct o30_uint *)0xC1EC71C)->v) = 0x0;
     return t64;
@@ -1608,7 +1608,7 @@ int PutGridPoly(int a4, int a5, float f4, float f5, float f6)
     register float u4;
 
     nlTriPutTextureInit(0xC274BE8, 0xFFFFFFFF, 0x0);
-    FUN_0c075740(0xC274BE8, 0x1, 0x0, 0xFFFFFFFF, 0x0, 0x0, 0x0, 0x0, 0x0, 0xA);
+    FUN_0c075740(0xC274BE8, 0x1, 0x0, 0xFFFFFFFF, 0x0, 0x0, 0x0, 0x0, 0x0, 0xA, 0.5f, 0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
     *(unsigned int *)0xC274C08 = ((*(int *)0xC274C08) | 0xC0);
     nlTriPutSetPoint(0xC274BE8, 0x0, ((float)a4 * f6), (f5 - 1.0f), ((float)a5 * f6), 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
     nlTriPutSetPoint(0xC274BE8, 0x1, ((float)a4 * f6), (f4 + 1.0f), ((float)a5 * f6), 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);

@@ -1930,7 +1930,7 @@ int adxt_stat_prep(int a4, int a5, int a6, int a7)
             if (t10 == 3) {
                 if ((*(signed char *)((a4 + 0x70))) == 0) {
                     if ((*(signed char *)((a4 + 0x72))) == 0) {
-                        mwRnaSetPlaySw();
+                        thunk_mwRnaSetPlaySw();
                         (((struct o9C_uint *)(a4))->v) = 0x0;
                         (((struct oA0_uint *)(a4))->v) = (*(int *)0xC173D68);
                     }
@@ -1941,7 +1941,7 @@ int adxt_stat_prep(int a4, int a5, int a6, int a7)
         } else {
             if ((*(signed char *)((a4 + 0x70))) == 0) {
                 if ((*(signed char *)((a4 + 0x72))) == 0) {
-                    mwRnaSetPlaySw();
+                    thunk_mwRnaSetPlaySw();
                     (((struct o9C_uint *)(a4))->v) = 0x0;
                     (((struct oA0_uint *)(a4))->v) = (*(int *)0xC173D68);
                 }
@@ -1952,7 +1952,7 @@ int adxt_stat_prep(int a4, int a5, int a6, int a7)
     } else {
         if ((*(signed char *)((a4 + 0x70))) == 0) {
             if ((*(signed char *)((a4 + 0x72))) == 0) {
-                mwRnaSetPlaySw();
+                thunk_mwRnaSetPlaySw();
                 (((struct o9C_uint *)(a4))->v) = 0x0;
                 (((struct oA0_uint *)(a4))->v) = (*(int *)0xC173D68);
             }

@@ -984,7 +984,7 @@ int FUN_0c1658d0(int a4, int a5)
 
     t1 = FUN_0c162394(a5, (*(int *)((a4 + 0x8))));
     if (t1 == 0) {
-        FUN_0c16bab0(0xC1718C0);
+        FUN_0c16bab0(0xC1718C0, a5);
     }
     t5 = FUN_0c16274a(t1);
     t6 = (t5 + 0x7FF);
@@ -1392,7 +1392,7 @@ int FUN_0c053c00(int a4)
             break;
         }
     }
-    kmSetFogTable();
+    thunk_kmSetFogTable();
     return kmSetFogDensity(0x808F);
 }
 
@@ -1918,7 +1918,7 @@ int FUN_0c165ba4(int a4, int a5)
         }
         return (*(int *)(((a4 + 0x38) + (((t1 << 2) << 2) << 2))));
     }
-    FUN_0c16bab0(0xC171924);
+    FUN_0c16bab0(0xC171924, a5);
     return 0xFFFFFFFF;
 }
 

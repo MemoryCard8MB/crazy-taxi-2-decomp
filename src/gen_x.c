@@ -149,7 +149,7 @@ int kdDevGetFD(int, int);
 int kdGetDevice(int);
 int kdGetDeviceInfo(int);
 int kdIsChanged(int);
-int kdSetBlockWrite(int, ...);
+int kdSetBlockWrite(int, int, int, int, int, int, int);
 int kmChangeLatencyModel(int, int, int, int);
 int kmiCopyToFrameBuffer(int, int, int);
 int kmiMemCopy8(int, int, int);
@@ -180,7 +180,7 @@ int strncpy(int, int, int);
 int syCfgGetLanguage(int);
 int syCfgGetSoundMode(int, int, int);
 int syChainDeleteHandler(int);
-int syG2Write(int, int, int, int, int);
+int syG2Write(int, int, int, int, int, int);
 int thunk_FUN_0c1643e4(void);
 int vmsfs_bank_lock_retry(int, int);
 int vmsfs_c_getstate(int);
@@ -763,7 +763,8 @@ int pdVmsLcdWrite(int a4, int a5, int a6)
     } else {
         t0 = *(signed char *)((a4 + 0xC17148C));
         pdVmsLcdBlt((((((((unsigned char)t0 << 1) + (unsigned char)t0) << 2) << 2) << 2) + 0xC2D12FC), a5, a6);
-        t2 = kdSetBlockWrite(0x0, (((((((unsigned char)t0 << 1) + (unsigned char)t0) << 2) << 2) << 2) + 0xC2D12FC), 0x30);
+        /* manual: the original passes r4 = a4, r5 = 4, r6 = r7 = 0 and the stack words 0, the buffer, 48 */
+        t2 = kdSetBlockWrite(a4, 0x4, 0x0, 0x0, 0x0, (((((((unsigned char)t0 << 1) + (unsigned char)t0) << 2) << 2) << 2) + 0xC2D12FC), 0x30);
         t0 = 0x0;
         if ((int)t2 < 0) {
             t0 = 0xFFFFFFFF;
@@ -1033,7 +1034,7 @@ int FUN_0c07c44e(int a4)
             t1 = 0xFFFFFFFF;
             if (((*(int *)((t0 + 0x0))) & 0x7F00) == 0x100) {
             } else {
-                syG2Write(0xC113FC4, (*(int *)((t0 + 0x1C))), 0x4, 0x19, 0x1);
+                syG2Write(0xC113FC4, (*(int *)((t0 + 0x1C))), 0x4, 0x19, 0x1, 0x1);
                 FUN_0c07b6c0((*(int *)(((*(int *)0xC2C3EA4) + 0x8))), ((*(int *)(((*(int *)0xC2C3EA4) + 0x1C))) + 0x8));
                 FUN_0c07b6c0(0x1, 0xA08000B0);
                 t0 = *(int *)0xC2C3EA4;
@@ -1529,7 +1530,7 @@ int FUN_0c14efc2(int a4)
     *(unsigned int *)(((int)stk + 8)) = (thunk_FUN_0c1643e4());
     FUN_0c14edc8();
     *(volatile int *)((a4 + 0xC));
-    mwRnaGetTime();
+    thunk_mwRnaGetTime();
     (((struct o9C_uint *)(a4))->v) = (int)(((float)(*(int *)(((int)stk + 0))) / (float)(*(int *)(((int)stk + 4)))) * (float)(*(int *)0xC2D1BEC));
     (((struct oA0_uint *)(a4))->v) = (*(int *)0xC173D68);
     return (*(int *)(((int)stk + 8)));
@@ -1634,7 +1635,7 @@ int FUN_0c165c84(int a4, int a5)
         break;
     }
     if (t1 == 16) {
-        FUN_0c16bab0(0xC171944);
+        FUN_0c16bab0(0xC171944, a5);
         return 0xFFFFFFFF;
     }
     return (*(int *)((((((t1 << 2) << 2) << 2) + (a4 + 0x38)) + 0x38)));
@@ -1660,7 +1661,7 @@ int FUN_0c165ce6(int a4, int a5)
         break;
     }
     if (t1 == 16) {
-        FUN_0c16bab0(0xC171944);
+        FUN_0c16bab0(0xC171944, a5);
         return 0x0;
     }
     return (*(int *)((((((t1 << 2) << 2) << 2) + (a4 + 0x38)) + 0x3C)));
@@ -2024,7 +2025,7 @@ int syExtChkDisableSyncDev(int a4)
     _builtin_set_imask(0xF);
     *(int *)((int)stk + 4) = 0x1;
     *(int *)((int)stk + 0) = 0x1;
-    t2 = syG2Write((((int)stk + 0) + 0x8), ((*(int *)(((int)stk + 12))) + 0x18), 0x4, 0x1, 0x1);
+    t2 = syG2Write((((int)stk + 0) + 0x8), ((*(int *)(((int)stk + 12))) + 0x18), 0x4, 0x1, 0x1, 0x1);
     _builtin_set_imask(((unsigned int)((((*(int *)(((int)stk + 16))) & 0xF) << 2) << 2) >> 4));
     return (((t2 == 0)) ? 1 : 0);
 }
@@ -2042,7 +2043,7 @@ int FUN_0c14de8a(void)
         FUN_0c1620f0();
         FUN_0c16195c();
         FUN_0c14f248();
-        mwRnaInit();
+        thunk_mwRnaInit();
         mwRnaEntryErrFunc(0xC14DE74, 0x0);
         t12 = (memset(0xC173844, 0x0, 0x520));
     }

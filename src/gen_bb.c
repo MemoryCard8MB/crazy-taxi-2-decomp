@@ -95,7 +95,8 @@ int FUN_0c078890(float);
 int FUN_0c07ada0(int);
 int FUN_0c07ff00(void);
 int FUN_0c165fa0(void);
-int FUN_0c1675c0(void);
+typedef struct { int w[63]; } Stk63;
+int FUN_0c1675c0(Stk63 s);
 int buCalcCRC(int, int);
 int kmiCreateRegionArray(int, int, int, int, int, int);
 int kmiDMAHazardReset(void);
@@ -1298,9 +1299,6 @@ int kmiInitPAL(void)
     t92 = *(int *)(((((int)stk + 252) + 0x14) + 0xC));
     (((struct o0_uint *)0xC300BE8)->v) = ((((int)((unsigned int)((int)((unsigned int)t92 + (unsigned int)0x0)) + ((((int)0x0 > (int)t92)) ? 1u : 0u))) >> 1) + ((((struct o8_int *)0xC300BE8)->v)));
     (((struct o4_uint *)0xC300BE8)->v) = (*(int *)(((((int)stk + 252) + 0x14) + 0xC)));
-    t99 = (((int)stk + 252) + 0x14);
-    t100 = ((((int)stk + 252) + 0x14) + 252);
-    t101 = ((int)stk + 0);
-    for (;;) { t102 = *(int *)t99; t99 = (t99 + 4); if ((unsigned int)t100 < (unsigned int)t99) break; *(unsigned int *)t101 = t102; t101 = (t101 + 4); }
-    return (FUN_0c1675c0());
+    /* manual: the original copies the 63-word block at stk+272 to the outgoing argument area (_quick_mvn) and passes it by value */
+    return (FUN_0c1675c0(*(Stk63 *)(((int)stk + 252) + 0x14)));
 }

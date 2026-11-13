@@ -1757,7 +1757,7 @@ int FUN_0c14e936(int a4, int a5, int a6)
         }
     } else {
         *(volatile int *)((a4 + 0xC));
-        mwRnaGetTime();
+        thunk_mwRnaGetTime();
     }
     *(unsigned int *)((a5 + 0x0)) = ((*(int *)((a5 + 0x0))) + ((((struct o88_int *)(a4))->v)));
     return 0x88;

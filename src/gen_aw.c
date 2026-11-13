@@ -160,7 +160,7 @@ int FUN_0c04d5fa(void);
 int FUN_0c0372a0(int a4);
 int FUN_0c051034(int a4, int a5, int a6, int a7);
 int FUN_0c05d374(int a4, int a5, float f4, float f5, float f6, float f7, float f8);
-int FUN_0c0108fe(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10);
+int FUN_0c0108fe(int a4);
 int FUN_0c0397ec(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8);
 
 int FUN_0c04d5fa(void)
@@ -1053,7 +1053,7 @@ int FUN_0c05d374(int a4, int a5, float f4, float f5, float f6, float f7, float f
     return t211;
 }
 
-int FUN_0c0108fe(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10)
+int FUN_0c0108fe(int a4)
 {
 
     register int R1;
@@ -1082,9 +1082,6 @@ int FUN_0c0108fe(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
     register float w0_1;
     register float w0_2;
     v0_1 = a4;
-    v0_0 = a7;
-    w0_1 = f5;
-    w0_0 = f10;
     v0_0 = R13;
     v0_2 = R12;
     v0_3 = R11;

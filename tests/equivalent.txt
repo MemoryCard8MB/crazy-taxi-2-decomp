@@ -11,6 +11,7 @@ ADXB_CheckSpsd
 ADXB_CheckWav
 ADXB_Create
 ADXB_DecodeHeader
+ADXB_DecodeHeaderAdx
 ADXB_DecodeHeaderAiff
 ADXB_DecodeHeaderAu
 ADXB_DecodeHeaderWav
@@ -88,6 +89,7 @@ ADXT_GetTimeReal
 ADXT_IsIbufSafety
 ADXT_SetAutoRcvr
 ADXT_SetLpFlg
+ADXT_SetOutVol
 ADXT_SetReloadSct
 ADXT_Stop
 ADX_DecodeInfoAiff
@@ -97,6 +99,7 @@ ADX_DecodeInfoExLoop
 ADX_DecodeInfoSpsd
 ADX_DecodeInfoWav
 ADX_DecodeMonoFloat
+ADX_GetCoefficient
 BigOneRotate
 BupProgressCallback
 BupSave
@@ -105,6 +108,7 @@ CalcHomingVector
 CalcShadow2Matrix
 CalcShadow4Normal
 CarSel_Camera
+CarSel_SetFog
 CarSel_SetLight
 ChangeColliObj
 Check2DAreaDX
@@ -153,6 +157,7 @@ FUN_0c012e78
 FUN_0c013a30
 FUN_0c013b2c
 FUN_0c01422e
+FUN_0c0148f4
 FUN_0c01505c
 FUN_0c016240
 FUN_0c016398
@@ -197,6 +202,7 @@ FUN_0c01a166
 FUN_0c01a1a0
 FUN_0c01a7a4
 FUN_0c01a7cc
+FUN_0c01a848
 FUN_0c01a8d8
 FUN_0c01a978
 FUN_0c01b026
@@ -219,12 +225,14 @@ FUN_0c01c568
 FUN_0c01c900
 FUN_0c01ca48
 FUN_0c01cb08
+FUN_0c01cd78
 FUN_0c01d044
 FUN_0c01d190
 FUN_0c01d22c
 FUN_0c01d2d4
 FUN_0c01d37a
 FUN_0c01d3b4
+FUN_0c01d4ac
 FUN_0c01d69c
 FUN_0c01d7b0
 FUN_0c01da32
@@ -494,6 +502,8 @@ FUN_0c032026
 FUN_0c03209c
 FUN_0c032150
 FUN_0c032210
+FUN_0c03232a
+FUN_0c0323d0
 FUN_0c032436
 FUN_0c03256c
 FUN_0c0328d8
@@ -553,6 +563,7 @@ FUN_0c037790
 FUN_0c037dca
 FUN_0c038012
 FUN_0c0383b2
+FUN_0c03849a
 FUN_0c0386a4
 FUN_0c038862
 FUN_0c038b04
@@ -580,6 +591,7 @@ FUN_0c03b72e
 FUN_0c03baba
 FUN_0c03bc10
 FUN_0c03cc9c
+FUN_0c03cd7e
 FUN_0c03d416
 FUN_0c03d7a8
 FUN_0c03d974
@@ -849,6 +861,7 @@ FUN_0c053158
 FUN_0c05370e
 FUN_0c0538f4
 FUN_0c053992
+FUN_0c053c00
 FUN_0c053c5c
 FUN_0c053c98
 FUN_0c053d20
@@ -897,6 +910,7 @@ FUN_0c0572ce
 FUN_0c057374
 FUN_0c057624
 FUN_0c05763e
+FUN_0c0576fc
 FUN_0c057756
 FUN_0c0577d4
 FUN_0c0579e0
@@ -1476,6 +1490,7 @@ FUN_0c07b200
 FUN_0c07b430
 FUN_0c07b5a0
 FUN_0c07b650
+FUN_0c07b6c0
 FUN_0c07b6e6
 FUN_0c07b706
 FUN_0c07b734
@@ -1497,6 +1512,7 @@ FUN_0c07c080
 FUN_0c07c142
 FUN_0c07c164
 FUN_0c07c184
+FUN_0c07c1a6
 FUN_0c07c44e
 FUN_0c07c4d0
 FUN_0c07c546
@@ -1514,6 +1530,7 @@ FUN_0c07cba2
 FUN_0c07cbb6
 FUN_0c07cbbc
 FUN_0c07cdf4
+FUN_0c07ce10
 FUN_0c07ceac
 FUN_0c07ced8
 FUN_0c07cef8
@@ -1746,6 +1763,7 @@ FUN_0c14ebd8
 FUN_0c14ebf6
 FUN_0c14ec14
 FUN_0c14ed0c
+FUN_0c14edc8
 FUN_0c14ee68
 FUN_0c14efc2
 FUN_0c14f130
@@ -1876,12 +1894,17 @@ FUN_0c165ae0
 FUN_0c165b1c
 FUN_0c165b68
 FUN_0c165b86
+FUN_0c165ba4
+FUN_0c165c00
+FUN_0c165c84
+FUN_0c165ce6
 FUN_0c165d48
 FUN_0c165d86
 FUN_0c165dc6
 FUN_0c165de2
 FUN_0c165fa0
 FUN_0c1664c0
+FUN_0c1675c0
 FUN_0c168000
 FUN_0c168004
 FUN_0c169172
@@ -1962,6 +1985,7 @@ FUN_0c16f752
 FUN_0c16f778
 FUN_0c16f7aa
 FUN_0c16f7d4
+FUN_0c16f81c
 GS_GuestEject
 GS_GuestResult
 GetAng4Mat
@@ -1987,8 +2011,10 @@ Pause_ExecRenderTexture2nd
 Put2DObj
 Put2DObjUp
 PutAdvLogoSprite
+PutColliWall
 PutCollisionEffect
 PutCollisionObj
+PutGridPoly
 PutShotLandmark
 Put_Adv_FreePlay
 Put_Adv_Logo_Sprite
@@ -2113,10 +2139,12 @@ adxstm_sj_internal_error
 adxt_RcvrReplay
 adxt_eos_entry
 adxt_nlp_trap_entry
+adxt_set_outpan
 adxt_start_stm
 adxt_stat_decend
 adxt_stat_decinfo
 adxt_stat_playing
+adxt_stat_prep
 adxt_trap_entry
 bcd2bin
 bcdtime2fad
@@ -2499,6 +2527,7 @@ kmSetPaletteBankData
 kmSetPixelClipping
 kmSetStripLength
 kmSetStripOverRunCallback
+kmSetSystemConfiguration
 kmSetTexOverflowCallback
 kmSetUserClipping
 kmSetVSyncCallback
@@ -2519,6 +2548,7 @@ kmiBGPlanePutColor
 kmiBGPlanePutColor2
 kmiBGPlanePutWord
 kmiBGPlaneSetPCW
+kmiCBalloc
 kmiCalcTABufferSize
 kmiCh2DMAtoTA
 kmiCheckRenderTexture
@@ -2546,6 +2576,7 @@ kmiErrorISR08
 kmiErrorRecover
 kmiExCallBackFunc
 kmiExecuteDMAChain
+kmiFBControl
 kmiFBFitBlock
 kmiFBGarbageCollect
 kmiFBSearchFree
@@ -2570,6 +2601,8 @@ kmiGetSysConfigFlag
 kmiGetVertexBasePointer
 kmiInitCallback
 kmiInitInterrupt
+kmiInitNTSC
+kmiInitPAL
 kmiInitRenderer
 kmiInitTimer
 kmiInitVGA
@@ -2698,6 +2731,7 @@ mpdrv_set_arctrl_ns
 mpdrv_set_bread
 mpdrv_set_bread_ns
 mpdrv_set_bwrite
+mpdrv_set_bwrite_ns
 mpdrv_set_dkill
 mpdrv_set_dkill_ns
 mpdrv_set_dreq
@@ -2709,8 +2743,11 @@ mpdrv_set_end_ns
 mpdrv_set_ft4ctrl
 mpdrv_set_ft4ctrl_ns
 mpdrv_set_getcond
+mpdrv_set_getcond_ns
 mpdrv_set_getlerr
+mpdrv_set_getlerr_ns
 mpdrv_set_getminfo
+mpdrv_set_getminfo_ns
 mpdrv_set_hreset
 mpdrv_set_hreset_ns
 mpdrv_set_setcond
@@ -2817,6 +2854,7 @@ nlCosec
 nlCreateTextureParam
 nlCreateTextureParamA
 nlCreateVertexBuffer
+nlCreateVertexBuffer_clx16
 nlCreateVertexBuffer_clx22
 nlDetMatrix
 nlDispStripFreeTexture
@@ -3034,6 +3072,7 @@ pdVibEnumerateUnit
 pdVibGetInfo
 pdVibGetUnitInfoCallback
 pdVibIsReady
+pdVibSetStopTime
 pdVibSetUnitInfo
 pdVibStart
 pdVmsLcdBlt
@@ -3076,6 +3115,7 @@ syCfgGetBroadcastType
 syCfgGetCountryCode
 syCfgGetDefaultLanguage
 syCfgGetIDAddress
+syCfgGetIndividualID
 syCfgGetLanguage
 syCfgGetSoundMode
 syCfgIIDCheckSum
@@ -3091,6 +3131,7 @@ syChainMasterHandlerPVR_V
 syExtChkClearG2TimeOut
 syExtChkConnectSyncDev
 syExtChkDisableInterrupt
+syExtChkDisableSyncDev
 syExtChkExit
 syG2AicaFifoIsEmpty
 syG2DmaClose
@@ -3126,6 +3167,8 @@ syMallocStat
 syMalloc_default_malloc
 syMmuAddEntry
 syMmuDeleteEntry
+syRtcAicaSetDateHi
+syRtcAicaSetDateLo
 syRtcAicaSetWriteFlag
 syRtcCompareDate
 syRtcExecServer

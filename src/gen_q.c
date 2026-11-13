@@ -188,7 +188,7 @@ int nlRotateAY(int);
 int nlSubVector3op(int, int, int);
 int nlUnitMatrix(void);
 int set_event(int, int);
-int syG2Write(int, int, int, int, int);
+int syG2Write(int, int, int, int, int, int);
 int thunk_FUN_0c160706(int, int, int);
 int vmsfs_bank_change_retry(int, int);
 int vmsfs_bank_info_retry(int, int, int, int);
@@ -873,7 +873,7 @@ int FUN_0c07bd84(int a4, int a5)
                         if (t11 == 0) {
                             *(int *)((int)stk + 4) = 0x1;
                             *(int *)((int)stk + 0) = 0x1;
-                            syG2Write(a4, t4, 0x4, ((unsigned int)t1 >> 2), 0x1);
+                            syG2Write(a4, t4, 0x4, ((unsigned int)t1 >> 2), 0x1, 0x1);
                             t13 = FUN_0c07b786();
                             t35 = 0x0;
                             if (t13 != 0) {
@@ -884,7 +884,7 @@ int FUN_0c07bd84(int a4, int a5)
                 } else {
                     *(int *)((int)stk + 4) = 0x1;
                     *(int *)((int)stk + 0) = 0x1;
-                    syG2Write(a4, t4, 0x4, ((unsigned int)t1 >> 2), 0x1);
+                    syG2Write(a4, t4, 0x4, ((unsigned int)t1 >> 2), 0x1, 0x1);
                     t23 = FUN_0c07b786();
                     t35 = 0x0;
                     if (t23 != 0) {

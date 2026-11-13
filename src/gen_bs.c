@@ -180,7 +180,7 @@ int nlSubVector3op(int, int, int);
 int nlUnitVectorsd(int, int);
 int saveBufferInit(int);
 int set_event(int, int);
-int syG2Write(int, int, int, int, int);
+int syG2Write(int, int, int, int, int, int);
 int vmsfb_sleep(void);
 int vmsio_kd_bank_command(int, int, int, int, int);
 int vmsio_bank_info(int a4, int a5, int a6, int a7);
@@ -1259,7 +1259,7 @@ int FUN_0c14e3c8(int a4, int a5, int a6)
     v0_5 = ADXSJD_Create((*(int *)((v0_3 + 0x10))), v0_0, (v0_3 + 0x18));
     *(unsigned int *)((v0_3 + 0x4)) = v0_5;
     if ((v0_5 == 0)) goto L_C14E4E4;
-    v0_5 = mwRnaCreate();
+    v0_5 = thunk_mwRnaCreate();
     *(unsigned int *)((v0_3 + 0xC)) = v0_5;
     if ((v0_5 == 0)) goto L_C14E4E4;
     v0_5 = FUN_0c1657dc((*(int *)((v0_3 + 0x10))), v0_2, v0_4);
@@ -1734,7 +1734,7 @@ int FUN_0c07bb42(int a4, int a5)
     v0_3 = FUN_0c07b6e6(v0_2);
     FUN_0c07b6c0(((v0_3 & 0xFFFE) | 0x1), v0_2);
     v0_3 = FUN_0c07b6e6((v0_0 + 0x54));
-    syG2Write(v0_0, 0xA0800000, 0x4, ((unsigned int)v0_3 >> 2), 0x1);
+    syG2Write(v0_0, 0xA0800000, 0x4, ((unsigned int)v0_3 >> 2), 0x1, 0x1);
     FUN_0c07b6c0(v0_1, 0xA0800050);
     v0_4 = (0xA0800060);
     v0_6 = (0x8);

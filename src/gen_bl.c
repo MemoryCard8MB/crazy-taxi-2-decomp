@@ -124,13 +124,13 @@ int FUN_0c01cd78(void)
     switch (t67) {
     case 0:
         *(volatile int *)0xC175C84;
-        kmSetCheapShadowMode();
+        thunk_kmSetCheapShadowMode();
         break;
     case 1:
-        kmSetCheapShadowMode();
+        thunk_kmSetCheapShadowMode();
         break;
     case 2:
-        kmSetCheapShadowMode();
+        thunk_kmSetCheapShadowMode();
         break;
     }
     if ((int)((((struct o4_int *)0xC1EC71C)->v)) <= (int)0x1) {

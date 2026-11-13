@@ -90,7 +90,8 @@ int FUN_0c07c8be(int);
 int FUN_0c07ff00(void);
 int FUN_0c0800c8(int, int);
 int FUN_0c080770(void);
-int FUN_0c1675c0(void);
+typedef struct { int w[63]; } Stk63;
+int FUN_0c1675c0(Stk63 s);
 int Put2DObjUp(int, float, float, float);
 extern float _builtin_sqrtf(float);
 int gdDecSubcode(int, int);
@@ -1828,11 +1829,8 @@ int kmiInitNTSC(void)
     t58 = *(int *)((((int)stk + 252) + 0xC));
     (((struct o0_uint *)0xC300BE8)->v) = ((((int)((unsigned int)((int)((unsigned int)t58 + (unsigned int)0x0)) + ((((int)0x0 > (int)t58)) ? 1u : 0u))) >> 1) + ((((struct o8_int *)0xC300BE8)->v)));
     (((struct o4_uint *)0xC300BE8)->v) = (*(int *)((((int)stk + 252) + 0xC)));
-    t65 = ((int)stk + 252);
-    t66 = (((int)stk + 252) + 252);
-    t67 = ((int)stk + 0);
-    for (;;) { t68 = *(int *)t65; t65 = (t65 + 4); if ((unsigned int)t66 < (unsigned int)t65) break; *(unsigned int *)t67 = t68; t67 = (t67 + 4); }
-    return (FUN_0c1675c0());
+    /* manual: the original copies the 63-word block at stk+252 to the outgoing argument area (_quick_mvn) and passes it by value */
+    return (FUN_0c1675c0(*(Stk63 *)((int)stk + 252)));
 }
 
 int FUN_0c1595e8(int a4, int a5, int a6, int a7)

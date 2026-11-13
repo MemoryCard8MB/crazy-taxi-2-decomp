@@ -151,7 +151,7 @@ int memcpy(int, int, int);
 int memset(int, int, int);
 int mpdrv_dpf(int, ...);
 int mpdrv_set_bread_ns(int, int, int, int, int);
-int mpdrv_set_bwrite(int, ...);
+int mpdrv_set_bwrite(int, int, int, int, int, int, int);
 int mpdrv_set_getlerr_ns(int, ...);
 int nlAddVector(int, int);
 int nlArcTan2(int, int, float, float);
@@ -277,7 +277,7 @@ int FUN_0c095b84(int a4, int a5, int a6);
 void pdVibGetUnitInfoCallback(int a4, int a5, int a6, int a7);
 void syExtChkClearG2TimeOut(void);
 int kmiBGPlanePutColor(int a4, int a5, int a6);
-int kdSetBlockWrite(Stk4 s);
+int kdSetBlockWrite(int a4, int a5, int a6, int a7, int a8, int a9, int a10);
 void ADXSJD_Destroy(int a4);
 int FUN_0c1624b8(int a4, int a5, int a6, int a7);
 int kmiErrorISR04(int a4, int a5, int a6, int a7);
@@ -1948,11 +1948,12 @@ int kmiBGPlanePutColor(int a4, int a5, int a6)
     return t9;
 }
 
-int kdSetBlockWrite(Stk4 s)
+/* manual: r4-r7 and the three stack arguments go on to mpdrv_set_bwrite unchanged */
+int kdSetBlockWrite(int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
     register int t0;
 
-    t0 = mpdrv_set_bwrite(s.w[0], s.w[1], s.w[2]);
+    t0 = mpdrv_set_bwrite(a4, a5, a6, a7, a8, a9, a10);
     if (((((struct o10E8_int *)((*(int *)0xC30817C)))->v)) != 0) {
         kdRecvFrame();
     }

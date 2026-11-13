@@ -142,7 +142,7 @@ int FUN_0c073c40(int, int, float);
 float FUN_0c073c60(int);
 float FUN_0c073e10(int);
 int FUN_0c074f20(float);
-int FUN_0c075740(int, int, int, int, int, int, int, int, int, int);
+int FUN_0c075740(int, int, int, int, int, int, int, int, int, int, float, float, float, float, float, float, float, float);
 int FUN_0c075a00(int, float, float, float);
 int FUN_0c076230(float, float, float);
 int FUN_0c078870(int);
@@ -165,6 +165,7 @@ int adxt_set_outpan(int);
 int buCalcCRC(int, int);
 int kmiReadRegister(int);
 extern int kmiWriteRegister();
+extern int thunk_kmiWriteRegister();
 int mwRnaSetBitPerSmpl(void);
 int mwRnaSetNumChan(void);
 int mwRnaSetOutVol(void);
@@ -391,7 +392,7 @@ int FUN_0c02d3e8(int a4, int a5)
             *(int *)((int)stk + 0) = 0x1;
             *(volatile float *)0xC02D6EC;
             *(volatile float *)0xC02D6F0;
-            FUN_0c075740(0xC2752E0, 0x1, 0x0, 0xFFFFFFFF, 0x1, 0x0, 0x1, 0x1, 0x0, ((t8 << 1) + 0x2));
+            FUN_0c075740(0xC2752E0, 0x1, 0x0, 0xFFFFFFFF, 0x1, 0x0, 0x1, 0x1, 0x0, ((t8 << 1) + 0x2), 1.0f, 0.8f, 0.0f, 0.5f, 0.0f, 0.0f, 0.0f, 0.0f);
             nlTriPutSetClipping(0xC2752E0, (*(float *)((t16 + 0x0))), ((((struct o4_float *)(t16))->v)), ((((struct o8_float *)(t16))->v)), ((((struct o34_float *)0xC02D6C4)->v)));
             (((struct o38_uint *)0xC2752C8)->v) = (((((struct o38_int *)0xC2752C8)->v)) & 0x3FFFF3F);
             (((struct o38_uint *)0xC2752C8)->v) = (((((struct o38_int *)0xC2752C8)->v)) | 0x300000C0);
@@ -1089,22 +1090,22 @@ int FUN_0c1675c0(Stk63 s)
             t66 = 0x7F;
         }
     }
-    t68 = ((int (*)(int, int, int))(kmiWriteRegister))(0xE8, (((((struct o24_int *)0xC300BB0)->v)) | 0x8), t66);
+    t68 = ((int (*)(int, int, int))(thunk_kmiWriteRegister))(0xE8, (((((struct o24_int *)0xC300BB0)->v)) | 0x8), t66);
     t70 = 0x0;
     if ((((((struct o18_int *)0xC3008D4)->v)) & 1) != 0) {
         t70 = 0x800000;
     }
-    t72 = ((int (*)(int, int))(kmiWriteRegister))(0x44, t70);
-    t73 = ((int (*)(int, int))(kmiWriteRegister))(0x5C, 0x0);
-    t75 = ((int (*)(int, int))(kmiWriteRegister))(0xD0, ((((struct o0_int *)0xC300BB0)->v)));
-    t77 = ((int (*)(int, int))(kmiWriteRegister))(0xD8, ((((struct o10_int *)0xC300BB0)->v)));
-    t79 = ((int (*)(int, int))(kmiWriteRegister))(0xCC, ((((struct o8_int *)0xC300BB0)->v)));
-    t81 = ((int (*)(int, int))(kmiWriteRegister))(0xD4, ((((struct oC_int *)0xC300BB0)->v)));
-    t83 = ((int (*)(int, int))(kmiWriteRegister))(0xDC, ((((struct o14_int *)0xC300BB0)->v)));
-    t85 = ((int (*)(int, int))(kmiWriteRegister))(0xE0, ((((struct o18_int *)0xC300BB0)->v)));
-    t87 = ((int (*)(int, int))(kmiWriteRegister))(0xEC, ((((struct o28_int *)0xC300BB0)->v)));
-    t89 = ((int (*)(int, int))(kmiWriteRegister))(0xF0, ((((struct o2C_int *)0xC300BB0)->v)));
-    return (((int (*)(int, int))(kmiWriteRegister))(0xC8, ((((struct o4_int *)0xC300BB0)->v))));
+    t72 = ((int (*)(int, int))(thunk_kmiWriteRegister))(0x44, t70);
+    t73 = ((int (*)(int, int))(thunk_kmiWriteRegister))(0x5C, 0x0);
+    t75 = ((int (*)(int, int))(thunk_kmiWriteRegister))(0xD0, ((((struct o0_int *)0xC300BB0)->v)));
+    t77 = ((int (*)(int, int))(thunk_kmiWriteRegister))(0xD8, ((((struct o10_int *)0xC300BB0)->v)));
+    t79 = ((int (*)(int, int))(thunk_kmiWriteRegister))(0xCC, ((((struct o8_int *)0xC300BB0)->v)));
+    t81 = ((int (*)(int, int))(thunk_kmiWriteRegister))(0xD4, ((((struct oC_int *)0xC300BB0)->v)));
+    t83 = ((int (*)(int, int))(thunk_kmiWriteRegister))(0xDC, ((((struct o14_int *)0xC300BB0)->v)));
+    t85 = ((int (*)(int, int))(thunk_kmiWriteRegister))(0xE0, ((((struct o18_int *)0xC300BB0)->v)));
+    t87 = ((int (*)(int, int))(thunk_kmiWriteRegister))(0xEC, ((((struct o28_int *)0xC300BB0)->v)));
+    t89 = ((int (*)(int, int))(thunk_kmiWriteRegister))(0xF0, ((((struct o2C_int *)0xC300BB0)->v)));
+    return (((int (*)(int, int))(thunk_kmiWriteRegister))(0xC8, ((((struct o4_int *)0xC300BB0)->v))));
 }
 
 int FUN_0c038862(void)
@@ -1250,18 +1251,18 @@ int adxt_stat_decinfo(int a4)
             *(unsigned int *)(((int)stk + 0)) = (FUN_0c16201e(t0));
             FUN_0c161ffa(t0);
             *(volatile int *)((a4 + 0xC));
-            mwRnaSetBitPerSmpl();
+            thunk_mwRnaSetBitPerSmpl();
             *(volatile int *)((a4 + 0xC));
-            mwRnaSetSfreq();
+            thunk_mwRnaSetSfreq();
             *(volatile int *)(((int)stk + 4));
             *(volatile int *)((a4 + 0xC));
-            mwRnaSetNumChan();
+            thunk_mwRnaSetNumChan();
             *(volatile int *)(((int)stk + 0));
             *(volatile int *)((a4 + 0xC));
             FUN_0c1618dc();
             *(volatile short *)((a4 + 0x40));
             *(volatile int *)((a4 + 0xC));
-            mwRnaSetOutVol();
+            thunk_mwRnaSetOutVol();
             adxt_set_outpan(a4);
             if (((((struct o74_int *)(a4))->v)) != 0) {
                 ADXAMP_SetSfreq(((((struct o74_int *)(a4))->v)), t63);
@@ -1272,7 +1273,7 @@ int adxt_stat_decinfo(int a4)
                 ADXRNA_SetStmHdInfo((*(int *)((a4 + 0xC))), t88);
             }
             *(volatile int *)((a4 + 0xC));
-            mwRnaSetTransSw();
+            thunk_mwRnaSetTransSw();
             *(unsigned char *)((a4 + 0x1)) = 0x2;
             t100 = 0x2;
         }

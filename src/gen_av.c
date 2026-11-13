@@ -64,7 +64,7 @@ int FUN_0c034320(int, int);
 int FUN_0c0343b8(int, int);
 int FUN_0c034804(int, float, float);
 int FUN_0c03b72e(int, int, float, float, float, float, float, float, float);
-int FUN_0c03baba(void);
+int FUN_0c03baba(int, int, float, float);
 int FUN_0c03e43c(int);
 int FUN_0c03f154(int);
 int FUN_0c05b586(int);
@@ -441,27 +441,13 @@ int FUN_0c03cd7e(void)
                 t162 = ((((struct o0_int *)0xC2A58B0)->v));
                 if (t165 == t162) {
                     if (t165 != 0) {
-                        t161 = 0xC03D4D0;
-                        *(volatile float *)((t161 + 0x0));
-                        t161 = 0x28;
-                        *(volatile float *)((((int)stk + 0) + t161));
-                        t161 = 0xC03D4D4;
-                        *(volatile float *)((t161 + 0x0));
-                        t161 = 0x24;
-                        *(volatile float *)((((int)stk + 0) + t161));
-                        t161 = (FUN_0c03baba());
+                        /* manual: the original passes r4, r5 = 0x508900 and two floats built from the locals at stk+0x24 and stk+0x28 */
+                        t161 = FUN_0c03baba(0x0, 0x508900, ((*(float *)((int)stk + 0x24)) + -225.0f), ((*(float *)((int)stk + 0x28)) + -32.0f));
                     }
                     t162 = (*(int *)(((int)stk + 4)));
                     if (t165 != t162) {
-                        t161 = 0xC03D4DC;
-                        *(volatile float *)((t161 + 0x0));
-                        t161 = 0x28;
-                        *(volatile float *)((((int)stk + 0) + t161));
-                        t161 = 0xC03D4D4;
-                        *(volatile float *)((t161 + 0x0));
-                        t161 = 0x24;
-                        *(volatile float *)((((int)stk + 0) + t161));
-                        t161 = (FUN_0c03baba());
+                        /* manual: the original passes r4, r5 = 0x508900 and two floats built from the locals at stk+0x24 and stk+0x28 */
+                        t161 = FUN_0c03baba(0xFFFFFFFF, 0x508900, ((*(float *)((int)stk + 0x24)) + -225.0f), ((*(float *)((int)stk + 0x28)) + -2.0f));
                     }
                 }
             }

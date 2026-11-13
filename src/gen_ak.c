@@ -173,7 +173,7 @@ int mpdrv_set_getlerr(int, ...);
 int mpdrv_set_getminfo_ns(int, int, int);
 int mpdrv_set_setcond_ns(int, int, int, int);
 int mpdrv_set_transagain_ns(int);
-int mpdrv_setcmd(int, int, int, int, int);
+int mpdrv_setcmd(int, int, int, int, int, int);
 int mwRnaSetOutPan(void);
 int nlCloseEvent(int);
 int nlCreateTextureParamA(int, int, int, int, float, float, float, float, float);
@@ -196,7 +196,7 @@ int pdVmsLcdBltAsmFlipHV(int, int);
 int pdVmsLcdBltAsmFlipV(int, int);
 int set_event(int, int);
 int syChainAddHandler(int, int, int, int);
-int syG2Write(int, int, int, int, int);
+int syG2Write(int, int, int, int, int, int);
 int syIntInit(int, int);
 int syRtcGetAndCheckCount(int);
 int sySqInit(void);
@@ -609,7 +609,7 @@ int mpdrv_set_bwrite_ns(int a4, int a5, int a6, int a7, int a8, int a9, int a10)
     *(unsigned int *)((((int)stk + 8) + 0x4)) = ((((a6 << 16) << 8) | (a7 << 16)) | a8);
     *(int *)((int)stk + 4) = a10;
     *(int *)((int)stk + 0) = a9;
-    return (mpdrv_setcmd(a4, 0xC, ((int)stk + 8), 0x2, a9));
+    return (mpdrv_setcmd(a4, 0xC, ((int)stk + 8), 0x2, a9, a10));
 }
 
 int FUN_0c01e474(void)
@@ -900,7 +900,7 @@ int mpdrv_set_getlerr_ns(int a4, int a5, int a6, int a7, int a8)
     *(unsigned int *)((((int)stk + 8) + 0x4)) = ((((a6 << 16) << 8) | (a7 << 16)) | a8);
     *(int *)((int)stk + 4) = 0x0;
     *(int *)((int)stk + 0) = 0x0;
-    return (mpdrv_setcmd(a4, 0xD, ((int)stk + 8), 0x2, 0x0));
+    return (mpdrv_setcmd(a4, 0xD, ((int)stk + 8), 0x2, 0x0, 0x0));
 }
 
 int FUN_0c16c828(void)
@@ -2673,7 +2673,7 @@ int FUN_0c07b6c0(int a4, int a5)
     *(unsigned int *)(((int)stk + 8)) = a4;
     *(int *)((int)stk + 4) = 0x0;
     *(int *)((int)stk + 0) = 0x0;
-    syG2Write((((int)stk + 0) + 0x8), a5, 0x4, 0x1, 0x0);
+    syG2Write((((int)stk + 0) + 0x8), a5, 0x4, 0x1, 0x0, 0x0);
     return 0x0;
 }
 
@@ -2782,7 +2782,7 @@ int syRtcAicaSetDateLo(int a4)
     *(unsigned int *)(((int)stk + 8)) = a4;
     *(int *)((int)stk + 4) = 0x0;
     *(int *)((int)stk + 0) = 0x0;
-    syG2Write((((int)stk + 0) + 0x8), 0xA0710004, 0x4, 0x1, 0x0);
+    syG2Write((((int)stk + 0) + 0x8), 0xA0710004, 0x4, 0x1, 0x0, 0x0);
     return 0x0;
 }
 
@@ -2802,7 +2802,7 @@ int FUN_0c14ec14(int a4, int a5, int a6)
     *(unsigned short *)((((a5 << 1) + (a4 + 0x42)) + 0x0)) = a6;
     if ((int)a5 < (int)(*(signed char *)((a4 + 0x3)))) {
         *(volatile int *)((a4 + 0xC));
-        return mwRnaSetOutPan();
+        return thunk_mwRnaSetOutPan();
     }
     return FUN_0c1616ce(0xC17053C);
 }

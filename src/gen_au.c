@@ -125,10 +125,11 @@ int kmiGetDisplayData(int, int, int);
 int kmiGetNativeRegOBPSize(int);
 int kmiGetPackOBPParam(int, int, int, int, int, int);
 int kmiGetProfileInt(int, int, int);
-int kmiGetVertexBasePointer(int, int, int, int, int);
+int kmiGetVertexBasePointer(int, int, int, int, int, int, int);
 int kmiSetTAEnvironment(int, int, int, int, int);
 int kmiTAallocEx(int, int, int);
-int kmiWriteFBRegister(void);
+typedef struct { int w[29]; } Stk29;
+int kmiWriteFBRegister(Stk29 s);
 int memset(int, int, int);
 int nlAddVector(int, int);
 int nlAddVector3op(int, int, int);
@@ -1254,7 +1255,7 @@ int kmSetSystemConfiguration(int a4)
         *(int *)((int)stk + 4) = 0x0;
         t172 = (*(int *)(((((int)stk + 12) + 0x40) + 0x10)));
         *(int *)((int)stk + 0) = t172;
-        t183 = kmiGetVertexBasePointer(((((struct o40_int *)(((int)stk + 12)))->v)), (*(int *)(((((int)stk + 12) + 0x40) + 0x4))), (*(int *)(((((int)stk + 12) + 0x40) + 0x8))), (*(int *)(((((int)stk + 12) + 0x40) + 0xC))), t172);
+        t183 = kmiGetVertexBasePointer(((((struct o40_int *)(((int)stk + 12)))->v)), (*(int *)(((((int)stk + 12) + 0x40) + 0x4))), (*(int *)(((((int)stk + 12) + 0x40) + 0x8))), (*(int *)(((((int)stk + 12) + 0x40) + 0xC))), t172, 0x0, (*(int *)((int)stk + 8)));
         (((struct o28_uint *)0xC2D0C4C)->v) = ((((struct o0_int *)0xC2D0C4C)->v));
         (((struct o2C_uint *)0xC2D0C4C)->v) = ((((struct o4_int *)0xC2D0C4C)->v));
         (((struct o30_uint *)0xC2D0C4C)->v) = ((((struct o8_int *)0xC2D0C4C)->v));
@@ -1714,10 +1715,8 @@ int kmiFBControl(int a4, int a5, int a6, int a7, int a8, int a9)
     L_C167544:;
     (((struct o5C_uint *)(v0_3))->v) = (v0_5 - 1);
     L_C167552:;
-    v0_0 = v0_3;
-    v0_1 = ((int)stk + 0);
-    for (;;) { t93 = *(int *)v0_0; v0_0 = (v0_0 + 4); if ((unsigned int)((v0_3 + 116)) < (unsigned int)v0_0) break; *(unsigned int *)v0_1 = t93; v0_1 = (v0_1 + 4); }
-    kmiWriteFBRegister();
+    /* manual: the original copies the 29-word block at v0_3 to the outgoing argument area (_quick_mvn) and passes it by value */
+    kmiWriteFBRegister(*(Stk29 *)v0_3);
     (((struct o1C_uint *)0xC3008F0)->v) = v0_2;
     (((struct o18_uint *)0xC3008F0)->v) = v0_2;
     return v0_2;

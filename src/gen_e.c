@@ -143,7 +143,7 @@ int nlSubVector3op(int, int, int);
 int nl_set_cnv_proj_pers(void);
 int set_event(int, int);
 int strlen(int);
-int syG2Write(int, int, int, int, int);
+int syG2Write(int, int, int, int, int, int);
 int thunk_FUN_0c160706(int, int, int);
 int vmsfs_unmount(int);
 int vmsio_ismount(int);
@@ -997,7 +997,7 @@ int FUN_0c07beb4(int a4, int a5)
                         t0 = (t0 << 2);
                         t0 = (signed char)t0;
                         t0 = (t0 + 0xC2C3F88);
-                        syG2Write(a4, (*(int *)((t0 + 0x4))), 0x4, ((unsigned int)t2 >> 2), 0x1);
+                        syG2Write(a4, (*(int *)((t0 + 0x4))), 0x4, ((unsigned int)t2 >> 2), 0x1, 0x1);
                         FUN_0c07b6c0((*(int *)((t0 + 0x8))), ((*(int *)((t0 + 0x4))) + 0x8));
                         t6 = FUN_0c07b786();
                         if (t6 != 0) {
@@ -1021,7 +1021,7 @@ int FUN_0c07beb4(int a4, int a5)
                     t0 = (t0 << 2);
                     t0 = (signed char)t0;
                     t0 = (t0 + 0xC2C3F88);
-                    syG2Write(a4, (*(int *)((t0 + 0x4))), 0x4, ((unsigned int)t2 >> 2), 0x1);
+                    syG2Write(a4, (*(int *)((t0 + 0x4))), 0x4, ((unsigned int)t2 >> 2), 0x1, 0x1);
                     FUN_0c07b6c0((*(int *)((t0 + 0x8))), ((*(int *)((t0 + 0x4))) + 0x8));
                     t2 = FUN_0c07b786();
                     if (t2 != 0) {

@@ -62,7 +62,7 @@ int FUN_0c01ecaa(int);
 int FUN_0c01fb8c(int, int);
 int FUN_0c030c9c(void);
 int FUN_0c031b94(int, int, int, int);
-int FUN_0c032210(int, int, int, int);
+int FUN_0c032210(int, int, int, int, int, int, int);
 int FUN_0c032942(int, int, int, int, int);
 int FUN_0c0339c0(int);
 int FUN_0c03e792(int, int);
@@ -127,7 +127,7 @@ int buIsExistFile(int, int);
 int buIsReady(int);
 int buStat(int);
 int colliNodeAlloc(void);
-float cos(void);
+float cos(float);
 int cvFsError(int, int, int);
 int fmMngReadData(int);
 int fmMngWriteData(int, int, int);
@@ -422,8 +422,7 @@ float ADX_GetCoefficient(int a4, int a5, int a6, int a7)
     register float u4;
     register float u5;
 
-    *(volatile float *)0xC1613B4;
-    t1 = cos();
+    t1 = cos((((float)a4 * (*(float *)0xC1613B4)) / (float)a5));
     u2 = _builtin_sqrtf((((_builtin_sqrtf((1.0f + 1.0f)) - t1) + (_builtin_sqrtf((1.0f + 1.0f)) + -1.0f)) * ((_builtin_sqrtf((1.0f + 1.0f)) - t1) - (_builtin_sqrtf((1.0f + 1.0f)) + -1.0f))));
     *(unsigned short *)((a6 + 0x0)) = (int)((((_builtin_sqrtf((1.0f + 1.0f)) - t1) - u2) / (_builtin_sqrtf((1.0f + 1.0f)) + -1.0f)) * ((((struct o0_float *)0xC1613BC)->v)));
     u4 = (((struct o4_float *)0xC1613BC)->v);
@@ -452,7 +451,7 @@ int FUN_0c165c00(int a4, int a5)
         break;
     }
     if (t1 == 16) {
-        FUN_0c16bab0(0xC171944);
+        FUN_0c16bab0(0xC171944, a5);
         return 0x0;
     }
     return (((((t1 << 2) << 2) << 2) + (a4 + 0x38)) + 0x4);
@@ -1262,7 +1261,7 @@ int FUN_0c03232a(int a4, int a5, int a6, int a7)
         t0 = ((((struct o4_int *)0xC2AC5FC)->v));
         t1 = ((((struct o0_int *)0xC2AC5FC)->v));
     }
-    t2 = FUN_0c032210(a4, a5, t1, t0);
+    t2 = FUN_0c032210(a4, a5, t1, t0, a7, (a7 == 0), 0x300);
     t0 = t2;
     if (t2 == 0) {
         t3 = FUN_0c07ffbc((0x2B0 + t1), 0xC0B3034, 0xA);

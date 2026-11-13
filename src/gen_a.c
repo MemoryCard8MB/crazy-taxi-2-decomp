@@ -1983,7 +1983,7 @@ int ADXT_SetOutVol(int a4, int a5)
 {
     (((struct o40_ushort *)(a4))->v) = a5;
     *(volatile int *)((a4 + 0xC));
-    return mwRnaSetOutVol();
+    return thunk_mwRnaSetOutVol();
 }
 
 void VQEnQueueTop(int a4, int a5)

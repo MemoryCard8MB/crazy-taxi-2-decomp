@@ -183,7 +183,7 @@ int kmiMemCopy8(int, int, int);
 int kmytex_ABSalloc(int, int, int, int, int, int);
 int memset(int, int, int);
 int mpdrv_dpf(int, ...);
-int mpdrv_set_bwrite_ns(int, ...);
+int mpdrv_set_bwrite_ns(int, int, int, int, int, int, int);
 int mwlRnaIsCopyEnd(int, int, int, int);
 int mwlSbGetStreamParam(int, int, int);
 int ndPuru2Check(int);
@@ -330,7 +330,7 @@ int kdDevGetTimerInfo(int a4, int a5);
 int FUN_0c1616f4(int a4, int a5, int a6, int a7);
 int mpdrv_hreset(int a4);
 int mpdrv_sdckbdisable(int a4);
-int mpdrv_set_bwrite(Stk4 s);
+int mpdrv_set_bwrite(int a4, int a5, int a6, int a7, int a8, int a9, int a10);
 
 int mwlRnaWaitTransEnd(int a4, int a5, int a6, int a7)
 {
@@ -2710,7 +2710,8 @@ int mpdrv_sdckbdisable(int a4)
     return 0x0;
 }
 
-int mpdrv_set_bwrite(Stk4 s)
+/* manual: r4-r7 and the three stack arguments go on to mpdrv_set_bwrite_ns unchanged */
+int mpdrv_set_bwrite(int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
     register int t2;
 
@@ -2718,7 +2719,7 @@ int mpdrv_set_bwrite(Stk4 s)
         mpdrv_dpf(0xC171A6C);
         return 0xFFFFFFFE;
     }
-    t2 = mpdrv_set_bwrite_ns(s.w[0], s.w[1], s.w[2]);
+    t2 = mpdrv_set_bwrite_ns(a4, a5, a6, a7, a8, a9, a10);
     *(unsigned char *)(((*(int *)0xC16A484) + 0x0)) = 0x0;
     return t2;
 }

@@ -847,7 +847,7 @@ void FUN_0c05990e(void)
         if (t2 != 0) {
             nlFogDensityF(((((struct o204_float *)(t2))->v)));
             *(volatile int *)0xC2B8A24;
-            kmSetFogTable();
+            thunk_kmSetFogTable_0c071a70();
             FUN_0c0719e0(((((struct o208_int *)((*(int *)0xC2B8A24)))->v)));
     return;
         }
@@ -1066,10 +1066,10 @@ void FUN_0c14def2(void)
     t0 = *(int *)0xC173D64;
     *(unsigned int *)0xC173D64 = (t0 - 1);
     if ((t0 - 1) == 0) {
-        mwRnaFinish();
+        thunk_mwRnaFinish();
         FUN_0c14f292();
         FUN_0c161970();
-        cvFsFinish();
+        thunk_cvFsFinish();
         FUN_0c1616aa();
         SJMEM_Finish();
         SJRBF_Finish();
@@ -1778,7 +1778,7 @@ int FUN_0c019d08(int a4, int a5, int a6)
 void FUN_0c01a848(void)
 {
     FUN_0c14def2();
-    syCfgExit();
+    thunk_syCfgExit();
     FUN_0c03155a();
     syRtcFinish();
     pdExitPeripheral();

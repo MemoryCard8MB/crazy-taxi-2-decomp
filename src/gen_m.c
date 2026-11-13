@@ -197,7 +197,7 @@ int nlSubVector3op(int, int, int);
 int nlUnitMatrix(void);
 float nlUnitVectorsd(int, int);
 int nl_set_cnv_proj_pers(void);
-int syG2Write(int, int, int, int, int);
+int syG2Write(int, int, int, int, int, int);
 int vmsfs_read_retry(int, int, int);
 int vmsfs_write_retry(int, int, int);
 int vmsio_bank_change(int, int);
@@ -1099,7 +1099,7 @@ int FUN_0c07ce10(int a4, int a5)
         t0 = *(signed char *)((((unsigned char)((unsigned short)a4 * (unsigned short)0x1C) + 0xC2C3EA8) + 0x1));
         t1 = t0;
         if (t0 == 0) {
-            syG2Write(a5, ((((((((short)a4 << 1) + (short)a4) << 2) << 2) << 1) + 0xA0800100) + 0x20), 0x4, 0x10, 0x1);
+            syG2Write(a5, ((((((((short)a4 << 1) + (short)a4) << 2) << 2) << 1) + 0xA0800100) + 0x20), 0x4, 0x10, 0x1, 0x1);
             *(unsigned int *)((((unsigned char)((unsigned short)a4 * (unsigned short)0x1C) + 0xC2C3EA8) + 0xC)) = (unsigned short)((((struct o2A_short *)(a5))->v));
             t0 = *(signed char *)((a5 + 0x8));
             if ((short)(unsigned char)t0 != 0) {

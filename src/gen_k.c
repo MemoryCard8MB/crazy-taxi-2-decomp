@@ -176,7 +176,7 @@ int set_event(int, int);
 int syBtExit(void);
 int syG2DmaEndIntrruptHandler(int);
 int syG2DmaIsBusy(int, int);
-int syG2Write(int, int, int, int, int);
+int syG2Write(int, int, int, int, int, int);
 int syTmrDiffCount(int, int);
 int syTmrGetCount(void);
 int vmsfs_c_progress(int, int, int, int);
@@ -1767,7 +1767,7 @@ int FUN_0c07be0e(int a4, int a5, int a6)
     L_C07BE76:;
     *(int *)((int)stk + 4) = 0x1;
     *(int *)((int)stk + 0) = 0x1;
-    syG2Write(v0_1, v0_3, 0x4, ((unsigned int)(*(int *)(((int)stk + 16))) >> 2), 0x1);
+    syG2Write(v0_1, v0_3, 0x4, ((unsigned int)(*(int *)(((int)stk + 16))) >> 2), 0x1, 0x1);
     FUN_0c07b6c0(v0_2, (v0_3 + 0x8));
     v0_1 = FUN_0c07b786();
     v0_0 = (v0_1);

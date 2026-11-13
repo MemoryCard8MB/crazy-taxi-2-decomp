@@ -146,7 +146,7 @@ int nl_set_cnv_proj_pers(void);
 int strlen(int);
 int strncpy(int, int, int);
 int syChainAddHandler(int, int, int, int);
-int syG2Write(int, int, int, int, int);
+int syG2Write(int, int, int, int, int, int);
 int syMmuAddEntry(int, int, int);
 int vmsfs_fclose(int, int);
 int vmsfs_fgetsize(int, int);
@@ -2115,7 +2115,7 @@ int FUN_0c07c1a6(int a4)
         } else {
             t2 = (*(int *)((t0 + 0x4)));
         }
-        syG2Write(a4, (*(int *)((t0 + 0x18))), 0x4, t2, 0x1);
+        syG2Write(a4, (*(int *)((t0 + 0x18))), 0x4, t2, 0x1, 0x1);
         t0 = *(int *)0xC2C3EA4;
         t3 = *(int *)((t0 + 0xC));
         *(unsigned int *)((t0 + 0xC)) = (t3 - (t2 << 2));

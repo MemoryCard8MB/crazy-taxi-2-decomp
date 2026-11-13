@@ -173,7 +173,7 @@ int strncmp(int, int, int);
 int strncpy(int, int, int);
 int syCacheOCBP(int, int);
 int syCfgSetSoundMode(int);
-int syG2Write(int, int, int, int, int);
+int syG2Write(int, int, int, int, int, int);
 int thunk_FUN_0c160706(int, int, int);
 int vmsfs_c_getstate(int);
 int vmsfs_c_setfname(int, int, int);
@@ -291,7 +291,7 @@ int CarSel_SetFog(void)
             break;
         }
     }
-    kmSetFogTable();
+    thunk_kmSetFogTable();
     return kmSetFogDensity(0x808F);
 }
 
@@ -322,7 +322,7 @@ int FUN_0c0576fc(void)
             break;
         }
     }
-    kmSetFogTable();
+    thunk_kmSetFogTable();
     return FUN_0c071a60(0x808F);
 }
 
@@ -1489,7 +1489,7 @@ int syExtChkDisableInterrupt(int a4)
     _builtin_set_imask(0xF);
     *(int *)((int)stk + 4) = 0x1;
     *(int *)((int)stk + 0) = 0x1;
-    t2 = syG2Write((((int)stk + 0) + 0x8), ((*(int *)(((int)stk + 12))) + 0x14), 0x4, 0x1, 0x1);
+    t2 = syG2Write((((int)stk + 0) + 0x8), ((*(int *)(((int)stk + 12))) + 0x14), 0x4, 0x1, 0x1, 0x1);
     _builtin_set_imask(((unsigned int)((((*(int *)(((int)stk + 16))) & 0xF) << 2) << 2) >> 4));
     return (((t2 == 0)) ? 1 : 0);
 }

@@ -1658,7 +1658,7 @@ int FUN_0c14e9a8(int a4, int a5, int a6)
             if (!(((((struct o4_float *)0xC2D1BEC)->v)) > 60.0f) && (u46 = (((struct o4_float *)0xC2D1BEC)->v), !(-60.0f > u46))) {
             } else {
                 *(volatile int *)((a4 + 0xC));
-                mwRnaGetTime();
+                thunk_mwRnaGetTime();
                 (((struct o9C_uint *)(a4))->v) = (int)(((float)(*(int *)(((int)stk + 0))) / (float)(*(int *)(((int)stk + 4)))) * (float)((((struct o0_int *)0xC2D1BEC)->v)));
                 (((struct oA0_uint *)(a4))->v) = ((((struct o0_int *)0xC173D68)->v));
             }

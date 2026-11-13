@@ -16,7 +16,7 @@ int nlsndPackFree(void);
 int kbCfgGetId(void);
 int gdc_FileLoad(int, int, int);
 int gdc_StopStreamSongAll(void);
-int kbCfgIni(void);
+int kbCfgIni(int);
 int kmiWriteRegister(int, int);
 int memmove(int, int, int);
 int syCfgIIDCheckSum(int);
@@ -45,7 +45,7 @@ int syCfgGetIndividualID(int a4)
     if (a4 == 0) {
         return 0x0;
     }
-    kbCfgIni();
+    kbCfgIni(0x0);
     t1 = kbCfgGetId();
     memmove(a4, (t1 + 0x2), 0x6);
     t3 = syCfgIIDCheckSum(t1);
