@@ -42327,6 +42327,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 96
 - the cases run 26 of 75 instructions
 
+### FUN_0c07d728 (`0C07D728`, 216 bytes, `src/hand_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/hand_a/FUN_0c07d728.json`
+- case 149
+- case 149
+- case 0
+- case 1
+- case 5
+- case 30
+- case 2
+- case 3
+- case 4
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 155
+- case 68
+- case 61
+- case 59
+- case 87
+- case 94
+- case 96
+- case 90
+- case 115
+- case 119
+- case 102
+- case 49
+- case 142
+- case 145
+- case 146
+- case 113
+- case 147
+- case 139
+- the cases run 64 of 98 instructions
+
 ### FUN_0c07d800 (`0C07D800`, 64 bytes, `src/gen_ag.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_ag/FUN_0c07d800.json`
 - case 10
@@ -55588,11 +55628,91 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 30 of 47 instructions
 
+### FUN_0c16d948 (`0C16D948`, 50 bytes, `src/hand_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/hand_a/FUN_0c16d948.json`
+- case 0
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- the cases run 25 of 25 instructions
+
 ### FUN_0c16d97a (`0C16D97A`, 108 bytes, `src/gen_v.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_v/FUN_0c16d97a.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 36 of 53 instructions
+
+### FUN_0c16d9e6 (`0C16D9E6`, 54 bytes, `src/hand_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/hand_a/FUN_0c16d9e6.json`
+- case 1
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- the cases run 27 of 27 instructions
 
 ### FUN_0c16da1c (`0C16DA1C`, 152 bytes, `src/gen_m.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_m/FUN_0c16da1c.json`
