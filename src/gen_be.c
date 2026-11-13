@@ -255,7 +255,7 @@ int FUN_0c032a60(int a4, int a5, int a6, int a7)
     t83 = FUN_0c031e86(0x1, (((((struct o30_int *)0xC2AC5CC)->v)) + 0x300), (((((struct o34_int *)0xC2AC5CC)->v)) - 768), ((*(int *)(((int)stk + 8))) - 768));
     t106 = 0xFFFFFFFF;
     if ((int)t83 > 0) {
-        (((struct o26_uint *)0xC2AC582)->v) = (t83 + 0x50);
+        *(unsigned int *)0xC2AC5A8 = (t83 + 0x50); /* manual: the word at 0xC2AC5A8 (an offset struct put it at 0xC2AC5AA by alignment) */
         t85 = 0xC2AC2FC;
         t87 = ((((struct o30_int *)0xC2AC5CC)->v));
         for (;;) { t88 = *(int *)t85; t85 = (t85 + 4); if ((unsigned int)((0xC2AC2FC + 768)) < (unsigned int)t85) break; *(unsigned int *)t87 = t88; t87 = (t87 + 4); }

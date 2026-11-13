@@ -74,7 +74,7 @@ struct oC_uint { char p[0xC]; unsigned int v; };
 int ADXCRS_Lock(void);
 int ADXCRS_Unlock(void);
 int ADX_DecodeMonoFloat(int, int, int, int, int, int);
-int ADX_DecodeSteFloat(int, int, int, int, int, int);
+int ADX_DecodeSteFloat(int, int, int, int, int, int, int, int);
 int CarSel_Camera(void);
 int CarSel_SetFog(void);
 int FUN_0c018b22(int, int);
@@ -1637,7 +1637,7 @@ int ADXPD_ExecHndl(int a4)
         } else {
             *(volatile short *)(((a4 + 0x30) + 0x2));
             *(volatile short *)(((a4 + 0x30) + 0x0));
-            t0 = ADX_DecodeSteFloat((*(int *)((a4 + 0x18))), (*(int *)((a4 + 0x1C))), (*(int *)((a4 + 0x20))), (a4 + 0x28), ((*(int *)((a4 + 0x24)))), ((a4 + 0x28) + 0x4));
+            t0 = ADX_DecodeSteFloat((*(int *)((a4 + 0x18))), (*(int *)((a4 + 0x1C))), (*(int *)((a4 + 0x20))), (a4 + 0x28), ((*(int *)((a4 + 0x24)))), ((a4 + 0x28) + 0x4), (*(short *)((a4 + 0x30))), (*(short *)((a4 + 0x32))));
             *(unsigned int *)((a4 + 0x10)) = t0;
             t3 = ((~(((~t0) + 0x1) & 0x1)) + 0x1);
             if ((int)t0 >= 0) {

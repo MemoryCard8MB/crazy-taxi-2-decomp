@@ -4,49 +4,34 @@
 struct o0_int { int v; };
 struct o4_int { char p[0x4]; int v; };
 int vsprintf(int, int, int);
-int FUN_0c16ada2(int a4, int a5, int a6, int a7, int a8, int a9, int a10);
-int FUN_0c16bab0(int a4, int a5, int a6, int a7, int a8, int a9, int a10);
+int FUN_0c16ada2(int fmt, ...);
+int FUN_0c16bab0(int fmt, ...);
 
-int FUN_0c16ada2(int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+/* manual: printf-style error report of the MWRNA/ADX code: formats into 0xC3086E0 and hands the text to the hook at 0xC174408
+   (with the word at 0xC17440C). A variadic function: SHC passes every argument of the call on the stack, the format first. */
+int FUN_0c16ada2(int fmt, ...)
 {
-    int stk[13];
-    register int t0;
-    register int t3;
-    register int t6;
+    int r;
+    int (*hook)(int, int);
 
-    stk[2] = a8;
-    stk[3] = a9;
-    stk[4] = a10;
-    t0 = ((((int)stk + 4) + 0x8) + 0x4);
-    if ((0x3 & ((((int)stk + 4) + 0x8) + 0x4)) != 0) {
-        t0 = ((((int)stk + 4) + 0x8) + 0x8);
+    r = vsprintf(0xC3086E0, fmt, (int)(&fmt + 1));
+    hook = *(int (**)(int, int))0xC174408;
+    if (hook != 0) {
+        r = hook(*(int *)0xC17440C, 0xC3086E0);
     }
-    t3 = (((struct o0_int *)0xC174408)->v);
-    t6 = (vsprintf(0xC3086E0, a8, t0));
-    if (t3 != 0) {
-        t6 = (((int (*)(int, int, int, int, int, int, int, int, int, int, int))(t3))(((((struct o4_int *)0xC174408)->v)), 0xC3086E0, a6, a7, *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24)));
-    }
-    return t6;
+    return r;
 }
 
-int FUN_0c16bab0(int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+/* manual: the same report for the stream code: text at 0xC309360, hook at 0xC174488 (with the word at 0xC17448C) */
+int FUN_0c16bab0(int fmt, ...)
 {
-    int stk[13];
-    register int t0;
-    register int t3;
-    register int t6;
+    int r;
+    int (*hook)(int, int);
 
-    stk[2] = a8;
-    stk[3] = a9;
-    stk[4] = a10;
-    t0 = ((((int)stk + 4) + 0x8) + 0x4);
-    if ((0x3 & ((((int)stk + 4) + 0x8) + 0x4)) != 0) {
-        t0 = ((((int)stk + 4) + 0x8) + 0x8);
+    r = vsprintf(0xC309360, fmt, (int)(&fmt + 1));
+    hook = *(int (**)(int, int))0xC174488;
+    if (hook != 0) {
+        r = hook(*(int *)0xC17448C, 0xC309360);
     }
-    t3 = (((struct o0_int *)0xC174488)->v);
-    t6 = (vsprintf(0xC309360, a8, t0));
-    if (t3 != 0) {
-        t6 = (((int (*)(int, int, int, int, int, int, int, int, int, int, int))(t3))(((((struct o4_int *)0xC174488)->v)), 0xC309360, a6, a7, *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24)));
-    }
-    return t6;
+    return r;
 }

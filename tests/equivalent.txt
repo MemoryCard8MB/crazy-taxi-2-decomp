@@ -14,6 +14,7 @@ ADXB_DecodeHeader
 ADXB_DecodeHeaderAdx
 ADXB_DecodeHeaderAiff
 ADXB_DecodeHeaderAu
+ADXB_DecodeHeaderSpsd
 ADXB_DecodeHeaderWav
 ADXB_Destroy
 ADXB_EndDecode
@@ -99,6 +100,7 @@ ADX_DecodeInfoExLoop
 ADX_DecodeInfoSpsd
 ADX_DecodeInfoWav
 ADX_DecodeMonoFloat
+ADX_DecodeSteFloat
 ADX_GetCoefficient
 BigOneRotate
 BupProgressCallback
@@ -162,6 +164,8 @@ FUN_0c01505c
 FUN_0c016240
 FUN_0c016398
 FUN_0c0164de
+FUN_0c0166c0
+FUN_0c016a22
 FUN_0c016cb2
 FUN_0c016cca
 FUN_0c018b00
@@ -394,6 +398,8 @@ FUN_0c02bbbc
 FUN_0c02bcf8
 FUN_0c02be68
 FUN_0c02c068
+FUN_0c02cc30
+FUN_0c02cf88
 FUN_0c02d37c
 FUN_0c02d3ba
 FUN_0c02d3e8
@@ -575,6 +581,7 @@ FUN_0c0390d8
 FUN_0c0391d2
 FUN_0c039282
 FUN_0c039342
+FUN_0c0393ea
 FUN_0c0397ec
 FUN_0c039c90
 FUN_0c039d7e
@@ -1115,6 +1122,7 @@ FUN_0c061f7e
 FUN_0c061fba
 FUN_0c062004
 FUN_0c062030
+FUN_0c0620ac
 FUN_0c06219e
 FUN_0c0621e0
 FUN_0c06221c
@@ -1888,6 +1896,7 @@ FUN_0c1657b4
 FUN_0c1657dc
 FUN_0c165878
 FUN_0c1658d0
+FUN_0c16592e
 FUN_0c165a34
 FUN_0c165a7e
 FUN_0c165ae0
@@ -1907,6 +1916,7 @@ FUN_0c1664c0
 FUN_0c1675c0
 FUN_0c168000
 FUN_0c168004
+FUN_0c16880c
 FUN_0c169172
 FUN_0c169186
 FUN_0c169190
@@ -2432,6 +2442,7 @@ kdInitSystem
 kdInitSystemEx
 kdIsChanged
 kdRecognizeChanged
+kdRecvFrame
 kdSetARControl
 kdSetARControlEx
 kdSetAllStatusRequest
@@ -2543,6 +2554,7 @@ kmfSetTimeOutCount
 kmfSetVertexBufferBaseAddress
 kmiABSalloc
 kmiAddSysConfigFlag
+kmiAllocSysConfig
 kmiBGPlaneCountWords
 kmiBGPlanePutColor
 kmiBGPlanePutColor2
@@ -2608,6 +2620,7 @@ kmiInitTimer
 kmiInitVGA
 kmiInitializeBackGroundPlane
 kmiInitializeDMA
+kmiInitializeDevice
 kmiInitializeDriver
 kmiInitializeHardware
 kmiInterruptHandlerSH
@@ -2711,6 +2724,7 @@ mpdrv_get_version
 mpdrv_hreset
 mpdrv_init
 mpdrv_init_ex
+mpdrv_init_globals
 mpdrv_init_memory
 mpdrv_insertnop
 mpdrv_ischanged
@@ -2777,6 +2791,7 @@ mwRnaGetAutoSw
 mwRnaGetBitPerSmpl
 mwRnaGetDrctLvl
 mwRnaGetFilter
+mwRnaGetFx
 mwRnaGetNumData
 mwRnaGetNumRoom
 mwRnaGetOutPan
@@ -2785,6 +2800,7 @@ mwRnaGetPitch
 mwRnaGetPlaySw
 mwRnaGetSfreq
 mwRnaGetStat
+mwRnaGetTime
 mwRnaGetTransSw
 mwRnaInit
 mwRnaIsOvrflw
@@ -2795,9 +2811,13 @@ mwRnaSetDrctLvl
 mwRnaSetFilter
 mwRnaSetFx
 mwRnaSetNumChan
+mwRnaSetOutPan
 mwRnaSetOutVol
 mwRnaSetPitch
+mwRnaSetPlaySw
+mwRnaSetSfreq
 mwRnaSetStartSmpl
+mwRnaSetStmHdInfo
 mwRnaSetTransSw
 mwRnaSetupSnd
 mwRnaStart
@@ -2866,6 +2886,7 @@ nlFastScreenPoint
 nlFatalErrorTrap
 nlFloor
 nlFogDensityF
+nlFogTableOff
 nlFraction
 nlFree
 nlFreeCommonTextureAll
@@ -2984,6 +3005,7 @@ nlRotateXSC
 nlRotateYSC
 nlRoundOff
 nlRoundUp
+nlScale
 nlScaleUnitVector
 nlScaleV
 nlScreenPoint
@@ -3134,6 +3156,7 @@ syExtChkDisableInterrupt
 syExtChkDisableSyncDev
 syExtChkExit
 syG2AicaFifoIsEmpty
+syG2AicaFifoWaitEmpty
 syG2DmaClose
 syG2DmaEndIntrruptHandler
 syG2DmaIsBusy
@@ -3154,6 +3177,7 @@ syHwCacheFinish
 syHwFinish
 syHwInit
 syHwInit2
+syIntAdrChk_dumpline
 syIntAdrChk_finish
 syIntAdrChk_getchar
 syIntAdrChk_printh
@@ -3302,6 +3326,7 @@ vmsfs_load_file
 vmsfs_load_file_ex
 vmsfs_lockbank
 vmsfs_mediainfo_retry
+vmsfs_memcmp
 vmsfs_memcpyl
 vmsfs_mount
 vmsfs_mount2
@@ -3327,4 +3352,5 @@ vmsio_get_media_info
 vmsio_init
 vmsio_ismount
 vmsio_isready
+vmsio_kd_bank_command
 vsprintf

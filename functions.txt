@@ -3630,4 +3630,4 @@ F 0c16f7aa 42 FUN_0c16f7aa
 F 0c16f7d4 52 FUN_0c16f7d4
 F 0c16f81c 30 FUN_0c16f81c
 F 0c16f840 258 ADX_DecodeMonoFloat
-F 0c16f958 476 ADX_DecodeSteFloat
+F 0c16f958 496 ADX_DecodeSteFloat

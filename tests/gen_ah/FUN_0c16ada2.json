@@ -1,14 +1,46 @@
 {
  "dev": [
   {
-   "about": "rescue: empty case",
+   "about": "no hook set: only the text is formatted",
    "regs": {}
+  },
+  {
+   "about": "hook set: it gets the word at 0C17440C and the text",
+   "poke": {
+    "0C174408": "0000200C",
+    "0C17440C": "78563412"
+   },
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000000"
+    },
+    {
+     "r0": "00000011"
+    }
+   ]
   }
  ],
  "holdout": [
   {
-   "about": "rescue: empty case",
+   "about": "no hook set",
    "regs": {}
+  },
+  {
+   "about": "another hook and word",
+   "poke": {
+    "0C174408": "40A2150C",
+    "0C17440C": "01000000"
+   },
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000000"
+    },
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
   }
  ]
 }

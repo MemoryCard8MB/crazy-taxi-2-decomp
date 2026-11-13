@@ -1,0 +1,72 @@
+{
+ "dev": [
+  {
+   "about": "empty at the first poll",
+   "regs": {},
+   "poke": {
+    "0C1743EC": "0000200C",
+    "0C20010C": "05000000"
+   },
+   "calls": [
+    {
+     "r0": "00000000",
+     "poke_arg": {
+      "r4": "01000000"
+     }
+    }
+   ]
+  },
+  {
+   "about": "two polls say not empty, the third empty",
+   "regs": {},
+   "poke": {
+    "0C1743EC": "0000200C",
+    "0C20010C": "FFFFFFFF"
+   },
+   "calls": [
+    {
+     "r0": "00000000",
+     "poke_arg": {
+      "r4": "00000000"
+     }
+    },
+    {
+     "r0": "00000000",
+     "poke_arg": {
+      "r4": "02000000"
+     }
+    },
+    {
+     "r0": "00000000",
+     "poke_arg": {
+      "r4": "01000000"
+     }
+    }
+   ]
+  }
+ ],
+ "holdout": [
+  {
+   "about": "one poll not empty, another structure",
+   "regs": {},
+   "poke": {
+    "0C1743EC": "40A2150C",
+    "0C15A34C": "7F000000"
+   },
+   "calls": [
+    {
+     "r0": "00000000",
+     "poke_arg": {
+      "r4": "00000000"
+     }
+    },
+    {
+     "r0": "00000000",
+     "poke_arg": {
+      "r4": "01000000"
+     }
+    }
+   ]
+  }
+ ]
+}
