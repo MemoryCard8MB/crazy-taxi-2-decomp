@@ -1,0 +1,5979 @@
+# Equivalent functions
+
+Functions whose C behaves like the original on every test case (`tools/equiv.py`: same calls, same final memory, same result). Written by `tools/equiv.py`; the cases are the evidence. Cases that start from a RAM dump (`"dump": "build/ram/<name>.bin"`) need your own dump there: all of RAM (16 MB from `0C000000`) at that moment, e.g. read with `tools/4-boosts/live.py`.
+
+### ADXAMP_SetSfreq (`0C161234`, 4 bytes, `src/libs_gen_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_a/ADXAMP_SetSfreq.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 2 of 2 instructions
+
+### ADXAMP_Stop (`0C161084`, 6 bytes, `src/libs_gen_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_a/ADXAMP_Stop.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 3 of 3 instructions
+
+### ADXB_EvokeExpandMono (`0C16A9BC`, 44 bytes, `src/libs_gen_fi.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_fi/ADXB_EvokeExpandMono.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 116
+- case 112
+- case 73
+- case 65
+- case 74
+- case 54
+- case 37
+- case 56
+- case 42
+- case 38
+- case 75
+- case 99
+- case 44
+- case 94
+- case 57
+- case 70
+- case 86
+- case 51
+- the cases run 22 of 22 instructions
+
+### ADXB_EvokeExpandSte (`0C16A9E8`, 54 bytes, `src/libs_gen_are.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_are/ADXB_EvokeExpandSte.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 60
+- case 79
+- case 108
+- case 43
+- case 49
+- case 114
+- case 115
+- case 90
+- case 94
+- case 117
+- case 52
+- case 106
+- case 46
+- case 38
+- case 112
+- case 78
+- case 91
+- case 55
+- the cases run 27 of 27 instructions
+
+### ADXB_ExecOneAdx (`0C16AC38`, 120 bytes, `src/libs_gen_ao.c`)
+- equivalent on 19 development and 19 holdout cases, in `tests/libs_gen_ao/ADXB_ExecOneAdx.json`
+- case 2
+- case 0
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- directed: flips 0C1716D6 (taken)
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- directed: flips 0C17170A (taken)
+- the cases run 60 of 60 instructions
+
+### ADXB_ExecOneAiff (`0C16E1B2`, 16 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/ADXB_ExecOneAiff.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 6 of 7 instructions
+
+### ADXB_ExecOneAiff16 (`0C16DF8C`, 286 bytes, `src/libs_gen_ao.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ao/ADXB_ExecOneAiff16.json`
+- case 2
+- case 0
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 39 of 136 instructions
+
+### ADXB_ExecOneAiff8 (`0C16E0AA`, 264 bytes, `src/libs_gen_ao.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ao/ADXB_ExecOneAiff8.json`
+- case 2
+- case 0
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 39 of 124 instructions
+
+### ADXB_ExecOneAu (`0C16E900`, 28 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/ADXB_ExecOneAu.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 10 of 12 instructions
+
+### ADXB_ExecOneAu16 (`0C16E5D4`, 274 bytes, `src/libs_gen_ao.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ao/ADXB_ExecOneAu16.json`
+- case 2
+- case 0
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 39 of 136 instructions
+
+### ADXB_ExecOneAu8 (`0C16E6F4`, 250 bytes, `src/libs_gen_ao.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ao/ADXB_ExecOneAu8.json`
+- case 2
+- case 0
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 39 of 124 instructions
+
+### ADXB_ExecOneAuUlaw (`0C16E7FC`, 260 bytes, `src/libs_gen_ao.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ao/ADXB_ExecOneAuUlaw.json`
+- case 2
+- case 0
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 39 of 129 instructions
+
+### ADXB_ExecOneSpsd (`0C16EAE0`, 246 bytes, `src/libs_gen_ao.c`)
+- equivalent on 19 development and 19 holdout cases, in `tests/libs_gen_ao/ADXB_ExecOneSpsd.json`
+- case 2
+- case 0
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- directed: flips 0C173C5C (taken)
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- directed: flips 0C173C96 (taken)
+- the cases run 89 of 116 instructions
+
+### ADXB_ExecOneWav16 (`0C16EE98`, 234 bytes, `src/libs_gen_ao.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ao/ADXB_ExecOneWav16.json`
+- case 2
+- case 0
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 37 of 116 instructions
+
+### ADXB_ExecOneWav8 (`0C16EF90`, 256 bytes, `src/libs_gen_ao.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ao/ADXB_ExecOneWav8.json`
+- case 2
+- case 0
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 39 of 127 instructions
+
+### ADXB_GetFormat (`0C16A87C`, 6 bytes, `src/libs_gen_b.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_b/ADXB_GetFormat.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 3 of 3 instructions
+
+### ADXB_GetLpStartOfst (`0C161F96`, 4 bytes, `src/libs_gen_b.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_b/ADXB_GetLpStartOfst.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 2 of 2 instructions
+
+### ADXB_GetNumChan (`0C16A886`, 4 bytes, `src/libs_gen_b.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_b/ADXB_GetNumChan.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 2 of 2 instructions
+
+### ADXB_GetNumLoop (`0C16A8DE`, 6 bytes, `src/libs_gen_b.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_b/ADXB_GetNumLoop.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 3 of 3 instructions
+
+### ADXB_GetOutBps (`0C16A88E`, 60 bytes, `src/libs_sdk_q.c`)
+- equivalent on 5 development and 4 holdout cases, in `tests/libs_sdk_q/ADXB_GetOutBps.json`
+- mode 0
+- 2,2: 4
+- 2,1: 8
+- 2,3: 16
+- 1,2: 4
+- 1,1: 16
+- 3,2: 16
+- -1,2: 16
+- 2,0: 16
+- the cases run 30 of 30 instructions
+
+### ADXB_Reset (`0C16A972`, 32 bytes, `src/libs_gen_e.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_e/ADXB_Reset.json`
+- case 3
+- case 1
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 0
+- case 2
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 16 of 16 instructions
+
+### ADXB_Start (`0C16A94A`, 14 bytes, `src/libs_sdk_e_2.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/libs_sdk_e_2/ADXB_Start.json`
+- zero
+- one
+- two
+- minus
+- high
+- the cases run 7 of 7 instructions
+
+### ADXB_Stop (`0C16A958`, 26 bytes, `src/libs_sdk_a_2.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/libs_sdk_a_2/ADXB_Stop.json`
+- normal
+- f8 zero
+- other
+- f4 already zero
+- again
+- the cases run 13 of 13 instructions
+
+### ADXF_InitCache_P2_ (`0C16333C`, 42 bytes, `src/libs_gen_e.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_e/ADXF_InitCache_P2_.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 21 of 21 instructions
+
+### ADXPD_Destroy (`0C16F2D2`, 20 bytes, `src/libs_sdk_b_2.c`)
+- equivalent on 3 development and 1 holdout cases, in `tests/libs_sdk_b_2/ADXPD_Destroy.json`
+- null
+- object
+- object offset
+- another
+- the cases run 10 of 10 instructions
+
+### ADXPD_EntrySte (`0C16F30C`, 30 bytes, `src/libs_gen_y.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_y/ADXPD_EntrySte.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 15 of 15 instructions
+
+### ADXPD_GetNumBlk (`0C16F360`, 4 bytes, `src/libs_gen_b.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_b/ADXPD_GetNumBlk.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 2 of 2 instructions
+
+### ADXPD_GetStat (`0C16F2EA`, 4 bytes, `src/libs_gen_b.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_b/ADXPD_GetStat.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 2 of 2 instructions
+
+### ADXSJD_SetDecPos (`0C161F9A`, 4 bytes, `src/libs_gen_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_a/ADXSJD_SetDecPos.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 2 of 2 instructions
+
+### ADXSJD_SetMaxDecSmpl (`0C161AE4`, 4 bytes, `src/libs_gen_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_a/ADXSJD_SetMaxDecSmpl.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 2 of 2 instructions
+
+### ADXSJD_SetTrapCnt (`0C161FBE`, 6 bytes, `src/libs_gen_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_a/ADXSJD_SetTrapCnt.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 3 of 3 instructions
+
+### ADXSJD_SetTrapDtLen (`0C161FCA`, 6 bytes, `src/libs_gen_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_a/ADXSJD_SetTrapDtLen.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 3 of 3 instructions
+
+### ADXSJD_SetTrapNumSmpl (`0C161FB6`, 4 bytes, `src/libs_gen_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_a/ADXSJD_SetTrapNumSmpl.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 2 of 2 instructions
+
+### ADXSJD_Stop (`0C161AFE`, 26 bytes, `src/libs_gen_e.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_e/ADXSJD_Stop.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 13 of 13 instructions
+
+### ADXSTM_EntryEosFunc (`0C16251C`, 6 bytes, `src/libs_gen_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_a/ADXSTM_EntryEosFunc.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 3 of 3 instructions
+
+### ADXSTM_SetEos (`0C162522`, 32 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/ADXSTM_SetEos.json`
+- case 35
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- the cases run 16 of 16 instructions
+
+### ADXSTM_SetReqRdSize (`0C162740`, 6 bytes, `src/libs_gen_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_a/ADXSTM_SetReqRdSize.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 3 of 3 instructions
+
+### ADXT_GetNumSctIbuf (`0C14ECD2`, 58 bytes, `src/libs_gen_aac.c`)
+- equivalent on 16 development and 16 holdout cases, in `tests/libs_gen_aac/ADXT_GetNumSctIbuf.json`
+- case 91
+- case 16
+- case 29
+- case 53
+- case 56
+- case 58
+- case 66
+- case 73
+- case 78
+- case 88
+- case 94
+- case 111
+- case 122
+- case 138
+- case 146
+- case 153
+- case 0
+- case 20
+- case 33
+- case 54
+- case 57
+- case 59
+- case 69
+- case 75
+- case 79
+- case 90
+- case 107
+- case 120
+- case 136
+- case 141
+- case 150
+- case 158
+- the cases run 29 of 29 instructions
+
+### ADXT_SetLpFlg (`0C14EE52`, 6 bytes, `src/libs_gen_akf.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_akf/ADXT_SetLpFlg.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 93
+- case 90
+- case 56
+- case 91
+- case 84
+- case 61
+- case 109
+- case 58
+- case 89
+- case 106
+- case 85
+- case 95
+- case 59
+- case 97
+- case 68
+- case 36
+- case 71
+- case 70
+- the cases run 3 of 3 instructions
+
+### ADXT_Stop (`0C14E836`, 118 bytes, `src/libs_gen_aae.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_aae/ADXT_Stop.json`
+- case 13
+- case 19
+- case 29
+- case 37
+- case 42
+- case 50
+- case 56
+- case 70
+- case 77
+- case 86
+- case 97
+- case 110
+- case 112
+- case 121
+- case 133
+- case 136
+- case 147
+- case 154
+- case 0
+- case 25
+- case 35
+- case 39
+- case 44
+- case 51
+- case 63
+- case 76
+- case 85
+- case 87
+- case 103
+- case 111
+- case 118
+- case 127
+- case 135
+- case 141
+- case 152
+- case 159
+- the cases run 50 of 59 instructions
+
+### ADX_DecodeInfoAiff (`0C16DDF6`, 152 bytes, `src/libs_gen_y.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_y/ADX_DecodeInfoAiff.json`
+- case 1
+- case 6
+- case 8
+- case 12
+- case 19
+- case 21
+- case 24
+- case 27
+- case 30
+- case 33
+- case 43
+- case 46
+- case 53
+- case 57
+- case 60
+- case 65
+- case 71
+- case 75
+- case 4
+- case 7
+- case 10
+- case 15
+- case 20
+- case 22
+- case 25
+- case 28
+- case 31
+- case 41
+- case 45
+- case 51
+- case 55
+- case 59
+- case 61
+- case 66
+- case 72
+- case 76
+- the cases run 17 of 75 instructions
+
+### ADX_DecodeInfoAu (`0C16E422`, 196 bytes, `src/libs_gen_ao.c`)
+- equivalent on 11 development and 11 holdout cases, in `tests/libs_gen_ao/ADX_DecodeInfoAu.json`
+- case 1
+- case 20
+- case 24
+- case 42
+- case 45
+- case 49
+- case 60
+- case 82
+- case 97
+- case 115
+- case 133
+- case 3
+- case 22
+- case 37
+- case 44
+- case 46
+- case 50
+- case 62
+- case 93
+- case 102
+- case 122
+- case 154
+- the cases run 17 of 78 instructions
+
+### ADX_DecodeInfoExADPCM2 (`0C161478`, 102 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/ADX_DecodeInfoExADPCM2.json`
+- case 5
+- case 1
+- case 3
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 0
+- case 2
+- case 4
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 23 of 50 instructions
+
+### CheckColliPoleEdge (`0C02C6DE`, 276 bytes, `src/libs_colli_b.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_colli_b/CheckColliPoleEdge.json`
+- case 42
+- case 101
+- case 18
+- case 5
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 52
+- case 75
+- case 91
+- case 40
+- case 39
+- case 85
+- case 83
+- case 116
+- case 99
+- case 60
+- case 61
+- case 54
+- case 59
+- case 48
+- case 107
+- case 89
+- case 70
+- case 77
+- the cases run 138 of 138 instructions
+
+### CheckColliWallPole (`0C02C66C`, 114 bytes, `src/libs_collide.c`)
+- equivalent on 4 development and 3 holdout cases, in `tests/libs_collide/CheckColliWallPole.json`
+- inside
+- high
+- low
+- far
+- touching
+- small R
+- on centre offset
+- the cases run 57 of 57 instructions
+
+### FBCompQueue (`0C15484C`, 550 bytes, `src/libs_gen_om.c`)
+- equivalent on 18 development and 16 holdout cases, in `tests/libs_gen_om/FBCompQueue.json`
+- case 115
+- case 71
+- case 104
+- case 17
+- case 23
+- case 30
+- case 57
+- case 72
+- case 85
+- case 97
+- case 109
+- case 116
+- case 121
+- case 126
+- case 133
+- case 154
+- case 157
+- directed: flips 0C1576BE (not taken)
+- case 115
+- case 0
+- case 115
+- case 18
+- case 26
+- case 50
+- case 67
+- case 83
+- case 96
+- case 106
+- case 112
+- case 120
+- case 124
+- case 130
+- case 137
+- case 156
+- the cases run 214 of 249 instructions
+
+### FBmovedata (`0C1546AA`, 194 bytes, `src/libs_gen_y.c`)
+- equivalent on 19 development and 18 holdout cases, in `tests/libs_gen_y/FBmovedata.json`
+- case 0
+- case 2
+- case 4
+- case 7
+- case 9
+- case 13
+- case 16
+- case 19
+- case 22
+- case 24
+- case 26
+- case 32
+- case 37
+- case 42
+- case 45
+- case 49
+- case 53
+- case 56
+- directed: flips 0C1574A8 (taken)
+- case 1
+- case 3
+- case 6
+- case 8
+- case 11
+- case 14
+- case 17
+- case 20
+- case 23
+- case 25
+- case 29
+- case 33
+- case 39
+- case 43
+- case 47
+- case 51
+- case 54
+- case 59
+- the cases run 76 of 76 instructions
+
+### HomingAngle1 (`0C01B7E0`, 60 bytes, `src/libs_gen_j.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_j/HomingAngle1.json`
+- case 1
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 0
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 30 of 30 instructions
+
+### SEGA_LOGO_SetColor (`0C053B72`, 48 bytes, `src/libs_gen_y.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_y/SEGA_LOGO_SetColor.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 0 of 24 instructions (nothing compared: no case showed a write, a call, a device access or a change of SR, and the C returns nothing)
+
+### SJMEM_Destroy (`0C164BF6`, 30 bytes, `src/libs_sdk_u.c`)
+- equivalent on 2 development and 1 holdout cases, in `tests/libs_sdk_u/SJMEM_Destroy.json`
+- handle
+- null
+- another
+- the cases run 15 of 15 instructions
+
+### SJMEM_EntryErrFunc (`0C164C18`, 6 bytes, `src/libs_gen_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_a/SJMEM_EntryErrFunc.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 3 of 3 instructions
+
+### SJRBF_Destroy (`0C164F0A`, 30 bytes, `src/libs_sdk_u.c`)
+- equivalent on 2 development and 1 holdout cases, in `tests/libs_sdk_u/SJRBF_Destroy.json`
+- handle
+- null
+- another
+- the cases run 15 of 15 instructions
+
+### SJRBF_GetBufPtr (`0C165292`, 4 bytes, `src/libs_gen_b.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_b/SJRBF_GetBufPtr.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 2 of 2 instructions
+
+### SJRBF_GetBufSize (`0C165296`, 4 bytes, `src/libs_gen_b.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_b/SJRBF_GetBufSize.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 2 of 2 instructions
+
+### SJRBF_GetXtrSize (`0C16529A`, 4 bytes, `src/libs_gen_b.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_b/SJRBF_GetXtrSize.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 2 of 2 instructions
+
+### SJUNI_Destroy (`0C16537E`, 30 bytes, `src/libs_sdk_u.c`)
+- equivalent on 2 development and 1 holdout cases, in `tests/libs_sdk_u/SJUNI_Destroy.json`
+- handle
+- null
+- another
+- the cases run 15 of 15 instructions
+
+### SJUNI_GetNumData (`0C165414`, 70 bytes, `src/libs_gen_ao.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ao/SJUNI_GetNumData.json`
+- case 4
+- case 0
+- case 5
+- case 7
+- case 9
+- case 11
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 35
+- case 39
+- case 1
+- case 2
+- case 6
+- case 8
+- case 10
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 36
+- case 40
+- the cases run 35 of 35 instructions
+
+### TggleObjShadow (`0C027E7A`, 86 bytes, `src/libs_gen_fw.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_fw/TggleObjShadow.json`
+- case 1
+- case 0
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 21
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 34 of 34 instructions
+
+### VQDeQueueEntry (`0C154F78`, 48 bytes, `src/libs_sdk_l.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/libs_sdk_l/VQDeQueueEntry.json`
+- node is head
+- node in the middle
+- node last
+- single
+- the cases run 24 of 24 instructions
+
+### _fmtout_intcnv (`0C093D4C`, 516 bytes, `src/libs_gen_add.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_add/_fmtout_intcnv.json`
+- case 22
+- case 22
+- case 0
+- case 87
+- case 11
+- case 71
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 12
+- case 13
+- case 117
+- case 158
+- case 139
+- case 142
+- case 57
+- case 91
+- case 49
+- case 62
+- case 99
+- case 111
+- case 144
+- case 94
+- case 56
+- case 110
+- case 45
+- case 39
+- case 76
+- case 38
+- the cases run 214 of 257 instructions
+
+### _pd_peripheral_error (`0C14B90A`, 52 bytes, `src/libs_small_c.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_small_c/_pd_peripheral_error.json`
+- case 0
+- case 2
+- case 3
+- case 5
+- case 7
+- case 9
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 11
+- case 1
+- case 4
+- case 6
+- case 8
+- case 10
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 26 of 26 instructions
+
+### adxf_wait_1ms (`0C14F374`, 10 bytes, `src/libs_sdk_s.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_sdk_s/adxf_wait_1ms.json`
+- spins
+- again
+- the cases run 5 of 5 instructions
+
+### adxsjd_decode_exec (`0C161EDC`, 58 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/adxsjd_decode_exec.json`
+- case 45
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 31
+- case 33
+- case 29
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 30
+- case 32
+- case 34
+- the cases run 29 of 29 instructions
+
+### adxsjd_get_wr (`0C161C04`, 164 bytes, `src/libs_gen_ao.c`)
+- equivalent on 9 development and 8 holdout cases, in `tests/libs_gen_ao/adxsjd_get_wr.json`
+- case 25
+- case 57
+- case 34
+- case 46
+- case 60
+- case 99
+- case 102
+- case 142
+- case 153
+- case 95
+- case 19
+- case 36
+- case 47
+- case 81
+- case 101
+- case 140
+- case 150
+- the cases run 82 of 82 instructions
+
+### adxt_RcvrReplay (`0C162FF8`, 136 bytes, `src/libs_gen_atf.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_atf/adxt_RcvrReplay.json`
+- case 96
+- case 4
+- case 11
+- case 16
+- case 20
+- case 24
+- case 31
+- case 33
+- case 36
+- case 39
+- case 41
+- case 44
+- case 46
+- case 51
+- case 56
+- case 59
+- case 68
+- case 74
+- case 0
+- case 8
+- case 13
+- case 18
+- case 23
+- case 29
+- case 32
+- case 35
+- case 38
+- case 40
+- case 42
+- case 45
+- case 47
+- case 52
+- case 57
+- case 62
+- case 73
+- case 75
+- the cases run 68 of 68 instructions
+
+### adxt_start_stm (`0C14E77C`, 62 bytes, `src/libs_gen_e.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_e/adxt_start_stm.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 31 of 31 instructions
+
+### adxt_stat_decend (`0C162FD2`, 34 bytes, `src/libs_gen_ath.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ath/adxt_stat_decend.json`
+- case 2
+- case 1
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 0
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 17 of 17 instructions
+
+### adxt_stat_playing (`0C162F6C`, 102 bytes, `src/libs_gen_atj.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_atj/adxt_stat_playing.json`
+- case 30
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 32
+- case 34
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 31
+- case 33
+- case 35
+- the cases run 45 of 51 instructions
+
+### bcd2bin (`0C15C6E8`, 26 bytes, `src/libs_sdk_s.c`)
+- equivalent on 3 development and 4 holdout cases, in `tests/libs_sdk_s/bcd2bin.json`
+- 0x45
+- 0x99
+- 0x00
+- 0xFF as signed
+- 0x80
+- 0x7F
+- 0xA3
+- the cases run 13 of 13 instructions
+
+### bcdtime2fad (`0C15C702`, 54 bytes, `src/libs_gen_p.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_p/bcdtime2fad.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 27 of 27 instructions
+
+### carSlipRatio (`0C011EFE`, 132 bytes, `src/libs_gen_ann.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ann/carSlipRatio.json`
+- case 0
+- case 60
+- case 6
+- case 2
+- case 5
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 1
+- case 73
+- case 4
+- case 3
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- the cases run 66 of 66 instructions
+
+### crcchk (`0C15C6BA`, 46 bytes, `src/libs_sdk_l.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/libs_sdk_l/crcchk.json`
+- equal
+- different
+- negative short
+- high bits ignored
+- the cases run 23 of 23 instructions
+
+### fmMngBit2Num (`0C160724`, 56 bytes, `src/libs_gen_q.c`)
+- equivalent on 15 development and 7 holdout cases, in `tests/libs_gen_q/fmMngBit2Num.json`
+- case 0
+- case 5
+- case 6
+- case 7
+- case 9
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 18
+- case 20
+- case 21
+- case 22
+- case 23
+- case 24
+- case 28
+- case 32
+- case 33
+- case 34
+- case 35
+- the cases run 28 of 28 instructions
+
+### fmMngChkEmptyData (`0C1607AA`, 80 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/fmMngChkEmptyData.json`
+- case 5
+- case 1
+- case 3
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 0
+- case 2
+- case 4
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 20 of 40 instructions
+
+### fmMngMcpy4 (`0C1606E0`, 28 bytes, `src/libs_gen_s.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_s/fmMngMcpy4.json`
+- case 2
+- case 4
+- case 13
+- case 16
+- case 20
+- case 22
+- case 24
+- case 30
+- case 33
+- case 35
+- case 38
+- case 49
+- case 52
+- case 57
+- case 59
+- case 62
+- case 64
+- case 68
+- case 3
+- case 6
+- case 15
+- case 17
+- case 21
+- case 23
+- case 25
+- case 32
+- case 34
+- case 36
+- case 43
+- case 51
+- case 55
+- case 58
+- case 61
+- case 63
+- case 65
+- case 73
+- the cases run 14 of 14 instructions
+
+### fmMngNum2Bit (`0C16075C`, 78 bytes, `src/libs_gen_s.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_s/fmMngNum2Bit.json`
+- case 1
+- case 2
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 28
+- case 31
+- case 34
+- case 37
+- case 39
+- case 41
+- case 0
+- case 3
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 29
+- case 32
+- case 35
+- case 38
+- case 40
+- case 43
+- the cases run 39 of 39 instructions
+
+### fmMngRead (`0C160CAC`, 60 bytes, `src/libs_sg_fm.c`)
+- equivalent on 7 development and 8 holdout cases, in `tests/libs_sg_fm/fmMngRead.json`
+- null state
+- busy
+- ok
+- neg index
+- index==count
+- index 0
+- index count-1
+- busy neg
+- count 0
+- count neg
+- big index
+- min index
+- index>count
+- busy and bad idx
+- arg ffffffff
+- the cases run 30 of 30 instructions
+
+### fmMngWriteData (`0C160ABC`, 96 bytes, `src/libs_gen_are.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_are/fmMngWriteData.json`
+- case 1
+- case 0
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 93
+- case 71
+- case 94
+- case 110
+- case 61
+- case 65
+- case 98
+- case 118
+- case 60
+- case 103
+- case 68
+- case 36
+- case 64
+- case 37
+- case 102
+- case 42
+- case 117
+- case 52
+- the cases run 38 of 42 instructions
+
+### frame_make (`0C168B72`, 256 bytes, `src/libs_gen_u.c`)
+- equivalent on 23 development and 22 holdout cases, in `tests/libs_gen_u/frame_make.json`
+- case 0
+- case 8
+- case 15
+- case 17
+- case 20
+- case 28
+- case 31
+- case 33
+- case 36
+- case 43
+- case 48
+- case 52
+- case 54
+- case 60
+- case 62
+- case 64
+- case 68
+- case 70
+- directed: flips 0C16E8CA (taken)
+- directed: flips 0C16E910 (taken)
+- directed: flips 0C16E922 (not taken)
+- directed: flips 0C16E92A (not taken)
+- directed: flips 0C16E942 (taken)
+- case 4
+- case 11
+- case 16
+- case 18
+- case 27
+- case 29
+- case 32
+- case 35
+- case 37
+- case 44
+- case 49
+- case 53
+- case 58
+- case 61
+- case 63
+- case 66
+- case 69
+- case 73
+- directed: flips 0C16E91E (not taken)
+- directed: flips 0C16E926 (not taken)
+- directed: flips 0C16E92E (not taken)
+- directed: flips 0C16E97A (taken)
+- the cases run 109 of 109 instructions
+
+### gdDcfDaPlay2_ (`0C15CAC0`, 34 bytes, `src/libs_gen_are.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_are/gdDcfDaPlay2_.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 142
+- case 232
+- case 98
+- case 45
+- case 145
+- case 246
+- case 237
+- case 215
+- case 170
+- case 105
+- case 120
+- case 211
+- case 56
+- case 41
+- case 185
+- case 118
+- case 127
+- case 88
+- the cases run 17 of 17 instructions
+
+### gdDcfDaPlay_ (`0C15CA9E`, 34 bytes, `src/libs_gen_are.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_are/gdDcfDaPlay_.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 104
+- case 128
+- case 67
+- case 111
+- case 152
+- case 57
+- case 112
+- case 207
+- case 95
+- case 64
+- case 108
+- case 47
+- case 201
+- case 170
+- case 227
+- case 45
+- case 123
+- case 208
+- the cases run 17 of 17 instructions
+
+### gdDcfDaRelease_ (`0C15CAF2`, 30 bytes, `src/libs_gen_are.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_are/gdDcfDaRelease_.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 79
+- case 338
+- case 176
+- case 149
+- case 257
+- case 405
+- case 174
+- case 387
+- case 218
+- case 43
+- case 244
+- case 214
+- case 304
+- case 320
+- case 301
+- case 46
+- case 104
+- case 56
+- the cases run 15 of 15 instructions
+
+### gdDcfGetDrvStat_ (`0C15CA74`, 28 bytes, `src/libs_gen_aak.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_aak/gdDcfGetDrvStat_.json`
+- case 0
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 48
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- the cases run 14 of 14 instructions
+
+### gdDcfGetScd_ (`0C15CB2C`, 34 bytes, `src/libs_gen_are.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_are/gdDcfGetScd_.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 130
+- case 227
+- case 121
+- case 134
+- case 37
+- case 52
+- case 88
+- case 102
+- case 117
+- case 168
+- case 175
+- case 75
+- case 202
+- case 160
+- case 247
+- case 55
+- case 68
+- case 73
+- the cases run 17 of 17 instructions
+
+### gdDcfGetToc_ (`0C15CB10`, 28 bytes, `src/libs_gen_are.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_are/gdDcfGetToc_.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 393
+- case 207
+- case 190
+- case 44
+- case 118
+- case 323
+- case 149
+- case 129
+- case 262
+- case 200
+- case 242
+- case 54
+- case 341
+- case 112
+- case 384
+- case 270
+- case 361
+- case 38
+- the cases run 14 of 14 instructions
+
+### gdDcfGetVer_ (`0C15CB82`, 30 bytes, `src/libs_gen_are.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_are/gdDcfGetVer_.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 88
+- case 218
+- case 212
+- case 237
+- case 226
+- case 413
+- case 291
+- case 387
+- case 162
+- case 181
+- case 92
+- case 85
+- case 252
+- case 357
+- case 78
+- case 183
+- case 279
+- case 327
+- the cases run 15 of 15 instructions
+
+### gdDcfReqStat_ (`0C15CB62`, 32 bytes, `src/libs_gen_are.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_are/gdDcfReqStat_.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 78
+- case 106
+- case 49
+- case 83
+- case 200
+- case 120
+- case 48
+- case 170
+- case 208
+- case 225
+- case 71
+- case 65
+- case 166
+- case 63
+- case 87
+- case 189
+- case 181
+- case 240
+- the cases run 16 of 16 instructions
+
+### gdFsCheckEof (`0C15D2FC`, 40 bytes, `src/libs_sdk_e_2.c`)
+- equivalent on 5 development and 4 holdout cases, in `tests/libs_sdk_e_2/gdFsCheckEof.json`
+- null
+- flag zero
+- pos past
+- pos before
+- equal
+- negative pos
+- negative size
+- flag high byte
+- big
+- the cases run 20 of 20 instructions
+
+### gdFsGetTokenSize (`0C15CC94`, 38 bytes, `src/libs_gen_q.c`)
+- equivalent on 20 development and 19 holdout cases, in `tests/libs_gen_q/gdFsGetTokenSize.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- directed: flips 0C15FA8C (not taken)
+- directed: flips 0C15FA7A (taken)
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- directed: flips 0C15FA82 (not taken)
+- the cases run 19 of 19 instructions
+
+### gdFsGetTransStat (`0C15D718`, 26 bytes, `src/libs_sdk_b_2.c`)
+- equivalent on 4 development and 3 holdout cases, in `tests/libs_sdk_b_2/gdFsGetTransStat.json`
+- null
+- zero state
+- ok
+- negative short
+- zero value
+- ffff
+- 7fff
+- the cases run 12 of 12 instructions
+
+### gdFsMemcpy (`0C15CBD4`, 24 bytes, `src/libs_sdk_z.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/libs_sdk_z/gdFsMemcpy.json`
+- five bytes
+- zero
+- negative
+- one
+- the cases run 12 of 12 instructions
+
+### gdFsSearchPath_dds (`0C15CFB6`, 342 bytes, `src/libs_gen_ko.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/libs_gen_ko/gdFsSearchPath_dds.json`
+- rescue: empty case
+- directed: flips 0C15FDCE (not taken)
+- directed: flips 0C15FE3E (taken)
+- rescue: empty case
+- directed: flips 0C15FE20 (taken)
+- the cases run 99 of 157 instructions
+
+### gdFsSetTmode (`0C15D324`, 26 bytes, `src/libs_sdk_b_2.c`)
+- equivalent on 4 development and 3 holdout cases, in `tests/libs_sdk_b_2/gdFsSetTmode.json`
+- null
+- zero state
+- ok
+- ok negative
+- ok wide value
+- state negative short
+- null again
+- the cases run 13 of 13 instructions
+
+### gdFsStrcmpi (`0C15CC5A`, 58 bytes, `src/libs_gen_ak.c`)
+- equivalent on 19 development and 18 holdout cases, in `tests/libs_gen_ak/gdFsStrcmpi.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- directed: flips 0C15FA54 (not taken)
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 29 of 29 instructions
+
+### gdFsStrncmpi (`0C15CBEC`, 76 bytes, `src/libs_gen_ak.c`)
+- equivalent on 19 development and 18 holdout cases, in `tests/libs_gen_ak/gdFsStrncmpi.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- directed: flips 0C15F9DC (taken)
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 33 of 37 instructions
+
+### kdDevGetFD (`0C15FAFE`, 48 bytes, `src/libs_sdk_z.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/libs_sdk_z/kdDevGetFD.json`
+- second set bit
+- bit not set
+- bit 0
+- top bit
+- the cases run 24 of 24 instructions
+
+### kdGetDevice (`0C15F818`, 18 bytes, `src/libs_sdk_a_2.c`)
+- equivalent on 4 development and 2 holdout cases, in `tests/libs_sdk_a_2/kdGetDevice.json`
+- 0
+- 1
+- 3
+- 7
+- negative
+- 100
+- the cases run 9 of 9 instructions
+
+### kmGetGunTriggerPos (`0C148250`, 42 bytes, `src/libs_gen_sl.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_sl/kmGetGunTriggerPos.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 21 of 21 instructions
+
+### kmLoadRectangleTexturePart (`0C159186`, 204 bytes, `src/libs_gen_z.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_z/kmLoadRectangleTexturePart.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 29
+- case 32
+- case 34
+- case 36
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 30
+- case 33
+- case 35
+- case 37
+- the cases run 78 of 81 instructions
+
+### kmLoadTextureBlock (`0C15907C`, 154 bytes, `src/libs_gen_xo.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_xo/kmLoadTextureBlock.json`
+- case 17
+- case 0
+- case 3
+- case 1
+- case 2
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 54
+- case 103
+- case 90
+- case 60
+- case 78
+- case 94
+- case 89
+- case 74
+- case 95
+- case 115
+- case 56
+- case 47
+- case 118
+- case 63
+- case 71
+- case 119
+- case 113
+- case 62
+- the cases run 52 of 52 instructions
+
+### kmiCBalloc (`0C153094`, 108 bytes, `src/libs_gen_y.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_y/kmiCBalloc.json`
+- case 20
+- case 61
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 0
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- the cases run 54 of 54 instructions
+
+### kmiConvertUVnum (`0C15A240`, 128 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/kmiConvertUVnum.json`
+- case 33
+- case 7
+- case 21
+- case 53
+- case 0
+- case 2
+- case 4
+- case 8
+- case 10
+- case 12
+- case 15
+- case 17
+- case 19
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 5
+- case 13
+- case 48
+- case 79
+- case 1
+- case 3
+- case 6
+- case 9
+- case 11
+- case 14
+- case 16
+- case 18
+- case 20
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- the cases run 39 of 39 instructions
+
+### kmiCopyTextureToTexture (`0C156EC6`, 58 bytes, `src/libs_gen_cp.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_cp/kmiCopyTextureToTexture.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 80
+- case 59
+- case 38
+- case 67
+- case 57
+- case 54
+- case 94
+- case 103
+- case 60
+- case 56
+- case 70
+- case 61
+- case 91
+- case 79
+- case 88
+- case 84
+- case 113
+- case 83
+- the cases run 2 of 2 instructions
+
+### kmiFBFitBlock (`0C1538C0`, 162 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/kmiFBFitBlock.json`
+- case 16
+- case 0
+- case 84
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 57
+- case 1
+- case 17
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- the cases run 61 of 61 instructions
+
+### kmiFBSearchFree (`0C153AEC`, 104 bytes, `src/libs_gen_ar.c`)
+- equivalent on 20 development and 19 holdout cases, in `tests/libs_gen_ar/kmiFBSearchFree.json`
+- case 13
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- directed: flips 0C15690A (taken)
+- directed: flips 0C156916 (taken)
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- directed: arguments changed together for 0C15690E
+- the cases run 52 of 52 instructions
+
+### kmiFBfreeEx (`0C153420`, 48 bytes, `src/libs_gen_ak.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ak/kmiFBfreeEx.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 24 of 24 instructions
+
+### kmiFBgetfreemem (`0C153560`, 550 bytes, `src/libs_gen_aph.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_gen_aph/kmiFBgetfreemem.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 64 of 201 instructions
+
+### kmiMemCopy8 (`0C155A80`, 30 bytes, `src/libs_gen_bl.c`)
+- equivalent on 19 development and 18 holdout cases, in `tests/libs_gen_bl/kmiMemCopy8.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- directed: arguments changed together for 0C158868
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 15 of 15 instructions
+
+### kmiPurgeCache (`0C155AAE`, 6 bytes, `src/libs_gen_cc.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_cc/kmiPurgeCache.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 80
+- case 105
+- case 96
+- case 76
+- case 37
+- case 72
+- case 52
+- case 87
+- case 111
+- case 73
+- case 55
+- case 114
+- case 74
+- case 101
+- case 88
+- case 36
+- case 95
+- case 70
+- the cases run 3 of 3 instructions
+
+### kmiTAallocEx (`0C152FA0`, 108 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/kmiTAallocEx.json`
+- case 67
+- case 0
+- case 2
+- case 4
+- case 6
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 7
+- case 1
+- case 3
+- case 5
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- the cases run 54 of 54 instructions
+
+### kmiWriteRegisters (`0C156EA6`, 32 bytes, `src/libs_gen_q.c`)
+- equivalent on 10 development and 10 holdout cases, in `tests/libs_gen_q/kmiWriteRegisters.json`
+- case 7
+- case 11
+- case 25
+- case 48
+- case 67
+- case 84
+- case 96
+- case 129
+- case 137
+- case 139
+- case 8
+- case 13
+- case 38
+- case 61
+- case 80
+- case 88
+- case 105
+- case 130
+- case 138
+- case 149
+- the cases run 16 of 16 instructions
+
+### kmtex_GetTextureLevel (`0C1598C0`, 166 bytes, `src/libs_gen_ah.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ah/kmtex_GetTextureLevel.json`
+- case 2
+- case 6
+- case 26
+- case 33
+- case 45
+- case 73
+- case 3
+- case 5
+- case 8
+- case 10
+- case 12
+- case 14
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 28
+- case 0
+- case 15
+- case 32
+- case 36
+- case 60
+- case 1
+- case 4
+- case 7
+- case 9
+- case 11
+- case 13
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 27
+- case 29
+- the cases run 55 of 55 instructions
+
+### kmtex_ReloadPalettized4MM (`0C159CEE`, 416 bytes, `src/libs_gen_afe.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_afe/kmtex_ReloadPalettized4MM.json`
+- case 15
+- case 21
+- case 5
+- case 25
+- case 31
+- case 39
+- case 59
+- case 73
+- case 78
+- case 81
+- case 108
+- case 165
+- case 170
+- case 176
+- case 193
+- case 197
+- case 208
+- case 221
+- case 1
+- case 2
+- case 23
+- case 27
+- case 35
+- case 43
+- case 70
+- case 77
+- case 80
+- case 87
+- case 136
+- case 166
+- case 171
+- case 179
+- case 194
+- case 206
+- case 216
+- case 225
+- the cases run 84 of 187 instructions
+
+### kmtex_TextureSize (`0C159966`, 62 bytes, `src/libs_sdk_za.c`)
+- equivalent on 4 development and 1 holdout cases, in `tests/libs_sdk_za/kmtex_TextureSize.json`
+- type 3
+- mip
+- flag 32
+- plain
+- mip and 32
+- the cases run 31 of 31 instructions
+
+### kmtex_TextureSize_Palettized (`0C159A72`, 138 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/kmtex_TextureSize_Palettized.json`
+- case 25
+- case 0
+- case 2
+- case 4
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 6
+- case 1
+- case 3
+- case 5
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 45 of 53 instructions
+
+### kmtex_TextureSize_Twiddled (`0C1599C0`, 84 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/kmtex_TextureSize_Twiddled.json`
+- case 24
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 9
+- case 1
+- case 3
+- case 5
+- case 7
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 42 of 42 instructions
+
+### kmtex_TextureSize_VQ (`0C159A14`, 94 bytes, `src/libs_sdk_za.c`)
+- equivalent on 4 development and 3 holdout cases, in `tests/libs_sdk_za/kmtex_TextureSize_VQ.json`
+- 256 mip
+- 8x8 plain
+- 64x16 mip
+- 32x32 plain
+- 16x128 mip
+- 8x8 mip
+- 8x16 plain
+- the cases run 47 of 47 instructions
+
+### kmyConvertAddress64to32 (`0C15513E`, 34 bytes, `src/libs_sdk_c_2.c`)
+- equivalent on 5 development and 4 holdout cases, in `tests/libs_sdk_c_2/kmyConvertAddress64to32.json`
+- zero
+- bit 2
+- low bits
+- upper half
+- both
+- mid
+- below
+- max
+- big
+- the cases run 17 of 17 instructions
+
+### kmytex_FBEnQueueEntry (`0C154636`, 28 bytes, `src/libs_sdk_a_2.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/libs_sdk_a_2/kmytex_FBEnQueueEntry.json`
+- empty queue
+- nonempty queue
+- empty, other layout
+- nonempty, other layout
+- empty, third layout
+- the cases run 14 of 14 instructions
+
+### kmytex_GetSmallVQprofile (`0C154DC0`, 296 bytes, `src/libs_gen_y.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_y/kmytex_GetSmallVQprofile.json`
+- case 96
+- case 96
+- case 7
+- case 33
+- case 35
+- case 2
+- case 4
+- case 6
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 72
+- case 39
+- case 19
+- case 0
+- case 1
+- case 3
+- case 5
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- the cases run 105 of 105 instructions
+
+### memset (`0C0800B0`, 24 bytes, `src/libs_sdk_b.c`)
+- equivalent on 4 development and 3 holdout cases, in `tests/libs_sdk_b/memset.json`
+- n=0
+- n=1
+- n=13
+- value over a byte
+- n=32
+- negative val
+- n=3 odd start
+- the cases run 12 of 12 instructions
+
+### mpdrv_frame_send (`0C168C72`, 464 bytes, `src/libs_gen_apt.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_apt/mpdrv_frame_send.json`
+- case 0
+- case 8
+- case 12
+- case 14
+- case 16
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 36
+- case 39
+- case 42
+- case 44
+- case 46
+- case 4
+- case 9
+- case 13
+- case 15
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 35
+- case 37
+- case 40
+- case 43
+- case 45
+- case 47
+- the cases run 21 of 190 instructions
+
+### mpdrv_get_device (`0C169028`, 16 bytes, `src/libs_sdk_e_2.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/libs_sdk_e_2/mpdrv_get_device.json`
+- zero
+- three
+- minus
+- big
+- other base
+- the cases run 8 of 8 instructions
+
+### mpdrv_make_deviceinfo (`0C169E1E`, 324 bytes, `src/libs_gen_ao.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ao/mpdrv_make_deviceinfo.json`
+- case 4
+- case 8
+- case 18
+- case 21
+- case 23
+- case 25
+- case 27
+- case 31
+- case 33
+- case 36
+- case 44
+- case 50
+- case 61
+- case 67
+- case 71
+- case 75
+- case 83
+- case 86
+- case 0
+- case 11
+- case 19
+- case 22
+- case 24
+- case 26
+- case 30
+- case 32
+- case 35
+- case 41
+- case 46
+- case 59
+- case 62
+- case 70
+- case 74
+- case 80
+- case 84
+- case 89
+- the cases run 140 of 151 instructions
+
+### mpdrv_memset_l (`0C16A438`, 22 bytes, `src/libs_sdk_z.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/libs_sdk_z/mpdrv_memset_l.json`
+- three words
+- none
+- negative count
+- one
+- the cases run 11 of 11 instructions
+
+### mpdrv_set_allstatreq_ns (`0C16A10C`, 24 bytes, `src/libs_sdk_zc.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_sdk_zc/mpdrv_set_allstatreq_ns.json`
+- port 1
+- port 3
+- the cases run 12 of 12 instructions
+
+### mpdrv_set_arctrl_ns (`0C16A31C`, 36 bytes, `src/libs_sdk_zc.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_sdk_zc/mpdrv_set_arctrl_ns.json`
+- a
+- b
+- the cases run 18 of 18 instructions
+
+### mpdrv_set_bread_ns (`0C16A1A8`, 46 bytes, `src/libs_sdk_zc.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_sdk_zc/mpdrv_set_bread_ns.json`
+- a
+- b
+- the cases run 23 of 23 instructions
+
+### mpdrv_set_dkill_ns (`0C16A084`, 24 bytes, `src/libs_sdk_zc.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_sdk_zc/mpdrv_set_dkill_ns.json`
+- port 1
+- port 3
+- the cases run 12 of 12 instructions
+
+### mpdrv_set_dreq_ns (`0C16A040`, 24 bytes, `src/libs_sdk_zc.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_sdk_zc/mpdrv_set_dreq_ns.json`
+- port 1
+- port 3
+- the cases run 12 of 12 instructions
+
+### mpdrv_set_dreset_ns (`0C16A0C8`, 24 bytes, `src/libs_sdk_zc.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_sdk_zc/mpdrv_set_dreset_ns.json`
+- port 1
+- port 3
+- the cases run 12 of 12 instructions
+
+### mpdrv_set_ft4ctrl_ns (`0C16A36C`, 36 bytes, `src/libs_sdk_a_2.c`)
+- equivalent on 4 development and 2 holdout cases, in `tests/libs_sdk_a_2/mpdrv_set_ft4ctrl_ns.json`
+- 1,2
+- zero
+- negative
+- big
+- other
+- port 2
+- the cases run 18 of 18 instructions
+
+### mpdrv_set_setcond_ns (`0C16A3CC`, 36 bytes, `src/libs_sdk_a_2.c`)
+- equivalent on 4 development and 2 holdout cases, in `tests/libs_sdk_a_2/mpdrv_set_setcond_ns.json`
+- 1..4
+- zero
+- negative
+- big
+- other
+- port 2
+- the cases run 18 of 18 instructions
+
+### mpdrv_set_transagain_ns (`0C16A2D8`, 24 bytes, `src/libs_sdk_zc.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_sdk_zc/mpdrv_set_transagain_ns.json`
+- port 1
+- port 3
+- the cases run 12 of 12 instructions
+
+### mwSbTrns (`0C16B984`, 78 bytes, `src/libs_gen_are.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_are/mwSbTrns.json`
+- case 7
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 47
+- case 74
+- case 59
+- case 43
+- case 88
+- case 51
+- case 94
+- case 111
+- case 68
+- case 86
+- case 75
+- case 99
+- case 54
+- case 45
+- case 71
+- case 101
+- case 50
+- case 119
+- the cases run 39 of 39 instructions
+
+### mwlSbGetDrctLvl (`0C16B77E`, 6 bytes, `src/libs_gen_b.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_b/mwlSbGetDrctLvl.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 3 of 3 instructions
+
+### mwlSbGetGain (`0C16B71E`, 6 bytes, `src/libs_gen_b.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_b/mwlSbGetGain.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 3 of 3 instructions
+
+### mwlSbSetFilter (`0C16B650`, 72 bytes, `src/libs_gen_l.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_l/mwlSbSetFilter.json`
+- case 6
+- case 0
+- case 2
+- case 4
+- case 7
+- case 9
+- case 11
+- case 13
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 14
+- case 1
+- case 3
+- case 5
+- case 8
+- case 10
+- case 12
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 36 of 36 instructions
+
+### mwlSbSetGain (`0C16B6D6`, 72 bytes, `src/libs_gen_y.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_y/mwlSbSetGain.json`
+- case 0
+- case 24
+- case 2
+- case 4
+- case 6
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 7
+- case 1
+- case 3
+- case 5
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 36 of 36 instructions
+
+### mwlSbSetPitch (`0C16B5E6`, 92 bytes, `src/libs_gen_y.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_y/mwlSbSetPitch.json`
+- case 1
+- case 0
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 103
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- the cases run 46 of 46 instructions
+
+### nlAddVector (`0C073AD0`, 32 bytes, `src/libs_vecmath.c`)
+- equivalent on 5 development and 5 holdout cases, in `tests/libs_vecmath/nlAddVector.json`
+- small integers
+- zeros
+- signs and fractions
+- large values
+- vd and vs the same vector
+- 3-4-5
+- rounding
+- opposite signs
+- infinity
+- vd and vs the same vector
+- the cases run 16 of 16 instructions
+
+### nlArcTan2 (`0C070930`, 180 bytes, `src/libs_trig.c`)
+- equivalent on 9 development and 10 holdout cases, in `tests/libs_trig/nlArcTan2.json`
+- right region (x >= |y|)
+- top region (y > |x|)
+- left region (-x > |y|... x < -|y|)
+- bottom region (-y > x and y <= x)
+- y = 0, x > 0
+- x = 0, y > 0
+- x = 0, y < 0
+- y = 0, x < 0
+- both zero
+- diagonal up-right (y = x)
+- diagonal up-left (y = -x)
+- diagonal down-right (y = -x)
+- diagonal down-left
+- tiny values
+- large values
+- negative y, negative x
+- top region, negative x
+- bottom region, negative x
+- x = 0, y > 0 no call
+- the cases run 57 of 63 instructions
+
+### nlDetMatrix (`0C072360`, 34 bytes, `src/libs_gen_nq.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_nq/nlDetMatrix.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 17 of 17 instructions
+
+### nlFastScreenPoint (`0C074DE0`, 50 bytes, `src/libs_small_c.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_small_c/nlFastScreenPoint.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 25 of 25 instructions
+
+### nlFloor (`0C070B90`, 70 bytes, `src/libs_gen_ai.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ai/nlFloor.json`
+- case 4
+- case 1
+- case 3
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 0
+- case 2
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 22 of 28 instructions
+
+### nlFraction (`0C070BE0`, 54 bytes, `src/libs_frac_b.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_frac_b/nlFraction.json`
+- case 0
+- case 3
+- case 2
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 4
+- case 1
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 22 of 22 instructions
+
+### nlGetAverageVector (`0C073B10`, 44 bytes, `src/libs_sdk_e.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/libs_sdk_e/nlGetAverageVector.json`
+- halves
+- zero w2
+- mixed
+- negative
+- zeros
+- the cases run 22 of 22 instructions
+
+### nlGetPushedMatrix (`0C0725C0`, 40 bytes, `src/libs_sdk_e.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/libs_sdk_e/nlGetPushedMatrix.json`
+- zero
+- three
+- minus one
+- one
+- big
+- the cases run 14 of 14 instructions
+
+### nlInitPalette (`0C06EEF0`, 58 bytes, `src/libs_sdk_e.c`)
+- equivalent on 3 development and 3 holdout cases, in `tests/libs_sdk_e/nlInitPalette.json`
+- zero entries
+- one entry
+- five entries
+- ten entries
+- other table
+- count 2 high bits
+- the cases run 29 of 29 instructions
+
+### nlLdexpf (`0C070C60`, 168 bytes, `src/libs_gen_y.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_y/nlLdexpf.json`
+- case 1
+- case 6
+- case 2
+- case 5
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 0
+- case 3
+- case 4
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 55 of 55 instructions
+
+### nlLength (`0C073B60`, 32 bytes, `src/libs_vecmath.c`)
+- equivalent on 4 development and 4 holdout cases, in `tests/libs_vecmath/nlLength.json`
+- small integers
+- zeros
+- signs and fractions
+- large values
+- 3-4-5
+- rounding
+- opposite signs
+- infinity
+- the cases run 16 of 16 instructions
+
+### nlLineBlendFunc (`0C0788A0`, 46 bytes, `src/libs_sdk_d.c`)
+- equivalent on 3 development and 3 holdout cases, in `tests/libs_sdk_d/nlLineBlendFunc.json`
+- basic
+- all set
+- keeps low bits
+- args above 7
+- src 4 dst 2
+- big args
+- the cases run 23 of 23 instructions
+
+### nlLineSendVertex (`0C078FE0`, 116 bytes, `src/libs_gen_ao.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ao/nlLineSendVertex.json`
+- case 0
+- case 3
+- case 13
+- case 18
+- case 25
+- case 29
+- case 41
+- case 47
+- case 53
+- case 57
+- case 64
+- case 69
+- case 73
+- case 76
+- case 80
+- case 85
+- case 91
+- case 99
+- case 2
+- case 6
+- case 17
+- case 24
+- case 28
+- case 40
+- case 45
+- case 52
+- case 56
+- case 60
+- case 65
+- case 71
+- case 75
+- case 77
+- case 83
+- case 90
+- case 97
+- case 100
+- the cases run 55 of 55 instructions
+
+### nlLoadRechangeMatrix (`0C074F50`, 56 bytes, `src/libs_gen_dg.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_dg/nlLoadRechangeMatrix.json`
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- the cases run 28 of 28 instructions
+
+### nlMvNotShadowIndexPol (`0C07A530`, 54 bytes, `src/libs_sdk_l.c`)
+- equivalent on 2 development and 1 holdout cases, in `tests/libs_sdk_l/nlMvNotShadowIndexPol.json`
+- leaf: no resource, no child, no sibling
+- with resource and sibling
+- resource only
+- the cases run 19 of 23 instructions
+
+### nlMvSendFace1 (`0C079F10`, 42 bytes, `src/libs_gen_re.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_re/nlMvSendFace1.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 21 of 21 instructions
+
+### nlMvSendFace3 (`0C079F90`, 48 bytes, `src/libs_gen_rg.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_rg/nlMvSendFace3.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 24 of 24 instructions
+
+### nlMvSetShadowIndexPol (`0C07A4E0`, 70 bytes, `src/libs_gen_fo.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_gen_fo/nlMvSetShadowIndexPol.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 15 of 27 instructions
+
+### nlObjPutUseViewMatrix (`0C076090`, 34 bytes, `src/libs_nlobjput.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/libs_nlobjput/nlObjPutUseViewMatrix.json`
+- second word 1: lights set up
+- second word 3 (bit 1): no light set-up
+- second word 2, first word 0
+- second word 0
+- the cases run 17 of 17 instructions
+
+### nlObjPutUseViewMatrixTrnsl (`0C076100`, 44 bytes, `src/libs_nlobjput.c`)
+- equivalent on 2 development and 1 holdout cases, in `tests/libs_nlobjput/nlObjPutUseViewMatrixTrnsl.json`
+- word 1 bit 1 clear: lights first
+- word 1 bit 1 set: no lights
+- word 1 = 2
+- the cases run 22 of 22 instructions
+
+### nlOuterProduct (`0C073B80`, 52 bytes, `src/libs_sdk_a.c`)
+- equivalent on 4 development and 2 holdout cases, in `tests/libs_sdk_a/nlOuterProduct.json`
+- x cross y
+- y cross z
+- general ints
+- parallel
+- fractions
+- negatives
+- the cases run 26 of 26 instructions
+
+### nlParallelProj (`0C073020`, 204 bytes, `src/libs_gen_nr.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_nr/nlParallelProj.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 102 of 102 instructions
+
+### nlRotateAX (`0C0734A0`, 44 bytes, `src/libs_gen_ats.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ats/nlRotateAX.json`
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- the cases run 22 of 22 instructions
+
+### nlRotateAY (`0C073650`, 40 bytes, `src/libs_gen_rn.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_rn/nlRotateAY.json`
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- the cases run 20 of 20 instructions
+
+### nlRotateAZ (`0C073710`, 40 bytes, `src/libs_gen_atr.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_atr/nlRotateAZ.json`
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- the cases run 20 of 20 instructions
+
+### nlRotateXSC (`0C0734D0`, 40 bytes, `src/libs_gen_hg.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_hg/nlRotateXSC.json`
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- the cases run 20 of 20 instructions
+
+### nlRotateYSC (`0C073680`, 36 bytes, `src/libs_gen_hg.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_hg/nlRotateYSC.json`
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- the cases run 18 of 18 instructions
+
+### nlRoundOff (`0C070EB0`, 86 bytes, `src/libs_gen_ai.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ai/nlRoundOff.json`
+- case 2
+- case 1
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 0
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 22 of 27 instructions
+
+### nlScaleUnitVector (`0C073C00`, 60 bytes, `src/libs_sdk_b.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/libs_sdk_b/nlScaleUnitVector.json`
+- unit x
+- scaled
+- negative comps
+- zero vec
+- negative scale
+- the cases run 30 of 30 instructions
+
+### nlSinfReduce (`0C0710F0`, 92 bytes, `src/libs_gen_nm.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_nm/nlSinfReduce.json`
+- case 0
+- case 5
+- case 1
+- case 2
+- case 3
+- case 4
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 100
+- case 120
+- case 58
+- case 97
+- case 126
+- case 137
+- case 60
+- case 115
+- case 38
+- case 86
+- case 138
+- case 114
+- case 125
+- case 56
+- case 76
+- case 134
+- case 43
+- case 69
+- the cases run 44 of 44 instructions
+
+### nlSpriteF2C (`0C07B670`, 50 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/nlSpriteF2C.json`
+- case 1
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 0
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 23 of 23 instructions
+
+### nlSubVector (`0C073C90`, 32 bytes, `src/libs_sdk_d.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/libs_sdk_d/nlSubVector.json`
+- simple
+- zero
+- negative result
+- fractions
+- large
+- the cases run 16 of 16 instructions
+
+### nlSubVector3op (`0C073CB0`, 32 bytes, `src/libs_vecmath.c`)
+- equivalent on 5 development and 5 holdout cases, in `tests/libs_vecmath/nlSubVector3op.json`
+- small integers
+- zeros
+- signs and fractions
+- large values
+- vd is vs1
+- 3-4-5
+- rounding
+- opposite signs
+- infinity
+- vd is vs1
+- the cases run 16 of 16 instructions
+
+### nlTriPutSetClipping (`0C075B00`, 38 bytes, `src/libs_sdk_b.c`)
+- equivalent on 3 development and 1 holdout cases, in `tests/libs_sdk_b/nlTriPutSetClipping.json`
+- screen
+- distinct
+- negative
+- fractions
+- the cases run 19 of 19 instructions
+
+### nlTriPutTextureInit (`0C075700`, 42 bytes, `src/libs_sdk_d.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/libs_sdk_d/nlTriPutTextureInit.json`
+- basic
+- zero args
+- pointer tex
+- other seed
+- v 5
+- the cases run 21 of 21 instructions
+
+### nlUnitMatrix (`0C073A80`, 36 bytes, `src/libs_gen_dg.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_dg/nlUnitMatrix.json`
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- the cases run 18 of 18 instructions
+
+### nlUnitVectorsd (`0C073E60`, 36 bytes, `src/libs_gen_nv.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_nv/nlUnitVectorsd.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 39
+- case 38
+- case 96
+- case 52
+- case 93
+- case 104
+- case 100
+- case 50
+- case 86
+- case 105
+- case 61
+- case 42
+- case 47
+- case 63
+- case 43
+- case 89
+- case 79
+- case 73
+- the cases run 18 of 18 instructions
+
+### ovSearchLib (`0C149C56`, 64 bytes, `src/libs_sg_ov.c`)
+- equivalent on 6 development and 5 holdout cases, in `tests/libs_sg_ov/ovSearchLib.json`
+- empty
+- first
+- last
+- middle
+- absent
+- count beyond match not searched
+- neg count
+- big key
+- neg key last
+- zero key
+- dup
+- the cases run 32 of 32 instructions
+
+### paletteUpload (`0C06F140`, 36 bytes, `src/libs_sdk_e.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/libs_sdk_e/paletteUpload.json`
+- clean
+- dirty
+- dirty 5
+- flag in byte 1 only
+- the cases run 12 of 12 instructions
+
+### pdGetPeripheralInfo (`0C14BABA`, 10 bytes, `src/libs_sdk_e_2.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/libs_sdk_e_2/pdGetPeripheralInfo.json`
+- zero
+- two
+- minus
+- big
+- ret minus
+- the cases run 5 of 5 instructions
+
+### pdGunSetFlashColor (`0C14BB50`, 12 bytes, `src/libs_sdk_zc.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_sdk_zc/pdGunSetFlashColor.json`
+- a
+- b
+- the cases run 6 of 6 instructions
+
+### pdGunSetTrigger (`0C14BBC8`, 52 bytes, `src/libs_sdk_a_2.c`)
+- equivalent on 5 development and 3 holdout cases, in `tests/libs_sdk_a_2/pdGunSetTrigger.json`
+- 0
+- 6
+- 12
+- 18
+- other 5
+- 24
+- negative
+- 7
+- the cases run 26 of 26 instructions
+
+### pdSetMode (`0C14BAC4`, 12 bytes, `src/libs_sdk_zc.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_sdk_zc/pdSetMode.json`
+- a
+- b
+- the cases run 6 of 6 instructions
+
+### pdSetOptimize (`0C14BAD6`, 12 bytes, `src/libs_sdk_zc.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_sdk_zc/pdSetOptimize.json`
+- a
+- b
+- the cases run 6 of 6 instructions
+
+### pdVibSetStopTime (`0C14D646`, 180 bytes, `src/libs_gen_y.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_y/pdVibSetStopTime.json`
+- case 15
+- case 2
+- case 4
+- case 6
+- case 9
+- case 13
+- case 18
+- case 22
+- case 25
+- case 32
+- case 35
+- case 40
+- case 44
+- case 46
+- case 51
+- case 54
+- case 57
+- case 62
+- case 43
+- case 3
+- case 5
+- case 8
+- case 12
+- case 16
+- case 20
+- case 23
+- case 26
+- case 33
+- case 38
+- case 42
+- case 45
+- case 49
+- case 52
+- case 56
+- case 61
+- case 64
+- the cases run 90 of 90 instructions
+
+### pdVmsLcdBltAsmFlipH (`0C1604E2`, 44 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/pdVmsLcdBltAsmFlipH.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 21 of 22 instructions
+
+### pdVmsLcdBltAsmFlipHV (`0C16050E`, 42 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/pdVmsLcdBltAsmFlipHV.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 20 of 21 instructions
+
+### pdVmsLcdBltAsmFlipV (`0C1604B0`, 46 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/pdVmsLcdBltAsmFlipV.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 22 of 23 instructions
+
+### pdVmsLcdWrite1 (`0C14D1E6`, 74 bytes, `src/libs_sg_lcd.c`)
+- equivalent on 4 development and 5 holdout cases, in `tests/libs_sg_lcd/pdVmsLcdWrite1.json`
+- ready=0 ret=0
+- ready=1 ret=0
+- ready=1 ret=-1
+- ready=1 ret=5
+- ready=1 ret=2147483648
+- ready=1 ret=2147483647
+- ready=5 ret=-100
+- ready=0 ret=2147483647
+- ready=1 ret=1
+- the cases run 37 of 37 instructions
+
+### pfTextPut (`0C0588EC`, 50 bytes, `src/libs_gen_alo.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_alo/pfTextPut.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 25 of 25 instructions
+
+### strncpy (`0C091054`, 46 bytes, `src/libs_sdk_e.c`)
+- equivalent on 4 development and 4 holdout cases, in `tests/libs_sdk_e/strncpy.json`
+- short src, pads
+- exact fit
+- truncated
+- zero n
+- empty src
+- long
+- n one
+- big pad
+- the cases run 23 of 23 instructions
+
+### syCachePREF (`0C14C426`, 50 bytes, `src/libs_gen_tf.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_tf/syCachePREF.json`
+- case 1
+- case 3
+- case 6
+- case 8
+- case 10
+- case 12
+- case 16
+- case 19
+- case 22
+- case 24
+- case 27
+- case 32
+- case 35
+- case 37
+- case 41
+- case 43
+- case 45
+- case 47
+- case 2
+- case 4
+- case 7
+- case 9
+- case 11
+- case 15
+- case 18
+- case 20
+- case 23
+- case 26
+- case 29
+- case 34
+- case 36
+- case 40
+- case 42
+- case 44
+- case 46
+- case 48
+- the cases run 21 of 21 instructions
+
+### syCfgGetBroadcastType (`0C14D4C4`, 42 bytes, `src/libs_sdk_l.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/libs_sdk_l/syCfgGetBroadcastType.json`
+- block: byte (negative) stored
+- no block
+- null pointer
+- another block
+- the cases run 21 of 21 instructions
+
+### syCfgGetCountryCode (`0C14D40C`, 42 bytes, `src/libs_sdk_l.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/libs_sdk_l/syCfgGetCountryCode.json`
+- block: byte (negative) stored
+- no block
+- null pointer
+- another block
+- the cases run 21 of 21 instructions
+
+### syCfgGetDefaultLanguage (`0C14D49A`, 42 bytes, `src/libs_sdk_l.c`)
+- equivalent on 2 development and 2 holdout cases, in `tests/libs_sdk_l/syCfgGetDefaultLanguage.json`
+- block: byte (negative) stored
+- no block
+- null pointer
+- another block
+- the cases run 21 of 21 instructions
+
+### syCfgGetIndividualID (`0C14D4EE`, 70 bytes, `src/libs_gen_o.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_o/syCfgGetIndividualID.json`
+- case 0
+- case 13
+- case 2
+- case 4
+- case 7
+- case 9
+- case 11
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 6
+- case 1
+- case 3
+- case 5
+- case 8
+- case 10
+- case 12
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 35 of 35 instructions
+
+### syChainClx1Handler (`0C15DC86`, 170 bytes, `src/libs_gen_ax.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ax/syChainClx1Handler.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 24 of 84 instructions
+
+### syIntAdrChk_printh (`0C16F698`, 60 bytes, `src/libs_gen_q.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_q/syIntAdrChk_printh.json`
+- case 1
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 0
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 30 of 30 instructions
+
+### syRtcAicaSetWriteFlag (`0C14CED2`, 40 bytes, `src/libs_sdk_zc.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/libs_sdk_zc/syRtcAicaSetWriteFlag.json`
+- a
+- b
+- the cases run 20 of 20 instructions
+
+### syTmrCountToMicro (`0C15EBE6`, 52 bytes, `src/libs_gen_aas.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_aas/syTmrCountToMicro.json`
+- case 0
+- case 2
+- case 4
+- case 6
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 3
+- case 5
+- case 7
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 26 of 26 instructions
+
+### syTmrGenCountToMicro (`0C15EE82`, 86 bytes, `src/libs_gen_aav.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_aav/syTmrGenCountToMicro.json`
+- case 0
+- case 2
+- case 7
+- case 4
+- case 8
+- case 10
+- case 12
+- case 14
+- case 16
+- case 18
+- case 20
+- case 22
+- case 24
+- case 26
+- case 28
+- case 30
+- case 32
+- case 34
+- case 1
+- case 5
+- case 3
+- case 6
+- case 9
+- case 11
+- case 13
+- case 15
+- case 17
+- case 19
+- case 21
+- case 23
+- case 25
+- case 27
+- case 29
+- case 31
+- case 33
+- case 35
+- the cases run 43 of 43 instructions
+
+### vsprintf (`0C091084`, 34 bytes, `src/libs_gen_cy.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_cy/vsprintf.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 95
+- case 114
+- case 85
+- case 99
+- case 44
+- case 62
+- case 101
+- case 119
+- case 40
+- case 108
+- case 117
+- case 39
+- case 94
+- case 96
+- case 69
+- case 92
+- case 65
+- case 37
+- the cases run 17 of 17 instructions
