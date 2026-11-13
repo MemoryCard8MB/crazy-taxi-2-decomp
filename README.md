@@ -1,6 +1,6 @@
 # Crazy Taxi 2 decomp
 
-![decomp progress](badges/progress.svg?p=6.3&b=3.1&a=2&s=0)
+![decomp progress](badges/progress.svg?p=23.8&b=4.6&a=4&s=0)
 
 **Explore this decomp project with [Shuriken Explorer](https://consolesplayingconsoles.github.io/dc-shuriken-explorer/) and see the game's models, skeletons, animations, textures, images, sounds, text and side-by-side C and assembly code directly in your browser.**
 
@@ -23,18 +23,18 @@ everything game-derived on your machine, and `.gitignore` keeps it out of git.
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE             2.3%  the instructions the cases ran, of all instructions, over the 3229 functions that can be C; the 202 functions that reached the check are measured, the others count 0
-FUNCTIONS LEFT  (6.3% complete) 3027  of the 3229 functions that can be C (226 with no C form are counted apart)
-BYTES LEFT    (3.1% complete) 495138  of 511106 bytes of code that can be C
-FUNCTIONS                             
-  unnamed                       1872  functions still called FUN_... (1872 of 3455)
-  Not written C                 3027  495138 bytes
-  Written C with errors            0  0 bytes
-  Not drawn                        0  0 bytes
-  Drawn with errors                0  0 bytes
-  Checked with errors              0  0 bytes
-  No C form                     6.5%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
-  documented                    5.8%  202 named functions in docs/*.md
+TOTAL TEST COVERAGE              3.7%  the instructions the cases ran, of all instructions, over the 3229 functions that can be C; the 769 functions that reached the check are measured, the others count 0
+FUNCTIONS LEFT  (23.8% complete) 2460  of the 3229 functions that can be C (226 with no C form are counted apart)
+BYTES LEFT     (4.6% complete) 487718  of 511106 bytes of code that can be C
+FUNCTIONS                              
+  unnamed                        1872  functions still called FUN_... (1872 of 3455)
+  Not written C                  2460  487718 bytes
+  Written C with errors             0  0 bytes
+  Not drawn                         0  0 bytes
+  Drawn with errors                 0  0 bytes
+  Checked with errors               0  0 bytes
+  No C form                      6.5%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
+  documented                    11.8%  408 named functions in docs/*.md
 ```
 <!-- /progress -->
 
