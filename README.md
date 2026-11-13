@@ -23,17 +23,17 @@ everything game-derived on your machine, and `.gitignore` keeps it out of git.
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE             0.0%  the instructions the cases ran, of all instructions, over the 3226 functions that can be C; the 0 functions that reached the check are measured, the others count 0
-FUNCTIONS LEFT  (0.0% complete) 3226  of the 3226 functions that can be C (229 with no C form are counted apart)
-BYTES LEFT    (0.0% complete) 507588  of 507588 bytes of code that can be C
+TOTAL TEST COVERAGE             0.0%  the instructions the cases ran, of all instructions, over the 3229 functions that can be C; the 0 functions that reached the check are measured, the others count 0
+FUNCTIONS LEFT  (0.0% complete) 3229  of the 3229 functions that can be C (226 with no C form are counted apart)
+BYTES LEFT    (0.0% complete) 511106  of 511106 bytes of code that can be C
 FUNCTIONS                             
-  unnamed                       2511  functions still called FUN_... (2511 of 3455)
-  Not written C                 3226  507588 bytes
+  unnamed                       2030  functions still called FUN_... (2030 of 3455)
+  Not written C                 3229  511106 bytes
   Written C with errors            0  0 bytes
   Not drawn                        0  0 bytes
   Drawn with errors                0  0 bytes
   Checked with errors              0  0 bytes
-  No C form                     6.6%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
+  No C form                     6.5%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
   documented                    0.0%  0 named functions in docs/*.md
 ```
 <!-- /progress -->
