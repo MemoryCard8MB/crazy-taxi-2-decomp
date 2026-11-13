@@ -1,6 +1,6 @@
 # Crazy Taxi 2 decomp
 
-![decomp progress](badges/progress.svg?p=97.3&b=94.4&a=56&s=0)
+![decomp progress](badges/progress.svg?p=98.3&b=97.4&a=58&s=0)
 
 **Explore this decomp project with [Shuriken Explorer](https://consolesplayingconsoles.github.io/dc-shuriken-explorer/) and see the game's models, skeletons, animations, textures, images, sounds, text and side-by-side C and assembly code directly in your browser.**
 
@@ -23,18 +23,18 @@ everything game-derived on your machine, and `.gitignore` keeps it out of git.
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE           56.4%  the instructions the cases ran, of all instructions, over the 3449 functions that can be C; the 3356 functions that reached the check are measured, the others count 0
-FUNCTIONS LEFT  (97.3% complete) 93  of the 3449 functions that can be C (184 with no C form are counted apart)
-BYTES LEFT   (94.4% complete) 31076  of 556924 bytes of code that can be C
+TOTAL TEST COVERAGE           58.2%  the instructions the cases ran, of all instructions, over the 3449 functions that can be C; the 3390 functions that reached the check are measured, the others count 0
+FUNCTIONS LEFT  (98.3% complete) 59  of the 3449 functions that can be C (184 with no C form are counted apart)
+BYTES LEFT   (97.4% complete) 14490  of 556924 bytes of code that can be C
 FUNCTIONS                            
   unnamed                      2050  functions still called FUN_... (2050 of 3633)
   Not written C                  15  3554 bytes
   Written C with errors           0  0 bytes
   Not drawn                      36  8598 bytes
-  Drawn with errors              35  16606 bytes
+  Drawn with errors               1  20 bytes
   Checked with errors             7  2318 bytes
   No C form                    5.1%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
-  documented                  40.9%  1486 named functions in docs/*.md
+  documented                  41.2%  1497 named functions in docs/*.md
 ```
 <!-- /progress -->
 

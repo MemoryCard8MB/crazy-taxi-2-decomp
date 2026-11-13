@@ -1,0 +1,19 @@
+{
+ "dev": [
+  {
+   "about": "the 32 x 128 table",
+   "regs": {
+    "r7": "00000005"
+   }
+  }
+ ],
+ "holdout": [
+  {
+   "about": "the table, other leftover registers",
+   "regs": {
+    "r4": "00000001",
+    "r7": "FFFFFFFF"
+   }
+  }
+ ]
+}

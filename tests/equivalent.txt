@@ -66,6 +66,7 @@ ADXPD_Start
 ADXPD_Stop
 ADXRNA_Destroy
 ADXRNA_SetStmHdInfo
+ADXSJD_Create
 ADXSJD_Destroy
 ADXSJD_EntryTrapFunc
 ADXSJD_ExecHndl
@@ -161,6 +162,7 @@ FUN_0c013b2c
 FUN_0c01422e
 FUN_0c0148f4
 FUN_0c01505c
+FUN_0c015f28
 FUN_0c016240
 FUN_0c016398
 FUN_0c0164de
@@ -209,6 +211,7 @@ FUN_0c01a7cc
 FUN_0c01a848
 FUN_0c01a8d8
 FUN_0c01a978
+FUN_0c01aa30
 FUN_0c01b026
 FUN_0c01b208
 FUN_0c01b270
@@ -274,6 +277,7 @@ FUN_0c01edbc
 FUN_0c01ee10
 FUN_0c01ee58
 FUN_0c01eea6
+FUN_0c01eeda
 FUN_0c01efc0
 FUN_0c01f098
 FUN_0c01f214
@@ -286,6 +290,7 @@ FUN_0c01f9ca
 FUN_0c01fb8c
 FUN_0c01fbda
 FUN_0c01fc54
+FUN_0c01fcd0
 FUN_0c01fd16
 FUN_0c01fd5c
 FUN_0c01fd96
@@ -448,6 +453,7 @@ FUN_0c031138
 FUN_0c0311b4
 FUN_0c0311f2
 FUN_0c031444
+FUN_0c031460
 FUN_0c03155a
 FUN_0c0316e0
 FUN_0c0316e6
@@ -732,10 +738,14 @@ FUN_0c048fd6
 FUN_0c048ff8
 FUN_0c0491d8
 FUN_0c0494a4
+FUN_0c049610
+FUN_0c049f58
+FUN_0c04afec
 FUN_0c04b0ba
 FUN_0c04b0e4
 FUN_0c04b12a
 FUN_0c04b180
+FUN_0c04b1e6
 FUN_0c04b32c
 FUN_0c04b432
 FUN_0c04b4c4
@@ -977,6 +987,7 @@ FUN_0c05a3b0
 FUN_0c05a3f8
 FUN_0c05a8c4
 FUN_0c05a902
+FUN_0c05a938
 FUN_0c05aa9a
 FUN_0c05ab06
 FUN_0c05ab5e
@@ -1010,6 +1021,7 @@ FUN_0c05beca
 FUN_0c05bef8
 FUN_0c05befe
 FUN_0c05bf60
+FUN_0c05bf7e
 FUN_0c05bfe6
 FUN_0c05c00c
 FUN_0c05c080
@@ -1053,6 +1065,7 @@ FUN_0c05e784
 FUN_0c05e88c
 FUN_0c05edbe
 FUN_0c05ef18
+FUN_0c05efcc
 FUN_0c05f1b6
 FUN_0c05f314
 FUN_0c05f37e
@@ -1222,6 +1235,7 @@ FUN_0c069790
 FUN_0c069864
 FUN_0c069890
 FUN_0c06989a
+FUN_0c06991a
 FUN_0c069a04
 FUN_0c069a62
 FUN_0c069b10
@@ -1277,6 +1291,7 @@ FUN_0c06c4e6
 FUN_0c06c71e
 FUN_0c06c760
 FUN_0c06c8ea
+FUN_0c06cb24
 FUN_0c06cbc2
 FUN_0c06cbe2
 FUN_0c06cc10
@@ -1390,6 +1405,7 @@ FUN_0c0721f0
 FUN_0c072230
 FUN_0c072250
 FUN_0c072290
+FUN_0c0722b0
 FUN_0c0722f0
 FUN_0c072600
 FUN_0c072b60
@@ -1504,6 +1520,7 @@ FUN_0c07b706
 FUN_0c07b734
 FUN_0c07b760
 FUN_0c07b786
+FUN_0c07b7e0
 FUN_0c07b84a
 FUN_0c07b864
 FUN_0c07b91c
@@ -1704,6 +1721,7 @@ FUN_0c08fd60
 FUN_0c08fe18
 FUN_0c08ff62
 FUN_0c090008
+FUN_0c090180
 FUN_0c0902e8
 FUN_0c090484
 FUN_0c0905cc
@@ -1723,6 +1741,7 @@ FUN_0c095b84
 FUN_0c095bb8
 FUN_0c096138
 FUN_0c096228
+FUN_0c0962ac
 FUN_0c147a9a
 FUN_0c147aec
 FUN_0c149c00
@@ -1777,6 +1796,7 @@ FUN_0c14efc2
 FUN_0c14f130
 FUN_0c14f248
 FUN_0c14f292
+FUN_0c14f3b0
 FUN_0c14f46a
 FUN_0c14f604
 FUN_0c14f7a8
@@ -1804,6 +1824,8 @@ FUN_0c150414
 FUN_0c150444
 FUN_0c150460
 FUN_0c15047c
+FUN_0c1504e4
+FUN_0c1505ac
 FUN_0c150680
 FUN_0c1550c0
 FUN_0c155b78
@@ -1942,6 +1964,8 @@ FUN_0c16ada2
 FUN_0c16adf8
 FUN_0c16ae20
 FUN_0c16aef4
+FUN_0c16b0b6
+FUN_0c16b196
 FUN_0c16b244
 FUN_0c16b280
 FUN_0c16b372
@@ -2114,12 +2138,14 @@ _allzero
 _app_coss
 _app_sins
 _calcnpw
+_div64
 _duchek
 _fmtout_intcnv
 _fmtout_putstr
 _in_coss
 _in_fmods
 _its
+_lsft
 _lsfts
 _mult
 _mult64
@@ -2358,6 +2384,7 @@ gdFsGetTokenSize
 gdFsGetTransStat
 gdFsGetWorkHn
 gdFsGetWorkHnG
+gdFsInitG
 gdFsLoadDirFastG
 gdFsLoadDirG
 gdFsLockDir
@@ -2519,6 +2546,7 @@ kmQueryFinishLastTextureDMA
 kmReLoadMipmap
 kmRender
 kmRenderDirect
+kmRenderTexture
 kmResetPointer
 kmResetRenderer
 kmSetBackGroundPlane
@@ -2656,6 +2684,7 @@ kmiReqRestOfDMA
 kmiSetOpaqueDummy
 kmiSetSysConfigFlag
 kmiStartNextRender
+kmiStartRenderTextureEntry
 kmiTAallocEx
 kmiTXalloc
 kmiUnloadDevice
@@ -2951,6 +2980,7 @@ nlMultiLineSub
 nlMultiMatrixRevOrder
 nlMultiMatrixRevOrder8
 nlMvCalcEdgeA
+nlMvCalcEdgeB
 nlMvChgIndexPolAttr
 nlMvClipEdge
 nlMvEndList
@@ -2960,6 +2990,7 @@ nlMvNotShadowIndexPol
 nlMvNotShadowObjPutPol
 nlMvPutFaceClip
 nlMvPutPolygon
+nlMvPutStrip
 nlMvSendFace1
 nlMvSendFace3
 nlMvSendFan3
@@ -2967,6 +2998,7 @@ nlMvSendTriangle
 nlMvSetShadowIndexPol
 nlObjPut
 nlObjPutCheapEnvMap
+nlObjPutInit
 nlObjPutLoadTexture
 nlObjPutSetGarbagedTexture_Sub
 nlObjPutSetLightDirectionV
@@ -3061,6 +3093,7 @@ ovFinish
 ovGetLibTbl
 ovInit
 ovLibClose
+ovLibDeleteTbl
 ovLibEntryTbl
 ovLibOpen
 ovSearchLib
@@ -3180,6 +3213,7 @@ syHwInit2
 syIntAdrChk_dumpline
 syIntAdrChk_finish
 syIntAdrChk_getchar
+syIntAdrChk_init
 syIntAdrChk_printh
 syIntAdrChk_putchar
 syIntChkDump
