@@ -1,0 +1,34 @@
+# Everything game-derived or SDK-derived stays local: setup.sh regenerates it from your own disc.
+1ST_READ.BIN
+IP.BIN
+*.gdi
+*.bin
+*.raw
+*.chd
+asm/
+objects.txt
+text-map/
+text-dump/
+build/
+state/
+sdk-source/
+*.sigs
+report*.txt
+.env
+disc/
+.idea/
+__pycache__/
+
+# patch leftovers
+*.orig
+# case-file backups the retest tool leaves behind
+*.json.old
+# code overlays (references/overlays.md): generated per overlay, never committed
+overlays/*/symbols.txt
+overlays/*/state/
+overlays/*/src/
+overlays/*/BASE
+
+# kick-off working files (Ghidra projects, reports, signature tables)
+work/
+.DS_Store

@@ -1,0 +1,760 @@
+0c018900  after FUN_0c016cca             pointed to from 0c037ca4; pointed to from 0c06b400
+0c018908  after FUN_0c016cca             pointed to from 0c033ef4
+0c018d0c  after FUN_0c018d02             leaf: pool load + rts; pointed to from 0c16ae68
+0c01932c  after FUN_0c018df2             pointed to from 0c159644
+0c019486  after FUN_0c019466             function start; pointed to from 0c09711c; pointed to from 0c097120; pointed to from 0c097124; pointe
+0c0195ec  after FUN_0c019466             function start; pointed to from 0c09713c; pointed to from 0c097140; pointed to from 0c097144; pointe
+0c0197f6  after FUN_0c019466             pointed to from 0c09710c; pointed to from 0c097110; pointed to from 0c097114; pointed to from 0c0971
+0c019898  after FUN_0c019466             pointed to from 0c09712c; pointed to from 0c097130; pointed to from 0c097134; pointed to from 0c0971
+0c01a832  after FUN_0c01a7cc             pointed to from 0c01abf4
+0c01a9f4  after FUN_0c01a978             pointed to from 0c01ac14
+0c01af9e  after FUN_0c01aa30             pointed to from 0c0973b8
+0c01ba02  after FUN_0c01b9c4             pointed to from 0c0974b0
+0c01ba58  after FUN_0c01b9c4             function start; pointed to from 0c0974b4
+0c01bdda  after FUN_0c01bca2             pointed to from 0c0974c0
+0c01bdde  after FUN_0c01bca2             pointed to from 0c0974c4
+0c01be2c  after FUN_0c01bde2             pointed to from 0c0974c8
+0c01bf10  after FUN_0c01bde2             function start; pointed to from 0c0974cc
+0c01c134  after FUN_0c01bde2             pointed to from 0c0974d0
+0c01c1aa  after FUN_0c01bde2             pointed to from 0c0974d4
+0c01d044  after FUN_0c01cd78             function start; pointed to from 0c097634
+0c01d1d8  after FUN_0c01d190             function start; pointed to from 0c097638
+0c01d22c  after FUN_0c01d190             function start; pointed to from 0c09763c
+0c01d2d4  after FUN_0c01d190             function start; pointed to from 0c097650
+0c01d336  after FUN_0c01d190             pointed to from 0c097654
+0c01d350  after FUN_0c01d190             pointed to from 0c097658
+0c01d368  after FUN_0c01d190             pointed to from 0c09765c
+0c01d37a  after FUN_0c01d190             function start; pointed to from 0c097640
+0c01da30  after FUN_0c01d7b0             pointed to from 0c03e590
+0c01da32  after FUN_0c01d7b0             function start; pointed to from 0c097660
+0c01dadc  after FUN_0c01daac             pointed to from 0c0973a0
+0c01db74  after FUN_0c01daac             function start; pointed to from 0c097750
+0c01dd5a  after FUN_0c01dc1e             pointed to from 0c06bdf0
+0c01dd88  after FUN_0c01dc1e             pointed to from 0c097758
+0c022d9c  after FUN_0c022d30             pointed to from 0c02581c; pointed to from 0c02594c; pointed to from 0c026078; pointed to from 0c0266
+0c023176  after FUN_0c022de2             pointed to from 0c09c9f4
+0c0231c0  after FUN_0c022de2             function start; pointed to from 0c09ca34
+0c0233aa  after FUN_0c022de2             pointed to from 0c09c9f8
+0c02345c  after FUN_0c022de2             function start; pointed to from 0c09ca38
+0c023718  after FUN_0c023650             pointed to from 0c0236f8
+0c0242fe  after FUN_0c023650             pointed to from 0c09ca3c
+0c024708  after FUN_0c0244e4             pointed to from 0c09ca00
+0c0247a8  after FUN_0c0244e4             pointed to from 0c09ca40
+0c024c6c  after FUN_0c0244e4             pointed to from 0c09ca44
+0c0253a2  after FUN_0c025088             pointed to from 0c09ca08
+0c0253e8  after FUN_0c025088             pointed to from 0c09ca48
+0c0254de  after FUN_0c025088             pointed to from 0c09ca0c
+0c025524  after FUN_0c025088             pointed to from 0c09ca4c
+0c02562c  after FUN_0c025088             pointed to from 0c09ca10
+0c02566e  after FUN_0c025088             pointed to from 0c09ca50
+0c025754  after FUN_0c025088             pointed to from 0c09ca14
+0c0257a4  after FUN_0c025088             pointed to from 0c09ca54
+0c0258a2  after FUN_0c025088             pointed to from 0c09ca18
+0c025950  after FUN_0c025088             pointed to from 0c09ca58
+0c025a9a  after FUN_0c025088             pointed to from 0c09ca5c
+0c025ba8  after FUN_0c025088             pointed to from 0c09ca20
+0c025bf2  after FUN_0c025088             pointed to from 0c09ca60
+0c025cfe  after FUN_0c025088             pointed to from 0c09ca24
+0c025d44  after FUN_0c025088             pointed to from 0c09ca64
+0c025e4e  after FUN_0c025088             pointed to from 0c09ca28
+0c025e94  after FUN_0c025088             pointed to from 0c09ca68
+0c025fa4  after FUN_0c025088             pointed to from 0c09ca2c
+0c025ffc  after FUN_0c025088             pointed to from 0c09ca6c
+0c0265e8  after FUN_0c025088             pointed to from 0c09ca70
+0c02b3b8  after FUN_0c02b1ca             function start; pointed to from 0c1293c0
+0c02e604  after FUN_0c02e42a             pointed to from 0c02e838
+0c03000e  after FUN_0c02ff06             pointed to from 0c1198dc, inside FUN_0c02ff06 (merged?)
+0c0300d8  after FUN_0c02ff06             function start; pointed to from 0c030444; pointed to from 0c030508; pointed to from 0c030604; pointe
+0c03010e  after FUN_0c02ff06             function start; pointed to from 0c0302e8; pointed to from 0c0309c8
+0c0301b4  after FUN_0c02ff06             function start; pointed to from 0c129798
+0c0304ee  after FUN_0c0303d0             pointed to from 0c1488f0
+0c03052c  after FUN_0c0303d0             function start; pointed to from 0c129828
+0c030634  after FUN_0c0303d0             function start; pointed to from 0c12984c
+0c030760  after FUN_0c0303d0             function start; pointed to from 0c1298dc
+0c030850  after FUN_0c0303d0             function start; pointed to from 0c129900
+0c0318b4  after FUN_0c0318a2             function start; pointed to from 0c0319ac
+0c031d04  after FUN_0c031bbc             pointed to from 0c16084c
+0c035f24  after FUN_0c035e96             function start; pointed to from 0c0b3a28; pointed to from 0c0b3a30
+0c0364d2  after FUN_0c036318             pointed to from 0c036c3c
+0c03650c  after FUN_0c036318             function start; pointed to from 0c0b3920; pointed to from 0c0b3928; pointed to from 0c0b3930; pointe
+0c0365f2  after FUN_0c036318             pointed to from 0c051828
+0c036972  after FUN_0c036936             pointed to from 0c0b370c
+0c0369ec  after FUN_0c036936             function start; pointed to from 0c0b3714; pointed to from 0c0b3744
+0c038218  after FUN_0c038012             function start; pointed to from 0c0b37a4
+0c0383b2  after FUN_0c038012             function start; pointed to from 0c0b37b4
+0c03854c  after FUN_0c03849a             function start; pointed to from 0c0b3824
+0c0385c4  after FUN_0c03849a             function start; pointed to from 0c0b37e4
+0c0386a4  after FUN_0c03849a             function start; pointed to from 0c0b3804
+0c03a006  after FUN_0c03a004             pointed to from 0c152e84, inside FUN_0c03a004 (merged?)
+0c03a01e  after FUN_0c03a004             pointed to from 0c152f2c, inside FUN_0c03a004 (merged?)
+0c03a870  after FUN_0c03a004             function start; pointed to from 0c0b389c; pointed to from 0c0b38ac
+0c03c5d8  after FUN_0c03c534             pointed to from 0c0b3884
+0c03d34e  after FUN_0c03cd7e             pointed to from 0c05b820
+0c03d53a  after FUN_0c03d416             function start; pointed to from 0c0b39fc
+0c03d5ce  after FUN_0c03d416             function start; pointed to from 0c0b38cc
+0c03d7a8  after FUN_0c03d416             function start; pointed to from 0c0b390c
+0c03da58  after FUN_0c03d974             function start; pointed to from 0c0b3a74
+0c03db44  after FUN_0c03d974             pointed to from 0c0b39d4
+0c03dbf6  after FUN_0c03d974             function start; pointed to from 0c0b3a94
+0c03dc5c  after FUN_0c03d974             function start; pointed to from 0c0b3aa4
+0c03dd80  after FUN_0c03d974             pointed to from 0c0c06f8
+0c03e400  after FUN_0c03e37e             pointed to from 0c152e90; pointed to from 0c152f68
+0c03f3f4  after FUN_0c03f228             function start; pointed to from 0c0973a8
+0c040ca0  after FUN_0c040bec             pointed to from 0c0c0a7c
+0c040cbe  after FUN_0c040bec             function start; pointed to from 0c0c0a84
+0c040d68  after FUN_0c040cf2             pointed to from 0c0c0a80
+0c0440a4  after FUN_0c043e98             pointed to from 0c042b90; pointed to from 0c043b94
+0c0443ac  after FUN_0c043e98             pointed to from 0c043dcc
+0c04dd2c  after FUN_0c04dcf0             pointed to from 0c157400, inside FUN_0c04dcf0 (merged?)
+0c04e6bc  after FUN_0c04e6a0             pointed to from 0c01d474
+0c04eb04  after FUN_0c04e9ac             pointed to from 0c1745d8
+0c04ec08  after FUN_0c04ebe2             pointed to from 0c04f72c, inside FUN_0c04ebe2 (merged?)
+0c0518b8  after FUN_0c051844             pointed to from 0c0518ac
+0c0527c4  after FUN_0c052722             pointed to from 0c016a94
+0c058974  after FUN_0c05891e             pointed to from 0c022b6c; pointed to from 0c023138; pointed to from 0c02624c; pointed to from 0c0268
+0c05bb34  after FUN_0c05ba98             pointed to from 0c05bbc0
+0c05de0c  after FUN_0c05d928             function start; pointed to from 0c10dd24
+0c05edcc  after FUN_0c05edbe             function start; pointed to from 0c10e49c
+0c05edfc  after FUN_0c05edbe             function start; pointed to from 0c10e4a4; pointed to from 0c10e4a8
+0c05ee5c  after FUN_0c05edbe             function start; pointed to from 0c10e4a0
+0c05f12c  after FUN_0c05efcc             function start; pointed to from 0c10e4ac
+0c05f852  after FUN_0c05f834             pointed to from 0c1392d4
+0c05f85a  after FUN_0c05f834             pointed to from 0c139844
+0c05f862  after FUN_0c05f834             pointed to from 0c1398c4
+0c05f86a  after FUN_0c05f834             pointed to from 0c1399dc
+0c05f872  after FUN_0c05f834             pointed to from 0c139a1c
+0c05f87a  after FUN_0c05f834             pointed to from 0c139b1c
+0c05f882  after FUN_0c05f834             pointed to from 0c139b5c
+0c05f88a  after FUN_0c05f834             pointed to from 0c139c64
+0c05f892  after FUN_0c05f834             pointed to from 0c139c9c
+0c05f89a  after FUN_0c05f834             pointed to from 0c139d04
+0c05f8a2  after FUN_0c05f834             pointed to from 0c139d3c
+0c05f8aa  after FUN_0c05f834             pointed to from 0c139d44
+0c05f8b2  after FUN_0c05f834             pointed to from 0c139d5c
+0c05f8ba  after FUN_0c05f834             pointed to from 0c139ddc
+0c05f8c2  after FUN_0c05f834             pointed to from 0c139e44
+0c05f8ca  after FUN_0c05f834             pointed to from 0c139e7c
+0c05f8d2  after FUN_0c05f834             pointed to from 0c139ee4
+0c05f8da  after FUN_0c05f834             pointed to from 0c13a024
+0c05f8e2  after FUN_0c05f834             pointed to from 0c13a0c4
+0c05f8ea  after FUN_0c05f834             pointed to from 0c13a0fc
+0c05f8f2  after FUN_0c05f834             pointed to from 0c13a15c
+0c05f8fa  after FUN_0c05f834             pointed to from 0c13aadc
+0c05f902  after FUN_0c05f834             pointed to from 0c13aaf4
+0c0602f8  after FUN_0c060298             pointed to from 0c064720
+0c06040a  after FUN_0c060384             function start; pointed to from 0c10e82c
+0c060542  after FUN_0c0604d0             pointed to from 0c10e86c
+0c060564  after FUN_0c0604d0             pointed to from 0c0605a8
+0c060728  after FUN_0c060654             pointed to from 0c10e834
+0c0607b2  after FUN_0c060654             function start; pointed to from 0c10e838
+0c060868  after FUN_0c060654             pointed to from 0c10e83c
+0c06088e  after FUN_0c060654             function start; pointed to from 0c10e8a8
+0c060990  after FUN_0c060908             function start; pointed to from 0c10e8b0
+0c060a4c  after FUN_0c060908             pointed to from 0c10e8b4
+0c060a74  after FUN_0c060908             pointed to from 0c10e8b8
+0c060ab8  after FUN_0c060908             function start; pointed to from 0c10e8bc
+0c060bcc  after FUN_0c060908             function start; pointed to from 0c10e8c0
+0c060d00  after FUN_0c060908             function start; pointed to from 0c10e8c4
+0c060f3a  after FUN_0c060e82             pointed to from 0c10e8d0
+0c060f4e  after FUN_0c060e82             pointed to from 0c10e840
+0c060fa2  after FUN_0c060e82             pointed to from 0c10e844
+0c061004  after FUN_0c060e82             function start; pointed to from 0c10e914
+0c06105a  after FUN_0c060e82             pointed to from 0c10e918
+0c0610a0  after FUN_0c060e82             pointed to from 0c10e91c
+0c0610b4  after FUN_0c060e82             pointed to from 0c10e848
+0c061110  after FUN_0c060e82             function start; pointed to from 0c10e920
+0c06114c  after FUN_0c060e82             pointed to from 0c10e924
+0c061164  after FUN_0c060e82             pointed to from 0c10e84c
+0c06118a  after FUN_0c060e82             function start; pointed to from 0c10e928
+0c0611e0  after FUN_0c060e82             pointed to from 0c10e92c
+0c061234  after FUN_0c060e82             function start; pointed to from 0c10e850
+0c061306  after FUN_0c060e82             pointed to from 0c10e938
+0c06136c  after FUN_0c060e82             pointed to from 0c10e93c
+0c0613d2  after FUN_0c060e82             pointed to from 0c10e940
+0c0614ac  after FUN_0c060e82             pointed to from 0c10e944
+0c061508  after FUN_0c060e82             pointed to from 0c119b94
+0c061608  after FUN_0c061516             function start; pointed to from 0c10e858
+0c06165a  after FUN_0c061516             pointed to from 0c10e948
+0c06170a  after FUN_0c061686             pointed to from 0c10e950
+0c06180c  after FUN_0c06170e             pointed to from 0c10e954
+0c06183a  after FUN_0c06170e             pointed to from 0c10e958
+0c0618a4  after FUN_0c06170e             pointed to from 0c10e95c
+0c061980  after FUN_0c06170e             pointed to from 0c10e960
+0c061a10  after FUN_0c06170e             function start; pointed to from 0c10e860
+0c061a96  after FUN_0c06170e             function start; pointed to from 0c10e864
+0c061af2  after FUN_0c06170e             pointed to from 0c10e964
+0c061b68  after FUN_0c06170e             function start; pointed to from 0c10e968
+0c061baa  after FUN_0c06170e             pointed to from 0c10e96c
+0c0622f4  after FUN_0c0622a4             pointed to from 0c10ecf8
+0c062bc6  after FUN_0c062554             pointed to from 0c063124
+0c063458  after FUN_0c062bda             pointed to from 0c10ed00
+0c063680  after FUN_0c06356c             pointed to from 0c10ed08
+0c06374e  after FUN_0c0636b4             pointed to from 0c10ed10
+0c064656  after FUN_0c063a2a             pointed to from 0c10ed18
+0c06475e  after FUN_0c0646e0             pointed to from 0c10ed20
+0c064762  after FUN_0c0646e0             pointed to from 0c10ed24
+0c064958  after FUN_0c064936             function start; pointed to from 0c10fa84; pointed to from 0c10fa88; pointed to from 0c10fa8c
+0c0649b4  after FUN_0c064936             function start; pointed to from 0c10fa90
+0c064b10  after FUN_0c064936             function start; pointed to from 0c10fa94
+0c064da4  after FUN_0c064b46             function start; pointed to from 0c10fa9c
+0c064f6e  after FUN_0c064f20             function start; pointed to from 0c065008
+0c065478  after FUN_0c065366             function start; pointed to from 0c10fb7c
+0c065604  after FUN_0c065366             pointed to from 0c10fb80
+0c06560e  after FUN_0c065366             function start; pointed to from 0c10fb84
+0c0656ac  after FUN_0c065366             pointed to from 0c10fb88
+0c065734  after FUN_0c065704             function start; pointed to from 0c10fbb0
+0c0657b8  after FUN_0c065704             pointed to from 0c10fbb4
+0c065894  after FUN_0c065704             pointed to from 0c10fbb8
+0c0658d2  after FUN_0c065704             pointed to from 0c10fbbc
+0c065910  after FUN_0c065704             pointed to from 0c10fbc0
+0c065974  after FUN_0c065914             function start; pointed to from 0c10fbc4
+0c065a74  after FUN_0c0659a2             pointed to from 0c10fbcc
+0c065b34  after FUN_0c0659a2             pointed to from 0c10fbd0
+0c065cf0  after FUN_0c065ba2             pointed to from 0c10fbd8
+0c065d5a  after FUN_0c065ba2             pointed to from 0c10fbdc
+0c065dac  after FUN_0c065ba2             function start; pointed to from 0c10fbe0
+0c065e82  after FUN_0c065ba2             pointed to from 0c10fbe4
+0c065f46  after FUN_0c065ba2             pointed to from 0c10fbe8
+0c065f84  after FUN_0c065ba2             pointed to from 0c10fbec
+0c065fb8  after FUN_0c065ba2             pointed to from 0c10fbf0
+0c065fe6  after FUN_0c065ba2             pointed to from 0c10fbf4
+0c066028  after FUN_0c065ba2             pointed to from 0c10fbf8
+0c066052  after FUN_0c065ba2             pointed to from 0c10fbfc
+0c0661aa  after FUN_0c066068             pointed to from 0c10fc04
+0c0661de  after FUN_0c066068             pointed to from 0c10fc08
+0c066208  after FUN_0c066068             pointed to from 0c10fc0c
+0c0662a8  after FUN_0c066246             function start; pointed to from 0c10fe9c
+0c06634c  after FUN_0c066246             function start; pointed to from 0c10fea0
+0c066832  after FUN_0c0667cc             pointed to from 0c10feac
+0c066836  after FUN_0c0667cc             function start; pointed to from 0c10feb0
+0c06689c  after FUN_0c0667cc             function start; pointed to from 0c10feb4
+0c066c3c  after FUN_0c066b3a             function start; pointed to from 0c0669dc; pointed to from 0c066bf8
+0c066dd4  after FUN_0c066d32             function start; pointed to from 0c11015c
+0c066f1e  after FUN_0c066d32             function start; pointed to from 0c110160; pointed to from 0c110164; pointed to from 0c110170
+0c067020  after FUN_0c066d32             pointed to from 0c110168
+0c06703c  after FUN_0c066d32             pointed to from 0c11016c
+0c067058  after FUN_0c066d32             pointed to from 0c110174
+0c067096  after FUN_0c066d32             pointed to from 0c110178
+0c06734e  after FUN_0c067220             pointed to from 0c10ed70
+0c0673d6  after FUN_0c067392             pointed to from 0c110184
+0c068e2c  after FUN_0c068ddc             pointed to from 0c1102f8
+0c068ea6  after FUN_0c068e36             pointed to from 0c110300
+0c069322  after FUN_0c069230             pointed to from 0c110308
+0c069388  after FUN_0c069230             function start; pointed to from 0c11030c
+0c069450  after FUN_0c069230             function start; pointed to from 0c110310
+0c0695b8  after FUN_0c069230             function start; pointed to from 0c110314
+0c06964a  after FUN_0c069230             pointed to from 0c110318
+0c06967a  after FUN_0c069230             pointed to from 0c11031c
+0c06967e  after FUN_0c069230             function start; pointed to from 0c0695ac
+0c069afc  after FUN_0c069a62             pointed to from 0c11032c
+0c069b84  after FUN_0c069b10             pointed to from 0c110334
+0c069bec  after FUN_0c069b10             function start; pointed to from 0c110338
+0c069c78  after FUN_0c069b10             pointed to from 0c11033c
+0c069cd8  after FUN_0c069b10             function start; pointed to from 0c110340
+0c069ef2  after FUN_0c069e78             function start; pointed to from 0c065958
+0c069f70  after FUN_0c069e78             function start; pointed to from 0c06601c
+0c06a9f4  after FUN_0c06a8f0             function start; pointed to from 0c111480
+0c06ac4e  after FUN_0c06ac1a             pointed to from 0c111d18
+0c06b0a4  after FUN_0c06aeba             pointed to from 0c111d20
+0c06b67a  after FUN_0c06b640             pointed to from 0c06b740
+0c06b930  after FUN_0c06b6f8             function start; pointed to from 0c11289c
+0c06bc68  after FUN_0c06b6f8             pointed to from 0c13c2d0
+0c06bcee  after FUN_0c06bc8c             pointed to from 0c06bd7c
+0c06c33a  after FUN_0c06c0aa             pointed to from 0c13c2d4
+0c06c41c  after FUN_0c06c35c             pointed to from 0c06c414
+0c06c760  after FUN_0c06c71e             function start; pointed to from 0c06cab4
+0c06ce90  after FUN_0c06ce72             pointed to from 0c112a58
+0c06ceae  after FUN_0c06ce72             pointed to from 0c112a64
+0c06cef0  after FUN_0c06ce72             function start; pointed to from 0c112a68
+0c06d104  after FUN_0c06ce72             pointed to from 0c112a6c
+0c06d154  after FUN_0c06ce72             function start; pointed to from 0c112a70
+0c06d1a6  after FUN_0c06ce72             pointed to from 0c112a5c
+0c06d37e  after FUN_0c06d1c4             pointed to from 0c112a78
+0c06d3f4  after FUN_0c06d1c4             function start; pointed to from 0c112a7c
+0c06d62a  after FUN_0c06d1c4             function start; pointed to from 0c112a80
+0c06d67a  after FUN_0c06d1c4             pointed to from 0c112a60
+0c06d6e0  after FUN_0c06d1c4             function start; pointed to from 0c112a90
+0c06d888  after FUN_0c06d1c4             pointed to from 0c112a94
+0c06da42  after FUN_0c06d8e6             pointed to from 0c112a9c
+0c06dade  after FUN_0c06d8e6             function start; pointed to from 0c112aa0
+0c06db4c  after FUN_0c06db2e             pointed to from 0c112ae4
+0c06dc22  after FUN_0c06db2e             pointed to from 0c112ae8
+0c06de14  after FUN_0c06dc4e             pointed to from 0c112afc
+0c06de3c  after FUN_0c06dc4e             function start; pointed to from 0c112b00
+0c06de8c  after FUN_0c06dc4e             pointed to from 0c112aec
+0c06dff0  after FUN_0c06deb8             pointed to from 0c112b2c
+0c06e060  after FUN_0c06deb8             function start; pointed to from 0c112b30
+0c06e0b0  after FUN_0c06deb8             pointed to from 0c112af0
+0c06e214  after FUN_0c06e0dc             pointed to from 0c112b50
+0c06e284  after FUN_0c06e0dc             function start; pointed to from 0c112b54
+0c06e2d4  after FUN_0c06e0dc             pointed to from 0c112af4
+0c06e3e8  after FUN_0c06e300             pointed to from 0c112b74
+0c06e410  after FUN_0c06e300             function start; pointed to from 0c112b78
+0c06e47e  after FUN_0c06e460             pointed to from 0c112b94
+0c06e5d2  after FUN_0c06e49c             pointed to from 0c112b9c
+0c06f1e0  after FUN_0c06f1d0             pointed to from 0c06f790; pointed to from 0c0706d4
+0c070420  after FUN_0c070390             pointed to from 0c070580
+0c07286c  after FUN_0c0726c0             pointed to from 0c072840
+0c0728b0  after FUN_0c0726c0             pointed to from 0c072880
+0c072904  after FUN_0c0726c0             pointed to from 0c0728d0
+0c073620  after FUN_0c073520             pointed to from 0c073910
+0c0736e0  after FUN_0c073680             pointed to from 0c073918
+0c073740  after FUN_0c073710             pointed to from 0c07391c
+0c0737a0  after FUN_0c073710             pointed to from 0c073920
+0c076728  after FUN_0c0766d0             pointed to from 0c0762f0
+0c076798  after FUN_0c076740             pointed to from 0c0762f4
+0c0782f0  after buCalcCRC                function start; pointed to from 0c078520
+0c0784e0  after FUN_0c0784d0             pointed to from 0c147554
+0c0784f0  after FUN_0c0784d0             pointed to from 0c147558
+0c078500  after FUN_0c0784d0             pointed to from 0c14755c
+0c078550  after FUN_0c0784d0             pointed to from 0c147560
+0c078560  after FUN_0c0784d0             pointed to from 0c147564
+0c078570  after FUN_0c0784d0             pointed to from 0c147568; pointed to from 0c14756c; pointed to from 0c147570; pointed to from 0c1475
+0c078590  after FUN_0c0784d0             pointed to from 0c147584
+0c078660  after FUN_0c0785b0             pointed to from 0c147588; pointed to from 0c14758c; pointed to from 0c147590; pointed to from 0c1475
+0c078670  after FUN_0c0785b0             pointed to from 0c147594
+0c078680  after FUN_0c0785b0             pointed to from 0c14759c
+0c079f40  after FUN_0c079f10             pointed to from 0c147684
+0c079fc0  after FUN_0c079f90             function start; pointed to from 0c14767c
+0c07a000  after FUN_0c079f90             pointed to from 0c147688
+0c07a040  after FUN_0c079f90             pointed to from 0c147678
+0c07a080  after FUN_0c079f90             pointed to from 0c14768c
+0c07a0c0  after FUN_0c079f90             pointed to from 0c147690
+0c07d9aa  after FUN_0c07d974             pointed to from 0c07d968
+0c080490  after FUN_0c080440             pointed to from 0c075e0c
+0c081870  after FUN_0c081540             pointed to from 0c075e24; pointed to from 0c076300
+0c081872  after FUN_0c081540             pointed to from 0c075e28; pointed to from 0c07630c
+0c0829ea  after FUN_0c082680             pointed to from 0c076544
+0c08358a  after FUN_0c0834f0             pointed to from 0c076548
+0c084190  after FUN_0c084100             pointed to from 0c075e30
+0c084192  after FUN_0c084100             pointed to from 0c075e34
+0c085420  after FUN_0c085350             pointed to from 0c075e38
+0c085422  after FUN_0c085350             pointed to from 0c075e3c
+0c08d032  after vmsfs_fread1             pointed to from 0c165ea4, inside vmsfs_fread1 (merged?)
+0c092b60  after vmsio_block_read         pointed to from 0c0c3eb4, inside vmsio_block_read (merged?); pointed to from 0c0c4284, inside vmsio_
+0c092bc0  after vmsio_block_read         pointed to from 0c0dbfc4; pointed to from 0c0de214; pointed to from 0c0df524; pointed to from 0c0e08
+0c094314  after buFbrCreateFiber         pointed to from 0c0c6c74; pointed to from 0c0c8724; pointed to from 0c0cf5b4; pointed to from 0c0d0c
+0c094458  after buFbrKillFiber           pointed to from 0c0cee14, inside buFbrKillFiber (merged?)
+0c096534  after _mvsto2b                 pointed to from 0c0100bc
+0c0973bc  after _mvsto2b                 pointed to from 0c01b758
+0c09ba38  after _mvsto2b                 pointed to from 0c09c320
+0c09bdd4  after _mvsto2b                 pointed to from 0c09c4c4
+0c09bf24  after _mvsto2b                 pointed to from 0c09c554
+0c09cf94  after _mvsto2b                 pointed to from 0c09d020
+0c09d204  after _mvsto2b                 pointed to from 0c09d290
+0c09d324  after _mvsto2b                 pointed to from 0c09d370
+0c09d404  after _mvsto2b                 pointed to from 0c09d450
+0c09d564  after _mvsto2b                 pointed to from 0c123f20
+0c09d59c  after _mvsto2b                 pointed to from 0c123f60
+0c09d63c  after _mvsto2b                 pointed to from 0c123f64
+0c0a0040  after _mvsto2b                 pointed to from 0c0a05bc
+0c0a0a3c  after _mvsto2b                 pointed to from 0c0a133c
+0c0a0c1c  after _mvsto2b                 pointed to from 0c0a1364
+0c0a0fac  after _mvsto2b                 pointed to from 0c0a13ac
+0c0a1180  after _mvsto2b                 pointed to from 0c0a13cc
+0c0a12b8  after _mvsto2b                 pointed to from 0c0a13ec
+0c0a1768  after _mvsto2b                 pointed to from 0c0a1dec
+0c0a3c14  after _mvsto2b                 pointed to from 0c12a220
+0c0a6738  after FUN_0c0a6604             pointed to from 0c12a298
+0c0a674c  after FUN_0c0a6604             pointed to from 0c0a68a8
+0c0a67e8  after FUN_0c0a6604             pointed to from 0c0a68b0
+0c0a68a8  after FUN_0c0a6604             pointed to from 0c12a29c
+0c0a68bc  after FUN_0c0a6604             pointed to from 0c0a6b58
+0c0a6964  after FUN_0c0a6604             pointed to from 0c0a6b5c
+0c0a69d8  after FUN_0c0a6604             pointed to from 0c0a6b60
+0c0a7e8c  after FUN_0c0a6b56             pointed to from 0c0a8020
+0c0a82b0  after FUN_0c0a6b56             pointed to from 0c0a840c
+0c0a841c  after FUN_0c0a6b56             pointed to from 0c0a88b4
+0c0a9a08  after FUN_0c0a6b56             pointed to from 0c0a9bbc
+0c0a9d44  after FUN_0c0a6b56             pointed to from 0c0a9d8c
+0c0aa1a0  after FUN_0c0a6b56             pointed to from 0c0aa354
+0c0acdb4  after FUN_0c0acd78             pointed to from 0c0acdec
+0c0acde4  after FUN_0c0acd78             pointed to from 0c12a400
+0c0acdf8  after FUN_0c0acd78             pointed to from 0c0acf54
+0c0acf54  after FUN_0c0ace44             pointed to from 0c12a404
+0c0acf68  after FUN_0c0ace44             pointed to from 0c0ad100
+0c0acfe0  after FUN_0c0ace44             pointed to from 0c0ad104
+0c0ad028  after FUN_0c0ace44             pointed to from 0c0ad108
+0c0ad100  after FUN_0c0ace44             pointed to from 0c12a408
+0c0ad114  after FUN_0c0ace44             pointed to from 0c0ad238
+0c0ad174  after FUN_0c0ace44             pointed to from 0c0ad23c
+0c0ad1a8  after FUN_0c0ace44             pointed to from 0c0ad240
+0c0ad238  after FUN_0c0ace44             pointed to from 0c12a40c
+0c0ad24c  after FUN_0c0ace44             pointed to from 0c0ad2c0
+0c0ad27c  after FUN_0c0ace44             pointed to from 0c0ad2c4
+0c0ad290  after FUN_0c0ace44             pointed to from 0c0ad2c8
+0c0ad2c0  after FUN_0c0ace44             pointed to from 0c12a410
+0c0ad2d4  after FUN_0c0ace44             pointed to from 0c0ad348
+0c0ad318  after FUN_0c0ace44             pointed to from 0c0ad350
+0c0ad348  after FUN_0c0ace44             pointed to from 0c12a414
+0c0ad35c  after FUN_0c0ace44             pointed to from 0c0ad3d0
+0c0ad38c  after FUN_0c0ace44             pointed to from 0c0ad3d4
+0c0ad3a0  after FUN_0c0ace44             pointed to from 0c0ad3d8
+0c0ad3d0  after FUN_0c0ace44             pointed to from 0c12a418
+0c0ad3e4  after FUN_0c0ace44             pointed to from 0c0ad42c
+0c0ad408  after FUN_0c0ace44             pointed to from 0c0ad430
+0c0ad414  after FUN_0c0ace44             pointed to from 0c0ad434
+0c0ad42c  after FUN_0c0ace44             pointed to from 0c12a41c
+0c0ad440  after FUN_0c0ace44             pointed to from 0c0ad488
+0c0ad464  after FUN_0c0ace44             pointed to from 0c0ad48c
+0c0ad470  after FUN_0c0ace44             pointed to from 0c0ad490
+0c0ad488  after FUN_0c0ace44             pointed to from 0c12a420
+0c0ad49c  after FUN_0c0ace44             pointed to from 0c0ad510
+0c0ad4e0  after FUN_0c0ace44             pointed to from 0c0ad518
+0c0ad510  after FUN_0c0ace44             pointed to from 0c12a424
+0c0ad524  after FUN_0c0ace44             pointed to from 0c0ad888
+0c0af1a0  after FUN_0c0ad57c             pointed to from 0c0af5b8
+0c0afa6c  after FUN_0c0af8b0             pointed to from 0c12a464
+0c0afa80  after FUN_0c0af8b0             pointed to from 0c0afaf4
+0c0afab0  after FUN_0c0af8b0             pointed to from 0c0afaf8
+0c0afac4  after FUN_0c0af8b0             pointed to from 0c0afafc
+0c0afaf4  after FUN_0c0af8b0             pointed to from 0c12a468
+0c0afb08  after FUN_0c0af8b0             pointed to from 0c0afb7c
+0c0afb38  after FUN_0c0af8b0             pointed to from 0c0afb80
+0c0afb4c  after FUN_0c0af8b0             pointed to from 0c0afb84
+0c0afb7c  after FUN_0c0af8b0             pointed to from 0c12a46c
+0c0afb90  after FUN_0c0af8b0             pointed to from 0c0afcb4
+0c0afbf0  after FUN_0c0af8b0             pointed to from 0c0afcb8
+0c0afcb4  after FUN_0c0af8b0             pointed to from 0c12a470
+0c0afcc8  after FUN_0c0af8b0             pointed to from 0c0afdec
+0c0afd28  after FUN_0c0af8b0             pointed to from 0c0afdf0
+0c0f3bb4  after FUN_0c0afd3e             pointed to from 0c0f5800
+0c0f3f98  after FUN_0c0afd3e             pointed to from 0c0f5be4
+0c0f470c  after FUN_0c0afd3e             pointed to from 0c0f6754
+0c0f4f94  after FUN_0c0afd3e             pointed to from 0c0f6fdc
+0c0f5384  after FUN_0c0afd3e             pointed to from 0c0f73cc
+0c0f54b0  after FUN_0c0afd3e             pointed to from 0c0f74f8
+0c0f5708  after FUN_0c0afd3e             pointed to from 0c0f7f18
+0c0f9d76  after FUN_0c0afd3e             pointed to from 0c12fdcc
+0c0f9e26  after FUN_0c0afd3e             pointed to from 0c12fde0
+0c0fa2ba  after FUN_0c0afd3e             pointed to from 0c12fee8
+0c10dad4  after FUN_0c0afd3e             pointed to from 0c05c62c
+0c10db34  after FUN_0c0afd3e             pointed to from 0c05c798
+0c10ef38  after FUN_0c0afd3e             pointed to from 0c0640d8
+0c10ef4c  after FUN_0c0afd3e             pointed to from 0c063a68
+0c10f618  after FUN_0c0afd3e             pointed to from 0c13b1d4
+0c10f630  after FUN_0c0afd3e             pointed to from 0c13b1d8
+0c10f648  after FUN_0c0afd3e             pointed to from 0c13b1c4
+0c10f660  after FUN_0c0afd3e             pointed to from 0c13b1c8
+0c10f678  after FUN_0c0afd3e             pointed to from 0c13b1e0
+0c10f690  after FUN_0c0afd3e             pointed to from 0c13b1e4
+0c10f6a8  after FUN_0c0afd3e             pointed to from 0c13b1d0
+0c10f6c0  after FUN_0c0afd3e             pointed to from 0c13b1f4
+0c10f790  after FUN_0c0afd3e             pointed to from 0c13b234
+0c10f900  after FUN_0c0afd3e             pointed to from 0c13b2a0
+0c10fa48  after FUN_0c0afd3e             pointed to from 0c13b320
+0c10fa54  after FUN_0c0afd3e             pointed to from 0c13b324
+0c10fae8  after FUN_0c0afd3e             pointed to from 0c064c18
+0c10fd0c  after FUN_0c0afd3e             pointed to from 0c066290
+0c110058  after FUN_0c0afd3e             pointed to from 0c067440
+0c1100b8  after FUN_0c0afd3e             pointed to from 0c13b36c
+0c111378  after FUN_0c0afd3e             pointed to from 0c13b99c; pointed to from 0c13b9a0
+0c111484  after FUN_0c0afd3e             pointed to from 0c13ba9c
+0c111e00  after FUN_0c0afd3e             pointed to from 0c13be9c
+0c1186a0  after FUN_0c0afd3e             pointed to from 0c09610c
+0c12a4dc  after FUN_0c0afd3e             pointed to from 0c0310ac
+0c12fe54  after FUN_0c0afd3e             pointed to from 0c0492b4
+0c1301a4  after FUN_0c0afd3e             pointed to from 0c0492bc
+0c131a44  after FUN_0c0afd3e             pointed to from 0c131bf4
+0c147a00  after FUN_0c0afd3e             pointed to from 0c01002c; pointed to from 0c0964cc; pointed to from 0c0964d0; pointed to from 0c0964
+0c14a26a  after gdFsReadWG               pointed to from 0c14a3d8
+0c14a284  after gdFsReadWG               pointed to from 0c14a3d0
+0c14b268  after gdFsDaGetInfoG           pointed to from 0c16fea0
+0c14beee  after FUN_0c14bd2a             pointed to from 0c14be74
+0c14bf68  after FUN_0c14bd2a             pointed to from 0c14bef8
+0c14bf7c  after FUN_0c14bd2a             pointed to from 0c14bdac
+0c14c13e  after FUN_0c14bf86             pointed to from 0c14c0c4
+0c14c1b8  after FUN_0c14bf86             pointed to from 0c14c148
+0c14c1cc  after FUN_0c14bf86             pointed to from 0c14bffc
+0c14c38e  after FUN_0c14c1d6             pointed to from 0c14c314
+0c14c408  after FUN_0c14c1d6             pointed to from 0c14c398
+0c14c41c  after FUN_0c14c1d6             pointed to from 0c14c24c
+0c14c744  after free                     pointed to from 0c16ff6c
+0c14c7fc  after free                     pointed to from 0c16ff74
+0c14c9a4  after free                     function start; pointed to from 0c16ff70
+0c14d0d8  after syHwCacheFinish          pointed to from 0c14d15c
+0c14de74  after syExtChkDisableSyncDev   pointed to from 0c14df70
+0c152586  after kmiProcessVertex_14      pointed to from 0c173dc8
+0c15258a  after kmiProcessVertex_14      pointed to from 0c173dcc
+0c15258e  after kmiProcessVertex_14      pointed to from 0c173dd0
+0c154328  after FUN_0c15416c             pointed to from 0c169800
+0c1553f2  after kmiInitializeDevice      pointed to from 0c168a04
+0c156072  after kmSetPALEXTCallback      pointed to from 0c155bc8; pointed to from 0c155c4c
+0c156076  after kmSetPALEXTCallback      pointed to from 0c155bcc; pointed to from 0c155c50
+0c15607a  after kmSetPALEXTCallback      pointed to from 0c155bd0; pointed to from 0c155c54
+0c1560a0  after kmSetPALEXTCallback      pointed to from 0c155bd4; pointed to from 0c155c58
+0c1560a4  after kmSetPALEXTCallback      pointed to from 0c155bd8; pointed to from 0c155c5c
+0c1560a8  after kmSetPALEXTCallback      pointed to from 0c155bdc; pointed to from 0c155ccc
+0c1560ac  after kmSetPALEXTCallback      pointed to from 0c155be0; pointed to from 0c155cd0
+0c1560b0  after kmSetPALEXTCallback      pointed to from 0c155be4; pointed to from 0c155cd4
+0c1560f2  after FUN_0c1560b4             pointed to from 0c155bec
+0c157940  after kmFlipFrameBuffer        pointed to from 0c160858
+0c15c858  after gdDecSubcode             function start; pointed to from 0c1712c0
+0c15ca1c  after FUN_0c15c95a             pointed to from 0c1712d4
+0c15ca64  after FUN_0c15ca22             function start; pointed to from 0c1712dc
+0c15cb5c  after FUN_0c15cb4e             pointed to from 0c171304
+0c15ed30  after syTmrInt1Cancel          pointed to from 0c15ee1c, inside syTmrInt1Cancel (merged?)
+0c15f0ae  after kdExecGun                pointed to from 0c15f280
+0c15f0b6  after kdExecGun                pointed to from 0c15f284
+0c1605e8  after FUN_0c1605d4             pointed to from 0c14a2a0
+0c160624  after FUN_0c160610             pointed to from 0c15ca60
+0c160638  after FUN_0c160610             pointed to from 0c15cbb8
+0c161fa2  after FUN_0c161f9a             pointed to from 0c14f080
+0c163574  after FUN_0c16342c             pointed to from 0c163514
+0c163588  after FUN_0c16342c             pointed to from 0c1633a4; pointed to from 0c1633e4
+0c1661e4  after FUN_0c165fa0             pointed to from 0c0c36cc; pointed to from 0c0d17bc; pointed to from 0c0d1b8c; pointed to from 0c0d1f
+0c1674e4  after kmiFBControl             pointed to from 0c0db40c; pointed to from 0c0ea06c; pointed to from 0c0ea43c; pointed to from 0c0ea8
+0c168008  after FUN_0c168004             pointed to from 0c15de84; pointed to from 0c15e094
+0c168134  after FUN_0c168004             pointed to from 0c15df58
+0c168190  after FUN_0c168144             pointed to from 0c15df4c
+0c168194  after FUN_0c168144             pointed to from 0c15df68; pointed to from 0c15e044
+0c16832c  after FUN_0c1681c4             pointed to from 0c15df54
+0c16a484  after FUN_0c16a458             pointed to from 0c15f024; pointed to from 0c15f2cc; pointed to from 0c15f35c; pointed to from 0c1600
+0c16a49c  after FUN_0c16a48c             pointed to from 0c08aa1c
+0c16a4a6  after FUN_0c16a48c             pointed to from 0c08aa24
+0c16a4ae  after FUN_0c16a48c             pointed to from 0c08aa20
+0c16a4b6  after FUN_0c16a48c             pointed to from 0c08aa28
+0c16a55c  after FUN_0c16a548             pointed to from 0c16a654
+0c16a57a  after FUN_0c16a548             pointed to from 0c16a658
+0c16a878  after FUN_0c16a864             pointed to from 0c161ce8
+0c16a882  after FUN_0c16a87c             pointed to from 0c1620a4
+0c16a88a  after FUN_0c16a886             pointed to from 0c1620d8
+0c16a8ca  after FUN_0c16a88e             pointed to from 0c1620b0
+0c16a8ce  after FUN_0c16a88e             pointed to from 0c1620b4
+0c16a8d6  after FUN_0c16a8d2             pointed to from 0c1620bc
+0c16a8da  after FUN_0c16a8d2             pointed to from 0c1620c4
+0c16a8e4  after FUN_0c16a8de             pointed to from 0c1620c8
+0c16a8e8  after FUN_0c16a8de             pointed to from 0c1620cc
+0c16a8ec  after FUN_0c16a8de             pointed to from 0c1620d0
+0c16a8f0  after FUN_0c16a8de             pointed to from 0c1620d4
+0c16ad50  after FUN_0c16ad4c             pointed to from 0c163790
+0c16adf8  after FUN_0c16ada2             function start; pointed to from 0c174420
+0c16ae20  after FUN_0c16ada2             function start; pointed to from 0c174424
+0c16aef4  after FUN_0c16aeb4             function start; pointed to from 0c174428
+0c16b0b6  after FUN_0c16aeb4             function start; pointed to from 0c174438
+0c16b196  after FUN_0c16aeb4             function start; pointed to from 0c17443c
+0c16b244  after FUN_0c16aeb4             function start; pointed to from 0c174440
+0c16b280  after FUN_0c16aeb4             function start; pointed to from 0c174444
+0c16b2c8  after FUN_0c16b2ae             function start; pointed to from 0c17444c
+0c16b442  after FUN_0c16b430             function start; pointed to from 0c174464
+0c16b4d8  after FUN_0c16b48a             function start; pointed to from 0c17446c
+0c16ba36  after FUN_0c16b9f0             pointed to from 0c174480
+0c16ba48  after FUN_0c16b9f0             pointed to from 0c174484
+0c16be28  after FUN_0c16bdaa             leaf: pool load + rts; pointed to from 0c162204
+0c16c2b0  after gdCiLoadDirInfo          leaf: pool load + rts; pointed to from 0c174500
+0c170f14  after ADX_DecodeSteFloat       pointed to from 0c15a028
+0c171074  after ADX_DecodeSteFloat       pointed to from 0c159f48
+0c172208  after ADX_DecodeSteFloat       pointed to from 0c16c3b4
+0c014ffc  after FUN_0c0148f4             function start
+0c018d12  after FUN_0c018d02             leaf: pool load + rts
+0c018d18  after FUN_0c018d02             leaf: pool load + rts
+0c019384  after FUN_0c018df2             function start
+0c019cfc  after FUN_0c019cd6             leaf: pool load + rts
+0c019d02  after FUN_0c019cd6             leaf: pool load + rts
+0c01c410  after FUN_0c01c290             function start
+0c01c8b8  after FUN_0c01c568             function start
+0c01c8c4  after FUN_0c01c568             function start
+0c01caa4  after FUN_0c01ca48             function start
+0c01ccb8  after FUN_0c01cb08             function start
+0c01cce0  after FUN_0c01cb08             function start
+0c01e64a  after FUN_0c01e5f8             function start
+0c01e706  after FUN_0c01e6f8             function start
+0c01efd2  after FUN_0c01efc0             function start
+0c01f7fc  after FUN_0c01f6ee             function start
+0c01f818  after FUN_0c01f6ee             function start
+0c01fd16  after FUN_0c01fcd0             leaf: pool load + rts
+0c022c1c  after FUN_0c0228f0             function start
+0c02303a  after FUN_0c022de2             function start
+0c023130  after FUN_0c022de2             function start
+0c026bfc  after FUN_0c026bf4             leaf: pool load + rts
+0c026cb4  after FUN_0c026c82             function start
+0c0271a6  after FUN_0c027096             function start
+0c027324  after FUN_0c0272de             function start
+0c0277a4  after FUN_0c027408             function start
+0c027da8  after FUN_0c027bfa             function start
+0c029418  after FUN_0c029404             function start
+0c029520  after FUN_0c029458             function start
+0c02cf7c  after FUN_0c02ce5e             function start
+0c03017e  after FUN_0c02ff06             leaf: pool load + rts
+0c030a16  after FUN_0c0303d0             leaf: pool load + rts
+0c030a8e  after FUN_0c030a26             leaf: pool load + rts
+0c0316e0  after FUN_0c031608             leaf: pool load + rts
+0c0316e6  after FUN_0c031608             leaf: pool load + rts
+0c0316ec  after FUN_0c031608             leaf: pool load + rts
+0c0316f2  after FUN_0c031608             leaf: pool load + rts
+0c03172c  after FUN_0c031608             leaf: pool load + rts
+0c031732  after FUN_0c031608             leaf: pool load + rts
+0c031738  after FUN_0c031608             leaf: pool load + rts
+0c03173e  after FUN_0c031608             leaf: pool load + rts
+0c031744  after FUN_0c031608             leaf: pool load + rts
+0c03174a  after FUN_0c031608             leaf: pool load + rts
+0c031750  after FUN_0c031608             leaf: pool load + rts
+0c031756  after FUN_0c031608             leaf: pool load + rts
+0c03175c  after FUN_0c031608             leaf: pool load + rts
+0c031762  after FUN_0c031608             leaf: pool load + rts
+0c031768  after FUN_0c031608             leaf: pool load + rts
+0c03176e  after FUN_0c031608             leaf: pool load + rts
+0c031774  after FUN_0c031608             leaf: pool load + rts
+0c03177a  after FUN_0c031608             leaf: pool load + rts
+0c031780  after FUN_0c031608             leaf: pool load + rts
+0c031786  after FUN_0c031608             leaf: pool load + rts
+0c03178c  after FUN_0c031608             leaf: pool load + rts
+0c031792  after FUN_0c031608             leaf: pool load + rts
+0c031824  after FUN_0c031608             leaf: pool load + rts
+0c03182a  after FUN_0c031608             leaf: pool load + rts
+0c031830  after FUN_0c031608             leaf: pool load + rts
+0c031836  after FUN_0c031608             leaf: pool load + rts
+0c03183c  after FUN_0c031608             leaf: pool load + rts
+0c031842  after FUN_0c031608             leaf: pool load + rts
+0c031848  after FUN_0c031608             leaf: pool load + rts
+0c03184e  after FUN_0c031608             leaf: pool load + rts
+0c031854  after FUN_0c031608             leaf: pool load + rts
+0c03185a  after FUN_0c031608             leaf: pool load + rts
+0c031860  after FUN_0c031608             leaf: pool load + rts
+0c031866  after FUN_0c031608             leaf: pool load + rts
+0c03186c  after FUN_0c031608             leaf: pool load + rts
+0c031872  after FUN_0c031608             leaf: pool load + rts
+0c031878  after FUN_0c031608             leaf: pool load + rts
+0c03187e  after FUN_0c031608             leaf: pool load + rts
+0c031884  after FUN_0c031608             leaf: pool load + rts
+0c03188a  after FUN_0c031608             leaf: pool load + rts
+0c031890  after FUN_0c031608             leaf: pool load + rts
+0c031896  after FUN_0c031608             leaf: pool load + rts
+0c03189c  after FUN_0c031608             leaf: pool load + rts
+0c033128  after FUN_0c032dd4             function start
+0c033688  after FUN_0c033578             function start
+0c038c14  after FUN_0c038b04             function start
+0c03da60  after FUN_0c03d974             function start
+0c03e55c  after FUN_0c03e52a             function start
+0c046772  after FUN_0c046724             function start
+0c048f5e  after FUN_0c048f26             function start
+0c04906c  after FUN_0c048ff8             function start
+0c0490e6  after FUN_0c048ff8             function start
+0c04d448  after FUN_0c04d3f8             function start
+0c04e5c0  after FUN_0c04e526             function start
+0c04e642  after FUN_0c04e526             leaf: pool load + rts
+0c04e648  after FUN_0c04e526             leaf: pool load + rts
+0c050334  after FUN_0c050104             function start
+0c050338  after FUN_0c050104             function start
+0c050544  after FUN_0c050538             leaf: pool load + rts
+0c0508ac  after FUN_0c05074c             function start
+0c0519e8  after FUN_0c051844             function start
+0c051bf0  after FUN_0c051844             function start
+0c051da4  after FUN_0c051844             function start
+0c052f28  after FUN_0c052eca             function start
+0c0532b8  after FUN_0c053158             function start
+0c05332a  after FUN_0c0532e6             function start
+0c053360  after FUN_0c0532e6             function start
+0c053396  after FUN_0c0532e6             function start
+0c0533f4  after FUN_0c0532e6             function start
+0c053400  after FUN_0c0532e6             function start
+0c053456  after FUN_0c053420             function start
+0c053510  after FUN_0c053420             function start
+0c0535d8  after FUN_0c053420             function start
+0c0535e4  after FUN_0c053420             function start
+0c053668  after FUN_0c053420             function start
+0c0581b8  after FUN_0c058016             function start
+0c058518  after FUN_0c0584ea             function start
+0c058968  after FUN_0c05891e             function start
+0c059da0  after FUN_0c059d92             function start
+0c05abf8  after FUN_0c05ab5e             function start
+0c05bbd0  after FUN_0c05bb64             function start
+0c05bd5c  after FUN_0c05bc98             function start
+0c05caf8  after FUN_0c05cad0             leaf: pool load + rts
+0c05cafe  after FUN_0c05cad0             leaf: pool load + rts
+0c05cb64  after FUN_0c05cad0             function start
+0c05d078  after FUN_0c05cf54             function start
+0c05d112  after FUN_0c05d0d8             function start
+0c06633c  after FUN_0c066246             function start
+0c06c428  after FUN_0c06c35c             function start
+0c06ec20  after FUN_0c06ebe0             leaf: pool load + rts
+0c06f1c0  after FUN_0c06f190             leaf: pool load + rts
+0c06f980  after FUN_0c06f960             function start
+0c06fd60  after FUN_0c06fca0             leaf: pool load + rts
+0c070460  after FUN_0c070430             leaf: pool load + rts
+0c070480  after FUN_0c070430             leaf: pool load + rts
+0c070490  after FUN_0c070430             leaf: pool load + rts
+0c070780  after FUN_0c070730             function start
+0c0707b0  after FUN_0c070730             function start
+0c0707e0  after FUN_0c070730             function start
+0c071344  after FUN_0c071250             function start
+0c071450  after FUN_0c0713c0             leaf: pool load + rts
+0c071f70  after FUN_0c071ed0             leaf: pool load + rts
+0c07269a  after FUN_0c072650             function start
+0c0737f0  after FUN_0c0737d0             function start
+0c073810  after FUN_0c0737d0             function start
+0c073830  after FUN_0c0737d0             function start
+0c073850  after FUN_0c0737d0             function start
+0c073870  after FUN_0c0737d0             function start
+0c073eb0  after FUN_0c073e90             function start
+0c075670  after FUN_0c075630             leaf: pool load + rts
+0c075ab0  after FUN_0c075a00             function start
+0c075c10  after FUN_0c075c00             leaf: pool load + rts
+0c075c80  after FUN_0c075c60             function start
+0c075f90  after FUN_0c075e50             leaf: pool load + rts
+0c0763b0  after FUN_0c076320             function start
+0c076480  after FUN_0c076320             function start
+0c076884  after FUN_0c076830             function start
+0c077770  after FUN_0c0776e8             function start
+0c0779ac  after FUN_0c077998             function start
+0c0779c8  after FUN_0c077998             function start
+0c077a00  after FUN_0c077998             function start
+0c078650  after FUN_0c0785b0             leaf: pool load + rts
+0c07a450  after FUN_0c07a3d0             function start
+0c07a630  after FUN_0c07a570             leaf: pool load + rts
+0c07c2f0  after FUN_0c07c1a6             function start
+0c07c5a2  after FUN_0c07c546             leaf: pool load + rts
+0c07cb1c  after FUN_0c07cacc             function start
+0c07cbb6  after FUN_0c07cba2             leaf: pool load + rts
+0c07d634  after FUN_0c07d616             leaf: pool load + rts
+0c07d9e0  after FUN_0c07d9d0             leaf: pool load + rts
+0c07dbe0  after FUN_0c07db20             leaf: pool load + rts
+0c07e9a0  after FUN_0c07e928             function start
+0c07ea94  after FUN_0c07e9ee             function start
+0c07eb80  after FUN_0c07e9ee             function start
+0c07ec6c  after FUN_0c07e9ee             function start
+0c07ed58  after FUN_0c07e9ee             function start
+0c07ee44  after FUN_0c07e9ee             function start
+0c07ef30  after FUN_0c07e9ee             function start
+0c07f594  after FUN_0c07f51a             function start
+0c07fa0c  after FUN_0c07f98c             function start
+0c080230  after strncmp                  function start
+0c080260  after strncmp                  leaf: pool load + rts
+0c080310  after FUN_0c080270             function start
+0c0803a0  after FUN_0c080370             function start
+0c08e708  after vmsfs_getvolume          function start
+0c0925b0  after FUN_0c092520             function start
+0c094022  after FUN_0c093fdc             function start
+0c0947fa  after FUN_0c094724             function start
+0c0950d2  after FUN_0c094fec             function start
+0c095cac  after FUN_0c095bb8             function start
+0c095efe  after _duchek                  function start
+0c147bc0  after FUN_0c147aec             function start
+0c14bcb8  after FUN_0c14bc76             leaf: pool load + rts
+0c14be78  after FUN_0c14bd2a             function start
+0c14befc  after FUN_0c14bd2a             function start
+0c14c0c8  after FUN_0c14bf86             function start
+0c14c14c  after FUN_0c14bf86             function start
+0c14c318  after FUN_0c14c1d6             function start
+0c14c39c  after FUN_0c14c1d6             function start
+0c14d5ea  after syBtExit                 function start
+0c14da34  after pdVibEnumerateUnit       function start
+0c14dcce  after FUN_0c14dc2c             leaf: pool load + rts
+0c14dcd4  after FUN_0c14dc2c             leaf: pool load + rts
+0c14e2ce  after FUN_0c14e1ec             function start
+0c14ef6e  after FUN_0c14ee68             function start
+0c14f084  after FUN_0c14efc2             function start
+0c150680  after FUN_0c1505ac             leaf: pool load + rts
+0c153414  after kmiFBfree                function start
+0c15b6d0  after kmChangeContextFilterMode function start
+0c15b820  after kmChangeContextFilterMode function start
+0c15e622  after syG2DmaTrigger           function start
+0c161208  after FUN_0c1611f4             function start
+0c16202a  after FUN_0c16201e             function start
+0c162042  after FUN_0c162036             function start
+0c1620dc  after FUN_0c162090             leaf: pool load + rts
+0c163080  after FUN_0c162ff8             function start
+0c163518  after FUN_0c16342c             function start
+0c16ab08  after FUN_0c16aada             function start
+0c16ab3c  after FUN_0c16aada             function start
+0c16acf2  after FUN_0c16acb0             function start
