@@ -65,6 +65,8 @@ Work in this order. Run build/equiv tools with `DOCKER_CONTEXT=colima-x86` (the 
 4. **Coverage**: 55.0% total. After the 150, finish the `--retest` polish pass (stopped after `gen_a`..`gen_ae`, ~2 min per serial batch, 97 batches; split by name).
 5. **Before step 8**: the arity check (`state/arity_scan.json`) and `retcheck.py`, as in "Building from C".
 
+Polish pass (tested 2026-11-13): `--retest` is near its ceiling (82 functions redrawn in two batches, 1 case file changed, coverage unchanged at 54.9%). Two `--retest` processes on disjoint batches run side by side without corrupting `tests/equivalent.txt` or `docs/equivalent.md` (compiles use per-process scratch folders); the x86 VM (4 CPUs) allows 2-3. More coverage has to come from hand cases for the failing functions and `--direct`.
+
 Boundary: the user decides whether to go on to step 7 (size reduction) after `python3 tools/progress.py`.
 
 ## Layout *(both)*
