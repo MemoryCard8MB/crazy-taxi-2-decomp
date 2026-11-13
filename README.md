@@ -1,6 +1,6 @@
 # Crazy Taxi 2 decomp
 
-![decomp progress](badges/progress.svg?p=96.5&b=93.1&a=55&s=0)
+![decomp progress](badges/progress.svg?p=95.3&b=90.6&a=53&s=0)
 
 **Explore this decomp project with [Shuriken Explorer](https://consolesplayingconsoles.github.io/dc-shuriken-explorer/) and see the game's models, skeletons, animations, textures, images, sounds, text and side-by-side C and assembly code directly in your browser.**
 
@@ -23,18 +23,18 @@ everything game-derived on your machine, and `.gitignore` keeps it out of git.
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE            55.2%  the instructions the cases ran, of all instructions, over the 3449 functions that can be C; the 3330 functions that reached the check are measured, the others count 0
-FUNCTIONS LEFT  (96.5% complete) 119  of the 3449 functions that can be C (184 with no C form are counted apart)
-BYTES LEFT    (93.1% complete) 38266  of 556904 bytes of code that can be C
+TOTAL TEST COVERAGE            53.3%  the instructions the cases ran, of all instructions, over the 3449 functions that can be C; the 3287 functions that reached the check are measured, the others count 0
+FUNCTIONS LEFT  (95.3% complete) 162  of the 3449 functions that can be C (184 with no C form are counted apart)
+BYTES LEFT    (90.6% complete) 52234  of 556904 bytes of code that can be C
 FUNCTIONS                             
   unnamed                       2050  functions still called FUN_... (2050 of 3633)
-  Not written C                   20  5386 bytes
+  Not written C                   63  19354 bytes
   Written C with errors            0  0 bytes
   Not drawn                       34  7600 bytes
   Drawn with errors               33  16208 bytes
   Checked with errors             32  9072 bytes
   No C form                     5.1%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
-  documented                   40.4%  1468 named functions in docs/*.md
+  documented                   39.8%  1445 named functions in docs/*.md
 ```
 <!-- /progress -->
 
