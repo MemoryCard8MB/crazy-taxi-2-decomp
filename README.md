@@ -1,6 +1,6 @@
 # Crazy Taxi 2 decomp
 
-![decomp progress](badges/progress.svg?p=92.8&b=89.0&a=53&s=0)
+![decomp progress](badges/progress.svg?p=95.4&b=92.7&a=55&s=0)
 
 **Explore this decomp project with [Shuriken Explorer](https://consolesplayingconsoles.github.io/dc-shuriken-explorer/) and see the game's models, skeletons, animations, textures, images, sounds, text and side-by-side C and assembly code directly in your browser.**
 
@@ -23,12 +23,12 @@ everything game-derived on your machine, and `.gitignore` keeps it out of git.
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE            52.5%  the instructions the cases ran, of all instructions, over the 3363 functions that can be C; the 3122 functions that reached the check are measured, the others count 0
-FUNCTIONS LEFT  (92.8% complete) 241  of the 3363 functions that can be C (184 with no C form are counted apart)
-BYTES LEFT    (89.0% complete) 61372  of 555610 bytes of code that can be C
+TOTAL TEST COVERAGE            54.8%  the instructions the cases ran, of all instructions, over the 3363 functions that can be C; the 3208 functions that reached the check are measured, the others count 0
+FUNCTIONS LEFT  (95.4% complete) 155  of the 3363 functions that can be C (184 with no C form are counted apart)
+BYTES LEFT    (92.7% complete) 40784  of 555610 bytes of code that can be C
 FUNCTIONS                             
   unnamed                       1964  functions still called FUN_... (1964 of 3547)
-  Not written C                  106  25974 bytes
+  Not written C                   20  5386 bytes
   Written C with errors            0  0 bytes
   Not drawn                        0  0 bytes
   Drawn with errors               33  16208 bytes
