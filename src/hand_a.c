@@ -303,3 +303,138 @@ void nlMultiMatrix8(int a4)
     }
     _builtin_ld_ext((float (*)[4])r);
 }
+
+/* manual: Kamui's void kmSetAutoSortMode; the original's rts delay slot leaves r15 in r0, which the generator took for a result */
+void kmSetAutoSortMode(int mode)
+{
+    if (*(int *)0xC300A94 == mode) {
+        *(int *)0xC300A90 = 3;
+        if (mode == 1) {
+            *(int *)0xC300A94 = 0;
+        } else {
+            *(int *)0xC300A94 = 1;
+        }
+    }
+}
+
+extern float _builtin_fipr(float *, float *);
+extern float _builtin_fsrra(float);
+static float iaFsrra(float x)
+{
+    return _builtin_fsrra(x);
+}
+
+void FUN_0c0723a0(void)
+{
+    register float u2;
+    register float u6;
+    register float u9;
+    register float u12;
+    register float u15;
+    register float u18;
+    register float u19;
+    register float u20;
+    register float u21;
+    register float t23;
+    register float t25;
+    register float t27;
+    volatile float neg2, neg6, neg9;
+    float u0[4];
+    float u1[4];
+    float u3[16];
+    float u4[4];
+    float u5[4];
+    float u7[4];
+    float u8[4];
+    float u10[4];
+    float u11[4];
+    float u13[4];
+    float u14[4];
+    float u16[4];
+    float u17[4];
+    float u28[16];
+
+    _builtin_st_ext((float (*)[4])u3);
+    u0[0] = u3[12];
+    u0[1] = u3[13];
+    u0[2] = u3[14];
+    u0[3] = u3[15];
+    u1[0] = u3[0];
+    u1[1] = u3[1];
+    u1[2] = u3[2];
+    u1[3] = u3[3];
+    u2 = _builtin_fipr(u0, u1);
+    u4[0] = u3[12];
+    u4[1] = u3[13];
+    u4[2] = u3[14];
+    u4[3] = u3[15];
+    u5[0] = u3[4];
+    u5[1] = u3[5];
+    u5[2] = u3[6];
+    u5[3] = u3[7];
+    u6 = _builtin_fipr(u4, u5);
+    u7[0] = u3[12];
+    u7[1] = u3[13];
+    u7[2] = u3[14];
+    u7[3] = u3[15];
+    u8[0] = u3[8];
+    u8[1] = u3[9];
+    u8[2] = u3[10];
+    u8[3] = u3[11];
+    u9 = _builtin_fipr(u7, u8);
+    u10[0] = u3[0];
+    u10[1] = u3[1];
+    u10[2] = u3[2];
+    u10[3] = (u2 - u2);
+    u11[0] = u3[0];
+    u11[1] = u3[1];
+    u11[2] = u3[2];
+    u11[3] = (u2 - u2);
+    u12 = _builtin_fipr(u10, u11);
+    u13[0] = u3[4];
+    u13[1] = u3[5];
+    u13[2] = u3[6];
+    u13[3] = (u6 - u6);
+    u14[0] = u3[4];
+    u14[1] = u3[5];
+    u14[2] = u3[6];
+    u14[3] = (u6 - u6);
+    u15 = _builtin_fipr(u13, u14);
+    u16[0] = u3[8];
+    u16[1] = u3[9];
+    u16[2] = u3[10];
+    u16[3] = (u9 - u9);
+    u17[0] = u3[8];
+    u17[1] = u3[9];
+    u17[2] = u3[10];
+    u17[3] = (u9 - u9);
+    u18 = _builtin_fipr(u16, u17);
+    u19 = iaFsrra(u12);
+    u20 = iaFsrra(u15);
+    u21 = iaFsrra(u18);
+    t23 = (u3[1] * u19);    /* flds/fsts through FPUL: a bit copy */
+    t25 = (u3[2] * u19);
+    t27 = (u3[6] * u20);
+    _builtin_st_ext((float (*)[4])u28);
+    u28[0] = (u3[0] * u19);
+    u28[1] = (u3[4] * u20);
+    u28[2] = (u3[8] * u21);
+    u28[3] = 0.0f;
+    u28[4] = t23;
+    u28[5] = (u3[5] * u20);
+    u28[6] = (u3[9] * u21);
+    u28[7] = (u20 - u20);
+    u28[8] = t25;
+    u28[9] = t27;
+
+    u28[10] = (u3[10] * u21);
+    u28[11] = 0.0f;
+    neg2 = -u2;    /* fneg before fmul, as the original: the product of a NaN takes no sign from it */
+    neg6 = -u6;
+    neg9 = -u9;
+    u28[12] = (neg2 * u19);
+    u28[13] = (neg6 * u20);
+    u28[14] = (neg9 * u21);
+    u28[15] = u3[15];
+    _builtin_ld_ext((float (*)[4])u28);
+}

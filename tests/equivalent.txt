@@ -325,6 +325,7 @@ FUN_0c022cee
 FUN_0c022d30
 FUN_0c022de2
 FUN_0c0231c0
+FUN_0c02345c
 FUN_0c023650
 FUN_0c02447c
 FUN_0c0244e4
@@ -1414,6 +1415,7 @@ FUN_0c072250
 FUN_0c072290
 FUN_0c0722b0
 FUN_0c0722f0
+FUN_0c0723a0
 FUN_0c072600
 FUN_0c072b60
 FUN_0c072fe0
@@ -2565,6 +2567,7 @@ kmRenderTexture
 kmRenderTextureDirect
 kmResetPointer
 kmResetRenderer
+kmSetAutoSortMode
 kmSetBackGroundPlane
 kmSetBackGroundRenderState
 kmSetBorderColor
@@ -2578,6 +2581,7 @@ kmSetEndOfYUVCallback
 kmSetFogDensity
 kmSetFogTable
 kmSetFogTableColor
+kmSetFogVertexColor
 kmSetForwardClipping
 kmSetFramebufferTexture
 kmSetGlobalClipping

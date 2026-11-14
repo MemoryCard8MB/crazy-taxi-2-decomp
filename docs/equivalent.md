@@ -8540,6 +8540,40 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 94 of 181 instructions
 
+### FUN_0c02345c (`0C02345C`, 436 bytes, `src/gen_dp.c`)
+- equivalent on 15 development and 15 holdout cases, in `tests/gen_dp/FUN_0c02345c.json`
+- state 0 mode 0 timer 0
+- state 3 mode 0 timer 0
+- state 0 mode 0 timer 150
+- state 3 mode 0 timer 150
+- state 0 mode 1 timer 0
+- state 3 mode 1 timer 0
+- state 0 mode 1 timer 150
+- state 3 mode 1 timer 150
+- state 1 sub 2
+- state 1 sub 0, y above -200, ecc 0
+- state 1 sub 0, y -200 exactly
+- state 1 sub 1 ecc -5
+- state 1 sub 1 list 0 empty
+- state 1 sub 1 list 2 empty
+- state 1 sub 1 all lists set, mode 1
+- state 2 mode 0 timer 0
+- state 4 (no case) mode 0
+- state 2 mode 0 timer 150
+- state 4 (no case) mode 0
+- state 2 mode 1 timer 0
+- state 4 (no case) mode 1
+- state 2 mode 1 timer 150
+- state 4 (no case) mode 1
+- state 1 sub 0, y below -200
+- state 1 sub -1
+- state 1 sub 1 ecc 0
+- state 1 sub 1 ecc 1
+- state 1 sub 1 list 1 empty
+- state 1 sub 1 list 3 empty
+- state 1 sub 5 all lists set
+- the cases run 189 of 189 instructions
+
 ### FUN_0c023650 (`0C023650`, 168 bytes, `src/gen_k.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_k/FUN_0c023650.json`
 - rescue: empty case
@@ -36586,6 +36620,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - rescue: empty case
 - the cases run 13 of 13 instructions
+
+### FUN_0c0723a0 (`0C0723A0`, 92 bytes, `src/hand_a.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/hand_a/FUN_0c0723a0.json`
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- the cases run 46 of 46 instructions
 
 ### FUN_0c072600 (`0C072600`, 16 bytes, `src/gen_a.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_a/FUN_0c072600.json`
@@ -72885,6 +72959,26 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 10 of 10 instructions
 
+### kmSetAutoSortMode (`0C147F04`, 38 bytes, `src/hand_a.c`)
+- equivalent on 8 development and 8 holdout cases, in `tests/hand_a/kmSetAutoSortMode.json`
+- [0C300A94]=0x0 mode 0x0
+- [0C300A94]=0x0 mode 0x2
+- [0C300A94]=0x1 mode 0x0
+- [0C300A94]=0x1 mode 0x2
+- [0C300A94]=0x2 mode 0x0
+- [0C300A94]=0x2 mode 0x2
+- [0C300A94]=0xffffffff mode 0x0
+- [0C300A94]=0xffffffff mode 0x2
+- [0C300A94]=0x0 mode 0x1
+- [0C300A94]=0x0 mode 0xffffffff
+- [0C300A94]=0x1 mode 0x1
+- [0C300A94]=0x1 mode 0xffffffff
+- [0C300A94]=0x2 mode 0x1
+- [0C300A94]=0x2 mode 0xffffffff
+- [0C300A94]=0xffffffff mode 0x1
+- [0C300A94]=0xffffffff mode 0xffffffff
+- the cases run 19 of 19 instructions
+
 ### kmSetBackGroundPlane (`0C147EE0`, 36 bytes, `src/gen_am.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_am/kmSetBackGroundPlane.json`
 - case 0
@@ -73301,6 +73395,46 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 62
 - case 36
 - case 47
+- the cases run 8 of 8 instructions
+
+### kmSetFogVertexColor (`0C147C80`, 16 bytes, `src/gen_dp.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_dp/kmSetFogVertexColor.json`
+- case 0
+- case 1
+- case 2
+- case 3
+- case 4
+- case 5
+- case 6
+- case 7
+- case 8
+- case 9
+- case 10
+- case 11
+- case 12
+- case 13
+- case 14
+- case 15
+- case 16
+- case 17
+- case 59
+- case 63
+- case 38
+- case 87
+- case 94
+- case 67
+- case 101
+- case 48
+- case 65
+- case 102
+- case 114
+- case 37
+- case 71
+- case 55
+- case 118
+- case 111
+- case 103
+- case 64
 - the cases run 8 of 8 instructions
 
 ### kmSetForwardClipping (`0C1481AE`, 4 bytes, `src/gen_c.c`)
