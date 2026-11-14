@@ -8,6 +8,9 @@
     code    code the test cases may not write to: the console runs it from ROM-like RAM nobody writes (optional;
             without it the cases may poke anywhere)
     spare   unused RAM for code that does not fit, for test builds only (optional; the build stops without it)
+    count   `count <pool word> <start>`: a pool word that counts words from <start>, an address that moves, to an end that does not
+            (Crazy Taxi 2 main's -1 fill). The asm cannot move such a size, so the function needs C that computes it; movecheck.py runs
+            both of its images with the count up to `fixed` (optional).
     mixed   `mixed 1`: the movable build (mbuild.py) may copy a group that also holds pieces without C (a pointer into the middle of a
             function that is now C), and calls a replaced function through its hole when a bsr could not reach it. Off (the old
             behaviour, including the old error) when the line is missing. Zombie Revenge sets it; Crazy Taxi and Virtua Tennis do not.

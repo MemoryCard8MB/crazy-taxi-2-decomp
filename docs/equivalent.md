@@ -22209,45 +22209,38 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 95 of 334 instructions
 
-### FUN_0c04e03c (`0C04E03C`, 278 bytes, `src/gen_ce.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_ce/FUN_0c04e03c.json`
-- case 4
-- case 7
-- case 4
-- case 4
-- case 5
-- case 8
-- case 9
-- case 10
-- case 11
-- case 13
-- case 14
-- case 15
-- case 16
-- case 17
-- case 18
-- case 20
-- case 21
-- case 22
-- case 59
-- case 98
-- case 103
-- case 96
-- case 81
-- case 133
-- case 73
-- case 150
-- case 51
-- case 80
-- case 128
-- case 118
-- case 4
-- case 82
-- case 135
-- case 148
-- case 100
-- case 137
-- the cases run 94 of 125 instructions
+### FUN_0c04e03c (`0C04E03C`, 278 bytes, `src/hand_i.c`)
+- equivalent on 16 development and 13 holdout cases, in `tests/hand_i/FUN_0c04e03c.json`
+- as dumped (Around Apple); area list entry 5; area 98 already in a slot
+- Around Apple, STEP -1; area list entry 0; area 92 already in a slot
+- Around Apple, STEP 0; area list entry 1; area 93: 0 points into 53 free slots
+- Around Apple, STEP 1; area list entry 2; area 94 already in a slot
+- Around Apple, STEP 7; area list entry 8; area 102: 0 points into 53 free slots
+- Around Apple, STEP 8; area list entry 9; area 103 already in a slot
+- Around Apple, STEP 9; wraps to the taxi's area (at a -1); area 99 already in a slot
+- Around Apple, STEP 13; wraps to the taxi's area (after 14); area 99 already in a slot
+- all slots free, the 11-point area 0; wraps to the taxi's area (after 14); area 0: 11 points into 80 free slots
+- three free slots, the 11-point area 0; wraps to the taxi's area (after 14); area 0: 11 points, 3 free slots: steps back
+- 9 scattered free slots, the 9-point area 26; wraps to the taxi's area (after 14); area 26: 9 points, 9 free slots: steps back
+- 10 scattered free slots, the 9-point area 26; wraps to the taxi's area (after 14); area 26: 9 points into 10 free slots
+- an empty area, free slots; wraps to the taxi's area (after 14); area 2: 0 points into 53 free slots
+- an empty area, no free slot; wraps to the taxi's area (after 14); area 2: 0 points, 0 free slots: steps back
+- the area in the last slot only; wraps to the taxi's area (after 14); area 26 already in a slot
+- a 6-point area from the list; area list entry 3; area 36: 6 points into 53 free slots
+- as dumped (Small Apple); area list entry 7; area 160 already in a slot
+- Small Apple, STEP -1; area list entry 0; area 137 already in a slot
+- Small Apple, STEP 2; area list entry 3; area 153 already in a slot
+- Small Apple, STEP 5; area list entry 6; area 159 already in a slot
+- Small Apple, STEP 11; wraps to the taxi's area (at a -1); area 155 already in a slot
+- Small Apple, STEP 12; wraps to the taxi's area (at a -1); area 155 already in a slot
+- random 0; wraps to the taxi's area (at a -1); area 35: 4 points into 68 free slots
+- random 1; wraps to the taxi's area (at a -1); area 68: 3 points into 67 free slots
+- random 2; area list entry 3; area 43: 9 points into 64 free slots
+- random 3; wraps to the taxi's area (after 14); area 173: 5 points into 64 free slots
+- random 4; wraps to the taxi's area (at a -1); area 199: 3 points into 64 free slots
+- random 5; wraps to the taxi's area (after 14); area 204: 4 points into 66 free slots
+- Small Apple, free slots at the end, its biggest area; wraps to the taxi's area (after 14); area 185: 15 points into 17 free slots
+- the cases run 125 of 125 instructions
 
 ### FUN_0c04e152 (`0C04E152`, 64 bytes, `src/gen_ag.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_ag/FUN_0c04e152.json`

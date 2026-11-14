@@ -211,6 +211,32 @@ def simulate(exe, steps):
                        'steps': steps}, '.', deep=True)
 
 
+def count_images(d, cnt, new, fixed, base_txt, exe_a, exe_b):
+    """layout.txt `count <pool word> <start>`: the pool word is a count of words from <start>, an address that moves, to an end that
+    does not (Crazy Taxi 2's main fills 0C310000-0CD10000 with -1, its count 0x280000). Neither the assembler nor the linker can
+    write that distance, so the asm cannot move it; the build takes the function from C, which computes it (src/hand_g.c). For
+    check 2 both images get the count up to `fixed` instead: the original fills <start>..fixed, the padded image the same words
+    moved, so every write still pairs up; the addresses from `fixed` on do not move, so they say nothing about the split.
+    Returns the two image paths to run and a line for the log."""
+    at, start = cnt[0], cnt[1]
+    lo = int(base_txt, 16) & 0x1FFFFFFF
+    off = lambda a: (a & 0x1FFFFFFF) - lo
+    a = bytearray(open(exe_a, 'rb').read())
+    b = bytearray(open(exe_b, 'rb').read())
+    was = struct.unpack_from('<I', a, off(at))[0]
+    if struct.unpack_from('<I', b, off(new(at)))[0] != was:
+        sys.exit('[ERROR] layout.txt count %08X: the padded image holds %08X there, not the original\'s %08X'
+                 % (at, struct.unpack_from('<I', b, off(new(at)))[0], was))
+    n = (fixed - start) // 4
+    struct.pack_into('<I', a, off(at), n)
+    struct.pack_into('<I', b, off(new(at)), n)
+    pa, pb = os.path.join(d, 'count_orig.bin'), os.path.join(d, 'count_pad.bin')
+    open(pa, 'wb').write(a)
+    open(pb, 'wb').write(b)
+    return pa, pb, 'count %08X: %d words from %08X (to %08X) run as %d (to fixed %08X) in both images' % (
+        at, was, start, start + 4 * was, n, fixed)
+
+
 def to_assemble(d, files):
     """(changed, stale, missing): the pieces linked from <d>/obj (a source symbolize.py changed, or one build.sh left no object for, or
     an object older than its source: a function split or merged in functions.txt, then split_asm.py. Zombie Revenge FUN_0c017ad0 and
@@ -347,9 +373,13 @@ def main(argv):
 
     # check 2: the padded image runs as the original
     new = mapper([starts[i] for i in G], pad, end, starts[0], fixed)
-    ra = simulate('1ST_READ.BIN', steps)
+    exe_a, exe_b = '1ST_READ.BIN', os.path.join(d, 'pad.bin')
+    if layout.region('count'):
+        exe_a, exe_b, note = count_images(d, layout.region('count'), new, fixed, base_txt, exe_a, exe_b)
+        say(note, log)
+    ra = simulate(exe_a, steps)
     say('original: %s after %d steps, %d writes' % (ra['error'], ra['steps'], len(ra['writes'])), log)
-    rb = simulate(os.path.join(d, 'pad.bin'), steps)
+    rb = simulate(exe_b, steps)
     say('padded:   %s after %d steps, %d writes' % (rb['error'], rb['steps'], len(rb['writes'])), log)
     diff = []
     for k, (x, y) in enumerate(zip(ra['writes'], rb['writes'])):

@@ -1,0 +1,16 @@
+# Decisions about single words of the executable (tools/1-2-baseline/pointers.py): P = an address, N = a number. They override every rule.
+
+# 0C1188xx-0C11Cxxx: records of floats with a word of four small bytes, then two halfwords (a small number, then 0x0Cxx). The same
+# pair with an odd low half is a byte table already (rule bytes: 0C11B150, 0C11B560, 0C11B574, 0C11C68C, 0C11C718); these have an
+# even one, so rule 0c took them for addresses (0C03000E would be one into the middle of game code).
+N 0C118888
+N 0C1198DC
+N 0C119918
+N 0C11B100
+N 0C11B420
+N 0C11B484
+N 0C11B510
+
+# A float near zero (8C47FFE2, -1.5e-31) after x, y, z floats (-515, 23.5, -2118); rule 8c takes every 8C word for an address.
+N 0C0E824C
+N 0C0E8260

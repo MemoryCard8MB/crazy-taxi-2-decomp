@@ -4,10 +4,13 @@ void FUN_0c01b026(int, int, int, int);
 
 /* manual: fills the 10 MB from 0C310000 with FFFFFFFF and goes on into FUN_0c01b026 (a jump, it does not come back here).
    The arguments are what the fill leaves in r4-r6 (count 0, end address, the fill word) and the caller's r7: FUN_0c01b026's C
-   passes its registers on, so the check compares them. */
+   passes its registers on, so the check compares them.
+   The fill ends at 0CD10000 whatever moves: a build that moves the buffers from 0C310000 up (layout.txt `bss`) moves the start
+   address, so the count is the distance (0x280000 words in the original layout); with a fixed count the fill would run on past
+   0CD10000 by as much as the buffers moved. */
 void FUN_0c01b1e8(int a4, int a5, int a6, int a7)
 {
-    int n = 0x280000;
+    int n = (0xCD10000 - 0xC310000) >> 2;
     int *p = (int *)0xC310000;
 
     do {
