@@ -1,0 +1,46 @@
+{
+ "dev": [
+  {
+   "about": "the handler is called with 0x200 and 3",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000000"
+    }
+   ]
+  },
+  {
+   "about": "other registers on entry stay",
+   "regs": {
+    "r0": "12345678",
+    "r4": "00000001",
+    "r5": "00000002",
+    "r6": "00000003",
+    "r7": "00000004"
+   },
+   "calls": [
+    {
+     "r0": "00000000"
+    }
+   ]
+  }
+ ],
+ "holdout": [
+  {
+   "about": "again, with other values in r0-r7",
+   "regs": {
+    "r0": "FFFFFFFF",
+    "r1": "11",
+    "r4": "0C200000",
+    "r5": "7",
+    "r6": "8",
+    "r7": "9"
+   },
+   "calls": [
+    {
+     "r0": "00000000"
+    }
+   ]
+  }
+ ]
+}

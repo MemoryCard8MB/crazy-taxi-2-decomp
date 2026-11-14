@@ -54099,6 +54099,13 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 110
 - the cases run 2 of 2 instructions
 
+### FUN_0c168198 (`0C168198`, 30 bytes, `src/hand_c.c`)
+- equivalent on 2 development and 1 holdout cases, in `tests/hand_c/FUN_0c168198.json`
+- the handler is called with 0x200 and 3
+- other registers on entry stay
+- again, with other values in r0-r7
+- the cases run 15 of 15 instructions
+
 ### FUN_0c16880c (`0C16880C`, 50 bytes, `src/hand_a.c`)
 - equivalent on 2 development and 1 holdout cases, in `tests/hand_a/FUN_0c16880c.json`
 - empty at the first poll

@@ -17,6 +17,10 @@ No C form, by register convention: a function that reads r0-r3 or r8-r14 it neve
 (bt, bf, movt, rotcl, rotcr, addc, subc, negc, div1 before anything sets it), takes that register or flag from its caller or from a helper
 it calls. Assembly routines did this; SHC reaches them from C through #pragma inline_asm and #pragma regsave/noregsave (see the messages in
 shc/bin/shcerr.msg), and C itself has no way to take a flag as an argument or return one.
+No C form, by name: the runtime routines whose names SHC reserves (RESERVED: a definition stops the compile with error 2020).
+No C form, by stack: code that leaves words on the stack and jumps through a pool address to another function's entry (it hands
+them on; leaves_stack_word). Code is followed through `jmp @rN` when rN holds a pool address inside the function (literal_jump), as
+through a branch, so the rules see what lies behind a size check that leaves that way (the SDK's cache routines).
 A function that takes a variable argument list, or passes the address of its own stack area on, cannot
 be told from the disassembly: the first case that differs shows it.
 """
@@ -34,7 +38,11 @@ BLOCK = (('ldtlb', 'MMU'),)           # everything else has an intrinsic or an i
 NOTE = (('fipr', 'fipr: exact-in-float values'), ('fmac', 'fmac: exact-in-float values'))
 
 
-NO_C_FORM = ('bank', 'dbr', 'ssr', 'spc', 'sgr')      # GBR and VBR have intrinsics (get_gbr, set_vbr...) when smachine.h / umachine.h are included
+NO_C_FORM = ('bank', 'dbr', 'ssr', 'spc', 'sgr')
+# The compiler's runtime routines whose names SHC reserves: a definition of one stops the compile with error 2020 "System identifier
+# redefined", so no C can carry it (tested on this game's 41 underscore names with the SDK's shc and equiv.py's flags, 2026-11-14).
+# They take their operands the compiler's way (r0-r2, the T flag), and the build keeps them as the C runtime's own bytes.
+RESERVED = ('_bfslu', '_divls', '_divlu', '_divws', '_modls', '_modlu', '_quick_mvn', '_slow_mvn', '_slow_strcmp1', '_slow_strcpy')      # GBR and VBR have intrinsics (get_gbr, set_vbr...) when smachine.h / umachine.h are included
 
 
 def reachable(exe, base, a, sz):
@@ -54,10 +62,33 @@ def reachable(exe, base, a, sz):
                 seen.add(pc + 2)
             if op in ('bt', 'bf', 'bt/s', 'bf/s', 'bra', 'bsr') and tgt is not None and a <= tgt < end:
                 work.append(tgt)
+            if op == 'jmp':
+                j = literal_jump(exe, base, a, pc)
+                if j is not None and a <= j < end:
+                    work.append(j)                               # a jump to its own code through a pool address: a branch, not a call
             if op in ('rts', 'rte', 'jmp', 'braf', 'bra'):
                 break
             pc += 4 if delay else 2
     return seen
+
+
+def literal_jump(exe, base, a, pc, any_mirror=False):
+    """Where `jmp @rN` at pc goes when rN was loaded from the literal pool just before (and not changed since), in the function's
+    own mirror (a jump to the same code through A0000000, P2, is self_mirror_jump's), else None. The SDK's cache routines
+    (syCacheOCBP, ADXF_Ocbi) leave their size checks this way: reachable() stopped there and never saw their cache instructions."""
+    import re
+    m = re.match(r'jmp @r(\d+)', shdis.decode(struct.unpack_from('<H', exe, pc - base)[0], pc)[0])
+    if not m:
+        return None
+    rn = m.group(1)
+    for k in range(pc - 2, max(a, pc - 64) - 2, -2):
+        t = shdis.decode(struct.unpack_from('<H', exe, k - base)[0], k)
+        if re.match(r'mov\.l\s+@\(0x[0-9a-f]+,pc\),r%s\b' % rn, t[0]) and t[1] is not None:
+            v = struct.unpack_from('<I', exe, t[1] - base)[0]
+            return v if any_mirror or (v & 0xE0000000) == (a & 0xE0000000) else None
+        if re.search(r',r%s\b' % rn, t[0].split(';')[0]) or t[0].split()[0] in ('rts', 'rte', 'jmp', 'bra', 'braf'):
+            return None
+    return None
 
 
 INPLACE = ('shll', 'shlr', 'shal', 'shar', 'shll2', 'shlr2', 'shll8', 'shlr8', 'shll16', 'shlr16', 'rotl', 'rotr', 'rotcl', 'rotcr', 'dt')
@@ -499,13 +530,41 @@ def self_mirror_jump(exe, base, a, sz):
     return None
 
 
+def leaves_stack_word(exe, base, a, sz):
+    """True when the code returns nowhere (no rts or rte reached), leaves by jmp, and pushes more words than it pops with no other
+    change of r15: it hands the words it left on the stack to the code it jumps to (the interrupt dispatcher entry FUN_0c168144
+    pushes r1 and jumps on). A C function leaves its stack as it found it."""
+    pcs = sorted(reachable(exe, base, a, sz))
+    ops = [shdis.decode(struct.unpack_from('<H', exe, pc - base)[0], pc)[0] for pc in pcs]
+    if any(t.split()[0] in ('rts', 'rte') for t in ops):
+        return False
+    jmps = [pc for pc, t in zip(pcs, ops) if t.split()[0] == 'jmp']
+    targets = [literal_jump(exe, base, a, pc, any_mirror=True) for pc in jmps]
+    # every way out is a jump through a pool address to another function's entry: a range cut short before its return, or a jump
+    # through a computed address (FUN_0c091ae0: jmp @r0 with r0 read from memory), says nothing about where its stack ends up
+    if not jmps or any(v is None or _name_at(v) is None or a <= v < a + sz for v in targets):
+        return False
+    if any(t.split()[0] in ('bra', 'bt', 'bf', 'bt/s', 'bf/s') and shdis.decode(struct.unpack_from('<H', exe, pc - base)[0], pc)[3] is not None
+           and not a <= shdis.decode(struct.unpack_from('<H', exe, pc - base)[0], pc)[3] < a + sz for pc, t in zip(pcs, ops)):
+        return False                                     # a branch leaves the listed range: its code goes on past it
+    push = sum(1 for t in ops if '@-r15' in t)
+    pop = sum(1 for t in ops if '@r15+' in t)
+    other = any(t.split(';')[0].rstrip().endswith(',r15') and '@r15+' not in t for t in ops)     # add #n,r15, mov rX,r15...
+    return push > pop and not other
+
+
 def no_c_form(exe, base, a, sz):
     """The instructions of one function that have no C form with this compiler (see above): ['ldc r3,r0_bank', ...], pools skipped."""
     out = []
+    nm = _name_at(a)
+    if nm in RESERVED:
+        out.append('is %s, a runtime routine whose name SHC reserves (error 2020 on a definition): no C can carry it' % nm)
     for pc in sorted(reachable(exe, base, a, sz)):
         t = shdis.decode(struct.unpack_from('<H', exe, pc - base)[0], pc)[0]
         if t.startswith(('stc', 'ldc')) and any(k in t for k in NO_C_FORM) and t not in out:
             out.append(t)
+    if leaves_stack_word(exe, base, a, sz):
+        out.append('leaves a word on the stack and jumps on: it hands it to the code it jumps to (a custom convention)')
     ji = jumps_into(exe, base, a, sz)
     if ji is not None:
         out.append('branches into the middle of another function (%08X): a piece of that function, not one of its own' % ji)

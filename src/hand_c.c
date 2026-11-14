@@ -550,3 +550,11 @@ int FUN_0c052fcc(void)
     FUN_0c053c00(0x00FFFFFF);
     return ((int (*)(float, float, float))0xC0761A0)(0.0f, 0.600000024f, 0.800000012f);
 }
+
+/* manual: an exception entry: calls the boot code's handler at 0xAC004000 (the copy at 0x0C004000, through the uncached mirror)
+   with 0x200 and 3, keeping every register, and returns with rte. #pragma interrupt saves what the call uses and ends in rte. */
+#pragma interrupt(FUN_0c168198)
+void FUN_0c168198(void)
+{
+    ((void (*)(int, int))0xAC004000)(0x200, 3);
+}
