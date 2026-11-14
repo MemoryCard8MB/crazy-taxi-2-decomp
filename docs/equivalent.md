@@ -6068,6 +6068,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - endless case 11
 - the cases run 122 of 131 instructions
 
+### FUN_0c01b1e8 (`0C01B1E8`, 20 bytes, `src/hand_g.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/hand_g/FUN_0c01b1e8.json`
+- the whole fill: 2,621,440 words
+- the whole fill, other register values and old contents
+- the cases run 10 of 10 instructions
+
 ### FUN_0c01b208 (`0C01B208`, 104 bytes, `src/gen_v.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_v/FUN_0c01b208.json`
 - rescue: empty case
@@ -6341,6 +6347,103 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 53
 - case 79
 - the cases run 11 of 11 instructions
+
+### FUN_0c01bf10 (`0C01BF10`, 510 bytes, `src/hand_f.c`)
+- equivalent on 47 development and 46 holdout cases, in `tests/hand_f/FUN_0c01bf10.json`
+- mode 0 time 0 skip 0 voice 0 wait 0
+- mode 0 time 5 skip 0 voice 0 wait 0
+- mode 0 time 5 skip 1 voice 0 wait 0
+- mode 0 time 6 skip 0 voice 0 wait 0
+- mode 0 time 6 skip 1 voice 0 wait 0
+- mode 0 time 29 skip 0 voice 0 wait 0
+- mode 0 time 30 skip 0 voice 0 wait 0
+- mode 0 time 30 skip 0 voice 2 wait 0
+- mode 0 time 30 skip 1 voice 1 wait 0
+- mode 0 time 31 skip 0 voice 0 wait 0
+- mode 0 time 39 skip 0 voice 0 wait 0
+- mode 0 time 40 skip 0 voice 0 wait 0
+- mode 0 time 40 skip 0 voice 1 wait 0
+- mode 0 time 40 skip 0 voice 2 wait 0
+- mode 0 time 40 skip 1 voice 0 wait 0
+- mode 0 time 40 skip 1 voice 1 wait 0
+- mode 0 time 40 skip 1 voice 2 wait 0
+- mode 0 time 120 skip 0 voice 0 wait 0
+- mode 0 time 121 skip 0 voice 0 wait 0
+- mode 0 time 121 skip 0 voice 2 wait 0
+- mode 0 time 121 skip 1 voice 1 wait 0
+- mode 0 time 278 skip 0 voice 0 wait 0
+- mode 0 time 279 skip 0 voice 0 wait 0
+- mode 0 time 420 skip 0 voice 0 wait 0
+- mode 0 time 421 skip 0 voice 0 wait 0
+- mode 0 time 421 skip 0 voice 1 wait 0
+- mode 0 time 421 skip 0 voice 2 wait 0
+- mode 0 time 421 skip 1 voice 0 wait 0
+- mode 0 time 421 skip 1 voice 1 wait 0
+- mode 0 time 421 skip 1 voice 2 wait 0
+- mode 0 time 500 skip 0 voice 0 wait 0
+- mode 1 time 0 skip 0 voice 0 wait 0
+- mode 1 time 5 skip 0 voice 0 wait 3
+- mode 1 time 6 skip 0 voice 0 wait 3
+- mode 1 time 30 skip 0 voice 0 wait 0
+- mode 1 time 30 skip 0 voice 2 wait 0
+- mode 1 time 39 skip 0 voice 0 wait 0
+- mode 1 time 40 skip 0 voice 0 wait 3
+- mode 1 time 40 skip 0 voice 1 wait 3
+- mode 1 time 40 skip 0 voice 2 wait 3
+- mode 1 time 121 skip 0 voice 0 wait 0
+- mode 1 time 121 skip 0 voice 2 wait 0
+- mode 1 time 279 skip 0 voice 0 wait 0
+- mode 1 time 421 skip 0 voice 0 wait 0
+- mode 1 time 421 skip 0 voice 1 wait 0
+- mode 1 time 421 skip 0 voice 2 wait 0
+- mode 1 time 500 skip 0 voice 0 wait 0
+- mode 0 time 0 skip 1 voice 0 wait 0
+- mode 0 time 5 skip 0 voice 0 wait 3
+- mode 0 time 5 skip 1 voice 0 wait 3
+- mode 0 time 6 skip 0 voice 0 wait 3
+- mode 0 time 6 skip 1 voice 0 wait 3
+- mode 0 time 29 skip 1 voice 0 wait 0
+- mode 0 time 30 skip 0 voice 1 wait 0
+- mode 0 time 30 skip 1 voice 0 wait 0
+- mode 0 time 30 skip 1 voice 2 wait 0
+- mode 0 time 31 skip 1 voice 0 wait 0
+- mode 0 time 39 skip 1 voice 0 wait 0
+- mode 0 time 40 skip 0 voice 0 wait 3
+- mode 0 time 40 skip 0 voice 1 wait 3
+- mode 0 time 40 skip 0 voice 2 wait 3
+- mode 0 time 40 skip 1 voice 0 wait 3
+- mode 0 time 40 skip 1 voice 1 wait 3
+- mode 0 time 40 skip 1 voice 2 wait 3
+- mode 0 time 120 skip 1 voice 0 wait 0
+- mode 0 time 121 skip 0 voice 1 wait 0
+- mode 0 time 121 skip 1 voice 0 wait 0
+- mode 0 time 121 skip 1 voice 2 wait 0
+- mode 0 time 278 skip 1 voice 0 wait 0
+- mode 0 time 279 skip 1 voice 0 wait 0
+- mode 0 time 420 skip 1 voice 0 wait 0
+- mode 0 time 421 skip 0 voice 0 wait 3
+- mode 0 time 421 skip 0 voice 1 wait 3
+- mode 0 time 421 skip 0 voice 2 wait 3
+- mode 0 time 421 skip 1 voice 0 wait 3
+- mode 0 time 421 skip 1 voice 1 wait 3
+- mode 0 time 421 skip 1 voice 2 wait 3
+- mode 0 time 500 skip 1 voice 0 wait 0
+- mode 1 time 5 skip 0 voice 0 wait 0
+- mode 1 time 6 skip 0 voice 0 wait 0
+- mode 1 time 29 skip 0 voice 0 wait 0
+- mode 1 time 30 skip 0 voice 1 wait 0
+- mode 1 time 31 skip 0 voice 0 wait 0
+- mode 1 time 40 skip 0 voice 0 wait 0
+- mode 1 time 40 skip 0 voice 1 wait 0
+- mode 1 time 40 skip 0 voice 2 wait 0
+- mode 1 time 120 skip 0 voice 0 wait 0
+- mode 1 time 121 skip 0 voice 1 wait 0
+- mode 1 time 278 skip 0 voice 0 wait 0
+- mode 1 time 420 skip 0 voice 0 wait 0
+- mode 1 time 421 skip 0 voice 0 wait 3
+- mode 1 time 421 skip 0 voice 1 wait 3
+- mode 1 time 421 skip 0 voice 2 wait 3
+- the cases run 219 of 219 instructions
 
 ### FUN_0c01c200 (`0C01C200`, 42 bytes, `src/gen_ak.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_ak/FUN_0c01c200.json`
@@ -15012,6 +15115,72 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 76 of 135 instructions
 
+### FUN_0c035560 (`0C035560`, 1216 bytes, `src/hand_h.c`)
+- equivalent on 33 development and 29 holdout cases, in `tests/hand_h/FUN_0c035560.json`
+- case 2
+- case 2
+- case 2
+- case 9
+- case 5
+- case 21
+- case 42
+- case 23
+- case 7
+- case 15
+- case 17
+- case 18
+- case 22
+- case 24
+- case 25
+- case 32
+- case 36
+- case 37
+- a4 nibble 0, a6=8, a5=3, a8=0, a9 bits 0
+- a4 nibble 1, a6=12, a5=-1, a8=5, a9 bits 4
+- a4 nibble 2, a6=23, a5=7, a8=100, a9 bits 3
+- a4 nibble 3, a6=9, a5=0, a8=2, a9 bits 7
+- a4 nibble 4, a6=30, a5=1, a8=1, a9 bits 1
+- a4 nibble 5, a6=16, a5=-5, a8=0, a9 bits 6
+- a4 nibble 15, a6=10, a5=2, a8=50, a9 bits 2
+- a4 nibble 1, a6=20, a5=4, a8=3, a9 bits 5
+- ten-row table 0, shared block: owners shown and missing, ranks below 0
+- ten-row table 5, shared block, one row with an owner
+- ten-row table 25, player 2
+- five-row table 8, shared block: equal names share a place, an empty name does not; owners shown and missing
+- five-row table 12, shared block, short layout
+- five-row table 15, shared block, short layout shifted, frame
+- five-row table 9, player 1: places from the rows
+- case 150
+- case 102
+- case 158
+- case 156
+- case 135
+- case 122
+- case 111
+- case 88
+- case 116
+- case 73
+- case 81
+- case 84
+- case 137
+- case 106
+- case 123
+- case 133
+- case 143
+- case 72
+- a4 nibble 2, a6=8, a5=-2, a8=10, a9 bits 4
+- a4 nibble 0, a6=15, a5=6, a8=0, a9 bits 3
+- a4 nibble 1, a6=11, a5=1, a8=7, a9 bits 0
+- a4 nibble 3, a6=22, a5=0, a8=1, a9 bits 7
+- ten-row table 3, shared block, rows 2..5, frame
+- ten-row table 24, shared block
+- ten-row table 7, player 0, first past last: nothing drawn
+- five-row table 23, shared block, rows 1..3, frame
+- five-row table 12, shared block, short layout shifted
+- five-row table 9, shared block: two runs of equal names
+- five-row table 10, shared block, first past last
+- the cases run 520 of 520 instructions
+
 ### FUN_0c035a20 (`0C035A20`, 62 bytes, `src/gen_ag.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_ag/FUN_0c035a20.json`
 - case 3
@@ -18185,6 +18354,22 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - rescue: empty case
 - the cases run 21 of 143 instructions
+
+### FUN_0c045108 (`0C045108`, 380 bytes, `src/hand_f.c`)
+- equivalent on 6 development and 6 holdout cases, in `tests/hand_f/FUN_0c045108.json`
+- forward, first point is far, settles at once
+- backward, two steps, halving below then above
+- dir most negative
+- wrap backward: moved to the end of line 0
+- negative dist
+- long halving, alternating sides
+- forward, three steps, halving above then below
+- dir 0 counts as forward
+- wrap: FUN_0c046fde moves to the other line
+- distance equal to dist is not far
+- settles on the second halving with a growing distance
+- first halving answer equals the walk answer minus dist
+- the cases run 166 of 166 instructions
 
 ### FUN_0c045284 (`0C045284`, 1512 bytes, `src/gen_au.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_au/FUN_0c045284.json`

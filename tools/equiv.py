@@ -171,6 +171,18 @@ def outside_names(cfile, table):
     return {'_' + n: table[n] for n in used if n in table and n not in defined}, defined
 
 
+def runtime_aliases(cfile, table):
+    """{helper name: address} from the file's `@runtime _helper=game_name` notes. A runtime helper the game's names list only under a
+    FUN_ name (other files call it by that name, as a call out) is, for this file alone, the compiler's helper: linked under the
+    helper's name and run on both sides, so the struct copies the compiler writes through it are compared by what they store."""
+    out = {}
+    for h, g in re.findall(r'@runtime\s+(_\w+)\s*=\s*(\w+)', open(cfile, errors='replace').read()):
+        if g not in table:
+            sys.exit('[ERROR] @runtime %s=%s: %s is not a name of the game' % (h, g, g))
+        out[h] = table[g]
+    return out
+
+
 def returns(cfile):
     """The return register of each function the file defines, from its prototype: fr0 for float
     and double, nothing for void, r0 otherwise (a leftover value in the other is not a result)."""
@@ -774,6 +786,8 @@ def main(argv):
     # the compiler's runtime helpers (_divls, _modls, _quick_evn_mvn...) are called by code it generates, not by name in
     # the source: every one the game names goes to the linker too
     defines.update({'_' + n: a for n, a in table.items() if n.startswith('_') and n not in defined})
+    aliases = runtime_aliases(cfile, table)       # this file's own runtime helpers: `/* @runtime _quick_odd_mvn=FUN_0c07ff00 */`
+    defines.update({'_' + n: a for n, a in aliases.items()})
     code, syms = compile_link(cfile, defines)
     if code is None:
         sys.exit('[ERROR] link: undefined %s (name them in functions.txt / globals.txt / symbols.txt)' % ', '.join(syms))
@@ -785,14 +799,14 @@ def main(argv):
     back = {a: table[n[1:]] for n, a in syms.items() if n[1:] in table}    # the file's own names
     # a call into the compiled C that is not one of its game-named functions is the C's own helper
     # (a static the original inlined, not in the map): part of the C version, so it runs
-    runtime_addrs = {a for n, a in table.items() if n.startswith('_')}
+    runtime_addrs = {a for n, a in table.items() if n.startswith('_')} | set(aliases.values())
     helpers = lambda t: (SCRATCH <= t < SCRATCH + len(code) and t not in back) or t in runtime_addrs
     arity, stackn = compared_arity(cfile, table)
     READS_NAME.update({(0x0C000000 | (a & 0x1FFFFFFF)) if 0x0C000000 <= (a & 0x1FFFFFFF) < 0x0D000000 else a: n for n, a in table.items()})
     STACKN.clear()
     STACKN.update(stackn)
     canon_ = lambda t: 0x0C000000 | (t & 0x1FFFFFFF) if 0x0C000000 <= (t & 0x1FFFFFFF) < 0x0D000000 else t
-    runtime = {a for n, a in table.items() if n.startswith('_')}        # the compiler's own helpers (_divls,
+    runtime = {a for n, a in table.items() if n.startswith('_')} | set(aliases.values())        # the compiler's own helpers (_divls,
     arity.update({canon_(a): (0, 0) for a in runtime})                           # _quick_odd_mvn...): run, not compared
     helpers_orig = lambda t: t in runtime
     fills = fill_regs(table)

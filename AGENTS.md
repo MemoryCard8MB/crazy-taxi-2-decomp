@@ -67,6 +67,16 @@ Work in this order. Run build/equiv tools with `DOCKER_CONTEXT=colima-x86` (the 
 
 Polish pass (tested 2026-11-13): `--retest` is near its ceiling (82 functions redrawn in two batches, 1 case file changed, coverage unchanged at 54.9%). Two `--retest` processes on disjoint batches run side by side without corrupting `tests/equivalent.txt` or `docs/equivalent.md` (compiles use per-process scratch folders); the x86 VM (4 CPUs) allows 2-3. More coverage has to come from hand cases for the failing functions and `--direct`.
 
+Struct copies (added 2026-11-14): the compiler's copy helpers `_quick_evn_mvn` (0C07FDC8) and `_quick_odd_mvn` (0C07FF00) keep their
+`FUN_` names, because 74 generated files call `FUN_0c07ff00()` by name as a call out (renaming makes `equiv.py` run it with the C's
+unset r0-r2). A hand file that copies structs in plain C (`a = b;`, a struct passed by value) says so in a comment:
+`@runtime _quick_odd_mvn=FUN_0c07ff00`. For that file alone `equiv.py` links the helper under its real name and runs it on both
+sides, so the copy is compared by what it stores (`src/hand_f.c`). Do not mix the note with by-name calls in one file.
+
+State 2026-11-14: every function that can be C is Equivalent (3,441; 188 have no C form). Open before step 8: the generated
+callers that still call `FUN_0c07ff00()` / `FUN_0c07fdc8()` with no arguments drop the copy in a build from C; names (2,046 `FUN_`);
+coverage (60.3%).
+
 Boundary: the user decides whether to go on to step 7 (size reduction) after `python3 tools/progress.py`.
 
 ## Layout *(both)*

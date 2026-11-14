@@ -1,0 +1,2 @@
+{"dev": [{"about": "the whole fill: 2,621,440 words", "regs": {"r4": "00000011", "r5": "00000022", "r6": "00000033", "r7": "00000044"}, "steps": 12000000}],
+ "holdout": [{"about": "the whole fill, other register values and old contents", "regs": {"r4": "FFFFFFFF", "r5": "0C400000", "r6": "00000000", "r7": "89ABCDEF"}, "poke": {"0C310000": "0102030405060708", "0CD0FFF8": "1122334455667788", "0CD10000": "a1a2a3a4"}, "steps": 12000000}]}
