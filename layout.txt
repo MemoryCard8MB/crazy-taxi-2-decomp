@@ -7,3 +7,4 @@ code    0C010000 0C0964C8    # entry, game code, NAOMI library and runtime: the 
 bss     0C30BC20             # the end of the BSS (_INITSCT: game BSS 0C175400-0C2D0BC0 word-cleared, SDK BSS 0C2D0BC0-0C30BC20 byte-cleared)
 fixed   0C310000             # the first address a movable build may not move: main (FUN_0c01b1e8) fills 0C310000-0CD10000 with -1, gdc_FileLoadInit and FUN_0c04e03c use it (0x43E0 = 17,376 bytes between, not yet checked free in a RAM dump)
 mixed   1                    # state tables in the data point into the middle of FUN_0c066f1e (0C067020, 0C06703C, 0C067058, 0C067096); its group shares pools with FUN_0c0677c4, which has no C form (it relies on FUN_0c07ff00 keeping r4): a running copy of a group with pieces without C (as Zombie Revenge)
+trimdata 1                   # a data copy (bytes the C reads out of a replaced function) holds only the data runs that contain a read (mbuild.py data_runs)
