@@ -836,3 +836,65 @@ int FUN_0c0393ea(int a4, int a5, float f4)
     FUN_0c03341c(0.300000012f);
     return FUN_0c02803a(0xFFCF0000, 0xFFCF0000, 0xFFCF0000, 0xFFCF0000);
 }
+
+/* manual: queues a DMA transfer to the TA. With interrupts masked (level 14): no length -> 0x103. Channel (a7 bit 3) picks one
+   of two rings of eight 32-byte slots at 0xC2D56B0; a free slot (low bits of +24 clear) takes the request (addresses and length
+   rounded up to 32 bytes, sequence number from 0xC2D58B8), is handed back through *a8 and the ring index moves on; a busy slot
+   gives 0x100. If no transfer is running (the slot at 0xC2D58C8/0xC2D58C4 is idle) and the new one is ready, it is started:
+   DMA channel 2 (0xFFA00020-2C) and the TA FIFO DMA (0xA05F6800-08), in the original's order. */
+int kmiDMAtoTARequest(int a4, int a5, int a6, int a7, int a8)
+{
+    int old = _builtin_get_imask();
+    int ch, idx, e, cur, r, mode;
+
+    _builtin_set_imask(0xE);
+    if (a6 == 0) {
+        _builtin_set_imask(old);
+        return 0x103;
+    }
+    ch = (a7 & 8) >> 3;
+    idx = *(int *)(0xC2D58B0 + (ch << 2));
+    e = 0xC2D56B0 + (ch << 8) + (idx << 5);
+    r = 0x100;
+    if ((*(int *)(e + 24) & 3) == 0) {
+        if ((a5 & 31) != 0) {
+            a5 = (a5 + 31) & ~31;
+        }
+        if ((a6 & 31) != 0) {
+            a6 = (a6 + 31) & ~31;
+        }
+        *(int *)(e + 0) = *(int *)0xC2D58B8;
+        *(int *)(e + 4) = a5;
+        *(int *)(e + 12) = a4;
+        *(int *)(e + 20) = a6;
+        *(int *)(e + 24) = a7 | 1;
+        *(int *)a8 = e;
+        r = 0;
+        *(int *)(0xC2D58B0 + (ch << 2)) = (*(int *)(0xC2D58B0 + (ch << 2)) + 1) & 7;
+        *(int *)0xC2D58B8 = *(int *)0xC2D58B8 + 1;
+    }
+    if (r == 0x100) {
+        _builtin_set_imask(old);
+        return 0x100;
+    }
+    cur = 0xC2D56B0 + (*(int *)0xC2D58C8 << 8) + (*(int *)0xC2D58C4 << 5);
+    if ((*(int *)(cur + 24) & 3) == 0 && (*(int *)(e + 24) & 3) == 1) {
+        *(int *)(e + 24) = (*(int *)(e + 24) & ~3) | 2;
+        *(volatile int *)0xFFA00020 = *(int *)(e + 4);
+        *(volatile int *)0xFFA00024 = (*(int *)(e + 12) + 0xF0000000) << 1;
+        *(volatile int *)0xFFA00028 = (unsigned int)a6 >> 5;
+        mode = ((*(int *)(e + 24) & 4) != 0) ? 0x241 : 0x2C1;
+        if ((*(int *)(e + 24) & 16) != 0) {
+            mode = mode | 0x1000;
+        }
+        *(volatile int *)0xFFA0002C = mode;
+        *(volatile int *)0xA05F6800 = *(int *)(e + 12);
+        *(volatile int *)0xA05F6804 = *(int *)(e + 20);
+        *(volatile int *)0xA05F6808 = 1;
+        *(int *)0xC2D58C4 = idx;
+        *(int *)0xC2D58C8 = ch;
+        *(int *)(0xC2D58BC + (ch << 2)) = (*(int *)(0xC2D58BC + (ch << 2)) + 1) & 7;
+    }
+    _builtin_set_imask(old);
+    return r;
+}

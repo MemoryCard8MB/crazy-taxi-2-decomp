@@ -1,0 +1,52 @@
+{
+ "dev": [
+  {
+   "about": "handler returns 5",
+   "regs": {
+    "r4": "00000001",
+    "r5": "00000002",
+    "r6": "00000003",
+    "r7": "00000004"
+   },
+   "poke": {
+    "0C16FE34": "0000250C"
+   },
+   "calls": [
+    {
+     "r0": "00000005"
+    }
+   ]
+  },
+  {
+   "about": "another handler, no registers set",
+   "regs": {},
+   "poke": {
+    "0C16FE34": "0010250C"
+   },
+   "calls": [
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
+  }
+ ],
+ "holdout": [
+  {
+   "about": "handler with pointer arguments",
+   "regs": {
+    "r4": "0C200000",
+    "r5": "0C210000",
+    "r6": "00000000",
+    "r7": "7FFFFFFF"
+   },
+   "poke": {
+    "0C16FE34": "0020250C"
+   },
+   "calls": [
+    {
+     "r0": "00000000"
+    }
+   ]
+  }
+ ]
+}

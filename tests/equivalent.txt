@@ -603,6 +603,7 @@ FUN_0c03b5e0
 FUN_0c03b72e
 FUN_0c03baba
 FUN_0c03bc10
+FUN_0c03c070
 FUN_0c03cc9c
 FUN_0c03cd7e
 FUN_0c03d416
@@ -872,6 +873,7 @@ FUN_0c052d5c
 FUN_0c052dba
 FUN_0c052eca
 FUN_0c052f8c
+FUN_0c052fcc
 FUN_0c05304a
 FUN_0c05305e
 FUN_0c053158
@@ -1235,6 +1237,7 @@ FUN_0c069790
 FUN_0c069864
 FUN_0c069890
 FUN_0c06989a
+FUN_0c0698ac
 FUN_0c06991a
 FUN_0c069a04
 FUN_0c069a62
@@ -1749,6 +1752,7 @@ FUN_0c149c18
 FUN_0c149e6e
 FUN_0c149ec6
 FUN_0c14a2ba
+FUN_0c14b2ec
 FUN_0c14b394
 FUN_0c14b460
 FUN_0c14b478
@@ -2607,6 +2611,7 @@ kmiCreateGlobalParameter
 kmiCreateRegionArray
 kmiDACControl
 kmiDMAHazardReset
+kmiDMAtoTARequest
 kmiDefaultFatalErrorCallback
 kmiDefaultInterruptHandler
 kmiDiscardRenderPipeline
@@ -2977,6 +2982,7 @@ nlMakeProjConvMat
 nlMalloc
 nlMirrorDouble
 nlMultiLineSub
+nlMultiMatrix8
 nlMultiMatrixRevOrder
 nlMultiMatrixRevOrder8
 nlMvCalcEdgeA

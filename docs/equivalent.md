@@ -15933,6 +15933,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 284 of 439 instructions
 
+### FUN_0c03c070 (`0C03C070`, 1362 bytes, `src/gen_di.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_di/FUN_0c03c070.json`
+- rescue: empty case
+- rescue: empty case
+- the cases run 78 of 578 instructions
+
 ### FUN_0c03cc9c (`0C03CC9C`, 226 bytes, `src/gen_cl.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_cl/FUN_0c03cc9c.json`
 - rescue: empty case
@@ -23009,6 +23015,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 39
 - case 119
 - the cases run 32 of 32 instructions
+
+### FUN_0c052fcc (`0C052FCC`, 126 bytes, `src/hand_c.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/hand_c/FUN_0c052fcc.json`
+- the setup: every call answered 0
+- the setup, calls answer other values
+- the cases run 63 of 63 instructions
 
 ### FUN_0c05304a (`0C05304A`, 20 bytes, `src/gen_a.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_a/FUN_0c05304a.json`
@@ -31554,6 +31566,17 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 86
 - case 53
 - the cases run 9 of 9 instructions
+
+### FUN_0c0698ac (`0C0698AC`, 110 bytes, `src/hand_c.c`)
+- equivalent on 5 development and 2 holdout cases, in `tests/hand_c/FUN_0c0698ac.json`
+- three entries, flags 0: bit 21 set, bit 20 clear
+- two entries, flags 3: bit 21 clear, bit 20 set
+- no entries
+- one entry, flags 1
+- one entry, flags 2
+- four entries, flags 2
+- one entry, flags 0xFF
+- the cases run 55 of 55 instructions
 
 ### FUN_0c06991a (`0C06991A`, 234 bytes, `src/gen_dh.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_dh/FUN_0c06991a.json`
@@ -48239,6 +48262,13 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - rescue: empty case
 - the cases run 94 of 355 instructions
+
+### FUN_0c14b2ec (`0C14B2EC`, 28 bytes, `src/hand_c.c`)
+- equivalent on 2 development and 1 holdout cases, in `tests/hand_c/FUN_0c14b2ec.json`
+- handler returns 5
+- another handler, no registers set
+- handler with pointer arguments
+- the cases run 14 of 14 instructions
 
 ### FUN_0c14b394 (`0C14B394`, 22 bytes, `src/gen_a.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_a/FUN_0c14b394.json`
@@ -74769,6 +74799,18 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 71
 - the cases run 44 of 44 instructions
 
+### kmiDMAtoTARequest (`0C152700`, 456 bytes, `src/hand_b.c`)
+- equivalent on 5 development and 3 holdout cases, in `tests/hand_b/kmiDMAtoTARequest.json`
+- no length
+- channel 0, free slot, idle: started (bit 2 clear, bit 4 set)
+- channel 1, unaligned sizes, free slot, idle: started (bit 2 set)
+- slot busy
+- free slot but a transfer is running
+- channel 1 wraps its ring index
+- channel 0, slot 6, length 1
+- busy slot on channel 1
+- the cases run 206 of 206 instructions
+
 ### kmiDefaultFatalErrorCallback (`0C1560B4`, 62 bytes, `src/gen_ag.c`)
 - equivalent on 6 development and 6 holdout cases, in `tests/gen_ag/kmiDefaultFatalErrorCallback.json`
 - endless case 0
@@ -85559,6 +85601,15 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - rescue: empty case
 - the cases run 57 of 143 instructions
+
+### nlMultiMatrix8 (`0C072F20`, 52 bytes, `src/hand_a.c`)
+- equivalent on 3 development and 2 holdout cases, in `tests/hand_a/nlMultiMatrix8.json`
+- identity times a matrix
+- a matrix times identity
+- two full matrices
+- other order
+- matrix times itself
+- the cases run 26 of 26 instructions
 
 ### nlMultiMatrixRevOrder (`0C072FA0`, 64 bytes, `src/gen_ag.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_ag/nlMultiMatrixRevOrder.json`

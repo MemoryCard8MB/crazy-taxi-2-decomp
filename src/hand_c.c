@@ -487,3 +487,66 @@ int FUN_0c05bf7e(void)
     *(unsigned int *)0xC136CAC = 0x0;
     return t1;
 }
+
+/* manual: makes 0xC16FE28 current (0xC1737F8) and calls its handler (the word at +12) with r4-r7 as they came and the object
+   itself as the one stack argument */
+int FUN_0c14b2ec(int a4, int a5, int a6, int a7)
+{
+    *(int *)0xC1737F8 = 0xC16FE28;
+    return ((int (*)(int, int, int, int, int))(*(int *)(0xC16FE28 + 12)))(a4, a5, a6, a7, 0xC16FE28);
+}
+
+/* manual: for each of the n entries (256 bytes each, n at a4+4, base at *a4) stores the kind a5 at +16 and two one-bit fields
+   of the word at +0xFC from the flags of kind a5 (table at 0xC10E5D0 from kind 35): bit 21 when flag bit 0 is clear, bit 20 when
+   flag bit 1 is set. The original stores the bits through _bfslu (descriptors 0x0A01 and 0x0B01: bit 31-10 and 31-11). */
+void FUN_0c0698ac(int a4, int a5)
+{
+    int *flags = (int *)(0xC10E5D0 + ((a5 - 35) << 2));
+    int i;
+
+    for (i = 0; i < *(int *)(a4 + 4); i++) {
+        unsigned int *w;
+        *(int *)(*(int *)a4 + (i << 8) + 16) = a5;
+        w = (unsigned int *)(*(int *)a4 + (i << 8) + 0xFC);
+        *w = (*w & ~0x200000u) | (((*flags & 1) == 0) ? 0x200000u : 0u);
+        w = (unsigned int *)(*(int *)a4 + (i << 8) + 0xFC);
+        *w = (*w & ~0x100000u) | (((*flags & 2) != 0) ? 0x100000u : 0u);
+    }
+}
+
+int nlMatrixMode(int);
+void nlUnitMatrix(void);
+int nlPerspective(int a4, float f4, float f5, float f6);
+void SEGA_LOGO_SetColor(void);
+int FUN_0c053c00(int a4);
+
+/* manual: sets up the logo screen: a 4:3 perspective, ten 20-byte points at 0xC2B2C5C at (320, 240), a point at 0xC2B2D28,
+   the logo colour, then goes on to the light-direction entry at 0xC0761A0 (inside nlObjPutSetLightDirectionV) with
+   (0, 0.6, 0.8): the original jumps there as its last step */
+int FUN_0c052fcc(void)
+{
+    float *p;
+    int i;
+
+    nlMatrixMode(3);
+    nlUnitMatrix();
+    nlPerspective(0x1D28, 1.33333337f, 0.300000012f, 300.0f);
+    nlMatrixMode(1);
+    p = (float *)0xC2B2C5C;
+    for (i = 0; i < 10; i++) {
+        p[0] = 320.0f;
+        p[1] = 240.0f;
+        p[2] = 0.0f;
+        ((short *)p)[6] = 0;
+        ((short *)p)[7] = 0;
+        ((short *)p)[8] = 0;
+        p = (float *)((int)p + 20);
+    }
+    *(int *)0xC2B2D24 = 0;
+    ((float *)0xC2B2D28)[0] = 0.0f;
+    ((float *)0xC2B2D28)[2] = 0.0f;
+    ((float *)0xC2B2D28)[1] = 36.0f;
+    SEGA_LOGO_SetColor();
+    FUN_0c053c00(0x00FFFFFF);
+    return ((int (*)(float, float, float))0xC0761A0)(0.0f, 0.600000024f, 0.800000012f);
+}

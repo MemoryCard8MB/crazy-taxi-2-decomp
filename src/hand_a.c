@@ -1,3 +1,6 @@
+extern void _builtin_ftrv(float *, float *);
+extern void _builtin_ld_ext(float (*)[4]);
+extern void _builtin_st_ext(float (*)[4]);
 int FUN_0c16f778(int, int, int, int, int);
 void kdRecvFrame(void);
 
@@ -150,8 +153,6 @@ int FUN_0c16880c(void)
     return 0;
 }
 
-extern void _builtin_ld_ext(float (*)[4]);
-extern void _builtin_st_ext(float (*)[4]);
 
 /* manual: scales the current matrix (the back register bank): rows 0-3 by x, 4-7 by y, 8-11 by z; the original pops the three
    arguments into xf15 in turn and keeps xf15 itself in FPUL */
@@ -280,4 +281,25 @@ void syIntAdrChk_dumpline(int head, int start, int n)
         send_message_in_current_mode(0xC172E78);
     }
     send_message_in_current_mode(0xC172E70);
+}
+
+
+/* manual: the current matrix (back bank) times the 4x4 matrix at a4, column by column with ftrv; the result becomes the current
+   matrix (the original swaps banks with frchg). The columns are loaded with paired moves (fschg), and a paired move on this
+   little-endian CPU puts the word at the higher address in the even register, so each pair of words is swapped */
+void nlMultiMatrix8(int a4)
+{
+    float r[16];
+    float *m = (float *)a4;
+    float v[4];
+    int i;
+
+    for (i = 0; i < 4; i++) {
+        v[0] = m[4 * i + 1];
+        v[1] = m[4 * i + 0];
+        v[2] = m[4 * i + 3];
+        v[3] = m[4 * i + 2];
+        _builtin_ftrv(v, r + 4 * i);
+    }
+    _builtin_ld_ext((float (*)[4])r);
 }
