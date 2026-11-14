@@ -36,3 +36,14 @@ normal's `ac3ff700` next to `-1.0`); two kinds are real:
   (`0xFE0` bytes), which hold all 14 such words. Nothing to translate.
 
 Words in RAM above the moved range that point into it (88-500 per dump) are floats in model data, or slots the code writes at run time.
+
+## Marker test
+
+2026-11-14, `work/fix8/watchfree.py`: `0C59D520`-`0C5C0000` read every 5 s over Flycast's GDB server while the game was played
+(drives in both cities, Crazy Pyramid, menus): 420 samples over 35 minutes, every word the `-1` fill. Then the game's internet
+function zeroed all of it within a second. That is the Dream Passport browser, a program of its own (`ntLDBrowser` loads
+`sg_dpldr.bin` to `8C008300`, which loads `2_DP.BIN`, linked at `8C010000`, over the game). Leaving it restarts `1ST_READ.BIN`:
+after the browser `0C310000`-`0C390000` is all `-1` again, as at boot (`menu1`), where a menu after a drive still holds the ppl and spl
+data (`menu2`, 408,660 bytes). Nothing of the game's RAM is used across the browser, so the block stays free for the game. The
+launch passes only fixed system addresses (`8C008300`, hardware and cache registers); what else ntLD/ntInf name is game memory read
+by the game's own code, which moves with it. A build from C still has to be tried with the browser in step 9.
