@@ -660,6 +660,7 @@ FUN_0c03ff4a
 FUN_0c0401d8
 FUN_0c04027a
 FUN_0c040704
+FUN_0c0408f2
 FUN_0c040bec
 FUN_0c040cbe
 FUN_0c040cf2
@@ -2071,6 +2072,7 @@ Put_Adv_Logo_Sprite
 Put_Combo_Entry
 Put_Remain_Time_Add
 Put_Time_Bonus_Sprite
+Put_Time_Spark
 ReflectColliWallBox
 Result_Face_Put
 Result_Wobble

@@ -17375,6 +17375,41 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 40
 - the cases run 93 of 216 instructions
 
+### FUN_0c0408f2 (`0C0408F2`, 674 bytes, `src/hand_e.c`)
+- equivalent on 16 development and 15 holdout cases, in `tests/hand_e/FUN_0c0408f2.json`
+- fading out, height above 100: closes the event
+- fading out, height below 100
+- rising, scale at 1.2
+- draw flag off
+- kind 1, mode 0
+- kind 3, mode 0
+- kind -1, mode 0
+- kind 2, mode 1
+- kind 1, mode 2
+- kind 3, mode 2
+- kind 2, mode 3
+- kind 1, mode -1
+- kind 3, mode -1
+- count 99, mode 2
+- count 12345, mode 2
+- mode 1, scale above 1.2, large height
+- fading out, height 100 exactly: keeps moving
+- rising, scale under 1.2 grows
+- rising, scale above 1.2
+- kind 0, mode 0
+- kind 2, mode 0
+- kind 4, mode 0
+- kind 1, mode 1
+- kind 3, mode 1
+- kind 2, mode 2
+- kind 1, mode 3
+- kind 3, mode 3
+- kind 2, mode -1
+- count 0, mode 2
+- count 100, mode 2
+- count -150, mode 2
+- the cases run 276 of 276 instructions
+
 ### FUN_0c040bec (`0C040BEC`, 180 bytes, `src/gen_h.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_h/FUN_0c040bec.json`
 - case 0
@@ -57599,6 +57634,16 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - rescue: empty case
 - the cases run 68 of 68 instructions
+
+### Put_Time_Spark (`0C052546`, 140 bytes, `src/hand_e.c`)
+- equivalent on 3 development and 3 holdout cases, in `tests/hand_e/Put_Time_Spark.json`
+- position (10.5, -3.25), sprite halfwords 0102 7FF0 0506, step 0010
+- position (-640, 480.9), sprite halfwords FFFF 8000 1234, step FFF0
+- position (3, 4), sprite halfwords 4000 C000 0001, step 8001
+- position (0, 0), sprite halfwords 0000 0000 0000, step 0000
+- position (1e+06, -1e+06), sprite halfwords 00FF 7FFF FF00, step 7FFF
+- position (-0.75, 99.5), sprite halfwords 1111 2222 3333, step 4444
+- the cases run 70 of 70 instructions
 
 ### ReflectColliWallBox (`0C02C7F2`, 398 bytes, `src/gen_bw.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_bw/ReflectColliWallBox.json`
