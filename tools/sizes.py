@@ -50,8 +50,7 @@ def c_size(name, src, protos, head=None):
             return None
         # the whole of the file's code and constant sections (the literal pools and constants count, as they do in the
         # build), less the 4 bytes of the marker function
-        stem = os.path.splitext(os.path.basename(f))[0]
-        m = open('build/equiv/%s.map' % stem, errors='replace').read()
+        m = equiv.LAST_MAP[0]          # compile_link compiles under a fresh name and removes its files; it keeps the map's text
         total = sum(int(x.group(2), 16) for x in re.finditer(r"^(P|C)\s+H'[0-9A-F]{8}\s+-\s+H'[0-9A-F]{8}\s+H'([0-9A-F]{8})", m, re.M))
         return total - 4 if total else None
     finally:

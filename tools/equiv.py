@@ -115,6 +115,7 @@ def sdk_env():
 
 
 _CL_SEQ = [0]
+LAST_MAP = ['']
 
 
 def compile_link(cfile, defines):
@@ -178,7 +179,8 @@ def _compile_link(cfile, stem, defines, sdk, rel):
     if undefined or not os.path.exists('build/equiv/%s.bin' % stem):
         return None, undefined or ['(link failed: %s)' % log.strip()[-200:]]
     syms = {}
-    for m in re.finditer(r'(_\w+)\s*\n?\s*H\'([0-9A-Fa-f]{8})', open('build/equiv/%s.map' % stem, errors='replace').read()):
+    LAST_MAP[0] = open('build/equiv/%s.map' % stem, errors='replace').read()      # the map's text, for sizes.c_size (the file goes)
+    for m in re.finditer(r'(_\w+)\s*\n?\s*H\'([0-9A-Fa-f]{8})', LAST_MAP[0]):
         syms.setdefault(m.group(1), int(m.group(2), 16))
     return open('build/equiv/%s.bin' % stem, 'rb').read(), syms
 

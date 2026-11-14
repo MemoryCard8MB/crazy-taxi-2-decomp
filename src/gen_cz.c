@@ -194,61 +194,6 @@ int kmiInitializeDevice(void)
     return 0x1;
 }
 
-int FUN_0c02cf88(int a4)
-{
-    int stk[15];
-    register int t2;
-    register int t3;
-    register int t4;
-    register float u6;
-    register float u7;
-    register int t10;
-    register int t11;
-    register float u12;
-    register float u13;
-    register float u14;
-    register int t17;
-    register int t19;
-
-    nlTriPutTextureInit(0xC274808, 0xFFFFFFFF, 0x0);
-    t2 = ((((struct o48_int *)(a4))->v));
-    *(int *)((int)stk + 20) = t2;
-    *(int *)((int)stk + 16) = 0x0;
-    *(int *)((int)stk + 12) = 0x0;
-    *(int *)((int)stk + 8) = 0x0;
-    *(int *)((int)stk + 4) = 0x0;
-    *(int *)((int)stk + 0) = 0x0;
-    t3 = (((struct o44_int *)(a4))->v);
-    t4 = *(int *)0xC270F50;
-    u6 = (((struct o8_float *)(((t3 * 0x1C) + t4)))->v);
-    u7 = (((struct o4_float *)(((t3 * 0x1C) + t4)))->v);
-    FUN_0c075740(0xC274808, 0x2, 0x0, 0xFFFFFFFF, 0x0, 0x0, 0x0, 0x0, 0x0, t2, 0.5f, 0.5f, u7, u6, ((((struct oC_float *)(((t3 * 0x1C) + t4)))->v)), 0.0f, 0.0f, 0.0f);
-    *(unsigned int *)0xC274828 = ((*(int *)0xC274828) | 0xC0);
-    t10 = (((struct o44_int *)(a4))->v);
-    t11 = *(int *)0xC270F50;
-    u12 = (((struct o4_float *)(((t10 * 0x1C) + t11)))->v);
-    u13 = (((struct o8_float *)(((t10 * 0x1C) + t11)))->v);
-    u14 = (((struct oC_float *)(((t10 * 0x1C) + t11)))->v);
-    FUN_0c073c40(((int)stk + 24), a4, 0.00999999978f);
-    FUN_0c07ff00();
-    t17 = 0x0;
-    for (;;) {
-        if ((int)t17 >= (int)((((struct o48_int *)(a4))->v))) {
-            break;
-        }
-        t19 = *(int *)(((t17 << 2) + 0xC1294CC));
-        nlAddVector3op((((int)stk + 24) + 0x18), ((int)stk + 24), ((((t19 << 1) + t19) << 2) + (a4 + 0x14)));
-        nlAddVector((((int)stk + 24) + 0xC), (((int)stk + 24) + 0x18));
-        nlTriPutSetPoint(0xC274808, t17, (*(float *)(((int)stk + 48))), (*(float *)(((int)stk + 52))), (*(float *)(((int)stk + 56))), (*(float *)((a4 + 0x0))), ((((struct o4_float *)(a4))->v)), ((((struct o8_float *)(a4))->v)), 0.0f, 0.0f);
-        t17 = (t17 + 0x1);
-    }
-    nlTriPutSetClipping(0xC274808, ((((struct o14_float *)(a4))->v)), ((((struct o4_float *)((a4 + 0x14)))->v)), ((((struct o8_float *)((a4 + 0x14)))->v)), ((((struct o10_float *)(a4))->v)));
-    nlObjPutUseViewMatrix(0xC274808);
-    FUN_0c073c40((((int)stk + 24) + 0xC), (((int)stk + 24) + 0xC), (1.0f / (float)((((struct o48_int *)(a4))->v))));
-    FUN_0c073c40((((int)stk + 24) + 0x18), a4, (((((struct o10_float *)(a4))->v)) * 0.100000001f));
-    nlAddVector((((int)stk + 24) + 0x18), (((int)stk + 24) + 0xC));
-    return (FUN_0c078810((((int)stk + 24) + 0x18), (((int)stk + 24) + 0xC), (((0xFF000000 | ((unsigned char)(int)(u12 * 255.0f) << 16)) | ((unsigned char)(int)(u13 * 255.0f) << 8)) | (unsigned char)(int)(u14 * 255.0f))));
-}
 
 int kmiAllocSysConfig(int a4, float f4, float f5, float f6, float f7, float f8, float f9)
 {

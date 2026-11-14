@@ -2190,67 +2190,6 @@ int syG2DmaReset(int a4)
     return 0x0;
 }
 
-int FUN_0c039c90(void)
-{
-    int stk[2];
-    register int t0;
-    register int t5;
-    register int t12;
-    int t29;
-    register int t60;
-
-    t0 = FUN_0c034320(0x1, 0x0);
-    if (t0 != 0) {
-        t5 = *(int *)0xC2A4F94;
-        if ((t5 & 1) != 0) {
-            FUN_0c0397ec(0x1, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
-        } else {
-            if ((t5 & 2) != 0) {
-                FUN_0c0397ec(0x1, 0x1, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
-            } else {
-                t12 = *(int *)0xC2A4F94;
-                if ((t12 & 4) != 0) {
-                    FUN_0c0397ec(0x1, 0x2, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
-                } else {
-                    if ((t12 & 8) != 0) {
-                        FUN_0c0397ec(0x1, 0x3, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
-                    } else {
-                        if (((*(int *)0xC2A4F94) & 32) != 0) {
-                            FUN_0c0397ec(0x1, 0x4, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
-                        }
-                    }
-                }
-            }
-        }
-    } else {
-        t29 = *(int *)0xC2A4F94;
-        if ((0x1 & t29) != 0) {
-            FUN_0c0397ec(0x0, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
-        } else {
-            if ((0x2 & t29) != 0) {
-                FUN_0c0397ec(0x0, 0x1, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
-            } else {
-                if ((0x4 & t29) != 0) {
-                    FUN_0c0397ec(0x0, 0x2, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
-                } else {
-                    if ((0x8 & t29) != 0) {
-                        FUN_0c0397ec(0x0, 0x3, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
-                    } else {
-                        if ((t29 & 0x20) != 0) {
-                            FUN_0c0397ec(0x0, 0x4, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
-                        }
-                    }
-                }
-            }
-        }
-    }
-    FUN_0c0339c0(0x0);
-    t60 = FUN_0c0343b8(0x1, 0x0);
-    if (t60 == 3) {
-        *(unsigned int *)0xC2A4F94 = ((*(int *)0xC2A4F94) & 0xFFFFFFD0);
-    }
-    return t60;
-}
 
 int FUN_0c064f92(int a4)
 {

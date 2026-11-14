@@ -1125,69 +1125,6 @@ int FUN_0c06a754(int a4, int a5, int a6)
     return t10;
 }
 
-int FUN_0c06cc10(void)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-    register int t3;
-    register int t4;
-
-    t0 = 0x0;
-    for (;;) {
-        if ((int)t0 < (int)0xA) {
-            t1 = 0x0;
-            for (;;) {
-                t2 = (FUN_0c14fd82(0xC112A40, 0x0));
-                t1 = (t1 + 0x1);
-                if ((int)t1 <= (int)0x78) {
-                    if (t2 != 0) {
-                        break;
-                    }
-                    continue;
-                }
-                t0 = (t0 + 0x1);
-                if ((int)t0 < (int)0xA) {
-                    t1 = 0x0;
-                    continue;
-                }
-                return t2;
-            }
-            t1 = t2;
-            t2 = 0xC1129E0;
-            t3 = *(int *)((((*(int *)0xC175C80) << 2) + t2));
-            t4 = t3;
-            if ((int)t3 < 0) {
-                t4 = (t3 + 0x7FF);
-            }
-            t2 = (FUN_0c150308(t1, ((int)t4 >> 11), 0x0));
-            t2 = (nlMalloc(0x3800));
-            (((struct o8_uint *)0xC13C344)->v) = t2;
-            if (t2 != 0) {
-                (((struct oC_uint *)0xC13C344)->v) = ((t2 + 0x20) & 0xFFFFFFE0);
-                t2 = (FUN_0c1500d2(t1, 0x7, ((t2 + 0x20) & 0xFFFFFFE0)));
-                for (;;) {
-                    t2 = (FUN_0c150460(t1));
-                    if (t2 == 3) {
-                        t2 = (FUN_0c14ff0c(t1));
-                        t2 = 0xC1129E0;
-                        (((struct o10_uint *)0xC13C344)->v) = (((*(int *)((((*(int *)0xC175C80) << 2) + t2))) - (((((int)t4 >> 11) << 8) << 2) << 1)) + ((((struct oC_int *)0xC13C344)->v)));
-                        return t2;
-                    }
-                    if (t2 == 4) {
-                        break;
-                    }
-                }
-                t2 = (FUN_0c14ff0c(t1));
-                t2 = (nlFree(((((struct o0_int *)0xC13C344)->v))));
-                t0 = (t0 + 0x1);
-                continue;
-            }
-            return t2;
-        }
-        return t2;
-    }
-}
 
 int SJUNI_GetChunk(int a4, int a5, int a6, int a7)
 {

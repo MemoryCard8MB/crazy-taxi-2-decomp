@@ -68,43 +68,6 @@ int FUN_0c08f788(int a4, int a5, int a6, int a7)
     return 0xFFFFFFFF;
 }
 
-int FUN_0c058edc(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-    register int t3;
-
-    if ((*(int *)(((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0))) + 0x4))) == (*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0xC)))) {
-        FUN_0c01edbc(a4, (*(int *)(((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0))) + 0x0))));
-        gdc_StreamVoiceVol(a4, (*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x4))));
-        t0 = (FUN_0c01ee10(a4, (*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x8)))));
-    } else {
-        t1 = *(int *)(((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0))) + 0x4));
-        t0 = t1;
-        if ((int)t1 <= (int)(*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0xC)))) {
-            t1 = gdc_GetStreamVoiceStat2(a4);
-            if (t1 != 0) {
-                t1 = FUN_0c01ed38(a4);
-                t3 = t1;
-                if ((int)t1 >= (int)(*(int *)(((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0))) + 0x8)))) {
-                    t3 = (FUN_0c01ec7a(a4));
-                }
-                t1 = t3;
-            } else {
-                *(unsigned int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0)) = ((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0))) + 0xC);
-                *(unsigned int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0xC)) = 0x0;
-                t3 = *(int *)(((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0))) + 0x0));
-                if (t3 == -1) {
-                    *(unsigned int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0)) = 0x0;
-                }
-                t1 = t3;
-            }
-            t0 = t1;
-        }
-    }
-    *(unsigned int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0xC)) = ((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0xC))) + 0x1);
-    return t0;
-}
 
 int kmiInitInterrupt(void)
 {

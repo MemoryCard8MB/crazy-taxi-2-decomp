@@ -1,0 +1,95 @@
+/* Straight-line functions with calls and guards (batch gen_ej): generated from the code and checked by tests. Calls are
+   to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
+
+int FUN_0c0339c0(int);
+int FUN_0c034320(int, int);
+int FUN_0c0343b8(int, int);
+int FUN_0c0397ec(int, int, int, int, int, int, int, int, int, int, int, int);
+int FUN_0c039c90(int a4);
+
+int FUN_0c039c90(int a4)
+{
+    int stk[2];
+    int t28;
+
+    register int R2;
+    register int R3;
+    int R4;
+    register int R6;
+    register int R8;
+    register int R9;
+    register int R10;
+    register int R12;
+    register int T_;
+    register int v0_0;
+    register int v0_1;
+    register int v0_2;
+    R4 = a4;
+    v0_1 = (FUN_0c034320(0x1, 0x0)) == 0;
+    v0_0 = (0xC2A4F94);
+    if (v0_1) goto L_C039D14;
+    v0_2 = *(int *)((v0_0 + 0x0));
+    v0_1 = (v0_2);
+    if (((v0_2 & 1) == 0)) goto L_C039CAC;
+    v0_1 = (0x0);
+    L_C039CBE:;
+    R4 = (0x1);
+    L_C039D4A:;
+    FUN_0c0397ec(R4, v0_1, R6, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
+    L_C039D5E:;
+    FUN_0c0339c0(0x0);
+    v0_2 = FUN_0c0343b8(0x1, 0x0);
+    v0_1 = (v0_2);
+    if ((v0_2 != 3)) goto L_C039D78;
+    *(unsigned int *)((v0_0 + 0x0)) = ((*(int *)((v0_0 + 0x0))) & 0xFFFFFFD0);
+    L_C039D78:;
+    return v0_1;
+    L_C039CAC:;
+    if (((v0_1 & 2) == 0)) goto L_C039CB6;
+    R4 = (0x1);
+    v0_1 = (0x1);
+    L_C039CFC:;
+    FUN_0c0397ec(R4, v0_1, R6, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
+    goto L_C039D5E;
+    L_C039CB6:;
+    v0_2 = *(int *)((v0_0 + 0x0));
+    v0_1 = (v0_2);
+    if (((v0_2 & 4) == 0)) goto L_C039CF4;
+    v0_1 = (0x2);
+    goto L_C039CBE;
+    L_C039CF4:;
+    if (((v0_1 & 8) == 0)) goto L_C039D04;
+    R4 = (0x1);
+    v0_1 = (0x3);
+    goto L_C039CFC;
+    L_C039D04:;
+    if ((((*(int *)((v0_0 + 0x0))) & 32) == 0)) goto L_C039D5E;
+    FUN_0c0397ec(0x1, 0x4, R6, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
+    goto L_C039D5E;
+    L_C039D14:;
+    t28 = *(int *)((v0_0 + 0x0));
+    R4 = (t28);
+    if (((0x1 & t28) == 0)) goto L_C039D24;
+    R4 = (0x0);
+    v0_1 = (0x0);
+    goto L_C039D4A;
+    L_C039D24:;
+    if (((0x2 & R4) == 0)) goto L_C039D32;
+    R4 = (0x0);
+    v0_1 = (0x1);
+    goto L_C039D4A;
+    L_C039D32:;
+    if (((0x4 & R4) == 0)) goto L_C039D40;
+    R4 = (0x0);
+    v0_1 = (0x2);
+    goto L_C039D4A;
+    L_C039D40:;
+    if (((0x8 & R4) == 0)) goto L_C039D52;
+    R4 = (0x0);
+    v0_1 = (0x3);
+    goto L_C039D4A;
+    L_C039D52:;
+    if (((R4 & 0x20) == 0)) goto L_C039D5E;
+    FUN_0c0397ec(0x0, 0x4, R6, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
+    goto L_C039D5E;
+}

@@ -1,0 +1,91 @@
+/* Straight-line functions with calls and guards (batch gen_fs): generated from the code and checked by tests. Calls are
+   to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
+
+struct o0_float { float v; };
+struct o0_uint { unsigned int v; };
+struct o10_int { char p[0x10]; int v; };
+struct o4_float { char p[0x4]; float v; };
+struct o8_uint { char p[0x8]; unsigned int v; };
+struct o80_int { char p[0x80]; int v; };
+int FUN_0c05f470(int, int, float, float);
+int FUN_0c05ff5c(int);
+int FUN_0c060bcc(int a4, float f4);
+
+int FUN_0c060bcc(int a4, float f4)
+{
+
+    register int R1;
+    register int R2;
+    register int R3;
+    register float F0;
+    register float F2;
+    register float F3;
+    register float F13;
+    register float F14;
+    register float F15;
+    register int T_;
+    register int FPUL_;
+    register int v0_0;
+    register int v0_1;
+    register int v0_2;
+    register int v0_3;
+    register float w0_0;
+    register float w0_1;
+    v0_1 = a4;
+    w0_0 = f4;
+    v0_2 = ((*(signed char *)0xC2B9C5B) & 32) != 0;
+    v0_0 = (v0_1);
+    F13 = (0.0f);
+    F15 = (30.0f);
+    if (v0_2) goto L_C060C68;
+    v0_2 = FUN_0c05ff5c((((((((struct o10_int *)0xC2B9CA0)->v)) << 8) + (*(int *)((v0_0 + 0x0)))) + 0x70));
+    v0_1 = (v0_2);
+    if (((int)v0_2 <= 0)) goto L_C060C1A;
+    w0_0 = ((((float)(0x6150 - v0_1) * F15) / 24912.0f));
+    FPUL_ = ((0x6150 - v0_1));
+    if ((!(0.0f > (((float)(0x6150 - v0_1) * F15) / 24912.0f)))) goto L_C060C3C;
+    w0_0 = (F13);
+    L_C060C3C:;
+    w0_1 = ((((struct o0_float *)0xC2B9C20)->v));
+    w0_1 = w0_1 + 0.100000001f * ((w0_0 - ((((struct o0_float *)0xC2B9C20)->v))));
+    FUN_0c05f470(0xC2B9C1C, 0xC93ED88, w0_1, 5.0f);
+    (((struct o4_float *)0xC2B9C20)->v) = F13;
+    (((struct o8_uint *)0xC2B9C20)->v) = 0x0;
+    F14 = (w0_1);
+    L_C060C68:;
+    v0_3 = *(int *)((v0_0 + 0xC));
+    v0_2 = (v0_3);
+    v0_1 = (v0_3);
+    if ((v0_3 != 3)) goto L_C060C88;
+    v0_0 = (int)((((struct o80_int *)(((((((struct o10_int *)0xC2B9CA0)->v)) << 8) + (*(int *)((v0_0 + 0x0))))))->v)) >= (int)0x4;
+    v0_2 = (0x4);
+    if (v0_0) goto L_C060C8E;
+    L_C060C88:;
+    if (((int)v0_1 <= (int)0x3)) goto L_C060CBA;
+    L_C060C8E:;
+    if ((!(F15 > F14))) goto L_C060C98;
+    v0_0 = (0xC8C15D4);
+    L_C060C9A:;
+    FUN_0c05f470(0xC2B9C1C, v0_0, F13, 10.0f);
+    (((struct o4_float *)0xC2B9C20)->v) = 1.0f;
+    (((struct o8_uint *)0xC2B9C20)->v) = 0x0;
+    (((struct o0_uint *)0xC2B9CA0)->v) = 0xA;
+    v0_2 = (0xA);
+    L_C060CBA:;
+    return v0_2;
+    L_C060C98:;
+    v0_0 = (0xC8C1E8C);
+    goto L_C060C9A;
+    L_C060C1A:;
+    w0_1 = (((float)v0_1 * F15) / -21269.0f);
+    w0_0 = ((w0_1 + F15));
+    FPUL_ = (v0_1);
+    if ((!(F15 > (w0_1 + F15)))) goto L_C060C32;
+    w0_0 = (F15);
+    goto L_C060C3C;
+    L_C060C32:;
+    w0_1 = (59.0f);
+    if ((59.0f > w0_0)) goto L_C060C3C;
+    w0_0 = (w0_1);
+    goto L_C060C3C;
+}

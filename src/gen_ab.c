@@ -2096,26 +2096,6 @@ int FUN_0c04cba6(void)
     return t10;
 }
 
-int ndPuru2Check(int a4)
-{
-    int t9;
-    register int t10;
-    register int t11;
-
-    (((struct o0_uint *)0xC2B32C0)->v) = (pdGetPeripheral(a4));
-    if ((unsigned char)(*(signed char *)0xC1EC783) == 2) {
-        if ((unsigned char)(*(signed char *)0xC1EC784) == 5) {
-            (((struct o28_uint *)0xC2B32C0)->v) = 0x1;
-            return 0x1;
-        }
-        return 0x0;
-    }
-    if (((unsigned char)(*(signed char *)0xC1EC784) == 2) && (t9 = (((struct o0_int *)0xC2B32C0)->v), t10 = *(int *)((t9 + 0x30)), t11 = *(int *)((t10 + 0x0)), (t11 & 0x100) != 0)) {
-        (((struct o28_uint *)0xC2B32C0)->v) = 0x0;
-        return 0x1;
-    }
-    return 0x0;
-}
 
 float FUN_0c05b422(int a4, float f4)
 {

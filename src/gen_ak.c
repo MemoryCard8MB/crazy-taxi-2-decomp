@@ -2190,13 +2190,6 @@ int FUN_0c05d0d8(float f4)
     return 0x0;
 }
 
-int FUN_0c05cad0(float f4)
-{
-    FUN_0c018b1c(0x1);
-    camSetTarget(0xC175930, 0x2);
-    FUN_0c018c8a(0.0500000007f, 0.75f);
-    return FUN_0c05cac6(f4);
-}
 
 void nlLoadMatrix8(int a4)
 {

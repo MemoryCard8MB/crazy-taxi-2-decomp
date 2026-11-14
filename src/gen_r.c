@@ -533,67 +533,6 @@ int FUN_0c0329ba(int a4, int a5, int a6, int a7, int a8, int a9)
     return (FUN_0c032942((*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 12))), (((int)stk + 0) + 0x14), a8, a9));
 }
 
-int FUN_0c058f64(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    int t1;
-    register int t2;
-    register int t3;
-
-    t0 = (((struct o14_int *)0xC1EC72C)->v);
-    if (t0 != 1) {
-        t1 = (((struct o0_int *)0xC1EC72C)->v);
-        if ((t1 != 0) && (a5 == 0)) {
-            if ((*(int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x0))) == 0) {
-                *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x0)) = a4;
-                *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x4)) = a6;
-                *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x8)) = a7;
-                *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0xC)) = 0x0;
-            }
-        }
-        t2 = t1;
-    } else {
-        if (a5 != 0) {
-            t1 = (((struct o18_int *)0xC1EC72C)->v);
-            if ((t1 != 4) && (t1 != 5)) {
-                if ((t1 != 2) && ((t1 != 3) && ((t1 != 8) && ((t1 != 9) && ((t1 != 10) && ((t1 != 11) && ((t1 != 12) && ((t1 != 13) && ((t1 != 14) && (t1 != 15)))))))))) {
-                    if ((*(int *)0xC2AC2F4) == 0) {
-                        if ((*(int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x0))) == 0) {
-                            *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x0)) = a4;
-                            *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x4)) = a6;
-                            *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x8)) = a7;
-                            *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0xC)) = 0x0;
-                        }
-                    }
-                }
-                t3 = t1;
-            } else {
-                if (a5 == 1) {
-                    if ((*(int *)0xC2AC2F4) == 0) {
-                        if ((*(int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x0))) == 0) {
-                            *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x0)) = a4;
-                            *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x4)) = a6;
-                            *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x8)) = a7;
-                            *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0xC)) = 0x0;
-                        }
-                    }
-                }
-                t3 = a5;
-            }
-            t1 = t3;
-        } else {
-            if ((*(int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x0))) == 0) {
-                *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x0)) = a4;
-                *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x4)) = a6;
-                *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0x8)) = a7;
-                *(unsigned int *)(((((a5 << 2) << 2) + 0xC2B6770) + 0xC)) = 0x0;
-            }
-            t1 = t0;
-        }
-        t2 = t1;
-    }
-    return t2;
-}
 
 int FUN_0c06b1a2(int a4, int a5)
 {
@@ -1764,35 +1703,6 @@ int FUN_0c01a978(void)
     return (syBtExit());
 }
 
-int CheckColliWallEdge(int a4, int a5)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-    register int t3;
-    float u0;
-    register float u1;
-    register float u2;
-
-    t3 = *(int *)((a4 + 0x0));
-    u1 = (((struct o4_float *)(t3))->v);
-    if (!(u1 > ((((struct o14_float *)(a5))->v)))) {
-        if (!((((((struct o18_float *)(a5))->v)) - ((((struct o14_float *)(a4))->v))) > u1)) {
-            u1 = ((((((struct o8_float *)(a5))->v)) - (*(float *)((t3 + 0x0)))) * ((((struct o4_float *)(a5))->v)));
-            u2 = ((((((struct oC_float *)(a5))->v)) - ((((struct o8_float *)(t3))->v))) * (*(float *)((a5 + 0x0))));
-            if (((u1 - u2) > 0.0f) && (u0 = (((struct o1C_float *)(a5))->v), u0 > (u1 - u2))) {
-                FUN_0c07fdc8();
-                u0 = (((((struct o4_float *)(t1))->v)) * ((((struct o8_float *)(t0))->v)));
-                u0 = u0 + (*(float *)((t0 + 0x0))) * (*(float *)((t1 + 0x0)));
-                (((struct o10_float *)(t2))->v) = (u0 + ((((struct o10_float *)(t1))->v)));
-                return 0x1;
-            }
-            return 0x0;
-        }
-        return 0x0;
-    }
-    return 0x0;
-}
 
 int FUN_0c04f224(void)
 {
