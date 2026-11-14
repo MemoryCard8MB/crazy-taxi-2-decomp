@@ -1,6 +1,6 @@
 # Crazy Taxi 2 decomp
 
-![decomp progress](badges/progress.svg?p=98.7&b=98.0&a=59&s=0)
+![decomp progress](badges/progress.svg?p=99.6&b=99.0&a=59&s=0)
 
 **Explore this decomp project with [Shuriken Explorer](https://consolesplayingconsoles.github.io/dc-shuriken-explorer/) and see the game's models, skeletons, animations, textures, images, sounds, text and side-by-side C and assembly code directly in your browser.**
 
@@ -23,18 +23,18 @@ everything game-derived on your machine, and `.gitignore` keeps it out of git.
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE           58.5%  the instructions the cases ran, of all instructions, over the 3441 functions that can be C; the 3397 functions that reached the check are measured, the others count 0
-FUNCTIONS LEFT  (98.7% complete) 44  of the 3441 functions that can be C (188 with no C form are counted apart)
-BYTES LEFT   (98.0% complete) 10936  of 555534 bytes of code that can be C
+TOTAL TEST COVERAGE           59.2%  the instructions the cases ran, of all instructions, over the 3441 functions that can be C; the 3427 functions that reached the check are measured, the others count 0
+FUNCTIONS LEFT  (99.6% complete) 14  of the 3441 functions that can be C (188 with no C form are counted apart)
+BYTES LEFT    (99.0% complete) 5278  of 555534 bytes of code that can be C
 FUNCTIONS                            
   unnamed                      2046  functions still called FUN_... (2046 of 3629)
   Not written C                   0  0 bytes
   Written C with errors           0  0 bytes
-  Not drawn                      36  8598 bytes
+  Not drawn                       0  0 bytes
   Drawn with errors               1  20 bytes
-  Checked with errors             7  2318 bytes
+  Checked with errors            13  5258 bytes
   No C form                    5.2%  an instruction or a register convention with no C form (tools/5-generated/classify.py names it)
-  documented                  41.3%  1499 named functions in docs/*.md
+  documented                  41.9%  1521 named functions in docs/*.md
 ```
 <!-- /progress -->
 

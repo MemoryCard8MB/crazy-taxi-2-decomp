@@ -166,6 +166,7 @@ FUN_0c015f28
 FUN_0c016240
 FUN_0c016398
 FUN_0c0164de
+FUN_0c0164fc
 FUN_0c0166c0
 FUN_0c016a22
 FUN_0c016cb2
@@ -562,6 +563,7 @@ FUN_0c035f24
 FUN_0c0360a2
 FUN_0c036170
 FUN_0c036318
+FUN_0c03650c
 FUN_0c0366f4
 FUN_0c0367bc
 FUN_0c0368b4
@@ -813,6 +815,7 @@ FUN_0c04f518
 FUN_0c04f574
 FUN_0c04f660
 FUN_0c04f70e
+FUN_0c04f826
 FUN_0c04fbf0
 FUN_0c04fc7a
 FUN_0c04fc92
@@ -1122,6 +1125,7 @@ FUN_0c061004
 FUN_0c061110
 FUN_0c06118a
 FUN_0c061234
+FUN_0c061516
 FUN_0c061608
 FUN_0c061686
 FUN_0c06170e
@@ -1449,6 +1453,7 @@ FUN_0c075670
 FUN_0c075740
 FUN_0c075a00
 FUN_0c075ad0
+FUN_0c075ba0
 FUN_0c075bd0
 FUN_0c075c00
 FUN_0c075c10
@@ -1535,6 +1540,7 @@ FUN_0c07bd10
 FUN_0c07bd84
 FUN_0c07be0e
 FUN_0c07beb4
+FUN_0c07bf7a
 FUN_0c07c006
 FUN_0c07c080
 FUN_0c07c142
@@ -1835,6 +1841,8 @@ FUN_0c1550c0
 FUN_0c155b78
 FUN_0c156d00
 FUN_0c1595e8
+FUN_0c15ba7c
+FUN_0c15c60c
 FUN_0c15c858
 FUN_0c15c8e6
 FUN_0c15c95a
@@ -2507,6 +2515,7 @@ kdSetSetCondition
 kdSetSetConditionEx
 kdSetTransmitAgain
 kmActivateFrameBuffer
+kmBlankScreen
 kmChangeContextClampUV
 kmChangeContextColorType
 kmChangeContextCullingMode
@@ -2552,23 +2561,34 @@ kmReLoadMipmap
 kmRender
 kmRenderDirect
 kmRenderTexture
+kmRenderTextureDirect
 kmResetPointer
 kmResetRenderer
 kmSetBackGroundPlane
 kmSetBackGroundRenderState
+kmSetBorderColor
 kmSetCheapShadowMode
+kmSetColorClampValue
+kmSetCullingRegister
+kmSetDisplayMode
 kmSetEORCallback
 kmSetEndOfVertexCallback
 kmSetEndOfYUVCallback
+kmSetFogDensity
 kmSetFogTable
+kmSetFogTableColor
 kmSetForwardClipping
 kmSetFramebufferTexture
 kmSetGlobalClipping
 kmSetHSyncCallback
+kmSetHSyncLine
 kmSetModifierRenderState
 kmSetPALEXTCallback
 kmSetPaletteBankData
+kmSetPaletteData
+kmSetPaletteMode
 kmSetPixelClipping
+kmSetStrideWidth
 kmSetStripLength
 kmSetStripOverRunCallback
 kmSetSystemConfiguration
@@ -2579,12 +2599,15 @@ kmSetVertex
 kmSetVertexRenderState
 kmSetWaitVsyncCallback
 kmSetWaitVsyncCount
+kmStopDisplayFrameBuffer
 kmUseAnotherModifier
 kmfGetInternalSystemMetrics
+kmfInitializeYUVConverter
 kmfSetCommonModifier
 kmfSetFatalErrorCallback
 kmfSetTimeOutCount
 kmfSetVertexBufferBaseAddress
+kmfSetVirticalFilterMode
 kmiABSalloc
 kmiAddSysConfigFlag
 kmiAllocSysConfig
@@ -2656,7 +2679,9 @@ kmiInitializeBackGroundPlane
 kmiInitializeDMA
 kmiInitializeDevice
 kmiInitializeDriver
+kmiInitializeFog
 kmiInitializeHardware
+kmiInitializeTA
 kmiInterruptHandlerSH
 kmiMIPalloc
 kmiMIPallocSub
@@ -2687,6 +2712,7 @@ kmiRegisterCallback
 kmiRegisterPhIntHandler
 kmiReleaseHardware
 kmiReqRestOfDMA
+kmiResetBoard
 kmiSetOpaqueDummy
 kmiSetSysConfigFlag
 kmiStartNextRender
@@ -2701,6 +2727,7 @@ kmiVQallocFB
 kmiWaitAccurate
 kmiWaitForFinishDMA
 kmiWaitVlank
+kmiWriteDispModeRegisters
 kmiWriteFBRegister
 kmiWriteRegister
 kmiWriteRegisters
@@ -2995,6 +3022,7 @@ nlMvGetFaceVerts
 nlMvLoadFlatMatrix
 nlMvNotShadowIndexPol
 nlMvNotShadowObjPutPol
+nlMvObjPut
 nlMvPutFaceClip
 nlMvPutPolygon
 nlMvPutStrip
@@ -3003,6 +3031,7 @@ nlMvSendFace3
 nlMvSendFan3
 nlMvSendTriangle
 nlMvSetShadowIndexPol
+nlMvSetWorkBuffer
 nlObjPut
 nlObjPutCheapEnvMap
 nlObjPutInit
@@ -3195,6 +3224,7 @@ syExtChkConnectSyncDev
 syExtChkDisableInterrupt
 syExtChkDisableSyncDev
 syExtChkExit
+syExtChkInit
 syG2AicaFifoIsEmpty
 syG2AicaFifoWaitEmpty
 syG2DmaClose
