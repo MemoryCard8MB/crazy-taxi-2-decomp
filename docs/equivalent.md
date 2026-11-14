@@ -45618,6 +45618,39 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 90
 - the cases run 1 of 1 instructions
 
+### FUN_0c083770 (`0C083770`, 264 bytes, `src/gen_do.c`)
+- equivalent on 18 development and 11 holdout cases, in `tests/gen_do/FUN_0c083770.json`
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- case 15
+- the cases run 104 of 131 instructions
+
 ### FUN_0c083880 (`0C083880`, 244 bytes, `src/gen_cj.c`)
 - equivalent on 11 development and 11 holdout cases, in `tests/gen_cj/FUN_0c083880.json`
 - case 15
@@ -73774,6 +73807,58 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 63
 - the cases run 14 of 14 instructions
 
+### kmSetUserClipLevelAdjust (`0C147FEC`, 450 bytes, `src/gen_do.c`)
+- equivalent on 24 development and 24 holdout cases, in `tests/gen_do/kmSetUserClipLevelAdjust.json`
+- live clip state, [908]=0 mode 0 [8F0]=0x38 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=0 mode 0 [8F0]=0x39 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=0 mode 0 [8F0]=0x18 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=0 mode 1 [8F0]=0x38 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=0 mode 1 [8F0]=0x39 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=0 mode 1 [8F0]=0x18 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=0 mode 2 [8F0]=0x38 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=0 mode 2 [8F0]=0x39 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=0 mode 2 [8F0]=0x18 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=1 mode 0 [8F0]=0x38 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=1 mode 0 [8F0]=0x39 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=1 mode 0 [8F0]=0x18 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=1 mode 1 [8F0]=0x38 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=1 mode 1 [8F0]=0x39 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=1 mode 1 [8F0]=0x18 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=1 mode 2 [8F0]=0x38 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=1 mode 2 [8F0]=0x39 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=1 mode 2 [8F0]=0x18 [90C]/[924]=(0, 0) out 0x0
+- live clip state, [908]=0 mode 1 [8F0]=0x38 [90C]/[924]=(0, 0) out 0xc200000
+- live clip state, [908]=0 mode 1 [8F0]=0x39 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=0 mode 1 [8F0]=0x18 [90C]/[924]=(32, 8) out 0xc200000
+- live clip state, [908]=1 mode 1 [8F0]=0x39 [90C]/[924]=(0, 0) out 0xc200000
+- live clip state, [908]=1 mode 1 [8F0]=0x18 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, mode 1, [914]=0x10
+- live clip state, [908]=0 mode 0 [8F0]=0x38 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=0 mode 0 [8F0]=0x39 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=0 mode 0 [8F0]=0x18 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=0 mode 1 [8F0]=0x38 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=0 mode 1 [8F0]=0x39 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=0 mode 1 [8F0]=0x18 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=0 mode 2 [8F0]=0x38 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=0 mode 2 [8F0]=0x39 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=0 mode 2 [8F0]=0x18 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=1 mode 0 [8F0]=0x38 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=1 mode 0 [8F0]=0x39 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=1 mode 0 [8F0]=0x18 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=1 mode 1 [8F0]=0x38 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=1 mode 1 [8F0]=0x39 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=1 mode 1 [8F0]=0x18 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=1 mode 2 [8F0]=0x38 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=1 mode 2 [8F0]=0x39 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=1 mode 2 [8F0]=0x18 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=0 mode 1 [8F0]=0x38 [90C]/[924]=(32, 8) out 0xc200000
+- live clip state, [908]=0 mode 1 [8F0]=0x18 [90C]/[924]=(0, 0) out 0xc200000
+- live clip state, [908]=1 mode 1 [8F0]=0x38 [90C]/[924]=(0, 16) out 0xc200000
+- live clip state, [908]=1 mode 1 [8F0]=0x39 [90C]/[924]=(32, 8) out 0xc200000
+- live clip state, mode 1, [914]=0x0
+- live clip state, mode 1, [914]=0xffffff00
+- the cases run 148 of 148 instructions
+
 ### kmSetUserClipping (`0C15B8EA`, 272 bytes, `src/gen_cg.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_cg/kmSetUserClipping.json`
 - rescue: empty case
@@ -75945,6 +76030,20 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 76
 - the cases run 68 of 68 instructions
 
+### kmiFBinit (`0C152C40`, 396 bytes, `src/gen_do.c`)
+- equivalent on 5 development and 5 holdout cases, in `tests/gen_do/kmiFBinit.json`
+- live FB state, [0C173DD4]=0, profile int 0, allocs ['0xc200000', '0xc200040']
+- live FB state, [0C173DD4]=0, profile int 0, allocs ['0xc200000', '0x0']
+- live FB state, [0C173DD4]=0, profile int 1, allocs ['0x0']
+- live FB state, [0C173DD4]=1, profile int 0, allocs ['0xc200000', '0xc200040']
+- live FB state, [0C173DD4]=1, profile int 1, allocs ['0xc200000', '0xc200040']
+- live FB state, [0C173DD4]=0, profile int 0, allocs ['0x0']
+- live FB state, [0C173DD4]=0, profile int 1, allocs ['0xc200000', '0xc200040']
+- live FB state, [0C173DD4]=0, profile int 1, allocs ['0xc200000', '0x0']
+- live FB state, [0C173DD4]=1, profile int 0, allocs ['0x0']
+- live FB state, [0C173DD4]=1, profile int 1, allocs ['0x0']
+- the cases run 159 of 159 instructions
+
 ### kmiFBreset (`0C152B80`, 160 bytes, `src/gen_m.c`)
 - equivalent on 1 development and 0 holdout cases, in `tests/gen_m/kmiFBreset.json`
 - case 0
@@ -77308,6 +77407,40 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 93
 - case 51
 - the cases run 4 of 4 instructions
+
+### kmiSetTAEnvironment (`0C15C386`, 646 bytes, `src/gen_do.c`)
+- equivalent on 15 development and 15 holdout cases, in `tests/gen_do/kmiSetTAEnvironment.json`
+- live TA state, s=0xef000f [8D4]=0x8f [D34]=0
+- live TA state, s=0xef000f [8D4]=0xa0 [D34]=0
+- live TA state, s=0xef000e [8D4]=0x8f [D34]=0
+- live TA state, s=0xef000e [8D4]=0xa0 [D34]=0
+- live TA state, s=0xff0001 [8D4]=0x8f [D34]=0
+- live TA state, s=0xff0001 [8D4]=0xa0 [D34]=0
+- live TA state, s=0x7ffffff [8D4]=0x8f [D34]=0
+- live TA state, s=0x7ffffff [8D4]=0xa0 [D34]=0
+- live TA state, s=0x0 [8D4]=0x8f [D34]=0
+- live TA state, s=0x0 [8D4]=0xa0 [D34]=0
+- live TA state, s=0xef000f [8D4]=0x8f [D34]=1
+- live TA state, s=0xef000e [8D4]=0x8f [D34]=1
+- live TA state, s=0xff0001 [8D4]=0x8f [D34]=1
+- live TA state, s=0x7ffffff [8D4]=0x8f [D34]=1
+- live TA state, s=0x0 [8D4]=0x8f [D34]=1
+- live TA state, s=0xef000f [8D4]=0x20 [D34]=0
+- live TA state, s=0xef000f [8D4]=0x0 [D34]=0
+- live TA state, s=0xef000e [8D4]=0x20 [D34]=0
+- live TA state, s=0xef000e [8D4]=0x0 [D34]=0
+- live TA state, s=0xff0001 [8D4]=0x20 [D34]=0
+- live TA state, s=0xff0001 [8D4]=0x0 [D34]=0
+- live TA state, s=0x7ffffff [8D4]=0x20 [D34]=0
+- live TA state, s=0x7ffffff [8D4]=0x0 [D34]=0
+- live TA state, s=0x0 [8D4]=0x20 [D34]=0
+- live TA state, s=0x0 [8D4]=0x0 [D34]=0
+- live TA state, s=0xef000f [8D4]=0xa0 [D34]=1
+- live TA state, s=0xef000e [8D4]=0xa0 [D34]=1
+- live TA state, s=0xff0001 [8D4]=0xa0 [D34]=1
+- live TA state, s=0x7ffffff [8D4]=0xa0 [D34]=1
+- live TA state, s=0x0 [8D4]=0xa0 [D34]=1
+- the cases run 252 of 252 instructions
 
 ### kmiStartNextRender (`0C16624A`, 534 bytes, `src/gen_bo.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_bo/kmiStartNextRender.json`

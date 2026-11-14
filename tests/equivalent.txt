@@ -1677,6 +1677,7 @@ FUN_0c080600
 FUN_0c08072a
 FUN_0c080770
 FUN_0c080780
+FUN_0c083770
 FUN_0c083880
 FUN_0c085350
 FUN_0c0866e0
@@ -2593,6 +2594,7 @@ kmSetStripLength
 kmSetStripOverRunCallback
 kmSetSystemConfiguration
 kmSetTexOverflowCallback
+kmSetUserClipLevelAdjust
 kmSetUserClipping
 kmSetVSyncCallback
 kmSetVertex
@@ -2658,6 +2660,7 @@ kmiFBfree
 kmiFBfreeEx
 kmiFBgetfreemem
 kmiFBgetfreememEx
+kmiFBinit
 kmiFBreset
 kmiFatalErrorEntry
 kmiFinalizeRender
@@ -2715,6 +2718,7 @@ kmiReqRestOfDMA
 kmiResetBoard
 kmiSetOpaqueDummy
 kmiSetSysConfigFlag
+kmiSetTAEnvironment
 kmiStartNextRender
 kmiStartRenderTextureEntry
 kmiTAallocEx
