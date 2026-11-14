@@ -57,7 +57,15 @@ def piece_starts(objects='objects.txt'):
     return out
 
 
-def groups(starts, listed, code, word, pools, end, stay=None, pool32=None, bsr_ties=True):
+def tails(starts, code):
+    """[(start, size)] of the bytes of each piece after its listed function: code the listing missed (a routine only a data table
+    points to, Crazy Taxi 2 0C06114C after FUN_0c061110 with a bra 4066 bytes back) or data. groups() scans them for ties too: a tie
+    on a data word only merges two groups (one pad fewer), a missed far bra left untied overflows the pad link."""
+    size = dict(code)
+    return [(a + size[a], b - a - size[a]) for a, b in zip(starts, starts[1:]) if a in size and a + size[a] < b]
+
+
+def groups(starts, listed, code, word, pools, end, stay=None, pool32=None, bsr_ties=True, extra=()):
     """Indexes of the pieces that start a group. starts: piece starts (sorted); listed: the starts that are listed functions;
     code: [(start, size)] of the listed functions; word(a): the halfword at a; pools: pool word addresses (not instructions);
     pool32(a): the signed 32-bit word at a (the distance a bsrf or braf takes from a pool); stay: pieces below it stay with the first one (the boot code and the entry stub before layout.txt's `game`: Crazy Taxi's
@@ -70,7 +78,7 @@ def groups(starts, listed, code, word, pools, end, stay=None, pool32=None, bsr_t
         if i != j:
             link[i] += 1
             link[j] -= 1
-    for a, s in code:
+    for a, s in list(code) + list(extra):     # extra: unlisted bytes (tails()) scanned for ties only, not for the fall-through rule below
         for x in range(a, min(a + s, end), 2):
             if x in pools or x - 2 in pools:
                 continue
@@ -256,8 +264,9 @@ def main(argv):
     listed = {a for a, s, n in layout.functions()}
     _, _, pools = shift._listed()
     game = layout.region('game')
-    G = groups(starts, listed, [(a, s) for a, s, n in layout.functions()], B.word, pools, end, stay=game[0] if game else None,
-               pool32=lambda a: struct.unpack_from('<i', B.BIN, a - B.BASE)[0])
+    code = [(a, s) for a, s, n in layout.functions()]
+    G = groups(starts, listed, code, B.word, pools, end, stay=game[0] if game else None,
+               pool32=lambda a: struct.unpack_from('<i', B.BIN, a - B.BASE)[0], extra=tails(starts, code))
     gset = set(G[1:])
     os.makedirs(os.path.join(d, 'pads'), exist_ok=True)
     padsrc = '          .SECTION    P, CODE, ALIGN=2\n' + "          .DATA.L     H'00000000\n" * (pad // 4) + '          .END\n'

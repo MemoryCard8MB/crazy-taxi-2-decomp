@@ -1227,6 +1227,11 @@ int FUN_0c0228f0(int a4, int a5, int a6, int a7)
     register int t114;
     register int t116;
     register int t117;
+    int R1000;
+    int R1004;
+
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
 
     *(unsigned int *)(((int)stk + 12)) = a5;
     t129 = *(int *)0xC2AC2F0;
@@ -1330,15 +1335,15 @@ int FUN_0c0228f0(int a4, int a5, int a6, int a7)
                 u97 = (float)(((((t96 << 1) + t96) << 2) << 1) + 0x15E);
                 t95 = (FUN_0c03ec48(((((struct o0_int *)0xC2A465C)->v)), (((((struct o0_int *)0xC1EC720)->v)) + ((((struct o4_int *)0xC1EC720)->v))), ((((struct oC_int *)0xC270994)->v))));
                 if ((t96 == t95) && (t107 = *(int *)0xC1EC83C, (t107 & 0x8) != 0)) {
-                    *(int *)((int)stk + 4) = 0x2;
+                    R1004 = 0x2;
                     t114 = t96;
-                    *(int *)((int)stk + 0) = t114;
+                    R1000 = t114;
                     t116 = 0x400232;
                     t117 = ((((((struct o0_int *)0xC1EC720)->v)) << 2) + ((((struct o4_int *)0xC1EC720)->v)));
                 } else {
-                    *(int *)((int)stk + 4) = 0x2;
+                    R1004 = 0x2;
                     t114 = t96;
-                    *(int *)((int)stk + 0) = t114;
+                    R1000 = t114;
                     t116 = 0x400222;
                     t117 = ((((((struct o0_int *)0xC1EC720)->v)) << 2) + ((((struct o4_int *)0xC1EC720)->v)));
                 }
@@ -1395,10 +1400,23 @@ int kmCreateVertexBuffer(int a4, int a5, int a6, int a7, int a8, float f4, float
     register int t101;
     register int t102;
     register int t103;
+    int R1008;
+    int R1012;
+    int R1016;
+    int R1020;
+    int R1024;
+    int R1028;
+
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+    R1016 = *(int *)((int)stk + 16);
+    R1020 = *(int *)((int)stk + 20);
+    R1024 = *(int *)((int)stk + 24);
+    R1028 = *(int *)((int)stk + 28);
 
     stk[16] = a8;
-    *(unsigned int *)(((int)stk + 16)) = a6;
-    *(unsigned int *)(((int)stk + 20)) = a7;
+    R1016 = a6;
+    R1020 = a7;
     t0 = (((struct o4_int *)0xC16FC80)->v);
     *(unsigned int *)(((((int)stk + 16) + 0x10) + 0x0)) = ((((struct o0_int *)0xC16FC80)->v));
     *(unsigned int *)(((((int)stk + 16) + 0x10) + 0x4)) = t0;
@@ -1412,8 +1430,8 @@ int kmCreateVertexBuffer(int a4, int a5, int a6, int a7, int a8, float f4, float
     }
     (((struct o0_uint *)0xC2D0BC0)->v) = a4;
     (((struct o4_uint *)0xC2D0BC0)->v) = t5;
-    (((struct o8_uint *)0xC2D0BC0)->v) = (*(int *)(((int)stk + 16)));
-    (((struct oC_uint *)0xC2D0BC0)->v) = (*(int *)(((int)stk + 20)));
+    (((struct o8_uint *)0xC2D0BC0)->v) = (R1016);
+    (((struct oC_uint *)0xC2D0BC0)->v) = (R1020);
     (((struct o10_uint *)0xC2D0BC0)->v) = a8;
     if (((((struct o0_int *)0xC1737E4)->v)) != 0x80000000) {
         t10 = (((struct o0_int *)0xC1737E4)->v);
@@ -1424,8 +1442,8 @@ int kmCreateVertexBuffer(int a4, int a5, int a6, int a7, int a8, float f4, float
             t125 = (kmiAllocSysConfig(((((struct o0_int *)0xC2D0C14)->v)), f4, f5, f6, f7, f8, f9));
         }
     } else {
-        *(int *)((int)stk + 12) = 0x0;
-        *(unsigned int *)(((int)stk + 24)) = (kmiChkActiveListType(t5, (*(int *)(((int)stk + 16))), (*(int *)(((int)stk + 20))), a8, 0x0));
+        R1012 = 0x0;
+        R1024 = (kmiChkActiveListType(t5, (R1016), (R1020), a8, 0x0));
         *(unsigned int *)((a4 + 0x10)) = ((((struct o10_int *)0xC300D28)->v));
         (((struct o4_uint *)0xC1737E4)->v) = 0x0;
         t27 = 0xC2D0CA8;
@@ -1436,17 +1454,17 @@ int kmCreateVertexBuffer(int a4, int a5, int a6, int a7, int a8, float f4, float
             *(unsigned int *)((t27 + 0x0)) = 0x0;
             t27 = (t27 + 0x4);
         }
-        *(int *)((int)stk + 12) = 0x0;
-        *(int *)((int)stk + 8) = 0x0;
-        t28 = *(int *)(((int)stk + 16));
-        t30 = kmiGetPackOBPParam(t5, t28, (*(int *)(((int)stk + 20))), a8, 0x0, 0x0);
-        *(unsigned int *)(((int)stk + 28)) = t30;
+        R1012 = 0x0;
+        R1008 = 0x0;
+        t28 = R1016;
+        t30 = kmiGetPackOBPParam(t5, t28, (R1020), a8, 0x0, 0x0);
+        R1028 = t30;
         kmiGetNativeRegOBPSize(t30);
-        t32 = *(int *)(((int)stk + 20));
-        t33 = *(int *)(((int)stk + 24));
+        t32 = R1020;
+        t33 = R1024;
         *(unsigned int *)(((((int)stk + 16) + 0x20) + 0x0)) = t5;
         *(unsigned int *)(((((int)stk + 16) + 0x20) + 0x4)) = t28;
-        *(unsigned int *)(((((int)stk + 16) + 0x20) + 0x8)) = (*(int *)(((int)stk + 20)));
+        *(unsigned int *)(((((int)stk + 16) + 0x20) + 0x8)) = (R1020);
         *(unsigned int *)(((((int)stk + 16) + 0x20) + 0xC)) = a8;
         t36 = *(int *)(((((int)stk + 16) + 0x20) + 0x0));
         t40 = t36;
@@ -1470,25 +1488,25 @@ int kmCreateVertexBuffer(int a4, int a5, int a6, int a7, int a8, float f4, float
             t41 = (t41 + 0x4);
             t42 = (t42 + 0x4);
         }
-        *(unsigned int *)(((int)stk + 16)) = (((int)stk + 16) + 0x20);
+        R1016 = (((int)stk + 16) + 0x20);
         (((struct o4_uint *)0xC2D0BC0)->v) = (*(int *)(((((int)stk + 16) + 0x20) + 0x0)));
         (((struct o8_uint *)0xC2D0BC0)->v) = (*(int *)((((((int)stk + 16) + 0x20) + 0x4) + 0x0)));
-        *(unsigned int *)(((int)stk + 24)) = ((((int)stk + 16) + 0x20) + 0x8);
+        R1024 = ((((int)stk + 16) + 0x20) + 0x8);
         (((struct oC_uint *)0xC2D0BC0)->v) = (*(int *)((((((int)stk + 16) + 0x20) + 0x8) + 0x0)));
         (((struct o10_uint *)0xC2D0BC0)->v) = (*(int *)((((((int)stk + 16) + 0x20) + 0xC) + 0x0)));
-        *(unsigned int *)(((int)stk + 16)) = (*(int *)(((*(int *)(((int)stk + 16))) + 0x0)));
-        *(unsigned int *)(((int)stk + 20)) = (*(int *)((((((int)stk + 16) + 0x20) + 0x4) + 0x0)));
-        *(unsigned int *)(((int)stk + 24)) = (*(int *)(((*(int *)(((int)stk + 24))) + 0x0)));
+        R1016 = (*(int *)(((R1016) + 0x0)));
+        R1020 = (*(int *)((((((int)stk + 16) + 0x20) + 0x4) + 0x0)));
+        R1024 = (*(int *)(((R1024) + 0x0)));
         t57 = (*(int *)((((((int)stk + 16) + 0x20) + 0xC) + 0x0)));
         *(unsigned int *)(((int)stk + 64)) = t57;
         t59 = 0x2;
         if ((*(int *)0xC300C14) == 1) {
             t59 = 0x1;
         }
-        *(int *)((int)stk + 12) = (t59);
-        *(int *)((int)stk + 8) = ((((t33 << 2) << 1) + (((t5 + t28) + t32) + a8)) + 0xA0);
+        R1012 = (t59);
+        R1008 = ((((t33 << 2) << 1) + (((t5 + t28) + t32) + a8)) + 0xA0);
         *(int *)((int)stk + 4) = 0x0;
-        t65 = kmiGetVertexBasePointer((*(int *)(((int)stk + 16))), (*(int *)(((int)stk + 20))), (*(int *)(((int)stk + 24))), t57, 0x0);
+        t65 = kmiGetVertexBasePointer((R1016), (R1020), (R1024), t57, 0x0);
         t116 = t65;
         if (t65 == 0) {
             kmiGetDisplayData(0xFF, ((((struct o18_int *)0xC2D0BC0)->v)), ((((struct o24_int *)0xC2D0BC0)->v)));
@@ -1504,10 +1522,10 @@ int kmCreateVertexBuffer(int a4, int a5, int a6, int a7, int a8, float f4, float
             t76 = kmiTAallocEx(((((struct o4_int *)0xC2D0C14)->v)), 0xC2D0CA0, 0xC2D0CA4);
             if (t76 == 0) {
                 (((struct o0_uint *)0xC300D28)->v) = ((((struct o4_int *)0xC2D0C14)->v));
-                *(int *)((int)stk + 12) = 0x0;
+                R1012 = 0x0;
                 t78 = (((struct o18_int *)0xC2D0BC0)->v);
-                t79 = *(int *)(((int)stk + 28));
-                *(int *)((int)stk + 8) = ((~t78) & t79);
+                t79 = R1028;
+                R1008 = ((~t78) & t79);
                 t89 = kmiSetTAEnvironment(((unsigned int)((((struct o0_int *)0xC30093C)->v)) >> 7), ((unsigned int)((((struct o4_int *)0xC30093C)->v)) >> 7), ((unsigned int)((((struct o8_int *)0xC30093C)->v)) >> 7), ((unsigned int)((((struct oC_int *)0xC30093C)->v)) >> 7), ((~t78) & t79));
                 (((struct o20_uint *)0xC2D0C54)->v) = ((((struct o38_int *)0xC2D0C14)->v));
                 (((struct o24_uint *)0xC2D0C54)->v) = ((((struct o3C_int *)0xC2D0C14)->v));

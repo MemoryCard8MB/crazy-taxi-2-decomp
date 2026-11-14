@@ -117,6 +117,10 @@ int FUN_0c04f826(void)
     register float w0_2;
     register float w0_3;
     register float w0_4;
+    int R1000;
+    int R1004;
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
     FUN_0c07ff00();
     v0_1 = (((struct o0_int *)0xC2B1D90)->v);
     v0_3 = (0xC048FD6);
@@ -177,18 +181,18 @@ int FUN_0c04f826(void)
     v0_8 = (0xC07ADA0);
     if ((v0_3 == 0)) goto L_C04FA06;
     *(unsigned int *)((v0_2 + 0x34)) = 0x5;
-    *(unsigned int *)(((int)stk + 4)) = ((v0_9 << 2) + v0_6);
-    *(unsigned int *)(((int)stk + 0)) = (((v0_9 << 2) << 1) + v0_5);
+    R1004 = ((v0_9 << 2) + v0_6);
+    R1000 = (((v0_9 << 2) << 1) + v0_5);
     v0_8 = (0x0);
     v0_3 = (0xC131B6C);
     L_C04F9B2:;
-    v0_9 = *(int *)(((*(int *)(((int)stk + 4))) + 0x0));
+    v0_9 = *(int *)(((R1004) + 0x0));
     v0_10 = *(int *)((v0_8 + v0_9));
     *(unsigned int *)((v0_2 + 0x0)) = v0_10;
     v0_9 = (v0_9);
     if ((v0_10 == 0)) goto L_C04F9F6;
-    (((struct o4_float *)(v0_2))->v) = (float)(int)(((*(float *)(((*(int *)(((int)stk + 0))) + 0x0))) + (*(float *)((v0_0 + 0x0)))) + (*(float *)((v0_3 + 0x0))));
-    (((struct o8_float *)(v0_2))->v) = (float)(int)((((((struct o4_float *)((*(int *)(((int)stk + 0)))))->v)) + (*(float *)((v0_1 + 0x0)))) + ((((struct o4_float *)(v0_3))->v)));
+    (((struct o4_float *)(v0_2))->v) = (float)(int)(((*(float *)(((R1000) + 0x0))) + (*(float *)((v0_0 + 0x0)))) + (*(float *)((v0_3 + 0x0))));
+    (((struct o8_float *)(v0_2))->v) = (float)(int)((((((struct o4_float *)((R1000)))->v)) + (*(float *)((v0_1 + 0x0)))) + ((((struct o4_float *)(v0_3))->v)));
     v0_9 = ((FUN_0c07ada0(0xC2B1C94, v0_5)));
     L_C04F9F6:;
     v0_10 = (unsigned int)(v0_7 + 0x1) < (unsigned int)0x6;
@@ -201,8 +205,8 @@ int FUN_0c04f826(void)
     L_C04FA06:;
     if (((int)(*(int *)((v0_4 + 0x0))) < (int)0x4)) goto L_C04FABE;
     *(unsigned int *)((v0_2 + 0x34)) = 0xA;
-    *(unsigned int *)(((int)stk + 0)) = (((v0_9 << 2) << 1) + v0_5);
-    *(unsigned int *)(((int)stk + 4)) = ((v0_9 << 2) + v0_6);
+    R1000 = (((v0_9 << 2) << 1) + v0_5);
+    R1004 = ((v0_9 << 2) + v0_6);
     v0_8 = (v0_7);
     w0_2 = (192.0f);
     w0_1 = (320.0f);
@@ -216,9 +220,9 @@ int FUN_0c04f826(void)
     if ((v0_3 != 2)) goto L_C04FA54;
     if ((((((struct o28_int *)0xC2B1D90)->v)) != 0)) goto L_C04FAAA;
     L_C04FA54:;
-    (((struct o4_float *)(v0_2))->v) = (float)(int)((((*(float *)(((*(int *)(((int)stk + 0))) + 0x0))) + (*(float *)((v0_0 + 0x0)))) + w0_3) + w0_1);
-    (((struct o8_float *)(v0_2))->v) = (float)(int)(((((((struct o4_float *)((*(int *)(((int)stk + 0)))))->v)) + (*(float *)((v0_1 + 0x0)))) + (float)(((((v0_3 - 1) << 2) << 2) << 2) << 1)) + w0_2);
-    *(unsigned int *)((v0_2 + 0x0)) = (*(int *)(((*(int *)(((*(int *)(((int)stk + 4))) + 0x0))) + (((v0_3 << 2) + v0_8) << 2))));
+    (((struct o4_float *)(v0_2))->v) = (float)(int)((((*(float *)(((R1000) + 0x0))) + (*(float *)((v0_0 + 0x0)))) + w0_3) + w0_1);
+    (((struct o8_float *)(v0_2))->v) = (float)(int)(((((((struct o4_float *)((R1000)))->v)) + (*(float *)((v0_1 + 0x0)))) + (float)(((((v0_3 - 1) << 2) << 2) << 2) << 1)) + w0_2);
+    *(unsigned int *)((v0_2 + 0x0)) = (*(int *)(((*(int *)(((R1004) + 0x0))) + (((v0_3 << 2) + v0_8) << 2))));
     v0_9 = ((FUN_0c07ada0(0xC2B1C94, v0_5)));
     L_C04FAAA:;
     v0_10 = (int)(v0_3 + 0x1) < (int)0x3;
@@ -482,6 +486,21 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
     register int t1259;
     register int t1188;
     register int t1194;
+    int R1000;
+    int R1004;
+    int R1008;
+    int R1012;
+    int R1016;
+    int R1020;
+    int R1024;
+
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+    R1016 = *(int *)((int)stk + 16);
+    R1020 = *(int *)((int)stk + 20);
+    R1024 = *(int *)((int)stk + 24);
 
     t1276 = kmiCheckRenderTexture(a4);
     if (t1276 != 0) {
@@ -495,7 +514,7 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
         t881 = 0x0;
         if (((((struct o4_int *)0xC300AD8)->v)) != 0) {
             for (;;) {
-                t9 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                t9 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                 if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o20_int *)0xC300AD8)->v))) {
                     break;
                 }
@@ -506,7 +525,7 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                     (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                     if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                         for (;;) {
-                            t17 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                            t17 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                             if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                 break;
                             }
@@ -516,25 +535,25 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                                     return 0xC300AF4;
                                 }
                                 (((struct o1C_uint *)0xC300C2C)->v) = 0x1;
-                                *(unsigned int *)(((int)stk + 12)) = ((((struct o0_int *)0xC300B84)->v));
-                                *(unsigned int *)(((int)stk + 0)) = ((((struct o4_int *)0xC300B84)->v));
+                                R1012 = ((((struct o0_int *)0xC300B84)->v));
+                                R1000 = ((((struct o4_int *)0xC300B84)->v));
                                 t24 = *(int *)((a4 + 0x10));
-                                *(unsigned int *)(((int)stk + 8)) = t24;
+                                R1008 = t24;
                                 t26 = *(int *)((a4 + 0xC));
                                 if ((unsigned int)t24 > (unsigned int)((((struct o4_int *)0xC300918)->v))) {
                                     t27 = (((struct o4_int *)0xC300918)->v);
-                                    *(unsigned int *)(((int)stk + 4)) = t26;
+                                    R1004 = t26;
                                     if ((unsigned int)t26 > (unsigned int)((((struct o0_int *)0xC300918)->v))) {
                                         kmSetPixelClipping(0x0, 0x0, ((((struct o0_int *)0xC300918)->v)), t27);
                                         (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                         (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                        (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                        (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                        (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                        (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                         t35 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                         (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                         if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                             for (;;) {
-                                                t39 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                                t39 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                                 if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                                     break;
                                                 }
@@ -572,16 +591,16 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                                             }
                                         }
                                     } else {
-                                        kmSetPixelClipping(0x0, 0x0, (*(int *)(((int)stk + 4))), t27);
+                                        kmSetPixelClipping(0x0, 0x0, (R1004), t27);
                                         (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                         (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                        (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                        (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                        (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                        (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                         t104 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                         (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                         if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                             for (;;) {
-                                                t108 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                                t108 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                                 if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                                     break;
                                                 }
@@ -620,19 +639,19 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                                         }
                                     }
                                 } else {
-                                    t167 = *(int *)(((int)stk + 8));
-                                    *(unsigned int *)(((int)stk + 4)) = t26;
+                                    t167 = R1008;
+                                    R1004 = t26;
                                     if ((unsigned int)t26 > (unsigned int)((((struct o0_int *)0xC300918)->v))) {
                                         kmSetPixelClipping(0x0, 0x0, ((((struct o0_int *)0xC300918)->v)), t167);
                                         (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                         (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                        (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                        (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                        (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                        (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                         t175 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                         (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                         if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                             for (;;) {
-                                                t179 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                                t179 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                                 if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                                     break;
                                                 }
@@ -670,16 +689,16 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                                             }
                                         }
                                     } else {
-                                        kmSetPixelClipping(0x0, 0x0, (*(int *)(((int)stk + 4))), t167);
+                                        kmSetPixelClipping(0x0, 0x0, (R1004), t167);
                                         (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                         (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                        (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                        (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                        (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                        (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                         t244 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                         (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                         if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                             for (;;) {
-                                                t248 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                                t248 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                                 if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                                     break;
                                                 }
@@ -741,25 +760,25 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                             return 0xC300AF4;
                         }
                         (((struct o1C_uint *)0xC300C2C)->v) = 0x1;
-                        *(unsigned int *)(((int)stk + 12)) = ((((struct o0_int *)0xC300B84)->v));
-                        *(unsigned int *)(((int)stk + 0)) = ((((struct o4_int *)0xC300B84)->v));
+                        R1012 = ((((struct o0_int *)0xC300B84)->v));
+                        R1000 = ((((struct o4_int *)0xC300B84)->v));
                         t309 = *(int *)((a4 + 0x10));
-                        *(unsigned int *)(((int)stk + 8)) = t309;
+                        R1008 = t309;
                         t311 = *(int *)((a4 + 0xC));
                         if ((unsigned int)t309 > (unsigned int)((((struct o4_int *)0xC300918)->v))) {
                             t312 = (((struct o4_int *)0xC300918)->v);
-                            *(unsigned int *)(((int)stk + 4)) = t311;
+                            R1004 = t311;
                             if ((unsigned int)t311 > (unsigned int)((((struct o0_int *)0xC300918)->v))) {
                                 kmSetPixelClipping(0x0, 0x0, ((((struct o0_int *)0xC300918)->v)), t312);
                                 (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                 (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                 t320 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                 (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                 if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                     for (;;) {
-                                        t324 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                        t324 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                         if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                             break;
                                         }
@@ -797,16 +816,16 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                                     }
                                 }
                             } else {
-                                kmSetPixelClipping(0x0, 0x0, (*(int *)(((int)stk + 4))), t312);
+                                kmSetPixelClipping(0x0, 0x0, (R1004), t312);
                                 (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                 (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                 t389 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                 (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                 if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                     for (;;) {
-                                        t393 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                        t393 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                         if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                             break;
                                         }
@@ -845,19 +864,19 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                                 }
                             }
                         } else {
-                            t452 = *(int *)(((int)stk + 8));
-                            *(unsigned int *)(((int)stk + 4)) = t311;
+                            t452 = R1008;
+                            R1004 = t311;
                             if ((unsigned int)t311 > (unsigned int)((((struct o0_int *)0xC300918)->v))) {
                                 kmSetPixelClipping(0x0, 0x0, ((((struct o0_int *)0xC300918)->v)), t452);
                                 (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                 (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                 t460 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                 (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                 if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                     for (;;) {
-                                        t464 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                        t464 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                         if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                             break;
                                         }
@@ -895,16 +914,16 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                                     }
                                 }
                             } else {
-                                kmSetPixelClipping(0x0, 0x0, (*(int *)(((int)stk + 4))), t452);
+                                kmSetPixelClipping(0x0, 0x0, (R1004), t452);
                                 (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                 (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                 t529 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                 (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                 if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                     for (;;) {
-                                        t533 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                        t533 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                         if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                             break;
                                         }
@@ -949,25 +968,25 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                             return 0xC300AF8;
                         }
                         (((struct o1C_uint *)0xC300C2C)->v) = 0x1;
-                        *(unsigned int *)(((int)stk + 12)) = ((((struct o0_int *)0xC300B84)->v));
-                        *(unsigned int *)(((int)stk + 0)) = ((((struct o4_int *)0xC300B84)->v));
+                        R1012 = ((((struct o0_int *)0xC300B84)->v));
+                        R1000 = ((((struct o4_int *)0xC300B84)->v));
                         t594 = *(int *)((a4 + 0x10));
-                        *(unsigned int *)(((int)stk + 8)) = t594;
+                        R1008 = t594;
                         t596 = *(int *)((a4 + 0xC));
                         if ((unsigned int)t594 > (unsigned int)((((struct o4_int *)0xC300918)->v))) {
                             t597 = (((struct o4_int *)0xC300918)->v);
-                            *(unsigned int *)(((int)stk + 4)) = t596;
+                            R1004 = t596;
                             if ((unsigned int)t596 > (unsigned int)((((struct o0_int *)0xC300918)->v))) {
                                 kmSetPixelClipping(0x0, 0x0, ((((struct o0_int *)0xC300918)->v)), t597);
                                 (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                 (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                 t605 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                 (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                 if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                     for (;;) {
-                                        t609 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                        t609 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                         if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                             break;
                                         }
@@ -1005,16 +1024,16 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                                     }
                                 }
                             } else {
-                                kmSetPixelClipping(0x0, 0x0, (*(int *)(((int)stk + 4))), t597);
+                                kmSetPixelClipping(0x0, 0x0, (R1004), t597);
                                 (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                 (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                 t674 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                 (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                 if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                     for (;;) {
-                                        t678 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                        t678 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                         if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                             break;
                                         }
@@ -1053,19 +1072,19 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                                 }
                             }
                         } else {
-                            t737 = *(int *)(((int)stk + 8));
-                            *(unsigned int *)(((int)stk + 4)) = t596;
+                            t737 = R1008;
+                            R1004 = t596;
                             if ((unsigned int)t596 > (unsigned int)((((struct o0_int *)0xC300918)->v))) {
                                 kmSetPixelClipping(0x0, 0x0, ((((struct o0_int *)0xC300918)->v)), t737);
                                 (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                 (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                 t745 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                 (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                 if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                     for (;;) {
-                                        t749 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                        t749 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                         if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                             break;
                                         }
@@ -1103,16 +1122,16 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                                     }
                                 }
                             } else {
-                                kmSetPixelClipping(0x0, 0x0, (*(int *)(((int)stk + 4))), t737);
+                                kmSetPixelClipping(0x0, 0x0, (R1004), t737);
                                 (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                 (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                 t814 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                 (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                 if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                     for (;;) {
-                                        t818 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                        t818 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                         if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                             break;
                                         }
@@ -1181,7 +1200,7 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
             t1179 = 0x0;
             if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                 for (;;) {
-                    t885 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                    t885 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                     if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                         break;
                     }
@@ -1191,25 +1210,25 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                             return 0xC300AF4;
                         }
                         (((struct o1C_uint *)0xC300C2C)->v) = 0x1;
-                        *(unsigned int *)(((int)stk + 12)) = ((((struct o0_int *)0xC300B84)->v));
-                        *(unsigned int *)(((int)stk + 0)) = ((((struct o4_int *)0xC300B84)->v));
+                        R1012 = ((((struct o0_int *)0xC300B84)->v));
+                        R1000 = ((((struct o4_int *)0xC300B84)->v));
                         t892 = *(int *)((a4 + 0x10));
-                        *(unsigned int *)(((int)stk + 8)) = t892;
+                        R1008 = t892;
                         t894 = *(int *)((a4 + 0xC));
                         if ((unsigned int)t892 > (unsigned int)((((struct o4_int *)0xC300918)->v))) {
                             t895 = (((struct o4_int *)0xC300918)->v);
-                            *(unsigned int *)(((int)stk + 4)) = t894;
+                            R1004 = t894;
                             if ((unsigned int)t894 > (unsigned int)((((struct o0_int *)0xC300918)->v))) {
                                 kmSetPixelClipping(0x0, 0x0, ((((struct o0_int *)0xC300918)->v)), t895);
                                 (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                 (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                 t903 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                 (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                 if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                     for (;;) {
-                                        t907 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                        t907 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                         if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                             break;
                                         }
@@ -1247,16 +1266,16 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                                     }
                                 }
                             } else {
-                                kmSetPixelClipping(0x0, 0x0, (*(int *)(((int)stk + 4))), t895);
+                                kmSetPixelClipping(0x0, 0x0, (R1004), t895);
                                 (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                 (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                 t972 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                 (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                 if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                     for (;;) {
-                                        t976 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                        t976 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                         if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                             break;
                                         }
@@ -1295,19 +1314,19 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                                 }
                             }
                         } else {
-                            t1035 = *(int *)(((int)stk + 8));
-                            *(unsigned int *)(((int)stk + 4)) = t894;
+                            t1035 = R1008;
+                            R1004 = t894;
                             if ((unsigned int)t894 > (unsigned int)((((struct o0_int *)0xC300918)->v))) {
                                 kmSetPixelClipping(0x0, 0x0, ((((struct o0_int *)0xC300918)->v)), t1035);
                                 (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                 (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                 t1043 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                 (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                 if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                     for (;;) {
-                                        t1047 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                        t1047 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                         if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                             break;
                                         }
@@ -1345,16 +1364,16 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                                     }
                                 }
                             } else {
-                                kmSetPixelClipping(0x0, 0x0, (*(int *)(((int)stk + 4))), t1035);
+                                kmSetPixelClipping(0x0, 0x0, (R1004), t1035);
                                 (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                                 (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                                (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                                (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                                (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                                (((struct o4_uint *)0xC300B84)->v) = (R1000);
                                 t1112 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                                 (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                                 if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                                     for (;;) {
-                                        t1116 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                                        t1116 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                                         if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                                             break;
                                         }
@@ -1419,33 +1438,33 @@ int kmRenderTextureDirect(int a4, int a5, int a6, int a7)
                 t1259 = t1175;
             } else {
                 (((struct o1C_uint *)0xC300C2C)->v) = 0x1;
-                *(unsigned int *)(((int)stk + 12)) = ((((struct o0_int *)0xC300B84)->v));
-                *(unsigned int *)(((int)stk + 0)) = ((((struct o4_int *)0xC300B84)->v));
+                R1012 = ((((struct o0_int *)0xC300B84)->v));
+                R1000 = ((((struct o4_int *)0xC300B84)->v));
                 t1182 = *(int *)((a4 + 0x10));
-                *(unsigned int *)(((int)stk + 8)) = t1182;
+                R1008 = t1182;
                 t1184 = *(int *)((a4 + 0xC));
                 if ((unsigned int)t1182 > (unsigned int)((((struct o4_int *)0xC300918)->v))) {
                     t1188 = ((((struct o4_int *)0xC300918)->v));
                 } else {
-                    t1188 = (*(int *)(((int)stk + 8)));
+                    t1188 = (R1008);
                 }
-                *(unsigned int *)(((int)stk + 4)) = t1184;
+                R1004 = t1184;
                 if ((unsigned int)t1184 > (unsigned int)((((struct o0_int *)0xC300918)->v))) {
                     t1194 = ((((struct o0_int *)0xC300918)->v));
                 } else {
-                    t1194 = (*(int *)(((int)stk + 4)));
+                    t1194 = (R1004);
                 }
                 kmSetPixelClipping(0x0, 0x0, t1194, t1188);
                 (((struct o8_uint *)0xC300DD8)->v) = ((((struct o0_int *)0xC300B84)->v));
                 (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
-                (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 12)));
-                (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 0)));
+                (((struct o0_uint *)0xC300B84)->v) = (R1012);
+                (((struct o4_uint *)0xC300B84)->v) = (R1000);
                 t1228 = kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
                 (((struct o14_uint *)0xC300C2C)->v) = 0x0;
                 t1230 = 0x0;
                 if (((((struct o0_int *)0xC300AD8)->v)) != 0) {
                     for (;;) {
-                        t1205 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
+                        t1205 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o0_int *)0xC300B38)->v))))(((((struct o4_int *)0xC300B38)->v)), a5, a6, a7, R1000, R1004, R1008, R1012, R1016, R1020, R1024);
                         if ((unsigned int)((((struct o14_int *)0xC300C2C)->v)) > (unsigned int)((((struct o1C_int *)0xC300AD8)->v))) {
                             break;
                         }
@@ -1572,11 +1591,15 @@ int FUN_0c0164fc(int a4, int a5)
     register float w0_0;
     register float w0_1;
     register float w0_2;
+    int R1000;
+    int R1004;
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
     v0_6 = a5;
     v0_3 = (((struct oC_int *)0xC177D0C)->v);
     v0_5 = (((struct o10_int *)0xC177D0C)->v);
-    *(unsigned int *)(((int)stk + 0)) = 0xC2ADF08;
-    *(unsigned int *)(((int)stk + 4)) = 0xC2ADED0;
+    R1000 = 0xC2ADF08;
+    R1004 = 0xC2ADED0;
     v0_0 = (0x0);
     v0_1 = (0xC177D28);
     v0_2 = (0x0);
@@ -1632,7 +1655,7 @@ int FUN_0c0164fc(int a4, int a5)
     if (((((((struct o28_int *)0xC177D0C)->v)) & R14) == 0)) goto L_C016618;
     L_C016578:;
     if (((*(int *)((v0_3 + 0x4))) == -1)) goto L_C01659E;
-    v0_7 = ((*(int *)(((int)stk + 4))));
+    v0_7 = ((R1004));
     L_C016580:;
     v0_8 = *(int *)((v0_3 + 0x4));
     v0_9 = (v0_8);
@@ -1641,7 +1664,7 @@ int FUN_0c0164fc(int a4, int a5)
     L_C016590:;
     v0_6 = (R14);
     L_C016592:;
-    v0_8 = (unsigned int)(v0_7 + 0x4) < (unsigned int)(*(int *)(((int)stk + 0)));
+    v0_8 = (unsigned int)(v0_7 + 0x4) < (unsigned int)(R1000);
     v0_7 = ((v0_7 + 0x4));
     if (v0_8) goto L_C016580;
     L_C0165A0:;
@@ -1672,17 +1695,22 @@ int syExtChkInit(int a4)
     register int t37;
     register int t43;
     register int t49;
+    int R1000;
+    int R1004;
+
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
 
     t68 = 0xFFFFFFFF;
     if (((((struct o0_int *)0xC173814)->v)) == 0) {
         syExtChkClearG2TimeOut();
-        *(int *)((int)stk + 4) = 0x0;
-        *(int *)((int)stk + 0) = 0x0;
+        R1004 = 0x0;
+        R1000 = 0x0;
         t2 = syG2Read(0xA0600004, (((int)stk + 0) + 0xC), 0x1, 0x1, 0x0, 0x0);
         t68 = 0xFFFFFFFF;
         if (t2 == 0) {
-            *(int *)((int)stk + 4) = 0x0;
-            *(int *)((int)stk + 0) = 0x0;
+            R1004 = 0x0;
+            R1000 = 0x0;
             t3 = syG2Read(0xA0600000, (((int)stk + 0) + 0x8), 0x1, 0x1, 0x0, 0x0);
             t68 = 0xFFFFFFFF;
             if (t3 != 0) {

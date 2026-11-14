@@ -84,7 +84,7 @@ int FUN_0c05f72a(int);
 int FUN_0c066cc6(int, int);
 int FUN_0c0673da(int);
 int FUN_0c067494(int, int);
-int FUN_0c06a2fe(int, int, int, int, int, int, int, int, int, int, int, int);
+int FUN_0c06a2fe(int, int, int);
 int FUN_0c071920(int);
 float FUN_0c072140(int);
 int FUN_0c072148(int);
@@ -184,6 +184,13 @@ int FUN_0c02bcf8(int a4)
     register int t19;
     register int t20;
     register int t21;
+    int R1000;
+    int R1004;
+    int R1008;
+
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
 
     *(unsigned int *)0xC273810 = (*(int *)(((a4 << 2) + 0xC129420)));
     *(volatile int *)(((a4 << 2) + 0xC09FC9C));
@@ -192,27 +199,27 @@ int FUN_0c02bcf8(int a4)
     if ((*(int *)0xC129458) != 0) {
         t5 = 0x0;
         for (;;) {
-            *(unsigned int *)(((int)stk + 4)) = (0xC273834 + (((((t5 << 2) << 1) + t5) << 2) << 1));
+            R1004 = (0xC273834 + (((((t5 << 2) << 1) + t5) << 2) << 1));
             t8 = 0x0;
             for (;;) {
-                t9 = *(int *)(((int)stk + 4));
-                *(unsigned int *)(((int)stk + 0)) = (t9 + t8);
-                *(unsigned int *)(((int)stk + 8)) = (((t5 * 0x78) + 0xC271E5C) + t8);
-                nlGetAverageVector((*(int *)(((int)stk + 8))), ((((t5 * 0x78) + 0xC271E5C) + t8) + 0x30), (t9 + t8), 0.5f, 0.5f);
-                nlAddVector((*(int *)(((int)stk + 0))), (((t5 * 0x78) + 0xC271E5C) + 0x60));
+                t9 = R1004;
+                R1000 = (t9 + t8);
+                R1008 = (((t5 * 0x78) + 0xC271E5C) + t8);
+                nlGetAverageVector((R1008), ((((t5 * 0x78) + 0xC271E5C) + t8) + 0x30), (t9 + t8), 0.5f, 0.5f);
+                nlAddVector((R1000), (((t5 * 0x78) + 0xC271E5C) + 0x60));
                 t8 = (t8 + 0xC);
                 if ((unsigned int)t8 >= (unsigned int)0x30) {
                     break;
                 }
             }
-            *(unsigned int *)(((int)stk + 0)) = 0x0;
+            R1000 = 0x0;
             t16 = ((t5 * 0x1C) + 0xC273DD4);
             t17 = ((((((t5 << 2) << 1) + t5) << 2) << 1) + 0xC273834);
             for (;;) {
                 nlGetAverageVector(t17, (t17 + 0xC), t16, 0.5f, 0.5f);
-                t19 = *(int *)(((int)stk + 0));
+                t19 = R1000;
                 t17 = (t17 + 0x18);
-                *(unsigned int *)(((int)stk + 0)) = (t19 + 0x1);
+                R1000 = (t19 + 0x1);
                 t16 = (t16 + 0xC);
                 if ((int)(t19 + 0x1) >= (int)0x2) {
                     break;
@@ -400,22 +407,27 @@ int FUN_0c07e210(int a4, int a5)
     register int t39;
     register int t27;
     register float u28;
+    int R1000;
+    int R1004;
+
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
 
     t0 = (((struct o8_int *)0xC2BBAC8)->v);
     t1 = *(int *)((t0 + 0x0));
-    *(unsigned int *)(((int)stk + 4)) = (t1 << 2);
+    R1004 = (t1 << 2);
     t3 = *(int *)((t0 + 0x4));
     t4 = *(int *)(((t1 << 2) + ((((struct o0_int *)0xC2BBAC8)->v))));
     (((struct o0_uint *)0xFF000038)->v) = ((unsigned int)((unsigned int)t4 >> 16) >> 8);
     (((struct o4_uint *)0xFF000038)->v) = ((unsigned int)((unsigned int)t4 >> 16) >> 8);
-    *(unsigned int *)(((int)stk + 0)) = ((t4 & 0x3FFFFFF) | 0xE0000000);
+    R1000 = ((t4 & 0x3FFFFFF) | 0xE0000000);
     kmiMemCopy8(((t4 & 0x3FFFFFF) | 0xE0000000), ((((struct o4_int *)0xC2BBAC8)->v)), t3);
-    _builtin_prefetch((void *)(*(int *)(((int)stk + 0))));
+    _builtin_prefetch((void *)(R1000));
     if (t3 == 64) {
-        _builtin_prefetch((void *)((*(int *)(((int)stk + 0))) + 0x20));
+        _builtin_prefetch((void *)((R1000) + 0x20));
     }
     t42 = (((struct o0_int *)0xC2BBAC8)->v);
-    t14 = *(int *)(((int)stk + 4));
+    t14 = R1004;
     *(unsigned int *)((t14 + t42)) = ((*(int *)((t14 + t42))) + (((unsigned int)t3 >> 2) << 2));
     *(unsigned int *)(((int)stk + 8)) = 0xE0000000;
     if ((int)a4 > 0) {
@@ -444,7 +456,7 @@ int FUN_0c07e210(int a4, int a5)
             *(unsigned int *)(((int)stk + 32)) = t14;
             *(unsigned int *)(((int)stk + 36)) = (*(int *)((t16 + 0x18)));
             t35 = *(int *)((((((struct o8_int *)0xC2BBAC8)->v)) + 0x0));
-            *(unsigned int *)(((int)stk + 0)) = (t35 << 2);
+            R1000 = (t35 << 2);
             t37 = *(int *)(((t35 << 2) + ((((struct o0_int *)0xC2BBAC8)->v))));
             (((struct o0_uint *)0xFF000038)->v) = ((unsigned int)((unsigned int)t37 >> 16) >> 8);
             (((struct o4_uint *)0xFF000038)->v) = ((unsigned int)((unsigned int)t37 >> 16) >> 8);
@@ -453,7 +465,7 @@ int FUN_0c07e210(int a4, int a5)
             _builtin_prefetch((void *)((t37 & 0x3FFFFFF) | 0xE0000000));
             t39 = (((struct o0_int *)0xC2BBAC8)->v);
             t15 = (t15 - 1);
-            t14 = (*(int *)(((int)stk + 0)));
+            t14 = (R1000);
             *(unsigned int *)((t14 + t39)) = ((*(int *)((t14 + t39))) + 0x20);
             t16 = (t16 + 0x1C);
             if ((int)t15 <= 0) {
@@ -481,46 +493,61 @@ int _its(int a4, int a5, int a6, int a7)
     register int t35;
     register int t36;
     register int t28;
+    int R1000;
+    int R1004;
+    int R1008;
+    int R1012;
+    int R1016;
+    int R1020;
+    int R1024;
 
-    *(unsigned int *)(((int)stk + 12)) = a5;
-    *(unsigned int *)(((int)stk + 0)) = a6;
-    *(unsigned int *)(((int)stk + 24)) = 0x1;
-    t0 = *(int *)(((int)stk + 12));
-    t1 = *(int *)(((int)stk + 0));
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+    R1016 = *(int *)((int)stk + 16);
+    R1020 = *(int *)((int)stk + 20);
+    R1024 = *(int *)((int)stk + 24);
+
+    R1012 = a5;
+    R1000 = a6;
+    R1024 = 0x1;
+    t0 = R1012;
+    t1 = R1000;
     *(unsigned char *)(((t1 + t0) + 0x0)) = 0x0;
     t6 = ((int (*)(int, int, int, int))(memcpy))((((int)stk + 0) + 0x24), a4, 0x8, a7);
-    t3 = *(int *)(((int)stk + 0));
-    *(unsigned int *)(((int)stk + 4)) = (t3 - 1);
-    *(unsigned int *)(((int)stk + 20)) = ((((t3 - 1) << 2) << 1) + 0xC118494);
-    *(unsigned int *)(((int)stk + 16)) = ((*(int *)(((int)stk + 4))) + 0x1);
+    t3 = R1000;
+    R1004 = (t3 - 1);
+    R1020 = ((((t3 - 1) << 2) << 1) + 0xC118494);
+    R1016 = ((R1004) + 0x1);
     t7 = (t1 + t0);
     for (;;) {
-        if ((int)(*(int *)(((int)stk + 4))) < 0) {
+        if ((int)(R1004) < 0) {
             return t6;
         }
         t6 = 0x5;
-        t6 = ((int)((int)(*(int *)(((int)stk + 16))) / (int)t6));
+        t6 = ((int)((int)(R1016) / (int)t6));
         t6 = (t6 + 0x1);
         t6 = (t6 << 1);
         t14 = (0x8 - t6);
         t15 = (0x8 - (0x8 - t6));
-        t6 = (((int (*)(int, int, int))(memcpy))(((0x8 - t6) + (((int)stk + 0) + 0x1C)), ((*(int *)(((int)stk + 20))) + (0x8 - t6)), (0x8 - (0x8 - t6))));
-        *(unsigned int *)(((int)stk + 8)) = 0x0;
-        *(unsigned int *)(((int)stk + 0)) = 0x0;
+        t6 = (((int (*)(int, int, int))(memcpy))(((0x8 - t6) + (((int)stk + 0) + 0x1C)), ((R1020) + (0x8 - t6)), (0x8 - (0x8 - t6))));
+        R1008 = 0x0;
+        R1000 = 0x0;
         t16 = 0x8;
         for (;;) {
             t6 = (FUN_0c095b84((t14 + (((int)stk + 0) + 0x24)), (t14 + (((int)stk + 0) + 0x1C)), t15));
             if ((int)t6 >= 0) {
                 t6 = (_sub(0x0, (t14 + (((int)stk + 0) + 0x24)), (t14 + (((int)stk + 0) + 0x1C)), t15));
-                *(unsigned int *)(((int)stk + 24)) = t6;
-                *(unsigned int *)(((int)stk + 8)) = ((*(int *)(((int)stk + 8))) + t16);
+                R1024 = t6;
+                R1008 = ((R1008) + t16);
             }
             t16 = ((int)((unsigned int)((int)((unsigned int)t16 + (unsigned int)0x0)) + ((((int)0x0 > (int)t16)) ? 1u : 0u)));
             t16 = (t16 >> 1);
             if (t16 != 0) {
                 t6 = (_rsfts((t14 + (((int)stk + 0) + 0x1C)), t15, 0x1));
-                t27 = *(int *)(((int)stk + 0));
-                *(unsigned int *)(((int)stk + 0)) = (t27 + 0x1);
+                t27 = R1000;
+                R1000 = (t27 + 0x1);
                 if ((int)(t27 + 0x1) >= (int)0x4) {
                     t28 = (t27 + 0x1); break;
                 }
@@ -528,22 +555,22 @@ int _its(int a4, int a5, int a6, int a7)
             }
             break;
         }
-        t31 = *(int *)(((int)stk + 8));
-        if ((*(int *)(((int)stk + 24))) == 0) {
+        t31 = R1008;
+        if ((R1024) == 0) {
             break;
         }
         *(unsigned char *)(((t7 - 0x1) + 0x0)) = (t31 + 0x30);
         t7 = (t7 - 0x1);
-        *(unsigned int *)(((int)stk + 4)) = ((*(int *)(((int)stk + 4))) - 1);
-        *(unsigned int *)(((int)stk + 20)) = ((*(int *)(((int)stk + 20))) - 8);
-        *(unsigned int *)(((int)stk + 16)) = ((*(int *)(((int)stk + 16))) - 1);
+        R1004 = ((R1004) - 1);
+        R1020 = ((R1020) - 8);
+        R1016 = ((R1016) - 1);
     }
     *(unsigned char *)(((t7 - 0x1) + 0x0)) = (t31 + 0x30);
     t35 = t28;
     t36 = (t7 - 0x1);
     for (;;) {
         t36 = (t36 - 1);
-        if ((unsigned int)t36 < (unsigned int)(*(int *)(((int)stk + 12)))) {
+        if ((unsigned int)t36 < (unsigned int)(R1012)) {
             break;
         }
         t35 = 0x30;
@@ -639,7 +666,7 @@ int FUN_0c06356c(int a4)
     } else {
         t54 = (*(int *)((a4 + 0x18)));
     }
-    t58 = FUN_0c06a2fe((*(int *)(((*(int *)((a4 + 0x0))) + 0x10))), t52, t54, t49, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
+    t58 = FUN_0c06a2fe((*(int *)(((*(int *)((a4 + 0x0))) + 0x10))), t52, t54);
     *(unsigned int *)((a4 + 0xC)) = ((*(int *)((a4 + 0xC))) + 0x1);
     return t58;
 }
@@ -703,22 +730,27 @@ int nldispstripTexSub(int a4, int a5)
     register int t38;
     register int t27;
     register float u28;
+    int R1000;
+    int R1004;
+
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
 
     t0 = (((struct o8_int *)0xC2BBAC8)->v);
     t1 = *(int *)((t0 + 0x0));
-    *(unsigned int *)(((int)stk + 4)) = (t1 << 2);
+    R1004 = (t1 << 2);
     t3 = *(int *)((t0 + 0x4));
     t4 = *(int *)(((t1 << 2) + ((((struct o0_int *)0xC2BBAC8)->v))));
     (((struct o0_uint *)0xFF000038)->v) = ((unsigned int)((unsigned int)t4 >> 16) >> 8);
     (((struct o4_uint *)0xFF000038)->v) = ((unsigned int)((unsigned int)t4 >> 16) >> 8);
-    *(unsigned int *)(((int)stk + 0)) = ((t4 & 0x3FFFFFF) | 0xE0000000);
+    R1000 = ((t4 & 0x3FFFFFF) | 0xE0000000);
     kmiMemCopy8(((t4 & 0x3FFFFFF) | 0xE0000000), ((((struct o4_int *)0xC2BBAC8)->v)), t3);
-    _builtin_prefetch((void *)(*(int *)(((int)stk + 0))));
+    _builtin_prefetch((void *)(R1000));
     if (t3 == 64) {
-        _builtin_prefetch((void *)((*(int *)(((int)stk + 0))) + 0x20));
+        _builtin_prefetch((void *)((R1000) + 0x20));
     }
     t41 = (((struct o0_int *)0xC2BBAC8)->v);
-    t14 = *(int *)(((int)stk + 4));
+    t14 = R1004;
     *(unsigned int *)((t14 + t41)) = ((*(int *)((t14 + t41))) + (((unsigned int)t3 >> 2) << 2));
     *(unsigned int *)(((int)stk + 8)) = 0xE0000000;
     if ((int)a4 > 0) {
@@ -746,7 +778,7 @@ int nldispstripTexSub(int a4, int a5)
             t14 = (*(int *)((t16 + 0x14)));
             *(unsigned int *)(((int)stk + 32)) = t14;
             t34 = *(int *)((((((struct o8_int *)0xC2BBAC8)->v)) + 0x0));
-            *(unsigned int *)(((int)stk + 0)) = (t34 << 2);
+            R1000 = (t34 << 2);
             t36 = *(int *)(((t34 << 2) + ((((struct o0_int *)0xC2BBAC8)->v))));
             (((struct o0_uint *)0xFF000038)->v) = ((unsigned int)((unsigned int)t36 >> 16) >> 8);
             (((struct o4_uint *)0xFF000038)->v) = ((unsigned int)((unsigned int)t36 >> 16) >> 8);
@@ -755,7 +787,7 @@ int nldispstripTexSub(int a4, int a5)
             _builtin_prefetch((void *)((t36 & 0x3FFFFFF) | 0xE0000000));
             t38 = (((struct o0_int *)0xC2BBAC8)->v);
             t15 = (t15 - 1);
-            t14 = (*(int *)(((int)stk + 0)));
+            t14 = (R1000);
             *(unsigned int *)((t14 + t38)) = ((*(int *)((t14 + t38))) + 0x20);
             t16 = (t16 + 0x1C);
             if ((int)t15 <= 0) {
@@ -869,9 +901,16 @@ int kmSetUserClipping(int a4, int a5, int a6, int a7, int a8, int a9)
     register int t14;
     register int t29;
     register int t31;
+    int R1000;
+    int R1004;
+    int R1008;
 
-    *(unsigned int *)(((int)stk + 8)) = a6;
-    *(unsigned int *)(((int)stk + 4)) = a7;
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+
+    R1008 = a6;
+    R1004 = a7;
     t0 = kmGetCurrentVertexOffset(a5);
     if (t0 != 8) {
         t4 = *(int *)(((*(int *)((a4 + 0x4))) + 0x0));
@@ -888,11 +927,11 @@ int kmSetUserClipping(int a4, int a5, int a6, int a7, int a8, int a9)
         t12 = *(int *)((a4 + 0x0));
         t11 = *(int *)(((a5 << 2) + t12));
         *(unsigned int *)(((a5 << 2) + t12)) = (t11 + 0x20);
-        *(unsigned int *)(((int)stk + 0)) = 0x2;
+        R1000 = 0x2;
         t13 = (t11 + 0x20);
         t14 = ((t8 & 0x3FFFFFF) | 0xE0000000);
         for (;;) {
-            if ((*(int *)(((int)stk + 0))) == 0) {
+            if ((R1000) == 0) {
                 break;
             }
             t12 = (*(int *)((a4 + 0x0)));
@@ -908,14 +947,14 @@ int kmSetUserClipping(int a4, int a5, int a6, int a7, int a8, int a9)
             _builtin_prefetch((void *)t14);
             t12 = (*(int *)((a4 + 0x0)));
             *(unsigned int *)(((a5 << 2) + t12)) = ((*(int *)(((a5 << 2) + t12))) + 0x40);
-            t13 = (*(int *)(((int)stk + 0)));
+            t13 = (R1000);
             t13 = (t13 - 1);
-            *(unsigned int *)(((int)stk + 0)) = t13;
+            R1000 = t13;
         }
     }
     *(unsigned int *)(((((int)stk + 0) + 0xC) + 0x0)) = 0x20000000;
-    *(unsigned int *)(((((int)stk + 0) + 0xC) + 0x10)) = (*(int *)(((int)stk + 8)));
-    *(unsigned int *)(((((int)stk + 0) + 0xC) + 0x14)) = (*(int *)(((int)stk + 4)));
+    *(unsigned int *)(((((int)stk + 0) + 0xC) + 0x10)) = (R1008);
+    *(unsigned int *)(((((int)stk + 0) + 0xC) + 0x14)) = (R1004);
     *(unsigned int *)(((((int)stk + 0) + 0xC) + 0x18)) = a8;
     *(unsigned int *)(((((int)stk + 0) + 0xC) + 0x1C)) = a9;
     t29 = *(int *)(((a5 << 2) + (*(int *)((a4 + 0x0)))));
@@ -969,13 +1008,24 @@ int ADXB_DecodeHeaderAdx(int a4, int a5, int a6)
     register int t0;
     register int t20;
     register int t1;
+    int R1004;
+    int R1008;
+    int R1012;
+    int R1016;
+    int R1020;
+
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+    R1016 = *(int *)((int)stk + 16);
+    R1020 = *(int *)((int)stk + 20);
 
     *(unsigned short *)((a4 + 0x2)) = 0x1;
-    *(int *)((int)stk + 20) = (a4 + 0x10);
-    *(int *)((int)stk + 16) = (a4 + 0x18);
-    *(int *)((int)stk + 12) = (a4 + 0x14);
-    *(int *)((int)stk + 8) = (a4 + 0xE);
-    *(int *)((int)stk + 4) = (a4 + 0xF);
+    R1020 = (a4 + 0x10);
+    R1016 = (a4 + 0x18);
+    R1012 = (a4 + 0x14);
+    R1008 = (a4 + 0xE);
+    R1004 = (a4 + 0xF);
     *(int *)((int)stk + 0) = (a4 + 0xD);
     t0 = FUN_0c16137e(a5, a6, (((int)stk + 0) + 0x18), (a4 + 0xC), (a4 + 0xD), (a4 + 0xF), (a4 + 0xE), (a4 + 0x14), (a4 + 0x18), (a4 + 0x10));
     t20 = 0x0;
@@ -985,11 +1035,11 @@ int ADXB_DecodeHeaderAdx(int a4, int a5, int a6)
         if ((int)t1 < 0) {
         } else {
             ADXPD_SetCoef((*(int *)((a4 + 0x8))), (*(int *)((a4 + 0x14))), (*(short *)((a4 + 0x1C))));
-            *(int *)((int)stk + 20) = (a4 + 0x34);
-            *(int *)((int)stk + 16) = (a4 + 0x30);
-            *(int *)((int)stk + 12) = (a4 + 0x2C);
-            *(int *)((int)stk + 8) = (a4 + 0x28);
-            *(int *)((int)stk + 4) = (a4 + 0x26);
+            R1020 = (a4 + 0x34);
+            R1016 = (a4 + 0x30);
+            R1012 = (a4 + 0x2C);
+            R1008 = (a4 + 0x28);
+            R1004 = (a4 + 0x26);
             ADX_DecodeInfoExLoop(a5, a6, (a4 + 0x20), (a4 + 0x24), (a4 + 0x26), (a4 + 0x28), (a4 + 0x2C), (a4 + 0x30), (a4 + 0x34));
             (((struct o58_uint *)(a4))->v) = (*(signed char *)((a4 + 0xE)));
             (((struct o5C_uint *)(a4))->v) = (*(signed char *)((a4 + 0xF)));
@@ -1539,49 +1589,60 @@ int vmsfs_init(int a4, int a5, int a6)
     register int t1;
     register int t8;
     register int t37;
+    int R1000;
+    int R1020;
+    int R1024;
+    int R1028;
+    int R1032;
 
-    *(unsigned int *)(((int)stk + 32)) = a4;
-    *(unsigned int *)(((int)stk + 28)) = a5;
-    *(unsigned int *)(((int)stk + 24)) = a6;
+    R1000 = *(int *)((int)stk + 0);
+    R1020 = *(int *)((int)stk + 20);
+    R1024 = *(int *)((int)stk + 24);
+    R1028 = *(int *)((int)stk + 28);
+    R1032 = *(int *)((int)stk + 32);
+
+    R1032 = a4;
+    R1028 = a5;
+    R1024 = a6;
     *(unsigned int *)0xC2C8D28 = 0xC2C8D14;
-    *(unsigned int *)(((int)stk + 20)) = 0x0;
+    R1020 = 0x0;
     t1 = 0xC2C8D28;
     for (;;) {
-        if ((int)(*(int *)(((int)stk + 20))) >= (int)0x8) {
+        if ((int)(R1020) >= (int)0x8) {
             break;
         }
-        t1 = (*(int *)(((int)stk + 20)));
+        t1 = (R1020);
         t1 = (t1 << 2);
         *(unsigned int *)((t1 + (0xC2C97CC))) = 0x0;
-        t1 = (*(int *)(((int)stk + 20)));
+        t1 = (R1020);
         t1 = (t1 + 0x1);
-        *(unsigned int *)(((int)stk + 20)) = t1;
+        R1020 = t1;
     }
     memset(0xC2C8D14, 0x0, 0x14);
     memset(0xC2C8D2C, 0x0, 0xAA0);
     vmsfs_setdevicetype(0x0);
     (((struct o8_uint *)0xC2CDC8C)->v) = 0x0;
-    *(unsigned int *)(((int)stk + 20)) = 0x0;
-    *(unsigned int *)(((int)stk + 0)) = 0x1;
+    R1020 = 0x0;
+    R1000 = 0x1;
     t8 = 0x1;
     for (;;) {
-        if ((int)(*(int *)(((int)stk + 20))) >= (int)0x8) {
+        if ((int)(R1020) >= (int)0x8) {
             break;
         }
-        if (((*(int *)(((int)stk + 28))) & (*(int *)(((int)stk + 0)))) != 0) {
+        if (((R1028) & (R1000)) != 0) {
             t8 = 0xC2CDC94;
             *(unsigned int *)((t8 + 0x0)) = ((*(int *)((t8 + 0x0))) + 0x1);
         }
-        *(unsigned int *)(((int)stk + 20)) = ((*(int *)(((int)stk + 20))) + 0x1);
-        t8 = (*(int *)(((int)stk + 0)));
+        R1020 = ((R1020) + 0x1);
+        t8 = (R1000);
         t8 = (t8 << 1);
-        *(unsigned int *)(((int)stk + 0)) = t8;
+        R1000 = t8;
     }
-    if ((*(int *)(((int)stk + 24))) != 0) {
-        vmsfs_init_work_normal((*(int *)(((int)stk + 32))), (*(int *)(((int)stk + 28))), (*(int *)(((int)stk + 24))));
+    if ((R1024) != 0) {
+        vmsfs_init_work_normal((R1032), (R1028), (R1024));
         *(unsigned int *)(((*(int *)0xC2C8D28) + 0x8)) = 0x0;
     } else {
-        vmsfs_init_work_new((*(int *)(((int)stk + 32))), (*(int *)(((int)stk + 28))), (*(int *)(((int)stk + 24))));
+        vmsfs_init_work_new((R1032), (R1028), (R1024));
         *(unsigned int *)(((*(int *)0xC2C8D28) + 0x8)) = 0x1;
     }
     (((struct o0_uint *)0xC2CDC8C)->v) = 0x8;
@@ -2303,32 +2364,41 @@ int kmiProcessVertex_09(int a4)
     register int t3;
     register int t5;
     register int t31;
+    int R1000;
+    int R1004;
+    int R1008;
+    int R1012;
 
-    *(unsigned int *)(((((int)stk + 0) + 0x4) + 0x0)) = (*(int *)((a4 + 0x0)));
-    *(unsigned int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0)) = (*(int *)((a4 + 0x4)));
-    *(unsigned int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0)) = (*(int *)((a4 + 0x8)));
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+
+    R1004 = (*(int *)((a4 + 0x0)));
+    R1008 = (*(int *)((a4 + 0x4)));
+    R1012 = (*(int *)((a4 + 0x8)));
     t3 = (((struct o4_int *)0xC300A6C)->v);
-    *(unsigned int *)(((int)stk + 0)) = ((((struct o8_int *)0xC300A6C)->v));
+    R1000 = ((((struct o8_int *)0xC300A6C)->v));
     t5 = (((struct oC_int *)0xC300A6C)->v);
     (((struct o0_uint *)0xC300974)->v) = t3;
-    (((struct o4_uint *)0xC300974)->v) = (*(int *)(((int)stk + 0)));
+    (((struct o4_uint *)0xC300974)->v) = (R1000);
     (((struct o8_uint *)0xC300974)->v) = t5;
-    (((struct oC_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0x4)));
-    (((struct o10_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0x8)));
-    (((struct o14_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0xC)));
-    (((struct o18_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0x10)));
-    (((struct o1C_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0x4)));
-    (((struct o20_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0x8)));
-    (((struct o24_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0xC)));
-    (((struct o28_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0x10)));
-    (((struct o2C_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0x4)));
-    (((struct o30_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0x8)));
-    (((struct o34_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0xC)));
-    (((struct o38_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0x10)));
+    (((struct oC_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0x4)));
+    (((struct o10_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0x8)));
+    (((struct o14_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0xC)));
+    (((struct o18_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0x10)));
+    (((struct o1C_uint *)0xC300974)->v) = (*(int *)(((R1008) + 0x4)));
+    (((struct o20_uint *)0xC300974)->v) = (*(int *)(((R1008) + 0x8)));
+    (((struct o24_uint *)0xC300974)->v) = (*(int *)(((R1008) + 0xC)));
+    (((struct o28_uint *)0xC300974)->v) = (*(int *)(((R1008) + 0x10)));
+    (((struct o2C_uint *)0xC300974)->v) = (*(int *)(((R1012) + 0x4)));
+    (((struct o30_uint *)0xC300974)->v) = (*(int *)(((R1012) + 0x8)));
+    (((struct o34_uint *)0xC300974)->v) = (*(int *)(((R1012) + 0xC)));
+    (((struct o38_uint *)0xC300974)->v) = (*(int *)(((R1012) + 0x10)));
     (((struct o0_uint *)0xC300A6C)->v) = 0x3C;
     t31 = kmiBGPlaneCountWords(t3);
     kmiBGPlaneSetPCW(t31, 0x0, 0x0);
-    (((struct o14_uint *)0xC300A6C)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0xC)));
+    (((struct o14_uint *)0xC300A6C)->v) = (*(int *)(((R1004) + 0xC)));
     return 0x0;
 }
 

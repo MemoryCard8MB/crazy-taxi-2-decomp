@@ -35,7 +35,7 @@ int FUN_0c0423e6(int);
 int FUN_0c046460(int);
 int FUN_0c0464f0(int, int, int, int, int);
 int FUN_0c047a4a(int);
-int FUN_0c048262(int, int, int, int, int, int, int, int, int);
+int FUN_0c048262(int);
 int FUN_0c0491d8(void);
 int FUN_0c04d58c(void);
 int FUN_0c04fbf0(void);
@@ -114,7 +114,7 @@ int FUN_0c01cd78(void)
     FUN_0c0423e6(0x0);
     FUN_0c03ff4a(0x0);
     FUN_0c0464f0(0x0, 0x0, 0x0, 0x0, *(int *)((int)stk + 0));
-    FUN_0c048262(0xFFFFFFFE, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16));
+    FUN_0c048262(0xFFFFFFFE);
     (((struct o0_uint *)0xC2AC2F4)->v) = 0x0;
     FUN_0c0590a8();
     FUN_0c026d10();

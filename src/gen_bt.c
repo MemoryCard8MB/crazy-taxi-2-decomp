@@ -171,15 +171,23 @@ int FUN_0c03ea54(int a4, int a5, int a6, int a7)
     register int v0_7;
     register int v0_8;
     register int v0_9;
+    int R1000;
+    int R1004;
+    int R1008;
+    int R1012;
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
     v0_0 = a7;
-    *(unsigned int *)(((int)stk + 0)) = 0x0;
+    R1000 = 0x0;
     v0_1 = (0xC28DD0C);
     v0_2 = (0xC2A4FE0);
     v0_3 = (0x0);
     v0_4 = (0xC0800B0);
     v0_4 = (0x78);
     L_C03EA74:;
-    v0_5 = *(int *)(((int)stk + 0));
+    v0_5 = R1000;
     memset(((v0_2 + 0x8) + (v0_5 * 0x78)), 0xFFFFFFFF, 0x78);
     v0_6 = ((v0_5 * 0x78));
     v0_5 = (0x0);
@@ -192,12 +200,12 @@ int FUN_0c03ea54(int a4, int a5, int a6, int a7)
     v0_5 = ((v0_5 + 0xC));
     if (v0_7) goto L_C03EA8A;
     L_C03EABE:;
-    v0_5 = *(int *)(((int)stk + 0));
-    *(unsigned int *)(((int)stk + 0)) = (v0_5 + 0x1);
+    v0_5 = R1000;
+    R1000 = (v0_5 + 0x1);
     if (((int)(v0_5 + 0x1) < (int)0x4)) goto L_C03EA74;
-    *(unsigned int *)(((int)stk + 0)) = v0_3;
+    R1000 = v0_3;
     L_C03EACC:;
-    v0_5 = *(int *)(((int)stk + 0));
+    v0_5 = R1000;
     memset(((0x1E8 + v0_2) + (v0_5 * 0x78)), 0xFFFFFFFF, 0x78);
     v0_6 = ((v0_5 * 0x78));
     v0_5 = (0x0);
@@ -210,31 +218,31 @@ int FUN_0c03ea54(int a4, int a5, int a6, int a7)
     v0_5 = ((v0_5 + 0xC));
     if (v0_7) goto L_C03EAE2;
     L_C03EB16:;
-    v0_5 = *(int *)(((int)stk + 0));
-    *(unsigned int *)(((int)stk + 0)) = (v0_5 + 0x1);
+    v0_5 = R1000;
+    R1000 = (v0_5 + 0x1);
     if (((int)(v0_5 + 0x1) < (int)0x4)) goto L_C03EACC;
-    *(unsigned int *)(((int)stk + 0)) = v0_3;
-    *(unsigned int *)(((int)stk + 4)) = ((((int)stk + 0) + 0x10) + 0x24);
-    *(unsigned int *)(((int)stk + 12)) = (((int)stk + 0) + 0x10);
+    R1000 = v0_3;
+    R1004 = ((((int)stk + 0) + 0x10) + 0x24);
+    R1012 = (((int)stk + 0) + 0x10);
     v0_5 = ((((int)stk + 0) + 0x10));
     L_C03EB32:;
-    v0_4 = *(int *)(((int)stk + 0));
+    v0_4 = R1000;
     memset(((0x3C8 + v0_2) + (v0_4 * 0x3C)), 0xFFFFFFFF, 0x3C);
     memset(v0_5, 0xFFFFFFFF, 0x3C);
-    v0_8 = *(int *)(((int)stk + 0));
-    v0_7 = ((*(int *)(((int)stk + 12))));
+    v0_8 = R1000;
+    v0_7 = ((R1012));
     v0_6 = ((0xC09C834 + (((v0_8 << 1) + v0_8) << 2)));
     v0_8 = ((((v0_8 << 1) + v0_8) << 2));
     v0_4 = ((v0_4 * 0x3C));
     L_C03EB82:;
-    if (((unsigned int)v0_7 < (unsigned int)(*(int *)(((int)stk + 4))))) goto L_C03EB7C;
-    *(unsigned int *)(((int)stk + 8)) = (*(int *)((v0_8 + 0xC09C8FC)));
+    if (((unsigned int)v0_7 < (unsigned int)(R1004))) goto L_C03EB7C;
+    R1008 = (*(int *)((v0_8 + 0xC09C8FC)));
     v0_6 = (v0_3);
     L_C03EB90:;
     FUN_0c07ff00();
     if (((*(int *)(((int)stk + 76))) == -1)) goto L_C03EBC2;
     *(unsigned char *)(((int)stk + 85)) = v0_3;
-    InsertRankRecord((*(int *)(((int)stk + 8))), (((int)stk + 0) + 0x4C), v0_5, 0x5);
+    InsertRankRecord((R1008), (((int)stk + 0) + 0x4C), v0_5, 0x5);
     v0_7 = (unsigned int)(v0_6 + 0xC) < (unsigned int)0x3C;
     v0_6 = ((v0_6 + 0xC));
     if (v0_7) goto L_C03EB90;
@@ -251,8 +259,8 @@ int FUN_0c03ea54(int a4, int a5, int a6, int a7)
     v0_7 = (v0_3);
     goto L_C03EBE8;
     L_C03EC14:;
-    v0_4 = *(int *)(((int)stk + 0));
-    *(unsigned int *)(((int)stk + 0)) = (v0_4 + 0x1);
+    v0_4 = R1000;
+    R1000 = (v0_4 + 0x1);
     if (((int)(v0_4 + 0x1) < (int)0x10)) goto L_C03EB32;
     return v0_9;
     L_C03EBE8:;
@@ -363,6 +371,9 @@ int FUN_0c038012(void)
     register float u60;
     register int t61;
     register int t54;
+    int R1000;
+
+    R1000 = *(int *)((int)stk + 0);
 
     t0 = FUN_0c034320(0x1, 0x14);
     if (t0 == 1) {
@@ -395,14 +406,14 @@ int FUN_0c038012(void)
         t41 = FUN_0c035a5e(0x4, 0x0, 320.0f, 240.0f);
         if (t41 == 2) {
             FUN_0c0345ec(0x224, 0x2A, 0x0, 320.0f, 174.0f, (*(float *)0xC2A5858));
-            *(unsigned int *)(((int)stk + 0)) = 0x0;
+            R1000 = 0x0;
             t45 = 0x0;
             t46 = 0x0;
             for (;;) {
                 if ((((int)0x1 << (int)t46) & ((((struct o20_int *)0xC2A4F80)->v))) != 0) {
-                    t48 = *(int *)(((int)stk + 0));
+                    t48 = R1000;
                     u49 = *(float *)0xC2A5858;
-                    *(unsigned int *)(((int)stk + 0)) = (t48 + 0x1);
+                    R1000 = (t48 + 0x1);
                     t45 = 0x34;
                     FUN_0c0345ec(t45, (t46 + 0x2B), 0x0, 320.0f, (float)((((t48 + 0x1) - 1) * 0x16) + 0xC4), u49);
                 } else {
@@ -571,8 +582,13 @@ float getNearCoursePoint(int a4, int a5, int a6, int a7, float f4)
     register float u79;
     register int t37;
     register float u46;
+    int R1000;
+    int R1004;
 
-    *(unsigned int *)(((int)stk + 4)) = a6;
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+
+    R1004 = a6;
     t1 = *(int *)0xC2ADA7C;
     t3 = *(int *)((((((a5 << 1) + a5) << 2) + t1) + 0x0));
     t4 = *(int *)(((*(int *)((((((a5 << 1) + a5) << 2) + t1) + 0x4))) + 0x0));
@@ -603,8 +619,8 @@ float getNearCoursePoint(int a4, int a5, int a6, int a7, float f4)
                     t37 = t14;
                     u46 = u23;
                 } else {
-                    *(unsigned int *)(((int)stk + 0)) = 0x0;
-                    t27 = (*(int *)(((*(int *)(((int)stk + 4))) + 0x0)));
+                    R1000 = 0x0;
+                    t27 = (*(int *)(((R1004) + 0x0)));
                     t28 = 0x0;
                     u29 = 3.40282347e+38f;
                     for (;;) {
@@ -616,8 +632,8 @@ float getNearCoursePoint(int a4, int a5, int a6, int a7, float f4)
                             t28 = t27;
                             u29 = t32;
                         }
-                        t34 = *(int *)(((int)stk + 0));
-                        *(unsigned int *)(((int)stk + 0)) = (t34 + 0x1);
+                        t34 = R1000;
+                        R1000 = (t34 + 0x1);
                         t27 = (t27 + 0x1);
                         if ((int)(t34 + 0x1) >= (int)0x7) {
                             break;
@@ -629,8 +645,8 @@ float getNearCoursePoint(int a4, int a5, int a6, int a7, float f4)
                 t70 = t37;
                 u79 = u46;
             } else {
-                *(unsigned int *)(((int)stk + 0)) = 0x0;
-                t50 = (*(int *)(((*(int *)(((int)stk + 4))) + 0x0)));
+                R1000 = 0x0;
+                t50 = (*(int *)(((R1004) + 0x0)));
                 t51 = 0x0;
                 u52 = 3.40282347e+38f;
                 for (;;) {
@@ -642,15 +658,15 @@ float getNearCoursePoint(int a4, int a5, int a6, int a7, float f4)
                         t51 = t50;
                         u52 = t55;
                     }
-                    t57 = *(int *)(((int)stk + 0));
-                    *(unsigned int *)(((int)stk + 0)) = (t57 + 0x1);
+                    t57 = R1000;
+                    R1000 = (t57 + 0x1);
                     t50 = (t50 - 1);
                     if ((int)(t57 + 0x1) >= (int)0x7) {
                         break;
                     }
                 }
-                *(unsigned int *)(((int)stk + 0)) = 0x0;
-                t60 = (*(int *)(((*(int *)(((int)stk + 4))) + 0x0)));
+                R1000 = 0x0;
+                t60 = (*(int *)(((R1004) + 0x0)));
                 t61 = t51;
                 u62 = u52;
                 for (;;) {
@@ -662,8 +678,8 @@ float getNearCoursePoint(int a4, int a5, int a6, int a7, float f4)
                         t61 = t60;
                         u62 = t65;
                     }
-                    t67 = *(int *)(((int)stk + 0));
-                    *(unsigned int *)(((int)stk + 0)) = (t67 + 0x1);
+                    t67 = R1000;
+                    R1000 = (t67 + 0x1);
                     t60 = (t60 + 0x1);
                     if ((int)(t67 + 0x1) >= (int)0x7) {
                         break;
@@ -675,7 +691,7 @@ float getNearCoursePoint(int a4, int a5, int a6, int a7, float f4)
             t94 = t70;
             u103 = u79;
         } else {
-            t82 = *(int *)(((*(int *)(((int)stk + 4))) + 0x0));
+            t82 = *(int *)(((R1004) + 0x0));
             t85 = t82;
             u86 = (nlLength(a7, ((((t82 << 1) + t82) << 2) + t3)));
             for (;;) {
@@ -696,11 +712,11 @@ float getNearCoursePoint(int a4, int a5, int a6, int a7, float f4)
         t130 = t94;
         u140 = u103;
     } else {
-        t109 = *(int *)(((*(int *)(((int)stk + 4))) + 0x0));
+        t109 = *(int *)(((R1004) + 0x0));
         t108 = nlLength(a7, ((((t109 << 1) + t109) << 2) + t3));
         u110 = t108;
         for (;;) {
-            *(unsigned int *)(((int)stk + 0)) = t109;
+            R1000 = t109;
             t109 = (t109 - 1);
             if ((int)t109 < 0) {
                 t109 = (t4 - 1);
@@ -711,7 +727,7 @@ float getNearCoursePoint(int a4, int a5, int a6, int a7, float f4)
                 break;
             }
         }
-        t117 = (*(int *)(((*(int *)(((int)stk + 4))) + 0x0)));
+        t117 = (*(int *)(((R1004) + 0x0)));
         u118 = t108;
         for (;;) {
             t119 = t117;
@@ -728,12 +744,12 @@ float getNearCoursePoint(int a4, int a5, int a6, int a7, float f4)
         t130 = t119;
         u126 = u123;
         if (u123 > u114) {
-            t130 = (*(int *)(((int)stk + 0)));
+            t130 = (R1000);
             u126 = u114;
         }
         u140 = u126;
     }
-    *(unsigned int *)(((*(int *)(((int)stk + 4))) + 0x0)) = t130;
+    *(unsigned int *)(((R1004) + 0x0)) = t130;
     return u140;
 }
 
@@ -910,35 +926,44 @@ int kmiProcessVertex_01(int a4)
     register int t24;
     register int t35;
     register int t40;
+    int R1000;
+    int R1004;
+    int R1008;
+    int R1012;
 
-    *(unsigned int *)(((((int)stk + 0) + 0x4) + 0x0)) = (*(int *)((a4 + 0x0)));
-    *(unsigned int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0)) = (*(int *)((a4 + 0x4)));
-    *(unsigned int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0)) = (*(int *)((a4 + 0x8)));
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+
+    R1004 = (*(int *)((a4 + 0x0)));
+    R1008 = (*(int *)((a4 + 0x4)));
+    R1012 = (*(int *)((a4 + 0x8)));
     t3 = (((struct o4_int *)0xC300A6C)->v);
-    *(unsigned int *)(((int)stk + 0)) = ((((struct o8_int *)0xC300A6C)->v));
+    R1000 = ((((struct o8_int *)0xC300A6C)->v));
     t5 = (((struct oC_int *)0xC300A6C)->v);
     (((struct o0_uint *)0xC300974)->v) = t3;
-    (((struct o4_uint *)0xC300974)->v) = (*(int *)(((int)stk + 0)));
+    (((struct o4_uint *)0xC300974)->v) = (R1000);
     (((struct o8_uint *)0xC300974)->v) = t5;
-    (((struct oC_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0x4)));
-    (((struct o10_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0x8)));
-    (((struct o14_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0xC)));
-    t13 = *(int *)(((((int)stk + 0) + 0x4) + 0x0));
+    (((struct oC_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0x4)));
+    (((struct o10_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0x8)));
+    (((struct o14_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0xC)));
+    t13 = R1004;
     (((struct o18_uint *)0xC300974)->v) = ((((((int)(((((struct o10_float *)(t13))->v)) * 255.0f) << 16) << 8) | ((int)(((((struct o14_float *)(t13))->v)) * 255.0f) << 16)) | ((int)(((((struct o18_float *)(t13))->v)) * 255.0f) << 8)) | (int)(((((struct o1C_float *)(t13))->v)) * 255.0f));
-    (((struct o1C_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0x4)));
-    (((struct o20_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0x8)));
-    (((struct o24_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0xC)));
-    t24 = *(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0));
+    (((struct o1C_uint *)0xC300974)->v) = (*(int *)(((R1008) + 0x4)));
+    (((struct o20_uint *)0xC300974)->v) = (*(int *)(((R1008) + 0x8)));
+    (((struct o24_uint *)0xC300974)->v) = (*(int *)(((R1008) + 0xC)));
+    t24 = R1008;
     (((struct o28_uint *)0xC300974)->v) = ((((((int)(((((struct o10_float *)(t24))->v)) * 255.0f) << 16) << 8) | ((int)(((((struct o14_float *)(t24))->v)) * 255.0f) << 16)) | ((int)(((((struct o18_float *)(t24))->v)) * 255.0f) << 8)) | (int)(((((struct o1C_float *)(t24))->v)) * 255.0f));
-    (((struct o2C_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0x4)));
-    (((struct o30_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0x8)));
-    (((struct o34_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0xC)));
-    t35 = *(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0));
+    (((struct o2C_uint *)0xC300974)->v) = (*(int *)(((R1012) + 0x4)));
+    (((struct o30_uint *)0xC300974)->v) = (*(int *)(((R1012) + 0x8)));
+    (((struct o34_uint *)0xC300974)->v) = (*(int *)(((R1012) + 0xC)));
+    t35 = R1012;
     (((struct o38_uint *)0xC300974)->v) = ((((((int)(((((struct o10_float *)(t35))->v)) * 255.0f) << 16) << 8) | ((int)(((((struct o14_float *)(t35))->v)) * 255.0f) << 16)) | ((int)(((((struct o18_float *)(t35))->v)) * 255.0f) << 8)) | (int)(((((struct o1C_float *)(t35))->v)) * 255.0f));
     (((struct o0_uint *)0xC300A6C)->v) = 0x3C;
     t40 = kmiBGPlaneCountWords(t3);
     kmiBGPlaneSetPCW(t40, 0x0, 0x0);
-    (((struct o14_uint *)0xC300A6C)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0xC)));
+    (((struct o14_uint *)0xC300A6C)->v) = (*(int *)(((R1004) + 0xC)));
     return 0x0;
 }
 
@@ -1013,8 +1038,11 @@ int FUN_0c045bac(int a4, int a5)
     register int t31;
     register int t34;
     register float u15;
+    int R1000;
 
-    *(unsigned int *)(((int)stk + 0)) = a5;
+    R1000 = *(int *)((int)stk + 0);
+
+    R1000 = a5;
     t0 = nlSetEventNext(0x12C, 0xC045D66, a4);
     t60 = t0;
     if (t0 == 0) {
@@ -1026,7 +1054,7 @@ int FUN_0c045bac(int a4, int a5)
         (((struct o80_uint *)(t0))->v) = ((((struct o80_int *)(a4))->v));
         FUN_0c07ff00();
         (((struct oD4_uint *)(t0))->v) = ((((struct oD4_int *)(a4))->v));
-        t6 = *(int *)(((int)stk + 0));
+        t6 = R1000;
         if (((((struct o78_int *)(a4))->v)) == 19) {
             (((struct o78_uint *)(t0))->v) = ((((FUN_0c046466()) & 0x1) + ((((struct o78_int *)(a4))->v))) + 0x1);
             u15 = 132.0f;
@@ -1210,36 +1238,8 @@ int FUN_0c03ed46(int a4)
         *(unsigned char *)(((int)stk + 32)) = (*(signed char *)0xC175C80);
         *(unsigned int *)(((int)stk + 28)) = ((((((((FUN_0c07ffac((0xFFFFF85A + (unsigned short)(*(short *)(((int)stk + 12)))))) << 16) << 8) | ((((unsigned char)(*(signed char *)(((int)stk + 14))) << 16) << 2) << 2)) | ((unsigned char)(*(signed char *)(((int)stk + 15))) << 15)) | (((unsigned char)(*(signed char *)(((int)stk + 16))) << 8) << 2)) | (((unsigned char)(*(signed char *)(((int)stk + 17))) << 2) << 2)) | ((unsigned int)(unsigned char)(*(signed char *)(((int)stk + 18))) >> 2));
         t15 = FUN_0c03f154(0x0);
-        if (t15 != 0) {
-            if (t15 != 1) {
-                if (t15 != 2) {
-                    *(unsigned char *)(((int)stk + 33)) = (*(signed char *)0xC1EC860);
-                    t17 = FUN_0c03f154(0x1);
-                    t22 = 0xC28FF84;
-                    if (t17 != 4) {
-                        t22 = (((FUN_0c03f154(0x1)) * 0x78) + (((t3 * 0x788) + 0xC28EDA8) + 0x8));
-                    }
-                    t75 = (InsertRankRecord(0x1, (((int)stk + 8) + 0x10), t22, 0xA));
-                } else {
-                    t26 = FUN_0c03f154(0x1);
-                    *(int *)((int)stk + 4) = (((t26 - 1) * 0x3C) + (0x3C8 + ((t3 * 0x788) + 0xC28EDA8)));
-                    *(int *)((int)stk + 0) = (((int)stk + 4) + 0x14);
-                    t27 = FUN_0c03f154(0x1);
-                    t75 = InsertRankRecord((*(int *)((0xC09C8FC + ((((t27 - 1) << 1) + (t27 - 1)) << 2)))), (((int)stk + 4) + 0x14), (((t26 - 1) * 0x3C) + (0x3C8 + ((t3 * 0x788) + 0xC28EDA8))), 0x5);
-                    if ((int)t75 >= 0) {
-                        *(unsigned int *)((((t3 * 0x788) + 0xC28EDA8) + 0x4)) = ((*(int *)((((t3 * 0x788) + 0xC28EDA8) + 0x4))) | ((int)0x1 << (int)((FUN_0c03f154(0x1)) - 1)));
-                    }
-                }
-            } else {
-                *(unsigned char *)(((int)stk + 33)) = (*(signed char *)0xC1EC860);
-                t44 = FUN_0c03f154(0x1);
-                t49 = 0xC2906B4;
-                if (t44 != 4) {
-                    t49 = (((FUN_0c03f154(0x1)) * 0x78) + (0x1E8 + ((t3 * 0x788) + 0xC28EDA8)));
-                }
-                t75 = (InsertRankRecord(0x1, (((int)stk + 8) + 0x10), t49, 0xA));
-            }
-        } else {
+        switch (t15) {
+        case 0:
             *(unsigned char *)(((int)stk + 33)) = (*(signed char *)0xC1EC860);
             t60 = FUN_0c03f154(0x1);
             t65 = 0xC28FF84;
@@ -1247,6 +1247,35 @@ int FUN_0c03ed46(int a4)
                 t65 = (((FUN_0c03f154(0x1)) * 0x78) + (((t3 * 0x788) + 0xC28EDA8) + 0x8));
             }
             t75 = (InsertRankRecord(0x1, (((int)stk + 8) + 0x10), t65, 0xA));
+            break;
+        case 1:
+            *(unsigned char *)(((int)stk + 33)) = (*(signed char *)0xC1EC860);
+            t44 = FUN_0c03f154(0x1);
+            t49 = 0xC2906B4;
+            if (t44 != 4) {
+                t49 = (((FUN_0c03f154(0x1)) * 0x78) + (0x1E8 + ((t3 * 0x788) + 0xC28EDA8)));
+            }
+            t75 = (InsertRankRecord(0x1, (((int)stk + 8) + 0x10), t49, 0xA));
+            break;
+        case 2:
+            t26 = FUN_0c03f154(0x1);
+            *(int *)((int)stk + 4) = (((t26 - 1) * 0x3C) + (0x3C8 + ((t3 * 0x788) + 0xC28EDA8)));
+            *(int *)((int)stk + 0) = (((int)stk + 4) + 0x14);
+            t27 = FUN_0c03f154(0x1);
+            t75 = InsertRankRecord((*(int *)((0xC09C8FC + ((((t27 - 1) << 1) + (t27 - 1)) << 2)))), (((int)stk + 4) + 0x14), (((t26 - 1) * 0x3C) + (0x3C8 + ((t3 * 0x788) + 0xC28EDA8))), 0x5);
+            if ((int)t75 >= 0) {
+                *(unsigned int *)((((t3 * 0x788) + 0xC28EDA8) + 0x4)) = ((*(int *)((((t3 * 0x788) + 0xC28EDA8) + 0x4))) | ((int)0x1 << (int)((FUN_0c03f154(0x1)) - 1)));
+            }
+            break;
+        default:
+            *(unsigned char *)(((int)stk + 33)) = (*(signed char *)0xC1EC860);
+            t17 = FUN_0c03f154(0x1);
+            t22 = 0xC28FF84;
+            if (t17 != 4) {
+                t22 = (((FUN_0c03f154(0x1)) * 0x78) + (((t3 * 0x788) + 0xC28EDA8) + 0x8));
+            }
+            t75 = (InsertRankRecord(0x1, (((int)stk + 8) + 0x10), t22, 0xA));
+            break;
         }
     }
     return t75;

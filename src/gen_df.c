@@ -39,17 +39,30 @@ int ADX_DecodeSteFloat(int a4, int a5, int a6, int a7, int a8, int a9, int a10, 
     register int t12;
     register float u13;
     register float u14;
+    int R1000;
+    int R1004;
+    int R1008;
+    int R1012;
+    int R1016;
+    int R1020;
+
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+    R1016 = *(int *)((int)stk + 16);
+    R1020 = *(int *)((int)stk + 20);
 
     t0 = *(short *)((a7 + 0x0));
-    *(unsigned int *)(((int)stk + 16)) = (a7 + 0x2);
+    R1016 = (a7 + 0x2);
     t1 = *(short *)(((a7 + 0x2) + 0x0));
     t2 = *(short *)((a9 + 0x0));
-    *(unsigned int *)(((int)stk + 20)) = (a9 + 0x2);
+    R1020 = (a9 + 0x2);
     t3 = *(short *)(((a9 + 0x2) + 0x0));
-    *(unsigned int *)(((int)stk + 0)) = 0x0;
-    *(unsigned int *)(((int)stk + 8)) = 0x1;
-    *(unsigned int *)(((int)stk + 4)) = 0x0;
-    *(unsigned int *)(((int)stk + 12)) = (((int)((unsigned int)((int)((unsigned int)a5 + (unsigned int)0x0)) + ((((int)0x0 > (int)a5)) ? 1u : 0u))) >> 1);
+    R1000 = 0x0;
+    R1008 = 0x1;
+    R1004 = 0x0;
+    R1012 = (((int)((unsigned int)((int)((unsigned int)a5 + (unsigned int)0x0)) + ((((int)0x0 > (int)a5)) ? 1u : 0u))) >> 1);
     t8 = 0x0;
     t9 = a6;
     t10 = a4;
@@ -63,7 +76,7 @@ int ADX_DecodeSteFloat(int a4, int a5, int a6, int a7, int a8, int a9, int a10, 
     u21 = (float)(t2 << 16);
     u22 = (float)(t3 << 16);
     for (;;) {
-        if ((int)(*(int *)(((int)stk + 0))) < (int)(*(int *)(((int)stk + 12)))) {
+        if ((int)(R1000) < (int)(R1012)) {
             t25 = *(short *)((t10 + 0x0));
             if (((short)((unsigned char)((int)t25 >> 8) | ((t25 << 8) & 0xFFFFFF00)) & 0x8000) != 0) {
                 break;
@@ -120,7 +133,7 @@ int ADX_DecodeSteFloat(int a4, int a5, int a6, int a7, int a8, int a9, int a10, 
             t12 = (unsigned char)t12;
             t12 = (t12 | ((t34 << 8) & 0xFFFFFF00));
             if ((0x8000 & (short)t12) != 0) {
-                t8 = (*(int *)(((int)stk + 8)));
+                t8 = (R1008);
                 return t8;
             }
             t10 = (t10 + 0x2);
@@ -169,17 +182,17 @@ int ADX_DecodeSteFloat(int a4, int a5, int a6, int a7, int a8, int a9, int a10, 
                     break;
                 }
             }
-            *(unsigned int *)(((int)stk + 0)) = ((*(int *)(((int)stk + 0))) + 0x1);
-            *(unsigned int *)(((int)stk + 8)) = ((*(int *)(((int)stk + 8))) + 0x2);
-            *(unsigned int *)(((int)stk + 4)) = ((*(int *)(((int)stk + 4))) + 0x2);
+            R1000 = ((R1000) + 0x1);
+            R1008 = ((R1008) + 0x2);
+            R1004 = ((R1004) + 0x2);
             continue;
         }
         t8 = a5;
         *(unsigned short *)((a7 + 0x0)) = ((unsigned int)(int)u20 >> 16);
-        *(unsigned short *)(((*(int *)(((int)stk + 16))) + 0x0)) = ((unsigned int)(int)u15 >> 16);
+        *(unsigned short *)(((R1016) + 0x0)) = ((unsigned int)(int)u15 >> 16);
         *(unsigned short *)((a9 + 0x0)) = (short)((unsigned int)(int)u21 >> 16);
-        *(unsigned short *)(((*(int *)(((int)stk + 20))) + 0x0)) = ((unsigned int)(int)u22 >> 16);
+        *(unsigned short *)(((R1020) + 0x0)) = ((unsigned int)(int)u22 >> 16);
         return t8;
     }
-    return (*(int *)(((int)stk + 4)));
+    return (R1004);
 }

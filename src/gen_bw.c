@@ -85,7 +85,7 @@ int FUN_0c08f87c(int, int);
 int FUN_0c08f9c4(int, int);
 int FUN_0c08f9f6(int, int);
 int FUN_0c08faa8(int, int);
-int FUN_0c14f3b0(int, int, int, int, int, int, int, int, int, int, int);
+int FUN_0c14f3b0(int, int, int, int);
 int FUN_0c14fd82(int, int);
 int FUN_0c14ff0c(int);
 extern int FUN_0c1616ce();
@@ -272,14 +272,22 @@ int FUN_0c14f604(int a4, int a5, int a6, int a7)
     register int v0_7;
     register int v0_8;
     register int v0_9;
+    int R1004;
+    int R1008;
+    int R1012;
+    int R1016;
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+    R1016 = *(int *)((int)stk + 16);
     v0_9 = a4;
     v0_3 = a5;
     v0_0 = a6;
     v0_4 = a7;
-    *(unsigned int *)(((int)stk + 8)) = v0_9;
-    *(unsigned int *)(((int)stk + 4)) = v0_3;
-    *(unsigned int *)(((int)stk + 12)) = v0_0;
-    v0_5 = adxf_ChkPrmPt((*(int *)(((int)stk + 8))), v0_4);
+    R1008 = v0_9;
+    R1004 = v0_3;
+    R1012 = v0_0;
+    v0_5 = adxf_ChkPrmPt((R1008), v0_4);
     v0_1 = (v0_5);
     v0_2 = (v0_4);
     if (((int)v0_5 >= 0)) goto L_C14F62E;
@@ -288,21 +296,21 @@ int FUN_0c14f604(int a4, int a5, int a6, int a7)
     L_C14F794:;
     return v0_0;
     L_C14F62E:;
-    v0_1 = FUN_0c14fd82((*(int *)(((int)stk + 4))), (*(int *)(((int)stk + 12))));
-    *(unsigned int *)(((int)stk + 16)) = v0_1;
+    v0_1 = FUN_0c14fd82((R1004), (R1012));
+    R1016 = v0_1;
     if ((v0_1 != 0)) goto L_C14F660;
     v0_0 = ((int (*)(int, int, int, int))(FUN_0c1616ce))(0xC1705F8, v0_3, v0_0, v0_4);
     v0_0 = (0xFFFFFFFF);
     goto L_C14F794;
     L_C14F660:;
     memset(v0_2, 0x0, 0x40);
-    *(unsigned int *)((((*(int *)(((int)stk + 8))) << 2) + 0xC2D21F4)) = v0_2;
+    *(unsigned int *)((((R1008) << 2) + 0xC2D21F4)) = v0_2;
     *(unsigned int *)((v0_2 + 0x0)) = 0x0;
-    strncpy((v0_2 + 0x10), (*(int *)(((int)stk + 4))), 0x28);
-    *(unsigned int *)((v0_2 + 0x38)) = (*(int *)(((int)stk + 12)));
+    strncpy((v0_2 + 0x10), (R1004), 0x28);
+    *(unsigned int *)((v0_2 + 0x38)) = (R1012);
     *(unsigned char *)((v0_2 + 0xE)) = 0x0;
-    *(unsigned int *)(((int)stk + 4)) = (v0_2 + 0x3C);
-    *(unsigned int *)(((int)stk + 8)) = ((v0_2 + 0x3C) + 0x2);
+    R1004 = (v0_2 + 0x3C);
+    R1008 = ((v0_2 + 0x3C) + 0x2);
     (((struct o0_uint *)0xC2D56A8)->v) = 0xC2D3640;
     (((struct o4_uint *)0xC2D56A8)->v) = 0xC2D3640;
     *(unsigned int *)((v0_2 + 0x8)) = 0x0;
@@ -318,10 +326,10 @@ int FUN_0c14f604(int a4, int a5, int a6, int a7)
     if ((v0_9 != 3)) goto L_C14F78E;
     v0_0 = ((int (*)(int, int, int, int))(FUN_0c1616ce))(0xC170628, v0_3, v0_0, v0_4);
     L_C14F78E:;
-    FUN_0c14ff0c((*(int *)(((int)stk + 16))));
+    FUN_0c14ff0c((R1016));
     goto L_C14F792;
     L_C14F6B0:;
-    v0_10 = (int)(FUN_0c14f3b0((*(int *)(((int)stk + 16))), 0x1, (*(int *)((v0_6 + 0x0))), v0_4, *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24))) <= 0;
+    v0_10 = (int)(FUN_0c14f3b0((R1016), 0x1, (*(int *)((v0_6 + 0x0))), v0_4)) <= 0;
     if (v0_10) goto L_C14F778;
     v0_0 = (0x800);
     if (((*(int *)((v0_2 + 0x8))) != 0)) goto L_C14F70C;
@@ -339,7 +347,7 @@ int FUN_0c14f604(int a4, int a5, int a6, int a7)
     *(unsigned short *)((v0_2 + 0xC)) = v0_3;
     *(unsigned int *)((v0_2 + 0x8)) = (unsigned short)v0_3;
     *(unsigned int *)((v0_2 + 0x4)) = (((unsigned int)((((unsigned short)v0_3 + 0x1) << 1) + 0x3E) >> 2) << 2);
-    v0_3 = (*(int *)(((int)stk + 4)));
+    v0_3 = (R1004);
     *(int *)((int)stk + 0) = v0_3;
     *(unsigned short *)((v0_3 + 0x0)) = ((int)((int)(*(int *)(((*(int *)((v0_6 + 0x0))) + 0x8))) / (int)v0_0));
     v0_9 = (v0_8);
@@ -348,7 +356,7 @@ int FUN_0c14f604(int a4, int a5, int a6, int a7)
     v0_4 = (0x200);
     if (((int)v0_9 >= (int)0x200)) goto L_C14F746;
     L_C14F71A:;
-    *(unsigned short *)((((v0_7 << 1) + (*(int *)(((int)stk + 8)))) + 0x0)) = ((int)((int)((*(int *)((v0_3 + (*(int *)((v0_6 + 0x0)))))) + 0x7FF) / (int)v0_0));
+    *(unsigned short *)((((v0_7 << 1) + (R1008)) + 0x0)) = ((int)((int)((*(int *)((v0_3 + (*(int *)((v0_6 + 0x0)))))) + 0x7FF) / (int)v0_0));
     v0_8 = (int)(v0_7 + 0x1) < (int)(*(int *)((v0_2 + 0x8)));
     v0_7 = ((v0_7 + 0x1));
     if (v0_8) goto L_C14F73E;
@@ -447,75 +455,86 @@ int vmsfs_diskfree(int a4, int a5)
     register int t33;
     register int t36;
     register int t51;
+    int R1000;
+    int R1004;
+    int R1008;
+    int R1012;
+    int R1016;
 
-    *(unsigned int *)(((int)stk + 16)) = a4;
-    *(unsigned int *)(((int)stk + 12)) = a5;
-    *(unsigned int *)(((int)stk + 0)) = (((*(int *)(((int)stk + 16))) * 0x154) + 0xC2C8D2C);
-    if ((*(signed char *)(((((*(int *)(((int)stk + 16))) * 0x154) + 0xC2C8D2C) + 0x2))) == 0) {
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+    R1016 = *(int *)((int)stk + 16);
+
+    R1016 = a4;
+    R1012 = a5;
+    R1000 = (((R1016) * 0x154) + 0xC2C8D2C);
+    if ((*(signed char *)(((((R1016) * 0x154) + 0xC2C8D2C) + 0x2))) == 0) {
         return 0xFFFFFF01;
     }
-    t4 = vmsio_isready((*(int *)(((int)stk + 16))));
+    t4 = vmsio_isready((R1016));
     if (t4 == 0) {
-        vmsfs_unmount((*(int *)(((int)stk + 16))));
+        vmsfs_unmount((R1016));
         return 0xFFFFFF01;
     }
-    t8 = vmsio_ismount((*(int *)(((int)stk + 16))));
+    t8 = vmsio_ismount((R1016));
     if (t8 == 0) {
         return 0xFFFFFF01;
     }
-    if ((*(signed char *)((((*(int *)(((int)stk + 16))) * 0x154) + 0xC2C8D34))) == 0) {
+    if ((*(signed char *)((((R1016) * 0x154) + 0xC2C8D34))) == 0) {
         return 0xFFFFFF01;
     }
-    t12 = buIsFormat((*(int *)(((int)stk + 16))));
+    t12 = buIsFormat((R1016));
     if ((int)t12 < 0) {
         return 0xFFFFFF03;
     }
-    *(unsigned int *)(((int)stk + 4)) = 0x0;
-    if ((*(int *)(((int)stk + 12))) == 1) {
-        *(unsigned int *)(((int)stk + 8)) = 0x0;
+    R1004 = 0x0;
+    if ((R1012) == 1) {
+        R1008 = 0x0;
         for (;;) {
-            if ((int)(*(int *)(((int)stk + 8))) >= (int)(*(int *)(((*(int *)(((*(int *)(((int)stk + 0))) + 0x1C))) + 0x38)))) {
-                *(unsigned int *)(((int)stk + 4)) = (*(int *)(((int)stk + 8)));
-                return (*(int *)(((int)stk + 4)));
+            if ((int)(R1008) >= (int)(*(int *)(((*(int *)(((R1000) + 0x1C))) + 0x38)))) {
+                R1004 = (R1008);
+                return (R1004);
             }
-            t23 = FUN_0c08f87c((*(int *)(((int)stk + 16))), (*(int *)(((int)stk + 8))));
+            t23 = FUN_0c08f87c((R1016), (R1008));
             if ((unsigned short)t23 != 0xFFFC) {
                 break;
             }
-            *(unsigned int *)(((int)stk + 8)) = ((*(int *)(((int)stk + 8))) + 0x1);
+            R1008 = ((R1008) + 0x1);
         }
-        *(unsigned int *)(((int)stk + 4)) = (*(int *)(((int)stk + 8)));
+        R1004 = (R1008);
     } else {
         if ((*(int *)0xC1182A8) != 0) {
-            *(unsigned int *)(((int)stk + 8)) = 0x0;
+            R1008 = 0x0;
             for (;;) {
-                if ((int)(*(int *)(((int)stk + 8))) >= (int)(*(int *)(((*(int *)(((*(int *)(((int)stk + 0))) + 0x1C))) + 0x30)))) {
+                if ((int)(R1008) >= (int)(*(int *)(((*(int *)(((R1000) + 0x1C))) + 0x30)))) {
                     break;
                 }
-                t33 = FUN_0c08f87c((*(int *)(((int)stk + 16))), (*(int *)(((int)stk + 8))));
+                t33 = FUN_0c08f87c((R1016), (R1008));
                 if ((unsigned short)t33 == 0xFFFC) {
-                    t36 = FUN_0c08f788((*(int *)(((int)stk + 16))), (*(int *)(((int)stk + 8))));
+                    t36 = FUN_0c08f788((R1016), (R1008));
                     if ((int)t36 >= 0) {
-                        *(unsigned int *)(((int)stk + 4)) = ((*(int *)(((int)stk + 4))) + 0x1);
+                        R1004 = ((R1004) + 0x1);
                     }
                 }
-                *(unsigned int *)(((int)stk + 8)) = ((*(int *)(((int)stk + 8))) + 0x1);
+                R1008 = ((R1008) + 0x1);
             }
         } else {
-            *(unsigned int *)(((int)stk + 8)) = 0x0;
+            R1008 = 0x0;
             for (;;) {
-                if ((int)(*(int *)(((int)stk + 8))) >= (int)(*(int *)(((*(int *)(((*(int *)(((int)stk + 0))) + 0x1C))) + 0x30)))) {
+                if ((int)(R1008) >= (int)(*(int *)(((*(int *)(((R1000) + 0x1C))) + 0x30)))) {
                     break;
                 }
-                t51 = FUN_0c08f87c((*(int *)(((int)stk + 16))), (*(int *)(((int)stk + 8))));
+                t51 = FUN_0c08f87c((R1016), (R1008));
                 if ((unsigned short)t51 == 0xFFFC) {
-                    *(unsigned int *)(((int)stk + 4)) = ((*(int *)(((int)stk + 4))) + 0x1);
+                    R1004 = ((R1004) + 0x1);
                 }
-                *(unsigned int *)(((int)stk + 8)) = ((*(int *)(((int)stk + 8))) + 0x1);
+                R1008 = ((R1008) + 0x1);
             }
         }
     }
-    return (*(int *)(((int)stk + 4)));
+    return (R1004);
 }
 
 int vmsio_block_read(int a4, int a5, int a6)
@@ -671,74 +690,85 @@ int vmsfs_fwrite1(int a4, int a5)
     register int t43;
     register int t52;
     register int t75;
+    int R1004;
+    int R1008;
+    int R1012;
+    int R1016;
+    int R1020;
 
-    *(unsigned int *)(((int)stk + 20)) = a4;
-    *(unsigned int *)(((int)stk + 16)) = a5;
-    t2 = vmsio_isready((*(int *)(((*(int *)(((int)stk + 20))) + 0x28))));
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+    R1016 = *(int *)((int)stk + 16);
+    R1020 = *(int *)((int)stk + 20);
+
+    R1020 = a4;
+    R1016 = a5;
+    t2 = vmsio_isready((*(int *)(((R1020) + 0x28))));
     if (t2 == 0) {
-        vmsfs_unmount((*(int *)(((*(int *)(((int)stk + 20))) + 0x28))));
+        vmsfs_unmount((*(int *)(((R1020) + 0x28))));
         return 0xFFFFFF01;
     }
-    t8 = vmsio_ismount((*(int *)(((*(int *)(((int)stk + 20))) + 0x28))));
+    t8 = vmsio_ismount((*(int *)(((R1020) + 0x28))));
     if (t8 == 0) {
         return 0xFFFFFF01;
     }
-    if ((*(signed char *)((((*(int *)(((*(int *)(((int)stk + 20))) + 0x28))) * 0x154) + 0xC2C8D34))) == 0) {
+    if ((*(signed char *)((((*(int *)(((R1020) + 0x28))) * 0x154) + 0xC2C8D34))) == 0) {
         return 0xFFFFFF01;
     }
-    t14 = buIsFormat((*(int *)(((*(int *)(((int)stk + 20))) + 0x28))));
+    t14 = buIsFormat((*(int *)(((R1020) + 0x28))));
     if ((int)t14 < 0) {
         return 0xFFFFFF03;
     }
-    *(unsigned int *)(((int)stk + 0)) = (*(int *)(((*(int *)(((int)stk + 20))) + 0x8)));
-    *(unsigned int *)(((int)stk + 4)) = (*(int *)(((*(int *)(((int)stk + 20))) + 0x28)));
-    t20 = FUN_0c08f72e((*(int *)(((int)stk + 4))));
-    *(unsigned int *)(((int)stk + 12)) = t20;
+    *(unsigned int *)(((int)stk + 0)) = (*(int *)(((R1020) + 0x8)));
+    R1004 = (*(int *)(((R1020) + 0x28)));
+    t20 = FUN_0c08f72e((R1004));
+    R1012 = t20;
     if ((int)t20 < 0) {
         return 0xFFFFFF04;
     }
-    t24 = vmsfs_write_retry((*(int *)(((int)stk + 4))), (*(int *)(((int)stk + 12))), (*(int *)(((int)stk + 16))));
-    *(unsigned int *)(((int)stk + 8)) = t24;
+    t24 = vmsfs_write_retry((R1004), (R1012), (R1016));
+    R1008 = t24;
     if ((int)t24 < 0) {
         if (t24 == 0xFFFFFF01) {
             return t24;
         }
         for (;;) {
-            FUN_0c08f824((*(int *)(((int)stk + 4))), (*(int *)(((int)stk + 12))), 0xFFFF);
-            t29 = FUN_0c08f6b4((*(int *)(((int)stk + 4))), 0xFFFC);
-            *(unsigned int *)(((int)stk + 12)) = t29;
+            FUN_0c08f824((R1004), (R1012), 0xFFFF);
+            t29 = FUN_0c08f6b4((R1004), 0xFFFC);
+            R1012 = t29;
             if ((int)t29 < 0) {
                 break;
             }
-            t33 = vmsfs_write_retry((*(int *)(((int)stk + 4))), (*(int *)(((int)stk + 12))), (*(int *)(((int)stk + 16))));
-            *(unsigned int *)(((int)stk + 8)) = t33;
+            t33 = vmsfs_write_retry((R1004), (R1012), (R1016));
+            R1008 = t33;
             if (t33 == 0) {
-                FUN_0c08f824((*(int *)(((int)stk + 4))), (*(int *)(((int)stk + 12))), 0xFFFA);
-                if ((*(int *)(((*(int *)(((int)stk + 20))) + 0x38))) == 0xFFFF) {
-                    *(unsigned int *)(((*(int *)(((int)stk + 20))) + 0x38)) = (short)(*(int *)(((int)stk + 12)));
-                    *(unsigned int *)(((*(int *)(((int)stk + 20))) + 0x3C)) = (short)(*(int *)(((int)stk + 12)));
-                    t43 = *(int *)(((int)stk + 20));
+                FUN_0c08f824((R1004), (R1012), 0xFFFA);
+                if ((*(int *)(((R1020) + 0x38))) == 0xFFFF) {
+                    *(unsigned int *)(((R1020) + 0x38)) = (short)(R1012);
+                    *(unsigned int *)(((R1020) + 0x3C)) = (short)(R1012);
+                    t43 = R1020;
                     *(unsigned int *)((t43 + 0x30)) = ((*(int *)((t43 + 0x30))) + 0x1);
                     return 0x0;
                 }
-                FUN_0c08f824((*(int *)(((int)stk + 4))), (*(int *)(((*(int *)(((int)stk + 20))) + 0x3C))), (*(int *)(((int)stk + 12))));
-                *(unsigned int *)(((*(int *)(((int)stk + 20))) + 0x3C)) = (short)(*(int *)(((int)stk + 12)));
-                t52 = *(int *)(((int)stk + 20));
+                FUN_0c08f824((R1004), (*(int *)(((R1020) + 0x3C))), (R1012));
+                *(unsigned int *)(((R1020) + 0x3C)) = (short)(R1012);
+                t52 = R1020;
                 *(unsigned int *)((t52 + 0x30)) = ((*(int *)((t52 + 0x30))) + 0x1);
                 return 0x0;
             }
         }
         return 0xFFFFFF04;
     }
-    FUN_0c08f824((*(int *)(((int)stk + 4))), (*(int *)(((int)stk + 12))), 0xFFFA);
-    if ((*(int *)(((*(int *)(((int)stk + 20))) + 0x38))) == 0xFFFF) {
-        *(unsigned int *)(((*(int *)(((int)stk + 20))) + 0x38)) = (short)(*(int *)(((int)stk + 12)));
-        *(unsigned int *)(((*(int *)(((int)stk + 20))) + 0x3C)) = (short)(*(int *)(((int)stk + 12)));
+    FUN_0c08f824((R1004), (R1012), 0xFFFA);
+    if ((*(int *)(((R1020) + 0x38))) == 0xFFFF) {
+        *(unsigned int *)(((R1020) + 0x38)) = (short)(R1012);
+        *(unsigned int *)(((R1020) + 0x3C)) = (short)(R1012);
     } else {
-        FUN_0c08f824((*(int *)(((int)stk + 4))), (*(int *)(((*(int *)(((int)stk + 20))) + 0x3C))), (*(int *)(((int)stk + 12))));
-        *(unsigned int *)(((*(int *)(((int)stk + 20))) + 0x3C)) = (short)(*(int *)(((int)stk + 12)));
+        FUN_0c08f824((R1004), (*(int *)(((R1020) + 0x3C))), (R1012));
+        *(unsigned int *)(((R1020) + 0x3C)) = (short)(R1012);
     }
-    t75 = *(int *)(((int)stk + 20));
+    t75 = R1020;
     *(unsigned int *)((t75 + 0x30)) = ((*(int *)((t75 + 0x30))) + 0x1);
     return 0x0;
 }
@@ -810,6 +840,19 @@ int kmCreateTABuffer(int a4, int a5, float f4, float f5, float f6, float f7, flo
     register int t34;
     register int t40;
     register int t53;
+    int R1004;
+    int R1008;
+    int R1016;
+    int R1020;
+    int R1024;
+    int R1028;
+
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1016 = *(int *)((int)stk + 16);
+    R1020 = *(int *)((int)stk + 20);
+    R1024 = *(int *)((int)stk + 24);
+    R1028 = *(int *)((int)stk + 28);
 
     (((struct o0_uint *)0xC2D0C14)->v) = 0x2;
     (((struct o0_uint *)0xC2D0BC0)->v) = a4;
@@ -829,15 +872,15 @@ int kmCreateTABuffer(int a4, int a5, float f4, float f5, float f6, float f7, flo
         *(unsigned int *)(((((((struct o0_int *)0xC300C2C)->v)) << 2) + 0xC300C1C)) = 0x2;
         *(unsigned int *)0xC300ADC = 0x0;
         (((struct o18_uint *)0xC300C2C)->v) = 0x1;
-        *(unsigned int *)(((((int)stk + 12) + 0x4) + 0x0)) = ((*(int *)((a4 + 0x10))) & 0x1);
-        *(unsigned int *)((((((int)stk + 12) + 0x4) + 0x4) + 0x0)) = (0x2 & (*(int *)((a4 + 0x10))));
-        *(unsigned int *)((((((int)stk + 12) + 0x4) + 0x8) + 0x0)) = ((*(int *)((a4 + 0x10))) & 0x4);
-        *(unsigned int *)((((((int)stk + 12) + 0x4) + 0xC) + 0x0)) = ((*(int *)((a4 + 0x10))) & 0x8);
-        *(int *)((int)stk + 8) = 0x0;
-        kmiChkActiveListType((*(int *)(((((int)stk + 12) + 0x4) + 0x0))), (*(int *)((((((int)stk + 12) + 0x4) + 0x4) + 0x0))), (*(int *)((((((int)stk + 12) + 0x4) + 0x8) + 0x0))), (*(int *)((((((int)stk + 12) + 0x4) + 0xC) + 0x0))), 0x0);
-        *(int *)((int)stk + 4) = 0x1;
+        R1016 = ((*(int *)((a4 + 0x10))) & 0x1);
+        R1020 = (0x2 & (*(int *)((a4 + 0x10))));
+        R1024 = ((*(int *)((a4 + 0x10))) & 0x4);
+        R1028 = ((*(int *)((a4 + 0x10))) & 0x8);
+        R1008 = 0x0;
+        kmiChkActiveListType((R1016), (R1020), (R1024), (R1028), 0x0);
+        R1004 = 0x1;
         *(int *)((int)stk + 0) = 0x0;
-        t27 = kmiGetPackOBPParam((*(int *)(((((int)stk + 12) + 0x4) + 0x0))), (*(int *)((((((int)stk + 12) + 0x4) + 0x4) + 0x0))), (*(int *)((((((int)stk + 12) + 0x4) + 0x8) + 0x0))), (*(int *)((((((int)stk + 12) + 0x4) + 0xC) + 0x0))), 0x0, 0x1);
+        t27 = kmiGetPackOBPParam((R1016), (R1020), (R1024), (R1028), 0x0, 0x1);
         kmiGetNativeRegOBPSize(t27);
         (((struct o4_uint *)0xC2D0C14)->v) = ((unsigned int)((((struct o4_int *)0xC2D0C14)->v)) >> 1);
         kmiGetDisplayData(0xFF, ((((struct o18_int *)0xC2D0BC0)->v)), ((((struct o24_int *)0xC2D0BC0)->v)));
@@ -848,9 +891,9 @@ int kmCreateTABuffer(int a4, int a5, float f4, float f5, float f6, float f7, flo
         t53 = kmiTAallocEx(((((struct o4_int *)0xC2D0C14)->v)), 0xC2D0CA0, 0xC2D0CA4);
         if (t53 == 0) {
             *(unsigned int *)0xC300D28 = ((((struct o4_int *)0xC2D0C14)->v));
-            *(int *)((int)stk + 8) = 0x0;
+            R1008 = 0x0;
             t40 = (((struct o18_int *)0xC2D0BC0)->v);
-            *(int *)((int)stk + 4) = (t27 & (~t40));
+            R1004 = (t27 & (~t40));
             kmiSetTAEnvironment(((unsigned int)((((struct o0_int *)0xC30093C)->v)) >> 7), ((unsigned int)((((struct o4_int *)0xC30093C)->v)) >> 7), ((unsigned int)((((struct o8_int *)0xC30093C)->v)) >> 7), ((unsigned int)((((struct oC_int *)0xC30093C)->v)) >> 7), (t27 & (~t40)));
             *(unsigned int *)0xC300ADC = 0x1;
         }
@@ -875,15 +918,20 @@ int kmtex_ReloadVQMM(int a4, int a5, int a6)
     register int t47;
     register int t48;
     register int t54;
+    int R1000;
+    int R1004;
 
-    *(unsigned int *)(((int)stk + 4)) = a5;
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+
+    R1004 = a5;
     t0 = kmtex_GetTextureLevel(a6, a6);
     if (a6 != 1) {
-        *(unsigned int *)(((int)stk + 0)) = (((int)stk + 0) + 0x8);
+        R1000 = (((int)stk + 0) + 0x8);
         if ((int)a6 <= (int)0x4) {
-            *(unsigned int *)(((int)stk + 0)) = (((int)stk + 0) + 0x8);
-            kmiCopyFromFrameBuffer((*(int *)(((int)stk + 0))), ((*(int *)((a4 + 0x1C))) + 0x800), 0x10);
-            t7 = *(int *)(((int)stk + 4));
+            R1000 = (((int)stk + 0) + 0x8);
+            kmiCopyFromFrameBuffer((R1000), ((*(int *)((a4 + 0x1C))) + 0x800), 0x10);
+            t7 = R1004;
             if (a6 == 2) {
                 *(unsigned char *)(((((int)stk + 0) + 0x8) + 0x1)) = (*(signed char *)((t7 + 0x0)));
             } else {
@@ -900,10 +948,10 @@ int kmtex_ReloadVQMM(int a4, int a5, int a6)
             }
             t54 = ((*(int *)((a4 + 0x1C))) + 0x800);
         } else {
-            *(unsigned int *)(((int)stk + 0)) = (((int)stk + 0) + 0x8);
-            kmiCopyFromFrameBuffer((*(int *)(((int)stk + 0))), ((*(int *)((a4 + 0x1C))) + ((*(int *)((0xC170FC4 + ((t0 - 1) << 2)))) + 0x7FA)), 0x10);
+            R1000 = (((int)stk + 0) + 0x8);
+            kmiCopyFromFrameBuffer((R1000), ((*(int *)((a4 + 0x1C))) + ((*(int *)((0xC170FC4 + ((t0 - 1) << 2)))) + 0x7FA)), 0x10);
             t20 = ((((int)stk + 0) + 0x8) + 0x6);
-            t21 = (*(int *)(((int)stk + 4)));
+            t21 = (R1004);
             for (;;) {
                 t22 = *(signed char *)((t21 + 0x0));
                 t21 = (t21 + 0x1);
@@ -913,22 +961,22 @@ int kmtex_ReloadVQMM(int a4, int a5, int a6)
                     break;
                 }
             }
-            *(unsigned int *)(((int)stk + 0)) = (*(int *)((a4 + 0x1C)));
-            *(unsigned int *)(((int)stk + 0)) = ((*(int *)(((int)stk + 0))) + ((*(int *)((0xC170FC4 + ((t0 - 1) << 2)))) + 0x7FA));
+            R1000 = (*(int *)((a4 + 0x1C)));
+            R1000 = ((R1000) + ((*(int *)((0xC170FC4 + ((t0 - 1) << 2)))) + 0x7FA));
             kmiPurgeCache((((int)stk + 0) + 0x8));
             kmiPurgeCache(((((int)stk + 0) + 0x8) + 0x20));
-            kmiCopyToFrameBuffer((*(int *)(((int)stk + 0))), (((int)stk + 0) + 0x8), 0x10);
+            kmiCopyToFrameBuffer((R1000), (((int)stk + 0) + 0x8), 0x10);
             if ((unsigned int)((*(int *)(((t0 << 2) + 0xC170F98))) - 16) > (unsigned int)0x0) {
                 t31 = *(int *)((0xC170FC4 + ((t0 - 1) << 2)));
                 t32 = *(int *)((a4 + 0x1C));
-                t33 = *(int *)(((int)stk + 4));
-                *(unsigned int *)(((int)stk + 0)) = (t33 + 0xA);
+                t33 = R1004;
+                R1000 = (t33 + 0xA);
                 kmiCopyToFrameBuffer((t32 + (t31 + 0x80A)), (t33 + 0xA), ((*(int *)(((t0 << 2) + 0xC170F98))) - 16));
             }
-            *(unsigned int *)(((int)stk + 0)) = (((int)stk + 0) + 0x8);
-            kmiCopyFromFrameBuffer((*(int *)(((int)stk + 0))), ((*(int *)((a4 + 0x1C))) + ((*(int *)((0xC170FC4 + (t0 << 2)))) + 0x7FA)), 0x10);
+            R1000 = (((int)stk + 0) + 0x8);
+            kmiCopyFromFrameBuffer((R1000), ((*(int *)((a4 + 0x1C))) + ((*(int *)((0xC170FC4 + (t0 << 2)))) + 0x7FA)), 0x10);
             t46 = (((int)stk + 0) + 0x8);
-            t47 = (((*(int *)(((t0 << 2) + 0xC170F98))) + (*(int *)(((int)stk + 4)))) - 6);
+            t47 = (((*(int *)(((t0 << 2) + 0xC170F98))) + (R1004)) - 6);
             for (;;) {
                 t48 = *(signed char *)((t47 + 0x0));
                 t47 = (t47 + 0x1);
@@ -1210,6 +1258,9 @@ int FUN_0c06dc4e(int a4)
     register float u6;
     register float u19;
     register float u37;
+    int R1000;
+
+    R1000 = *(int *)((int)stk + 0);
 
     FUN_0c07ff00();
     if (((*(signed char *)((a4 + 0xFE))) & 2) != 0) {
@@ -1218,9 +1269,9 @@ int FUN_0c06dc4e(int a4)
         u6 = (-((((struct o0_float *)0xC112B04)->v)));
     }
     FUN_0c06e700((((int)stk + 0) + 0x10), 0xC17596C, u6);
-    *(unsigned int *)(((int)stk + 0)) = 0xC112B04;
+    R1000 = 0xC112B04;
     FUN_0c06e700((((int)stk + 0) + 0x10), 0xC17597C, ((((struct o4_float *)0xC112B04)->v)));
-    FUN_0c06e700((((int)stk + 0) + 0x10), 0xC17598C, ((((struct o8_float *)((*(int *)(((int)stk + 0)))))->v)));
+    FUN_0c06e700((((int)stk + 0) + 0x10), 0xC17598C, ((((struct o8_float *)((R1000)))->v)));
     FUN_0c018b22((((int)stk + 0) + 0x10), 0x0);
     FUN_0c07ff00();
     if (((*(signed char *)((a4 + 0xFE))) & 2) != 0) {
@@ -1229,9 +1280,9 @@ int FUN_0c06dc4e(int a4)
         u19 = (-((((struct oC_float *)0xC112B04)->v)));
     }
     FUN_0c06e700((((int)stk + 0) + 0x4), 0xC17596C, u19);
-    *(unsigned int *)(((int)stk + 0)) = 0xC112B10;
+    R1000 = 0xC112B10;
     FUN_0c06e700((((int)stk + 0) + 0x4), 0xC17597C, ((((struct o10_float *)0xC112B04)->v)));
-    FUN_0c06e700((((int)stk + 0) + 0x4), 0xC17598C, ((((struct o8_float *)((*(int *)(((int)stk + 0)))))->v)));
+    FUN_0c06e700((((int)stk + 0) + 0x4), 0xC17598C, ((((struct o8_float *)((R1000)))->v)));
     nlSubVector((((int)stk + 0) + 0x4), (((int)stk + 0) + 0x10));
     FUN_0c073c40((((int)stk + 0) + 0x4), (((int)stk + 0) + 0x4), 0.00833333377f);
     FUN_0c018c18((((int)stk + 0) + 0x4));
@@ -1366,6 +1417,9 @@ int kmiCopyDummyGlobalData(int a4)
     int t54;
     int t79;
     register int t132;
+    int R1000;
+
+    R1000 = *(int *)((int)stk + 0);
 
     t0 = (((struct o4_int *)0xC16FCC0)->v);
     *(unsigned int *)(((((int)stk + 0) + 0x4) + 0x0)) = ((((struct o0_int *)0xC16FCC0)->v));
@@ -1380,13 +1434,13 @@ int kmiCopyDummyGlobalData(int a4)
     *(unsigned int *)(((((int)stk + 0) + 0x4) + 0x18)) = ((((struct o18_int *)0xC16FCC0)->v));
     *(unsigned int *)(((((int)stk + 0) + 0x4) + 0x1C)) = t6;
     if ((((*(int *)0xC300D38) & 1) != 0) && ((t9 = *(int *)0xC300C14, t9 == 0) || (t10 = *(int *)0xC300CF0, t10 != 32))) {
-        *(unsigned int *)(((int)stk + 0)) = 0x0;
+        R1000 = 0x0;
         if ((unsigned int)0x0 < (unsigned int)a4) {
             t11 = 0xC2D0C4C;
             for (;;) {
                 kmiMemCopy4((*(int *)((t11 + 0x0))), (((int)stk + 0) + 0x4), 0x20);
-                t14 = *(int *)(((int)stk + 0));
-                *(unsigned int *)(((int)stk + 0)) = (t14 + 0x1);
+                t14 = R1000;
+                R1000 = (t14 + 0x1);
                 t11 = (t11 + 0x14);
                 if ((unsigned int)(t14 + 0x1) >= (unsigned int)a4) {
                     break;
@@ -1399,13 +1453,13 @@ int kmiCopyDummyGlobalData(int a4)
         *(unsigned int *)(((((int)stk + 0) + 0x4) + 0x0)) = 0x81000000;
         if (((*(int *)0xC300C14) != 0) && (t29 = *(int *)0xC300CF0, t29 == 33)) {
         } else {
-            *(unsigned int *)(((int)stk + 0)) = 0x0;
+            R1000 = 0x0;
             if ((unsigned int)0x0 < (unsigned int)a4) {
                 t30 = 0xC2D0C4C;
                 for (;;) {
                     kmiMemCopy4((*(int *)((t30 + 0x4))), (((int)stk + 0) + 0x4), 0x20);
-                    t33 = *(int *)(((int)stk + 0));
-                    *(unsigned int *)(((int)stk + 0)) = (t33 + 0x1);
+                    t33 = R1000;
+                    R1000 = (t33 + 0x1);
                     t30 = (t30 + 0x14);
                     if ((unsigned int)(t33 + 0x1) >= (unsigned int)a4) {
                         break;
@@ -1419,13 +1473,13 @@ int kmiCopyDummyGlobalData(int a4)
         *(unsigned int *)(((((int)stk + 0) + 0x4) + 0x0)) = 0x82000000;
         if (((*(int *)0xC300C14) != 0) && (t54 = *(int *)0xC300CF0, t54 == 34)) {
         } else {
-            *(unsigned int *)(((int)stk + 0)) = 0x0;
+            R1000 = 0x0;
             if ((unsigned int)0x0 < (unsigned int)a4) {
                 t55 = 0xC2D0C4C;
                 for (;;) {
                     kmiMemCopy4((*(int *)((t55 + 0x8))), (((int)stk + 0) + 0x4), 0x20);
-                    t58 = *(int *)(((int)stk + 0));
-                    *(unsigned int *)(((int)stk + 0)) = (t58 + 0x1);
+                    t58 = R1000;
+                    R1000 = (t58 + 0x1);
                     t55 = (t55 + 0x14);
                     if ((unsigned int)(t58 + 0x1) >= (unsigned int)a4) {
                         break;
@@ -1439,13 +1493,13 @@ int kmiCopyDummyGlobalData(int a4)
         *(unsigned int *)(((((int)stk + 0) + 0x4) + 0x0)) = 0x83000000;
         if (((*(int *)0xC300C14) != 0) && (t79 = *(int *)0xC300CF0, t79 == 35)) {
         } else {
-            *(unsigned int *)(((int)stk + 0)) = 0x0;
+            R1000 = 0x0;
             if ((unsigned int)0x0 < (unsigned int)a4) {
                 t80 = 0xC2D0C4C;
                 for (;;) {
                     kmiMemCopy4((*(int *)((t80 + 0xC))), (((int)stk + 0) + 0x4), 0x20);
-                    t83 = *(int *)(((int)stk + 0));
-                    *(unsigned int *)(((int)stk + 0)) = (t83 + 0x1);
+                    t83 = R1000;
+                    R1000 = (t83 + 0x1);
                     t80 = (t80 + 0x14);
                     if ((unsigned int)(t83 + 0x1) >= (unsigned int)a4) {
                         break;
@@ -1463,13 +1517,13 @@ int kmiCopyDummyGlobalData(int a4)
             t110 = *(int *)0xC300CF0;
             t116 = t110;
             if (t110 != 36) {
-                *(unsigned int *)(((int)stk + 0)) = 0x0;
+                R1000 = 0x0;
                 if ((unsigned int)0x0 < (unsigned int)a4) {
                     t106 = 0xC2D0C4C;
                     for (;;) {
                         t108 = kmiMemCopy4((*(int *)((t106 + 0x10))), (((int)stk + 0) + 0x4), 0x20);
-                        t109 = *(int *)(((int)stk + 0));
-                        *(unsigned int *)(((int)stk + 0)) = (t109 + 0x1);
+                        t109 = R1000;
+                        R1000 = (t109 + 0x1);
                         t106 = (t106 + 0x14);
                         if ((unsigned int)(t109 + 0x1) >= (unsigned int)a4) {
                             break;
@@ -1482,14 +1536,14 @@ int kmiCopyDummyGlobalData(int a4)
             }
             t132 = t116;
         } else {
-            *(unsigned int *)(((int)stk + 0)) = 0x0;
+            R1000 = 0x0;
             t126 = 0xC300C14;
             if ((unsigned int)0x0 < (unsigned int)a4) {
                 t122 = 0xC2D0C4C;
                 for (;;) {
                     t124 = kmiMemCopy4((*(int *)((t122 + 0x10))), (((int)stk + 0) + 0x4), 0x20);
-                    t125 = *(int *)(((int)stk + 0));
-                    *(unsigned int *)(((int)stk + 0)) = (t125 + 0x1);
+                    t125 = R1000;
+                    R1000 = (t125 + 0x1);
                     t122 = (t122 + 0x14);
                     if ((unsigned int)(t125 + 0x1) >= (unsigned int)a4) {
                         break;

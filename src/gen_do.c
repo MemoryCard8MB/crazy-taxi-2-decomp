@@ -2,6 +2,7 @@
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
 typedef struct { int w[4]; } Stk4;
+typedef struct { int w[1]; } Stk1;    /* one stack word: kmiSetTAEnvironment reads @(32,r15) only, its fifth argument */
 struct o0_int { int v; };
 struct o0_uint { unsigned int v; };
 struct o10_int { char p[0x10]; int v; };
@@ -37,12 +38,12 @@ int kmiFBreset(void);
 int kmiGetProfileInt(int, int, int);
 int kmiWriteRegister(int, int);
 int kmytex_FBAllocEntry(void);
-int kmiSetTAEnvironment(Stk4 s);
+int kmiSetTAEnvironment(Stk1 s);
 int kmSetUserClipLevelAdjust(int a4, int a5);
 int kmiFBinit(void);
 float FUN_0c083770(int a4, int a5, int a6);
 
-int kmiSetTAEnvironment(Stk4 s)
+int kmiSetTAEnvironment(Stk1 s)
 {
     register int t0;
     register int t1;

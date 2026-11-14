@@ -455,6 +455,10 @@ float FUN_0c02f6e8(int a4)
     register float w0_5;
     register float w0_6;
     register float w0_7;
+    int R1000;
+    int R1004;
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
     v0_4 = a4;
     v0_0 = (v0_4);
     w0_1 = (0.00999999978f);
@@ -505,8 +509,8 @@ float FUN_0c02f6e8(int a4)
     v0_2 = (((struct o54_int *)(v0_0))->v);
     v0_1 = *(int *)((v0_2 + 0x4));
     v0_3 = *(int *)((v0_2 + 0x0));
-    *(unsigned int *)(((int)stk + 0)) = (*(int *)((v0_2 + 0x8)));
-    *(unsigned int *)(((int)stk + 4)) = 0x0;
+    R1000 = (*(int *)((v0_2 + 0x8)));
+    R1004 = 0x0;
     v0_4 = (0xC073C40);
     v0_1 = (v0_1);
     v0_4 = (0xC073AD0);
@@ -517,7 +521,7 @@ float FUN_0c02f6e8(int a4)
     L_C02F984:;
     v0_4 = (0xC073B80);
     w0_3 = (10.0f);
-    if (((*(int *)(((int)stk + 0))) == 0)) goto L_C02F994;
+    if (((R1000) == 0)) goto L_C02F994;
     if ((!(0.0f > ((((struct o4_float *)(v0_1))->v))))) goto L_C02F918;
     FUN_0c072230(v0_3, (((int)stk + 0) + 0x2C));
     nlOuterProduct((v0_0 + 0x3C), 0xC0A2D5C, (((int)stk + 0) + 0x20));
@@ -539,9 +543,9 @@ float FUN_0c02f6e8(int a4)
     if ((!(w0_2 > w0_3))) goto L_C02F974;
     w0_2 = (w0_3);
     L_C02F974:;
-    *(unsigned int *)(((int)stk + 4)) = ((*(int *)(((int)stk + 4))) + (*(int *)((v0_1 + 0x0))));
+    R1004 = ((R1004) + (*(int *)((v0_1 + 0x0))));
     L_C02F97C:;
-    *(unsigned int *)(((int)stk + 0)) = ((*(int *)(((int)stk + 0))) - 1);
+    R1000 = ((R1000) - 1);
     v0_1 = ((v0_1 + 0x8));
     goto L_C02F984;
     L_C02F918:;
@@ -602,7 +606,7 @@ float FUN_0c02f6e8(int a4)
     FUN_0c073c40((((int)stk + 0) + 0x20), (((int)stk + 0) + 0x20), (-0.333333313f / ((((struct o18_float *)(((((struct o54_int *)(v0_0))->v))))->v))));
     nlOuterProduct((((int)stk + 0) + 0x38), (((int)stk + 0) + 0x20), (((int)stk + 0) + 0x20));
     nlAddVector((v0_0 + 0x48), (((int)stk + 0) + 0x20));
-    if (((int)(*(int *)(((int)stk + 4))) <= (int)0x2)) goto L_C02FB30;
+    if (((int)(R1004) <= (int)0x2)) goto L_C02FB30;
     FUN_0c073c40((v0_0 + 0x48), (v0_0 + 0x48), 0.899999976f);
     (((struct o68_uint *)(v0_0))->v) = 0x5;
     goto L_C02FB30;

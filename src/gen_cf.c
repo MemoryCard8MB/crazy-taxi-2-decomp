@@ -7,7 +7,7 @@ struct o34_uint { char p[0x34]; unsigned int v; };
 struct o38_uint { char p[0x38]; unsigned int v; };
 struct o4_float { char p[0x4]; float v; };
 struct o8_float { char p[0x8]; float v; };
-int FUN_0c07ada0(int, int, int, int, float, float, float, float, float);
+int FUN_0c07ada0(int, int);
 int FUN_0c04f70e(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8);
 
 int FUN_0c04f70e(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8)
@@ -49,7 +49,7 @@ int FUN_0c04f70e(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
             (((struct o8_float *)0xC2B1C44)->v) = (float)((((((((t6 >> 1) >> 1) << 2) << 1) + ((t6 >> 1) >> 1)) << 2) - ((t5 << 1) + t5)) + 0x24);
             (((struct o0_uint *)0xC2B1C44)->v) = (*(int *)(((t4 << 2) + (*(int *)((0xC1319EC + (t0 << 2)))))));
             (((struct o28_uint *)0xC2B1C44)->v) = 0x2D8;
-            t3 = FUN_0c07ada0(0xC2B1C44, ((t5 << 1) + t5), ((((((((t6 >> 1) >> 1) << 2) << 1) + ((t6 >> 1) >> 1)) << 2) - ((t5 << 1) + t5)) + 0x24), a7, f4, f5, f6, f7, f8);
+            t3 = FUN_0c07ada0(0xC2B1C44, ((t5 << 1) + t5));
             t0 = (t0 + 0x1);
             if ((int)t0 >= (int)t1) {
                 break;

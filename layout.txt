@@ -1,0 +1,9 @@
+# The executable's layout for the tools (tools/layout.py): <name> <start hex> [<end hex>]
+game    0C010080 0C147A00    # the game's own code (0C010080-0C06E700, what the build from C replaces) up to the SDK startup at 0C147A00 (crt0, then _INITSCT, _INITLIBH, main FUN_0c01b1e8), which stays as the original bytes
+keep    0C06E700 0C147A00    # the NAOMI library (nl*, hand-written FPU asm on 32-byte alignment from 0C06E700), backup/VMS (bu*, vmsfs*), ntInf/ntLDBrowser and the C runtime (to _mvsto2b, 0C0964C6), then ~725 KB of game data: they stay as they are, the words in them that point at moved game code are followed
+code    0C010000 0C0964C8    # entry, game code, NAOMI library and runtime: the cases may not write there
+# no fill: 0C010000-0C010080 is the entry (it sets CCR and jumps to 0C147A00) and the "Lib Handle" block; the game code follows at once
+# the 9 "functions" in the data block (FUN_0c0a5422 .. FUN_0c0af8b0) are data read as code; they lie in keep and are not compiled
+bss     0C30BC20             # the end of the BSS (_INITSCT: game BSS 0C175400-0C2D0BC0 word-cleared, SDK BSS 0C2D0BC0-0C30BC20 byte-cleared)
+fixed   0C310000             # the first address a movable build may not move: main (FUN_0c01b1e8) fills 0C310000-0CD10000 with -1, gdc_FileLoadInit and FUN_0c04e03c use it (0x43E0 = 17,376 bytes between, not yet checked free in a RAM dump)
+mixed   1                    # state tables in the data point into the middle of FUN_0c066f1e (0C067020, 0C06703C, 0C067058, 0C067096); its group shares pools with FUN_0c0677c4, which has no C form (it relies on FUN_0c07ff00 keeping r4): a running copy of a group with pieces without C (as Zombie Revenge)

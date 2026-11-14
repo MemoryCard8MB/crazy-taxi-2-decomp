@@ -187,6 +187,8 @@ void FUN_0c01b026(int a4, int a5, int a6, int a7)
     register int v0_6;
     register int v0_7;
     register float w0_0;
+    int R1000;
+    R1000 = *(int *)((int)stk + 0);
     FUN_0c07ff00();
     FUN_0c07ff00();
     FUN_0c07ff00();
@@ -206,7 +208,7 @@ void FUN_0c01b026(int a4, int a5, int a6, int a7)
     FUN_0c07ff00();
     FUN_0c07ff00();
     FUN_0c07ff00();
-    *(unsigned int *)(((int)stk + 0)) = v0_6;
+    R1000 = v0_6;
     v0_5 = (0x3);
     v0_0 = (0xC1EC83C);
     R8 = (0x7);
@@ -224,7 +226,7 @@ void FUN_0c01b026(int a4, int a5, int a6, int a7)
     L_C01B0D2:;
     FUN_0c03e5f8();
     Exec_LCD();
-    FUN_0c057bb4((unsigned char)(*(signed char *)(((*(int *)(((int)stk + 0))) + 0x2C))));
+    FUN_0c057bb4((unsigned char)(*(signed char *)(((R1000) + 0x2C))));
     FUN_0c02022a();
     FUN_0c058d4e();
     FUN_0c06f960(0xC1EC84C);
@@ -263,6 +265,8 @@ int gdFsSearchPath(int a4, int a5, int a6, int a7)
     register int v0_6;
     register int v0_7;
     register int v0_8;
+    int R1000;
+    R1000 = *(int *)((int)stk + 0);
     v0_6 = a4;
     v0_1 = a5;
     v0_0 = a6;
@@ -271,7 +275,7 @@ int gdFsSearchPath(int a4, int a5, int a6, int a7)
     *(unsigned int *)(((int)stk + 16)) = v0_0;
     *(unsigned int *)(((int)stk + 20)) = 0x1;
     *(unsigned int *)(((int)stk + 12)) = 0x0;
-    *(unsigned int *)(((int)stk + 0)) = (0x800 + v0_6);
+    R1000 = (0x800 + v0_6);
     v0_5 = v0_6;
     v0_1 = (0x0);
     v0_2 = (0x1);
@@ -282,8 +286,8 @@ int gdFsSearchPath(int a4, int a5, int a6, int a7)
     v0_5 = v0_5;
     L_C15CEE4:;
     v0_6 = (v0_4);
-    if (((unsigned int)v0_4 >= (unsigned int)(*(int *)(((int)stk + 0))))) goto L_C15CF02;
-    if (((unsigned int)((((unsigned char)(*(signed char *)((v0_6 + 0x0))) + ((unsigned char)(*(signed char *)((v0_6 + 0x0))) & 0x1)) + 0x8) + v0_4) < (unsigned int)(*(int *)(((int)stk + 0))))) goto L_C15CF2C;
+    if (((unsigned int)v0_4 >= (unsigned int)(R1000))) goto L_C15CF02;
+    if (((unsigned int)((((unsigned char)(*(signed char *)((v0_6 + 0x0))) + ((unsigned char)(*(signed char *)((v0_6 + 0x0))) & 0x1)) + 0x8) + v0_4) < (unsigned int)(R1000))) goto L_C15CF2C;
     L_C15CF02:;
     gdFsMemcpy(v0_4, (v0_5 - ((v0_5 - v0_4) + 0x800)), ((v0_5 - v0_4) + 0x800));
     v0_7 = (gdFsReadWG((*(int *)(((int)stk + 8))), 0x1, v0_5)) != 0;

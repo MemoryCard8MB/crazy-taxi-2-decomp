@@ -799,6 +799,9 @@ int FUN_0c090180(int a4, int a5, int a6, int a7, int a8, int a9)
     register int t24;
     register int t27;
     register int t46;
+    int R1008;
+
+    R1008 = *(int *)((int)stk + 8);
 
     *(unsigned int *)(((int)stk + 56)) = a4;
     *(unsigned int *)(((int)stk + 52)) = a5;
@@ -830,10 +833,10 @@ int FUN_0c090180(int a4, int a5, int a6, int a7, int a8, int a9)
     *(unsigned char *)(((*(int *)(((int)stk + 12))) + 0x1)) = a9;
     *(unsigned int *)(((int)stk + 16)) = (*(int *)(((int)stk + 48)));
     t24 = *(int *)(((int)stk + 56));
-    *(unsigned int *)(((int)stk + 8)) = ((t24 * 0x154) + 0xC2C8D2C);
+    R1008 = ((t24 * 0x154) + 0xC2C8D2C);
     *(unsigned int *)((((t24 * 0x154) + 0xC2C8D2C) + 0x30)) = 0x1;
-    t27 = *(int *)(((*(int *)(((int)stk + 8))) + 0x4));
-    *(unsigned int *)(((*(int *)(((int)stk + 8))) + 0x34)) = ((*(int *)(((int)stk + 44))) + (*(int *)(((((((t27 << 1) + t27) << 2) << 2) << 1) + 0xC147870))));
+    t27 = *(int *)(((R1008) + 0x4));
+    *(unsigned int *)(((R1008) + 0x34)) = ((*(int *)(((int)stk + 44))) + (*(int *)(((((((t27 << 1) + t27) << 2) << 2) << 1) + 0xC147870))));
     FUN_0c090e4c((*(int *)(((int)stk + 56))), 0x0, (((int)stk + 8) + 0xC), 0x0);
     vmsfs_lockbank((*(int *)(((int)stk + 56))), 0x1);
     *(unsigned int *)(((int)stk + 40)) = 0x0;

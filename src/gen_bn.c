@@ -16,7 +16,7 @@ struct oC_float { char p[0xC]; float v; };
 int FUN_0c05d1b4(int, int, float);
 int FUN_0c05edbe(int);
 int FUN_0c06c71e(int, float, float);
-int FUN_0c06c8ea(int, int, int, int, int, int, int, int, int, int, int, int);
+int FUN_0c06c8ea(int);
 int FUN_0c06e700(int, int, float);
 int FUN_0c070730(float);
 int FUN_0c072290(int, int);
@@ -123,7 +123,7 @@ int FUN_0c06c4e6(int a4, float f4, float f5)
     FUN_0c05d1b4(0xCB1C150, 0x0, ((((struct o44_float *)(a4))->v)));
     FUN_0c05edbe(0x4);
     if (t44 != 0) {
-        FUN_0c06c8ea(a4, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
+        FUN_0c06c8ea(a4);
     }
     u105 = (((struct o44_float *)(a4))->v);
     u106 = (((struct o48_float *)(a4))->v);

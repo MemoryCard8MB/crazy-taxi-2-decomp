@@ -191,6 +191,22 @@ int FUN_0c04d5fa(void)
     register float w0_5;
     register float w0_6;
     register float w0_7;
+    int R1004;
+    float R1008;
+    int R1012;
+    float R1016;
+    int R1020;
+    int R1024;
+    int R1028;
+    float R1032;
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(float *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+    R1016 = *(float *)((int)stk + 16);
+    R1020 = *(int *)((int)stk + 20);
+    R1024 = *(int *)((int)stk + 24);
+    R1028 = *(int *)((int)stk + 28);
+    R1032 = *(float *)((int)stk + 32);
     v0_2 = *(int *)0xC1EC71C;
     v0_7 = (v0_2);
     v0_0 = (0x0);
@@ -211,16 +227,16 @@ int FUN_0c04d5fa(void)
     w0_4 = (((struct o160_float *)(v0_1))->v);
     w0_3 = (_builtin_fabsf(w0_4) * 30.0f);
     w0_4 = (_builtin_fabsf(w0_4) * 30.0f);
-    *(float *)(((int)stk + 8)) = (w0_3 * w0_4);
+    R1008 = (w0_3 * w0_4);
     v0_2 = (((struct o19E_short *)(v0_1))->v);
-    *(float *)(((int)stk + 16)) = (_builtin_fabsf((float)v0_2) / 384.0f);
+    R1016 = (_builtin_fabsf((float)v0_2) / 384.0f);
     FPUL_ = (v0_2);
     if ((!(0.0f > ((((struct o160_float *)(v0_1))->v))))) goto L_C04D676;
     w0_3 = (6400.0f);
     L_C04D67A:;
-    *(float *)(((int)stk + 32)) = w0_3;
-    if ((!(w0_0 > (*(float *)(((int)stk + 16)))))) goto L_C04D68A;
-    *(float *)(((int)stk + 16)) = w0_0;
+    R1032 = w0_3;
+    if ((!(w0_0 > (R1016)))) goto L_C04D68A;
+    R1016 = w0_0;
     L_C04D68A:;
     v0_2 = (((struct o4_int *)0xC2B1B94)->v);
     v0_7 = (v0_2);
@@ -303,14 +319,14 @@ int FUN_0c04d5fa(void)
     w0_3 = w0_3 + (*(float *)(((int)stk + 48))) * (*(float *)(((int)stk + 36)));
     w0_4 = (((struct o10_float *)(v0_4))->v);
     w0_5 = (((struct o80_float *)(v0_1))->v);
-    w0_6 = ((*(float *)(((int)stk + 8))) * w0_3);
+    w0_6 = ((R1008) * w0_3);
     w0_6 = (w0_6 * w0_3);
     w0_7 = (w0_6 * w0_3);
-    w0_6 = (*(float *)(((int)stk + 32)));
+    w0_6 = (R1032);
     w0_6 = w0_6 + 0.5f * w0_7;
     w0_3 = (w0_3);
     w0_4 = (((w0_5 - w0_4) * (w0_5 - w0_4)));
-    if ((w0_6 > (((((struct o50_float *)(v0_4))->v)) * (*(float *)(((int)stk + 16)))))) goto L_C04D7BE;
+    if ((w0_6 > (((((struct o50_float *)(v0_4))->v)) * (R1016)))) goto L_C04D7BE;
     goto L_C04D8C0;
     L_C04D7BE:;
     if ((400.0f > w0_4)) goto L_C04D7CA;
@@ -385,20 +401,20 @@ int FUN_0c04d5fa(void)
     w0_3 = ((w0_3 - (w0_2 + w0_2)));
     L_C04DA86:;
     *(unsigned int *)((v0_6 + 0x0)) = ((int)w0_3 & R7);
-    *(unsigned int *)(((int)stk + 28)) = v0_0;
-    *(unsigned int *)(((int)stk + 24)) = v0_0;
-    *(unsigned int *)(((int)stk + 20)) = v0_2;
-    *(unsigned int *)(((int)stk + 4)) = v0_2;
-    *(unsigned int *)(((int)stk + 12)) = (v0_2 + 0x3200);
+    R1028 = v0_0;
+    R1024 = v0_0;
+    R1020 = v0_2;
+    R1004 = v0_2;
+    R1012 = (v0_2 + 0x3200);
     v0_3 = (v0_0);
     v0_5 = (v0_0);
     v0_6 = ((v0_2 + 0x3200));
     v0_8 = (v0_2);
     FPUL_ = ((int)w0_3);
-    if (((unsigned int)(*(int *)(((int)stk + 4))) >= (unsigned int)(v0_2 + 0x3200))) goto L_C04DB2E;
+    if (((unsigned int)(R1004) >= (unsigned int)(v0_2 + 0x3200))) goto L_C04DB2E;
     L_C04DAAC:;
-    if ((((((struct o34_short *)((*(int *)(((int)stk + 4)))))->v)) == -1)) goto L_C04DB1C;
-    v0_4 = *(int *)(((int)stk + 20));
+    if ((((((struct o34_short *)((R1004)))->v)) == -1)) goto L_C04DB1C;
+    v0_4 = R1020;
     FUN_0c04e192(v0_4, v0_8, v0_2, R7);
     v0_1 = (((struct o54_int *)(v0_4))->v);
     v0_7 = (v0_1);
@@ -411,10 +427,10 @@ int FUN_0c04d5fa(void)
     L_C04DB18:;
     FUN_0c04e43a(v0_4);
     L_C04DB1C:;
-    *(unsigned int *)(((int)stk + 20)) = ((*(int *)(((int)stk + 20))) + 0x64);
-    v0_1 = *(int *)(((int)stk + 4));
-    *(unsigned int *)(((int)stk + 4)) = (v0_1 + 0x64);
-    if (((unsigned int)(v0_1 + 0x64) < (unsigned int)(*(int *)(((int)stk + 12))))) goto L_C04DAAC;
+    R1020 = ((R1020) + 0x64);
+    v0_1 = R1004;
+    R1004 = (v0_1 + 0x64);
+    if (((unsigned int)(v0_1 + 0x64) < (unsigned int)(R1012))) goto L_C04DAAC;
     L_C04DB2E:;
     FUN_0c073360();
     FUN_0c072b60(0xC177D5C);
@@ -477,24 +493,24 @@ int FUN_0c04d5fa(void)
     v0_3 = (((((struct o60_int *)(v0_3))->v)));
     goto L_C04DB70;
     L_C04DAEE:;
-    if (((*(int *)(((int)stk + 28))) != 0)) goto L_C04DAFA;
-    *(unsigned int *)(((int)stk + 28)) = v0_4;
+    if (((R1028) != 0)) goto L_C04DAFA;
+    R1028 = v0_4;
     v0_5 = (v0_4);
     L_C04DB02:;
     (((struct o60_uint *)(v0_4))->v) = v0_0;
     goto L_C04DB1C;
     L_C04DAFA:;
-    (((struct o60_uint *)((*(int *)(((int)stk + 28)))))->v) = v0_4;
-    *(unsigned int *)(((int)stk + 28)) = v0_4;
+    (((struct o60_uint *)((R1028)))->v) = v0_4;
+    R1028 = v0_4;
     goto L_C04DB02;
     L_C04DAD8:;
-    if (((*(int *)(((int)stk + 24))) != 0)) goto L_C04DAE4;
-    *(unsigned int *)(((int)stk + 24)) = v0_4;
+    if (((R1024) != 0)) goto L_C04DAE4;
+    R1024 = v0_4;
     v0_3 = (v0_4);
     goto L_C04DB02;
     L_C04DAE4:;
-    (((struct o60_uint *)((*(int *)(((int)stk + 24)))))->v) = v0_4;
-    *(unsigned int *)(((int)stk + 24)) = v0_4;
+    (((struct o60_uint *)((R1024)))->v) = v0_4;
+    R1024 = v0_4;
     goto L_C04DB02;
     L_C04DA54:;
     w0_2 = ((float)(R7 - v0_8));
@@ -543,8 +559,10 @@ int FUN_0c0372a0(int a4)
     register float w0_1;
     register float w0_2;
     register float w0_3;
+    int R1012;
+    R1012 = *(int *)((int)stk + 12);
     v0_6 = a4;
-    *(unsigned int *)(((int)stk + 12)) = 0xC2A46AC;
+    R1012 = 0xC2A46AC;
     v0_0 = (0xC2A4FA8);
     v0_1 = (0x2);
     if (((int)((((struct o0_int *)0xC2A4F80)->v)) < (int)0x2)) goto L_C037334;
@@ -557,8 +575,8 @@ int FUN_0c0372a0(int a4)
     if (!((((((struct o4_int *)0xC2A46E4)->v)) == 0))) goto L_C037776;
     if ((((((struct o0_int *)0xC2A46E4)->v)) != 1)) goto L_C037358;
     (((struct o0_uint *)0xC2A46E4)->v) = v0_1;
-    if ((((*(int *)(((*(int *)(((int)stk + 12))) + 0x1C))) & 6) == 0)) goto L_C037358;
-    *(unsigned int *)(((*(int *)(((int)stk + 12))) + 0x1C)) = v0_1;
+    if ((((*(int *)(((R1012) + 0x1C))) & 6) == 0)) goto L_C037358;
+    *(unsigned int *)(((R1012) + 0x1C)) = v0_1;
     goto L_C037358;
     L_C037776:;
     return R0;
@@ -655,7 +673,7 @@ int FUN_0c0372a0(int a4)
     if ((v0_2 == 0)) goto L_C0376AE;
     return FUN_0c03e358(v0_5, v0_2);
     L_C0376AE:;
-    v0_0 = *(int *)(((int)stk + 12));
+    v0_0 = R1012;
     *(unsigned int *)((v0_0 + 0x1C)) = ((*(int *)((v0_0 + 0x1C))) | v0_6);
     goto L_C0376B6;
     L_C0374E6:;
@@ -907,13 +925,18 @@ int FUN_0c05d374(int a4, int a5, float f4, float f5, float f6, float f7, float f
     register float u169;
     register float u170;
     register int t211;
+    int R1000;
+    int R1004;
 
-    *(unsigned int *)(((int)stk + 0)) = a5;
-    *(unsigned int *)(((int)stk + 4)) = 0xC2B9738;
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+
+    R1000 = a5;
+    R1004 = 0xC2B9738;
     t0 = *(int *)(((a4 << 2) + 0xC13AC90));
     if ((*(int *)((0xC13ADD8 + (a4 << 2)))) != 0) {
         if ((*(int *)(((*(int *)0xC136D80) + 0x4))) == 57) {
-            u7 = (((struct oD4_float *)((*(int *)(((int)stk + 4)))))->v);
+            u7 = (((struct oD4_float *)((R1004)))->v);
             if ((u7 > 0.899999976f) && (1.10000002f > u7)) {
                 *(unsigned int *)(((*(int *)((0xC13AC90 + (a4 << 2)))) + 0x28)) = (*(int *)(((*(int *)((0xC13ADD8 + (a4 << 2)))) + 0x0)));
             } else {
@@ -949,7 +972,7 @@ int FUN_0c05d374(int a4, int a5, float f4, float f5, float f6, float f7, float f
     }
     nlPushMatrix(0x0);
     FUN_0c072600(0xC136D90);
-    if (((*(int *)(((int)stk + 0))) & 1) != 0) {
+    if (((R1000) & 1) != 0) {
         nlPushMatrix(0x0);
         FUN_0c073a30((-((((struct o0_float *)0xC2B9738)->v))), 0.0f, (-((((struct o8_float *)0xC2B9738)->v))));
         FUN_0c072230(0xC2B9774, 0xC136E38);
@@ -1008,7 +1031,7 @@ int FUN_0c05d374(int a4, int a5, float f4, float f5, float f6, float f7, float f
     FUN_0c05d1f4(((((((((t0 + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8) + 0x8), 0x0, 0x0, 0x0);
     nlGetMatrix(0xC2B9A1C);
     nlPopMatrix(0x1);
-    if (((*(int *)(((int)stk + 0))) & 2) != 0) {
+    if (((R1000) & 2) != 0) {
         t211 = (nlPopMatrix(0x2));
     } else {
         nlGetPushedMatrix(0x0);

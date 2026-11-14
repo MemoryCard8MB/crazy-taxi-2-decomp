@@ -62,7 +62,7 @@ int End_Adv_Title_LOGO(void);
 int FUN_0c0100c4(int, int);
 int FUN_0c015f28(void);
 int FUN_0c01c468(void);
-int FUN_0c01c568(int, int, int, int, int, int, int, int, int, int, int, int);
+int FUN_0c01c568(void);
 int FUN_0c01cb08(void);
 int FUN_0c01e6f0(void);
 int FUN_0c01f5fc(void);
@@ -109,7 +109,7 @@ int FUN_0c05f3fe(int, int, int);
 int FUN_0c05f470(int, int, float, float);
 int FUN_0c05f788(int, int);
 int FUN_0c06753c(int, int);
-int FUN_0c068166(int, int, int, int, int, int, int, int, int, int, int, int);
+int FUN_0c068166(int, int);
 int FUN_0c06823e(int, int, int, int);
 int FUN_0c06a4e0(int, int, int);
 int FUN_0c06cbe2(void);
@@ -188,15 +188,22 @@ int FUN_0c05f1b6(int a4, int a5)
     register int t70;
     register int t71;
     register int t30;
+    int R1000;
+    int R1004;
+    int R1008;
 
-    *(unsigned int *)(((int)stk + 0)) = a5;
-    *(unsigned int *)(((int)stk + 8)) = 0x0;
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+
+    R1000 = a5;
+    R1008 = 0x0;
     t1 = *(int *)((a4 + 0x0));
     t4 = FUN_0c05b422((*(int *)(((*(int *)((a4 + 0x0))) + 0x0))), ((((struct o4_float *)(a4))->v)));
-    *(unsigned int *)(((int)stk + 4)) = ((*(int *)((a4 + 0x8))) + 0x10);
+    R1004 = ((*(int *)((a4 + 0x8))) + 0x10);
     t9 = FUN_0c05b422((*(int *)(((*(int *)((a4 + 0x8))) + 0x0))), ((((struct oC_float *)(a4))->v)));
     t26 = 0x1E;
-    if (((*(int *)(((int)stk + 0))) & 0x2) != 0) {
+    if (((R1000) & 0x2) != 0) {
     } else {
         t17 = *(int *)(((*(int *)((a4 + 0x8))) + 0x4));
         t18 = *(int *)(((*(int *)((a4 + 0x0))) + 0x4));
@@ -209,17 +216,17 @@ int FUN_0c05f1b6(int a4, int a5)
                 t26 = t18;
                 t30 = t17;
             }
-            *(unsigned int *)(((int)stk + 8)) = 0x1;
+            R1008 = 0x1;
         }
     }
     u32 = (((struct o10_float *)(a4))->v);
-    *(unsigned int *)(((int)stk + 0)) = 0x0;
+    R1000 = 0x0;
     if ((int)t26 > 0) {
         t33 = 0xC2B9738;
         t34 = (t1 + 0x10);
         for (;;) {
             FUN_0c05d118((((*(int *)((t34 + 0x0))) << 2) + (*(int *)((a4 + 0x0)))), (((int)stk + 0) + 0x10), t4);
-            FUN_0c05d118((((*(int *)(((*(int *)(((int)stk + 4))) + 0x0))) << 2) + (*(int *)((a4 + 0x8)))), (((int)stk + 0) + 0xC), t9);
+            FUN_0c05d118((((*(int *)(((R1004) + 0x0))) << 2) + (*(int *)((a4 + 0x8)))), (((int)stk + 0) + 0xC), t9);
             if (((*(int *)(((((*(int *)((t34 + 0x0))) << 2) + (*(int *)((a4 + 0x0)))) + 0x4))) & 0x2) != 0) {
                 *(unsigned int *)((t33 + 0x0)) = (short)(FUN_0c05b724((*(int *)(((int)stk + 16))), (*(int *)(((int)stk + 12))), (1.0f - u32)));
             } else {
@@ -229,15 +236,15 @@ int FUN_0c05f1b6(int a4, int a5)
             }
             t34 = (t34 + 0x4);
             t33 = (t33 + 0x4);
-            *(unsigned int *)(((int)stk + 4)) = ((*(int *)(((int)stk + 4))) + 0x4);
-            t59 = *(int *)(((int)stk + 0));
-            *(unsigned int *)(((int)stk + 0)) = (t59 + 0x1);
+            R1004 = ((R1004) + 0x4);
+            t59 = R1000;
+            R1000 = (t59 + 0x1);
             if ((int)(t59 + 0x1) >= (int)t26) {
                 break;
             }
         }
     }
-    if (((*(int *)(((int)stk + 8))) != 0) && ((int)t26 < (int)t30)) {
+    if (((R1008) != 0) && ((int)t26 < (int)t30)) {
         t70 = t26;
         t71 = ((t26 << 2) + 0xC2B9738);
         for (;;) {
@@ -263,9 +270,12 @@ float FUN_0c02a470(int a4, int a5)
     register int t24;
     register float t26;
     register float u35;
+    int R1000;
+
+    R1000 = *(int *)((int)stk + 0);
 
     (((struct o6C_float *)(((a4 * 0x78) + 0xC271E5C)))->v) = (*(float *)((a5 + 0x0)));
-    *(unsigned int *)(((int)stk + 0)) = (a5 + 0x4);
+    R1000 = (a5 + 0x4);
     (((struct o70_float *)(((a4 * 0x78) + 0xC271E5C)))->v) = ((((struct o4_float *)(a5))->v));
     u4 = (((struct o0_float *)0xC02A648)->v);
     (((struct o74_float *)(((a4 * 0x78) + 0xC271E5C)))->v) = ((((((struct o8_float *)(a5))->v)) - ((((struct oC_float *)(a5))->v))) * u4);
@@ -306,7 +316,7 @@ float FUN_0c02a470(int a4, int a5)
         }
     }
     if (((int)a4 >= (int)0xC) && ((int)a4 <= (int)0x10)) {
-        u35 = (*(float *)(((*(int *)(((int)stk + 0))) + 0x0)));
+        u35 = (*(float *)(((R1000) + 0x0)));
     } else {
         u35 = ((((struct o4_float *)(((((a4 << 2) << 2) << 1) + 0xC128DB4)))->v));
     }
@@ -317,7 +327,6 @@ float FUN_0c02a470(int a4, int a5)
 
 int FUN_0c03b098(void)
 {
-    int stk[7];
     register int t2;
     register int t3;
     register int t13;
@@ -357,19 +366,19 @@ int FUN_0c03b098(void)
         if (t25 == 14) {
             (((struct o0_uint *)0xC1EC71C)->v) = 0x0;
             FUN_0c01c468();
-            FUN_0c01c568(0x0, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
+            FUN_0c01c568();
         } else {
             if (t25 == 15) {
                 (((struct o0_uint *)0xC1EC71C)->v) = 0x1;
                 FUN_0c01c468();
-                FUN_0c01c568(0x0, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
+                FUN_0c01c568();
             } else {
                 FUN_0c01cb08();
             }
         }
     } else {
         FUN_0c01c468();
-        FUN_0c01c568(0x0, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
+        FUN_0c01c568();
     }
     if (((((struct o4_int *)0xC1EC71C)->v)) != 2) {
         FUN_0c01f95a();
@@ -543,11 +552,13 @@ int FUN_0c031bbc(int a4, int a5, int a6, int a7)
     register int v0_7;
     register int v0_8;
     register int v0_9;
+    int R1000;
+    R1000 = *(int *)((int)stk + 0);
     v0_3 = a4;
     v0_4 = a5;
     v0_7 = a6;
     R7 = a7;
-    *(unsigned int *)(((int)stk + 0)) = v0_3;
+    R1000 = v0_3;
     v0_5 = v0_4;
     v0_0 = (0x0);
     v0_1 = (v0_4);
@@ -561,7 +572,7 @@ int FUN_0c031bbc(int a4, int a5, int a6, int a7)
     L_C031BF2:;
     v0_1 = ((v0_1 + (v0_6 << 2)));
     v0_8 = (v0_7);
-    if (((int)(*(int *)(((int)stk + 0))) < 0)) goto L_C031C14;
+    if (((int)(R1000) < 0)) goto L_C031C14;
     v0_9 = (((int)((float)v0_6 * 1.25f) & 0xFFFFFFF0));
     FPUL_ = ((int)((float)v0_6 * 1.25f));
     L_C031C16:;
@@ -582,8 +593,8 @@ int FUN_0c031bbc(int a4, int a5, int a6, int a7)
     v0_4 = ((v0_4 - 1));
     if (v0_7) goto L_C031C3C;
     v0_7 = (0x20);
-    if (!(((int)(*(int *)(((int)stk + 0))) < 0))) goto L_C031CAE;
-    *(unsigned int *)(((int)stk + 0)) = (v0_8 + v0_5);
+    if (!(((int)(R1000) < 0))) goto L_C031CAE;
+    R1000 = (v0_8 + v0_5);
     goto L_C031CE6;
     L_C031CAE:;
     if (!(((int)v0_6 > 0))) goto L_C031CEA;
@@ -646,7 +657,7 @@ int FUN_0c031bbc(int a4, int a5, int a6, int a7)
     v0_4 = ((v0_4 + 0x8));
     if (v0_8) goto L_C031CC2;
     v0_6 = ((v0_6 - 5));
-    if (((int)v0_1 > (int)(*(int *)(((int)stk + 0))))) goto L_C031CEA;
+    if (((int)v0_1 > (int)(R1000))) goto L_C031CEA;
     goto L_C031CE6;
     L_C031C3C:;
     *(unsigned int *)(((v0_3 - 0x4) + 0x0)) = (*(int *)(((v0_1 - 4) + 0x0)));
@@ -914,7 +925,7 @@ int FUN_0c064dd6(int a4)
     }
     FUN_0c073a30(((*(float *)(((int)stk + 12))) + u18), 0.0f, (u14 + 0.200000003f));
     FUN_0c072600(((int)stk + 0));
-    FUN_0c068166(a4, ((int)stk + 0), 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
+    FUN_0c068166(a4, ((int)stk + 0));
     nlPopMatrix(0x1);
     FUN_0c06753c(a4, 0x1);
     t26 = *(signed char *)(((a4 + 0x3F) + 0x0));

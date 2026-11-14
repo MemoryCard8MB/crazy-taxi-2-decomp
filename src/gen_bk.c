@@ -73,7 +73,7 @@ struct oFE0_int { char p[0xFE0]; int v; };
 struct oFE0_uint { char p[0xFE0]; unsigned int v; };
 int End_Adv_Title_LOGO(void);
 int FUN_0c01c468(void);
-int FUN_0c01c568(int, int, int, int, int, int, int, int, int, int, int, int);
+int FUN_0c01c568(void);
 int FUN_0c01cb08(void);
 int FUN_0c01f5fc(void);
 int FUN_0c01f95a(void);
@@ -846,51 +846,60 @@ int kmiProcessVertex_07(int a4)
     register float u52;
     register float u54;
     register int t56;
+    int R1000;
+    int R1004;
+    int R1008;
+    int R1012;
 
-    *(unsigned int *)(((((int)stk + 0) + 0x4) + 0x0)) = (*(int *)((a4 + 0x0)));
-    *(unsigned int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0)) = (*(int *)((a4 + 0x4)));
-    *(unsigned int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0)) = (*(int *)((a4 + 0x8)));
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+
+    R1004 = (*(int *)((a4 + 0x0)));
+    R1008 = (*(int *)((a4 + 0x4)));
+    R1012 = (*(int *)((a4 + 0x8)));
     t3 = (((struct o4_int *)0xC300A6C)->v);
     t4 = (((struct o8_int *)0xC300A6C)->v);
     t5 = (((struct oC_int *)0xC300A6C)->v);
     (((struct o0_uint *)0xC300974)->v) = t3;
     (((struct o4_uint *)0xC300974)->v) = t4;
     (((struct o8_uint *)0xC300974)->v) = t5;
-    (((struct oC_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0x4)));
-    (((struct o10_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0x8)));
-    (((struct o14_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0xC)));
-    t12 = *(int *)(((((int)stk + 0) + 0x4) + 0x0));
-    *(unsigned int *)(((int)stk + 0)) = t12;
-    t16 = kmiBGPlanePutColor2(t3, 0x6, (*(int *)(((*(int *)(((int)stk + 0))) + 0x10))), (*(int *)((t12 + 0x14))));
-    u18 = (((struct o18_float *)((*(int *)(((((int)stk + 0) + 0x4) + 0x0)))))->v);
+    (((struct oC_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0x4)));
+    (((struct o10_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0x8)));
+    (((struct o14_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0xC)));
+    t12 = R1004;
+    R1000 = t12;
+    t16 = kmiBGPlanePutColor2(t3, 0x6, (*(int *)(((R1000) + 0x10))), (*(int *)((t12 + 0x14))));
+    u18 = (((struct o18_float *)((R1004)))->v);
     *(unsigned int *)(((t16 << 2) + 0xC300974)) = ((((((int)(u18 * 255.0f) << 16) << 8) | ((int)(u18 * 255.0f) << 16)) | ((int)(u18 * 255.0f) << 8)) | (int)(u18 * 255.0f));
-    u20 = (((struct o1C_float *)((*(int *)(((((int)stk + 0) + 0x4) + 0x0)))))->v);
+    u20 = (((struct o1C_float *)((R1004)))->v);
     t21 = kmiBGPlanePutWord(t3, (t16 + 0x1), ((((((int)(u20 * 255.0f) << 16) << 8) | ((int)(u20 * 255.0f) << 16)) | ((int)(u20 * 255.0f) << 8)) | (int)(u20 * 255.0f)));
-    u23 = (((struct o1C_float *)((*(int *)(((((int)stk + 0) + 0x4) + 0x0)))))->v);
+    u23 = (((struct o1C_float *)((R1004)))->v);
     *(unsigned int *)(((t21 << 2) + 0xC300974)) = ((((((int)(u23 * 255.0f) << 16) << 8) | ((int)(u23 * 255.0f) << 16)) | ((int)(u23 * 255.0f) << 8)) | (int)(u23 * 255.0f));
-    *(unsigned int *)((((t21 + 0x1) << 2) + 0xC300974)) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0x4)));
-    *(unsigned int *)(((((t21 + 0x1) + 0x1) << 2) + 0xC300974)) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0x8)));
-    *(unsigned int *)((((((t21 + 0x1) + 0x1) + 0x1) << 2) + 0xC300974)) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0xC)));
-    t30 = *(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0));
-    *(unsigned int *)(((int)stk + 0)) = t30;
-    t34 = kmiBGPlanePutColor2(t3, ((((t21 + 0x1) + 0x1) + 0x1) + 0x1), (*(int *)(((*(int *)(((int)stk + 0))) + 0x10))), (*(int *)((t30 + 0x14))));
-    u36 = (((struct o18_float *)((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0)))))->v);
+    *(unsigned int *)((((t21 + 0x1) << 2) + 0xC300974)) = (*(int *)(((R1008) + 0x4)));
+    *(unsigned int *)(((((t21 + 0x1) + 0x1) << 2) + 0xC300974)) = (*(int *)(((R1008) + 0x8)));
+    *(unsigned int *)((((((t21 + 0x1) + 0x1) + 0x1) << 2) + 0xC300974)) = (*(int *)(((R1008) + 0xC)));
+    t30 = R1008;
+    R1000 = t30;
+    t34 = kmiBGPlanePutColor2(t3, ((((t21 + 0x1) + 0x1) + 0x1) + 0x1), (*(int *)(((R1000) + 0x10))), (*(int *)((t30 + 0x14))));
+    u36 = (((struct o18_float *)((R1008)))->v);
     *(unsigned int *)(((t34 << 2) + 0xC300974)) = ((((((int)(u36 * 255.0f) << 16) << 8) | ((int)(u36 * 255.0f) << 16)) | ((int)(u36 * 255.0f) << 8)) | (int)(u36 * 255.0f));
-    u38 = (((struct o1C_float *)((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0)))))->v);
+    u38 = (((struct o1C_float *)((R1008)))->v);
     t39 = kmiBGPlanePutWord(t3, (t34 + 0x1), ((((((int)(u38 * 255.0f) << 16) << 8) | ((int)(u38 * 255.0f) << 16)) | ((int)(u38 * 255.0f) << 8)) | (int)(u38 * 255.0f)));
-    *(unsigned int *)(((t39 << 2) + 0xC300974)) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0x4)));
-    *(unsigned int *)((((t39 + 0x1) << 2) + 0xC300974)) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0x8)));
-    *(unsigned int *)(((((t39 + 0x1) + 0x1) << 2) + 0xC300974)) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0xC)));
-    t46 = *(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0));
-    *(unsigned int *)(((int)stk + 0)) = t46;
-    t50 = kmiBGPlanePutColor2(t3, (((t39 + 0x1) + 0x1) + 0x1), (*(int *)(((*(int *)(((int)stk + 0))) + 0x10))), (*(int *)((t46 + 0x14))));
-    u52 = (((struct o18_float *)((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0)))))->v);
+    *(unsigned int *)(((t39 << 2) + 0xC300974)) = (*(int *)(((R1012) + 0x4)));
+    *(unsigned int *)((((t39 + 0x1) << 2) + 0xC300974)) = (*(int *)(((R1012) + 0x8)));
+    *(unsigned int *)(((((t39 + 0x1) + 0x1) << 2) + 0xC300974)) = (*(int *)(((R1012) + 0xC)));
+    t46 = R1012;
+    R1000 = t46;
+    t50 = kmiBGPlanePutColor2(t3, (((t39 + 0x1) + 0x1) + 0x1), (*(int *)(((R1000) + 0x10))), (*(int *)((t46 + 0x14))));
+    u52 = (((struct o18_float *)((R1012)))->v);
     *(unsigned int *)(((t50 << 2) + 0xC300974)) = ((((((int)(u52 * 255.0f) << 16) << 8) | ((int)(u52 * 255.0f) << 16)) | ((int)(u52 * 255.0f) << 8)) | (int)(u52 * 255.0f));
-    u54 = (((struct o1C_float *)((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0)))))->v);
+    u54 = (((struct o1C_float *)((R1012)))->v);
     (((struct o0_uint *)0xC300A6C)->v) = ((kmiBGPlanePutWord(t3, (t50 + 0x1), ((((((int)(u54 * 255.0f) << 16) << 8) | ((int)(u54 * 255.0f) << 16)) | ((int)(u54 * 255.0f) << 8)) | (int)(u54 * 255.0f)))) << 2);
     t56 = kmiBGPlaneCountWords(t3);
     kmiBGPlaneSetPCW(t56, 0x0, 0x0);
-    (((struct o14_uint *)0xC300A6C)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0xC)));
+    (((struct o14_uint *)0xC300A6C)->v) = (*(int *)(((R1004) + 0xC)));
     return 0x0;
 }
 
@@ -1297,6 +1306,8 @@ float FUN_0c046d8c(int a4, int a5, int a6, int a7, int a8)
     register float w0_0;
     register float w0_1;
     register float w0_2;
+    int R1000;
+    R1000 = *(int *)((int)stk + 0);
     v0_6 = a4;
     v0_5 = a5;
     v0_0 = a6;
@@ -1308,7 +1319,7 @@ float FUN_0c046d8c(int a4, int a5, int a6, int a7, int a8)
     v0_3 = *(int *)(((*(int *)((((((v0_3 << 1) + v0_3) << 2) + v0_4) + 0x4))) + 0x0));
     *(unsigned int *)(((int)stk + 16)) = v0_3;
     *(unsigned int *)(((int)stk + 12)) = (*(int *)((v0_1 + 0x0)));
-    *(int *)((int)stk + 0) = a8;
+    R1000 = a8;
     w0_0 = FUN_0c0469e2(v0_6, v0_2, v0_3, v0_1, a8);
     v0_2 = *(int *)((v0_0 + 0x0));
     *(unsigned int *)(((int)stk + 4)) = (*(int *)((v0_1 + 0x0)));
@@ -1349,7 +1360,7 @@ float FUN_0c046d8c(int a4, int a5, int a6, int a7, int a8)
     v0_7 = *(int *)(((*(int *)((((((v0_3 << 1) + v0_3) << 2) + v0_7) + 0x4))) + 0x0));
     *(unsigned int *)(((int)stk + 4)) = 0x0;
     v0_8 = v0_4;
-    *(int *)((int)stk + 0) = v0_8;
+    R1000 = v0_8;
     w0_2 = FUN_0c0469e2(v0_2, v0_6, v0_7, (((int)stk + 0) + 0x4), v0_8);
     v0_8 = (v0_7);
     w0_1 = (w0_2);
@@ -1371,7 +1382,7 @@ float FUN_0c046d8c(int a4, int a5, int a6, int a7, int a8)
     v0_7 = *(int *)(((*(int *)((((((v0_3 << 1) + v0_3) << 2) + v0_7) + 0x4))) + 0x0));
     *(unsigned int *)(((int)stk + 4)) = (v0_7 - 1);
     v0_8 = v0_4;
-    *(int *)((int)stk + 0) = v0_8;
+    R1000 = v0_8;
     w0_2 = FUN_0c0469e2(v0_2, v0_6, v0_7, (((int)stk + 0) + 0x4), v0_8);
     w0_1 = (w0_2);
     if ((!(w0_0 > w0_2))) goto L_C046F46;
@@ -1393,7 +1404,7 @@ float FUN_0c046d8c(int a4, int a5, int a6, int a7, int a8)
     v0_6 = *(int *)(((*(int *)((((((v0_3 << 1) + v0_3) << 2) + v0_6) + 0x4))) + 0x0));
     *(unsigned int *)(((int)stk + 4)) = 0x0;
     v0_4 = v0_4;
-    *(int *)((int)stk + 0) = v0_4;
+    R1000 = v0_4;
     w0_2 = FUN_0c0469e2(v0_2, v0_5, v0_6, (((int)stk + 0) + 0x4), v0_4);
     w0_1 = (w0_2);
     if ((!(w0_0 > w0_2))) goto L_C046FC6;
@@ -1423,7 +1434,7 @@ float FUN_0c046d8c(int a4, int a5, int a6, int a7, int a8)
     v0_7 = *(int *)(((*(int *)((((((v0_3 << 1) + v0_3) << 2) + v0_7) + 0x4))) + 0x0));
     *(unsigned int *)(((int)stk + 4)) = (v0_7 - 1);
     v0_8 = v0_4;
-    *(int *)((int)stk + 0) = v0_8;
+    R1000 = v0_8;
     w0_2 = FUN_0c0469e2(v0_2, v0_6, v0_7, (((int)stk + 0) + 0x4), v0_8);
     v0_8 = (v0_7);
     w0_1 = (w0_2);
@@ -1436,7 +1447,6 @@ float FUN_0c046d8c(int a4, int a5, int a6, int a7, int a8)
 
 int FUN_0c03adec(float f4)
 {
-    int stk[10];
     register int t0;
     register int t1;
     register int t24;
@@ -1488,12 +1498,12 @@ int FUN_0c03adec(float f4)
         if (t35 == 14) {
             (((struct o0_uint *)0xC1EC71C)->v) = 0x0;
             FUN_0c01c468();
-            FUN_0c01c568(0x0, 0x0, 0x0, 0x0, *(int *)((int)stk + 8), *(int *)((int)stk + 8 + 4), *(int *)((int)stk + 8 + 8), *(int *)((int)stk + 8 + 12), *(int *)((int)stk + 8 + 16), *(int *)((int)stk + 8 + 20), *(int *)((int)stk + 8 + 24), *(int *)((int)stk + 8 + 28));
+            FUN_0c01c568();
         } else {
             if (t35 == 15) {
                 (((struct o0_uint *)0xC1EC71C)->v) = 0x1;
                 FUN_0c01c468();
-                FUN_0c01c568(0x0, 0x0, 0x0, 0x0, *(int *)((int)stk + 8), *(int *)((int)stk + 8 + 4), *(int *)((int)stk + 8 + 8), *(int *)((int)stk + 8 + 12), *(int *)((int)stk + 8 + 16), *(int *)((int)stk + 8 + 20), *(int *)((int)stk + 8 + 24), *(int *)((int)stk + 8 + 28));
+                FUN_0c01c568();
             } else {
                 FUN_0c01cb08();
             }
@@ -1515,8 +1525,6 @@ int FUN_0c03adec(float f4)
                 for (;;) {
                     nlLocate(0x23, 0x23);
                     t54 = ((((struct o34_int *)0xC2AC5CC)->v));
-                    *(int *)((int)stk + 4) = t54;
-                    *(int *)((int)stk + 0) = 0xC0C04EC;
                     nlPrintf(0xC0C04EC, t54);
                     FUN_0c06f240();
                 }
@@ -1535,7 +1543,7 @@ int FUN_0c03adec(float f4)
         (((struct o0_uint *)0xC1EC71C)->v) = ((((struct o4_int *)0xC1EC71C)->v));
         FUN_0c03e806(0x73E, 0x78);
         FUN_0c01c468();
-        FUN_0c01c568(0x0, 0x0, 0x0, 0x0, *(int *)((int)stk + 8), *(int *)((int)stk + 8 + 4), *(int *)((int)stk + 8 + 8), *(int *)((int)stk + 8 + 12), *(int *)((int)stk + 8 + 16), *(int *)((int)stk + 8 + 20), *(int *)((int)stk + 8 + 24), *(int *)((int)stk + 8 + 28));
+        FUN_0c01c568();
         (((struct o4_uint *)0xC2AC5CC)->v) = ((((struct o0_int *)0xC175C80)->v));
         (((struct o0_uint *)0xC2AC5CC)->v) = (((((struct o4_int *)0xC1EC71C)->v)) + ((((struct o8_int *)0xC1EC71C)->v)));
         (((struct o8_uint *)0xC2AC5CC)->v) = ((((struct o4_int *)0xC2A4660)->v));

@@ -35,6 +35,7 @@ import os as _tp_os, sys as _tp_sys  # noqa: E401  every tools folder on the imp
 _tp_sys.path.insert(0, _tp_os.path.normpath(_tp_os.path.join(_tp_os.path.dirname(_tp_os.path.abspath(__file__)), '..')))
 import toolpath  # noqa: E402,F401
 import bisect
+import shutil
 import glob
 import os
 import re
@@ -718,7 +719,8 @@ def main():
     _, _, pools = shift._listed()
     game = layout.region('game')
     G = movecheck.groups(starts, listed, [(a, s) for a, s, n in F], B.word, pools, end, stay=game[0] if game else None,
-                         pool32=lambda a: struct.unpack_from('<i', B.BIN, a - B.BASE)[0])
+                         pool32=lambda a: struct.unpack_from('<i', B.BIN, a - B.BASE)[0],
+                         extra=movecheck.tails(starts, [(a, s) for a, s, n in F]))     # code the listing missed after a function (movecheck.tails)
     if layout.region('keep'):
         escapes = keep_escapes(distance_items(B, F, piece, end), layout.region('keep'), layout.mirror)
         if escapes:
@@ -740,15 +742,24 @@ def main():
     gset_c = set(gstart_c)
     copy_join = set()                      # group starts that are not a unit boundary inside a copy
     second = {}
-    for j in run_need:                     # a copy that runs: its whole group, branches as names, labels _name__2
+    mixed_err = []
+    for j in sorted(run_need):             # a copy that runs: its whole group, branches as names, labels _name__2
         lo_g, hi_g = copy_extent(bisect.bisect_right(gstart_c, j) - 1, ties)
         copy_join |= {gstart_c[g_] for g_ in range(lo_g + 1, hi_g + 1)}
         run = range(gstart_c[lo_g], gstart_c[hi_g + 1] if hi_g + 1 < len(gstart_c) else len(P))
         if not MIXED and any(k not in dropped for k in run):
-            say('[ERROR] a pointer into %s needs a running copy of its group, which also holds pieces without C' % P[j][2])
-            sys.exit(1)
+            src = sorted('%08X->%08X' % (at, layout.mirror(v)) for at, v in words.items()
+                         if piece(at) not in dropped and mid(v) and not v & 1 and piece(layout.mirror(v)) == j)
+            src += sorted('C->%08X' % layout.mirror(v) for v in calls if mid(v) and piece(layout.mirror(v)) == j)
+            mixed_err.append('%s (%s; group without C: %s)' % (P[j][2], ', '.join(src[:4]),
+                                                                ', '.join(P[k][2] for k in run if k not in dropped)[:200]))
+            continue
         for k in run:
             second[k] = '__2'
+    if mixed_err:                          # every one at once (a build per piece is 11 minutes of movecheck)
+        say('[ERROR] %d pointer(s) into a piece need a running copy of its group, which also holds pieces without C:\n  %s'
+            % (len(mixed_err), '\n  '.join(mixed_err)))
+        sys.exit(1)
     for j in read_need:                    # bytes the C reads (pool words, mova tables, the data after the code): that piece
         second.setdefault(j, '__d')        # alone, never run, its branches back as raw words (so none can be out of reach)
     druns = {}
@@ -1001,7 +1012,21 @@ def main():
                     jobs.append((path_, o))
         return jobs
 
+    asm_round = [0]
+
     def assemble(jobs):
+        # each call assembles copies under a directory the container has never seen: a VM's shared folder (colima's sshfs) caches a
+        # file's old size and bytes for seconds, and a unit written again with its veneers was read cut short (Crazy Taxi 2 u00009:
+        # "SYNTAX ERROR IN DIRECTIVE", ".END NOT FOUND", the file itself assembling clean)
+        asm_round[0] += 1
+        fresh = '%s/asmx/%d_%d' % (OUT, os.getpid(), asm_round[0])
+        os.makedirs(fresh, exist_ok=True)
+        moved = []
+        for s_, o in jobs:
+            c_ = os.path.join(fresh, os.path.basename(s_))
+            shutil.copyfile(s_, c_)
+            moved.append((c_, o))
+        jobs = moved
         lines = ['set -e', 'A="$(find "$T" -maxdepth 1 -iname asmsh.exe -print -quit)"', 'mkdir -p /work/obj']
         for s_, o in jobs:                         # objects on the container's own disk, copied out once (tools/1-2-baseline/movecheck.py)
             w = 'Z:\\work\\obj\\' + os.path.basename(o)
@@ -1038,20 +1063,36 @@ def main():
     for n, a in cbuild.named_addresses().items():
         if '_' + n not in exported:
             names['_' + n] = a
+    fn_addr = {n: a for a, s, n in F}
+    for cf in sorted(glob.glob('src/*.c')):    # a C file's `@runtime _helper=game_name` (equiv.py runtime_aliases): the helper is that function
+        for h, g in re.findall(r'@runtime\s+(_\w+)\s*=\s*(\w+)', open(cf, errors='replace').read()):
+            if '_' + h not in exported and g in fn_addr:
+                names['_' + h] = fn_addr[g]
     for i in fill_pieces:                      # a word that names the filler (the boot copy's end, 0C014000): the address it had,
         names[P[i][1]] = (starts[i] & 0x1FFFFFFF) | link_top       # nothing before the game code moves
 
+    link_round = [0]
+
     def link(tag, defs, soft=False):
-        sub = ['elf', 'start P,C,D,B(%s)' % base_txt, 'output %s' % winpath('%s/%s.elf' % (OUT, tag)), 'print %s' % winpath('%s/%s.map' % (OUT, tag))]
+        # the linker writes into a directory the container has never seen, then the results are copied to OUT/<tag>.*: a VM's shared
+        # folder (colima's sshfs) still holds the entry of an output the host just deleted, and the linker cannot create it again
+        # (Crazy Taxi 2: "302 CANNOT OPEN FILE(build\mbuild\layout.elf)" on the second round of veneers)
+        link_round[0] += 1
+        D_ = '%s/lnkx/%d_%d' % (OUT, os.getpid(), link_round[0])
+        os.makedirs(D_, exist_ok=True)
+        sub = ['elf', 'start P,C,D,B(%s)' % base_txt, 'output %s' % winpath('%s/%s.elf' % (D_, tag)), 'print %s' % winpath('%s/%s.map' % (D_, tag))]
         sub += ['input %s' % winpath(o) for _, o in objects()]
         sub += ['define %s(%s)' % (n, lnk_hex(v)) for n, v in sorted(defs.items())] + ['exit']
-        open('%s/%s.sub' % (OUT, tag), 'w').write('\n'.join(sub) + '\n')
-        for x in ('.elf', '.map', '.bin'):
+        open('%s/%s.sub' % (D_, tag), 'w').write('\n'.join(sub) + '\n')
+        for x in ('.elf', '.map', '.bin', '.sub', '.lnk.log', '.e2b.log'):
             if os.path.exists('%s/%s%s' % (OUT, tag, x)):
                 os.remove('%s/%s%s' % (OUT, tag, x))
         rc, out = movecheck.docker('L="$(find "$T" -maxdepth 1 -iname lnk.exe -print -quit)"; E="$(find "$T" -maxdepth 1 -iname elf2bin.exe -print -quit)"; '
                                    '( wibo "$L" -subcommand=%s > %s/%s.lnk.log 2>&1 ); ( wibo "$E" -s %s %s %s > %s/%s.e2b.log 2>&1 ); echo done'
-                                   % (q('%s/%s.sub' % (OUT, tag)), OUT, tag, base_txt, q('%s/%s.elf' % (OUT, tag)), q('%s/%s.bin' % (OUT, tag)), OUT, tag))
+                                   % (q('%s/%s.sub' % (D_, tag)), D_, tag, base_txt, q('%s/%s.elf' % (D_, tag)), q('%s/%s.bin' % (D_, tag)), D_, tag))
+        for x in ('.elf', '.map', '.bin', '.sub', '.lnk.log', '.e2b.log'):
+            if os.path.exists('%s/%s%s' % (D_, tag, x)):
+                shutil.copyfile('%s/%s%s' % (D_, tag, x), '%s/%s%s' % (OUT, tag, x))
         log = open('%s/%s.lnk.log' % (OUT, tag), errors='replace').read().replace('\r', '')
         bad = [l for l in log.split('\n') if re.search(r'OVERFLOW|UNDEFINED|DUPLICATE|CANNOT FIND|ABORT|ATTRIBUTE MISMATCH', l)
                and 'CANNOT FIND SECTION' not in l]     # the start line names D for C's initialised data: none is no error

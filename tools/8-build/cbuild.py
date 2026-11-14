@@ -491,12 +491,12 @@ mkdir -p build/cbuild/$OBJD build/cbuild/log build/tmp
 one() {
   s=$1; me=cb.$s
   mkdir -p build/tmp/$me
-  if grep -q '#pragma inline_asm' build/cbuild/src/$s.c; then
-    if SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="Z:\\app\\build\\tmp\\$me" wibo "/sdk/$REL/shc.exe" "build\\cbuild\\src\\$s.c" -code=asm -object="build\\cbuild\\$OBJD\\$s.s" ${FLAGS_PLAIN:-$FLAGS} > build/cbuild/log/$s.log 2>&1 && wibo "/sdk/$REL/asmsh.exe" "build\\cbuild\\$OBJD\\$s.s" -object="build\\cbuild\\$OBJD\\$s.obj" -cpu=sh4 -endian=little >> build/cbuild/log/$s.log 2>&1; then rm -f build/cbuild/log/$s.log; else echo "FAIL $s"; fi
+  if grep -q '#pragma inline_asm' $SRCD/$s.c; then
+    if SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="Z:\\app\\build\\tmp\\$me" wibo "/sdk/$REL/shc.exe" "$SRCW\\$s.c" -code=asm -object="build\\cbuild\\$OBJD\\$s.s" ${FLAGS_PLAIN:-$FLAGS} > build/cbuild/log/$s.log 2>&1 && wibo "/sdk/$REL/asmsh.exe" "build\\cbuild\\$OBJD\\$s.s" -object="build\\cbuild\\$OBJD\\$s.obj" -cpu=sh4 -endian=little >> build/cbuild/log/$s.log 2>&1; then rm -f build/cbuild/log/$s.log; else echo "FAIL $s"; fi
     rm -rf build/tmp/$me; return
   fi
-  if SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="Z:\\app\\build\\tmp\\$me" wibo "/sdk/$REL/shc.exe" "build\\cbuild\\src\\$s.c" -object="build\\cbuild\\$OBJD\\$s.obj" $FLAGS > build/cbuild/log/$s.log 2>&1; then rm -f build/cbuild/log/$s.log
-  elif [ -n "$FLAGS_PLAIN" ] && SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="Z:\\app\\build\\tmp\\$me" wibo "/sdk/$REL/shc.exe" "build\\cbuild\\src\\$s.c" -object="build\\cbuild\\$OBJD\\$s.obj" $FLAGS_PLAIN > build/cbuild/log/$s.log 2>&1; then rm -f build/cbuild/log/$s.log; echo "PLAIN $s"
+  if SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="Z:\\app\\build\\tmp\\$me" wibo "/sdk/$REL/shc.exe" "$SRCW\\$s.c" -object="build\\cbuild\\$OBJD\\$s.obj" $FLAGS > build/cbuild/log/$s.log 2>&1; then rm -f build/cbuild/log/$s.log
+  elif [ -n "$FLAGS_PLAIN" ] && SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="Z:\\app\\build\\tmp\\$me" wibo "/sdk/$REL/shc.exe" "$SRCW\\$s.c" -object="build\\cbuild\\$OBJD\\$s.obj" $FLAGS_PLAIN > build/cbuild/log/$s.log 2>&1; then rm -f build/cbuild/log/$s.log; echo "PLAIN $s"
   else echo "FAIL $s"; fi
   rm -rf build/tmp/$me
 }
@@ -511,6 +511,9 @@ if [ "$PIECES" = 1 ]; then
 fi
 cat $LIST | xargs -P 2 -I{} bash -c 'one {}'
 '''
+
+
+_CB_SEQ = [0]
 
 
 def compile_all(stems=None, objd='obj', flags_edit=None):
@@ -552,7 +555,15 @@ def compile_all(stems=None, objd='obj', flags_edit=None):
     print('compile: %d of %d objects from the cache%s' % (len(stems) - len(todo), len(stems),
                                                           ('; %d of %d pieces' % (len(pkeys) - len(missing), len(pkeys))) if pkeys else ''))
     if todo or missing:
-        r = docker("export FLAGS='%s' FLAGS_PLAIN='%s' OBJD=%s PIECES=%d LIST=build/cbuild/list.txt; " % (flags, plain, objd, 1 if all_ else 0) + COMPILE)
+        # the sources compile from a folder the container has never seen: a VM's shared folder (colima's sshfs) serves the bytes it
+        # cached for a path the host just rewrote (Crazy Taxi 2, 2026-11-14), and a stale read would also be cached under the new key
+        _CB_SEQ[0] += 1
+        srcd = '%s/srcx/%d_%d' % (OUT, os.getpid(), _CB_SEQ[0])
+        os.makedirs(srcd, exist_ok=True)
+        for s_ in todo:
+            shutil.copyfile('%s/src/%s.c' % (OUT, s_), '%s/%s.c' % (srcd, s_))
+        r = docker("export FLAGS='%s' FLAGS_PLAIN='%s' OBJD=%s PIECES=%d LIST=build/cbuild/list.txt SRCD='%s' SRCW='%s'; "
+                   % (flags, plain, objd, 1 if all_ else 0, srcd, srcd.replace('/', '\\')) + COMPILE)
         print(r.stdout[-3000:], r.stderr[-1500:])
         for s_ in todo:
             buildcache.store(keys[s_], dest, s_)
@@ -800,6 +811,8 @@ def named_addresses():
     """{name: address} of globals.txt and symbols.txt: names the C uses that no object defines."""
     out = {}
     for f in ('globals.txt', 'symbols.txt'):
+        if not os.path.exists(f):          # globals.txt is optional (Crazy Taxi 2 has none yet)
+            continue
         for l in open(f):
             p = l.split()
             if p and not l.startswith('#') and len(p) >= 2:

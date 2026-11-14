@@ -205,10 +205,6 @@ void FUN_0c06f960(int a4)
     }
 }
 
-int FUN_0c06f920(int a4)
-{
-    return (kmSetBorderColor((a4 | 0xFF000000)));
-}
 
 float FUN_0c070c40(float f4)
 {
@@ -523,15 +519,7 @@ int syG2DmaResume(int a4)
     return 0x0;
 }
 
-int FUN_0c06f860(int a4)
-{
-    return (kmSetFogTableColor(a4));
-}
 
-int FUN_0c06f880(int a4)
-{
-    return (kmSetFogVertexColor(a4));
-}
 
 int FUN_0c073a60(int a4)
 {
@@ -548,3 +536,19 @@ int thunk_FUN_0c1616c4(int a4, int a5)
 {
     return ADXERR_EntryErrFunc(a4, a5);
 }
+
+int FUN_0c06f860(int a4)
+{
+    return (kmSetFogTableColor(a4));
+}
+
+int FUN_0c06f880(int a4)
+{
+    return (kmSetFogVertexColor(a4));
+}
+
+int FUN_0c06f920(int a4)
+{
+    return (kmSetBorderColor((a4 | 0xFF000000)));
+}
+

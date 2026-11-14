@@ -20,6 +20,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join('build', 'sizes.json')
 MARK = '\n\nvoid zz_size_end(void)\n{\n}\n'
+_SEQ = [0]
 
 
 def unit_head(text):
@@ -79,7 +80,8 @@ def unit_sizes(f, text=None, table=None, funcs=None):
     import equiv
     table = table if table is not None else equiv.names()
     funcs = funcs if funcs is not None else equiv.functions()
-    tmp = 'src/zz_sizes%d.c' % os.getpid()
+    _SEQ[0] += 1                  # a new name per compile: a VM's shared folder (colima's sshfs) serves the previous file's cached bytes
+    tmp = 'src/zz_sizes%d_%d.c' % (os.getpid(), _SEQ[0])     # under a reused name (Crazy Taxi 2: 129 of 218 units "Illegal token", "Undeclared name")
     open(tmp, 'w').write((text if text is not None else open(f, errors='replace').read()) + MARK)
     try:
         defines, defined = equiv.outside_names(tmp, table)

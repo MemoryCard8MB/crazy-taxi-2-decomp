@@ -231,13 +231,18 @@ int FUN_0c06d6e0(void)
     register int t12;
     register int t20;
     register int t35;
+    int R1000;
+    int R1004;
+
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
 
     FUN_0c07ff00();
     FUN_0c06e700((((int)stk + 0) + 0x14), 0xC17596C, ((((struct o4_float *)0xC112AD4)->v)));
     FUN_0c06e700((((int)stk + 0) + 0x14), 0xC17597C, ((((struct o8_float *)0xC112AD4)->v)));
     FUN_0c06e700((((int)stk + 0) + 0x14), 0xC17598C, ((((struct oC_float *)0xC112AD4)->v)));
     camSetTarget((((int)stk + 0) + 0x14), 0x0);
-    *(unsigned int *)(((int)stk + 0)) = ((int)((int)(FUN_0c0464ae()) % (int)((((struct o0_int *)0xC112AD4)->v))));
+    R1000 = ((int)((int)(FUN_0c0464ae()) % (int)((((struct o0_int *)0xC112AD4)->v))));
     t11 = 0xC06D830;
     t12 = 0x0;
     for (;;) {
@@ -250,11 +255,11 @@ int FUN_0c06d6e0(void)
             return t11;
         }
         t11 = ((((struct o0_int *)0xC112AD4)->v));
-        t11 = ((int)((int)((((((struct o0_int *)0xC112AD4)->v)) + t12) + (*(int *)(((int)stk + 0)))) % (int)t11));
-        *(unsigned int *)(((int)stk + 4)) = t11;
+        t11 = ((int)((int)((((((struct o0_int *)0xC112AD4)->v)) + t12) + (R1000)) % (int)t11));
+        R1004 = t11;
         t11 = 0xC;
         t11 = (FUN_0c07ff00());
-        t20 = *(int *)(((int)stk + 4));
+        t20 = R1004;
         t11 = (FUN_0c06e700((((int)stk + 0) + 0x20), 0xC17596C, (*(float *)((((((t20 << 1) + t20) << 2) + 0xC112AA4) + 0x0)))));
         t11 = 0x4;
         t11 = (FUN_0c06e700((((int)stk + 0) + 0x20), 0xC17597C, (*(float *)((((((t20 << 1) + t20) << 2) + 0xC112AA4) + t11)))));

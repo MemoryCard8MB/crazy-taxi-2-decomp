@@ -117,7 +117,7 @@ int FUN_0c09431e(int, int);
 int FUN_0c14e916(int);
 int FUN_0c16a4bc(int, int, int);
 int FUN_0c16a4d0(int, int, int);
-int MakeCollisionCellList(int, int, int, int, int, int, int, int, int, int, int, int);
+int MakeCollisionCellList(int, int);
 int SJ_SplitChunk(int, int, int);
 extern int _builtin_get_imask(void);
 extern void _builtin_set_imask(int);
@@ -592,32 +592,41 @@ int kmiProcessVertex_00(int a4)
     register int t3;
     register int t5;
     register int t31;
+    int R1000;
+    int R1004;
+    int R1008;
+    int R1012;
 
-    *(unsigned int *)(((((int)stk + 0) + 0x4) + 0x0)) = (*(int *)((a4 + 0x0)));
-    *(unsigned int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0)) = (*(int *)((a4 + 0x4)));
-    *(unsigned int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0)) = (*(int *)((a4 + 0x8)));
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+
+    R1004 = (*(int *)((a4 + 0x0)));
+    R1008 = (*(int *)((a4 + 0x4)));
+    R1012 = (*(int *)((a4 + 0x8)));
     t3 = (((struct o4_int *)0xC300A6C)->v);
-    *(unsigned int *)(((int)stk + 0)) = ((((struct o8_int *)0xC300A6C)->v));
+    R1000 = ((((struct o8_int *)0xC300A6C)->v));
     t5 = (((struct oC_int *)0xC300A6C)->v);
     (((struct o0_uint *)0xC300974)->v) = t3;
-    (((struct o4_uint *)0xC300974)->v) = (*(int *)(((int)stk + 0)));
+    (((struct o4_uint *)0xC300974)->v) = (R1000);
     (((struct o8_uint *)0xC300974)->v) = t5;
-    (((struct oC_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0x4)));
-    (((struct o10_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0x8)));
-    (((struct o14_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0xC)));
-    (((struct o18_uint *)0xC300974)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0x18)));
-    (((struct o1C_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0x4)));
-    (((struct o20_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0x8)));
-    (((struct o24_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0xC)));
-    (((struct o28_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x4) + 0x0))) + 0x18)));
-    (((struct o2C_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0x4)));
-    (((struct o30_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0x8)));
-    (((struct o34_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0xC)));
-    (((struct o38_uint *)0xC300974)->v) = (*(int *)(((*(int *)((((((int)stk + 0) + 0x4) + 0x8) + 0x0))) + 0x18)));
+    (((struct oC_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0x4)));
+    (((struct o10_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0x8)));
+    (((struct o14_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0xC)));
+    (((struct o18_uint *)0xC300974)->v) = (*(int *)(((R1004) + 0x18)));
+    (((struct o1C_uint *)0xC300974)->v) = (*(int *)(((R1008) + 0x4)));
+    (((struct o20_uint *)0xC300974)->v) = (*(int *)(((R1008) + 0x8)));
+    (((struct o24_uint *)0xC300974)->v) = (*(int *)(((R1008) + 0xC)));
+    (((struct o28_uint *)0xC300974)->v) = (*(int *)(((R1008) + 0x18)));
+    (((struct o2C_uint *)0xC300974)->v) = (*(int *)(((R1012) + 0x4)));
+    (((struct o30_uint *)0xC300974)->v) = (*(int *)(((R1012) + 0x8)));
+    (((struct o34_uint *)0xC300974)->v) = (*(int *)(((R1012) + 0xC)));
+    (((struct o38_uint *)0xC300974)->v) = (*(int *)(((R1012) + 0x18)));
     (((struct o0_uint *)0xC300A6C)->v) = 0x3C;
     t31 = kmiBGPlaneCountWords(t3);
     kmiBGPlaneSetPCW(t31, 0x0, 0x0);
-    (((struct o14_uint *)0xC300A6C)->v) = (*(int *)(((*(int *)(((((int)stk + 0) + 0x4) + 0x0))) + 0xC)));
+    (((struct o14_uint *)0xC300A6C)->v) = (*(int *)(((R1004) + 0xC)));
     return 0x0;
 }
 
@@ -744,8 +753,11 @@ int getRootDistance(int a4, int a5, int a6, int a7, int a8, int a9, int a10)
     register int t22;
     register float u24;
     register float u26;
+    int R1000;
 
-    *(unsigned int *)(((int)stk + 0)) = a7;
+    R1000 = *(int *)((int)stk + 0);
+
+    R1000 = a7;
     t0 = FUN_0c04707e(a7, a9, a5);
     t1 = FUN_0c07ffac(t0);
     if ((int)t1 <= (int)0x1) {
@@ -756,7 +768,7 @@ int getRootDistance(int a4, int a5, int a6, int a7, int a8, int a9, int a10)
         } else {
             FUN_0c07ff00();
         }
-        t11 = *(int *)(((int)stk + 0));
+        t11 = R1000;
         *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 4))) + ((*(float *)((a6 + 0x0))) - (*(float *)((((((t11 << 1) + t11) << 2) + a4) + 0x0)))));
         *(float *)(((int)stk + 8)) = ((*(float *)(((int)stk + 8))) + (((((struct o4_float *)(a6))->v)) - ((((struct o4_float *)(((((t11 << 1) + t11) << 2) + a4)))->v))));
         *(float *)(((int)stk + 12)) = ((*(float *)(((int)stk + 12))) + (((((struct o8_float *)(a6))->v)) - ((((struct o8_float *)(((((t11 << 1) + t11) << 2) + a4)))->v))));
@@ -792,9 +804,14 @@ int ADX_DecodeMonoFloat(int a4, int a5, int a6, int a7, int a8, int a9, float f4
     register int t23;
     register float u6;
     register float u7;
+    int R1000;
+    int R1004;
+
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
 
     t0 = *(short *)((a7 + 0x0));
-    *(unsigned int *)(((int)stk + 4)) = (a7 + 0x2);
+    R1004 = (a7 + 0x2);
     t2 = 0x24;
     t3 = a6;
     t4 = 0x0;
@@ -809,14 +826,14 @@ int ADX_DecodeMonoFloat(int a4, int a5, int a6, int a7, int a8, int a9, float f4
         if ((int)t4 >= (int)a5) {
             t2 = a5;
             *(unsigned short *)((a7 + 0x0)) = ((unsigned int)(int)u11 >> 16);
-            *(unsigned short *)(((*(int *)(((int)stk + 4))) + 0x0)) = ((unsigned int)(int)u12 >> 16);
+            *(unsigned short *)(((R1004) + 0x0)) = ((unsigned int)(int)u12 >> 16);
             return t2;
         }
         t15 = *(short *)((t5 + 0x0));
         if ((0x8000 & (short)((unsigned char)((int)t15 >> 8) | ((t15 << 8) & 0xFFFFFF00))) != 0) {
             break;
         }
-        *(unsigned int *)(((int)stk + 0)) = 0x0;
+        R1000 = 0x0;
         t5 = (t5 + 0x2);
         u8 = (float)(int)(((short)((unsigned char)((int)t15 >> 8) | ((t15 << 8) & 0xFFFFFF00)) & 0x1FFF) + 0x1);
         u13 = u8;
@@ -856,8 +873,8 @@ int ADX_DecodeMonoFloat(int a4, int a5, int a6, int a7, int a8, int a9, float f4
             u11 = u8;
             *(unsigned short *)((t3 + 0x0)) = (short)((unsigned int)(int)u9 >> 16);
             t3 = (t3 + 0x2);
-            t23 = *(int *)(((int)stk + 0));
-            *(unsigned int *)(((int)stk + 0)) = (t23 + 0x2);
+            t23 = R1000;
+            R1000 = (t23 + 0x2);
             if ((int)(t23 + 0x2) >= (int)0x20) {
                 break;
             }
@@ -1262,7 +1279,7 @@ int FUN_0c029866(int a4, int a5, int a6, float f4)
         nlUnitVectorsd(a5, (((int)stk + 0) + 0x4));
         nlRotateV((((int)stk + 0) + 0x4), 0xC09DFA4);
         FUN_0c073a40(a4);
-        MakeCollisionCellList(a4, a5, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
+        MakeCollisionCellList(a4, a5);
         u8 = (((struct o8_float *)(a6))->v);
         *(unsigned int *)(((int)stk + 0)) = 0xC270F04;
         t10 = 0xC270F04;

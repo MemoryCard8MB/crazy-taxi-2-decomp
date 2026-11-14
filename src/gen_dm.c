@@ -2,6 +2,8 @@
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
 typedef struct { int w[4]; } Stk4;
+typedef struct { int w[1]; } Stk1;    /* a KMPACKEDARGB by value: one stack word (the callee reads @(4,r15) only) */
+typedef struct { int w[2]; } Stk2v;   /* two of them (kmSetColorClampValue reads @(4,r15) and @(8,r15)) */
 struct o0_float { float v; };
 struct o14_float { char p[0x14]; float v; };
 struct o18_float { char p[0x18]; float v; };
@@ -31,11 +33,11 @@ int kmSetPaletteData(int a4);
 int kmSetStrideWidth(int a4);
 int kmiResetBoard(void);
 int kmSetFogDensity(int a4);
-int kmSetColorClampValue(Stk4 s);
+int kmSetColorClampValue(Stk2v s);
 int FUN_0c15c60c(void);
 int FUN_0c075ba0(int a4);
-int kmSetFogTableColor(Stk4 s);
-int kmSetBorderColor(Stk4 s);
+int kmSetFogTableColor(Stk1 s);
+int kmSetBorderColor(Stk1 s);
 
 int nlMvObjPut(int a4, int a5)
 {
@@ -152,7 +154,7 @@ int kmSetFogDensity(int a4)
     return 0x0;
 }
 
-int kmSetColorClampValue(Stk4 s)
+int kmSetColorClampValue(Stk2v s)
 {
     kmiWriteRegister(0xBC, s.w[0]);
     kmiWriteRegister(0xC0, s.w[1]);
@@ -172,13 +174,13 @@ int FUN_0c075ba0(int a4)
     return FUN_0c075c00(0x1);
 }
 
-int kmSetFogTableColor(Stk4 s)
+int kmSetFogTableColor(Stk1 s)
 {
     kmiWriteRegister(0xB0, s.w[0]);
     return 0x0;
 }
 
-int kmSetBorderColor(Stk4 s)
+int kmSetBorderColor(Stk1 s)
 {
     kmiWriteRegister(0x40, s.w[0]);
     return 0x0;

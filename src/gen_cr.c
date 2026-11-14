@@ -555,8 +555,11 @@ int FUN_0c065478(int a4, int a5)
     register int t43;
     int t36;
     register int t37;
+    int R1000;
 
-    *(unsigned int *)(((int)stk + 0)) = a4;
+    R1000 = *(int *)((int)stk + 0);
+
+    R1000 = a4;
     FUN_0c067494(a5, 0x1);
     FUN_0c07fdc8();
     nlPushMatrix(0xC17596C);
@@ -581,7 +584,7 @@ int FUN_0c065478(int a4, int a5)
         nlMultiMatrix((a5 + 0x40));
         nlGetMatrix33on44((a5 + 0x40));
         nlPopMatrix(0x1);
-        *(unsigned int *)(((int)stk + 0)) = (a5 + 0x70);
+        R1000 = (a5 + 0x70);
         t43 = (FUN_0c05b77e((a5 + 0x70), (((int)stk + 0) + 0x34), (a5 + 0x70), (((((struct o20_float *)(a5))->v)) / ((-((((struct o1C_float *)(a5))->v))) + 1.0f))));
     } else {
         nlPushMatrix(0xC17596C);
@@ -589,7 +592,7 @@ int FUN_0c065478(int a4, int a5)
         nlMultiMatrix((((int)stk + 0) + 0x4));
         nlGetMatrix((a5 + 0x40));
         nlPopMatrix(0x1);
-        if (((int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x8))) > (int)0x1) && (t36 = *(int *)(((int)stk + 0)), t37 = *(int *)((t36 + 0x14)), t37 == 0)) {
+        if (((int)(*(int *)(((R1000) + 0x8))) > (int)0x1) && (t36 = R1000, t37 = *(int *)((t36 + 0x14)), t37 == 0)) {
             (((struct o80_uint *)(a5))->v) = (((((struct o80_int *)(a5))->v)) + 0x1);
             (((struct o8_float *)(a5))->v) = 0.0f;
             t43 = 0x8;
@@ -800,6 +803,13 @@ void FUN_0c030850(int a4)
     register int t5;
     register int t7;
     register int t12;
+    int R1000;
+    int R1004;
+    int R1008;
+
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
 
     t0 = nlLength((a4 + 0xC), (a4 + 0x58));
     if (!(t0 > (1.0f + 1.0f))) {
@@ -808,8 +818,8 @@ void FUN_0c030850(int a4)
         FUN_0c073a60(a4);
         MultiRot4Vec((a4 + 0x30));
         nlPushMatrix(0x0);
-        *(unsigned int *)(((int)stk + 8)) = 0xC129AA0;
-        *(unsigned int *)(((int)stk + 4)) = 0xC129D3C;
+        R1008 = 0xC129AA0;
+        R1004 = 0xC129D3C;
         t6 = 0x0;
         for (;;) {
             t7 = set_event(0x84, 0xC03010E);
@@ -829,13 +839,13 @@ void FUN_0c030850(int a4)
                     GetRotVec((t7 + 0x30));
                 }
                 FUN_0c072600(t7);
-                (((struct o54_uint *)(t7))->v) = (*(int *)(((int)stk + 8)));
-                (((struct o64_uint *)(t7))->v) = (*(int *)(((*(int *)(((*(int *)(((int)stk + 4))) + 0x0))) + 0x0)));
-                *(int *)((int)stk + 0) = (0xC + t7);
+                (((struct o54_uint *)(t7))->v) = (R1008);
+                (((struct o64_uint *)(t7))->v) = (*(int *)(((*(int *)(((R1004) + 0x0))) + 0x0)));
+                R1000 = (0xC + t7);
                 (((struct oC_float *)(t7))->v) = (((((struct oC_float *)(t7))->v)) + ((FUN_0c070e80()) + -0.5f));
-                *(int *)((int)stk + 0) = (0x10 + t7);
+                R1000 = (0x10 + t7);
                 (((struct o10_float *)(t7))->v) = (((((struct o10_float *)(t7))->v)) + ((FUN_0c070e80()) + -0.5f));
-                *(int *)((int)stk + 0) = (0x14 + t7);
+                R1000 = (0x14 + t7);
                 (((struct o14_float *)(t7))->v) = (((((struct o14_float *)(t7))->v)) + ((FUN_0c070e80()) + -0.5f));
                 SetColliObj(t7, 0x15);
                 t34 = FUN_0c070e60();

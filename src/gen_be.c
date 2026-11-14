@@ -88,7 +88,7 @@ int FUN_0c046724(int, int, float);
 int FUN_0c058ca6(int, int);
 int FUN_0c05be5c(int, float);
 int FUN_0c05c00c(int, int, float);
-int FUN_0c068166(int, int, int, int, int, int, int, int, int, int, int, int);
+int FUN_0c068166(int, int);
 int FUN_0c06e700(int, int, float);
 int FUN_0c070730(float);
 int FUN_0c070e60(void);
@@ -303,10 +303,21 @@ float FUN_0c0683b0(int a4, int a5, float f4)
     register float t73;
     register int t74;
     register float u98;
+    int R1000;
+    int R1004;
+    float R1008;
+    int R1012;
+    int R1016;
 
-    *(unsigned int *)(((int)stk + 4)) = a5;
-    *(float *)(((int)stk + 8)) = f4;
-    nlSubVector3op((((int)stk + 0) + 0x68), (*(int *)(((int)stk + 4))), (a4 + 0x70));
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(float *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+    R1016 = *(int *)((int)stk + 16);
+
+    R1004 = a5;
+    R1008 = f4;
+    nlSubVector3op((((int)stk + 0) + 0x68), (R1004), (a4 + 0x70));
     *(float *)(((int)stk + 108)) = 0.0f;
     t2 = FUN_0c073c60((((int)stk + 0) + 0x68));
     if (9.99999975e-05f > t2) {
@@ -314,7 +325,7 @@ float FUN_0c0683b0(int a4, int a5, float f4)
         u98 = 0.0f;
     } else {
         FUN_0c073c40((((int)stk + 0) + 0x68), (((int)stk + 0) + 0x68), (1.0f / t2));
-        *(unsigned int *)(((int)stk + 16)) = 0xFFFFFFFF;
+        R1016 = 0xFFFFFFFF;
         nlPushMatrix(0xC17596C);
         t5 = 0x0;
         u6 = 3.40282347e+38f;
@@ -323,27 +334,27 @@ float FUN_0c0683b0(int a4, int a5, float f4)
             *(float *)(((int)stk + 48)) = 0.0f;
             nlOuterProduct((((int)stk + 0) + 0x68), (((int)stk + 0) + 0x2C), (((int)stk + 0) + 0x20));
             t9 = FUN_0c073b40((((int)stk + 0) + 0x20), 0xC10D9E0);
-            *(unsigned int *)(((int)stk + 0)) = (((t5 << 1) + t5) << 2);
-            *(unsigned int *)(((int)stk + 12)) = ((((t5 << 1) + t5) << 2) + (((int)stk + 0) + 0x38));
-            FUN_0c072230(((*(int *)(((int)stk + 0))) + 0xC1102A0), ((((t5 << 1) + t5) << 2) + (((int)stk + 0) + 0x38)));
-            nlSubVector3op((((int)stk + 0) + 0x2C), (*(int *)(((int)stk + 12))), (a4 + 0x70));
+            R1000 = (((t5 << 1) + t5) << 2);
+            R1012 = ((((t5 << 1) + t5) << 2) + (((int)stk + 0) + 0x38));
+            FUN_0c072230(((R1000) + 0xC1102A0), ((((t5 << 1) + t5) << 2) + (((int)stk + 0) + 0x38)));
+            nlSubVector3op((((int)stk + 0) + 0x2C), (R1012), (a4 + 0x70));
             *(float *)(((int)stk + 48)) = 0.0f;
             nlOuterProduct((((int)stk + 0) + 0x68), (((int)stk + 0) + 0x2C), (((int)stk + 0) + 0x20));
             t16 = FUN_0c073b40((((int)stk + 0) + 0x20), 0xC10D9E0);
             if (0.0f > (t9 * t16)) {
-                nlSubVector3op((((int)stk + 0) + 0x14), ((*(int *)(((int)stk + 0))) + (((int)stk + 0) + 0x38)), 0xC17599C);
+                nlSubVector3op((((int)stk + 0) + 0x14), ((R1000) + (((int)stk + 0) + 0x38)), 0xC17599C);
                 nlSubVector3op((((int)stk + 0) + 0x2C), (a4 + 0x70), 0xC17599C);
                 *(float *)(((int)stk + 48)) = 0.0f;
                 nlOuterProduct((((int)stk + 0) + 0x14), (((int)stk + 0) + 0x2C), (((int)stk + 0) + 0x20));
                 t21 = FUN_0c073b40((((int)stk + 0) + 0x20), 0xC10D9E0);
-                nlSubVector3op((((int)stk + 0) + 0x2C), (*(int *)(((int)stk + 4))), 0xC17599C);
+                nlSubVector3op((((int)stk + 0) + 0x2C), (R1004), 0xC17599C);
                 *(float *)(((int)stk + 48)) = 0.0f;
                 nlOuterProduct((((int)stk + 0) + 0x14), (((int)stk + 0) + 0x2C), (((int)stk + 0) + 0x20));
                 t25 = FUN_0c073b40((((int)stk + 0) + 0x20), 0xC10D9E0);
                 if (0.0f > (t21 * t25)) {
-                    t27 = nlLength(((*(int *)(((int)stk + 0))) + (((int)stk + 0) + 0x38)), (a4 + 0x70));
+                    t27 = nlLength(((R1000) + (((int)stk + 0) + 0x38)), (a4 + 0x70));
                     if (u6 > t27) {
-                        *(unsigned int *)(((int)stk + 16)) = t5;
+                        R1016 = t5;
                         u6 = t27;
                     }
                 }
@@ -354,8 +365,8 @@ float FUN_0c0683b0(int a4, int a5, float f4)
             }
         }
         nlPopMatrix(0x1);
-        if ((int)(*(int *)(((int)stk + 16))) >= 0) {
-            t40 = *(int *)(((int)stk + 16));
+        if ((int)(R1016) >= 0) {
+            t40 = R1016;
             nlSubVector3op((((int)stk + 0) + 0x2C), ((((t40 << 1) + t40) << 2) + (((int)stk + 0) + 0x38)), (a4 + 0x70));
             *(float *)(((int)stk + 48)) = 0.0f;
             t43 = FUN_0c073c60((((int)stk + 0) + 0x2C));
@@ -384,8 +395,8 @@ float FUN_0c0683b0(int a4, int a5, float f4)
             t74 = (-t71);
         }
         (((struct o9C_float *)(a4))->v) = (((((struct o9C_float *)(a4))->v)) + 0.0199999996f);
-        if (((((struct o9C_float *)(a4))->v)) > (*(float *)(((int)stk + 8)))) {
-            (((struct o9C_float *)(a4))->v) = (*(float *)(((int)stk + 8)));
+        if (((((struct o9C_float *)(a4))->v)) > (R1008)) {
+            (((struct o9C_float *)(a4))->v) = (R1008);
         }
         (((struct o8_float *)(a4))->v) = (((((struct o9C_float *)(a4))->v)) / 0.5f);
         FUN_0c073360();
@@ -394,7 +405,7 @@ float FUN_0c0683b0(int a4, int a5, float f4)
         nlGetMatrix33on44((a4 + 0x40));
         FUN_0c07ff00();
         FUN_0c06e700((((int)stk + 0) + 0x2C), (a4 + 0x60), (-((((struct o9C_float *)(a4))->v))));
-        FUN_0c068166(a4, (((int)stk + 0) + 0x2C), 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
+        FUN_0c068166(a4, (((int)stk + 0) + 0x2C));
         nlPopMatrix(0x1);
         u98 = t2;
     }
@@ -583,6 +594,13 @@ int kmiVQallocFB(int a4, int a5, int a6, int a7, int a8, int a9)
     register int t7;
     register int t12;
     int t13;
+    int R1000;
+    int R1008;
+    int R1012;
+
+    R1000 = *(int *)((int)stk + 0);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
 
     *(unsigned short *)(((int)stk + 4)) = a4;
     t0 = ((~(((~a6) + 0x1) & 0x1F)) + 0x1);
@@ -645,8 +663,8 @@ int kmiVQallocFB(int a4, int a5, int a6, int a7, int a8, int a9)
                     *(unsigned int *)((t49 + 0x10)) = t2;
                     *(unsigned int *)((t15 + 0x10)) = ((*(int *)((t15 + 0x10))) - t2);
                     *(unsigned int *)((t15 + 0xC)) = ((*(int *)((t15 + 0xC))) + t2);
-                    *(unsigned int *)(((int)stk + 0)) = ((((t5 << 2) + t5) << 2) + 0xC173DEC);
-                    kmytex_FBEnQueueTop((*(int *)(((int)stk + 0))), (((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0x4), t49);
+                    R1000 = ((((t5 << 2) + t5) << 2) + 0xC173DEC);
+                    kmytex_FBEnQueueTop((R1000), (((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0x4), t49);
                     *(unsigned int *)((a7 + 0x8)) = (*(int *)((t49 + 0xC)));
                     *(unsigned int *)((t49 + 0x14)) = a7;
                     if ((*(short *)(((int)stk + 4))) == 0) {
@@ -671,8 +689,8 @@ int kmiVQallocFB(int a4, int a5, int a6, int a7, int a8, int a9)
                         *(unsigned int *)((t15 + 0x10)) = ((*(int *)((t15 + 0x10))) - t2);
                         *(unsigned int *)((t79 + 0xC)) = a5;
                         *(unsigned int *)((t79 + 0x10)) = t2;
-                        *(unsigned int *)(((int)stk + 0)) = ((((t5 << 2) + t5) << 2) + 0xC173DEC);
-                        kmytex_FBEnQueueTop((*(int *)(((int)stk + 0))), (((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0x4), t79);
+                        R1000 = ((((t5 << 2) + t5) << 2) + 0xC173DEC);
+                        kmytex_FBEnQueueTop((R1000), (((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0x4), t79);
                         *(unsigned int *)((a7 + 0x8)) = (*(int *)((t79 + 0xC)));
                         *(unsigned int *)((t79 + 0x14)) = a7;
                         if ((*(short *)(((int)stk + 4))) == 0) {
@@ -694,21 +712,21 @@ int kmiVQallocFB(int a4, int a5, int a6, int a7, int a8, int a9)
                     t177 = 0x3;
                     if (t105 != 0) {
                         t106 = kmytex_FBAllocEntry();
-                        *(unsigned int *)(((int)stk + 0)) = t106;
+                        R1000 = t106;
                         if (t106 == 0) {
                             kmytex_FBFreeEntry(t105);
                             t177 = 0x3;
                         } else {
-                            *(unsigned int *)(((int)stk + 12)) = (*(int *)((t15 + 0x10)));
+                            R1012 = (*(int *)((t15 + 0x10)));
                             t109 = *(int *)((t15 + 0xC));
-                            *(unsigned int *)(((int)stk + 8)) = (a5 - t109);
+                            R1008 = (a5 - t109);
                             *(unsigned int *)((t15 + 0x10)) = (a5 - t109);
                             *(unsigned int *)((t105 + 0xC)) = a5;
                             *(unsigned int *)((t105 + 0x10)) = t2;
                             kmytex_FBEnQueueTop(((((t5 << 2) + t5) << 2) + 0xC173DEC), (((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0x4), t105);
-                            *(unsigned int *)(((*(int *)(((int)stk + 0))) + 0xC)) = (a5 + t2);
-                            *(unsigned int *)(((*(int *)(((int)stk + 0))) + 0x10)) = (((*(int *)(((int)stk + 12))) - t2) - (*(int *)(((int)stk + 8))));
-                            kmytex_FBEnQueueEntry((((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0xC), (*(int *)(((int)stk + 0))), (*(int *)((((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0xC))));
+                            *(unsigned int *)(((R1000) + 0xC)) = (a5 + t2);
+                            *(unsigned int *)(((R1000) + 0x10)) = (((R1012) - t2) - (R1008));
+                            kmytex_FBEnQueueEntry((((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0xC), (R1000), (*(int *)((((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0xC))));
                             *(unsigned int *)((a7 + 0x8)) = (*(int *)((t105 + 0xC)));
                             *(unsigned int *)((t105 + 0x14)) = a7;
                             if ((*(short *)(((int)stk + 4))) == 0) {
@@ -1296,23 +1314,30 @@ int nlMvPutFaceClip(int a4, int a5, int a6, int a7)
     register int t113;
     register int t114;
     register int t115;
+    int R1000;
+    int R1004;
+    int R1008;
 
-    *(unsigned int *)(((int)stk + 8)) = (a6 + 0x4);
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+
+    R1008 = (a6 + 0x4);
     t0 = (((struct o0_int *)0xC2C3DD8)->v);
-    *(unsigned int *)(((int)stk + 4)) = (a6 + 0x2);
+    R1004 = (a6 + 0x2);
     t1 = (((struct o8_int *)0xC2C3DD8)->v);
     if (a4 == 0) {
         if (a5 != 7) {
             return nlMvGetFaceVerts(t0, a6, t1, a7);
         }
-        return nlMvSendTriangle(((((*(short *)((a6 + 0x0))) << 2) << 2) + t0), ((((*(short *)(((*(int *)(((int)stk + 4))) + 0x0))) << 2) << 2) + t0), ((((*(short *)(((*(int *)(((int)stk + 8))) + 0x0))) << 2) << 2) + t0));
+        return nlMvSendTriangle(((((*(short *)((a6 + 0x0))) << 2) << 2) + t0), ((((*(short *)(((R1004) + 0x0))) << 2) << 2) + t0), ((((*(short *)(((R1008) + 0x0))) << 2) << 2) + t0));
     }
     if (a4 == 7) {
         if (a5 == 7) {
             return a5;
         }
         if (a5 == 0) {
-            return nlMvSendTriangle(((((*(short *)((a6 + 0x0))) << 2) << 2) + t0), ((((*(short *)(((*(int *)(((int)stk + 4))) + 0x0))) << 2) << 2) + t0), ((((*(short *)(((*(int *)(((int)stk + 8))) + 0x0))) << 2) << 2) + t0));
+            return nlMvSendTriangle(((((*(short *)((a6 + 0x0))) << 2) << 2) + t0), ((((*(short *)(((R1004) + 0x0))) << 2) << 2) + t0), ((((*(short *)(((R1008) + 0x0))) << 2) << 2) + t0));
         }
         return nlMvGetFaceVerts(t0, a6, t1, a7);
     }
@@ -1327,34 +1352,34 @@ int nlMvPutFaceClip(int a4, int a5, int a6, int a7)
                                 return a4;
                             }
                             t15 = *(short *)(((a7 + 0x4) + 0x0));
-                            *(unsigned int *)(((int)stk + 8)) = ((t15 << 2) << 2);
+                            R1008 = ((t15 << 2) << 2);
                             t16 = *(short *)(((a7 + 0x2) + 0x0));
-                            *(unsigned int *)(((int)stk + 4)) = ((t16 << 2) << 2);
-                            return FUN_0c07a380(((*(int *)(((int)stk + 8))) + t14), ((*(int *)(((int)stk + 4))) + t14), (((t16 << 2) << 2) + t1), (((t15 << 2) << 2) + t1));
+                            R1004 = ((t16 << 2) << 2);
+                            return FUN_0c07a380(((R1008) + t14), ((R1004) + t14), (((t16 << 2) << 2) + t1), (((t15 << 2) << 2) + t1));
                         }
                         t19 = *(short *)(((a7 + 0x2) + 0x0));
-                        *(unsigned int *)(((int)stk + 8)) = ((t19 << 2) << 2);
+                        R1008 = ((t19 << 2) << 2);
                         t20 = *(short *)((a7 + 0x0));
-                        *(unsigned int *)(((int)stk + 4)) = ((t20 << 2) << 2);
-                        return FUN_0c07a380(((*(int *)(((int)stk + 8))) + t14), ((*(int *)(((int)stk + 4))) + t14), (((t20 << 2) << 2) + t1), (((t19 << 2) << 2) + t1));
+                        R1004 = ((t20 << 2) << 2);
+                        return FUN_0c07a380(((R1008) + t14), ((R1004) + t14), (((t20 << 2) << 2) + t1), (((t19 << 2) << 2) + t1));
                     }
                     t23 = *(short *)((a7 + 0x0));
-                    *(unsigned int *)(((int)stk + 8)) = ((t23 << 2) << 2);
+                    R1008 = ((t23 << 2) << 2);
                     t24 = *(short *)(((a7 + 0x4) + 0x0));
-                    *(unsigned int *)(((int)stk + 4)) = ((t24 << 2) << 2);
-                    return FUN_0c07a380(((*(int *)(((int)stk + 8))) + t14), ((*(int *)(((int)stk + 4))) + t14), (((t24 << 2) << 2) + t1), (((t23 << 2) << 2) + t1));
+                    R1004 = ((t24 << 2) << 2);
+                    return FUN_0c07a380(((R1008) + t14), ((R1004) + t14), (((t24 << 2) << 2) + t1), (((t23 << 2) << 2) + t1));
                 }
                 t27 = *(short *)(((a7 + 0x2) + 0x0));
-                *(unsigned int *)(((int)stk + 8)) = ((t27 << 2) << 2);
+                R1008 = ((t27 << 2) << 2);
                 t28 = *(short *)((a7 + 0x0));
-                *(unsigned int *)(((int)stk + 4)) = ((t28 << 2) << 2);
-                return FUN_0c07a380(((*(int *)(((int)stk + 8))) + t14), ((*(int *)(((int)stk + 4))) + t14), (((t28 << 2) << 2) + t1), (((t27 << 2) << 2) + t1));
+                R1004 = ((t28 << 2) << 2);
+                return FUN_0c07a380(((R1008) + t14), ((R1004) + t14), (((t28 << 2) << 2) + t1), (((t27 << 2) << 2) + t1));
             }
             t31 = *(short *)(((a7 + 0x4) + 0x0));
-            *(unsigned int *)(((int)stk + 8)) = ((t31 << 2) << 2);
+            R1008 = ((t31 << 2) << 2);
             t32 = *(short *)(((a7 + 0x2) + 0x0));
-            *(unsigned int *)(((int)stk + 4)) = ((t32 << 2) << 2);
-            return FUN_0c07a380(((*(int *)(((int)stk + 8))) + t14), ((*(int *)(((int)stk + 4))) + t14), (((t32 << 2) << 2) + t1), (((t31 << 2) << 2) + t1));
+            R1004 = ((t32 << 2) << 2);
+            return FUN_0c07a380(((R1008) + t14), ((R1004) + t14), (((t32 << 2) << 2) + t1), (((t31 << 2) << 2) + t1));
         }
         t37 = a4;
         t38 = a5;
@@ -1368,21 +1393,21 @@ int nlMvPutFaceClip(int a4, int a5, int a6, int a7)
                 if (t37 == 3) {
                     if (t38 == 2) {
                         t41 = *(short *)((a7 + 0x0));
-                        *(unsigned int *)(((int)stk + 4)) = ((t41 << 2) << 2);
-                        *(int *)((int)stk + 0) = (((t41 << 2) << 2) + t1);
+                        R1004 = ((t41 << 2) << 2);
+                        R1000 = (((t41 << 2) << 2) + t1);
                         t53 = (((t41 << 2) << 2) + t1);
-                        t56 = (*(int *)(((int)stk + 4)));
+                        t56 = (R1004);
                         t57 = ((((*(short *)(((a7 + 0x4) + 0x0))) << 2) << 2) + t14);
-                        t58 = ((((*(short *)(((*(int *)(((int)stk + 8))) + 0x0))) << 2) << 2) + t0);
+                        t58 = ((((*(short *)(((R1008) + 0x0))) << 2) << 2) + t0);
                         t59 = ((((*(short *)(((a7 + 0x2) + 0x0))) << 2) << 2) + t1);
                     } else {
                         t47 = *(short *)(((a7 + 0x4) + 0x0));
-                        *(unsigned int *)(((int)stk + 8)) = ((t47 << 2) << 2);
-                        *(int *)((int)stk + 0) = (((t47 << 2) << 2) + t1);
+                        R1008 = ((t47 << 2) << 2);
+                        R1000 = (((t47 << 2) << 2) + t1);
                         t53 = (((t47 << 2) << 2) + t1);
-                        t56 = (*(int *)(((int)stk + 8)));
+                        t56 = (R1008);
                         t57 = ((((*(short *)((a7 + 0x0))) << 2) << 2) + t14);
-                        t58 = ((((*(short *)(((*(int *)(((int)stk + 4))) + 0x0))) << 2) << 2) + t0);
+                        t58 = ((((*(short *)(((R1004) + 0x0))) << 2) << 2) + t0);
                         t59 = ((((*(short *)(((a7 + 0x2) + 0x0))) << 2) << 2) + t1);
                     }
                     t118 = (nlMvSendFan3((t56 + t14), t57, t58, t59, t53));
@@ -1390,39 +1415,39 @@ int nlMvPutFaceClip(int a4, int a5, int a6, int a7)
             } else {
                 if (t38 == 3) {
                     t71 = *(short *)((a7 + 0x0));
-                    *(unsigned int *)(((int)stk + 4)) = ((t71 << 2) << 2);
-                    *(int *)((int)stk + 0) = (((t71 << 2) << 2) + t1);
+                    R1004 = ((t71 << 2) << 2);
+                    R1000 = (((t71 << 2) << 2) + t1);
                     t80 = (((t71 << 2) << 2) + t1);
                     t83 = (*(short *)(((a7 + 0x2) + 0x0)));
-                    t84 = ((((*(short *)(((*(int *)(((int)stk + 8))) + 0x0))) << 2) << 2) + t0);
+                    t84 = ((((*(short *)(((R1008) + 0x0))) << 2) << 2) + t0);
                     t85 = ((((*(short *)(((a7 + 0x4) + 0x0))) << 2) << 2) + t1);
                 } else {
                     t76 = *(short *)(((a7 + 0x2) + 0x0));
-                    *(unsigned int *)(((int)stk + 4)) = ((t76 << 2) << 2);
-                    *(int *)((int)stk + 0) = (((t76 << 2) << 2) + t1);
+                    R1004 = ((t76 << 2) << 2);
+                    R1000 = (((t76 << 2) << 2) + t1);
                     t80 = (((t76 << 2) << 2) + t1);
                     t83 = (*(short *)((a7 + 0x0)));
                     t84 = ((((*(short *)((a6 + 0x0))) << 2) << 2) + t0);
                     t85 = ((((*(short *)(((a7 + 0x4) + 0x0))) << 2) << 2) + t1);
                 }
-                t118 = (nlMvSendFan3(((*(int *)(((int)stk + 4))) + t14), (((t83 << 2) << 2) + t14), t84, t85, t80));
+                t118 = (nlMvSendFan3(((R1004) + t14), (((t83 << 2) << 2) + t14), t84, t85, t80));
             }
         } else {
             if (t38 == 3) {
                 t98 = *(short *)(((a7 + 0x4) + 0x0));
-                *(unsigned int *)(((int)stk + 8)) = ((t98 << 2) << 2);
-                *(int *)((int)stk + 0) = (((t98 << 2) << 2) + t1);
+                R1008 = ((t98 << 2) << 2);
+                R1000 = (((t98 << 2) << 2) + t1);
                 t109 = (((t98 << 2) << 2) + t1);
-                t112 = (*(int *)(((int)stk + 8)));
+                t112 = (R1008);
                 t113 = ((((*(short *)(((a7 + 0x2) + 0x0))) << 2) << 2) + t14);
-                t114 = ((((*(short *)(((*(int *)(((int)stk + 4))) + 0x0))) << 2) << 2) + t0);
+                t114 = ((((*(short *)(((R1004) + 0x0))) << 2) << 2) + t0);
                 t115 = ((((*(short *)((a7 + 0x0))) << 2) << 2) + t1);
             } else {
                 t104 = *(short *)(((a7 + 0x2) + 0x0));
-                *(unsigned int *)(((int)stk + 4)) = ((t104 << 2) << 2);
-                *(int *)((int)stk + 0) = (((t104 << 2) << 2) + t1);
+                R1004 = ((t104 << 2) << 2);
+                R1000 = (((t104 << 2) << 2) + t1);
                 t109 = (((t104 << 2) << 2) + t1);
-                t112 = (*(int *)(((int)stk + 4)));
+                t112 = (R1004);
                 t113 = ((((*(short *)(((a7 + 0x4) + 0x0))) << 2) << 2) + t14);
                 t114 = ((((*(short *)((a6 + 0x0))) << 2) << 2) + t0);
                 t115 = ((((*(short *)((a7 + 0x0))) << 2) << 2) + t1);
@@ -1454,6 +1479,13 @@ int kmytex_ABSalloc(int a4, int a5, int a6, int a7, int a8, int a9)
     register int t7;
     register int t12;
     int t13;
+    int R1000;
+    int R1008;
+    int R1012;
+
+    R1000 = *(int *)((int)stk + 0);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
 
     *(unsigned short *)(((int)stk + 4)) = a4;
     t0 = ((~(((~a6) + 0x1) & 0x1F)) + 0x1);
@@ -1516,8 +1548,8 @@ int kmytex_ABSalloc(int a4, int a5, int a6, int a7, int a8, int a9)
                     *(unsigned int *)((t49 + 0x10)) = t2;
                     *(unsigned int *)((t15 + 0x10)) = ((*(int *)((t15 + 0x10))) - t2);
                     *(unsigned int *)((t15 + 0xC)) = ((*(int *)((t15 + 0xC))) + t2);
-                    *(unsigned int *)(((int)stk + 0)) = ((((t5 << 2) + t5) << 2) + 0xC173DEC);
-                    kmytex_FBEnQueueTop((*(int *)(((int)stk + 0))), (((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0x4), t49);
+                    R1000 = ((((t5 << 2) + t5) << 2) + 0xC173DEC);
+                    kmytex_FBEnQueueTop((R1000), (((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0x4), t49);
                     *(unsigned int *)((a7 + 0x1C)) = (*(int *)((t49 + 0xC)));
                     *(unsigned int *)((t49 + 0x14)) = a7;
                     if ((*(short *)(((int)stk + 4))) == 0) {
@@ -1542,8 +1574,8 @@ int kmytex_ABSalloc(int a4, int a5, int a6, int a7, int a8, int a9)
                         *(unsigned int *)((t15 + 0x10)) = ((*(int *)((t15 + 0x10))) - t2);
                         *(unsigned int *)((t79 + 0xC)) = a5;
                         *(unsigned int *)((t79 + 0x10)) = t2;
-                        *(unsigned int *)(((int)stk + 0)) = ((((t5 << 2) + t5) << 2) + 0xC173DEC);
-                        kmytex_FBEnQueueTop((*(int *)(((int)stk + 0))), (((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0x4), t79);
+                        R1000 = ((((t5 << 2) + t5) << 2) + 0xC173DEC);
+                        kmytex_FBEnQueueTop((R1000), (((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0x4), t79);
                         *(unsigned int *)((a7 + 0x1C)) = (*(int *)((t79 + 0xC)));
                         *(unsigned int *)((t79 + 0x14)) = a7;
                         if ((*(short *)(((int)stk + 4))) == 0) {
@@ -1565,21 +1597,21 @@ int kmytex_ABSalloc(int a4, int a5, int a6, int a7, int a8, int a9)
                     t177 = 0x3;
                     if (t105 != 0) {
                         t106 = kmytex_FBAllocEntry();
-                        *(unsigned int *)(((int)stk + 0)) = t106;
+                        R1000 = t106;
                         if (t106 == 0) {
                             kmytex_FBFreeEntry(t105);
                             t177 = 0x3;
                         } else {
-                            *(unsigned int *)(((int)stk + 12)) = (*(int *)((t15 + 0x10)));
+                            R1012 = (*(int *)((t15 + 0x10)));
                             t109 = *(int *)((t15 + 0xC));
-                            *(unsigned int *)(((int)stk + 8)) = (a5 - t109);
+                            R1008 = (a5 - t109);
                             *(unsigned int *)((t15 + 0x10)) = (a5 - t109);
                             *(unsigned int *)((t105 + 0xC)) = a5;
                             *(unsigned int *)((t105 + 0x10)) = t2;
                             kmytex_FBEnQueueTop(((((t5 << 2) + t5) << 2) + 0xC173DEC), (((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0x4), t105);
-                            *(unsigned int *)(((*(int *)(((int)stk + 0))) + 0xC)) = (a5 + t2);
-                            *(unsigned int *)(((*(int *)(((int)stk + 0))) + 0x10)) = (((*(int *)(((int)stk + 12))) - t2) - (*(int *)(((int)stk + 8))));
-                            kmytex_FBEnQueueEntry((((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0xC), (*(int *)(((int)stk + 0))), (*(int *)((((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0xC))));
+                            *(unsigned int *)(((R1000) + 0xC)) = (a5 + t2);
+                            *(unsigned int *)(((R1000) + 0x10)) = (((R1012) - t2) - (R1008));
+                            kmytex_FBEnQueueEntry((((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0xC), (R1000), (*(int *)((((((t5 << 2) + t5) << 2) + 0xC173DEC) + 0xC))));
                             *(unsigned int *)((a7 + 0x1C)) = (*(int *)((t105 + 0xC)));
                             *(unsigned int *)((t105 + 0x14)) = a7;
                             if ((*(short *)(((int)stk + 4))) == 0) {
@@ -1624,12 +1656,18 @@ int FUN_0c033f62(int a4, int a5, int a6)
     register int v0_4;
     register int v0_5;
     register int v0_6;
+    int R1000;
+    int R1004;
+    int R1008;
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
     R4 = a4;
     v0_4 = a5;
     R6 = a6;
-    *(unsigned int *)(((int)stk + 4)) = v0_4;
+    R1004 = v0_4;
     v0_0 = *(int *)((((R4 * 0x2C) + 0xC2A4680) + 0x0));
-    *(unsigned int *)(((int)stk + 8)) = (*(int *)((((v0_0 << 2) + (((R4 * 0x2C) + 0xC2A4680) + 0x4)) + 0x0)));
+    R1008 = (*(int *)((((v0_0 << 2) + (((R4 * 0x2C) + 0xC2A4680) + 0x4)) + 0x0)));
     R11 = (R6);
     v0_0 = (((v0_0 << 2) + (((R4 * 0x2C) + 0xC2A4680) + 0x4)));
     v0_4 = (((R4 * 0x2C) + 0xC2A4680));
@@ -1650,7 +1688,7 @@ int FUN_0c033f62(int a4, int a5, int a6)
     goto L_C034224;
     L_C034224:;
     if (!(((((int)R14 << (int)(*(int *)((v0_0 + 0x0)))) & R11) == 0))) goto L_C033FF2;
-    if (((*(int *)((v0_0 + 0x0))) == (*(int *)(((int)stk + 8))))) goto L_C034246;
+    if (((*(int *)((v0_0 + 0x0))) == (R1008))) goto L_C034246;
     FUN_0c07c8be(0x10DA9);
     v0_0 = (0x1);
     goto L_C034248;
@@ -1678,13 +1716,13 @@ int FUN_0c033f62(int a4, int a5, int a6)
     L_C0341AC:;
     if (((*(int *)((v0_0 + 0x0))) != 0)) goto L_C034216;
     *(unsigned int *)((v0_0 + 0x0)) = 0x10;
-    *(unsigned int *)(((int)stk + 0)) = 0xC0B36E4;
+    R1000 = 0xC0B36E4;
     v0_2 = (0xC0B36F8);
     R4 = (0xC0B36F8);
     R6 = (0xC0B36F4);
     R9 = (R7);
     L_C03420C:;
-    if (((unsigned int)R4 >= (unsigned int)(*(int *)(((int)stk + 0))))) goto L_C0341C6;
+    if (((unsigned int)R4 >= (unsigned int)(R1000))) goto L_C0341C6;
     goto L_C034224;
     L_C0341C6:;
     v0_3 = (R7);
@@ -1707,14 +1745,14 @@ int FUN_0c033f62(int a4, int a5, int a6)
     L_C034216:;
     v0_2 = *(int *)((v0_0 + 0x0));
     *(unsigned int *)((v0_0 + 0x0)) = (v0_2 + 0x1);
-    if (((int)(v0_2 + 0x1) < (int)(*(int *)(((int)stk + 4))))) goto L_C034224;
+    if (((int)(v0_2 + 0x1) < (int)(R1004))) goto L_C034224;
     *(unsigned int *)((v0_0 + 0x0)) = R7;
     goto L_C034224;
     L_C03418A:;
     v0_2 = *(int *)((v0_0 + 0x0));
     *(unsigned int *)((v0_0 + 0x0)) = (v0_2 - 1);
     if (((int)(v0_2 - 1) >= 0)) goto L_C03419A;
-    *(unsigned int *)((v0_0 + 0x0)) = ((*(int *)(((int)stk + 4))) - 1);
+    *(unsigned int *)((v0_0 + 0x0)) = ((R1004) - 1);
     goto L_C03419A;
     L_C034012:;
     v0_4 = *(int *)((v0_0 + 0x0));
@@ -1730,13 +1768,13 @@ int FUN_0c033f62(int a4, int a5, int a6)
     if (v0_5) goto L_C03404C;
     v0_3 = (v0_2);
     L_C034056:;
-    *(unsigned int *)(((int)stk + 0)) = (R6 + v0_4);
+    R1000 = (R6 + v0_4);
     v0_2 = (R7);
     if (((0x40 & R9) != 0)) goto L_C034074;
     if ((((((struct o8_int *)0xC2A4670)->v)) != 0)) goto L_C034080;
     if (((((((struct o4_int *)0xC2A4670)->v)) & 64) == 0)) goto L_C034080;
     L_C034074:;
-    v0_5 = (int)(R4 + 0x1) < (int)(*(int *)(((int)stk + 0)));
+    v0_5 = (int)(R4 + 0x1) < (int)(R1000);
     v0_2 = (R14);
     R4 = ((R4 + 0x1));
     if (v0_5) goto L_C034080;
@@ -1815,7 +1853,7 @@ int FUN_0c033f62(int a4, int a5, int a6)
     v0_2 = (int)(R4 - 1) >= (int)R6;
     R4 = ((R4 - 1));
     if (v0_2) goto L_C034164;
-    R4 = (((*(int *)(((int)stk + 0))) - 1));
+    R4 = (((R1000) - 1));
     goto L_C034164;
     L_C03404C:;
     v0_5 = (int)(v0_2 + 0x1) < (int)0x6;

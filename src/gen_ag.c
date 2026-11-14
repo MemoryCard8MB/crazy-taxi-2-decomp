@@ -2445,33 +2445,7 @@ int FUN_0c06b640(void)
     return t1;
 }
 
-int FUN_0c0719e0(int a4)
-{
-    int stk[2];
-    register int t1;
 
-    *(unsigned char *)((((int)stk + 4) + 0x3)) = (signed char)((unsigned int)((unsigned int)a4 >> 16) >> 8);
-    *(unsigned char *)((((int)stk + 4) + 0x2)) = (short)((unsigned int)a4 >> 16);
-    *(unsigned char *)((((int)stk + 4) + 0x1)) = ((int)a4 >> 8);
-    *(unsigned char *)((((int)stk + 4) + 0x0)) = a4;
-    t1 = (*(int *)((((int)stk + 4) + 0x0)));
-    *(int *)((int)stk + 0) = t1;
-    return (kmSetFogTableColor(t1));
-}
-
-int FUN_0c071a20(int a4)
-{
-    int stk[2];
-    register int t1;
-
-    *(unsigned char *)((((int)stk + 4) + 0x3)) = (signed char)((unsigned int)((unsigned int)a4 >> 16) >> 8);
-    *(unsigned char *)((((int)stk + 4) + 0x2)) = (short)((unsigned int)a4 >> 16);
-    *(unsigned char *)((((int)stk + 4) + 0x1)) = ((int)a4 >> 8);
-    *(unsigned char *)((((int)stk + 4) + 0x0)) = a4;
-    t1 = (*(int *)((((int)stk + 4) + 0x0)));
-    *(int *)((int)stk + 0) = t1;
-    return (kmSetFogVertexColor(t1));
-}
 
 int FUN_0c07215c(int a4, int a5, int a6)
 {
@@ -2723,3 +2697,32 @@ int mpdrv_set_bwrite(int a4, int a5, int a6, int a7, int a8, int a9, int a10)
     *(unsigned char *)(((*(int *)0xC16A484) + 0x0)) = 0x0;
     return t2;
 }
+
+int FUN_0c0719e0(int a4)
+{
+    int stk[2];
+    register int t1;
+
+    *(unsigned char *)((((int)stk + 4) + 0x3)) = (signed char)((unsigned int)((unsigned int)a4 >> 16) >> 8);
+    *(unsigned char *)((((int)stk + 4) + 0x2)) = (short)((unsigned int)a4 >> 16);
+    *(unsigned char *)((((int)stk + 4) + 0x1)) = ((int)a4 >> 8);
+    *(unsigned char *)((((int)stk + 4) + 0x0)) = a4;
+    t1 = (*(int *)((((int)stk + 4) + 0x0)));
+    *(int *)((int)stk + 0) = t1;
+    return (kmSetFogTableColor(t1));
+}
+
+int FUN_0c071a20(int a4)
+{
+    int stk[2];
+    register int t1;
+
+    *(unsigned char *)((((int)stk + 4) + 0x3)) = (signed char)((unsigned int)((unsigned int)a4 >> 16) >> 8);
+    *(unsigned char *)((((int)stk + 4) + 0x2)) = (short)((unsigned int)a4 >> 16);
+    *(unsigned char *)((((int)stk + 4) + 0x1)) = ((int)a4 >> 8);
+    *(unsigned char *)((((int)stk + 4) + 0x0)) = a4;
+    t1 = (*(int *)((((int)stk + 4) + 0x0)));
+    *(int *)((int)stk + 0) = t1;
+    return (kmSetFogVertexColor(t1));
+}
+

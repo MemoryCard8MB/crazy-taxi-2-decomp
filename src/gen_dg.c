@@ -69,7 +69,7 @@ int kmiFlipVertexBuffer(int);
 int kmiMemCopy4(int, int, int);
 int kmiReadRegister(int);
 int kmiReqRestOfDMA(int);
-int kmiStartRenderTextureEntry(int, int, int, int, int, int, int, int, int, int);
+int kmiStartRenderTextureEntry(int, int, int, int);
 extern int kmiWriteRegister();
 int nlObjPutSetLightDirectionV(int);
 int nlPopMatrix(int);
@@ -1395,7 +1395,7 @@ int kmRenderTexture(int a4)
     (((struct oC_uint *)0xC300DD8)->v) = ((((struct o4_int *)0xC300B84)->v));
     (((struct o0_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 8)));
     (((struct o4_uint *)0xC300B84)->v) = (*(int *)(((int)stk + 16)));
-    kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20));
+    kmiStartRenderTextureEntry(0xC300DD4, 0x0, 0x0, 0x0);
     *(unsigned int *)0xC300A84 = (*(int *)(((int)stk + 20)));
     kmiFlipVertexBuffer((*(int *)((v0_2 + 0x0))));
     if (!((((((struct o0_int *)0xC300C14)->v)) == 1))) goto L_C1588B8;

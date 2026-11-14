@@ -1095,8 +1095,10 @@ int FUN_0c037790(int a4)
     register float w0_2;
     register float w0_3;
     register float w0_4;
+    int R1000;
+    R1000 = *(int *)((int)stk + 0);
     R4 = a4;
-    *(unsigned int *)(((int)stk + 0)) = 0xC2A46AC;
+    R1000 = 0xC2A46AC;
     v0_0 = (0xC2A4FA8);
     v0_1 = (0x2);
     if (((int)((((struct o0_int *)0xC2A4F80)->v)) < (int)0x2)) goto L_C0377D4;
@@ -1113,8 +1115,8 @@ int FUN_0c037790(int a4)
     L_C0377E0:;
     if ((((((struct o0_int *)0xC2A46E4)->v)) != 1)) goto L_C03783C;
     (((struct o0_uint *)0xC2A46E4)->v) = v0_1;
-    if ((((*(int *)(((*(int *)(((int)stk + 0))) + 0x1C))) & 6) == 0)) goto L_C03783C;
-    *(unsigned int *)(((*(int *)(((int)stk + 0))) + 0x1C)) = v0_1;
+    if ((((*(int *)(((R1000) + 0x1C))) & 6) == 0)) goto L_C03783C;
+    *(unsigned int *)(((R1000) + 0x1C)) = v0_1;
     R0 = (0xC2A4F80);
     if ((((((struct o0_int *)0xC2A4F80)->v)) == 0)) goto L_C03780A;
     v0_0 = *(int *)((R0 + 0x0));
@@ -1171,7 +1173,7 @@ int FUN_0c037790(int a4)
     v0_3 = (0xC2A5858);
     w0_2 = (196.0f);
     w0_3 = (262.0f);
-    if ((((*(int *)(((*(int *)(((int)stk + 0))) + 0x1C))) & 4) != 0)) goto L_C0378C4;
+    if ((((*(int *)(((R1000) + 0x1C))) & 4) != 0)) goto L_C0378C4;
     L_C037B92:;
     if (((*(int *)((v0_2 + 0x0))) != 0)) goto L_C037B9C;
     goto L_C037D72;
@@ -1242,7 +1244,7 @@ int FUN_0c037790(int a4)
     R5 = (v0_3);
     goto L_C037D60;
     L_C037D6A:;
-    v0_0 = *(int *)(((int)stk + 0));
+    v0_0 = R1000;
     *(unsigned int *)((v0_0 + 0x1C)) = ((*(int *)((v0_0 + 0x1C))) | R4);
     goto L_C037D72;
     L_C037BE0:;
@@ -1278,10 +1280,10 @@ int FUN_0c037790(int a4)
     if ((((*(int *)((v0_4 + 0x0))) & 6) != 0)) goto L_C037B24;
     goto L_C037D72;
     L_C037B24:;
-    v0_5 = *(int *)(((int)stk + 0));
+    v0_5 = R1000;
     *(unsigned int *)((v0_5 + 0x1C)) = ((*(int *)((v0_5 + 0x1C))) & 0xFFFFFFFB);
     if (((*(int *)((v0_2 + 0x0))) != 0)) goto L_C037B84;
-    v0_4 = *(int *)(((int)stk + 0));
+    v0_4 = R1000;
     *(unsigned int *)((v0_4 + 0x1C)) = ((*(int *)((v0_4 + 0x1C))) | 0x8);
     if (((int)((((struct o0_int *)0xC2A4F80)->v)) < (int)v0_1)) goto L_C037B54;
     FUN_0c03386a(0x4);

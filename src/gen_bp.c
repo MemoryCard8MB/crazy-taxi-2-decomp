@@ -425,19 +425,26 @@ int FUN_0c0311f2(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
     int t91;
     register int t98;
     register int t99;
+    int R1000;
+    int R1004;
+    int R1008;
+
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
 
     t0 = *(int *)0xC1EC848;
     (((struct o0_uint *)0xC289D04)->v) = t0;
-    *(unsigned int *)(((int)stk + 0)) = 0x0;
-    *(unsigned int *)(((int)stk + 8)) = 0xC12A604;
-    *(unsigned int *)(((int)stk + 4)) = 0xC12A604;
+    R1000 = 0x0;
+    R1008 = 0xC12A604;
+    R1004 = 0xC12A604;
     t2 = 0x0;
     t3 = 0xC1EC848;
     t4 = 0xC12A604;
     t6 = (0x28A - t0);
     for (;;) {
-        if ((unsigned int)(*(int *)(((int)stk + 0))) < (unsigned int)0xB3) {
-            t7 = (*(int *)(((int)stk + 0)));
+        if ((unsigned int)(R1000) < (unsigned int)0xB3) {
+            t7 = (R1000);
             t7 = (t7 << 2);
             if (((int)t6 > (int)0xFFFFFFE8) && (t3 = 0x1E0, (int)t6 < (int)t3)) {
                 t8 = t7;
@@ -474,14 +481,14 @@ int FUN_0c0311f2(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
                     if (t1 == 35) {
                         t1 = 0xC031328;
                         t1 = (pfSize(((*(float *)((t1 + 0x0)))), u10));
-                        t44 = ((*(int *)(((*(int *)(((int)stk + 4))) + 0x0))) + 0x1);
+                        t44 = ((*(int *)(((R1004) + 0x0))) + 0x1);
                     } else {
                         t1 = (pfSize(u10, u10));
                         t44 = (*(int *)((t4 + 0x0)));
                     }
                     t1 = (FUN_0c02842e(t44));
                 }
-                t1 = (*(int *)(((int)stk + 8)));
+                t1 = (R1008);
                 t1 = (*(int *)((t1 + 0x0)));
                 t1 = (*(signed char *)((t1 + 0x0)));
                 if (t1 == 64) {
@@ -509,13 +516,13 @@ int FUN_0c0311f2(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
             t3 = t58;
             t5 = t61;
             t4 = (t4 + 0x4);
-            *(unsigned int *)(((int)stk + 0)) = ((*(int *)(((int)stk + 0))) + 0x1);
-            t3 = (*(int *)(((int)stk + 8)));
+            R1000 = ((R1000) + 0x1);
+            t3 = (R1008);
             t3 = (t3 + 0x4);
-            *(unsigned int *)(((int)stk + 8)) = t3;
-            t2 = (*(int *)(((int)stk + 4)));
+            R1008 = t3;
+            t2 = (R1004);
             t2 = (t2 + 0x4);
-            *(unsigned int *)(((int)stk + 4)) = t2;
+            R1004 = t2;
             continue;
         }
         break;
@@ -971,23 +978,38 @@ int syG2Write(int a4, int a5, int a6, int a7, int a8, int a9)
     register int t87;
     register int t96;
     int t93;
+    int R1000;
+    int R1004;
+    int R1008;
+    int R1012;
+    int R1016;
+    int R1020;
+    int R1024;
 
-    *(unsigned int *)(((int)stk + 20)) = a4;
-    *(unsigned int *)(((int)stk + 0)) = a5;
-    *(unsigned int *)(((int)stk + 4)) = a6;
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+    R1016 = *(int *)((int)stk + 16);
+    R1020 = *(int *)((int)stk + 20);
+    R1024 = *(int *)((int)stk + 24);
+
+    R1020 = a4;
+    R1000 = a5;
+    R1004 = a6;
     if (((((struct oD4_int *)((*(int *)0xC1743EC)))->v)) == 1) {
-        *(unsigned int *)(((int)stk + 24)) = (_builtin_get_imask());
+        R1024 = (_builtin_get_imask());
         _builtin_set_imask(0xF);
     }
     switch (a8) {
     case 0:
-        *(unsigned int *)(((int)stk + 16)) = 0x0;
+        R1016 = 0x0;
         break;
     case 1:
-        *(unsigned int *)(((int)stk + 16)) = 0x1;
+        R1016 = 0x1;
         break;
     case 2:
-        *(unsigned int *)(((int)stk + 16)) = 0xFFFFFFFF;
+        R1016 = 0xFFFFFFFF;
         break;
     }
     t13 = 0x0;
@@ -1002,22 +1024,22 @@ int syG2Write(int a4, int a5, int a6, int a7, int a8, int a9)
     }
     syG2DmaSuspendAll();
     FUN_0c16880c();
-    t17 = *(int *)(((int)stk + 4));
+    t17 = R1004;
     if (t17 != 1) {
         if (t17 != 2) {
             if (t17 == 4) {
-                *(unsigned int *)(((int)stk + 4)) = (*(int *)(((int)stk + 0)));
-                *(unsigned int *)(((int)stk + 8)) = (*(int *)(((int)stk + 20)));
-                *(unsigned int *)(((int)stk + 0)) = 0x0;
-                *(unsigned int *)(((int)stk + 12)) = ((*(int *)(((int)stk + 16))) << 2);
-                *(unsigned int *)(((int)stk + 16)) = (t13 << 2);
+                R1004 = (R1000);
+                R1008 = (R1020);
+                R1000 = 0x0;
+                R1012 = ((R1016) << 2);
+                R1016 = (t13 << 2);
                 if ((int)a7 > 0) {
                     t21 = t17;
                     t23 = 0x0;
                     t24 = (t13 << 2);
                     for (;;) {
-                        if (((*(int *)(((int)stk + 0))) & 0x7) == 0) {
-                            t24 = (*(int *)(((int)stk + 4)));
+                        if (((R1000) & 0x7) == 0) {
+                            t24 = (R1004);
                             t24 = (t24 & 0x1FFFFFFF);
                             t21 = (FUN_0c16880c());
                             if (((unsigned int)t24 >= (unsigned int)0x700000) && (t23 = 0x1000000, (unsigned int)t24 <= (unsigned int)t23)) {
@@ -1029,18 +1051,18 @@ int syG2Write(int a4, int a5, int a6, int a7, int a8, int a9)
                         }
                         t22 = t29;
                         t23 = t30;
-                        t22 = (*(int *)(((int)stk + 4)));
-                        t23 = (*(int *)(((*(int *)(((int)stk + 8))) + 0x0)));
+                        t22 = (R1004);
+                        t23 = (*(int *)(((R1008) + 0x0)));
                         *(unsigned int *)((t22 + 0x0)) = t23;
-                        t22 = (*(int *)(((int)stk + 8)));
-                        t22 = (t22 + (*(int *)(((int)stk + 12))));
-                        *(unsigned int *)(((int)stk + 8)) = t22;
-                        t21 = (*(int *)(((int)stk + 4)));
-                        t23 = (*(int *)(((int)stk + 16)));
+                        t22 = (R1008);
+                        t22 = (t22 + (R1012));
+                        R1008 = t22;
+                        t21 = (R1004);
+                        t23 = (R1016);
                         t21 = (t21 + t23);
-                        *(unsigned int *)(((int)stk + 4)) = t21;
-                        t39 = *(int *)(((int)stk + 0));
-                        *(unsigned int *)(((int)stk + 0)) = (t39 + 0x1);
+                        R1004 = t21;
+                        t39 = R1000;
+                        R1000 = (t39 + 0x1);
                         if ((int)(t39 + 0x1) >= (int)a7) {
                             break;
                         }
@@ -1048,18 +1070,18 @@ int syG2Write(int a4, int a5, int a6, int a7, int a8, int a9)
                 }
             }
         } else {
-            *(unsigned int *)(((int)stk + 4)) = (*(int *)(((int)stk + 0)));
-            *(unsigned int *)(((int)stk + 8)) = (*(int *)(((int)stk + 20)));
-            *(unsigned int *)(((int)stk + 0)) = 0x0;
-            *(unsigned int *)(((int)stk + 12)) = ((*(int *)(((int)stk + 16))) << 1);
-            *(unsigned int *)(((int)stk + 16)) = (t13 << 1);
+            R1004 = (R1000);
+            R1008 = (R1020);
+            R1000 = 0x0;
+            R1012 = ((R1016) << 1);
+            R1016 = (t13 << 1);
             if ((int)a7 > 0) {
                 t55 = t17;
                 t57 = 0x0;
                 t58 = (t13 << 1);
                 for (;;) {
-                    if (((*(int *)(((int)stk + 0))) & 0x7) == 0) {
-                        t58 = (*(int *)(((int)stk + 4)));
+                    if (((R1000) & 0x7) == 0) {
+                        t58 = (R1004);
                         t58 = (t58 & 0x1FFFFFFF);
                         t55 = (FUN_0c16880c());
                         if (((unsigned int)t58 >= (unsigned int)0x700000) && (t57 = 0x1000000, (unsigned int)t58 <= (unsigned int)t57)) {
@@ -1071,18 +1093,18 @@ int syG2Write(int a4, int a5, int a6, int a7, int a8, int a9)
                     }
                     t56 = t63;
                     t57 = t64;
-                    t56 = (*(int *)(((int)stk + 4)));
-                    t57 = (*(short *)(((*(int *)(((int)stk + 8))) + 0x0)));
+                    t56 = (R1004);
+                    t57 = (*(short *)(((R1008) + 0x0)));
                     *(unsigned short *)((t56 + 0x0)) = t57;
-                    t56 = (*(int *)(((int)stk + 8)));
-                    t56 = (t56 + (*(int *)(((int)stk + 12))));
-                    *(unsigned int *)(((int)stk + 8)) = t56;
-                    t55 = (*(int *)(((int)stk + 4)));
-                    t57 = (*(int *)(((int)stk + 16)));
+                    t56 = (R1008);
+                    t56 = (t56 + (R1012));
+                    R1008 = t56;
+                    t55 = (R1004);
+                    t57 = (R1016);
                     t55 = (t55 + t57);
-                    *(unsigned int *)(((int)stk + 4)) = t55;
-                    t73 = *(int *)(((int)stk + 0));
-                    *(unsigned int *)(((int)stk + 0)) = (t73 + 0x1);
+                    R1004 = t55;
+                    t73 = R1000;
+                    R1000 = (t73 + 0x1);
                     if ((int)(t73 + 0x1) >= (int)a7) {
                         break;
                     }
@@ -1090,20 +1112,20 @@ int syG2Write(int a4, int a5, int a6, int a7, int a8, int a9)
             }
         }
     } else {
-        *(unsigned int *)(((int)stk + 4)) = (*(int *)(((int)stk + 0)));
-        *(unsigned int *)(((int)stk + 12)) = (*(int *)(((int)stk + 20)));
-        *(unsigned int *)(((int)stk + 0)) = 0x0;
+        R1004 = (R1000);
+        R1012 = (R1020);
+        R1000 = 0x0;
         if ((int)a7 > 0) {
             t88 = 0x0;
             for (;;) {
                 t98 = t88;
-                if (((*(int *)(((int)stk + 0))) & 0x7) == 0) {
-                    t87 = (*(int *)(((int)stk + 4)));
+                if (((R1000) & 0x7) == 0) {
+                    t87 = (R1004);
                     t87 = (t87 & 0x1FFFFFFF);
-                    *(unsigned int *)(((int)stk + 8)) = t87;
+                    R1008 = t87;
                     FUN_0c16880c();
-                    t88 = (*(int *)(((int)stk + 8)));
-                    if (((unsigned int)t88 >= (unsigned int)0x700000) && (t93 = *(int *)(((int)stk + 8)), t87 = 0x1000000, (unsigned int)t93 <= (unsigned int)t87)) {
+                    t88 = (R1008);
+                    if (((unsigned int)t88 >= (unsigned int)0x700000) && (t93 = R1008, t87 = 0x1000000, (unsigned int)t93 <= (unsigned int)t87)) {
                         syG2AicaFifoWaitEmpty();
                     } else {
                         t98 = t88;
@@ -1113,17 +1135,17 @@ int syG2Write(int a4, int a5, int a6, int a7, int a8, int a9)
                 }
                 t87 = t96;
                 t88 = t98;
-                t88 = (*(int *)(((int)stk + 4)));
-                t87 = (*(signed char *)(((*(int *)(((int)stk + 12))) + 0x0)));
+                t88 = (R1004);
+                t87 = (*(signed char *)(((R1012) + 0x0)));
                 *(unsigned char *)((t88 + 0x0)) = t87;
-                t88 = (*(int *)(((int)stk + 16)));
-                *(unsigned int *)(((int)stk + 12)) = ((*(int *)(((int)stk + 12))) + t88);
-                t87 = (*(int *)(((int)stk + 4)));
+                t88 = (R1016);
+                R1012 = ((R1012) + t88);
+                t87 = (R1004);
                 t87 = (t87 + t13);
-                *(unsigned int *)(((int)stk + 4)) = t87;
-                t88 = (*(int *)(((int)stk + 0)));
+                R1004 = t87;
+                t88 = (R1000);
                 t88 = (t88 + 0x1);
-                *(unsigned int *)(((int)stk + 0)) = t88;
+                R1000 = t88;
                 if ((int)t88 >= (int)a7) {
                     break;
                 }
@@ -1132,7 +1154,7 @@ int syG2Write(int a4, int a5, int a6, int a7, int a8, int a9)
     }
     syG2DmaResumeAll();
     if (((((struct oD4_int *)((*(int *)0xC1743EC)))->v)) == 1) {
-        _builtin_set_imask(((unsigned int)((((*(int *)(((int)stk + 24))) & 0xF) << 2) << 2) >> 4));
+        _builtin_set_imask(((unsigned int)((((R1024) & 0xF) << 2) << 2) >> 4));
     }
     return 0x0;
 }
@@ -1649,14 +1671,30 @@ int vmsfs_init_work_normal(int a4, int a5, int a6)
     register int v0_0;
     register int v0_1;
     register int v0_2;
+    int R1000;
+    int R1004;
+    int R1016;
+    int R1020;
+    int R1024;
+    int R1028;
+    int R1032;
+    int R1036;
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
+    R1016 = *(int *)((int)stk + 16);
+    R1020 = *(int *)((int)stk + 20);
+    R1024 = *(int *)((int)stk + 24);
+    R1028 = *(int *)((int)stk + 28);
+    R1032 = *(int *)((int)stk + 32);
+    R1036 = *(int *)((int)stk + 36);
     v0_0 = a4;
     v0_1 = a5;
     v0_2 = a6;
-    *(unsigned int *)(((int)stk + 36)) = v0_0;
-    *(unsigned int *)(((int)stk + 32)) = v0_1;
-    *(unsigned int *)(((int)stk + 28)) = v0_2;
-    *(unsigned int *)(((int)stk + 0)) = 0xC2C8D2C;
-    v0_0 = *(int *)(((int)stk + 36));
+    R1036 = v0_0;
+    R1032 = v0_1;
+    R1028 = v0_2;
+    R1000 = 0xC2C8D2C;
+    v0_0 = R1036;
     v0_1 = (v0_0);
     if ((v0_0 == 15)) goto L_C08ABEE;
     if ((v0_1 == 33)) goto L_C08AC18;
@@ -1668,43 +1706,43 @@ int vmsfs_init_work_normal(int a4, int a5, int a6)
     *(unsigned int *)(((int)stk + 12)) = ((((struct oC_int *)0xC147820)->v));
     *(unsigned int *)(((int)stk + 8)) = ((((struct o1C_int *)0xC147820)->v));
     L_C08AC6A:;
-    *(unsigned int *)(((int)stk + 20)) = (*(int *)(((int)stk + 28)));
-    *(unsigned int *)(((int)stk + 16)) = ((((*(int *)(((int)stk + 36))) << 8) << 1) + 0x20);
-    *(unsigned int *)(((int)stk + 24)) = 0x0;
-    *(unsigned int *)(((int)stk + 4)) = 0x1;
+    R1020 = (R1028);
+    R1016 = ((((R1036) << 8) << 1) + 0x20);
+    R1024 = 0x0;
+    R1004 = 0x1;
     L_C08ADAC:;
-    if (((int)(*(int *)(((int)stk + 24))) >= (int)0x8)) goto L_C08ADB8;
-    if (!((((*(int *)(((int)stk + 32))) & (*(int *)(((int)stk + 4)))) != 0))) goto L_C08AD98;
-    *(unsigned char *)(((*(int *)(((int)stk + 0))) + 0x2)) = 0x1;
-    *(unsigned short *)(((*(int *)(((int)stk + 0))) + 0x0)) = (*(int *)(((int)stk + 24)));
-    *(unsigned int *)(((*(int *)(((int)stk + 0))) + 0x1C)) = (((*(int *)(((int)stk + 24))) * 0x4C) + 0xC2CD7EC);
-    *(unsigned char *)(((*(int *)(((int)stk + 0))) + 0xA)) = 0x0;
-    *(unsigned char *)(((*(int *)(((int)stk + 0))) + 0xB)) = 0x0;
-    *(unsigned char *)(((*(int *)(((int)stk + 0))) + 0xC)) = 0x0;
-    *(unsigned int *)(((*(int *)(((int)stk + 0))) + 0x2C)) = (*(int *)(((int)stk + 20)));
-    *(unsigned int *)(((*(int *)(((int)stk + 0))) + 0x20)) = ((*(int *)(((int)stk + 20))) + 0x20);
-    *(unsigned int *)(((*(int *)(((int)stk + 0))) + 0x24)) = ((*(int *)(((int)stk + 20))) + 0x220);
-    *(unsigned int *)(((*(int *)(((int)stk + 0))) + 0x28)) = ((((((*(int *)(((int)stk + 12))) + 0x1) << 8) << 1) + (*(int *)(((int)stk + 20)))) + 0x20);
-    *(unsigned char *)(((*(int *)(((int)stk + 0))) + 0x8)) = 0x0;
-    *(unsigned char *)(((*(int *)(((int)stk + 0))) + 0x9)) = 0x0;
-    *(unsigned short *)(((*(int *)(((int)stk + 0))) + 0xE)) = 0x1;
-    *(unsigned short *)(((*(int *)(((int)stk + 0))) + 0x10)) = (*(short *)(((int)stk + 12)));
-    *(unsigned short *)(((*(int *)(((int)stk + 0))) + 0x12)) = (*(short *)(((int)stk + 8)));
-    *(unsigned short *)(((*(int *)(((int)stk + 0))) + 0x14)) = 0x20;
-    memset(((*(int *)(((int)stk + 0))) + 0x38), 0x0, 0x10);
-    memset(((*(int *)(((int)stk + 0))) + 0x48), 0x0, 0x100);
+    if (((int)(R1024) >= (int)0x8)) goto L_C08ADB8;
+    if (!((((R1032) & (R1004)) != 0))) goto L_C08AD98;
+    *(unsigned char *)(((R1000) + 0x2)) = 0x1;
+    *(unsigned short *)(((R1000) + 0x0)) = (R1024);
+    *(unsigned int *)(((R1000) + 0x1C)) = (((R1024) * 0x4C) + 0xC2CD7EC);
+    *(unsigned char *)(((R1000) + 0xA)) = 0x0;
+    *(unsigned char *)(((R1000) + 0xB)) = 0x0;
+    *(unsigned char *)(((R1000) + 0xC)) = 0x0;
+    *(unsigned int *)(((R1000) + 0x2C)) = (R1020);
+    *(unsigned int *)(((R1000) + 0x20)) = ((R1020) + 0x20);
+    *(unsigned int *)(((R1000) + 0x24)) = ((R1020) + 0x220);
+    *(unsigned int *)(((R1000) + 0x28)) = ((((((*(int *)(((int)stk + 12))) + 0x1) << 8) << 1) + (R1020)) + 0x20);
+    *(unsigned char *)(((R1000) + 0x8)) = 0x0;
+    *(unsigned char *)(((R1000) + 0x9)) = 0x0;
+    *(unsigned short *)(((R1000) + 0xE)) = 0x1;
+    *(unsigned short *)(((R1000) + 0x10)) = (*(short *)(((int)stk + 12)));
+    *(unsigned short *)(((R1000) + 0x12)) = (*(short *)(((int)stk + 8)));
+    *(unsigned short *)(((R1000) + 0x14)) = 0x20;
+    memset(((R1000) + 0x38), 0x0, 0x10);
+    memset(((R1000) + 0x48), 0x0, 0x100);
     v0_1 = (0x47);
     v0_2 = (0x20);
-    memset((*(int *)(((*(int *)(((int)stk + 0))) + 0x2C))), v0_1, v0_2);
-    memset((*(int *)(((*(int *)(((int)stk + 0))) + 0x20))), 0x53, 0x20);
-    memset((*(int *)(((*(int *)(((int)stk + 0))) + 0x24))), 0x46, 0x20);
-    memset((*(int *)(((*(int *)(((int)stk + 0))) + 0x28))), 0x44, 0x20);
-    *(unsigned int *)(((int)stk + 20)) = ((*(int *)(((int)stk + 20))) + (*(int *)(((int)stk + 16))));
+    memset((*(int *)(((R1000) + 0x2C))), v0_1, v0_2);
+    memset((*(int *)(((R1000) + 0x20))), 0x53, 0x20);
+    memset((*(int *)(((R1000) + 0x24))), 0x46, 0x20);
+    memset((*(int *)(((R1000) + 0x28))), 0x44, 0x20);
+    R1020 = ((R1020) + (R1016));
     goto L_C08AD98;
     L_C08AD98:;
-    *(unsigned int *)(((int)stk + 24)) = ((*(int *)(((int)stk + 24))) + 0x1);
-    *(unsigned int *)(((int)stk + 4)) = ((*(int *)(((int)stk + 4))) << 1);
-    *(unsigned int *)(((int)stk + 0)) = ((*(int *)(((int)stk + 0))) + 0x154);
+    R1024 = ((R1024) + 0x1);
+    R1004 = ((R1004) << 1);
+    R1000 = ((R1000) + 0x154);
     goto L_C08ADAC;
     L_C08ADB8:;
     return 0x0;

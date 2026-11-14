@@ -2,6 +2,8 @@
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
 typedef struct { int w[4]; } Stk4;
+typedef struct { int w[1]; } Stk1;    /* a KMPACKEDARGB by value: one stack word (the callee reads @(4,r15) only) */
+typedef struct { int w[2]; } Stk2v;   /* two of them (kmSetColorClampValue reads @(4,r15) and @(8,r15)) */
 struct o0_int { int v; };
 struct o0_uint { unsigned int v; };
 struct o14_uint { char p[0x14]; unsigned int v; };
@@ -23,7 +25,7 @@ int kmiWriteRegister(int, int);
 int pfSize(float, float);
 int pfTextCenterPut(int, int, int);
 int FUN_0c02345c(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8);
-int kmSetFogVertexColor(Stk4 s);
+int kmSetFogVertexColor(Stk1 s);
 
 int FUN_0c02345c(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8)
 {
@@ -101,7 +103,7 @@ int FUN_0c02345c(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
     return t0;
 }
 
-int kmSetFogVertexColor(Stk4 s)
+int kmSetFogVertexColor(Stk1 s)
 {
     kmiWriteRegister(0xB4, s.w[0]);
     return 0x0;

@@ -91,7 +91,7 @@ int FUN_0c06027a(int, int);
 int FUN_0c068c14(int, int, float);
 extern int FUN_0c069e54();
 int FUN_0c06a00c(void);
-int FUN_0c06a754(int, int, int, int, int, int, int, int, int, int, int, int);
+int FUN_0c06a754(int, int, int);
 int FUN_0c06e700(int, int, float);
 int FUN_0c070730(float);
 int FUN_0c072230(int, int);
@@ -701,7 +701,6 @@ int FBfree(int a4, int a5)
 
 int FUN_0c066068(int a4, int a5, int a6, int a7, float f4, float f5)
 {
-    int stk[5];
 
     register int R1;
     register int R2;
@@ -730,7 +729,7 @@ int FUN_0c066068(int a4, int a5, int a6, int a7, float f4, float f5)
     FUN_0c06a00c();
     L_C06616C:;
     if ((((((struct o84_int *)(v0_0))->v)) != 0)) goto L_C066184;
-    FUN_0c06a754((*(int *)((v0_0 + 0x10))), (*(int *)((((((struct oAC_int *)(v0_0))->v)) + 0x4))), ((((struct oA4_int *)(v0_0))->v)), 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
+    FUN_0c06a754((*(int *)((v0_0 + 0x10))), (*(int *)((((((struct oAC_int *)(v0_0))->v)) + 0x4))), ((((struct oA4_int *)(v0_0))->v)));
     L_C066184:;
     if ((((((struct o84_int *)(v0_0))->v)) != 2)) goto L_C066196;
     FUN_0c068c14(0xC10FD0C, v0_0, 1.0f);
@@ -756,7 +755,6 @@ int FUN_0c066068(int a4, int a5, int a6, int a7, float f4, float f5)
     goto L_C06616C;
     L_C066144:;
     v0_1 = ((int (*)(int, int, int, int, float, float))((*(int *)((((*(int *)0xC1EC740) << 2) + 0xC110374)))))(v0_1, v0_2, v0_3, a7, w0_0, w0_1);
-    *(unsigned int *)(((int)stk + 0)) = v0_1;
     FUN_0c05f470(v0_0, (*(int *)(((((int)((int)v0_1 % (int)0x3)) << 2) + 0xC10FC9C))), w0_2, w0_2);
     goto L_C06616C;
 }
@@ -929,31 +927,35 @@ int FUN_0c08fe18(int a4)
     register int T_;
     register int v0_0;
     register int v0_1;
+    int R1000;
+    int R1004;
+    R1000 = *(int *)((int)stk + 0);
+    R1004 = *(int *)((int)stk + 4);
     v0_0 = a4;
-    *(unsigned int *)(((int)stk + 4)) = v0_0;
-    *(unsigned int *)(((int)stk + 0)) = (*(int *)(((*(int *)(((int)stk + 4))) + 0x1C)));
-    if (((int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x0))) < (int)0x1)) goto L_C08FE36;
-    if (((int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x0))) <= (int)0x7FF)) goto L_C08FE3E;
+    R1004 = v0_0;
+    R1000 = (*(int *)(((R1004) + 0x1C)));
+    if (((int)(*(int *)(((R1000) + 0x0))) < (int)0x1)) goto L_C08FE36;
+    if (((int)(*(int *)(((R1000) + 0x0))) <= (int)0x7FF)) goto L_C08FE3E;
     L_C08FE36:;
     return 0xFFFFFFFF;
     L_C08FE3E:;
-    if (((*(int *)(((*(int *)(((int)stk + 0))) + 0x0))) == (*(int *)(((*(int *)(((int)stk + 0))) + 0x8))))) goto L_C08FE52;
+    if (((*(int *)(((R1000) + 0x0))) == (*(int *)(((R1000) + 0x8))))) goto L_C08FE52;
     return 0xFFFFFFFF;
     L_C08FE52:;
-    if (((int)(*(int *)(((*(int *)(((int)stk + 0))) + 0xC))) < 0)) goto L_C08FE66;
-    if (!(((int)(*(int *)(((*(int *)(((int)stk + 0))) + 0xC))) < (int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x0)))))) goto L_C08FE66;
-    if (((int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x14))) < 0)) goto L_C08FE84;
-    if (((int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x14))) < (int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x0))))) goto L_C08FE8C;
+    if (((int)(*(int *)(((R1000) + 0xC))) < 0)) goto L_C08FE66;
+    if (!(((int)(*(int *)(((R1000) + 0xC))) < (int)(*(int *)(((R1000) + 0x0)))))) goto L_C08FE66;
+    if (((int)(*(int *)(((R1000) + 0x14))) < 0)) goto L_C08FE84;
+    if (((int)(*(int *)(((R1000) + 0x14))) < (int)(*(int *)(((R1000) + 0x0))))) goto L_C08FE8C;
     goto L_C08FE84;
     L_C08FE66:;
     return 0xFFFFFFFF;
     L_C08FE84:;
     return 0xFFFFFFFF;
     L_C08FE8C:;
-    if (((int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x34))) < 0)) goto L_C08FEA0;
-    if (!(((int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x34))) <= (int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x0)))))) goto L_C08FEA0;
-    if (((int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x38))) < 0)) goto L_C08FEBC;
-    if (((int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x38))) <= (int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x0))))) goto L_C08FEC4;
+    if (((int)(*(int *)(((R1000) + 0x34))) < 0)) goto L_C08FEA0;
+    if (!(((int)(*(int *)(((R1000) + 0x34))) <= (int)(*(int *)(((R1000) + 0x0)))))) goto L_C08FEA0;
+    if (((int)(*(int *)(((R1000) + 0x38))) < 0)) goto L_C08FEBC;
+    if (((int)(*(int *)(((R1000) + 0x38))) <= (int)(*(int *)(((R1000) + 0x0))))) goto L_C08FEC4;
     goto L_C08FEBC;
     L_C08FEA0:;
     return 0xFFFFFFFF;
@@ -961,13 +963,13 @@ int FUN_0c08fe18(int a4)
     return 0xFFFFFFFF;
     L_C08FEC4:;
     if (((*(int *)(((*(int *)0xC2C8D28) + 0x8))) != 0)) goto L_C08FEFC;
-    if (((int)(*(short *)(((*(int *)(((int)stk + 4))) + 0x10))) >= (int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x10))))) goto L_C08FEE8;
+    if (((int)(*(short *)(((R1004) + 0x10))) >= (int)(*(int *)(((R1000) + 0x10))))) goto L_C08FEE8;
     return 0xFFFFFFFF;
     L_C08FEE8:;
-    if (((int)(*(short *)(((*(int *)(((int)stk + 4))) + 0x12))) >= (int)(*(int *)(((*(int *)(((int)stk + 0))) + 0x18))))) goto L_C08FEFC;
+    if (((int)(*(short *)(((R1004) + 0x12))) >= (int)(*(int *)(((R1000) + 0x18))))) goto L_C08FEFC;
     return 0xFFFFFFFF;
     L_C08FEFC:;
-    v0_0 = *(int *)(((*(int *)(((int)stk + 0))) + 0x0));
+    v0_0 = *(int *)(((R1000) + 0x0));
     v0_1 = (v0_0);
     if ((v0_0 == 0xFF)) goto L_C08FF1C;
     if ((v0_1 == 0x1FF)) goto L_C08FF26;
@@ -975,17 +977,17 @@ int FUN_0c08fe18(int a4)
     if ((v0_1 == 0x7FF)) goto L_C08FF3A;
     return 0xFFFFFFFF;
     L_C08FF3A:;
-    *(unsigned int *)(((*(int *)(((int)stk + 4))) + 0x4)) = 0x3;
+    *(unsigned int *)(((R1004) + 0x4)) = 0x3;
     L_C08FF4C:;
     return 0x0;
     L_C08FF30:;
-    *(unsigned int *)(((*(int *)(((int)stk + 4))) + 0x4)) = 0x2;
+    *(unsigned int *)(((R1004) + 0x4)) = 0x2;
     goto L_C08FF4C;
     L_C08FF26:;
-    *(unsigned int *)(((*(int *)(((int)stk + 4))) + 0x4)) = 0x1;
+    *(unsigned int *)(((R1004) + 0x4)) = 0x1;
     goto L_C08FF4C;
     L_C08FF1C:;
-    *(unsigned int *)(((*(int *)(((int)stk + 4))) + 0x4)) = 0x0;
+    *(unsigned int *)(((R1004) + 0x4)) = 0x0;
     goto L_C08FF4C;
 }
 
@@ -1186,7 +1188,6 @@ int mwlRnaExecSvrHndl(int a4, int a5, int a6, int a7)
 
 int FUN_0c01bca2(void)
 {
-    int stk[6];
     register int t2;
     register int t4;
     register int t8;
@@ -1198,7 +1199,6 @@ int FUN_0c01bca2(void)
     }
     t4 = FUN_0c048262(t2);
     if (t4 == 0) {
-        *(unsigned int *)(((int)stk + 0)) = 0xC01D7B0;
         FUN_0c01d7b0();
     }
     t8 = *(int *)0xC1ECC90;
@@ -1241,10 +1241,13 @@ int FUN_0c06e0dc(int a4)
     register int t31;
     register float u7;
     register float u23;
+    int R1000;
 
-    *(unsigned int *)(((int)stk + 0)) = a4;
+    R1000 = *(int *)((int)stk + 0);
+
+    R1000 = a4;
     FUN_0c07ff00();
-    if (((*(signed char *)(((*(int *)(((int)stk + 0))) + 0xFE))) & 2) != 0) {
+    if (((*(signed char *)(((R1000) + 0xFE))) & 2) != 0) {
         u7 = ((((struct oC_float *)0xC112B58)->v));
     } else {
         u7 = (-((((struct oC_float *)0xC112B58)->v)));
@@ -1255,7 +1258,7 @@ int FUN_0c06e0dc(int a4)
     camSetTarget((((int)stk + 0) + 0x4), 0x2);
     FUN_0c018c8a(0.100000001f, 0.400000006f);
     FUN_0c07ff00();
-    if (((*(signed char *)(((*(int *)(((int)stk + 0))) + 0xFE))) & 2) != 0) {
+    if (((*(signed char *)(((R1000) + 0xFE))) & 2) != 0) {
         u23 = ((((struct o0_float *)0xC112B58)->v));
     } else {
         u23 = (-((((struct o0_float *)0xC112B58)->v)));
@@ -1275,10 +1278,13 @@ int FUN_0c06deb8(int a4)
     register int t31;
     register float u7;
     register float u23;
+    int R1000;
 
-    *(unsigned int *)(((int)stk + 0)) = a4;
+    R1000 = *(int *)((int)stk + 0);
+
+    R1000 = a4;
     FUN_0c07ff00();
-    if (((*(signed char *)(((*(int *)(((int)stk + 0))) + 0xFE))) & 2) != 0) {
+    if (((*(signed char *)(((R1000) + 0xFE))) & 2) != 0) {
         u7 = ((((struct o0_float *)0xC112B34)->v));
     } else {
         u7 = (-((((struct o0_float *)0xC112B34)->v)));
@@ -1289,7 +1295,7 @@ int FUN_0c06deb8(int a4)
     FUN_0c018b22((((int)stk + 0) + 0x4), 0x2);
     FUN_0c018c2a(0.100000001f, 0.400000006f);
     FUN_0c07ff00();
-    if (((*(signed char *)(((*(int *)(((int)stk + 0))) + 0xFE))) & 2) != 0) {
+    if (((*(signed char *)(((R1000) + 0xFE))) & 2) != 0) {
         u23 = ((((struct oC_float *)0xC112B34)->v));
     } else {
         u23 = (-((((struct oC_float *)0xC112B34)->v)));
@@ -1359,12 +1365,17 @@ int FUN_0c032436(int a4, int a5, int a6, int a7, int a8)
     int t5;
     register int t24;
     register int t23;
+    int R1008;
+    int R1012;
 
-    *(unsigned int *)(((int)stk + 12)) = a5;
-    *(unsigned int *)(((int)stk + 8)) = a7;
+    R1008 = *(int *)((int)stk + 8);
+    R1012 = *(int *)((int)stk + 12);
+
+    R1012 = a5;
+    R1008 = a7;
     t3 = buCalcBackupFileSize((unsigned short)((((struct o4C_short *)(a6))->v)), (unsigned short)((((struct o54_short *)(a6))->v)), ((((struct o5C_int *)(a6))->v)));
     t31 = 0xFFFF0000;
-    if (((*(int *)(((int)stk + 8))) != 0) && (t5 = *(int *)(((int)stk + 8)), t3 != t5)) {
+    if (((R1008) != 0) && (t5 = R1008, t3 != t5)) {
     } else {
         t7 = nlMalloc(((t3 << 8) << 1));
         t27 = 0xFFFF0000;
@@ -1378,7 +1389,7 @@ int FUN_0c032436(int a4, int a5, int a6, int a7, int a8)
                 { struct mvb8 { char b[8]; }; *(struct mvb8 *)((((int)stk + 8) + 0x14)) = *(struct mvb8 *)((((int)stk + 8) + 0x8)); }
                 *(int *)((int)stk + 4) = 0x80000010;
                 *(int *)((int)stk + 0) = (((int)stk + 4) + 0x18);
-                t23 = FUN_0c077660(a4, (*(int *)(((int)stk + 12))), t7, t8, (((int)stk + 4) + 0x18), 0x80000010);
+                t23 = FUN_0c077660(a4, (R1012), t7, t8, (((int)stk + 4) + 0x18), 0x80000010);
                 if (t23 != 0) {
                     nlFree(t7);
                 } else {

@@ -2957,10 +2957,6 @@ int FUN_0c06eea0(int a4)
     return t3;
 }
 
-int FUN_0c070330(int a4, int a5)
-{
-    return (kmSetColorClampValue(a4, a5));
-}
 
 void FUN_0c073ab0(void)
 {
@@ -3269,3 +3265,9 @@ int FUN_0c01ead0(int a4, int a5)
 {
     return FUN_0c01e990(((((a4 << 2) << 2) << 1) + 0xC0997C5), 0x1, a5);
 }
+
+int FUN_0c070330(int a4, int a5)
+{
+    return (kmSetColorClampValue(a4, a5));
+}
+

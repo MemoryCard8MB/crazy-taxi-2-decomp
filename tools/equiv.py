@@ -59,6 +59,7 @@ import hashlib
 import json
 import os
 import random
+import shutil
 import re
 import struct
 import subprocess
@@ -113,11 +114,32 @@ def sdk_env():
     sys.exit('[ERROR] no shc.exe under %s' % sdk)
 
 
+_CL_SEQ = [0]
+
+
 def compile_link(cfile, defines):
-    """shc + lnk + elf2bin in the dc-tools container: (bytes, {symbol: address})."""
+    """shc + lnk + elf2bin in the dc-tools container: (bytes, {symbol: address}).
+
+    Every call compiles a copy under a name no earlier call used (build/xc/<stem>_<pid>_<n>.c, its objects and link file the same):
+    a VM's shared folder (colima's sshfs on an x86 QEMU VM) serves the bytes it cached for a path for seconds after the host
+    rewrote it, so a file written again and compiled at once was read as the previous version or cut short (Crazy Taxi 2,
+    2026-11-14: sizes.py 129 of 218 units "Illegal token", "Undeclared name"; a stale source checks the old C, a stale .sub links
+    the old defines)."""
     sdk, rel = sdk_env()
-    stem = os.path.splitext(os.path.basename(cfile))[0]
+    _CL_SEQ[0] += 1
+    stem = '%s_%d_%d' % (os.path.splitext(os.path.basename(cfile))[0], os.getpid(), _CL_SEQ[0])
     os.makedirs('build/equiv', exist_ok=True)
+    os.makedirs('build/xc', exist_ok=True)
+    shutil.copyfile(cfile, 'build/xc/%s.c' % stem)
+    try:
+        return _compile_link(cfile, stem, defines, sdk, rel)
+    finally:
+        for p in ['build/xc/%s.c' % stem] + ['build/equiv/%s.%s' % (stem, x) for x in ('sub', 'obj', 's', 'elf', 'map', 'bin')]:
+            if os.path.exists(p):
+                os.remove(p)
+
+
+def _compile_link(cfile, stem, defines, sdk, rel):
     tw = 'Z:' + ('/sdk/' + rel).replace('/', '\\')
     me = '%s.%d' % (stem, os.getpid())      # the compiler's temp folder and the logs are per run: compiles may run side by side
     sub = ['elf', 'start P(%08X)' % SCRATCH, 'output build\\equiv\\%s.elf' % stem,
@@ -125,11 +147,11 @@ def compile_link(cfile, defines):
     sub += ['define %s(%08X)' % (n, a) for n, a in sorted(defines.items())] + ['exit']
     open('build/equiv/%s.sub' % stem, 'w').write('\n'.join(sub) + '\n')
     inline = '#pragma inline_asm' in open(cfile, errors='replace').read()      # C with assembly text: shc to assembly source, then asmsh
-    first = ('SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="Z:\\app\\build\\tmp\\%s" wibo "/sdk/%s/shc.exe" "src\\%s.c" '
+    first = ('SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="Z:\\app\\build\\tmp\\%s" wibo "/sdk/%s/shc.exe" "build\\xc\\%s.c" '
              '-object="build\\equiv\\%s.obj" %s > build/equiv/%s.shc.log 2>&1 || { cat build/equiv/%s.shc.log; exit 1; }; '
              % (me, rel, stem, stem, FLAGS, me, me))
     if inline:
-        first = ('SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="Z:\\app\\build\\tmp\\%s" wibo "/sdk/%s/shc.exe" "src\\%s.c" -code=asm '
+        first = ('SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="Z:\\app\\build\\tmp\\%s" wibo "/sdk/%s/shc.exe" "build\\xc\\%s.c" -code=asm '
                  '-object="build\\equiv\\%s.s" %s > build/equiv/%s.shc.log 2>&1 || { cat build/equiv/%s.shc.log; exit 1; }; '
                  'wibo "/sdk/%s/asmsh.exe" "build\\equiv\\%s.s" -object="build\\equiv\\%s.obj" -cpu=sh4 -endian=little '
                  '> build/equiv/%s.asm.log 2>&1 || { cat build/equiv/%s.asm.log; exit 1; }; '
