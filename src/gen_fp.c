@@ -1,0 +1,144 @@
+/* Straight-line functions with calls and guards (batch gen_fp): generated from the code and checked by tests. Calls are
+   to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
+
+struct o18_float { char p[0x18]; float v; };
+struct o38_float { char p[0x38]; float v; };
+struct o4_float { char p[0x4]; float v; };
+struct o40_uint { char p[0x40]; unsigned int v; };
+struct o44_int { char p[0x44]; int v; };
+struct o8_float { char p[0x8]; float v; };
+int FUN_0c029866(int, int, int, float);
+int FUN_0c0295c0(int a4, int a5, float f4, float f5);
+
+int FUN_0c0295c0(int a4, int a5, float f4, float f5)
+{
+    int stk[11];
+
+    register int R1;
+    register int R2;
+    register int R3;
+    register int R6;
+    register float F2;
+    register float F3;
+    register int T_;
+    register int v0_0;
+    register int v0_1;
+    register int v0_2;
+    register int v0_3;
+    register int v0_4;
+    register int v0_5;
+    register int v0_6;
+    register int v0_7;
+    register int v0_8;
+    register float w0_0;
+    register float w0_1;
+    register float w0_2;
+    register float w0_3;
+    register float w0_4;
+    register float w0_5;
+    register float w0_6;
+    register float w0_7;
+    register float w0_8;
+    v0_7 = a4;
+    v0_0 = a5;
+    w0_0 = f4;
+    w0_1 = f5;
+    *(unsigned int *)(((int)stk + 0)) = v0_7;
+    *(unsigned int *)(((int)stk + 4)) = v0_0;
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 0) + 0x8)) = *(struct mv3 *)(v0_0); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 0) + 0x14)) = *(struct mv3 *)((*(int *)(((int)stk + 0)))); }
+    *(float *)(((int)stk + 40)) = 1.0f;
+    *(unsigned int *)0xC270F98 = 0x32;
+    v0_2 = (0xFFFFFFFF);
+    v0_0 = (0x0);
+    v0_3 = (0x1C);
+    v0_4 = (0x0);
+    v0_1 = (0xC270F54);
+    v0_5 = (0xC270F50);
+    v0_6 = (0x1);
+    w0_1 = (w0_1);
+    w0_2 = (w0_0);
+    w0_3 = (1.0f);
+    w0_4 = (1.0f);
+    L_C02961A:;
+    v0_7 = (FUN_0c029866((((int)stk + 0) + 0x14), (((int)stk + 0) + 0x8), (((int)stk + 0) + 0x20), w0_1)) == 0;
+    if (v0_7) goto L_C0296F6;
+    w0_5 = *(float *)(((int)stk + 40));
+    v0_8 = (0x28);
+    w0_0 = (w0_5);
+    if ((w0_5 != 0.0f)) goto L_C029648;
+    v0_7 = *(int *)0xC270F98;
+    *(unsigned int *)0xC270F98 = (v0_7 - 1);
+    if (((int)(v0_7 - 1) > 0)) goto L_C029648;
+    L_C02975E:;
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((*(int *)(((int)stk + 0)))) = *(struct mv3 *)((((int)stk + 0) + 0x14)); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((*(int *)(((int)stk + 4)))) = *(struct mv3 *)((((int)stk + 0) + 0x8)); }
+    (((struct o40_uint *)(v0_1))->v) = v0_0;
+    return 0xC270F54;
+    L_C029648:;
+    v0_7 = *(int *)(((int)stk + 32));
+    w0_5 = (*(float *)(((int)stk + 20)));
+    w0_5 = w0_5 + w0_0 * (*(float *)(((int)stk + 8)));
+    *(float *)(((int)stk + 20)) = w0_5;
+    w0_5 = (*(float *)(((int)stk + 24)));
+    w0_5 = w0_5 + w0_0 * (*(float *)(((int)stk + 12)));
+    *(float *)(((int)stk + 24)) = w0_5;
+    w0_5 = (*(float *)(((int)stk + 28)));
+    w0_5 = w0_5 + w0_0 * (*(float *)(((int)stk + 16)));
+    *(float *)(((int)stk + 28)) = w0_5;
+    w0_6 = *(float *)((((((((struct o44_int *)(v0_7))->v)) * v0_3) + (*(int *)((v0_5 + 0x0)))) + 0x0));
+    w0_5 = w0_4;
+    w0_5 = w0_5 + w0_6 * w0_2;
+    w0_6 = *(float *)(((int)stk + 36));
+    w0_7 = (-(w0_6 * w0_5));
+    w0_8 = (*(float *)(((int)stk + 8)));
+    w0_8 = w0_8 + w0_7 * (*(float *)((v0_7 + 0x0)));
+    *(float *)(((int)stk + 8)) = w0_8;
+    w0_7 = (-(w0_6 * w0_5));
+    w0_8 = (*(float *)(((int)stk + 12)));
+    w0_8 = w0_8 + w0_7 * ((((struct o4_float *)(v0_7))->v));
+    *(float *)(((int)stk + 12)) = w0_8;
+    w0_5 = (-(w0_6 * w0_5));
+    w0_6 = (*(float *)(((int)stk + 16)));
+    w0_6 = w0_6 + w0_5 * ((((struct o8_float *)(v0_7))->v));
+    *(float *)(((int)stk + 16)) = w0_6;
+    v0_8 = (0x10);
+    v0_7 = (v0_7);
+    if ((v0_4 != 0)) goto L_C0296E2;
+    { struct mv3 { int w[3]; }; *(struct mv3 *)(v0_1) = *(struct mv3 *)((((int)stk + 0) + 0x14)); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_1 + 0xC)) = *(struct mv3 *)(v0_7); }
+    (((struct o18_float *)(v0_1))->v) = w0_0;
+    *(unsigned int *)((v0_1 + 0x1C)) = ((((struct o44_int *)(v0_7))->v));
+    L_C0296E2:;
+    *(float *)(((int)stk + 40)) = (w0_3 - w0_0);
+    v0_0 = ((v0_0 | ((int)v0_6 << (int)((((struct o44_int *)((*(int *)(((int)stk + 32)))))->v)))));
+    w0_3 = ((w0_3 - w0_0));
+    v0_4 = ((v0_4 + 0x1));
+    goto L_C02961A;
+    L_C0296F6:;
+    if ((v0_4 == 0)) goto L_C029726;
+    w0_0 = *(float *)(((int)stk + 40));
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_1 + 0x20)) = *(struct mv3 *)((((int)stk + 0) + 0x14)); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_1 + 0x2C)) = *(struct mv3 *)((*(int *)(((int)stk + 32)))); }
+    (((struct o38_float *)(v0_1))->v) = w0_0;
+    *(unsigned int *)((v0_1 + 0x3C)) = ((((struct o44_int *)((*(int *)(((int)stk + 32)))))->v));
+    w0_0 = (w0_0);
+    L_C02972C:;
+    w0_1 = (*(float *)(((int)stk + 20)));
+    w0_1 = w0_1 + w0_0 * (*(float *)(((int)stk + 8)));
+    *(float *)(((int)stk + 20)) = w0_1;
+    w0_1 = (*(float *)(((int)stk + 24)));
+    w0_1 = w0_1 + w0_0 * (*(float *)(((int)stk + 12)));
+    *(float *)(((int)stk + 24)) = w0_1;
+    w0_1 = (*(float *)(((int)stk + 28)));
+    w0_1 = w0_1 + w0_0 * (*(float *)(((int)stk + 16)));
+    *(float *)(((int)stk + 28)) = w0_1;
+    v0_8 = (0x1C);
+    w0_0 = (w0_0);
+    goto L_C02975E;
+    L_C029726:;
+    *(unsigned int *)((v0_1 + 0x3C)) = v0_2;
+    *(unsigned int *)((v0_1 + 0x1C)) = v0_2;
+    w0_0 = (w0_4);
+    goto L_C02972C;
+}
