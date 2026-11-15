@@ -2522,6 +2522,43 @@
      "fr0": "C0400000"
     }
    ]
+  },
+  {
+   "entry": "8C0666C0",
+   "end": "8C0667CC",
+   "regs": {
+    "r4": "0C19DC84",
+    "r5": "00000000",
+    "r6": "FFFFFFFF",
+    "r7": "FFFFFFFF",
+    "r8": "0C177D2C",
+    "r9": "00000001",
+    "r10": "0C02897A",
+    "r11": "0C10ED28",
+    "r12": "00000000",
+    "r13": "00000000",
+    "r14": "0C19DDA8",
+    "fr4": "C4FA05B0",
+    "fr5": "00000000",
+    "fr6": "45518F2D",
+    "fr7": "3F800000",
+    "fr8": "3FD40431",
+    "fr9": "49FEAAD7",
+    "fr10": "4A79E643",
+    "fr11": "395A65B3",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "fa56010c00000000287b170cb458170c8cdd190c0000000000000000dc9e4d3fcc72170c600e2d0c980f2d0cd0102d0c0000000094f54d43b005fac400000000",
+    "0C19DC84": "cce2910c",
+    "0C19DCC3": "00"
+   },
+   "calls": [
+    {
+     "r0": "FFFFFF92"
+    }
+   ],
+   "about": "snapshot apple_dropoff1 #1: the state at its entry in that frame (5 bytes read, 1 call answers)"
   }
  ]
 }

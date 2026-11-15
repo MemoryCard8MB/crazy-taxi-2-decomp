@@ -260,6 +260,13 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   passenger, drop-off, Crazy Pyramid, game over): every function of a frame, the original against the C on that state.
   After the fixes no game function differs there except in a leftover r0 nobody reads.
 
+- **Cases from real game state** (2026-11-15): 960 holdout cases ("about": "snapshot <label> #<n>") made by
+  `work/fix9/snapcases.py` from the 13 frame snapshots: the state at a function's first entries in that frame, reduced to the
+  bytes the original reads (pokes), the entry registers and stack words, and the real answers of its calls (only the register the
+  callee returns: fr0 for float, r0 else, none for void). Kept only when the original takes the same path from the pokes as from
+  the full state. Coverage 60.3% -> 63.5%. Held back (work/fix9/held_cases/): 9 functions whose C differs on them, mostly a
+  declared result or float parameter nothing uses (a leftover compared), two to investigate (FUN_0c042ba8, FUN_0c0440a4).
+
 ## Changing the game *(equivalent)*
 The boot block is not free space. The entry stub copies the start of the executable elsewhere and
 runs it there (seen on a game linked at `0x0C010000`: `0x0C010100-0x0C014000` to `0x0C004000`),

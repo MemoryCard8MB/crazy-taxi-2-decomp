@@ -7561,6 +7561,166 @@
      "fr0": "3DCCCCCD"
     }
    ]
+  },
+  {
+   "entry": "8C06B4C8",
+   "end": "8C06B5B0",
+   "regs": {
+    "r4": "0C2BA6A8",
+    "r5": "0C2BA6A8",
+    "r6": "8C00F374",
+    "r7": "0C1BFFE0",
+    "r8": "00000007",
+    "r9": "0C1EC744",
+    "r10": "00000003",
+    "r11": "0C1EC83C",
+    "r12": "0C2BA6B8",
+    "r13": "0C2BA6A8",
+    "r14": "0C2BA6A8",
+    "fr4": "00000000",
+    "fr5": "C7C34F80",
+    "fr6": "3D5CCE30",
+    "fr7": "80000000",
+    "fr8": "C1F6052D",
+    "fr9": "43B59A6D",
+    "fr10": "4370240C",
+    "fr11": "3F800000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "acd0010cdcda010c9018070cf002070c0cdb010c0000000044d0010cd2b0010c40c71e0c58c71e0c53454741534547412b000900224f062f462f562f05d407d0",
+    "0C1759A0": "b75b973e"
+   },
+   "calls": [],
+   "about": "snapshot apple_drive_empty1 #1: the state at its entry in that frame (4 bytes read, 0 call answers)"
+  },
+  {
+   "entry": "8C06B4C8",
+   "end": "8C06B5B0",
+   "regs": {
+    "r4": "0C2BA6A8",
+    "r5": "0C2BA6A8",
+    "r6": "8C00F374",
+    "r7": "0C1BFFE0",
+    "r8": "00000007",
+    "r9": "0C1EC744",
+    "r10": "00000003",
+    "r11": "0C1EC83C",
+    "r12": "0C2BA6B8",
+    "r13": "0C2BA6A8",
+    "r14": "0C2BA6A8",
+    "fr4": "41FBB254",
+    "fr5": "C7C34F80",
+    "fr6": "34BB5D08",
+    "fr7": "80000000",
+    "fr8": "411359AA",
+    "fr9": "43CF63FE",
+    "fr10": "4307A94D",
+    "fr11": "3F800000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "acd0010cdcda010c9018070cf002070c0cdb010c0000000044d0010cd2b0010c40c71e0c58c71e0c53454741534547412b000900224f062f462f562f05d407d0",
+    "0C1759A0": "875a5c42"
+   },
+   "calls": [],
+   "about": "snapshot apple_dropoff1 #1: the state at its entry in that frame (4 bytes read, 0 call answers)"
+  },
+  {
+   "entry": "8C06B4C8",
+   "end": "8C06B5B0",
+   "regs": {
+    "r4": "0C2BA6A8",
+    "r5": "0C2BA6A8",
+    "r6": "8C00F374",
+    "r7": "0C1BFFE0",
+    "r8": "00000007",
+    "r9": "0C1EC744",
+    "r10": "00000003",
+    "r11": "0C1EC83C",
+    "r12": "0C2BA6B8",
+    "r13": "0C2BA6A8",
+    "r14": "0C2BA6A8",
+    "fr4": "40E346E1",
+    "fr5": "C7C34F80",
+    "fr6": "AA37A320",
+    "fr7": "80000000",
+    "fr8": "C1F6D9EB",
+    "fr9": "43B58162",
+    "fr10": "43706C53",
+    "fr11": "3F800000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "acd0010cdcda010c9018070cf002070c0cdb010c0000000044d0010cd2b0010c40c71e0c58c71e0c53454741534547412b000900224f062f462f562f05d407d0",
+    "0C1759A0": "1aef1240"
+   },
+   "calls": [],
+   "about": "snapshot apple_passenger1 #1: the state at its entry in that frame (4 bytes read, 0 call answers)"
+  },
+  {
+   "entry": "8C06B4C8",
+   "end": "8C06B5B0",
+   "regs": {
+    "r4": "0C2BA6A8",
+    "r5": "0C2BA6A8",
+    "r6": "8C00F374",
+    "r7": "0C1BFFE0",
+    "r8": "00000007",
+    "r9": "0C1EC744",
+    "r10": "00000003",
+    "r11": "0C1EC83C",
+    "r12": "0C2BA6B8",
+    "r13": "0C2BA6A8",
+    "r14": "0C2BA6A8",
+    "fr4": "41F3B254",
+    "fr5": "C7C34F80",
+    "fr6": "32890558",
+    "fr7": "80000000",
+    "fr8": "C20F7A53",
+    "fr9": "43B2CDC0",
+    "fr10": "4377B6F7",
+    "fr11": "3F800000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "acd0010cdcda010c9018070cf002070c0cdb010c0000000044d0010cd2b0010c40c71e0c58c71e0c53454741534547412b000900224f062f462f562f05d407d0",
+    "0C1759A0": "684b3742"
+   },
+   "calls": [],
+   "about": "snapshot apple_pickup1 #1: the state at its entry in that frame (4 bytes read, 0 call answers)"
+  },
+  {
+   "entry": "8C06B4C8",
+   "end": "8C06B5B0",
+   "regs": {
+    "r4": "0C2BA6A8",
+    "r5": "0C2BA6A8",
+    "r6": "8C00F330",
+    "r7": "0C1BFFE0",
+    "r8": "00000007",
+    "r9": "0C1EC744",
+    "r10": "00000003",
+    "r11": "0C09743C",
+    "r12": "0C2BA6B8",
+    "r13": "0C2BA6A8",
+    "r14": "0C2BA6A8",
+    "fr4": "3F2C5A2F",
+    "fr5": "C7C34F80",
+    "fr6": "C134F998",
+    "fr7": "C4019380",
+    "fr8": "C1F91D94",
+    "fr9": "43B545AF",
+    "fr10": "437116E8",
+    "fr11": "3F800000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "16d8010c48c81e0c1cc71e0c90cc1e0c0000000072656343617244617461000000000000dcbc010c0000803f0700000044c71e0c030000003c74090c48c81e0c",
+    "0C1759A0": "ee322840"
+   },
+   "calls": [],
+   "about": "snapshot title1 #1: the state at its entry in that frame (4 bytes read, 0 call answers)"
   }
  ]
 }

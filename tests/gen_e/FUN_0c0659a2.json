@@ -542,6 +542,138 @@
     "r4": "3F800000",
     "r5": "0CF00000"
    }
+  },
+  {
+   "entry": "8C0659A2",
+   "end": "8C065A5E",
+   "regs": {
+    "r4": "0C19DDA8",
+    "r5": "0C19DC84",
+    "r6": "FFFFFFFF",
+    "r7": "00000002",
+    "r8": "0C177D2C",
+    "r9": "00000001",
+    "r10": "0C02897A",
+    "r11": "0C10ED28",
+    "r12": "00000000",
+    "r13": "00000000",
+    "r14": "0C19DC84",
+    "fr4": "C611E9D0",
+    "fr5": "00000000",
+    "fr6": "4588C4FD",
+    "fr7": "3F800000",
+    "fr8": "3FD40431",
+    "fr9": "435E4B78",
+    "fr10": "00000001",
+    "fr11": "00000000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "8a21060ca8dd190cfa56010c00000000287b170cb458170c8cdd190c3d2c0000000000005c61170ccc72170cb4e000004c61040cf2ac29c20670d83eb29e2f42",
+    "0C19DD83": "42",
+    "0C2B9C9C": "01000000"
+   },
+   "calls": [],
+   "about": "snapshot apple_passenger1 #1: the state at its entry in that frame (5 bytes read, 0 call answers)"
+  },
+  {
+   "entry": "8C0659A2",
+   "end": "8C065A5E",
+   "regs": {
+    "r4": "0C19E5B8",
+    "r5": "0C19E494",
+    "r6": "FFFFFFFF",
+    "r7": "00000002",
+    "r8": "0C177D2C",
+    "r9": "00000001",
+    "r10": "0C02897A",
+    "r11": "0C10ED28",
+    "r12": "00000000",
+    "r13": "00000000",
+    "r14": "0C19E494",
+    "fr4": "44ADBFFC",
+    "fr5": "00000000",
+    "fr6": "C57EE768",
+    "fr7": "3F800000",
+    "fr8": "3FADFCF8",
+    "fr9": "43614A7A",
+    "fr10": "00000001",
+    "fr11": "00000000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "8a21060cb8e5190cfa56010c00000000b47b170cb458170c9ce5190c3d03000000000000d74bc5442460170c00a048c5e840040c000000000000000000000000",
+    "0C19E593": "42",
+    "0C2B9C9C": "08000000"
+   },
+   "calls": [],
+   "about": "snapshot small_passenger1 #1: the state at its entry in that frame (5 bytes read, 0 call answers)"
+  },
+  {
+   "entry": "8C0659A2",
+   "end": "8C065A5E",
+   "regs": {
+    "r4": "0C1A4CDC",
+    "r5": "0C1A48C0",
+    "r6": "FFFFFFFF",
+    "r7": "00000002",
+    "r8": "00000007",
+    "r9": "0C1EC744",
+    "r10": "00000003",
+    "r11": "0C09743C",
+    "r12": "00000000",
+    "r13": "00000000",
+    "r14": "0C1A48C0",
+    "fr4": "3F1E2320",
+    "fr5": "3F0DA853",
+    "fr6": "3F800000",
+    "fr7": "40C90FDB",
+    "fr8": "3F800000",
+    "fr9": "C3A00000",
+    "fr10": "C3700000",
+    "fr11": "3F800000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "8a21060cdc4c1a0cfc8d060c3c74090c48c81e0ce89e2b0cc84c1a0c00000000ee9c010cd47e170cc84c1a0c7ad9010c1cc71e0c90cc1e0c0000000072656343",
+    "0C1A49BF": "02",
+    "0C2B9C9C": "01000000"
+   },
+   "calls": [],
+   "about": "snapshot title1 #1: the state at its entry in that frame (5 bytes read, 0 call answers)"
+  },
+  {
+   "entry": "8C0659A2",
+   "end": "8C065A5E",
+   "regs": {
+    "r4": "0C1A4CDC",
+    "r5": "0C1A49C0",
+    "r6": "00000000",
+    "r7": "0C1BFFE0",
+    "r8": "00000007",
+    "r9": "0C1EC744",
+    "r10": "00000003",
+    "r11": "0C09743C",
+    "r12": "00000000",
+    "r13": "00000001",
+    "r14": "0C1A49C0",
+    "fr4": "BFD701F9",
+    "fr5": "450EAEF1",
+    "fr6": "4834F928",
+    "fr7": "3D9EC800",
+    "fr8": "425F7D66",
+    "fr9": "43CA0B9D",
+    "fr10": "431B4F5F",
+    "fr11": "3F800000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "8a21060cdc4c1a0cfc8d060c3c74090c48c81e0ce89e2b0cc84c1a0c00000000ee9c010cd47e170cc84c1a0c7ad9010c1cc71e0c90cc1e0c0000000072656343",
+    "0C1A4ABF": "02",
+    "0C2B9C9C": "01000000"
+   },
+   "calls": [],
+   "about": "snapshot title1 #2: the state at its entry in that frame (5 bytes read, 0 call answers)"
   }
  ]
 }
