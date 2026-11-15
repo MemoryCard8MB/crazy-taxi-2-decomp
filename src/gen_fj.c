@@ -48,7 +48,7 @@ struct oF0_float { char p[0xF0]; float v; };
 struct oF8_float { char p[0xF8]; float v; };
 struct oFC_float { char p[0xFC]; float v; };
 int FUN_0c046466(void);
-int FUN_0c0469e2(int, int, int, int, int, float);
+int FUN_0c0469e2(int, int, int, int, int);
 int FUN_0c046fde(int, int, int);
 int nlArcTan2(int, float, float);
 int FUN_0c0438c0(int a4, float f4);
@@ -140,7 +140,7 @@ int FUN_0c0438c0(int a4, float f4)
     v0_2 = *(int *)((((((v0_4 << 1) + v0_4) << 2) + v0_3) + 0x0));
     v0_3 = *(int *)(((*(int *)((((((v0_4 << 1) + v0_4) << 2) + v0_3) + 0x4))) + 0x0));
     *(int *)((int)stk + 0) = (0x8C + v0_1);
-    FUN_0c0469e2(0x0, v0_2, v0_3, (0xD4 + v0_1), (0x8C + v0_1), w0_1);
+    FUN_0c0469e2(0x0, v0_2, v0_3, (0xD4 + v0_1), (0x8C + v0_1));
     *(unsigned int *)(((int)stk + 8)) = ((((struct o80_int *)(v0_1))->v));
     *(unsigned int *)(((int)stk + 4)) = (((((struct oD4_int *)(v0_1))->v)) + 0x3);
     FUN_0c046fde((((int)stk + 0) + 0x8), (((int)stk + 0) + 0x4), 0x0);

@@ -153,8 +153,8 @@ int FUN_0c04ebe2(void);
 int FUN_0c06aeba(int a4, int a5, int a6);
 int vmsfs_setwork(int a4, int a5, int a6);
 int VQalloc(int a4, int a5, int a6, int a7);
-float FUN_0c0469e2(int a4, int a5, int a6, int a7, int a8, float f4);
-float FUN_0c02be68(int a4, float f4);
+float FUN_0c0469e2(int a4, int a5, int a6, int a7, int a8);
+void FUN_0c02be68(int a4, float f4);
 void buExecServer(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11);
 int PutGridPoly(int a4, int a5, float f4, float f5, float f6);
 int FUN_0c04c354(void);
@@ -1037,7 +1037,7 @@ int VQalloc(int a4, int a5, int a6, int a7)
     return t112;
 }
 
-float FUN_0c0469e2(int a4, int a5, int a6, int a7, int a8, float f4)
+float FUN_0c0469e2(int a4, int a5, int a6, int a7, int a8)
 {
     register int t0;
     register int t1;

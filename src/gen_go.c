@@ -50,7 +50,7 @@ int FUN_0c018b1c(int);
 int FUN_0c018b22(int, int);
 int FUN_0c0297f4(int, int, float);
 int FUN_0c029b12(int, float);
-int FUN_0c02be68(int, float);
+void FUN_0c02be68(int, float);
 int FUN_0c0503b4(int);
 int FUN_0c0503e6(float, float);
 extern int FUN_0c0503f0();

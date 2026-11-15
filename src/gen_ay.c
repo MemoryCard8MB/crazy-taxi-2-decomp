@@ -37,7 +37,7 @@ struct oC_uint { char p[0xC]; unsigned int v; };
 int FUN_0c01a7a4(void);
 int FUN_0c01b208(void);
 int FUN_0c029b12(int, float);
-int FUN_0c02be68(int, float);
+void FUN_0c02be68(int, float);
 int FUN_0c03e81a(void);
 int FUN_0c0503b4(int);
 int FUN_0c0503e6(float, float);

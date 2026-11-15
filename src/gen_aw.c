@@ -156,7 +156,7 @@ int nlSubVector3op(int, int, int);
 int nlUnitMatrix(void);
 int pfSize(float, float);
 int thunk_FUN_0c0765b0(void);
-int FUN_0c04d5fa(void);
+void FUN_0c04d5fa(void);
 int FUN_0c0372a0(int a4);
 int FUN_0c051034(int a4, int a5, int a6, int a7);
 int FUN_0c05d374(int a4, int a5, float f4, float f5, float f6, float f7, float f8);

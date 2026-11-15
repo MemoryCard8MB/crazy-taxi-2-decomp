@@ -12,7 +12,7 @@ struct o8A_short { char p[0x8A]; short v; };
 struct oC_uint { char p[0xC]; unsigned int v; };
 int FUN_0c03fbd8(int, int);
 int FUN_0c0401d8(int);
-int FUN_0c04027a(int, int, float);
+void FUN_0c04027a(int, int, float);
 int FUN_0c040bec(int, int);
 int FUN_0c044940(int, int);
 int FUN_0c044964(int, int, float);

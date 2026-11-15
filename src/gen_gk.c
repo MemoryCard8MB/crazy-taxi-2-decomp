@@ -117,11 +117,11 @@ int nlSubVector3op(int, int, int);
 int pfSize(float, float);
 float FUN_0c012e78(int a4, float f4, float f5, float f6, float f7, float f8);
 int FUN_0c048262(int a4);
-float FUN_0c028a0c(void);
+void FUN_0c028a0c(void);
 
 
 
-float FUN_0c028a0c(void)
+void FUN_0c028a0c(void)
 {
     int stk[51];
 
@@ -161,7 +161,7 @@ float FUN_0c028a0c(void)
     v0_9 = ((((int)stk + 0) + 0x1C));
     if ((v0_5 == 1)) goto L_C028A4E;
     L_C0293B6:;
-    return F0;
+    return;
     L_C028A4E:;
     v0_5 = (((struct o28_int *)0xC1EC71C)->v);
     v0_6 = (v0_5);

@@ -167,7 +167,7 @@ int nlUnitMatrix(void);
 int pcarRejoinLane(int);
 int set_event(int, int);
 int thunk_FUN_0c0765b0(void);
-float FUN_0c04d5fa(void);
+void FUN_0c04d5fa(void);
 int FUN_0c04dcf0(void);
 int FUN_0c02d3e8(int a4, int a5, int a6, int a7);
 int FUN_0c0423e6(int a4, int a5, int a6, int a7);

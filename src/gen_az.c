@@ -118,7 +118,7 @@ int nlSubVector3op(int, int, int);
 int nlUnitVectorsd(int, int);
 int thunk_FUN_0c0765b0(void);
 int FUN_0c02ebf0(int a4);
-float FUN_0c02e7a6(int a4, int a5);
+void FUN_0c02e7a6(int a4, int a5);
 int FUN_0c045d66(int a4);
 int FUN_0c05e33e(int a4, int a5);
 int FUN_0c050958(int a4, int a5, int a6, int a7);
@@ -244,7 +244,7 @@ int FUN_0c02ebf0(int a4)
     return t127;
 }
 
-float FUN_0c02e7a6(int a4, int a5)
+void FUN_0c02e7a6(int a4, int a5)
 {
     int stk[17];
 
@@ -370,7 +370,7 @@ float FUN_0c02e7a6(int a4, int a5)
     L_C02EB96:;
     (((struct o8_uint *)0xC1295A0)->v) = v0_0;
     (((struct o0_uint *)0xC1295A0)->v) = v0_0;
-    return w0_0;
+    return;
     L_C02EB74:;
     if ((v0_5 == 0)) goto L_C02EB96;
     v0_6 = (0xC1295A4);

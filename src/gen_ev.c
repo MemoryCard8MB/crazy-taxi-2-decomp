@@ -30,7 +30,7 @@ struct oF8_short { char p[0xF8]; short v; };
 int FUN_0c0297f4(int, int, float);
 int FUN_0c029b12(int, float);
 int FUN_0c0468aa(int, int, float);
-float FUN_0c0469e2(int, int, int, int, int, float);
+float FUN_0c0469e2(int, int, int, int, int);
 int FUN_0c072150(int, int, int);
 int FUN_0c072230(int, int);
 int FUN_0c0739a0(int);
@@ -265,7 +265,7 @@ int FUN_0c013b2c(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
     *(int *)((int)stk + 0) = (((int)stk + 4) + 0x48);
     v0_1 = *(int *)0xC2ADA7C;
     *(unsigned int *)(((int)stk + 4)) = ((v0_1 + v0_5) + v0_4);
-    w0_4 = FUN_0c0469e2(0x0, (*(int *)(((*(int *)(((int)stk + 4))) + 0x0))), (*(int *)(((*(int *)((((v0_1 + v0_5) + v0_4) + 0x4))) + 0x0))), (((int)stk + 0) + 0xC), (((int)stk + 4) + 0x48), w0_0);
+    w0_4 = FUN_0c0469e2(0x0, (*(int *)(((*(int *)(((int)stk + 4))) + 0x0))), (*(int *)(((*(int *)((((v0_1 + v0_5) + v0_4) + 0x4))) + 0x0))), (((int)stk + 0) + 0xC), (((int)stk + 4) + 0x48));
     w0_5 = (w0_4);
     w0_0 = (w0_4);
     if ((!(w0_3 > w0_4))) goto L_C014068;

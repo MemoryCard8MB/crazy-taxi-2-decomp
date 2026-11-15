@@ -214,7 +214,7 @@ int syRtcFinish(void);
 int thunk_FUN_0c0765b0(void);
 int thunk_FUN_0c14b2ec(int, int, int, int);
 int FUN_0c049610(int a4, int a5, int a6, int a7, float f4, float f5, float f6);
-float FUN_0c04d5fa(void);
+void FUN_0c04d5fa(void);
 int FUN_0c066b3a(int a4);
 int FUN_0c01db74(int a4, int a5, int a6, int a7);
 int FUN_0c04e88e(int a4);
@@ -664,7 +664,7 @@ int FUN_0c049610(int a4, int a5, int a6, int a7, float f4, float f5, float f6)
     goto L_C0496B8;
 }
 
-float FUN_0c04d5fa(void)
+void FUN_0c04d5fa(void)
 {
     int stk[21];
 
@@ -704,7 +704,7 @@ float FUN_0c04d5fa(void)
     w0_1 = (0.0f);
     if ((v0_2 != 2)) goto L_C04D632;
     L_C04DCD2:;
-    return F0;
+    return;
     L_C04D632:;
     v0_2 = (FUN_0c04dcf0()) != 0;
     if (v0_2) goto L_C04D63E;

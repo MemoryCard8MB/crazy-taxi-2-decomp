@@ -52,7 +52,7 @@ int FUN_0c018c2a(float, float);
 int FUN_0c018c8a(float, float);
 int FUN_0c026bd6(int);
 int FUN_0c0272a6(int);
-int FUN_0c028a0c(void);
+void FUN_0c028a0c(void);
 int FUN_0c0297f4(int, int, float);
 int FUN_0c029b12(int, float);
 int FUN_0c02a470(int, int);
@@ -112,7 +112,7 @@ int nlSubVector3op(int, int, int);
 float nlUnitVectorsd(int, int);
 int set_event(int, int);
 int FUN_0c06d8e6(float f4);
-int FUN_0c0164fc(int a4, int a5);
+void FUN_0c0164fc(int a4, int a5);
 int FUN_0c02fb94(int a4, int a5);
 int FUN_0c026d10(void);
 int FUN_0c0638e6(int a4);
@@ -214,7 +214,7 @@ int FUN_0c06d8e6(float f4)
     return t77;
 }
 
-int FUN_0c0164fc(int a4, int a5)
+void FUN_0c0164fc(int a4, int a5)
 {
     int stk[8];
 
@@ -255,7 +255,8 @@ int FUN_0c0164fc(int a4, int a5)
     if (((int)v0_0 < (int)((((struct o14_int *)0xC177D0C)->v)))) goto L_C016530;
     (((struct o0_uint *)0xC177D0C)->v) = (((((struct o0_int *)0xC177D0C)->v)) + 0x1);
     (((struct o28_uint *)0xC177D0C)->v) = (((((struct o28_int *)0xC177D0C)->v)) + 0x1);
-    return (FUN_0c028a0c());
+    (void)((FUN_0c028a0c()));
+    return;
     L_C016530:;
     v0_6 = *(int *)((v0_3 + 0x0));
     v0_7 = (v0_6);

@@ -231,7 +231,7 @@ int FUN_0c045284(int a4)
     v0_2 = (((struct o80_int *)(v0_0))->v);
     v0_1 = *(int *)((v0_1 + 0x0));
     *(unsigned int *)(((int)stk + 12)) = ((((v0_2 << 1) + v0_2) << 2) + v0_1);
-    v0_1 = ((int (*)(int, int, int, int, int, float))(FUN_0c0469e2))(0x2, (*(int *)(((*(int *)(((int)stk + 12))) + 0x0))), (*(int *)(((*(int *)((((((v0_2 << 1) + v0_2) << 2) + v0_1) + 0x4))) + 0x0))), (0xD4 + v0_0), (0x8C + v0_0), w0_1);
+    v0_1 = ((int (*)(int, int, int, int, int))(FUN_0c0469e2))(0x2, (*(int *)(((*(int *)(((int)stk + 12))) + 0x0))), (*(int *)(((*(int *)((((((v0_2 << 1) + v0_2) << 2) + v0_1) + 0x4))) + 0x0))), (0xD4 + v0_0), (0x8C + v0_0));
     nlSubVector3op((((int)stk + 4) + 0x24), (0x98 + v0_0), (((int)stk + 4) + 0x24));
     FUN_0c073360();
     nlSubVector3op((((int)stk + 4) + 0x3C), (((int)stk + 4) + 0x18), (((int)stk + 4) + 0xC));

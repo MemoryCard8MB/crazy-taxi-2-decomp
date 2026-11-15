@@ -79,7 +79,7 @@ int FUN_0c029b12(int, float);
 int FUN_0c02e42a(int, int, int);
 int FUN_0c03fbd8(int, int);
 int FUN_0c0401d8(int);
-int FUN_0c04027a(int, int, float);
+void FUN_0c04027a(int, int, float);
 int FUN_0c040bec(int, int);
 int FUN_0c041a44(int, int);
 int FUN_0c0435e2(int, int);
@@ -124,7 +124,7 @@ int FUN_0c064b46(int a4, float f4);
 int FUN_0c06cef0(void);
 int FUN_0c026e8a(void);
 int FUN_0c05074c(int a4, int a5, int a6, int a7, float f4);
-float FUN_0c02be68(int a4, float f4);
+void FUN_0c02be68(int a4, float f4);
 int FUN_0c04c354(void);
 int FUN_0c043e98(int a4, int a5, int a6, int a7, int a8);
 int FUN_0c0295c0(int a4, int a5, float f4, float f5);
@@ -490,7 +490,7 @@ int FUN_0c05074c(int a4, int a5, int a6, int a7, float f4)
     return t65;
 }
 
-float FUN_0c02be68(int a4, float f4)
+void FUN_0c02be68(int a4, float f4)
 {
     int stk[14];
 
@@ -536,7 +536,7 @@ float FUN_0c02be68(int a4, float f4)
     FPUL_ = ((int)w0_6);
     if (((int)((v0_5 * ((int)w0_6 - v0_4)) + ((int)w0_5 - v0_2)) >= 0)) goto L_C02BED0;
     L_C02C030:;
-    return w0_0;
+    return;
     L_C02BED0:;
     if (((int)v0_1 < (int)(*(int *)((v0_3 + 0x18))))) goto L_C02BEDA;
     goto L_C02C030;

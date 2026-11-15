@@ -264,8 +264,10 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   `tools/6-agentic/snapcases.py` from the 13 frame snapshots: the state at a function's first entries in that frame, reduced to the
   bytes the original reads (pokes), the entry registers and stack words, and the real answers of its calls (only the register the
   callee returns: fr0 for float, r0 else, none for void). Kept only when the original takes the same path from the pokes as from
-  the full state. Coverage 60.3% -> 63.5%. Held back (work/fix9/held_cases/): 9 functions whose C differs on them, mostly a
-  declared result or float parameter nothing uses (a leftover compared), two to investigate (FUN_0c042ba8, FUN_0c0440a4).
+  the full state. Coverage 60.3% -> 63.5%, then 64.0% after six of the nine functions whose C differed on them were fixed: a
+  declared result nothing uses (FUN_0c04027a, FUN_0c02e7a6, FUN_0c02be68, FUN_0c04d5fa, FUN_0c028a0c and its caller
+  FUN_0c0164fc are void now) or a float parameter the original never reads (FUN_0c0469e2's f4): a leftover register was
+  compared. Still held back (work/fix9/held_cases/): FUN_0c042ba8 (an extra call), FUN_0c0440a4, FUN_0c065170.
 
 ## Changing the game *(equivalent)*
 The boot block is not free space. The entry stub copies the start of the executable elsewhere and

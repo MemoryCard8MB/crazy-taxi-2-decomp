@@ -97,7 +97,7 @@ int nlUnitMatrix(void);
 int kmiCreateRegionArray(int a4, int a5, int a6, Stk2 s);
 int FUN_0c05ac3a(int a4, int a5);
 int FUN_0c02c068(int a4, int a5, float f4);
-float FUN_0c04027a(int a4, int a5, float f4);
+void FUN_0c04027a(int a4, int a5, float f4);
 float FUN_0c010fd4(int a4, int a5, int a6, int a7, float f4, float f5);
 int FUN_0c05a3f8(int a4);
 int FUN_0c05d928(int a4, float f4, float f5, float f6, float f7, float f8);
@@ -627,7 +627,7 @@ int FUN_0c05ac3a(int a4, int a5)
 }
 
 
-float FUN_0c04027a(int a4, int a5, float f4)
+void FUN_0c04027a(int a4, int a5, float f4)
 {
     int stk[12];
 
@@ -679,7 +679,7 @@ float FUN_0c04027a(int a4, int a5, float f4)
     FUN_0c040704(0xFFFFFFFF, 0x0);
     v0_6 = ((FUN_0c0461b0(((((struct o0_int *)0xC1EC71C)->v)))));
     L_C0406EC:;
-    return F0;
+    return;
     L_C0402DC:;
     (((struct o10_uint *)0xC2A5A10)->v) = 0x0;
     v0_6 = (0x5);
