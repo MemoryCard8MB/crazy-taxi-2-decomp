@@ -20431,10 +20431,28 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 72 of 318 instructions
 
 ### FUN_0c042ba8 (`0C042BA8`, 2218 bytes, `src/gen_gm.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_gm/FUN_0c042ba8.json`
+- equivalent on 1 development and 19 holdout cases, in `tests/gen_gm/FUN_0c042ba8.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 290 of 929 instructions
+- snapshot apple_drive_empty1 #1: the state at its entry in that frame (96 bytes read, 14 call answers)
+- snapshot apple_drive_empty1 #2: the state at its entry in that frame (72 bytes read, 6 call answers)
+- snapshot apple_dropoff1 #1: the state at its entry in that frame (96 bytes read, 14 call answers)
+- snapshot apple_dropoff1 #2: the state at its entry in that frame (96 bytes read, 14 call answers)
+- snapshot apple_passenger1 #1: the state at its entry in that frame (96 bytes read, 14 call answers)
+- snapshot apple_passenger1 #2: the state at its entry in that frame (76 bytes read, 30 call answers)
+- snapshot apple_pickup1 #1: the state at its entry in that frame (96 bytes read, 14 call answers)
+- snapshot apple_pickup1 #2: the state at its entry in that frame (96 bytes read, 14 call answers)
+- snapshot small_drive1 #1: the state at its entry in that frame (72 bytes read, 6 call answers)
+- snapshot small_drive1 #2: the state at its entry in that frame (72 bytes read, 7 call answers)
+- snapshot small_dropoff1 #1: the state at its entry in that frame (96 bytes read, 14 call answers)
+- snapshot small_dropoff1 #2: the state at its entry in that frame (96 bytes read, 14 call answers)
+- snapshot small_passenger1 #1: the state at its entry in that frame (96 bytes read, 14 call answers)
+- snapshot small_passenger1 #2: the state at its entry in that frame (76 bytes read, 7 call answers)
+- snapshot small_pickup1 #1: the state at its entry in that frame (68 bytes read, 7 call answers)
+- snapshot small_pickup1 #2: the state at its entry in that frame (96 bytes read, 14 call answers)
+- snapshot title1 #1: the state at its entry in that frame (96 bytes read, 14 call answers)
+- snapshot title1 #2: the state at its entry in that frame (96 bytes read, 14 call answers)
+- the cases run 548 of 932 instructions
 
 ### FUN_0c0435e2 (`0C0435E2`, 214 bytes, `src/gen_he.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_he/FUN_0c0435e2.json`

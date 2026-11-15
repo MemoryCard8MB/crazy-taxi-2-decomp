@@ -267,7 +267,14 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   the full state. Coverage 60.3% -> 63.5%, then 64.0% after six of the nine functions whose C differed on them were fixed: a
   declared result nothing uses (FUN_0c04027a, FUN_0c02e7a6, FUN_0c02be68, FUN_0c04d5fa, FUN_0c028a0c and its caller
   FUN_0c0164fc are void now) or a float parameter the original never reads (FUN_0c0469e2's f4): a leftover register was
-  compared. Still held back (work/fix9/held_cases/): FUN_0c042ba8 (an extra call), FUN_0c0440a4, FUN_0c065170.
+  compared. FUN_0c042ba8 was a real bug (below). Still held back (work/fix9/held_cases/): FUN_0c0440a4 (an event handler,
+  set_event(0x12C, ...): its float result is a leftover, but what the event system reads of it is open) and FUN_0c065170
+  (its result goes up to functions only reached through pointers).
+- **A left shift by a negative amount.** The generator writes SH-4 shld/shad with a negative count as `x << (int)(-n)`,
+  which C leaves undefined. SHC mostly emits the shift by a negated register (correct), but in FUN_0c042ba8 it folded
+  `(-1 << k) << -k` away and tested all the bits instead of the low ones: a snapshot case of the game took the other branch
+  (state 4 instead of 3, two calls more). Written as `0xFFFFFFFF >> k` now. 29 more such shifts in 15 files have a count
+  known only at run time and pass their cases; rewrite one if its compiled code shows no negated shift.
 
 ## Changing the game *(equivalent)*
 The boot block is not free space. The entry stub copies the start of the executable elsewhere and

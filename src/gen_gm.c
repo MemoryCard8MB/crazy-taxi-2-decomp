@@ -355,7 +355,10 @@ float FUN_0c042ba8(int a4)
     v0_3 = FUN_0c03fa18(((((struct o80_int *)(v0_0))->v)), ((((struct oD4_int *)(v0_0))->v)), v0_3, v0_5);
     v0_6 = ((0x20 - (v0_5 >> 1)));
     v0_4 = ((v0_3 >> 1));
-    if (((((unsigned int)((unsigned int)0xFFFFFFFF << (int)(0x20 - (v0_5 >> 1))) << (int)(-(0x20 - (v0_5 >> 1)))) & (v0_3 >> 1)) == 0)) goto L_C043054;
+    /* manual: the original builds the mask of the low (v0_5 >> 1) bits with two shld (-1 << k, then >> k logical, k = 32 - (v0_5 >> 1);
+       v0_5 is 7 or 9 here). The generated C wrote the second as a left shift by -k, which C leaves undefined: SHC folded the pair
+       away and tested all the bits, so a value with only higher bits set went the other way (a snapshot case of the game). */
+    if (((((unsigned int)0xFFFFFFFF >> (int)(0x20 - (v0_5 >> 1))) & (v0_3 >> 1)) == 0)) goto L_C043054;
     (((struct o88_uint *)(v0_0))->v) = 0x4;
     goto L_C04305E;
     L_C043054:;
