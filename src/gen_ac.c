@@ -690,15 +690,6 @@ int FUN_0c068ddc(int a4, int a5, int a6, int a7)
     return 0x78;
 }
 
-int FUN_0c06aa94(int a4)
-{
-    register int t0;
-
-    t0 = *(int *)((((a4 - 35) << 2) + 0xC10E5D0));
-    *(unsigned int *)0xC13BC14 = (*(int *)(((*(int *)(((t0 << 2) + 0xC13BC04))) + (((int)((int)(FUN_0c069e54()) % (int)(*(int *)(((t0 << 2) + 0xC1116C4))))) << 2))));
-    Voice_ShutUp(0x3);
-    return FUN_0c058f64(0xC13BC14, 0x3, (*(int *)(((t0 << 2) + 0xC11039C))), 0x0);
-}
 
 int FUN_0c077a1c(int a4, int a5, int a6)
 {
@@ -1056,44 +1047,7 @@ int FUN_0c01b87a(int a4, int a5, float f4)
     return (int)((float)t1 * f4);
 }
 
-int gdc_PlayStreamSong(int a4)
-{
-    register int t5;
 
-    *(unsigned int *)0xC2690D4 = 0x0;
-    (((struct o0_uchar *)0xC1ECD50)->v) = (int)(((float)(unsigned char)(*(signed char *)0xC28ED9D) / 8.0f) * 127.0f);
-    FUN_0c01e6f0();
-    FUN_0c14e15c(((((struct o14_int *)0xC1ECD50)->v)), 0x1, a4);
-    t5 = FUN_0c01e83e((*(signed char *)0xC1ECD50));
-    return ADXT_SetOutVol(((((struct o14_int *)0xC1ECD50)->v)), t5);
-}
-
-int FUN_0c01ee58(void)
-{
-    register int t0;
-    int t1;
-
-    t0 = 0x8;
-    for (;;) {
-        t1 = thunk_FUN_0c14b2ec();
-        if ((t1 != -23) && (t1 != -33)) {
-            if (t1 != 0) {
-                t0 = (t0 - 1);
-                if ((int)t0 <= 0) {
-                    break;
-                }
-                continue;
-            }
-            break;
-        }
-        return 0x0;
-    }
-    t1 = 0x1;
-    if (t0 == 0) {
-        t1 = 0x0;
-    }
-    return t1;
-}
 
 int FUN_0c01fb8c(int a4, int a5)
 {

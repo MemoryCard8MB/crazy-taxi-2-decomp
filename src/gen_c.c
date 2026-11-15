@@ -405,13 +405,6 @@ void pdSetThreshold(int a4, int a5)
     (((struct o1_uchar *)0xC2D126C)->v) = a5;
 }
 
-int malloc(void)
-{
-    register int t1;
-
-    t1 = *(int *)(((*(int *)0xC2D12B4) + 0x0));
-    return ((int (*)(void))(t1))();
-}
 
 int syMalloc(void)
 {
@@ -421,13 +414,6 @@ int syMalloc(void)
     return ((int (*)(void))(t1))();
 }
 
-int free(void)
-{
-    register int t1;
-
-    t1 = *(int *)(((*(int *)0xC2D12B4) + 0x4));
-    return ((int (*)(void))(t1))();
-}
 
 int kmiFatalErrorEntry(int a4, int a5, int a6, int a7)
 {
@@ -650,10 +636,6 @@ void FUN_0c01e43c(void)
     *(unsigned int *)0xC1EC840 = 0x81;
 }
 
-int FUN_0c01e6f0(void)
-{
-    return FUN_0c14e8e4((*(int *)0xC1ECD64));
-}
 
 void FUN_0c020244(void)
 {
@@ -714,10 +696,6 @@ void FUN_0c060022(void)
     *(unsigned int *)0xC13AFF8 = 0x0;
 }
 
-int FUN_0c06f550(int a4, int a5, int a6)
-{
-    return FUN_0c0704c0(a4, a5, a6, (*(float *)0xC06F5D8));
-}
 
 int FUN_0c070080(void)
 {
@@ -755,10 +733,6 @@ int FUN_0c075d50(void)
     return nlMultiMatrixRevOrder8(0xC2BFC08);
 }
 
-int FUN_0c075d60(void)
-{
-    return FUN_0c080780();
-}
 
 int FUN_0c075d70(int a4, float f4)
 {
@@ -1050,10 +1024,6 @@ int kmiGetSysConfigFlag(void)
     return (*(int *)0xC1737E4);
 }
 
-int thunk_FUN_0c14b2ec(void)
-{
-    return FUN_0c14b2ec();
-}
 
 int pdGetMode(void)
 {
@@ -1157,10 +1127,6 @@ int FUN_0c161880(void)
     return 0x7FFFFFFF;
 }
 
-int thunk_FUN_0c1644d8(int a4)
-{
-    return mwRnaGetNumData(a4);
-}
 
 int thunk_FUN_0c1643e4(void)
 {

@@ -1712,33 +1712,7 @@ int FUN_0c16c2e2(int a4, int a5, int a6, int a7)
     return t3;
 }
 
-int FUN_0c019446(void)
-{
-    register int t0;
-    register int t1;
 
-    t0 = *(int *)0xC175C80;
-    t1 = ((~(((~t0) + 0x1) & 0x7)) + 0x1);
-    if ((int)t0 >= 0) {
-        t1 = (t0 & 0x7);
-    }
-    t0 = *(int *)((0xC09710C + (t1 << 2)));
-    return ((int (*)(void))(t0))();
-}
-
-int FUN_0c019466(void)
-{
-    register int t0;
-    register int t1;
-
-    t0 = *(int *)0xC175C80;
-    t1 = ((~(((~t0) + 0x1) & 0x7)) + 0x1);
-    if ((int)t0 >= 0) {
-        t1 = (t0 & 0x7);
-    }
-    t0 = *(int *)((0xC09712C + (t1 << 2)));
-    return ((int (*)(void))(t0))();
-}
 
 int gdc_FileLoadInit(void)
 {
@@ -1831,14 +1805,6 @@ int FUN_0c0503b4(int a4)
     return FUN_0c053f6a();
 }
 
-int End_Adv_Title_LOGO(float f4)
-{
-    register int t0;
-
-    t0 = FUN_0c06f550(0xFF000000, 0xFF000000, 0xFF000000);
-    *(unsigned short *)0xC2B2B58 = ((*(short *)0xC2B2B58) & 0xFFFE);
-    return t0;
-}
 
 int FUN_0c05be8a(int a4, float f4)
 {
@@ -2315,38 +2281,8 @@ int FUN_0c061e50(int a4)
     return t3;
 }
 
-void FUN_0c06ce72(void)
-{
-    register int t0;
 
-    t0 = *(int *)0xC2BB3D4;
-    if (((int)t0 >= 0) && ((int)t0 < (int)0x3)) {
-        ((int (*)(void))((*(int *)(((t0 << 2) + 0xC112A58)))))();
-    return;
-    }
-}
 
-void FUN_0c06db2e(void)
-{
-    register int t0;
-
-    t0 = *(int *)0xC2BB3D4;
-    if (((int)t0 >= 0) && ((int)t0 < (int)0x5)) {
-        ((int (*)(void))((*(int *)(((t0 << 2) + 0xC112AE4)))))();
-    return;
-    }
-}
-
-void FUN_0c06e460(void)
-{
-    register int t0;
-
-    t0 = *(int *)0xC2BB3D4;
-    if (((int)t0 >= 0) && ((int)t0 < (int)0x1)) {
-        ((int (*)(void))((*(int *)(((t0 << 2) + 0xC112B94)))))();
-    return;
-    }
-}
 
 int FUN_0c070e60(void)
 {
@@ -2798,14 +2734,6 @@ int FUN_0c018b00(int a4)
     return t2;
 }
 
-int FUN_0c01ee10(int a4, int a5)
-{
-    int stk[2];
-
-    *(unsigned int *)(((int)stk + 0)) = a4;
-    *(unsigned char *)(((int)stk + 4)) = a5;
-    return FUN_0c14ec14((*(int *)((((*(int *)(((int)stk + 0))) << 2) + 0xC1ECD54))), 0x0, (*(signed char *)(((int)stk + 4))));
-}
 
 int FUN_0c020368(int a4)
 {

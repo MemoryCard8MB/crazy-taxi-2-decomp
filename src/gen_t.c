@@ -125,32 +125,3 @@ int setObjGroupOpen(int a4)
     return t0;
 }
 
-int FUN_0c06a1d0(int a4)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-    register int t3;
-    register int t4;
-
-    t0 = *(int *)0xC1ECCA8;
-    if (t0 == 1) {
-        t1 = *(int *)((((a4 - 35) << 2) + 0xC10E5D0));
-        t2 = FUN_0c061bae();
-        if (t2 != 0) {
-            t2 = *(int *)(((t1 << 2) + 0xC13B558));
-            t3 = ((int)((int)(FUN_0c069e54()) % (int)(*(int *)(((t1 << 2) + 0xC1109E4)))));
-            t4 = t2;
-        } else {
-            t2 = *(int *)(((t1 << 2) + 0xC13B548));
-            t3 = ((int)((int)(FUN_0c069e54()) % (int)(*(int *)(((t1 << 2) + 0xC1109E4)))));
-            t4 = t2;
-        }
-        t1 = *(int *)((t4 + (t3 << 2)));
-        if (t1 != 0) {
-            return FUN_0c058ca6(t1, 0x1);
-        }
-        return (t3 << 2);
-    }
-    return t0;
-}

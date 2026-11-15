@@ -1051,69 +1051,6 @@ int FUN_0c024c6c(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
     return t1;
 }
 
-int FUN_0c03dd80(void)
-{
-    int t0;
-    int t1;
-    register int t2;
-    register int t3;
-
-    *(unsigned int *)0xC177EF0 = 0xC177EF4;
-    nlInitHeapMemory(0xC177EF4, 0x30000);
-    nlInitEvent();
-    FUN_0c020772();
-    FUN_0c058e82();
-    gdc_StopStreamVoiceAll();
-    FUN_0c01e6f0();
-    FUN_0c058be4(0x0);
-    mpvvlc_InitMbai();
-    FUN_0c03f42e(0x3);
-    *(unsigned int *)0xC1EC840 = 0x11;
-    FUN_0c06f550(0xFFFFC500, 0xFFFFC500, 0xFFFFC500);
-    FUN_0c0272de();
-    (((struct o0_uint *)0xC2A469C)->v) = 0x2;
-    (((struct o4_uint *)0xC2A585C)->v) = 0x280;
-    (((struct o0_uint *)0xC2A585C)->v) = 0x280;
-    (((struct oC_uint *)0xC2A469C)->v) = 0x0;
-    (((struct o38_uint *)0xC2A469C)->v) = 0x0;
-    if ((((((struct o0_int *)0xC2A46DC)->v)) != 0xC0B384C) && (t0 = (((struct o0_int *)0xC2A46DC)->v), t0 != 0xC0B3824)) {
-        t0 = 0xC2A4680;
-    } else {
-        FUN_0c0339fc(0x0);
-    }
-    if ((((((struct o24_int *)0xC2A4F88)->v)) != -2) && (t1 = (((struct o3C_int *)0xC2A469C)->v), t1 != 0xC0B3AA4)) {
-        (((struct o3C_uint *)0xC2A469C)->v) = 0xC0B3AA4;
-        FUN_0c03f15e(0x0);
-    } else {
-        t1 = t0;
-    }
-    FUN_0c033b12(0x0, t1);
-    FUN_0c033430(0xC2A5808);
-    if (((*(int *)0xC2A464C) == 0) && ((t2 = (((struct o0_int *)0xC2A4F88)->v), t2 != 0) || (t3 = (((struct o4_int *)0xC2A4F88)->v), t3 != 0))) {
-        gdc_PlayStreamSong(0x0);
-        gdc_VolStreamSong(0x7F);
-    }
-    if (((((struct o0_int *)0xC2A4F88)->v)) == 0) {
-        t0 = (((struct o4_int *)0xC2A4F88)->v);
-        if ((t0 != 7) && (t0 != 9)) {
-        } else {
-            FUN_0c01edbc(0x0, 0x20E);
-        }
-        FUN_0c03386a(0x0);
-    }
-    if (((((struct o4_int *)0xC2A46DC)->v)) == 0) {
-        FUN_0c03eefe(0x1);
-    }
-    FUN_0c026e56();
-    thunk_FUN_0c05995e();
-    FUN_0c0476dc(0x4);
-    *(float *)0xC177D9C = ((((struct o0_float *)0xC03E010)->v));
-    nlMatrixMode(0x3);
-    nlUnitMatrix();
-    t0 = nlPerspectiveX(((int)(((((*(float *)0xC177D9C) * ((((struct o1C_float *)0xC03E010)->v))) / ((((struct o20_float *)0xC03E010)->v)))) + ((((struct o24_float *)0xC03E010)->v))) & 0xFFFF), ((((struct o18_float *)0xC03E010)->v)), ((((struct o14_float *)0xC03E010)->v)), ((((struct o10_float *)0xC03E010)->v)));
-    *(unsigned int *)0xC1EC744 = ((*(int *)0xC1EC744) + 0x1);
-    return t0;
-}
 
 
 int FUN_0c038218(void)

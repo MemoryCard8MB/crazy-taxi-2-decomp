@@ -946,56 +946,6 @@ int kmChangeContextSRCBlendMode(int a4)
     return 0x0;
 }
 
-int FUN_0c01eb14(void)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-    register int t4;
-
-    t0 = *(signed char *)0xC1ECD50;
-    if ((*(int *)0xC2A464C) == 1) {
-        t1 = gdc_GetVolGainMute(t0);
-        ADXT_SetOutVol((*(int *)0xC1ECD64), t1);
-        *(unsigned int *)0xC11D0C4 = 0x1;
-    } else {
-        if ((*(int *)0xC11D0C4) == 1) {
-            t1 = gdc_GetVolGainMute(t0);
-            ADXT_SetOutVol((*(int *)0xC1ECD64), t1);
-            *(unsigned int *)0xC11D0C4 = 0x0;
-        }
-    }
-    t0 = (((struct o0_int *)0xC2690E4)->v);
-    t1 = (((struct o4_int *)0xC2690E4)->v);
-    if (t0 != 1) {
-        t2 = t0;
-        if (t0 != 2) {
-        } else {
-            t0 = (((struct o10_int *)0xC2690E4)->v);
-            if ((int)t0 < (int)0x3C) {
-                t2 = ((~(((~(t1 + 0x1)) + 0x1) & 0x3)) + 0x1);
-                if ((int)(t1 + 0x1) >= 0) {
-                    t2 = ((t1 + 0x1) & 0x3);
-                }
-                (((struct o4_uint *)0xC2690E4)->v) = t2;
-                t2 = (FUN_0c01ea8e());
-            } else {
-                t4 = gdc_GetVolGainMute((int)(((float)t0 / (*(float *)0xC01ECE4)) * (float)(*(signed char *)0xC1ECD50)));
-                t2 = (ADXT_SetOutVol((*(int *)0xC1ECD64), t4));
-            }
-            (((struct o10_uint *)0xC2690E4)->v) = (((((struct o10_int *)0xC2690E4)->v)) - 1);
-        }
-        t0 = t2;
-    } else {
-        t2 = FUN_0c01e742(0x0);
-        if ((int)t2 >= (int)(*(int *)(((t1 << 2) + 0xC099888)))) {
-            (((struct o0_uint *)0xC2690E4)->v) = 0x2;
-            (((struct o10_uint *)0xC2690E4)->v) = 0xB4;
-        }
-        t0 = 0xC099888;
-    }
-    return t0;
-}
 
 int FUN_0c04ede4(int a4, int a5, int a6)
 {

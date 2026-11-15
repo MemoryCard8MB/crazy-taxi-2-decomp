@@ -1981,44 +1981,7 @@ int FUN_0c16c56c(int a4)
     return t5;
 }
 
-int FUN_0c01e5f8(int a4, int a5, int a6, int a7, int a8)
-{
-    int stk[2];
-    register int t0;
-    register int t3;
-    register int t4;
 
-    *(unsigned int *)(((int)stk + 0)) = a6;
-    *(unsigned int *)(((int)stk + 4)) = a7;
-    t0 = 0xC1ECD64;
-    if (a4 == 1) {
-        t0 = 0xC1ECD54;
-    }
-    for (;;) {
-        t3 = *(int *)(((int)stk + 4));
-        *(unsigned int *)(((int)stk + 4)) = (t3 - 1);
-        if (((t3 - 1) + 0x1) == 0) {
-            break;
-        }
-        t4 = *(int *)(((int)stk + 0));
-        *(unsigned int *)(((int)stk + 0)) = (t4 + 0x20);
-        FUN_0c14dfa0((*(int *)(((t0 + (a5 << 2)) + 0x0))), ((t4 + 0x20) - 32));
-    }
-    FUN_0c14e0be((*(int *)(((t0 + (a5 << 2)) + 0x0))));
-    return FUN_0c14e02a((*(int *)(((t0 + (a5 << 2)) + 0x0))));
-}
-
-int FUN_0c01e990(int a4, int a5, int a6)
-{
-    register int t6;
-
-    *(unsigned int *)0xC2690D4 = 0x0;
-    (((struct o0_uchar *)0xC1ECD50)->v) = (int)(((float)(unsigned char)(*(signed char *)0xC28ED9D) / ((((struct o0_float *)0xC01EB7C)->v))) * ((((struct o4_float *)0xC01EB7C)->v)));
-    FUN_0c01e6f0();
-    FUN_0c01e5f8(0x2, 0x0, a4, a5, a6);
-    t6 = FUN_0c01e83e((*(signed char *)0xC1ECD50));
-    return ADXT_SetOutVol(((((struct o14_int *)0xC1ECD50)->v)), t6);
-}
 
 int FUN_0c03b1ec(void)
 {

@@ -1,148 +1,77 @@
 /* Straight-line functions with calls and guards (batch gen_bl): generated from the code and checked by tests. Calls are
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
-struct o0_int { int v; };
+struct o0_float { float v; };
 struct o0_uint { unsigned int v; };
-struct o24_int { char p[0x24]; int v; };
-struct o28_int { char p[0x28]; int v; };
-struct o28_uint { char p[0x28]; unsigned int v; };
-struct o30_uint { char p[0x30]; unsigned int v; };
-struct o4_int { char p[0x4]; int v; };
+struct o10_uchar { char p[0x10]; unsigned char v; };
+struct o11_uchar { char p[0x11]; unsigned char v; };
+struct o14_uint { char p[0x14]; unsigned int v; };
+struct o4_float { char p[0x4]; float v; };
 struct o4_uint { char p[0x4]; unsigned int v; };
-int FUN_0c014364(void);
-int FUN_0c016398(void);
-int FUN_0c016ab8(int);
-int FUN_0c019446(void);
-int FUN_0c01e15a(void);
-int FUN_0c01e43c(void);
-int FUN_0c01f5fc(void);
-int FUN_0c01f95a(void);
-int FUN_0c02022a(void);
-int FUN_0c020d78(int);
-int FUN_0c022cc4(void);
-int FUN_0c022d30(void);
-int FUN_0c026c02(void);
-int FUN_0c026d10(void);
-int FUN_0c028924(void);
-int FUN_0c029528(void);
-int FUN_0c02a5ca(int);
-int FUN_0c02d3ba(void);
-int FUN_0c02f096(void);
-int FUN_0c02ff06(void);
-int FUN_0c030b34(void);
-int FUN_0c03ff4a(int);
-int FUN_0c0423e6(int);
-int FUN_0c046460(int);
-int FUN_0c0464f0(int, int, int, int, int);
-int FUN_0c047a4a(int);
-int FUN_0c048262(int);
-int FUN_0c0491d8(void);
-int FUN_0c04d58c(void);
-int FUN_0c04fbf0(void);
-int FUN_0c04fc7a(void);
-int FUN_0c058be4(int);
-int FUN_0c0590a8(void);
-int FUN_0c059d88(void);
-int FUN_0c059d92(void);
-int FUN_0c05bef8(int);
-int FUN_0c060104(void);
-int FUN_0c06017e(void);
-int FUN_0c06b370(void);
-int FUN_0c06cc10(void);
-int FUN_0c06f550(int, int, int);
-int FUN_0c070ea0(int);
-int kmSetCheapShadowMode(void);
-int nlInitEvent(void);
-int nlInitHeapMemory(int, int);
-int FUN_0c01cd78(void);
+struct o8_float { char p[0x8]; float v; };
+struct oC_uchar { char p[0xC]; unsigned char v; };
+struct oD_uchar { char p[0xD]; unsigned char v; };
+struct oE_uchar { char p[0xE]; unsigned char v; };
+struct oE_ushort { char p[0xE]; unsigned short v; };
+struct oF_uchar { char p[0xF]; unsigned char v; };
+int FUN_0c029574(int);
+int FUN_0c04b180(int);
+int strlen(int);
+int strncmp(int, int, int);
+int FUN_0c04906c(int a4, int a5);
+int FUN_0c0233aa(void);
 
-int FUN_0c01cd78(void)
+int FUN_0c04906c(int a4, int a5)
 {
-    int stk[4];
-    register int t67;
-    register int t91;
+    register int t0;
+    register int t1;
+    register int t10;
+    register int t2;
+    register int t5;
 
-    FUN_0c022d30();
-    FUN_0c02a5ca((*(int *)0xC175C80));
-    if (((((struct o4_int *)0xC1EC71C)->v)) == 2) {
-        FUN_0c022cc4();
-        FUN_0c01f95a();
+    t0 = strlen(a4);
+    t1 = strlen(a5);
+    t10 = 0x0;
+    if ((unsigned int)((t1 + a4) - 1) < (unsigned int)(a4 + t0)) {
+        t2 = ((t1 + a4) - 1);
+        for (;;) {
+            if ((*(signed char *)((t2 + 0x0))) == (*(signed char *)((((t1 - 1) + a5) + 0x0)))) {
+                t5 = strncmp(((t2 - t1) + 0x1), a5, t1);
+                if (t5 == 0) {
+                    break;
+                }
+                t2 = (t2 + (*(int *)((0xC2ADA90 + ((*(signed char *)((t2 + 0x0))) << 2)))));
+                if ((unsigned int)t2 >= (unsigned int)(a4 + t0)) {
+                    return 0x0;
+                }
+                continue;
+            }
+            t2 = (t2 + (*(int *)((0xC2ADA90 + ((*(signed char *)((t2 + 0x0))) << 2)))));
+            if ((unsigned int)t2 >= (unsigned int)(a4 + t0)) {
+                return 0x0;
+            }
+        }
+        t10 = 0x1;
     }
-    FUN_0c02022a();
-    FUN_0c020d78(((((struct o0_int *)0xC1EC71C)->v)));
-    FUN_0c026c02();
-    *(unsigned int *)0xC177EF0 = 0xC177EF4;
-    nlInitHeapMemory(0xC177EF4, 0x30000);
-    nlInitEvent();
-    FUN_0c046460(0x3039);
-    FUN_0c05bef8(0xD431);
-    FUN_0c070ea0(0x3039);
-    if (((((struct o24_int *)0xC1EC71C)->v)) != 0) {
-        FUN_0c01e43c();
-    }
-    FUN_0c04fbf0();
-    FUN_0c01e15a();
-    FUN_0c04fc7a();
-    if (((((struct o4_int *)0xC1EC71C)->v)) != 2) {
-        FUN_0c029528();
-        *(volatile int *)0xC1EC71C;
-        FUN_0c0491d8();
-    }
-    FUN_0c02022a();
-    FUN_0c014364();
-    FUN_0c016ab8(0x0);
-    if (((((struct o4_int *)0xC1EC71C)->v)) != 2) {
-        FUN_0c019446();
-    }
-    FUN_0c02d3ba();
-    if ((*(int *)0xC270924) != 0) {
-        FUN_0c016398();
-    }
-    FUN_0c02ff06();
-    FUN_0c028924();
-    FUN_0c02f096();
-    if (((((struct o4_int *)0xC1EC71C)->v)) == 2) {
-        FUN_0c060104();
-        FUN_0c06017e();
-    } else {
-        FUN_0c06cc10();
-        FUN_0c060104();
-    }
-    FUN_0c06b370();
-    FUN_0c058be4(0x0);
-    FUN_0c02022a();
-    FUN_0c0423e6(0x0);
-    FUN_0c03ff4a(0x0);
-    FUN_0c0464f0(0x0, 0x0, 0x0, 0x0, *(int *)((int)stk + 0));
-    FUN_0c048262(0xFFFFFFFE);
-    (((struct o0_uint *)0xC2AC2F4)->v) = 0x0;
-    FUN_0c0590a8();
-    FUN_0c026d10();
-    FUN_0c04d58c();
-    FUN_0c030b34();
-    t67 = (((struct o0_int *)0xC1EC71C)->v);
-    switch (t67) {
-    case 0:
-        *(volatile int *)0xC175C84;
-        thunk_kmSetCheapShadowMode();
-        break;
-    case 1:
-        thunk_kmSetCheapShadowMode();
-        break;
-    case 2:
-        thunk_kmSetCheapShadowMode();
-        break;
-    }
-    if ((int)((((struct o4_int *)0xC1EC71C)->v)) <= (int)0x1) {
-        FUN_0c047a4a(0x1);
-    } else {
-        (((struct o4_uint *)0xC2AC2F4)->v) = 0x0;
-    }
-    FUN_0c059d88();
-    FUN_0c059d92();
-    FUN_0c01f5fc();
-    t91 = FUN_0c06f550(0xFF3D3D46, 0xFF3D3D46, 0xFF3D3D46);
-    (((struct o28_uint *)0xC1EC71C)->v) = (((((struct o28_int *)0xC1EC71C)->v)) + 0x1);
-    (((struct o30_uint *)0xC1EC71C)->v) = 0x0;
-    return t91;
+    return t10;
+}
+
+int FUN_0c0233aa(void)
+{
+    (((struct o0_uint *)0xC270924)->v) = 0x0;
+    (((struct o14_uint *)0xC270924)->v) = 0x1;
+    (((struct o0_uint *)0xC2709A8)->v) = 0x0;
+    (((struct o4_uint *)0xC2709A8)->v) = 0x0;
+    (((struct o0_float *)0xC175930)->v) = 0.0f;
+    (((struct o4_float *)0xC175930)->v) = 0.0f;
+    (((struct o8_float *)0xC175930)->v) = 400.0f;
+    (((struct oC_uchar *)0xC175930)->v) = (*(signed char *)0xC097434);
+    (((struct oD_uchar *)0xC175930)->v) = (*(signed char *)0xC097435);
+    (((struct oE_uchar *)0xC175930)->v) = (*(signed char *)0xC097436);
+    (((struct oF_uchar *)0xC175930)->v) = (*(signed char *)0xC097437);
+    (((struct o10_uchar *)0xC175930)->v) = (*(signed char *)0xC097438);
+    (((struct o11_uchar *)0xC175930)->v) = (*(signed char *)0xC097439);
+    (((struct oE_ushort *)0xC175930)->v) = 0x8000;
+    FUN_0c04b180(0x7);
+    return FUN_0c029574(0x7);
 }

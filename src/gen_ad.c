@@ -12,25 +12,7 @@ int FUN_0c069fbe(void);
 int FUN_0c06a00c(void);
 int FUN_0c053c98(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8);
 
-int FUN_0c069fbe(void)
-{
-    register int t0;
 
-    t0 = *(int *)0xC2B9C2C;
-    *(unsigned int *)0xC13B4A8 = (*(int *)(((*(int *)((((t0 - 1) << 2) + 0xC13B488))) + (((int)((int)(FUN_0c069e54()) % (int)(*(int *)((((t0 - 1) << 2) + 0xC110824))))) << 2))));
-    Voice_ShutUp(0x1);
-    return FUN_0c058f64(0xC13B4A8, 0x1, (*(int *)((((t0 - 1) << 2) + 0xC11037C))), 0x0);
-}
-
-int FUN_0c06a00c(void)
-{
-    register int t0;
-
-    t0 = *(int *)0xC2B9C2C;
-    *(unsigned int *)0xC13B4E0 = (*(int *)(((*(int *)((((t0 - 1) << 2) + 0xC13B4C0))) + (((int)((int)(FUN_0c069e54()) % (int)(*(int *)((((t0 - 1) << 2) + 0xC1108E4))))) << 2))));
-    Voice_ShutUp(0x1);
-    return FUN_0c058f64(0xC13B4E0, 0x1, (*(int *)((((t0 - 1) << 2) + 0xC11037C))), 0x0);
-}
 
 int FUN_0c053c98(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8)
 {

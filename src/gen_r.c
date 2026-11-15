@@ -1640,29 +1640,6 @@ int cvFsChangeDir(int a4, int a5, int a6, int a7)
     goto L_C16CE56;
 }
 
-int Warning(float f4)
-{
-    register int t12;
-
-    FUN_0c06f550(0xFF000000, 0xFF000000, 0xFF000000);
-    ETD_EntryRecvFunc(0x10, 0x10);
-    nlLocate(0x1, 0x4);
-    nlPrintf(0xC097214);
-    nlPrintf(0xC097240);
-    nlPrintf(0xC09726C);
-    nlPrintf(0xC097298);
-    nlPrintf(0xC0972C4);
-    nlPrintf(0xC0972F0);
-    nlPrintf(0xC09731C);
-    nlPrintf(0xC097348);
-    nlPrintf(0xC097374);
-    t12 = ETD_EntryRecvFunc(0x8, 0x8);
-    if ((int)(*(int *)0xC1EC83C) > (int)0x3C) {
-        (((struct o0_uint *)0xC1EC740)->v) = 0x0;
-        (((struct o4_uint *)0xC1EC740)->v) = 0x0;
-    }
-    return t12;
-}
 
 int FUN_0c01a978(void)
 {

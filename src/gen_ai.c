@@ -1501,20 +1501,6 @@ float FUN_0c040cf2(int a4, int a5)
     return u2;
 }
 
-int Voice_CancelToNext(int a4)
-{
-    register int t6;
-
-    if ((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0))) != 0) {
-        t6 = FUN_0c01ec7a(a4);
-        *(unsigned int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0)) = ((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0))) + 0xC);
-        *(unsigned int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0xC)) = 0x0;
-        if ((*(int *)(((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0))) + 0x0))) == 0) {
-            *(unsigned int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0)) = 0x0;
-        }
-    }
-    return t6;
-}
 
 int FUN_0c05b724(int a4, int a5, float f4)
 {

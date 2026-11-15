@@ -890,47 +890,6 @@ int FUN_0c03e43c(int a4)
     return t17;
 }
 
-int FUN_0c0557f4(int a4, int a5, int a6, int a7)
-{
-    int t0;
-    register int t1;
-    register int t2;
-    register int t3;
-    register int t4;
-
-    if ((int)(*(int *)0xC2B3110) < (int)(((((struct o0_int *)0xC2B31C4)->v)) + 0x78)) {
-        t1 = *(int *)0xC1EC75C;
-        t2 = t1;
-        if (((t1 & 8) != 0) && (t0 = (((struct o38_int *)0xC2B31C4)->v), t0 == 0)) {
-            FUN_0c01ec7a(0x0);
-            t0 = (((struct o0_int *)0xC2B31C4)->v);
-            if ((int)(*(int *)0xC2B3110) < (int)t0) {
-                *(unsigned int *)0xC2B3110 = t0;
-            } else {
-                if ((int)(*(int *)0xC2B3110) < (int)(t0 + 0x79)) {
-                    *(unsigned int *)0xC2B3110 = (t0 + 0x79);
-                }
-            }
-            (((struct o38_uint *)0xC2B31C4)->v) = 0x1;
-            t0 = 0x0;
-            for (;;) {
-                *(unsigned int *)((0xC2B3248 + t0)) = 0x1;
-                t1 = (int)((int)((*(int *)(((t0 + 0xC2B3228) + 0x0))) + (*(int *)(((t0 + 0xC2B3208) + 0x0)))) % (int)0xA);
-                t3 = (t0 + 0xC2B3228);
-                t4 = (t0 + 0xC2B3208);
-                t0 = (t0 + 0x4);
-                *(unsigned int *)((t3 + 0x0)) = t1;
-                *(unsigned int *)((t4 + 0x0)) = 0x0;
-                if ((unsigned int)t0 >= (unsigned int)0x20) {
-                    break;
-                }
-            }
-            t2 = t1;
-        }
-        t0 = t2;
-    }
-    return t0;
-}
 
 int nlGetNormalCalcMatrix(int a4, int a5, int a6, int a7)
 {

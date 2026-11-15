@@ -1,99 +1,134 @@
 /* Straight-line functions with calls and guards (batch gen_gx): generated from the code and checked by tests. Calls are
    to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
 
-typedef struct { int w[4]; } Stk4;
-struct o0_float { float v; };
-struct o1C_float { char p[0x1C]; float v; };
-struct o20_float { char p[0x20]; float v; };
-struct o4_float { char p[0x4]; float v; };
-struct o40_float { char p[0x40]; float v; };
-struct o44_float { char p[0x44]; float v; };
-struct o48_float { char p[0x48]; float v; };
-int FUN_0c05b3fc(void);
-int FUN_0c05b410(void);
-int FUN_0c072ff0(void);
-int FUN_0c073360(void);
-int FUN_0c073a30(float, float, float);
-int FUN_0c073ab0(void);
-int FUN_0c074f20(float);
-float nlLength(int, int);
-int nlObjPut(int);
-int nlObjPutUseViewMatrix(int);
-int nlPopMatrix(int);
-int nlPushMatrix(int);
-int nlRotateAY(int);
-int nlScale(float, float, float);
-int FUN_0c067f60(int a4, float f4);
+struct o0_int { int v; };
+struct o4_int { char p[0x4]; int v; };
+int FUN_0c01eeda(int, int, int, int);
+int FUN_0c075d60(int);
+int FUN_0c01f368(int a4, int a5, float f4);
 
-int FUN_0c067f60(int a4, float f4)
+int FUN_0c01f368(int a4, int a5, float f4)
 {
-    int stk[4];
-    register int t80;
-    register int t15;
-    register float t36;
-    register int t40;
-    register float u61;
-    register int t1;
-    register int t2;
-    register int t102;
 
-    { struct mv4 { int w[4]; }; *(struct mv4 *)(((int)stk + 0)) = *(struct mv4 *)(0xC110290); }
-    if (((*(int *)0xC177D58) != 0) && ((t1 = *(int *)0xC177D58, t1 != 1) && ((t2 = *(int *)0xC177D58, t2 != 2) && (t102 = *(int *)0xC177D58, t102 != 13)))) {
-    } else {
-        t80 = *(signed char *)(((a4 + 0x63) + 0x0));
-        t102 = t80;
-        if ((t80 & 2) == 0) {
-        } else {
-            if ((*(int *)0xC177CE8) == 0) {
-            } else {
-                t15 = *(int *)0xC1EC720;
-                t80 = t15;
-                if (t15 == 2) {
-                } else {
-                    FUN_0c073360();
-                    FUN_0c073a30(((((struct o40_float *)(a4))->v)), (((((struct o44_float *)(a4))->v)) + ((((struct o1C_float *)(a4))->v))), ((((struct o48_float *)(a4))->v)));
-                    nlRotateAY((*(int *)((a4 + 0x24))));
-                    *(volatile float *)((a4 + 0x54));
-                    *(volatile float *)((a4 + 0x50));
-                    *(volatile float *)((a4 + 0x4C));
-                    FUN_0c05b410();
-                    nlPushMatrix(0x0);
-                    if ((*(int *)0xC17590C) != 0) {
-                        nlScale(0.5f, 0.5f, 0.5f);
-                        FUN_0c074f20(0.5f);
-                    }
-                    t36 = nlLength((a4 + 0x40), 0xC177D38);
-                    t40 = 0xC3CC208;
-                    if (450.0f > t36) {
-                    } else {
-                        nlObjPutUseViewMatrix(0xC3CCC68);
-                        nlRotateAY(0x8000);
-                        t40 = 0xC3CCC68;
-                    }
-                    nlObjPutUseViewMatrix(t40);
-                    nlPopMatrix(0x1);
-                    FUN_0c072ff0();
-                    FUN_0c073ab0();
-                    if ((*(int *)0xC17590C) != 0) {
-                        nlScale(0.5f, 0.5f, 0.5f);
-                        FUN_0c074f20(0.5f);
-                    }
-                    nlObjPut((*(int *)((((((*(int *)((a4 + 0x4))) - 1) << 2) + ((int)stk + 0)) + 0x0))));
-                    FUN_0c05b3fc();
-                    nlPopMatrix(0x1);
-                    (((struct o1C_float *)(a4))->v) = (((((struct o1C_float *)(a4))->v)) + ((((struct o20_float *)(a4))->v)));
-                    u61 = (((struct o0_float *)0xC0681F4)->v);
-                    if (u61 > ((((struct o1C_float *)(a4))->v))) {
-                        (((struct o1C_float *)(a4))->v) = u61;
-                        (((struct o20_float *)(a4))->v) = ((((struct o4_float *)0xC0681F4)->v));
-                    }
-                    (((struct o20_float *)(a4))->v) = (((((struct o20_float *)(a4))->v)) - 0.0250000004f);
-                    *(unsigned int *)((a4 + 0x24)) = ((*(int *)((a4 + 0x24))) + 0x100);
-                    t80 = 0x20;
-                }
-            }
-            t102 = t80;
-        }
-    }
-    return t102;
+    register int R3;
+    register int R9;
+    register int R10;
+    register int R11;
+    register int R12;
+    register int R13;
+    register float F3;
+    register float F13;
+    register float F14;
+    register float F15;
+    register int T_;
+    register int FPUL_;
+    register int v0_0;
+    register int v0_1;
+    register int v0_2;
+    register int v0_3;
+    register int v0_4;
+    register int v0_5;
+    register float w0_0;
+    v0_2 = a4;
+    v0_4 = a5;
+    w0_0 = f4;
+    v0_0 = R13;
+    v0_1 = R12;
+    v0_3 = R11;
+    v0_5 = R10;
+    R13 = (0x0);
+    v0_1 = ((((v0_2 << 2) + v0_2) << 2));
+    v0_0 = (0x0);
+    v0_3 = ((v0_2 << 2));
+    if ((v0_4 != 0)) goto L_C01F39A;
+    v0_2 = *(int *)((v0_3 + ((((struct o0_int *)0xC2707E0)->v))));
+    R10 = (v0_2);
+    v0_2 = (0xC1ECD40);
+    L_C01F3A2:;
+    v0_1 = *(int *)((((*(int *)((v0_2 + 0x0))) + v0_1) + 0x10));
+    R11 = (0x1);
+    R12 = (v0_1);
+    v0_1 = (0xC26ECC0);
+    v0_2 = (R13);
+    F13 = ((5000.0f - w0_0));
+    F14 = (1.20000005f);
+    F15 = (0.0f);
+    L_C01F3BA:;
+    v0_4 = (*(int *)((v0_1 + 0x4))) != R10;
+    if (v0_4) goto L_C01F43E;
+    v0_2 = (unsigned char)(*(signed char *)((v0_1 + 0x0))) != 4;
+    R12 = (0xC075D60);
+    if (v0_2) goto L_C01F400;
+    FUN_0c075d60((*(int *)((v0_1 + 0x14))));
+    L_C01F410:;
+    v0_0 = (R11);
+    L_C01F434:;
+    *(unsigned int *)((v0_1 + 0x10)) = ((*(int *)((v0_1 + 0x10))) + 0x1);
+    v0_0 = (v0_0);
+    L_C01F4B6:;
+    return v0_0;
+    L_C01F400:;
+    v0_2 = (*(signed char *)((v0_1 + 0x0))) != 0;
+    if (v0_2) goto L_C01F414;
+    FUN_0c075d60((*(int *)((v0_1 + 0x14))));
+    *(unsigned char *)((v0_1 + 0x0)) = 0x4;
+    *(unsigned int *)((v0_1 + 0xC)) = R13;
+    goto L_C01F410;
+    L_C01F414:;
+    v0_2 = (unsigned char)(*(signed char *)((v0_1 + 0x0))) != 1;
+    if (v0_2) goto L_C01F434;
+    v0_2 = (*(int *)((v0_1 + 0x10))) != 0;
+    if (v0_2) goto L_C01F434;
+    w0_0 = (F13);
+    if ((!(0.0f > F13))) goto L_C01F42C;
+    w0_0 = (F15);
+    L_C01F42C:;
+    *(unsigned int *)((v0_1 + 0xC)) = (int)(w0_0 * F14);
+    FPUL_ = ((int)(w0_0 * F14));
+    goto L_C01F434;
+    L_C01F43E:;
+    v0_4 = *(int *)((v0_1 + 0x8));
+    v0_5 = (int)((v0_2 + v0_4) + 0x1) < (int)0x120;
+    v0_1 = ((v0_1 + (((((v0_4 + 0x1) << 1) + (v0_4 + 0x1)) << 2) << 1)));
+    v0_2 = (((v0_2 + v0_4) + 0x1));
+    v0_4 = (0x120);
+    if (v0_5) goto L_C01F3BA;
+    v0_0 = FUN_0c01eeda(R12, v0_4, v0_0, v0_3);
+    v0_2 = (v0_0);
+    if ((v0_0 == -1)) goto L_C01F4B4;
+    *(unsigned char *)(((((((v0_2 << 1) + v0_2) << 2) << 1) + 0xC26ECC0) + 0x0)) = R11;
+    *(unsigned int *)(((((((v0_2 << 1) + v0_2) << 2) << 1) + 0xC26ECC0) + 0x4)) = R10;
+    v0_2 = ((((((v0_2 << 1) + v0_2) << 2) << 1) + 0xC26ECC0));
+    w0_0 = (F13);
+    if ((!(0.0f > F13))) goto L_C01F47E;
+    w0_0 = (F15);
+    L_C01F47E:;
+    *(unsigned int *)((v0_2 + 0xC)) = (int)(w0_0 * F14);
+    *(unsigned int *)((v0_2 + 0x10)) = ((*(int *)((v0_2 + 0x10))) + 0x1);
+    *(unsigned int *)((v0_2 + 0x8)) = (R12 - 1);
+    FPUL_ = ((int)(w0_0 * F14));
+    if (((int)R12 <= (int)R11)) goto L_C01F4B4;
+    v0_2 = ((v0_2 + 0x18));
+    v0_4 = (R11);
+    if (((int)R11 >= (int)R12)) goto L_C01F4B4;
+    v0_0 = (0xFFFFFFFF);
+    v0_3 = (0x3E8);
+    L_C01F4A2:;
+    *(unsigned char *)((v0_2 + 0x0)) = R13;
+    *(unsigned int *)((v0_2 + 0xC)) = v0_3;
+    *(unsigned int *)((v0_2 + 0x10)) = R13;
+    *(unsigned int *)((v0_2 + 0x8)) = R13;
+    *(unsigned int *)((v0_2 + 0x4)) = v0_0;
+    v0_1 = (int)(v0_4 + 0x1) < (int)R12;
+    v0_2 = ((v0_2 + 0x18));
+    v0_4 = ((v0_4 + 0x1));
+    if (v0_1) goto L_C01F4A2;
+    L_C01F4B4:;
+    v0_0 = (0x0);
+    goto L_C01F4B6;
+    L_C01F39A:;
+    v0_2 = *(int *)((v0_3 + ((((struct o4_int *)0xC2707E0)->v))));
+    R10 = (v0_2);
+    v0_2 = (0xC1ECD44);
+    goto L_C01F3A2;
 }

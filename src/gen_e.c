@@ -1563,27 +1563,6 @@ int FUN_0c067160(int a4, int a5, int a6, int a7)
 }
 
 
-int FUN_0c05305e(int a4, int a5, float f4)
-{
-    register int t8;
-
-    FUN_0c06f550(0xFFFFC500, 0xFFFFC500, 0xFFFFC500);
-    FUN_0c052eca();
-    (((struct o8_uint *)0xC2B2C4C)->v) = a5;
-    *(unsigned short *)0xC2B2B58 = ((*(short *)0xC2B2B58) | 0x1);
-    if (a4 == 0) {
-        t8 = (FUN_0c058f64(0xC11D02C, 0x0, 0x78, 0x0));
-    } else {
-        t8 = a4;
-        if (a4 == -1) {
-            (((struct o0_uint *)0xC2B2C4C)->v) = 0x1;
-            (((struct o4_uint *)0xC2B2C4C)->v) = 0x0;
-            t8 = 0x0;
-        }
-    }
-    (((struct oC_uint *)0xC2B2C4C)->v) = a4;
-    return t8;
-}
 
 int FUN_0c058d4e(int a4, int a5)
 {

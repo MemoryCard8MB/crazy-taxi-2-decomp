@@ -37,40 +37,20 @@ int thunk_mwRnaSetOutPan(void);
 int thunk_cvFsFinish(void);
 int thunk_mwRnaSetBitPerSmpl(void);
 
-int thunk_kmiWriteRegister(void)
-{
-    return kmiWriteRegister();
-}
 
 int thunk_mwRnaInit(void)
 {
     return mwRnaInit();
 }
 
-int thunk_kmSetFogTable_0c071a70(void)
-{
-    return kmSetFogTable();
-}
 
-int thunk_kmSetCheapShadowMode(void)
-{
-    return kmSetCheapShadowMode();
-}
 
-int thunk_syCfgExit(void)
-{
-    return syCfgExit();
-}
 
 int thunk_kmSetFogTable(void)
 {
     return kmSetFogTable();
 }
 
-int thunk_mwRnaCreate(void)
-{
-    return mwRnaCreate();
-}
 
 int thunk_mwRnaFinish(void)
 {
@@ -97,32 +77,12 @@ int thunk_mwRnaSetPlaySw(void)
     return mwRnaSetPlaySw();
 }
 
-int thunk_mwRnaSetTransSw(void)
-{
-    return mwRnaSetTransSw();
-}
 
-int thunk_mwRnaSetNumChan(void)
-{
-    return mwRnaSetNumChan();
-}
 
-int thunk_mwRnaSetOutVol(void)
-{
-    return mwRnaSetOutVol();
-}
 
-int thunk_mwRnaSetOutPan(void)
-{
-    return mwRnaSetOutPan();
-}
 
 int thunk_cvFsFinish(void)
 {
     return cvFsFinish();
 }
 
-int thunk_mwRnaSetBitPerSmpl(void)
-{
-    return mwRnaSetBitPerSmpl();
-}

@@ -994,41 +994,6 @@ int FUN_0c033128(int a4, int a5, int a6, int a7)
     return (FUN_0c032942((*(int *)(((int)stk + 4))), (*(int *)(((int)stk + 8))), (((int)stk + 0) + 0x14), 0x0, 0x0));
 }
 
-int FUN_0c01be2c(int a4, int a5, int a6, int a7)
-{
-    register int t22;
-    register int t24;
-
-    (((struct o30_uint *)0xC1EC71C)->v) = 0x0;
-    (((struct o8_uint *)0xC1ECC98)->v) = 0x0;
-    (((struct o0_uint *)0xC1EC840)->v) = 0x11;
-    (((struct o0_uchar *)0xC1ECC98)->v) = (*(signed char *)0xC097434);
-    (((struct o1_uchar *)0xC1ECC98)->v) = (*(signed char *)0xC097435);
-    (((struct o2_uchar *)0xC1ECC98)->v) = (*(signed char *)0xC097436);
-    (((struct o3_uchar *)0xC1ECC98)->v) = (*(signed char *)0xC097437);
-    (((struct o4_uchar *)0xC1ECC98)->v) = (*(signed char *)0xC097438);
-    (((struct o5_uchar *)0xC1ECC98)->v) = (*(signed char *)0xC097439);
-    (((struct o28_uint *)0xC1EC71C)->v) = (((((struct o28_int *)0xC1EC71C)->v)) + 0x1);
-    nlInitEvent();
-    FUN_0c01e6f0();
-    FUN_0c058e82();
-    mpvvlc_InitMbai();
-    FUN_0c03386a(0x0);
-    FUN_0c05305e(0x1, 0x0);
-    if ((int)(*(int *)0xC11D044) > 0) {
-        *(unsigned int *)0xC11D044 = 0x384;
-        FUN_0c058f64(0xC11D02C, 0x0, 0x78, 0x0);
-    }
-    FUN_0c02024c();
-    gdc_FileLoadInit();
-    t22 = 0x2;
-    if (((((struct o0_int *)0xC1EC71C)->v)) == 0) {
-        t22 = 0x1;
-    }
-    t24 = FUN_0c047624(t22);
-    (((struct o8_uint *)0xC1EC840)->v) = 0x0;
-    return t24;
-}
 
 int FUN_0c060728(void)
 {
@@ -1331,27 +1296,6 @@ int FUN_0c03854c(void)
     return FUN_0c0343b8(0x1, 0x14);
 }
 
-int FUN_0c01c134(int a4, int a5, int a6, int a7)
-{
-    (((struct o0_uint *)0xC1EC744)->v) = (((((struct o0_int *)0xC1EC744)->v)) + 0x1);
-    (((struct o8_uint *)0xC1EC744)->v) = 0x0;
-    *(unsigned int *)0xC1EC840 = 0x11;
-    nlInitEvent();
-    FUN_0c01e6f0();
-    FUN_0c058e82();
-    mpvvlc_InitMbai();
-    FUN_0c03386a(0x0);
-    FUN_0c03393c(((((struct o0_float *)0xC01C250)->v)));
-    FUN_0c033942(((((struct o8_float *)0xC01C250)->v)));
-    *(unsigned int *)0xC1ECC94 = 0x0;
-    FUN_0c05305e(0x0, 0x0);
-    if ((int)(*(int *)0xC11D044) > 0) {
-        *(unsigned int *)0xC11D044 = 0x384;
-        FUN_0c058f64(0xC11D02C, 0x0, 0x78, 0x0);
-    }
-    FUN_0c02024c();
-    return gdc_FileLoadInit();
-}
 
 int FUN_0c065b34(int a4, int a5)
 {
@@ -1675,15 +1619,6 @@ int FUN_0c01dd88(int a4, int a5, int a6)
     return (t2 - 1);
 }
 
-int FUN_0c069f70(void)
-{
-    register int t0;
-
-    t0 = *(int *)0xC2B9C2C;
-    *(unsigned int *)0xC13B470 = (*(int *)(((*(int *)((((t0 - 1) << 2) + 0xC13B450))) + (((int)((int)(FUN_0c069e54()) % (int)(*(int *)((((t0 - 1) << 2) + 0xC110700))))) << 2))));
-    Voice_ShutUp(0x1);
-    return FUN_0c058f64(0xC13B470, 0x1, (*(int *)((((t0 - 1) << 2) + 0xC11037C))), 0x0);
-}
 
 int FUN_0c023176(void)
 {

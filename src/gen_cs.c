@@ -338,46 +338,6 @@ int FUN_0c019486(void)
     return (nlPopMatrix(0x1));
 }
 
-int FUN_0c01db74(int a4, int a5, int a6, int a7)
-{
-    int t0;
-    register int t1;
-    register int t2;
-
-    (((struct o8_uint *)0xC1ECD0C)->v) = (((((struct o8_int *)0xC1ECD0C)->v)) - 1);
-    t1 = (((struct o0_int *)0xC1ECCA8)->v);
-    if (t1 == 1) {
-        (((struct oC_uint *)0xC1ECCA8)->v) = (((((struct oC_int *)0xC1ECCA8)->v)) - 1);
-    }
-    t2 = (((struct o8_int *)0xC1ECD0C)->v);
-    if ((int)t2 <= 0) {
-        (((struct o0_uint *)0xC1ECD0C)->v) = (((((struct o0_int *)0xC1ECD0C)->v)) + 0x1);
-        return t1;
-    }
-    FUN_0c050958(t2, a5, a6, a7);
-    if ((*(int *)0xC1EC720) != 2) {
-        FUN_0c019466();
-        if (((((struct o8_int *)0xC1ECD0C)->v)) == 0x14A) {
-            FUN_0c053fde();
-        }
-    } else {
-        FUN_0c018b00(0x0);
-    }
-    t1 = (((struct o8_int *)0xC1ECD0C)->v);
-    if (t1 == 45) {
-        *(unsigned int *)0xC175908 = 0x1;
-        t2 = FUN_0c03f154(0x0);
-        if ((t2 == 3) && (t0 = *(int *)0xC1EC720, t0 != 2)) {
-            FUN_0c01ead0((*(int *)0xC2A4668), 0x0);
-        } else {
-            FUN_0c01ea8e();
-        }
-        (((struct o0_uint *)0xC1ECCA8)->v) = 0x1;
-        (((struct oC_uint *)0xC1ECCA8)->v) = (((((struct oC_int *)0xC1ECCA8)->v)) - 1);
-        return FUN_0c03b318(0x2);
-    }
-    return t1;
-}
 
 int FUN_0c06a9f4(int a4, int a5)
 {
@@ -679,24 +639,6 @@ int FUN_0c061608(int a4, int a5, int a6, int a7)
     return FUN_0c05f98c();
 }
 
-int FUN_0c069ef2(int a4)
-{
-    register int t0;
-    register int t2;
-
-    t0 = *(int *)0xC1ECCA8;
-    if (t0 == 1) {
-        t2 = *(int *)0xC2B9C2C;
-        if (a4 != 0) {
-            *(unsigned int *)0xC13B438 = (*(int *)(((*(int *)((((t2 - 1) << 2) + 0xC13B3F8))) + (((int)((int)(FUN_0c069e54()) % (int)(*(int *)((((t2 - 1) << 2) + 0xC1105C4))))) << 2))));
-        } else {
-            *(unsigned int *)0xC13B438 = (*(int *)(((*(int *)((((t2 - 1) << 2) + 0xC13B418))) + (((int)((int)(FUN_0c069e54()) % (int)(*(int *)((((t2 - 1) << 2) + 0xC110644))))) << 2))));
-        }
-        Voice_ShutUp(0x1);
-        return FUN_0c058f64(0xC13B438, 0x1, (*(int *)((((t2 - 1) << 2) + 0xC11037C))), 0x0);
-    }
-    return t0;
-}
 
 int FUN_0c06088e(int a4)
 {
@@ -729,29 +671,6 @@ int FUN_0c06088e(int a4)
     return 0x84;
 }
 
-int FUN_0c01da32(void)
-{
-    int stk[3];
-    register int t12;
-
-    FUN_0c058be4(0x0);
-    FUN_0c01e6f0();
-    FUN_0c06f550(0x0, 0x0, 0x0);
-    *(unsigned int *)0xC2AC2F4 = 0x1;
-    FUN_0c048262(0xFFFFFFFF);
-    *(unsigned int *)(((int)stk + 0)) = 0xC01D4AC;
-    FUN_0c01d4ac();
-    FUN_0c047624(0x3);
-    SetAdvCamera(0xC177D38, 0x1);
-    FUN_0c030e54();
-    FUN_0c030e54();
-    SetMotionBlurStrength((*(float *)0xC01DB48));
-    FUN_0c030eee(1.0f, 1.0f, 1.0f);
-    t12 = FUN_0c0311b4();
-    (((struct o0_uint *)0xC1EC744)->v) = (((((struct o0_int *)0xC1EC744)->v)) + 0x1);
-    (((struct o8_uint *)0xC1EC744)->v) = 0x0;
-    return t12;
-}
 
 int FUN_0c0318b4(int a4, int a5, int a6)
 {

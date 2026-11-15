@@ -180,7 +180,7 @@ int syRtcMakeAgeOfMoon(void);
 int syExtChkConnectSyncDev(int a4);
 int FUN_0c030eee(float f4, float f5, float f6);
 int FUN_0c032942(int a4, int a5, int a6, int a7, int a8);
-void FUN_0c034320(int a4, int a5);
+int FUN_0c034320(int a4, int a5);
 int FUN_0c05ccce(int a4, int a5, int a6, int a7);
 int FUN_0c07d4bc(int a4, int a5, int a6);
 int ntLDBrowser(int a4, int a5, int a6, int a7);
@@ -297,24 +297,6 @@ float FUN_0c01b93e(int a4, int a5, int a6, float f4)
     return u15;
 }
 
-int FUN_0c01c468(void)
-{
-    register int t7;
-
-    *(unsigned int *)0xC177EF0 = 0xC177EF4;
-    nlInitHeapMemory(0xC177EF4, 0x30000);
-    nlInitEvent();
-    FUN_0c01e6f0();
-    mpvvlc_InitMbai();
-    FUN_0c020ae8();
-    FUN_0c05ab5e();
-    FUN_0c05f834();
-    t7 = FUN_0c06cb24();
-    if (((((struct o24_int *)0xC1EC71C)->v)) == 0) {
-        return gdc_FileLoad((((((struct o0_int *)0xC2AC5FC)->v)) + 0x300), (*(int *)((((((((struct o0_int *)0xC1EC71C)->v)) << 2) + (0xC11D04C + ((((int)(*(int *)0xC2AC2F8) >> 4) << 2) << 1))) + 0x0))), (((((struct o4_int *)0xC2AC5FC)->v)) - 768));
-    }
-    return t7;
-}
 
 void FUN_0c055dce(void)
 {
@@ -358,21 +340,6 @@ int FUN_0c067494(int a4, int a5)
     return t10;
 }
 
-int FUN_0c069e78(int a4)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-
-    t0 = FUN_0c069e54();
-    t1 = FUN_0c059074(0x1);
-    if ((t1 == 0) && ((t2 = *(int *)0xC2B9C2C, (int)a4 >= 0) && ((int)a4 < (int)0x3))) {
-        *(unsigned int *)0xC13B3E0 = (*(int *)((((((int)((int)t0 % (int)(*(int *)((((*(int *)(((a4 << 2) + 0xC13B3D4))) + ((t2 - 1) << 2)) + 0x0))))) << 2) + (*(int *)((((*(int *)(((a4 << 2) + 0xC13B3C8))) + ((t2 - 1) << 2)) + 0x0)))) + 0x0)));
-        Voice_ShutUp(0x1);
-        return FUN_0c058f64(0xC13B3E0, 0x1, (*(int *)((((t2 - 1) << 2) + 0xC11037C))), 0x0);
-    }
-    return t1;
-}
 
 int nlInvLightVectorUseViewMatrix(void)
 {
@@ -644,17 +611,23 @@ int FUN_0c032942(int a4, int a5, int a6, int a7, int a8)
     return t1;
 }
 
-void FUN_0c034320(int a4, int a5)
+/* manual: returns what the original leaves in r0 (r7): 0 when nothing happens, 2 after the countdown at +0x28 steps, 1 when it
+   went below zero and was reset to a5, 3 when it reached zero (retcheck: a caller reads it) */
+int FUN_0c034320(int a4, int a5)
 {
     int t0;
+    int r = 0;
 
     if ((((*(int *)0xC2A46E0) != 1) || (a4 != 0)) && (t0 = *(int *)((((a4 * 0x2C) + 0xC2A4680) + 0x1C)), (t0 & 2) != 0)) {
+        r = 2;
         t0 = *(int *)((((a4 * 0x2C) + 0xC2A4680) + 0x28));
         *(unsigned int *)((((a4 * 0x2C) + 0xC2A4680) + 0x28)) = (t0 - 1);
         if ((int)(t0 - 1) < 0) {
+            r = 1;
             *(unsigned int *)((((a4 * 0x2C) + 0xC2A4680) + 0x28)) = a5;
         }
         if ((*(int *)((((a4 * 0x2C) + 0xC2A4680) + 0x28))) == 0) {
+            r = 3;
             *(unsigned int *)((((a4 * 0x2C) + 0xC2A4680) + 0x1C)) = (((*(int *)((((a4 * 0x2C) + 0xC2A4680) + 0x1C))) & 0xFFFFFFF4) | 0x4);
         }
         if (a4 == 0) {
@@ -672,6 +645,7 @@ void FUN_0c034320(int a4, int a5)
             }
         }
     }
+    return r;
 }
 
 

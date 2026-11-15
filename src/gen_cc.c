@@ -1061,54 +1061,6 @@ int mwlRnaExecSvrHndl(int a4, int a5, int a6, int a7)
     return (unsigned char)t0;
 }
 
-int FUN_0c01bca2(void)
-{
-    register int t2;
-    register int t4;
-    register int t8;
-
-    (((struct o30_uint *)0xC1EC71C)->v) = (((((struct o30_int *)0xC1EC71C)->v)) + 0x1);
-    t2 = 0x2;
-    if (((((struct o0_int *)0xC1EC71C)->v)) == 0) {
-        t2 = 0x1;
-    }
-    t4 = FUN_0c048262(t2);
-    if (t4 == 0) {
-        FUN_0c01d7b0();
-    }
-    t8 = *(int *)0xC1ECC90;
-    switch (t8) {
-    case 0:
-        if ((int)(*(int *)0xC1EC848) < (int)0xBB8) {
-        } else {
-            *(unsigned int *)0xC1ECC90 = ((*(int *)0xC1ECC90) + 0x1);
-        }
-        break;
-    case 1:
-        if ((int)(*(int *)0xC1EC848) >= (int)((*(int *)((0xC09743C + (((((struct o0_int *)0xC1EC71C)->v)) << 2)))) - 600)) {
-            *(volatile int *)0xC1EC71C;
-            FUN_0c01e9e2(0x0, 0x2BC);
-            *(unsigned int *)0xC1ECC90 = ((*(int *)0xC1ECC90) + 0x1);
-        }
-        break;
-    case 2:
-        if ((int)(*(int *)0xC1EC848) >= (int)((*(int *)((0xC09743C + (((((struct o0_int *)0xC1EC71C)->v)) << 2)))) - 400)) {
-            FUN_0c058f64(0xC11CFFC, 0x0, 0x78, 0x0);
-            *(unsigned int *)0xC1ECC90 = ((*(int *)0xC1ECC90) + 0x1);
-        }
-        gdc_FadeManStreamSong();
-        break;
-    case 3:
-        gdc_FadeManStreamSong();
-        break;
-    }
-    if ((int)(*(int *)0xC1EC848) >= (int)(*(int *)((0xC09743C + (((((struct o0_int *)0xC1EC71C)->v)) << 2))))) {
-        (((struct o28_uint *)0xC1EC71C)->v) = 0x8;
-        FUN_0c047a4a(0x0);
-        return FUN_0c01e6f0();
-    }
-    return FUN_0c01e3cc(0x0);
-}
 
 
 

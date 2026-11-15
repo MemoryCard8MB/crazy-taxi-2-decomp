@@ -542,32 +542,6 @@ int FUN_0c055548(int a4, int a5, int a6, int a7, float f4)
     return 0xC055684;
 }
 
-int FUN_0c066b3a(int a4)
-{
-    float u19;
-    register float u20;
-
-    nlPushMatrix(0xC17596C);
-    nlMultiMatrix((a4 + 0x14));
-    if (((((struct o58_int *)(a4))->v)) == 3) {
-        FUN_0c05b410();
-    }
-    FUN_0c05d1b4(((((struct o54_int *)(a4))->v)), 0x0, ((((struct o64_float *)(a4))->v)));
-    FUN_0c05edbe(((((struct o58_int *)(a4))->v)));
-    if (((((struct o58_int *)(a4))->v)) == 3) {
-        FUN_0c05b3fc();
-    }
-    (((struct o64_float *)(a4))->v) = (((((struct o64_float *)(a4))->v)) + ((((struct o68_float *)(a4))->v)));
-    if ((((((struct o5C_int *)(a4))->v)) != 0) && (u19 = (((struct o60_float *)(a4))->v), u20 = (((struct o64_float *)(a4))->v), !(u19 > u20))) {
-        if ((((((struct o60_float *)(a4))->v)) + ((((struct o68_float *)(a4))->v))) > ((((struct o64_float *)(a4))->v))) {
-            FUN_0c058ca6(((((struct o5C_int *)(a4))->v)), 0x2);
-        }
-    }
-    if ((int)(int)((((struct o64_float *)(a4))->v)) >= (int)(*(int *)((((((struct o54_int *)(a4))->v)) + 0x0)))) {
-        nlCloseEvent(a4);
-    }
-    return nlPopMatrix(0x1);
-}
 
 int gdFsDaPauseG(void)
 {

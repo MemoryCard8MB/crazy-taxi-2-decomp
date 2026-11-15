@@ -131,7 +131,7 @@ int FUN_0c069450(void);
 int FUN_0c063458(int a4, int a5, int a6, int a7, float f4);
 void FUN_0c027096(void);
 int FUN_0c0666c0(int a4);
-void FUN_0c01422e(int a4);
+int FUN_0c01422e(int a4);
 int getRootDistance(int a4, int a5, int a6, int a7, int a8, int a9, int a10);
 
 int FUN_0c06d8e6(float f4)
@@ -1174,7 +1174,9 @@ void FUN_0c027096(void)
 }
 
 
-void FUN_0c01422e(int a4)
+/* manual: returns what the original leaves in r0: 1 from the default-table paths ([0C1EC720] 0, or not 1 or 2), 0 for 1
+   and 2 (retcheck: a caller reads it) */
+int FUN_0c01422e(int a4)
 {
     register int t0;
 
@@ -1193,10 +1195,10 @@ void FUN_0c01422e(int a4)
                         { struct mv5 { int w[5]; }; *(struct mv5 *)(a4) = *(struct mv5 *)(0xC2903BC); }
                     }
                 }
-                return;
+                return 1;
             }
             { struct mv5 { int w[5]; }; *(struct mv5 *)(a4) = *(struct mv5 *)(0xC175930); }
-            return;
+            return 0;
         }
         t0 = FUN_0c03f154(0x0);
         if (t0 == 3) {
@@ -1209,7 +1211,7 @@ void FUN_0c01422e(int a4)
                 { struct mv5 { int w[5]; }; *(struct mv5 *)(a4) = *(struct mv5 *)(0xC290AEC); }
             }
         }
-        return;
+        return *(int *)(a4 + 4);       /* what the copy helper leaves in r0: the record's second word */
     }
     t0 = FUN_0c03f154(0x0);
     if (t0 == 3) {
@@ -1222,6 +1224,7 @@ void FUN_0c01422e(int a4)
             { struct mv5 { int w[5]; }; *(struct mv5 *)(a4) = *(struct mv5 *)(0xC2903BC); }
         }
     }
+    return 1;
 }
 
 int getRootDistance(int a4, int a5, int a6, int a7, int a8, int a9, int a10)

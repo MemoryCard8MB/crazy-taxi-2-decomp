@@ -249,28 +249,6 @@ int kmResetPointer(void);
 int kmtex_TextureSize_smallVQ(int a4);
 
 
-int FUN_0c06a0c0(void)
-{
-    int t0;
-    register int t1;
-
-    t1 = *(int *)0xC2B9C2C;
-    *(unsigned int *)0xC13B518 = (*(int *)(((*(int *)((0xC13B4F8 + ((t1 - 1) << 2)))) + (((int)((int)(FUN_0c069e54()) % (int)(*(int *)((((t1 - 1) << 2) + 0xC110964))))) << 2))));
-    if (((*(int *)0xC2B9C2C) == 7) && (t0 = *(int *)0xC13B518, t0 == 0x323)) {
-        t0 = *(int *)0xC2B9CA4;
-        if ((*(int *)((t0 + 0x4))) == 1) {
-            if (((*(signed char *)(((*(int *)((t0 + 0x0))) + 0xFE))) & 32) != 0) {
-                *(unsigned int *)0xC13B518 = 0x323;
-            } else {
-                *(unsigned int *)0xC13B518 = 0x324;
-            }
-        } else {
-            *(unsigned int *)0xC13B518 = 0x325;
-        }
-    }
-    Voice_ShutUp(0x1);
-    return FUN_0c058f64(0xC13B518, 0x1, (*(int *)((((t1 - 1) << 2) + 0xC11037C))), 0x0);
-}
 
 int nlDispStripLoadTexture(int a4, int a5)
 {

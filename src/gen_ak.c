@@ -978,19 +978,6 @@ int FUN_0c02d694(int a4, int a5)
     return Check2DAreaDX(a4, (*(int *)(((t4 + ((a5 << 2) << 1)) + 0x4))), (*(int *)(((t4 + ((a5 << 2) << 1)) + 0x0))));
 }
 
-int FUN_0c04e92c(float f4)
-{
-    register int t0;
-    register int t1;
-
-    t0 = *(int *)0xC175C80;
-    t1 = ((~(((~t0) + 0x1) & 0x7)) + 0x1);
-    if ((int)t0 >= 0) {
-        t1 = (t0 & 0x7);
-    }
-    t0 = *(int *)(((t1 << 2) + 0xC131804));
-    return FUN_0c06f550(t0, t0, t0);
-}
 
 float FUN_0c05b77e(int a4, int a5, int a6, float f4)
 {
@@ -1584,21 +1571,6 @@ int FUN_0c01c200(int a4, int a5, int a6, int a7)
     return FUN_0c033948();
 }
 
-int FUN_0c01eaea(void)
-{
-    register int t1;
-    register int t2;
-
-    FUN_0c01e6f0();
-    (((struct o0_uint *)0xC2690E4)->v) = 0x0;
-    t1 = (((struct o4_int *)0xC2690E4)->v);
-    t2 = ((~(((~(t1 + 0x1)) + 0x1) & 0x3)) + 0x1);
-    if ((int)(t1 + 0x1) >= 0) {
-        t2 = ((t1 + 0x1) & 0x3);
-    }
-    (((struct o4_uint *)0xC2690E4)->v) = t2;
-    return t2;
-}
 
 int FUN_0c020ae8(void)
 {
@@ -2140,14 +2112,6 @@ int Start_TimeUp(void)
     return ((t3 & 0xFBFFFFFF) | 0x10000000);
 }
 
-int FUN_0c05a356(int a4)
-{
-    nlPushMatrix(0x0);
-    thunk_FUN_0c0765b0();
-    nlMultiMatrixRevOrder8(0xC2B8A30);
-    FUN_0c075d60();
-    return nlPopMatrix(0x1);
-}
 
 int FUN_0c05ac12(void)
 {
@@ -2589,17 +2553,6 @@ int FUN_0c03e358(int a4, int a5)
     return FUN_0c0339fc(t1);
 }
 
-int Voice_ShutUp(int a4)
-{
-    register int t2;
-
-    if ((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0))) != 0) {
-        t2 = FUN_0c01ec7a(a4);
-        *(unsigned int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0)) = 0x0;
-        *(unsigned int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0xC)) = 0x0;
-    }
-    return t2;
-}
 
 int FUN_0c05bfe6(void)
 {

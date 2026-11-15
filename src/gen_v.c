@@ -779,35 +779,6 @@ int gdFsSearchName(int a4, int a5, int a6)
     return t2;
 }
 
-int adxt_set_outpan(int a4)
-{
-    register int t0;
-
-    t0 = FUN_0c161fee((*(int *)((a4 + 0x4))));
-    if (t0 == 1) {
-        t0 = (((struct o42_short *)(a4))->v);
-        *(volatile int *)((a4 + 0xC));
-        if (t0 == -128) {
-        } else {
-            *(volatile short *)(((a4 + 0x42) + 0x0));
-        }
-        t0 = (thunk_mwRnaSetOutPan());
-    } else {
-        if (((((struct o42_short *)(a4))->v)) == -128) {
-        } else {
-            *(volatile short *)(((a4 + 0x42) + 0x0));
-        }
-        *(volatile int *)((a4 + 0xC));
-        thunk_mwRnaSetOutPan();
-        if (((((struct o44_short *)(a4))->v)) == -128) {
-        } else {
-            *(volatile short *)((a4 + 0x44));
-        }
-        *(volatile int *)((a4 + 0xC));
-        t0 = (thunk_mwRnaSetOutPan());
-    }
-    return t0;
-}
 
 int FUN_0c16bb46(void)
 {
@@ -1616,28 +1587,6 @@ int nlCloseEvent(int a4)
     return t1;
 }
 
-void gdc_FadeManStreamSong(void)
-{
-    register int t6;
-    register int t9;
-
-    if (((((struct o0_int *)0xC2690D4)->v)) != 0) {
-        if ((int)((((struct o4_int *)0xC2690D4)->v)) > 0) {
-            (((struct o4_uint *)0xC2690D4)->v) = (((((struct o4_int *)0xC2690D4)->v)) - 1);
-            return;
-        }
-        t6 = (((struct o8_int *)0xC2690D4)->v);
-        if ((int)t6 > 0) {
-            t9 = FUN_0c01e83e((int)(((float)t6 / (float)((((struct oC_int *)0xC2690D4)->v))) * (float)(*(signed char *)0xC1ECD50)));
-            ADXT_SetOutVol((*(int *)0xC1ECD64), t9);
-            (((struct o8_uint *)0xC2690D4)->v) = (((((struct o8_int *)0xC2690D4)->v)) - 1);
-            return;
-        }
-        (((struct o0_uint *)0xC2690D4)->v) = 0x0;
-        FUN_0c01e6f0();
-    return;
-    }
-}
 
 int FUN_0c02024c(void)
 {

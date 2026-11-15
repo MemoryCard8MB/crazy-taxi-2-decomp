@@ -317,16 +317,6 @@ int FUN_0c08fa8a(int a4)
     return (memset(a4, 0x0, 0x48));
 }
 
-int FUN_0c091ae0(void)
-{
-    register int t0;
-
-    t0 = *(int *)0xC147528;
-    if (t0 != 0) {
-        return ((int (*)(void))(t0))();
-    }
-    return ((int (*)(void))(0xC091AFA))();
-}
 
 int vmsfb_init(void)
 {

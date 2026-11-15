@@ -8,9 +8,9 @@ struct o24_int { char p[0x24]; int v; };
 struct o4_int { char p[0x4]; int v; };
 int FUN_0c01f4ca(int, int, float);
 extern float nlLength();
-int gdc_CoursePointLoadReq(int a4, Stk2 s, float f4);
+int gdc_CoursePointLoadReq(int a4, Stk3 p, float f4);
 
-int gdc_CoursePointLoadReq(int a4, Stk2 s, float f4)
+int gdc_CoursePointLoadReq(int a4, Stk3 p, float f4)
 {
     int stk[14];
 
@@ -30,8 +30,9 @@ int gdc_CoursePointLoadReq(int a4, Stk2 s, float f4)
     register float w0_1;
     register float w0_2;
     register float w0_3;
-    stk[4] = s.w[0];
-    stk[5] = s.w[1];
+    stk[4] = p.w[0];
+    stk[5] = p.w[1];
+    stk[6] = p.w[2];
     v0_0 = a4;
     w0_2 = f4;
     *(float *)(((int)stk + 20)) = (0.0f);

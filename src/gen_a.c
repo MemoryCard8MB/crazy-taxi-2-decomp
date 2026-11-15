@@ -534,10 +534,6 @@ int FUN_0c026c02(void)
     return FUN_0c076130(((((struct o20_float *)0xC270B38)->v)));
 }
 
-int FUN_0c01edbc(int a4, int a5)
-{
-    return FUN_0c14e15c((*(int *)(((a4 << 2) + 0xC1ECD54))), 0x2, a5);
-}
 
 int FUN_0c030c9c(void)
 {
@@ -555,13 +551,6 @@ int FUN_0c048d70(int a4)
     return t2;
 }
 
-int FUN_0c04edcc(void)
-{
-    if (((((struct o0_int *)0xC2B1CF8)->v)) == 0) {
-        FUN_0c04ede4();
-    }
-    return FUN_0c04ef02((*(int *)((((((struct o8_int *)0xC2B1CF8)->v)) + 0x0))));
-}
 
 void FUN_0c04fc7a(void)
 {
@@ -830,31 +819,7 @@ int gdFsOpenFast(void)
     return 0x0;
 }
 
-int FUN_0c14b460(void)
-{
-    register int t0;
-    register int t1;
 
-    t0 = *(int *)0xC1737F8;
-    if (t0 != 0) {
-        t1 = (((struct o54_int *)(t0))->v);
-        return ((int (*)(void))(t1))();
-    }
-    return 0x0;
-}
-
-int FUN_0c14b478(void)
-{
-    register int t0;
-    register int t1;
-
-    t0 = *(int *)0xC1737F8;
-    if (t0 != 0) {
-        t1 = (((struct o58_int *)(t0))->v);
-        return ((int (*)(void))(t1))();
-    }
-    return 0x0;
-}
 
 int kmChangeContextColorType(int a4)
 {
@@ -1186,49 +1151,13 @@ void gdFsLockDir(int a4)
     }
 }
 
-int gdFsSetGlobalErr(void)
-{
-    register int t0;
-    register int t1;
-
-    t0 = *(int *)0xC1737F8;
-    if (t0 != 0) {
-        t1 = *(int *)((t0 + 0x20));
-        return ((int (*)(void))(t1))();
-    }
-    return 0x0;
-}
 
 int gdFsOpenFastG(int a4, int a5)
 {
     return gdFsOpenG(a4, a5);
 }
 
-int FUN_0c14b394(void)
-{
-    register int t0;
-    register int t1;
 
-    t0 = *(int *)0xC1737F8;
-    if (t0 != 0) {
-        t1 = *(int *)((t0 + 0x2C));
-        return ((int (*)(void))(t1))();
-    }
-    return 0x0;
-}
-
-int gdFsOpen(void)
-{
-    register int t0;
-    register int t1;
-
-    t0 = *(int *)0xC1737F8;
-    if (t0 != 0) {
-        t1 = *(int *)((t0 + 0x3C));
-        return ((int (*)(void))(t1))();
-    }
-    return 0x0;
-}
 
 int gdFsGetSysHn(void)
 {
@@ -1256,27 +1185,7 @@ int gdFsGetWorkHn(void)
     return 0x0;
 }
 
-void gdFsEntryErrFuncAll(void)
-{
-    register int t0;
 
-    t0 = *(int *)0xC1737F8;
-    if (t0 != 0) {
-        ((int (*)(void))(((((struct o74_int *)(t0))->v))))();
-    return;
-    }
-}
-
-void gdFsExecServer(void)
-{
-    register int t0;
-
-    t0 = *(int *)0xC1737F8;
-    if (t0 != 0) {
-        ((int (*)(void))(((((struct o48_int *)(t0))->v))))();
-    return;
-    }
-}
 
 int kmiWaitForFinishDMA(int a4)
 {
@@ -1492,10 +1401,6 @@ int FUN_0c05a3b0(float f4)
     return (((((*(int *)((((int)stk + 0) + 0x0))) & 0x7F800000) == 0x7F800000)) ? 1 : 0);
 }
 
-int FUN_0c05b3fc(void)
-{
-    return FUN_0c076230(((((struct o0_float *)0xC2B968C)->v)), ((((struct o4_float *)0xC2B968C)->v)), ((((struct o8_float *)0xC2B968C)->v)));
-}
 
 int FUN_0c0621e0(int a4)
 {
@@ -1849,11 +1754,6 @@ int FUN_0c061bae(void)
     return 0x0;
 }
 
-int FUN_0c062004(int a4)
-{
-    (((struct o63_uchar *)(a4))->v) = ((*(signed char *)(((a4 + 0x63) + 0x0))) | 0x8);
-    return FUN_0c040bec(0x3, 0x2);
-}
 
 int FUN_0c06989a(void)
 {
@@ -1955,12 +1855,6 @@ int syCfgInit(int a4)
     return 0x0;
 }
 
-int ADXT_SetOutVol(int a4, int a5)
-{
-    (((struct o40_ushort *)(a4))->v) = a5;
-    *(volatile int *)((a4 + 0xC));
-    return thunk_mwRnaSetOutVol();
-}
 
 void VQEnQueueTop(int a4, int a5)
 {
@@ -1983,21 +1877,12 @@ int syCblCheckCable(void)
     return (0x3 & ((unsigned int)t0 >> 8));
 }
 
-int ADXRNA_Destroy(int a4)
-{
-    mwRnaStop(a4);
-    return mwRnaDestroy(a4);
-}
 
 int mpdrv_get_deviceinfo(int a4)
 {
     return (((*(int *)0xC30817C) + 0x44C) + (a4 * 0x78));
 }
 
-int mwlSbGetStreamParam(int a4, int a5, int a6)
-{
-    return FUN_0c07d2aa((*(int *)(((*(int *)((a4 + 0x1C))) + 0x4))), a5, a6);
-}
 
 void ADXPD_Start(int a4)
 {
@@ -2282,10 +2167,6 @@ int syHwCacheFinish(int a4, int a5, int a6, int a7)
     return ((int (*)(int, int, int, int))(0xAC14D0D8))(0xAC14D0D8, a5, a6, a7);
 }
 
-int FUN_0c14e0be(int a4)
-{
-    return FUN_0c165de2(((((struct o94_int *)(a4))->v)));
-}
 
 int kmiMemCopy4(int a4, int a5, int a6)
 {
@@ -2454,10 +2335,6 @@ int FUN_0c01e6f8(int a4)
     return FUN_0c14ee68((*(int *)0xC1ECD64), a4);
 }
 
-int FUN_0c01ec7a(int a4)
-{
-    return FUN_0c14e8e4((*(int *)(((a4 << 2) + 0xC1ECD54))));
-}
 
 void FUN_0c028196(void)
 {
@@ -2515,13 +2392,6 @@ int FUN_0c05edbe(int a4, int a5, int a6, int a7)
     return ((int (*)(int, int, int, int))(t0))(a4, a5, a6, a7);
 }
 
-int FUN_0c069e54(void)
-{
-    register int t1;
-
-    t1 = *(int *)((0xC110374 + ((*(int *)0xC1EC740) << 2)));
-    return ((int (*)(void))(t1))();
-}
 
 int FUN_0c0702e0(void)
 {
@@ -2916,10 +2786,6 @@ void FUN_0c05f72a(int a4)
     *(unsigned int *)((a4 + 0x38)) = 0x0;
 }
 
-int FUN_0c066cba(int a4)
-{
-    return FUN_0c068c14(0xC10FFD4, a4, (*(float *)0xC13B004));
-}
 
 void FUN_0c0787d0(int a4)
 {

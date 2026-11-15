@@ -1277,17 +1277,6 @@ int FUN_0c031ede(int a4, int a5)
     return (unsigned char)t3;
 }
 
-int FUN_0c0311b4(float f4)
-{
-    FUN_0c06f550(0x0, 0x0, 0x0);
-    FUN_0c027f28(0x0);
-    pfSize(1.0f, 1.0f);
-    FUN_0c01ead0(0x5, 0x0);
-    gdc_VolStreamSong(0x6E);
-    (((struct o0_uint *)0xC289D04)->v) = 0x0;
-    (((struct o4_uint *)0xC289D04)->v) = 0x2;
-    return 0xC289D08;
-}
 
 int FUN_0c033430(int a4)
 {
@@ -1907,21 +1896,6 @@ int FUN_0c04b432(int a4)
     return nlPopMatrix(0x1);
 }
 
-int FUN_0c053c5c(void)
-{
-    (((struct o0_float *)0xC2B2D68)->v) = 1.0f;
-    (((struct o4_float *)0xC2B2D68)->v) = 1.0f;
-    (((struct o8_float *)0xC2B2D68)->v) = 1.0f;
-    (((struct oC_float *)0xC2B2D68)->v) = 0.0f;
-    (((struct o10_float *)0xC2B2D68)->v) = 0.0f;
-    (((struct o14_float *)0xC2B2D68)->v) = 1.0f;
-    (((struct o18_float *)0xC2B2D68)->v) = 1.0f;
-    (((struct o1C_uint *)0xC2B2D68)->v) = 0x0;
-    (((struct o20_float *)0xC2B2D68)->v) = 1.0f;
-    (((struct o24_uint *)0xC2B2D68)->v) = 0x2;
-    (((struct o28_uint *)0xC2B2D68)->v) = 0x5;
-    return FUN_0c06f550(0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF);
-}
 
 int lcdSync(int a4)
 {

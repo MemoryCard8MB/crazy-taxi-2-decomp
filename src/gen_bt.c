@@ -826,68 +826,6 @@ int kmActivateFrameBuffer(int a4, int a5, int a6, int a7)
 }
 
 
-int FUN_0c0529ec(void)
-{
-    register int t0;
-    register int t1;
-    register float u0;
-    register float u1;
-    register float u2;
-
-    if (((((struct o0_int *)0xC2B2AE8)->v)) == 0) {
-        FUN_0c058ca6(0x500A9, 0x0);
-    }
-    if (((((struct o0_int *)0xC2B2AE8)->v)) == 60) {
-        Voice_ShutUp(0x0);
-        FUN_0c058f64(0xC131FB8, 0x0, 0x78, 0x0);
-    }
-    FUN_0c06f550(0xFF000000, 0xFF000000, 0xFF000000);
-    t0 = 0x0;
-    for (;;) {
-        (((struct o0_uint *)0xC2B2A98)->v) = (*(int *)(((t0 << 2) + 0xC10C99C)));
-        u0 = (((struct o4_float *)0xC2B2AE8)->v);
-        if (u0 > 0.996999979f) {
-            *(unsigned short *)((((t0 << 1) + 0xC2B2AF0) + 0x0)) = (int)((float)(*(short *)((((t0 << 1) + 0xC2B2AF0) + 0x0))) * 0.5f);
-        } else {
-            if (u0 > 0.699999988f) {
-                if ((int)t0 < (int)0x4) {
-                    t1 = ((*(short *)((((t0 << 1) + 0xC2B2AF0) + 0x0))) - (((((t0 << 2) + t0) << 2) << 1) + 0x28));
-                } else {
-                    t1 = ((*(short *)((((t0 << 1) + 0xC2B2AF0) + 0x0))) + ((((((t0 - 4) << 2) + (t0 - 4)) << 2) << 1) + 0x28));
-                }
-                *(unsigned short *)((((t0 << 1) + 0xC2B2AF0) + 0x0)) = t1;
-            }
-        }
-        (((struct o28_uint *)0xC2B2A98)->v) = (*(short *)((0xC2B2AF0 + (t0 << 1))));
-        if ((int)t0 < (int)0x4) {
-            (((struct o34_uint *)0xC2B2A98)->v) = 0x200F;
-            u0 = (((struct o4_float *)0xC2B2AE8)->v);
-            u1 = (float)((t0 * 0x3C) + 0x78);
-            u2 = ((1.0f - u0) * 180.0f);
-            (((struct o4_float *)0xC2B2A98)->v) = (((u1 * u0)) - u2);
-        } else {
-            (((struct o34_uint *)0xC2B2A98)->v) = 0x200D;
-            u0 = (float)(((0x7 - t0) * 0x3C) + 0x78);
-            u1 = (u0 * ((((struct o4_float *)0xC2B2AE8)->v)));
-            (((struct o4_float *)0xC2B2A98)->v) = (((((1.0f - ((((struct o4_float *)0xC2B2AE8)->v))) * 180.0f)) - u1) + ((((struct o0_float *)0xC052C28)->v)));
-        }
-        FUN_0c07ada0(0xC2B2A98);
-        t0 = (t0 + 0x1);
-        if ((int)t0 < (int)0x8) continue;
-        break;
-    }
-    (((struct o0_uint *)0xC2B2AE8)->v) = (((((struct o0_int *)0xC2B2AE8)->v)) + 0x1);
-    if (((((struct o4_float *)0xC2B2AE8)->v)) > 0.699999988f) {
-        u0 = ((((struct o4_float *)0xC2B2AE8)->v));
-        u0 = u0 + ((((struct o10_float *)0xC052C28)->v)) * ((1.0f - ((((struct o4_float *)0xC2B2AE8)->v))));
-        (((struct o4_float *)0xC2B2AE8)->v) = u0;
-        t0 = 0xC052C38;
-    } else {
-        (((struct o4_float *)0xC2B2AE8)->v) = (((((struct o4_float *)0xC2B2AE8)->v)) + ((((struct o14_float *)0xC052C28)->v)));
-        t0 = 0xC052C3C;
-    }
-    return t0;
-}
 
 
 int FUN_0c03ed46(int a4)

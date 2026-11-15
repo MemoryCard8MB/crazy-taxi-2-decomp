@@ -386,42 +386,6 @@ int kmiFBreset(void)
     return 0x0;
 }
 
-int FUN_0c04e88e(int a4)
-{
-    int stk[3];
-    register int t29;
-
-    *(unsigned int *)(((int)stk + 0)) = a4;
-    nlUnitMatrix();
-    (((struct o4_uint *)0xC2B1CFC)->v) = (*(int *)(((int)stk + 0)));
-    FUN_0c04f224();
-    CarSel_SetFog();
-    FUN_0c06f550(0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF);
-    if (((((struct o0_int *)0xC2B1CFC)->v)) == 0) {
-        if ((int)((((struct o0_int *)0xC2B1D70)->v)) < (int)0x3B0) {
-            FUN_0c04ebe2();
-        }
-        FUN_0c04e9ac(0x0, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8));
-        FUN_0c04eb10();
-    }
-    FUN_0c050104();
-    FUN_0c04f518();
-    FUN_0c04edcc();
-    CarSel_Camera();
-    if ((int)((((struct o0_int *)0xC2B1D70)->v)) >= (int)0x3B0) {
-        (((struct o0_uint *)0xC2B1D70)->v) = (((((struct o0_int *)0xC2B1D70)->v)) - 1);
-    }
-    if ((*(int *)0xC131E58) != 0) {
-        t29 = FUN_0c059074(0x0);
-        if (t29 == 0) {
-            Voice_ShutUp(0x0);
-            FUN_0c058f64(0xC131C80, 0x0, 0x6E, 0x0);
-            *(unsigned int *)0xC131E58 = 0x0;
-        }
-    }
-    (((struct o38_uint *)0xC2B1D70)->v) = (int)(*(float *)0xC1EC800);
-    return 0xC1EC800;
-}
 
 int FUN_0c057230(void)
 {

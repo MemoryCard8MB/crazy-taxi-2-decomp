@@ -319,35 +319,6 @@ int vmsio_ismount(int a4)
     return 0x1;
 }
 
-int FUN_0c01a7cc(void)
-{
-    int t0;
-    register float u18;
-    register float u19;
-
-    t0 = FUN_0c14b460();
-    if ((t0 != 6) && (t0 != 0)) {
-    } else {
-        FUN_0c14b478();
-    }
-    pdExecPeripheralServer();
-    if (((((struct o4_int *)0xC11CFF4)->v)) != 0) {
-        Voice_Execute();
-    }
-    FUN_0c14edc8();
-    if ((*(int *)0xC1EC734) != 2) {
-        *(unsigned int *)0xC1EC848 = ((*(int *)0xC1EC848) + 0x1);
-    } else {
-        if ((*(int *)0xC1EC848) == 0) {
-            (((struct o0_float *)0xC11CFF4)->v) = 0.0f;
-        }
-        u18 = (((struct o0_float *)0xC11CFF4)->v);
-        u19 = *(float *)0xC01A8B0;
-        (((struct o0_float *)0xC11CFF4)->v) = (u18 + u19);
-        *(unsigned int *)0xC1EC848 = (int)(u18 + u19);
-    }
-    return 0x0;
-}
 
 
 int FUN_0c06cda4(int a4)
@@ -1177,27 +1148,6 @@ int FUN_0c0583b8(void)
     return t1;
 }
 
-int FUN_0c058e20(void)
-{
-    register int t0;
-
-    t0 = 0x0;
-    for (;;) {
-        *(unsigned int *)(((((t0 << 2) << 1) + 0xC2B6750) + 0x0)) = 0x78;
-        *(unsigned int *)(((((t0 << 2) << 1) + 0xC2B6750) + 0x4)) = 0x0;
-        *(unsigned int *)(((((t0 << 2) << 2) + 0xC2B6770) + 0x0)) = 0x0;
-        *(unsigned int *)(((((t0 << 2) << 2) + 0xC2B6770) + 0x4)) = 0x78;
-        *(unsigned int *)(((((t0 << 2) << 2) + 0xC2B6770) + 0x8)) = 0x0;
-        *(unsigned int *)(((((t0 << 2) << 2) + 0xC2B6770) + 0xC)) = 0x0;
-        gdc_StreamVoiceVol(t0, 0x78);
-        FUN_0c01ee10(t0, 0x0);
-        t0 = (t0 + 0x1);
-        if ((int)t0 >= (int)0x4) {
-            break;
-        }
-    }
-    return gdc_StopStreamVoiceAll();
-}
 
 int FUN_0c05c084(int a4, int a5, int a6)
 {
@@ -1787,25 +1737,6 @@ int FUN_0c03e07c(void)
     return FUN_0c0339fc(0x1);
 }
 
-int FUN_0c03e37e(void)
-{
-    (((struct o0_uint *)0xC1EC740)->v) = 0x0;
-    if ((*(int *)0xC2A46D8) != 0xC0B3AA4) {
-        (((struct o4_uint *)0xC1EC740)->v) = 0x0;
-    } else {
-        (((struct o4_uint *)0xC1EC740)->v) = 0x8;
-    }
-    (((struct o0_uint *)0xC2A4680)->v) = 0x0;
-    (((struct o4_uint *)0xC2A4680)->v) = 0x0;
-    FUN_0c03386a(0x0);
-    FUN_0c0339fc(0x0);
-    FUN_0c058e82();
-    gdc_StopStreamVoiceAll();
-    FUN_0c01e6f0();
-    FUN_0c058be4(0x0);
-    FUN_0c027fdc(0.100000001f);
-    return FUN_0c03f19a();
-}
 
 int FUN_0c040f22(int a4, float f4, float f5, float f6)
 {
@@ -1905,26 +1836,6 @@ int FUN_0c053ff2(void)
     return t0;
 }
 
-int FUN_0c05d1f4(int a4, int a5, int a6, int a7)
-{
-    register int t16;
-    register int t10;
-
-    if ((*(int *)((a4 + 0x0))) != 0) {
-        nlObjPutUseViewMatrix((*(int *)((a4 + 0x0))));
-        nlPushMatrix(0x0);
-        FUN_0c05b410();
-        FUN_0c05b596(0xC136D84, 0xC136D90, 0xC136D9C);
-        nlObjPutUseViewMatrix((*(int *)((a4 + 0x0))));
-        FUN_0c05b3fc();
-        t10 = (nlPopMatrix(0x1));
-    }
-    if ((*(int *)((a4 + 0x4))) != 0) {
-        t16 = *(int *)((a4 + 0x4));
-        return ((int (*)(int, int, int, int))(t16))(0x0, 0x0, a6, a7);
-    }
-    return t10;
-}
 
 float FUN_0c070ab0(int a4)
 {

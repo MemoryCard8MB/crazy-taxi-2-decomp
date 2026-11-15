@@ -1099,29 +1099,6 @@ int FUN_0c024f94(float f4, float f5, float f6, float f7, float f8, float f9)
     return t2;
 }
 
-int FUN_0c01d3b4(void)
-{
-    int stk[9];
-
-    (((struct o8_uint *)0xC1EC744)->v) = (((((struct o8_int *)0xC1EC744)->v)) + 0x1);
-    *(float *)(((int)stk + 24)) = 0.0f;
-    *(float *)(((int)stk + 28)) = 1.0f;
-    *(float *)(((int)stk + 32)) = 0.0f;
-    { struct mv3 { int w[3]; }; *(struct mv3 *)((((int)stk + 0) + 0xC)) = *(struct mv3 *)(0xC09741C); }
-    { struct mv3 { int w[3]; }; *(struct mv3 *)(((int)stk + 0)) = *(struct mv3 *)(0xC09741C); }
-    *(float *)(((int)stk + 8)) = 10.0f;
-    nlLookAtUp((((int)stk + 0) + 0xC), ((int)stk + 0), (((int)stk + 0) + 0x18));
-    FUN_0c04e88e(0xC175C80);
-    if ((*(int *)0xC2B1CFC) == 6) {
-        FUN_0c04e92c();
-        FUN_0c06cbc2();
-        (((struct o0_uint *)0xC1EC744)->v) = 0x0;
-        FUN_0c01e6f0();
-        FUN_0c01c568();
-        FUN_0c01f95a();
-    }
-    return (gdc_FadeManStreamSong());
-}
 
 void calcColliCheck(int a4)
 {

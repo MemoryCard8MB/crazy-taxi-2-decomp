@@ -326,36 +326,6 @@ int cvFsOptFn1(int a4, int a5, int a6, int a7);
 int cvFsOptFn2(int a4, int a5, int a6, int a7);
 int FUN_0c018c96(int a4, int a5, int a6, int a7);
 
-int FUN_0c048e74(void)
-{
-    register int t0;
-    int t1;
-    register int t2;
-
-    if ((*(int *)0xC12FDC0) != -3) {
-        t1 = 0x0;
-        for (;;) {
-            t2 = buStat(t1);
-            if (t2 != -1) {
-                t1 = (t1 + 0x1);
-                if ((int)t1 > (int)0x7) {
-                    break;
-                }
-                continue;
-            }
-        }
-        t1 = t0;
-        for (;;) {
-            t0 = FUN_0c14b460();
-            t1 = t0;
-            if ((t0 != -1) && (t1 != 0)) {
-                ntLDBrowser(t1);
-                continue;
-            }
-        }
-    }
-    return 0xFFFFFFFF;
-}
 
 int FUN_0c165a34(int a4)
 {
@@ -378,18 +348,6 @@ int FUN_0c165a34(int a4)
     return (FUN_0c16ba80(((int)stk + 4)));
 }
 
-int FUN_0c01d190(void)
-{
-    FUN_0c058be4(0x1);
-    FUN_0c058e82();
-    gdc_StopStreamVoiceAll();
-    FUN_0c01e6f0();
-    FUN_0c05995e();
-    FUN_0c026c3a(1.0f, 1.0f, 1.0f);
-    FUN_0c026bf4(0.400000006f);
-    FUN_0c026b80(0x2200, 0x2900);
-    return FUN_0c06ccdc();
-}
 
 int FUN_0c026c3a(float f4, float f5, float f6)
 {
@@ -769,23 +727,6 @@ int FUN_0c02447c(float f4, float f5, float f6)
     return t1;
 }
 
-int FUN_0c03e0dc(void)
-{
-    register int t0;
-
-    t0 = *(int *)0xC2AC2F0;
-    if (t0 != 1) {
-        (((struct o0_uint *)0xC2A4F88)->v) = ((((struct o0_int *)0xC1EC740)->v));
-        (((struct o4_uint *)0xC2A4F88)->v) = ((((struct o4_int *)0xC1EC740)->v));
-        FUN_0c058e82();
-        gdc_StopStreamVoiceAll();
-        FUN_0c01e6f0();
-        FUN_0c058be4(0x0);
-        FUN_0c0339fc(0x2);
-        return FUN_0c03e806(0x48, 0x78);
-    }
-    return t0;
-}
 
 int FUN_0c03e1b2(void)
 {
@@ -838,23 +779,6 @@ int FUN_0c04b0e4(int a4)
     return 0x0;
 }
 
-void FUN_0c05990e(void)
-{
-    register int t2;
-
-    if ((*(int *)0xC132E94) != 0) {
-        t2 = *(int *)0xC2B8A24;
-        if (t2 != 0) {
-            nlFogDensityF(((((struct o204_float *)(t2))->v)));
-            *(volatile int *)0xC2B8A24;
-            thunk_kmSetFogTable_0c071a70();
-            FUN_0c0719e0(((((struct o208_int *)((*(int *)0xC2B8A24)))->v)));
-    return;
-        }
-        return;
-    }
-    nlFogTableOff();
-}
 
 float nlRoundUp(float f4)
 {
@@ -1765,48 +1689,8 @@ int FUN_0c019d08(int a4, int a5, int a6)
     return t0;
 }
 
-void FUN_0c01a848(void)
-{
-    FUN_0c14def2();
-    thunk_syCfgExit();
-    FUN_0c03155a();
-    syRtcFinish();
-    pdExitPeripheral();
-    FUN_0c0704b0();
-    syMallocFinish();
-    syHwFinish();
-    _builtin_set_imask(0xF);
-}
 
-int FUN_0c01ea8e(void)
-{
-    int stk[1];
-    register int t7;
 
-    FUN_0c01e6f0();
-    (((struct oC_uint *)0xC2690E4)->v) = 0x0;
-    FUN_0c01e5cc(0x2, 0x0, ((((((((struct o4_int *)0xC2690E4)->v)) << 2) << 2) << 1) + 0xC0997C5), 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4));
-    (((struct o8_uint *)0xC2690E4)->v) = (FUN_0c01e772(((((struct oC_int *)0xC2690E4)->v))));
-    (((struct o0_uint *)0xC2690E4)->v) = 0x1;
-    t7 = gdc_GetVolGainMute((*(signed char *)0xC1ECD50));
-    return ADXT_SetOutVol((*(int *)0xC1ECD64), t7);
-}
-
-int InitAdvLogoSprite(void)
-{
-    (((struct o0_float *)0xC2708D8)->v) = 1.0f;
-    (((struct oC_float *)0xC2708D8)->v) = 0.0f;
-    (((struct o10_float *)0xC2708D8)->v) = 0.0f;
-    (((struct o14_float *)0xC2708D8)->v) = 1.0f;
-    (((struct o18_float *)0xC2708D8)->v) = 1.0f;
-    (((struct o1C_uint *)0xC2708D8)->v) = 0x0;
-    (((struct o28_uint *)0xC2708D8)->v) = 0xA;
-    (((struct o20_float *)0xC2708D8)->v) = 1.0f;
-    (((struct o24_uint *)0xC2708D8)->v) = 0x2;
-    (((struct o8_float *)0xC2708D8)->v) = 1.0f;
-    (((struct o4_float *)0xC2708D8)->v) = 1.0f;
-    return FUN_0c06f550(0xFFBFBFBF, 0xFFBFBFBF, 0xFFBFBFBF);
-}
 
 int FUN_0c022cee(void)
 {
