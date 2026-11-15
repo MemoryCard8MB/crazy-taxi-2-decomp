@@ -70730,14 +70730,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 62
 - the cases run 19 of 38 instructions
 
-### calcCheck (`0C0434F6`, 236 bytes, `src/gen_tmp0p28464v.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_tmp0p28464v/calcCheck.json`
+### calcCheck (`0C0434F6`, 236 bytes, `src/gen_ap.c`)
+- equivalent on 1 development and 1 holdout cases, in `tests/gen_ap/calcCheck.json`
 - rescue: empty case
 - rescue: empty case
 - the cases run 80 of 89 instructions
 
-### calcColliCheck (`0C043470`, 134 bytes, `src/gen_tmp0p17192v.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_tmp0p17192v/calcColliCheck.json`
+### calcColliCheck (`0C043470`, 134 bytes, `src/gen_hg.c`)
+- equivalent on 18 development and 18 holdout cases, in `tests/gen_hg/calcColliCheck.json`
 - case 3
 - case 0
 - case 1

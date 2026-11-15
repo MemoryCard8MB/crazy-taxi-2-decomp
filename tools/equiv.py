@@ -162,9 +162,8 @@ def _compile_link(cfile, stem, defines, sdk, rel):
              'wibo "/sdk/%s/elf2bin.exe" -s %08X "build\\equiv\\%s.elf" "build\\equiv\\%s.bin" > build/equiv/%s.elf2bin.log 2>&1 || true; '
              'rm -rf build/tmp/%s'
              % (rel, stem, me, rel, SCRATCH, stem, stem, me, me))
-    r = subprocess.run(['docker', 'run', '--rm', '-v', sdk + ':/sdk:ro', '-v', os.getcwd() + ':/app', '-w', '/app',
-                        '-e', 'TW=' + tw, os.environ.get('DC_TOOLS_IMAGE', 'dc-tools'), 'bash', '-c', steps],
-                       stdin=subprocess.DEVNULL, capture_output=True, text=True)
+    import hitachi                          # the dc-tools container, or natively with DC_NATIVE=1 (tools/hitachi.py)
+    r = hitachi.run(steps, env={'TW': tw})
     if r.returncode:
         sys.exit('[ERROR] compile failed:\n' + r.stdout + r.stderr)
     if not os.path.exists('build/equiv/%s.lnk.log' % me):      # the container stopped before the link: say what it printed

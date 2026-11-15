@@ -10,6 +10,8 @@ The tools of each step are in their own folder: [1-2-baseline/](1-2-baseline/), 
 | [docker_check.sh](docker_check.sh) | Checks Docker is installed and running, and whether Ghidra steps run one at a time (sourced by build.sh) |
 | [fcmp.py](fcmp.py) | Compare a C unit with the game function by function, instruction by instruction (`--score` for the permuter). |
 | [equiv.py](equiv.py) | Behaviour check: does a C file's code do what the original does? |
+| [hitachi.py](hitachi.py) | Runs the scripts that drive the SDK's Hitachi tools: in the dc-tools container, or natively with `DC_NATIVE=1` in .env (the container's /sdk, /app, /work and Z:\\ paths mapped to the host through hyphen-free links in ~/.dcnative). Every tool that compiles, assembles or links goes through it |
+| [wibo_native.sh](wibo_native.sh) | Fetches the pinned macOS wibo (same release as the image) to build/native for `DC_NATIVE=1` |
 | [gdi_read.py](gdi_read.py) | List or extract files from a Dreamcast GDI, across every data track. |
 | [ledger.py](ledger.py) | Nothing the tools learn about a function is thrown away. |
 | [permute.py](permute.py) | Try rewrites of one function that keep its meaning, kept when `fcmp.py --score` gets no worse. |

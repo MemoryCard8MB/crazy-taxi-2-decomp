@@ -173,15 +173,15 @@ def docker(steps):
     """Run a shell script in the dc-tools container with the SDK's tools as $T; its stdout+stderr. The image is built on first
     use (tools/docker_check.sh, as build.sh does: a Docker restart can drop it)."""
     import equiv
+    import hitachi                          # natively with DC_NATIVE=1 (tools/hitachi.py): /sdk, /app and /work map to the host
     sdk, rel = equiv.sdk_env()
-    chk = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'docker_check.sh')
-    img = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'tools-image')
-    r = subprocess.run(['bash', '-c', '. "%s" && docker_ready "%s"' % (chk, img)], stdin=subprocess.DEVNULL, capture_output=True, text=True)
-    if r.returncode:
-        sys.exit(r.stderr.strip() or '[ERROR] Docker is not ready')
-    r = subprocess.run(['docker', 'run', '--rm', '-v', sdk + ':/sdk:ro', '-v', os.getcwd() + ':/app', '-w', '/app',
-                        '-e', 'T=/sdk/' + rel, os.environ.get('DC_TOOLS_IMAGE', 'dc-tools'), 'bash', '-c', steps],
-                       stdin=subprocess.DEVNULL, capture_output=True, text=True)
+    if not hitachi.native():
+        chk = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'docker_check.sh')
+        img = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'tools-image')
+        r = subprocess.run(['bash', '-c', '. "%s" && docker_ready "%s"' % (chk, img)], stdin=subprocess.DEVNULL, capture_output=True, text=True)
+        if r.returncode:
+            sys.exit(r.stderr.strip() or '[ERROR] Docker is not ready')
+    r = hitachi.run(steps, env={'T': '/sdk/' + rel})
     return r.returncode, r.stdout + r.stderr
 
 

@@ -477,13 +477,12 @@ def prep_sources():
 
 
 def docker(script):
+    """Run a script of the Hitachi tools: in the dc-tools container, or natively with DC_NATIVE=1 (tools/hitachi.py)."""
     import equiv
-    import subprocess
+    import hitachi
     sdk, rel = equiv.sdk_env()
     tw = 'Z:' + ('/sdk/' + rel).replace('/', '\\')
-    return subprocess.run(['docker', 'run', '--rm', '-v', sdk + ':/sdk:ro', '-v', os.getcwd() + ':/app', '-w', '/app',
-                           '-e', 'TW=' + tw, '-e', 'REL=' + rel, os.environ.get('DC_TOOLS_IMAGE', 'dc-tools'), 'bash', '-c', script],
-                          stdin=subprocess.DEVNULL, capture_output=True, text=True)
+    return hitachi.run(script, env={'TW': tw, 'REL': rel})
 
 
 COMPILE = r'''set -e

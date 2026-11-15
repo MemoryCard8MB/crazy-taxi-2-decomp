@@ -5,8 +5,9 @@
 #   bash build.sh --overlay <name>   opt-in: the same build for one code overlay (overlays/<name>/, load address from overlays.tsv),
 #                                    compared with overlays/<name>/<name>.bin; build_overlays.sh runs it for every overlay
 # SDK_PATH can be any SDK layout: the tools are found by name (asmsh.exe) anywhere under it.
-# Docker is the default (any OS). DC_LOCAL=1 is opt-in for Linux x86_64 without Docker: it runs
-# wibo from your PATH (wibo does not run on macOS or Windows).
+# Docker is the default (any OS). DC_LOCAL=1 is opt-in without Docker: it runs wibo from your PATH (Linux x86_64, or the macOS
+# build under Rosetta 2). DC_NATIVE=1 (in .env, as for the Python tools: tools/hitachi.py) is DC_LOCAL=1 with the wibo that
+# tools/wibo_native.sh put in build/native (or the folder DC_WIBO names).
 set -euo pipefail
 cd "$(dirname "$0")"
 # shellcheck disable=SC1091
@@ -111,8 +112,12 @@ STEPS='
   if grep -qi "UNDEFINED" build/link.log; then tr -d "\r" < build/link.log | grep -i "UNDEFINED"; exit 1; fi
   wibo "$(tool elf2bin)" -s "$B" build\\out.elf > build/elf2bin.log 2>&1 || { cat build/elf2bin.log; exit 1; }
 '
+if [ "${DC_NATIVE:-0}" = 1 ]; then
+  DC_LOCAL=1; W="${DC_WIBO:-build/native}"
+  [ -x "$W/wibo" ] && PATH="$(cd "$W" && pwd):$PATH"
+fi
 if [ "${DC_LOCAL:-0}" = 1 ]; then
-  command -v wibo >/dev/null || { echo "[ERROR] DC_LOCAL=1 needs wibo on PATH (github.com/decompals/wibo, Linux x86_64)"; exit 1; }
+  command -v wibo >/dev/null || { echo "[ERROR] DC_LOCAL=1 needs wibo on PATH (github.com/decompals/wibo; on macOS: bash tools/wibo_native.sh)"; exit 1; }
   TW="Z:$(printf '%s' "$SDK_PATH/$TOOLS_REL" | tr / '\\')"     # wibo maps Z:\ to /
   [ -n "$OV" ] || SHCT="build\\tmp"     # Z:\app is the container's mount: here the repo's own build/tmp
   R04="${SDK_R04_PATH:-}"; R04W=""; [ -n "$R04" ] && R04W="Z:$(printf '%s' "$R04" | tr / '\\')"

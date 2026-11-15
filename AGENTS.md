@@ -51,7 +51,9 @@ State at hand-over (2026-11-13, commit e7d204e): 3,455 functions, 944 named by S
 3,122 of 3,272 that can be C are Equivalent (95.4%; 202 ported from CT1, the rest `gen_equiv`), 150 left (38,952 bytes), 183 have no C form;
 total test coverage 55.0%; `build.sh` prints MATCH. Nothing is hand-written yet.
 
-Work in this order. Run build/equiv tools with `DOCKER_CONTEXT=colima-x86` (the repo's `.env` sets it); never the arm64 context.
+Work in this order. The Hitachi tools run natively on this Mac (`DC_NATIVE=1` in `.env`, set 2026-11-15; `tools/hitachi.py`, `wibo` from
+`bash tools/wibo_native.sh`): 5-10x faster than the container and no stale reads. Without it they run in the x86 container
+(`DOCKER_CONTEXT=colima-x86`, which `.env` also sets; never the arm64 context). Both give the same `game.bin` and the same proofs.
 
 1. **Missed code first** (`missed.txt`, 760 candidates). Check them with `tools/1-2-baseline/missed_funcs.py` and `checksizes.py --hidden`,
    add real ones to `functions.txt` as `F <addr> <size> FUN_<addr>`, rebuild to MATCH, then let step 5 draw them. Must be done before step 8.
@@ -67,15 +69,14 @@ Work in this order. Run build/equiv tools with `DOCKER_CONTEXT=colima-x86` (the 
 
 Polish pass (tested 2026-11-13): `--retest` is near its ceiling (82 functions redrawn in two batches, 1 case file changed, coverage unchanged at 54.9%). Two `--retest` processes on disjoint batches run side by side without corrupting `tests/equivalent.txt` or `docs/equivalent.md` (compiles use per-process scratch folders); the x86 VM (4 CPUs) allows 2-3. More coverage has to come from hand cases for the failing functions and `--direct`.
 
-Struct copies (added 2026-11-14): the compiler's copy helpers `_quick_evn_mvn` (0C07FDC8) and `_quick_odd_mvn` (0C07FF00) keep their
-`FUN_` names, because 74 generated files call `FUN_0c07ff00()` by name as a call out (renaming makes `equiv.py` run it with the C's
-unset r0-r2). A hand file that copies structs in plain C (`a = b;`, a struct passed by value) says so in a comment:
-`@runtime _quick_odd_mvn=FUN_0c07ff00`. For that file alone `equiv.py` links the helper under its real name and runs it on both
-sides, so the copy is compared by what it stores (`src/hand_f.c`). Do not mix the note with by-name calls in one file.
+Struct copies (2026-11-15): `symbols.txt` names the compiler's copy helpers `_quick_evn_mvn` (0C07FDC8) and `_quick_odd_mvn`
+(0C07FF00), so the generator writes a block copy as a struct assignment and `equiv.py` and the builds run the game's own helper on
+both sides. No C calls `FUN_0c07ff00()` / `FUN_0c07fdc8()` by name any more (208 functions were regenerated, commit 14d243c); keep it
+so: such a call is a copy the build drops. The older per-file note `@runtime _quick_odd_mvn=FUN_0c07ff00` (`src/hand_f.c`) still works.
 
-State 2026-11-14: every function that can be C is Equivalent (3,441; 188 have no C form). Open before step 8: the generated
-callers that still call `FUN_0c07ff00()` / `FUN_0c07fdc8()` with no arguments drop the copy in a build from C; names (2,046 `FUN_`);
-coverage (60.3%).
+State 2026-11-15 (step 7): every function that can be C is Equivalent (3,441; 188 have no C form); `make c` fits with 21,376
+bytes below `fixed`. Open before step 8: `shrink.py` over the regenerated functions, `gdc_CoursePointLoadReq` (Stk2 for a 12-byte
+vector), the `thunk_*` definitions still `(void)`, names (2,046 `FUN_`), coverage (60.3%), the 9 retcheck warnings.
 
 Boundary: the user decides whether to go on to step 7 (size reduction) after `python3 tools/progress.py`.
 

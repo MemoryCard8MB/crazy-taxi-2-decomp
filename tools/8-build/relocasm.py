@@ -356,9 +356,8 @@ def check(out, names):
         script.append('wibo "/sdk/%s/elf2bin.exe" -s %08X "build\\reloc_check\\%s.elf" "build\\reloc_check\\%s.bin" > /dev/null 2>&1 || true' % (rel, base_, stem, stem))
         info[stem] = (a, nxt, red)
     tw = 'Z:' + ('/sdk/' + rel).replace('/', '\\')
-    r = subprocess.run(['docker', 'run', '--rm', '-v', sdk + ':/sdk:ro', '-v', os.getcwd() + ':/app', '-w', '/app', '-e', 'TW=' + tw,
-                        os.environ.get('DC_TOOLS_IMAGE', 'dc-tools'), 'bash', '-c', '\n'.join(script)],
-                       stdin=subprocess.DEVNULL, capture_output=True, text=True)
+    import hitachi                          # the dc-tools container, or natively with DC_NATIVE=1 (tools/hitachi.py)
+    r = hitachi.run('\n'.join(script), env={'TW': tw})
     if r.stdout.strip():
         print(r.stdout.strip())
     ok = bad = 0

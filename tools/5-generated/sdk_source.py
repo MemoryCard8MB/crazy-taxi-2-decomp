@@ -85,10 +85,10 @@ def functions():
 
 
 def run(sdk, cmd):
-    r = subprocess.run(['docker', 'run', '--rm', '-v', sdk + ':/sdk:ro', '-v', os.getcwd() + ':/w', '-w', '/w',
-                        '-e', 'TW=Z:\\sdk\\' + RELWIN, os.environ.get('DC_TOOLS_IMAGE', 'dc-tools'), 'bash', '-c', cmd],
-                       stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
-    return r.stdout
+    """The tools in the dc-tools container with the repo at /w, or natively with DC_NATIVE=1 (tools/hitachi.py)."""
+    import hitachi
+    r = hitachi.run(cmd, env={'TW': 'Z:\\sdk\\' + RELWIN}, mount='/w')
+    return r.stdout + r.stderr
 
 
 def stage(folders, sdk):
