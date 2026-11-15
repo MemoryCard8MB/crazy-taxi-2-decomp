@@ -25,7 +25,7 @@ everything game-derived on your machine, and `.gitignore` keeps it out of git.
 ```
 TOTAL TEST COVERAGE           60.3%  the instructions the cases ran, of all instructions, over the 3658 functions that can be C; the 3658 functions that reached the check are measured, the others count 0
 FUNCTIONS LEFT  (100.0% complete) 0  of the 3658 functions that can be C (188 with no C form are counted apart)
-BYTES LEFT      (100.0% complete) 0  of 589190 bytes of code that can be C
+BYTES LEFT      (100.0% complete) 0  of 589324 bytes of code that can be C
 FUNCTIONS                            
   unnamed                      2263  functions still called FUN_... (2263 of 3846)
   Not written C                   0  0 bytes

@@ -247,6 +247,19 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   parameter in three files: zeros written until the text pointer was overwritten). Check a caller's prototypes against the
   callee's definition, and rerun the cases with junk in the registers a case leaves unset (both sides, the same junk).
 
+- **Calls into the middle of a function, and sizes that stop short.** `Exec_LCD` ends in a tail branch into `FUN_0c058518`;
+  the generated C inlined it and called two of its branch targets as functions. `FUN_0c02303a` was listed 182 bytes long but
+  branches to its own epilogue at +0x116 (316 bytes): the C called that epilogue as a function, and the simulator, seeing a
+  branch past the listed end, mocked it as a call, so the proof never ran it. In a build from C such a call runs a copy of
+  the original that pops a frame the C never pushed. Check: no C casts a constant that is not a function start to a function
+  pointer (kept library entries the original also calls are fine), and `checksizes.py` lists no game function branching
+  outside its size.
+- **Cases that miss what matters.** `FUN_0c058782` (the VMU screen image) added each column onto the row base: all 36 cases
+  passed because none drew a row wider than one byte. Found with `tools/6-agentic/frametest.py` on RAM snapshots taken at the
+  frame loop's scene call (`work/fix9/framesnap.py`, breakpoint 0C01B0CE; 13 frames: menus, both cities driving, pickup,
+  passenger, drop-off, Crazy Pyramid, game over): every function of a frame, the original against the C on that state.
+  After the fixes no game function differs there except in a leftover r0 nobody reads.
+
 ## Changing the game *(equivalent)*
 The boot block is not free space. The entry stub copies the start of the executable elsewhere and
 runs it there (seen on a game linked at `0x0C010000`: `0x0C010100-0x0C014000` to `0x0C004000`),

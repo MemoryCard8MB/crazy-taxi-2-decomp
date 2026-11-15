@@ -9326,7 +9326,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - the cases run 45 of 200 instructions
 
-### FUN_0c02303a (`0C02303A`, 182 bytes, `src/gen_dv.c`)
+### FUN_0c02303a (`0C02303A`, 316 bytes, `src/gen_dv.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_dv/FUN_0c02303a.json`
 - case 2
 - case 65
@@ -9364,7 +9364,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 91
 - case 42
 - case 95
-- the cases run 59 of 90 instructions
+- the cases run 78 of 109 instructions
 
 ### FUN_0c023176 (`0C023176`, 74 bytes, `src/gen_du.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_du/FUN_0c023176.json`

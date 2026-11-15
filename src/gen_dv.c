@@ -37,6 +37,7 @@ float nlRoundOff(float);
 int pfSize(float, float);
 int FUN_0c053456(int a4, int a5, int a6);
 int FUN_0c02303a(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8);
+int FUN_0c0228f0(int, int, int, int);
 int FUN_0c022d9c(int a4, int a5, float f4, float f5);
 int FUN_0c06105a(float f4);
 
@@ -94,7 +95,10 @@ int FUN_0c02303a(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
                 if (t0 != 3) {
                     return t0;
                 }
-                return ((int (*)(void))(0xC023150))();
+                /* manual: the original branches to a shared epilogue past this function's listed end (0C023150): it pops
+                   this function's frame and tail-calls FUN_0c0228f0(0, *0C2709B4) with r6/r7 as they came in. The generated
+                   C called that address as a function, which in a build from C pops a frame the C never pushed. */
+                return FUN_0c0228f0(0x0, (*(int *)0xC2709B4), a6, a7);
             }
             return FUN_0c0227a0(0x0, a5, a6, a7, f4, f5, f6, f7, f8);
         }

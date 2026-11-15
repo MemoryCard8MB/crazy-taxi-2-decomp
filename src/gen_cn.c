@@ -125,6 +125,7 @@ int vmsfs_init(int, int, int);
 int _calcnpw(int a4, int a5, int a6, int a7);
 int pdExecPeripheralServerUser(void);
 void Exec_LCD(int a4, int a5, int a6, int a7);
+int FUN_0c058518(void);
 int FUN_0c06170e(int a4, int a5, int a6, int a7);
 int vmsfs_fwrite(int a4, int a5, int a6, int a7);
 int kmiFBallocEx(int a4, int a5, int a6);
@@ -257,42 +258,24 @@ int pdExecPeripheralServerUser(void)
     return t3;
 }
 
+/* manual: the original ends in a tail branch into FUN_0c058518 (bf 0x0c058518), a function of its own. The generated C had
+   inlined it and called two of its branch targets (0C05858C, 0C058594) as functions: in a build from C those run a copy of
+   the original that pops FUN_0c058518's frame and stores through its r13, which the C never set up. */
 void Exec_LCD(int a4, int a5, int a6, int a7)
 {
-    int t2;
-    register int t3;
-    register int t4;
-    register int t17;
+    register int t2;
 
-    if ((*(int *)0xC2B33C4) == 0) {
-        t2 = (((struct o0_int *)0xC2B337C)->v);
-        if ((0x2 & t2) != 2) {
-            if ((0x4 & t2) == 4) {
-                return;
-            }
-            t3 = (((struct o0_int *)0xC132584)->v);
-            t4 = (((struct o4_int *)0xC132584)->v);
-            t17 = pdGetPeripheral((((t3 << 1) + (t3 << 2)) + t4));
-            if (((*(int *)(((*(int *)((t17 + 0x30))) + 0x0))) & 4) != 0) {
-                FUN_0c05872e(0x0, (((t3 << 1) + (t3 << 2)) + t4));
-                FUN_0c058782((*(int *)(((((int)((int)(((((struct o4_int *)0xC2B337C)->v)) >> 1) % (int)0x3)) << 2) + 0xC132578))), 0x0, 0x0, 0x1, (((t3 << 1) + (t3 << 2)) + t4));
-                lcdSync((((t3 << 1) + (t3 << 2)) + t4));
-            } else {
-            }
-            if (((((struct o0_int *)0xC132584)->v)) == 3) {
-                if (((((struct o4_int *)0xC132584)->v)) == 2) {
-                    *(volatile int *)0xC2B3380;
-                    ((int (*)(int, int, int, int))(0xC05858C))(t17, a5, a6, a7);
-    return;
-                }
-                ((int (*)(int, int, int, int))(0xC058594))(t17, a5, a6, a7);
-    return;
-            }
-            ((int (*)(int, int, int, int))(0xC058594))(t17, a5, a6, a7);
-    return;
-        }
+    if ((*(int *)0xC2B33C4) != 0) {
         return;
     }
+    t2 = (((struct o0_int *)0xC2B337C)->v);
+    if ((0x2 & t2) == 2) {
+        return;
+    }
+    if ((0x4 & t2) == 4) {
+        return;
+    }
+    FUN_0c058518();
 }
 
 int FUN_0c06170e(int a4, int a5, int a6, int a7)

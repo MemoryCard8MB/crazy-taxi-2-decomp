@@ -313,6 +313,7 @@ int FUN_0c058782(int a4, int a5, int a6, int a7, int a8)
     register int t12;
     register int t13;
     register int t14;
+    register int t15;
 
     t0 = (int)((unsigned int)a8 / (unsigned int)0x6);
     t2 = (int)((unsigned int)a8 % (unsigned int)0x6);
@@ -330,18 +331,16 @@ int FUN_0c058782(int a4, int a5, int a6, int a7, int a8)
         if ((int)t14 >= (int)(a6 + (((unsigned char)t6 << 8) + (unsigned char)t8))) {
             break;
         }
-        t9 = t14;
-        t9 = (t9 << 1);
-        t11 = t14;
-        t9 = (t9 + t11);
+        /* manual: the row's base (r11 = row * 48) is a variable of its own; t9 stays the original's r0, which only the
+           store below sets (row base + column). The generated C added each column onto the base, so every byte of the
+           VMU screen image landed one step further than the last. */
+        t15 = (((t14 << 1) + t14) << 2) << 2;
         t13 = a5;
-        t9 = (t9 << 2);
-        t9 = (t9 << 2);
         if ((int)t13 < (int)(a5 + (((unsigned char)t5 << 8) + (unsigned char)t3))) {
             for (;;) {
                 if (((int)t13 >= 0) && ((t10 = 0x30, (int)t13 < (int)t10) && (((int)t14 >= 0) && (t11 = 0x20, (int)t14 < (int)t11)))) {
                     t11 = (*(signed char *)((t12 + 0x0)));
-                    t9 = (t9 + t13);
+                    t9 = (t15 + t13);
                     *(unsigned char *)((((((((((t0 << 1) + t2) - 1) << 1) + (((t0 << 1) + t2) - 1)) << 8) << 1) + 0xC2B33C8) + t9)) = t11;
                 }
                 t13 = (t13 + 0x1);
