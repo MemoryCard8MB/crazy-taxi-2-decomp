@@ -16,6 +16,16 @@
    "poke": {
     "0C177E80": "00c0ce0c"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c018cfc) fr0=447A0000",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "fr0": "447A0000"
+    }
+   ]
   }
  ]
 }

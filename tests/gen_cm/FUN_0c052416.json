@@ -19,6 +19,19 @@
      "r0": "FFFFFFFF"
     }
    ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 5 (FUN_0c070e60) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
   }
  ]
 }

@@ -494,8 +494,11 @@ def cut_endless(orig, mine):
     same steps it makes fewer calls and device accesses (Virtua Tennis vmsfs_c_dispatch: "access 1053/1333: original [...] / C none")."""
     k = min(len(orig['calls']), len(mine['calls']))
     kd = min(len(orig.get('devices', [])), len(mine.get('devices', [])))
+    # a run cut at the step limit never returned: its registers there are no result (r0 held the argument in one and not the
+    # other, FUN_0c05ac3a), so both sides get the original's
     return (dict(orig, calls=orig['calls'][:k], devices=orig.get('devices', [])[:kd], writes={}, error=None),
-            dict(mine, calls=mine['calls'][:k], devices=mine.get('devices', [])[:kd], writes={}, error=None))
+            dict(mine, calls=mine['calls'][:k], devices=mine.get('devices', [])[:kd], writes={}, error=None,
+                 out=orig.get('out'), out_set=orig.get('out_set')))
 
 
 READS_NAME = {}     # {address: name} of the game's functions, set by main for orig_reads

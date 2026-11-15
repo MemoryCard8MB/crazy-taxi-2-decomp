@@ -93,6 +93,15 @@
     "0C2A46E4": "01000000",
     "0C2A4F80": "0080c50c"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (FUN_0c034320) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
   }
  ]
 }

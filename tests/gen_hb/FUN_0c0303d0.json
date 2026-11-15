@@ -18,6 +18,24 @@
    "poke": {
     "0CCE4020": "00c0cd0c"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCE4000, 0CCE4020.4=0CCDC000; call 5 (set_event) r0=0CC8C000",
+   "regs": {
+    "r4": "0CCE4000"
+   },
+   "poke": {
+    "0CCE4020": "00c0cd0c"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CC8C000"
+    }
+   ]
   }
  ]
 }

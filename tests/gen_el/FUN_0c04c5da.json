@@ -87,6 +87,57 @@
    "poke": {
     "0C2ADEC4": "d0000000"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c073c80) fr0=4C895440; 0C2ADFE4.4=00002A31; call 4 (FUN_0c073c80) fr0=4C895440",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "fr0": "4C895440"
+    },
+    {},
+    {
+     "fr0": "4C895440"
+    }
+   ],
+   "poke": {
+    "0C2ADFE4": "312a0000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c073c80) fr0=4C895440; 0C2ADFE4.4=00002A31",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "fr0": "4C895440"
+    }
+   ],
+   "poke": {
+    "0C2ADFE4": "312a0000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c073c80) fr0=4C895440",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "fr0": "4C895440"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c073c80) fr0=4B742401",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "fr0": "4B742401"
+    }
+   ]
   }
  ]
 }

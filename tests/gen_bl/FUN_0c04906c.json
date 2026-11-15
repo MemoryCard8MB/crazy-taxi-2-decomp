@@ -15,6 +15,19 @@
    "regs": {
     "r4": "00000001"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=00000001; call 3 (strncmp) r0=0CC18000",
+   "regs": {
+    "r4": "00000001"
+   },
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "0CC18000"
+    }
+   ]
   }
  ]
 }

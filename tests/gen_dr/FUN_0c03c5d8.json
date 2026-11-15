@@ -396,6 +396,15 @@
     "0C2A4670": "20000000",
     "0C2A4F84": "06000000"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (buIsReady) r0=0CCE0000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CCE0000"
+    }
+   ]
   }
  ]
 }

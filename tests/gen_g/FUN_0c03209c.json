@@ -36,6 +36,16 @@
    "poke": {
     "0DFFFF00": "ffffffff"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (buIsReady) r0=0CC1C000",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "0CC1C000"
+    }
+   ]
   }
  ]
 }

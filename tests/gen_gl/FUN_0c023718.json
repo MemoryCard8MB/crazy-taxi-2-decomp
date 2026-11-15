@@ -226,6 +226,97 @@
     "0CCC0040": "54000000",
     "0CC28020": "0000cac2"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 6 fills r5+8.4=BF800000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "poke_arg": {
+      "r5": "0000000000000000000080bf"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCF8000, 0CCF8040.4=C1C80000; call 7 fills r5+8.4=BF800000",
+   "regs": {
+    "r4": "0CCF8000"
+   },
+   "poke": {
+    "0CCF8040": "0000c8c1"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "poke_arg": {
+      "r5": "0000000000000000000080bf"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 6 fills r5+8.4=3F800000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "poke_arg": {
+      "r5": "00000000000000000000803f"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCF8000, 0CCF8040.4=C1C80000; call 7 fills r5+8.4=3F800000",
+   "regs": {
+    "r4": "0CCF8000"
+   },
+   "poke": {
+    "0CCF8040": "0000c8c1"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "poke_arg": {
+      "r5": "00000000000000000000803f"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCF8000, 0CCF8040.4=C1C80000; call 2 (nlLength) fr0=41200000",
+   "regs": {
+    "r4": "0CCF8000"
+   },
+   "poke": {
+    "0CCF8040": "0000c8c1"
+   },
+   "calls": [
+    {},
+    {
+     "fr0": "41200000"
+    }
+   ]
   }
  ]
 }

@@ -9,6 +9,43 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (nlSetEventNext) r0=0CC50000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC50000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (nlSetEventNext) r0=0CC50000; r4=0CC64000, 0CC64080.4=0CC5C000",
+   "regs": {
+    "r4": "0CC64000"
+   },
+   "calls": [
+    {
+     "r0": "0CC50000"
+    }
+   ],
+   "poke": {
+    "0CC64080": "00c0c50c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (nlSetEventNext) r0=0CC50000; r4=0CC58000, 0CC58078.4=00000013",
+   "regs": {
+    "r4": "0CC58000"
+   },
+   "calls": [
+    {
+     "r0": "0CC50000"
+    }
+   ],
+   "poke": {
+    "0CC58078": "13000000"
+   }
   }
  ]
 }

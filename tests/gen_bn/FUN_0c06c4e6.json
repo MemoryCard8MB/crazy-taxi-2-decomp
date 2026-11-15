@@ -92,6 +92,34 @@
    "poke": {
     "0CC18050": "000080bf"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c073c60) fr0=3F8CCCCD",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "fr0": "3F8CCCCD"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c073c60) fr0=3F8CCCCD; call 7 (FUN_0c073b40) fr0=BF800000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "fr0": "3F8CCCCD"
+    },
+    {},
+    {},
+    {},
+    {
+     "fr0": "BF800000"
+    }
+   ]
   }
  ]
 }

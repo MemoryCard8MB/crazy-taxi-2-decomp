@@ -75,7 +75,7 @@ int FUN_0c01e9e2(int, int);
 int FUN_0c026ce6(void);
 int FUN_0c0297f4(int, int, float);
 int FUN_0c029b12(int, float);
-int FUN_0c02f6e8(int);
+void FUN_0c02f6e8(int);
 int FUN_0c02fb94(int, int);
 extern int FUN_0c03346e();
 int FUN_0c03b318(int);

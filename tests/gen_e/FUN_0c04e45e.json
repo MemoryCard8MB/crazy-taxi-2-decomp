@@ -9,6 +9,54 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c073c80) fr0=481C4000",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "fr0": "481C4000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c073c80) fr0=481C4000; call 4 (FUN_0c073c80) fr0=481C4000",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "fr0": "481C4000"
+    },
+    {},
+    {
+     "fr0": "481C4000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c073c80) fr0=481C4000; call 2 (FUN_0c073c80) fr0=4A1C4004",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "fr0": "4A1C4004"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c073c80) fr0=481C4000; call 4 (FUN_0c073c80) fr0=481C4000; call 2 (FUN_0c073c80) fr0=4A1C4000",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "fr0": "4A1C4000"
+    },
+    {},
+    {
+     "fr0": "481C4000"
+    }
+   ]
   }
  ]
 }

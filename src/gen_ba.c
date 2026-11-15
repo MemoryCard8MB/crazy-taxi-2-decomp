@@ -152,8 +152,8 @@ float FUN_0c021040(int a4, int a5)
     *(int *)((int)stk + 4) = v0_1;
     w0_1 = FUN_0c020dbc(v0_3, (((int)stk + 4) + 0x28), (((int)stk + 4) + 0x10), (((int)stk + 4) + 0x4), v0_1);
     *(int *)((int)stk + 0) = 0x0;
-    v0_1 = (*(int *)(((int)stk + 20))) != (*(int *)(((int)stk + 16)));
     w0_1 = ((w0_1 + (FUN_0c020dbc((*(int *)(((int)stk + 24))), (((int)stk + 0) + 0x20), (((int)stk + 0) + 0x10), (((int)stk + 0) + 0xC), 0x0))));
+    v0_1 = (*(int *)(((int)stk + 20))) != (*(int *)(((int)stk + 16)));     /* manual: after the call, which fills these two words through its r6 (the original compares at 0C0210B0, after the bsr); the generator had moved the compare before it */
     if (v0_1) goto L_C0210C4;
     v0_0 = *(int *)(((int)stk + 8));
     v0_1 = *(int *)(((int)stk + 12));

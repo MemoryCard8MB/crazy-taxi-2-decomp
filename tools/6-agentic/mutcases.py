@@ -31,6 +31,8 @@ args = sys.argv[1:]
 names = []
 if '--' in args:
     names = args[args.index('--') + 1:]; args = args[:args.index('--')]
+    args += [a for a in names if a in ('--list', '--write')]          # flags given after the names (mutpar.sh appends them)
+    names = [a for a in names if a not in ('--list', '--write')]
 opt = {'--max-cov': 0.75, '--min-gap': 40, '--top': 0, '--time': 90.0, '--keep': 200}
 write = False
 listonly = False
@@ -251,6 +253,7 @@ def rv(T, i, reg):
 class Ctx:
     def __init__(self, r, fn):
         self.T = r['trace']; self.mem = r['_mem']; self.mocks = dict(r['_mocks'])
+        self.call_to = [x['to'] for x in r.get('calls', [])]
         self.rl = sorted(self.mem.rlog, key=lambda x: x[0]); self.rt = [x[0] for x in self.rl]
         a, s = FUN[fn]
         k = (a & 0x1FFFFFFF) | 0x0C000000
@@ -270,6 +273,8 @@ class Ctx:
         for j in range(i - 1, -1, -1):
             if reg in dests(T[j][1]) or rv(T, j + 1, reg) != rv(T, j, reg):
                 return j
+            if reg in (('r', 0), ('f', 0)) and (j + 1) in self.mock_index:
+                return j                               # a mocked call answers r0 and fr0 even with the value they had
         return -1
 
 def leaves(ctx, i, reg, depth=0, out=None, seen=None, path=()):
@@ -324,7 +329,18 @@ def leaves(ctx, i, reg, depth=0, out=None, seen=None, path=()):
                     if src: leaves(ctx, wj, src, depth + 1, out, seen)
                 continue
             if 0x0DFFE000 <= a < 0x0DFFFF00:
-                continue                               # the function's own frame, never written: nothing to give
+                # the function's own frame, not written by it: an output a mocked call filled through a pointer argument
+                for tick in sorted((x for x in ctx.mock_index if x <= j), reverse=True):
+                    if tick >= len(T): continue
+                    hit = None
+                    for rr in range(4, 8):
+                        p_ = T[tick][2][rr] & M32
+                        if (p_ & 0x1FFFFFFF) <= a < (p_ & 0x1FFFFFFF) + 64:
+                            hit = (rr, a - (p_ & 0x1FFFFFFF)); break
+                    if hit:
+                        out.append(('fill', ctx.mock_index[tick][0], 'r%d' % hit[0], hit[1], size, (op >> 12) == 0xF))
+                        break
+                continue
             fl = (op >> 12) == 0xF
             out.append(('mem', a, size, fl))
         return out
@@ -401,6 +417,16 @@ def apply(case, leaf, v, size_hint=4):
         while len(calls) <= k: calls.append({})
         calls[k] = dict(calls[k]); calls[k][leaf[2]] = '%08X' % v
         return c, 'call %d (%s) %s=%08X' % (k + 1, name_at.get(leaf[3] | 0x0C000000 if leaf[3] < 0x0C000000 else leaf[3], '%08X' % leaf[3]), leaf[2], v)
+    if leaf[0] == 'fill':
+        _, k, reg, off, size, fl = leaf
+        calls = c.setdefault('calls', [])
+        while len(calls) <= k: calls.append({})
+        ans = dict(calls[k]); pa = dict(ans.get('poke_arg', {}))
+        b = bytearray.fromhex(pa.get(reg, ''))
+        if len(b) < off + size: b += bytes(off + size - len(b))
+        b[off:off + size] = (v & ((1 << (8 * size)) - 1)).to_bytes(size, 'little')
+        pa[reg] = b.hex(); ans['poke_arg'] = pa; calls[k] = ans
+        return c, 'call %d fills %s+%d.%d=%0*X' % (k + 1, reg, off, size, 2 * size, v & ((1 << (8 * size)) - 1))
     if leaf[0] == 'pfield':
         _, bl, off, size, fl = leaf
         P = fresh_ptr()
@@ -410,13 +436,17 @@ def apply(case, leaf, v, size_hint=4):
     _, a, size, fl = leaf
     data = (v & ((1 << (8 * size)) - 1)).to_bytes(size, 'little')
     pk = c.setdefault('poke', {})
+    # the case's pokes may overlap (a generated object over a wider block) and run in order: the bytes go into every poke that
+    # covers them, or a later one puts the old value back
+    covered = bytearray(size)
     for key, hx in list(pk.items()):
         k0 = int(key, 16) & 0x1FFFFFFF; ln = len(hx) // 2
-        if k0 <= a and a + size <= k0 + ln:
-            b = bytearray.fromhex(hx); b[a - k0:a - k0 + size] = data; pk[key] = b.hex()
-            break
-    else:
-        pk['%08X' % a] = data.hex()
+        lo, hi = max(a, k0), min(a + size, k0 + ln)
+        if lo < hi:
+            b = bytearray.fromhex(hx); b[lo - k0:hi - k0] = data[lo - a:hi - a]; pk[key] = b.hex()
+            for x in range(lo - a, hi - a): covered[x] = 1
+    if not all(covered):
+        pk['%08X' % a] = data.hex()             # last, so it wins over nothing it should not
     return c, '%08X.%d=%s' % (a, size, data[::-1].hex().upper())
 
 # ---------------------------------------------------------------------------------------------------------------- the search
@@ -442,6 +472,24 @@ def tsource(ctx, i):
             return (j,) + ts
     return None
 
+
+def clean(case, r):
+    """the original ran to its return, or (a case marked endless: a loop that never returns) to the step limit"""
+    return not r['error'] or (case.get('endless') and str(r['error']).startswith('more than'))
+
+def strip_fills(mc, mr, parent_to):
+    """the answers' buffer fills (poke_arg, poke_stack) were written for the parent's callees: where the mutant calls another
+    function at that position, the fill is dropped (a 32-byte fill meant for one callee overran a stack buffer of another)"""
+    calls = mc.get('calls') or []
+    changed = False
+    for k, ans in enumerate(calls):
+        if not isinstance(ans, dict) or not any(x in ans for x in ('poke_arg', 'poke_stack')): continue
+        to_now = mr['calls'][k]['to'] if k < len(mr.get('calls', [])) else None
+        to_was = parent_to[k] if k < len(parent_to) else None
+        if to_now != to_was:
+            calls[k] = {x: v for x, v in ans.items() if x not in ('poke_arg', 'poke_stack')}; changed = True
+    return changed
+
 def explore(fn):
     p = 'tests/%s/%s.json' % (cfile[fn], fn)
     d = json.load(open(p))
@@ -451,7 +499,7 @@ def explore(fn):
     pool, S = [], set()
     for c in base_cases:
         r = run(fn, c, trace=True)
-        if r['error']:
+        if not clean(c, r):
             continue
         S.update(r['covered'])
         pool.append((c, r, c.get('about', 'case')))
@@ -489,11 +537,11 @@ def explore(fn):
         return kind, vals, imm, lv
 
     def values(kind, vals, imm, lf, limit=None):
-        fl = lf[-1] if lf[0] in ('mem', 'reg', 'pfield') and isinstance(lf[-1], bool) else (lf[0] == 'call' and lf[2] == 'fr0')
+        fl = lf[-1] if lf[0] in ('mem', 'reg', 'pfield', 'fill') and isinstance(lf[-1], bool) else (lf[0] == 'call' and lf[2] == 'fr0')
         out = []
         for v in candidates(kind, vals, imm, fl, None):
             if v == 'PTR':
-                if fl or (lf[0] == 'mem' and lf[2] != 4) or (lf[0] == 'pfield' and lf[3] != 4): continue
+                if fl or (lf[0] == 'mem' and lf[2] != 4) or (lf[0] == 'pfield' and lf[3] != 4) or (lf[0] == 'fill' and lf[4] != 4): continue
                 v = fresh_ptr()
             out.append(v)
             if limit and len(out) >= limit: break
@@ -519,7 +567,9 @@ def explore(fn):
                 tried.add(key)
                 mc, desc = apply(c, lf, v)
                 mr = run(fn, mc, trace=True, steps=steps_lim); state['runs'] += 1; n += 1
-                if not mr['error']:
+                if clean(mc, mr) and set(mr['covered']) - S and strip_fills(mc, mr, ctx.call_to):
+                    mr = run(fn, mc, trace=True, steps=steps_lim); state['runs'] += 1
+                if clean(mc, mr):
                     new = set(mr['covered']) - S
                     if new:
                         keep(mc, mr, about, desc, new); return True
@@ -546,7 +596,9 @@ def explore(fn):
                     tried.add(key)
                     m1, d1 = apply(c, lf, v)
                     r1 = run(fn, m1, trace=True, steps=steps_lim); state['runs'] += 1
-                    if r1['error']: continue
+                    if clean(m1, r1) and strip_fills(m1, r1, ctx.call_to):
+                        r1 = run(fn, m1, trace=True, steps=steps_lim); state['runs'] += 1
+                    if not clean(m1, r1): continue
                     new = set(r1['covered']) - S
                     if new:
                         keep(m1, r1, about, d1, new); return True

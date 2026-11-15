@@ -68,6 +68,18 @@
    "poke": {
     "0CC48000": "f0258e0c"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 4 (nlLength) fr0=43170000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {
+     "fr0": "43170000"
+    }
+   ]
   }
  ]
 }

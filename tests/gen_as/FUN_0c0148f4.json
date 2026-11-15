@@ -1924,6 +1924,23 @@
    "poke": {
     "0C1EC808": "00000040"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1758D4.4=80CFFFFE; call 6 (nlLength) fr0=41940000",
+   "regs": {},
+   "poke": {
+    "0C1758D4": "feffcf80"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "fr0": "41940000"
+    }
+   ]
   }
  ]
 }

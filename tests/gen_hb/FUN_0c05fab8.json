@@ -9,6 +9,24 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 10 (nlUnitVectorsd) fr0=41100000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "fr0": "41100000"
+    }
+   ]
   }
  ]
 }

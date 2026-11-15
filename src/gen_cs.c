@@ -65,7 +65,7 @@ int FUN_0c026e8a(void);
 int FUN_0c0297f4(int, int, float);
 void FUN_0c02a798(void);
 int FUN_0c02d37c(void);
-int FUN_0c02f6e8(int);
+void FUN_0c02f6e8(int);
 int FUN_0c02fe92(void);
 int FUN_0c030e54(void);
 int FUN_0c030eee(float, float, float);
@@ -192,7 +192,7 @@ int FUN_0c06088e(int a4);
 int FUN_0c01da32(void);
 int FUN_0c0318b4(int a4, int a5, int a6);
 int FUN_0c0607b2(void);
-int FUN_0c03010e(int a4, int a5, int a6, int a7);
+void FUN_0c03010e(int a4, int a5, int a6, int a7);
 int FUN_0c01d2d4(int a4, int a5, int a6, int a7);
 int FUN_0c061004(void);
 int FUN_0c06118a(void);
@@ -703,13 +703,14 @@ int FUN_0c0318b4(int a4, int a5, int a6)
 }
 
 
-int FUN_0c03010e(int a4, int a5, int a6, int a7)
+void FUN_0c03010e(int a4, int a5, int a6, int a7)
 {
     register float t4;
 
     if (((((struct o18_float *)((a4 + 0x14)))->v)) > 1800.0f) {
         KillColliObj((a4 + 0x14), a5, a6, a7);
-        return nlCloseEvent(a4);
+        (void)(nlCloseEvent(a4));
+        return;
     }
     if (((((struct o68_int *)((a4 + 0x14)))->v)) == 5) {
         t4 = FUN_0c073c60(((a4 + 0x14) + 0x48));
@@ -717,7 +718,8 @@ int FUN_0c03010e(int a4, int a5, int a6, int a7)
             ChangeColliObj((a4 + 0x14), 0x1A);
         }
     }
-    return FUN_0c02f6e8((a4 + 0x14));
+    (void)(FUN_0c02f6e8((a4 + 0x14)));
+    return;
 }
 
 int FUN_0c01d2d4(int a4, int a5, int a6, int a7)

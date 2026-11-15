@@ -64,6 +64,80 @@
    "poke": {
     "0C136CB0": "06000000"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdGetPeripheral) r0=0CCF0000, 0CCF0010.4=00000010",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CCF0000"
+    }
+   ],
+   "poke": {
+    "0CCF0010": "10000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdGetPeripheral) r0=0CCF8000, 0CCF8010.4=00000020",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CCF8000"
+    }
+   ],
+   "poke": {
+    "0CCF8010": "20000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdGetPeripheral) r0=0CC0C000, 0CC0C010.4=00000080",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC0C000"
+    }
+   ],
+   "poke": {
+    "0CC0C010": "80000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdGetPeripheral) r0=0CC04000, 0CC04010.4=00000040",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC04000"
+    }
+   ],
+   "poke": {
+    "0CC04010": "40000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdGetPeripheral) r0=0CCF0000, 0CCF0010.4=00000010; 0C136CB0.4=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CCF0000"
+    }
+   ],
+   "poke": {
+    "0CCF0010": "10000000",
+    "0C136CB0": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdGetPeripheral) r0=0CCF8000, 0CCF8010.4=00000020; 0C136CB0.4=00000002",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CCF8000"
+    }
+   ],
+   "poke": {
+    "0CCF8010": "20000000",
+    "0C136CB0": "02000000"
+   }
   }
  ]
 }

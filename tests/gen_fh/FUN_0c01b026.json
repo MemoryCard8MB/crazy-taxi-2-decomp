@@ -73,6 +73,30 @@
    "poke": {},
    "endless": true,
    "steps": 20000
+  },
+  {
+   "about": "mutant of endless case 0: 0C09739C.4=00000000",
+   "poke": {
+    "0C09739C": "00000000"
+   },
+   "endless": true,
+   "steps": 20000
+  },
+  {
+   "about": "mutant of endless case 0: 0C1EC718.4=00000004",
+   "poke": {
+    "0C1EC718": "04000000"
+   },
+   "endless": true,
+   "steps": 20000
+  },
+  {
+   "about": "mutant of endless case 0: 0C2A4658.4=0CCE4000",
+   "poke": {
+    "0C2A4658": "0040ce0c"
+   },
+   "endless": true,
+   "steps": 20000
   }
  ]
 }

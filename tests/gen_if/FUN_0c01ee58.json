@@ -9,6 +9,24 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (thunk_FUN_0c14b2ec) r0=0CC08000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC08000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (thunk_FUN_0c14b2ec) r0=FFFFFFE9",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "FFFFFFE9"
+    }
+   ]
   }
  ]
 }

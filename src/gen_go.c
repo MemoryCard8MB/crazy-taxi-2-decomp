@@ -121,7 +121,7 @@ int FUN_0c05c2cc(int a4);
 int FUN_0c05de0c(int a4, float f4, float f5, float f6, float f7, float f8);
 int FUN_0c02c068(int a4, int a5, float f4);
 int FUN_0c05a3f8(int a4);
-float FUN_0c02f6e8(int a4);
+void FUN_0c02f6e8(int a4);
 int FUN_0c04c5da(void);
 int FUN_0c068794(int a4);
 
@@ -679,7 +679,7 @@ int FUN_0c05a3f8(int a4)
     return 0xC05A8BC;
 }
 
-float FUN_0c02f6e8(int a4)
+void FUN_0c02f6e8(int a4)
 {
     int stk[17];
 
@@ -736,7 +736,7 @@ float FUN_0c02f6e8(int a4)
     v0_2 = (0x18);
     if ((1000.0f > ((((struct o18_float *)(v0_0))->v)))) goto L_C02F790;
     L_C02FB48:;
-    return w0_0;
+    return;
     L_C02F790:;
     FUN_0c073360();
     FUN_0c073a60(v0_0);

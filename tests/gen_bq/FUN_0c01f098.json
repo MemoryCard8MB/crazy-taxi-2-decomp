@@ -6526,6 +6526,37 @@
     {}
    ],
    "about": "mutant of snapshot title1 #1: the state at its entry in that frame (17: 0C26F9E0.1=04"
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (ADXF_OpenAfs) r0=0CC08000; call 4 (FUN_0c150460) r0=00000004",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC08000"
+    },
+    {},
+    {},
+    {
+     "r0": "00000004"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (ADXF_OpenAfs) r0=0CC08000; call 4 (FUN_0c150460) r0=00000004; 0C123E54.4=0000000A",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC08000"
+    },
+    {},
+    {},
+    {
+     "r0": "00000004"
+    }
+   ],
+   "poke": {
+    "0C123E54": "0a000000"
+   }
   }
  ]
 }

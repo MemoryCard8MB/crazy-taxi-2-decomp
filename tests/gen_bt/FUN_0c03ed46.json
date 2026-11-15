@@ -28,6 +28,42 @@
    "poke": {
     "0C2AC2F0": "01000000"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c03f154) r0=00000001; call 3 (FUN_0c03f154) r0=00000002",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "00000002"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c03f154) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c03f154) r0=00000001; call 4 (FUN_0c03f154) r0=00000004",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000004"
+    }
+   ]
   }
  ]
 }

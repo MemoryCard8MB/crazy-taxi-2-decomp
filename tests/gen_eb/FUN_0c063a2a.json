@@ -315,6 +315,15 @@
     "0CC08008": "02000000",
     "0CC08014": "0000ce0c"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (FUN_0c05bf60) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
   }
  ]
 }

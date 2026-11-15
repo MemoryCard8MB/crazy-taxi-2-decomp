@@ -9,6 +9,70 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (set_event) r0=0CC04000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC04000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (set_event) r0=0CC04000; r5=0CC08000, 0CC08010.1=FF",
+   "regs": {
+    "r5": "0CC08000"
+   },
+   "calls": [
+    {
+     "r0": "0CC04000"
+    }
+   ],
+   "poke": {
+    "0CC08010": "ff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (set_event) r0=0CC04000; r5=0CC0C000, 0CC0C012.2=0001",
+   "regs": {
+    "r5": "0CC0C000"
+   },
+   "calls": [
+    {
+     "r0": "0CC04000"
+    }
+   ],
+   "poke": {
+    "0CC0C012": "0100"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (set_event) r0=0CC04000; 0C177914.1=FF",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC04000"
+    }
+   ],
+   "poke": {
+    "0C177914": "ff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (set_event) r0=0CC04000; r5=0CC08000, 0CC08010.1=FF; 0C177930.1=FF",
+   "regs": {
+    "r5": "0CC08000"
+   },
+   "calls": [
+    {
+     "r0": "0CC04000"
+    }
+   ],
+   "poke": {
+    "0CC08010": "ff",
+    "0C177930": "ff"
+   }
   }
  ]
 }

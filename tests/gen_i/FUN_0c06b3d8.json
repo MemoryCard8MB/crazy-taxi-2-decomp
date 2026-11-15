@@ -40,6 +40,28 @@
    "poke": {
     "0CCF8007": "40"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: r5=0CCF0000; call 1 (FUN_0c04ba42) r0=0CC6C000",
+   "regs": {
+    "r5": "0CCF0000"
+   },
+   "calls": [
+    {
+     "r0": "0CC6C000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=0CCF4000; call 1 (FUN_0c04ba04) r0=0CCA0000",
+   "regs": {
+    "r6": "0CCF4000"
+   },
+   "calls": [
+    {
+     "r0": "0CCA0000"
+    }
+   ]
   }
  ]
 }

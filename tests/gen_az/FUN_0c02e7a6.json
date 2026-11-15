@@ -810,6 +810,20 @@
     }
    ],
    "about": "mutant of snapshot title1 #1: the state at its entry in that frame (41: 0C1EC71C.4=00000002"
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC3C000, 0CC3C000.4=00000005; call 1 (FUN_0c073c60) fr0=3FB33333",
+   "regs": {
+    "r4": "0CC3C000"
+   },
+   "poke": {
+    "0CC3C000": "05000000"
+   },
+   "calls": [
+    {
+     "fr0": "3FB33333"
+    }
+   ]
   }
  ]
 }

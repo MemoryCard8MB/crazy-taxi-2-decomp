@@ -37,7 +37,7 @@ int FUN_0c027f28(int);
 int FUN_0c027fbe(float, float);
 int FUN_0c02803a(int, int, int, int);
 int FUN_0c02842e(int);
-int FUN_0c02f6e8(int);
+void FUN_0c02f6e8(int);
 int FUN_0c033948(void);
 int FUN_0c033b12(int);
 int FUN_0c03449c(void);
@@ -81,7 +81,7 @@ int nlPushMatrix(int);
 int pfSize(float, float);
 int FUN_0c03f3f4(int a4, int a5, int a6, int a7);
 int FUN_0c01dadc(int a4, int a5, int a6, int a7);
-int FUN_0c0300d8(int a4, int a5, int a6, int a7);
+void FUN_0c0300d8(int a4, int a5, int a6, int a7);
 int FUN_0c05332a(void);
 int FUN_0c053360(void);
 int FUN_0c053396(void);
@@ -223,13 +223,15 @@ int FUN_0c01dadc(int a4, int a5, int a6, int a7)
     return t1;
 }
 
-int FUN_0c0300d8(int a4, int a5, int a6, int a7)
+void FUN_0c0300d8(int a4, int a5, int a6, int a7)
 {
     if (((((struct o18_float *)((a4 + 0x14)))->v)) > (*(float *)0xC030190)) {
         KillColliObj((a4 + 0x14), a5, a6, a7);
-        return nlCloseEvent(a4);
+        (void)(nlCloseEvent(a4));
+        return;
     }
-    return FUN_0c02f6e8((a4 + 0x14));
+    (void)(FUN_0c02f6e8((a4 + 0x14)));
+    return;
 }
 
 int FUN_0c05332a(void)

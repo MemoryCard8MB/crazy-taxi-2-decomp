@@ -175,6 +175,32 @@
     "0C2A469C": "04000000",
     "0C1EC83C": "77be7f3f"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 4 (FUN_0c03f154) r0=0CCB0000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCB0000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (FUN_0c034320) r0=00000001; call 4 (FUN_0c03f154) r0=0CCD8000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {},
+    {},
+    {
+     "r0": "0CCD8000"
+    }
+   ]
   }
  ]
 }

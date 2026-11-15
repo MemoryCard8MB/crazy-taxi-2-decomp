@@ -44,6 +44,25 @@
    "poke": {
     "0C2A4658": "05000000"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (syCfgGetSoundMode) r0=0CCDC000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CCDC000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (syCfgGetLanguage) r0=0CCE0000",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "0CCE0000"
+    }
+   ]
   }
  ]
 }

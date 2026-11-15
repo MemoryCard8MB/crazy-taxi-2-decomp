@@ -21,6 +21,16 @@
    "regs": {
     "r4": "00000010"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c073c60) fr0=3F800000",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "fr0": "3F800000"
+    }
+   ]
   }
  ]
 }

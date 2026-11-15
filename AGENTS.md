@@ -295,6 +295,12 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   through a variadic prototype `(int, ...)`; the original passes the image (0C10D348 or 0C10D284 by a5), 0, 0, 1 and the port
   (`work/mut/varscan.py` lists short calls through such prototypes: none is left in game code). Also: FUN_0c027bfa had a
   placeholder a4, FUN_0c059bf2 (no caller at all) returned a leftover.
+  Batch 4+5 (every game function with a gap, after five tool fixes found by `MUTDEBUG` statistics: a poke into every
+  overlapping fixture, a mocked call as the writer of r0/fr0 even with an unchanged value, a frame word filled by a call as an
+  input (that call's `poke_arg`), cases marked endless, and fills dropped where the mutant calls another function): 500
+  mutants, game coverage 91.1% -> 95.8%. Real bug: `FUN_0c021040` compared two words before the call that fills them (the
+  generator moved the compare above the `bsr`). `equiv.py`: a run cut at the step limit (endless) has no result registers to
+  compare. Event handlers FUN_0c03010e and FUN_0c0300d8 (and FUN_0c02f6e8 below them) are void.
 - **A left shift by a negative amount.** The generator writes SH-4 shld/shad with a negative count as `x << (int)(-n)`,
   which C leaves undefined. SHC mostly emits the shift by a negated register (correct), but in FUN_0c042ba8 it folded
   `(-1 << k) << -k` away and tested all the bits instead of the low ones: a snapshot case of the game took the other branch

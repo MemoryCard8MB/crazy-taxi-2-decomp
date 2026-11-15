@@ -106,6 +106,21 @@
     "0C2A4700": "01000000",
     "0C2A4708": "ff"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCF0000; r5=FFFFFFFF; call 4 (buGetFileInfo) r0=0CCF4000",
+   "regs": {
+    "r4": "0CCF0000",
+    "r5": "FFFFFFFF"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCF4000"
+    }
+   ]
   }
  ]
 }

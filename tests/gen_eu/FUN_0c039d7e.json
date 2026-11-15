@@ -27,6 +27,156 @@
      "r0": "0CC18000"
     }
    ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 7 fills r5+9.1=52",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "poke_arg": {
+      "r5": "00000000000000000052"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 5 (buIsExistFile) r0=0CCEC000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCEC000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 7 fills r5+9.1=52; call 10 (FUN_0c07ffac) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "poke_arg": {
+      "r5": "00000000000000000052"
+     }
+    },
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 7 fills r5+9.1=52; call 10 (FUN_0c07ffac) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "poke_arg": {
+      "r5": "00000000000000000052"
+     }
+    },
+    {},
+    {},
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 6 (buFindFirstFile) r0=0CCF0000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCF0000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 7 (FUN_0c07ffbc) r0=0CCF4000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCF4000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 7 fills r5+9.1=52; call 8 (buGetFileInfo) r0=0CCFC000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "poke_arg": {
+      "r5": "00000000000000000052"
+     }
+    },
+    {
+     "r0": "0CCFC000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (buIsExistFile) r0=0CCE8000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "0CCE8000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 5 (buIsExistFile) r0=0CCEC000; call 6 (buIsExistFile) r0=0CCF8000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCEC000"
+    },
+    {
+     "r0": "0CCF8000"
+    }
+   ]
   }
  ]
 }

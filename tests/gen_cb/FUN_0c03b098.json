@@ -32,6 +32,42 @@
     "0C1EC720": "02000000",
     "0C1EC724": "0f000000"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (FUN_0c03f154) r0=00000003; call 2 (FUN_0c03f154) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000003"
+    },
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (FUN_0c03f154) r0=00000003; call 2 (FUN_0c03f154) r0=00000001; 0C2AC5CC.4=00000002",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000003"
+    },
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C2AC5CC": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (FUN_0c03f154) r0=00000003",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000003"
+    }
+   ]
   }
  ]
 }

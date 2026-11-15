@@ -9,6 +9,20 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 6 (FUN_0c0621e0) r0=0CCF0000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCF0000"
+    }
+   ]
   }
  ]
 }

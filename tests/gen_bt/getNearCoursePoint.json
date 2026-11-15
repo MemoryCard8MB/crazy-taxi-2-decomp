@@ -48,6 +48,22 @@
    "regs": {
     "r4": "00000003"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=00000002; call 1 (nlLength) fr0=3F800000; call 4 (nlLength) fr0=3F800000",
+   "regs": {
+    "r4": "00000002"
+   },
+   "calls": [
+    {
+     "fr0": "3F800000"
+    },
+    {},
+    {},
+    {
+     "fr0": "3F800000"
+    }
+   ]
   }
  ]
 }

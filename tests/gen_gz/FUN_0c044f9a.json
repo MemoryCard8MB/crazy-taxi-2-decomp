@@ -9,6 +9,26 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (nlSetEventNext) r0=0CC6C000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC6C000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (nlSetEventNext) r0=0CC6C000; r5=00000005",
+   "regs": {
+    "r5": "00000005"
+   },
+   "calls": [
+    {
+     "r0": "0CC6C000"
+    }
+   ]
   }
  ]
 }

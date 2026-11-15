@@ -71,6 +71,55 @@
    "poke": {
     "0CC98010": "0000c90c"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: r5=0CCA4000, 0CCA4004.4=00000002; call 12 (FUN_0c029b12) r0=0CCB4000, 0CCB401C.4=0CCAC000; call 13 (nlLength) fr0=41800000",
+   "regs": {
+    "r5": "0CCA4000"
+   },
+   "poke": {
+    "0CCA4004": "02000000",
+    "0CCB401C": "00c0ca0c"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCB4000"
+    },
+    {
+     "fr0": "41800000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r5=0CCA4000, 0CCA4004.4=00000002; call 7 (FUN_0c070e60) r0=FFFFFFFF",
+   "regs": {
+    "r5": "0CCA4000"
+   },
+   "poke": {
+    "0CCA4004": "02000000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
   }
  ]
 }

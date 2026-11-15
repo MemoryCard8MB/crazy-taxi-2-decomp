@@ -113,7 +113,7 @@ int vmsfs_lockbank(int, int);
 int vmsfs_mount(int);
 int vmsfs_unmount(int);
 int FUN_0c01b270(int a4, float f4);
-float FUN_0c02f6e8(int a4);
+void FUN_0c02f6e8(int a4);
 int FUN_0c04c5da(void);
 void vmsfs_c_dispatch(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11);
 int FUN_0c07ada0(int a4, int a5);

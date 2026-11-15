@@ -18,6 +18,15 @@
    "poke": {
     "0CCAC01C": "5a000000"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (FUN_0c061e7c) r0=0CC5C000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC5C000"
+    }
+   ]
   }
  ]
 }

@@ -28,6 +28,65 @@
     "0CCAC080": "04000000",
     "0C2BB3E0": "28000000"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 4 (FUN_0c073c60) fr0=3F800000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {
+     "fr0": "3F800000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 18 (FUN_0c0297f4) r0=0CCF4000, 0CCF401C.4=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCF4000"
+    }
+   ],
+   "poke": {
+    "0CCF401C": "ffffffff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 10 (FUN_0c073b40) fr0=BF800000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "fr0": "BF800000"
+    }
+   ]
   }
  ]
 }

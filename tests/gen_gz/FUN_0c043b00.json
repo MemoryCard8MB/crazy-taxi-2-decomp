@@ -9,6 +9,40 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (set_event) r0=0CCAC000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CCAC000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (set_event) r0=0CCAC000; call 2 (FUN_0c046466) r0=0000000F; r4=00000013",
+   "regs": {
+    "r4": "00000013"
+   },
+   "calls": [
+    {
+     "r0": "0CCAC000"
+    },
+    {
+     "r0": "0000000F"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (set_event) r0=0CCAC000; r6=0CCB0000",
+   "regs": {
+    "r6": "0CCB0000"
+   },
+   "calls": [
+    {
+     "r0": "0CCAC000"
+    }
+   ]
   }
  ]
 }
