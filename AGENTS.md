@@ -301,6 +301,13 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   mutants, game coverage 91.1% -> 95.8%. Real bug: `FUN_0c021040` compared two words before the call that fills them (the
   generator moved the compare above the `bsr`). `equiv.py`: a run cut at the step limit (endless) has no result registers to
   compare. Event handlers FUN_0c03010e and FUN_0c0300d8 (and FUN_0c02f6e8 below them) are void.
+  Batch 6 (95.8% -> 96.9%): deltas through arithmetic (`r5 + r7*44 + 12 == 0` wants r5 = -12 - r7*44, mul/macl followed),
+  fills of a mocked call anywhere in RAM as inputs, a callee's side effect on a global (sh4sim case format: an answer's
+  `poke_mem` {addr: bytes}, written when the call returns), and a crashing mutant retried without the generated 32-byte fills.
+  Real bug: `gdc_CoursePointLoadReq` called `nlLength` through an `int`-returning cast (it returns a float in fr0) and passed
+  stk+52 for the vector the original reads at r15+48, its stack argument `p` (now `&p`); it is void now and has no a4, and
+  FUN_0c01f95a's cases lost the r0 answers they gave that call (`work/mut/voidanswers.py`). `work/mut/castscan.py` lists casts
+  whose return type contradicts the callee's definition: the other hits' results are never read.
 - **A left shift by a negative amount.** The generator writes SH-4 shld/shad with a negative count as `x << (int)(-n)`,
   which C leaves undefined. SHC mostly emits the shift by a negated register (correct), but in FUN_0c042ba8 it folded
   `(-1 << k) << -k` away and tested all the bits instead of the low ones: a snapshot case of the game took the other branch

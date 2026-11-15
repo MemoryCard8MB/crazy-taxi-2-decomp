@@ -426,6 +426,12 @@
     {}
    ],
    "about": "mutant of snapshot menu_options1 #1: the state at its entry in that fr: 0C1EC83C.4=00000010; call 6 (FUN_0c02806c) fr0=C2B20000"
+  },
+  {
+   "about": "mutant of rescue: empty case: r5=FFFFFFF4",
+   "regs": {
+    "r5": "FFFFFFF4"
+   }
   }
  ]
 }

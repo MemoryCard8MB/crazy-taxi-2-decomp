@@ -102,7 +102,7 @@ int FUN_0c07ada0(int);
 int PutCollisionEffect(int, int, int);
 int SetAdvCamera(int, int);
 int camSnapToCar(int);
-int gdc_CoursePointLoadReq(Stk3, float);
+void gdc_CoursePointLoadReq(Stk3, float);
 int nlAddVector(int, int);
 int nlAddVector3op(int, int, int);
 int nlLocate(int, int);

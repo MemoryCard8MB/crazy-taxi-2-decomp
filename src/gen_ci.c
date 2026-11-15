@@ -159,7 +159,7 @@ int thunk_FUN_0c1606d4(int, int, int);
 int vmsfs_isformat(int);
 int FUN_0c068c94(int a4);
 int FUN_0c04b32c(void);
-int gdc_CoursePointLoadReq(Stk2 s, float f4);
+void gdc_CoursePointLoadReq(Stk2 s, float f4);
 int gdFsLoadDirG(int a4, int a5);
 int kmiProcessVertex_00(int a4);
 int fmMngInit(int a4, int a5, int a6);

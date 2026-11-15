@@ -7,7 +7,7 @@ typedef struct { float x, y, z; } Vec3;
 int FUN_0c058f64(int, int, int, int);
 int FUN_0c01e990(int, int, int);
 int FUN_0c047bda(int, int, Vec3 *);
-int gdc_CoursePointLoadReq(Vec3, float);
+void gdc_CoursePointLoadReq(Vec3, float);
 int End_Adv_Title_LOGO(void);
 int FUN_0c01e3cc(int);
 int FUN_0c046d8c(int, int, int *, int *, int);

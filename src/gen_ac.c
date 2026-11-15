@@ -191,7 +191,7 @@ int gdFsClose(int);
 int gdFsGetFileSize(int, int);
 int gdFsOpen(void);
 int gdFsSearchName(int, int, int);
-int gdc_CoursePointLoadReq(float);
+void gdc_CoursePointLoadReq(float);
 int kdDevGetFD(int, int);
 int kdGetDevice(int);
 int kdGetDeviceInfo(int);

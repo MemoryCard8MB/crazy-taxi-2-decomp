@@ -108,6 +108,24 @@
      "r0": "00000002"
     }
    ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FBC.4=00000008; call 5 writes 0C2A4FBC.4=FFFFFFFF",
+   "regs": {},
+   "poke": {
+    "0C2A4FBC": "08000000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {
+     "poke_mem": {
+      "0C2A4FBC": "ffffffff"
+     }
+    }
+   ]
   }
  ]
 }

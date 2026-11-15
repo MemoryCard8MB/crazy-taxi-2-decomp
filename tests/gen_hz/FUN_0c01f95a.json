@@ -1349,8 +1349,6 @@
      }
     },
     {
-     "r0": "00000005",
-     "fr0": "3DCCCCCD",
      "poke_arg": {
       "r4": "0000004000000000ffffffff00002040286b6e4efffffffffeffffff08000000"
      }
@@ -1386,8 +1384,6 @@
      }
     },
     {
-     "r0": "00000005",
-     "fr0": "3DCCCCCD",
      "poke_arg": {
       "r4": "0000004000000000ffffffff00002040286b6e4efffffffffeffffff08000000"
      }

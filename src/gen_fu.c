@@ -7,10 +7,13 @@ struct o0_int { int v; };
 struct o24_int { char p[0x24]; int v; };
 struct o4_int { char p[0x4]; int v; };
 int FUN_0c01f4ca(int, int, float);
-extern float nlLength();
-int gdc_CoursePointLoadReq(int a4, Stk3 p, float f4);
+float nlLength(int, int);
+void gdc_CoursePointLoadReq(Stk3 p, float f4);
 
-int gdc_CoursePointLoadReq(int a4, Stk3 p, float f4)
+/* manual: nlLength returns a float (the first call read r0 through an int cast) and its second vector is the stack argument p
+   (the original passes r15+48, the entry SP: &p), not stk+52 past the frame. */
+/* manual: void, and no a4: the original returns no value (r0 is a leftover) and never reads r4; the callers pass (Stk3, float) */
+void gdc_CoursePointLoadReq(Stk3 p, float f4)
 {
     int stk[14];
 
@@ -33,7 +36,6 @@ int gdc_CoursePointLoadReq(int a4, Stk3 p, float f4)
     stk[4] = p.w[0];
     stk[5] = p.w[1];
     stk[6] = p.w[2];
-    v0_0 = a4;
     w0_2 = f4;
     *(float *)(((int)stk + 20)) = (0.0f);
     v0_0 = (0x34);
@@ -60,11 +62,11 @@ int gdc_CoursePointLoadReq(int a4, Stk3 p, float f4)
     v0_2 = (v0_3);
     L_C01F7D6:;
     if (((int)v0_2 < (int)(*(int *)((v0_1 + 0x0))))) goto L_C01F7AA;
-    return v0_0;
+    return;
     L_C01F7AA:;
     { struct mv3 { int w[3]; }; *(struct mv3 *)(((int)stk + 4)) = *(struct mv3 *)((v0_4 + 0x4)); }
     *(float *)(((int)stk + 8)) = w0_1;
-    w0_3 = ((int (*)(int, int, Stk3))(nlLength))(((int)stk + 4), (((int)stk + 4) + 0x30), *(Stk3 *)(((int)stk + 4)));
+    w0_3 = nlLength(((int)stk + 4), (int)&p);
     w0_2 = (w0_3);
     w0_2 = (w0_3);
     if ((!(((*(float *)((v0_4 + 0x0))) + w0_0) > w0_3))) goto L_C01F7D2;
@@ -76,7 +78,7 @@ int gdc_CoursePointLoadReq(int a4, Stk3 p, float f4)
     L_C01F734:;
     { struct mv3 { int w[3]; }; *(struct mv3 *)(((int)stk + 4)) = *(struct mv3 *)((v0_2 + 0x4)); }
     *(float *)(((int)stk + 8)) = w0_1;
-    w0_3 = ((float (*)(int, int, Stk3))(nlLength))(((int)stk + 4), (((int)stk + 4) + 0x30), *(Stk3 *)(((int)stk + 4)));
+    w0_3 = nlLength(((int)stk + 4), (int)&p);
     w0_2 = (w0_3);
     w0_2 = (w0_3);
     if ((!(((*(float *)((v0_2 + 0x0))) + w0_0) > w0_3))) goto L_C01F75C;
@@ -93,7 +95,7 @@ int gdc_CoursePointLoadReq(int a4, Stk3 p, float f4)
     L_C01F76E:;
     { struct mv3 { int w[3]; }; *(struct mv3 *)(((int)stk + 4)) = *(struct mv3 *)((v0_2 + 0x4)); }
     *(float *)(((int)stk + 8)) = w0_1;
-    w0_3 = ((float (*)(int, int, Stk3))(nlLength))(((int)stk + 4), (((int)stk + 4) + 0x30), *(Stk3 *)(((int)stk + 4)));
+    w0_3 = nlLength(((int)stk + 4), (int)&p);
     w0_2 = (w0_3);
     w0_2 = (w0_3);
     if ((!(((*(float *)((v0_2 + 0x0))) + w0_0) > w0_3))) goto L_C01F796;

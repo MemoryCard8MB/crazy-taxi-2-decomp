@@ -162,7 +162,7 @@ int SJUNI_Lock(void);
 int SJUNI_Unlock(int, int);
 int SJ_SplitChunk(int, int, int);
 int SetColliObj(int, int);
-int gdc_CoursePointLoadReq(Stk3, float);
+void gdc_CoursePointLoadReq(Stk3, float);
 int gdc_FadeManStreamSong(void);
 int memset(int, int, int);
 int nlAddVector(int, int);

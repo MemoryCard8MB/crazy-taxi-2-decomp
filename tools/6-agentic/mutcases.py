@@ -94,12 +94,16 @@ class Mem(BaseMem):
     """the simulator's memory, logging each data read and write with the trace position of the instruction doing it"""
     def __init__(self):
         super().__init__()
-        self.tick = 0; self.rlog = []; self.wlog = {}
+        self.tick = 0; self.rlog = []; self.wlog = {}; self.flog = []
     def read(self, addr, size, fetch=False):
         v = BaseMem.read(self, addr, size, fetch)
         if not fetch:
             self.rlog.append((self.tick, self.phys(addr), size, v))
         return v
+    def load(self, addr, data):
+        if self.tick > 0:                     # during the run: a mocked call's fill (poke_arg, poke_stack)
+            self.flog.append((self.tick, self.phys(addr), len(data)))
+        return BaseMem.load(self, addr, data)
     def write(self, addr, size, value):
         a = self.phys(addr)
         for k in range(size):
@@ -175,7 +179,7 @@ def dests(op):
         elif lo4 == 0xD and m in (2, 4, 5, 6, 8, 9): d.add(('f', n))
     return d
 
-LOAD = 'LOAD'; CONST = 'CONST'; STOP = 'STOP'; FPUL = 'FPUL'
+LOAD = 'LOAD'; CONST = 'CONST'; STOP = 'STOP'; FPUL = 'FPUL'; MACL = 'MACL'
 
 def srcs(op):
     """what instruction op's written value is made of: a list of registers, or LOAD (from memory: the read log tells), CONST, FPUL, STOP"""
@@ -195,6 +199,7 @@ def srcs(op):
     if hi == 4 and lo4 in (0xC, 0xD): return [('r', n), ('r', m)]
     if hi == 0 and lo4 in (0xC, 0xD, 0xE): return LOAD
     if hi == 0 and lo8 == 0x5A: return FPUL
+    if hi == 0 and lo8 == 0x1A: return MACL
     if hi == 0xF:
         if lo4 in (6, 8, 9): return LOAD
         if lo4 == 0xC: return [('f', m)]
@@ -254,6 +259,7 @@ class Ctx:
     def __init__(self, r, fn):
         self.T = r['trace']; self.mem = r['_mem']; self.mocks = dict(r['_mocks'])
         self.call_to = [x['to'] for x in r.get('calls', [])]
+        self.leafval = {}                     # str(leaf[:3]) -> the value the input had in this run (for the delta candidates)
         self.rl = sorted(self.mem.rlog, key=lambda x: x[0]); self.rt = [x[0] for x in self.rl]
         a, s = FUN[fn]
         k = (a & 0x1FFFFFFF) | 0x0C000000
@@ -289,7 +295,8 @@ def leaves(ctx, i, reg, depth=0, out=None, seen=None, path=()):
     if j < 0:
         k, x = reg
         if (k == 'r' and 4 <= x <= 7) or (k == 'f' and 4 <= x <= 11):      # the arguments only: a C function cannot read its caller's r8-r14
-            out.append(('reg', '%s%d' % ('r' if k == 'r' else 'fr', x), k == 'f'))
+            lf = ('reg', '%s%d' % ('r' if k == 'r' else 'fr', x), k == 'f')
+            ctx.leafval.setdefault(str(lf[:3]), rv(T, 0, reg)); out.append(lf)
         return out
     if (j + 1) in ctx.mock_index and reg in (('r', 0), ('f', 0)):
         kidx, tgt = ctx.mock_index[j + 1]
@@ -297,7 +304,8 @@ def leaves(ctx, i, reg, depth=0, out=None, seen=None, path=()):
         want = rtype.get(nm, 'r0')
         have = 'r0' if reg == ('r', 0) else 'fr0'
         if want == have:
-            out.append(('call', kidx, have, tgt))
+            lf = ('call', kidx, have, tgt)
+            ctx.leafval.setdefault(str(lf[:3]), rv(T, min(j + 1, len(T) - 1), reg)); out.append(lf)
         return out
     pc, op = T[j][0], T[j][1]
     if not (ctx.lo <= pc < ctx.hi):
@@ -312,7 +320,8 @@ def leaves(ctx, i, reg, depth=0, out=None, seen=None, path=()):
                     base = rv(T, j, r2)
                     if (base & 0x1FFFFFFF) < 0x100000:
                         for bl in leaves(ctx, j, r2, depth + 1, [], set(seen)):
-                            out.append(('pfield', bl, (a - (base & 0x1FFFFFFF)) & 0xFFFFF, size, (op >> 12) == 0xF))
+                            lf = ('pfield', bl, (a - (base & 0x1FFFFFFF)) & 0xFFFFF, size, (op >> 12) == 0xF)
+                            ctx.leafval.setdefault(str(lf[:3]), v); out.append(lf)
                 continue
             if CODE_LO <= a < CODE_HI:
                 for r2 in load_addr_regs(op):          # a constant table: follow the index
@@ -323,6 +332,15 @@ def leaves(ctx, i, reg, depth=0, out=None, seen=None, path=()):
             if ws:
                 p = bisect.bisect_left(ws, j) - 1
                 if p >= 0: wj = ws[p]
+            fl_ = next(((tk, s0, ln) for (tk, s0, ln) in reversed(ctx.mem.flog) if tk <= j and s0 <= a < s0 + ln), None)
+            if fl_ and (wj is None or fl_[0] > wj) and fl_[0] in ctx.mock_index and fl_[0] < len(T):
+                # the word came from a mocked call's fill: that call's poke_arg is the input
+                tk, s0, ln = fl_
+                rr = next((x for x in range(4, 8) if (T[tk][2][x] & 0x1FFFFFFF) == s0), None)
+                if rr is not None:
+                    lf = ('fill', ctx.mock_index[tk][0], 'r%d' % rr, a - s0, size, (op >> 12) == 0xF)
+                    ctx.leafval.setdefault(str(lf[:3]), v); out.append(lf)
+                continue
             if wj is not None:
                 if wj < len(T) and ctx.lo <= T[wj][0] < ctx.hi:
                     src = store_src(T[wj][1])
@@ -338,17 +356,32 @@ def leaves(ctx, i, reg, depth=0, out=None, seen=None, path=()):
                         if (p_ & 0x1FFFFFFF) <= a < (p_ & 0x1FFFFFFF) + 64:
                             hit = (rr, a - (p_ & 0x1FFFFFFF)); break
                     if hit:
-                        out.append(('fill', ctx.mock_index[tick][0], 'r%d' % hit[0], hit[1], size, (op >> 12) == 0xF))
+                        lf = ('fill', ctx.mock_index[tick][0], 'r%d' % hit[0], hit[1], size, (op >> 12) == 0xF)
+                        ctx.leafval.setdefault(str(lf[:3]), v); out.append(lf)
                         break
                 continue
             fl = (op >> 12) == 0xF
-            out.append(('mem', a, size, fl))
+            lf = ('mem', a, size, fl)
+            ctx.leafval.setdefault(str(lf[:3]), v); out.append(lf)
+            last = max((x for x in ctx.mock_index if x <= j), default=None)
+            if last is not None and 0x0C000000 <= a < 0x0D000000:
+                # the last call before this read may have changed the word (a global the callee updates): set it there, so earlier
+                # reads keep their value
+                lf = ('callmem', ctx.mock_index[last][0], a, size, fl)
+                ctx.leafval.setdefault(str(lf[:3]), v); out.append(lf)
         return out
     if sc == FPUL:
         for jj in range(j - 1, -1, -1):
             o = T[jj][1]
             if (o & 0xF0FF) == 0x405A: return leaves(ctx, jj, ('r', (o >> 8) & 15), depth + 1, out, seen)
             if (o & 0xF0FF) in (0xF03D, 0xF01D): return leaves(ctx, jj, ('f', (o >> 8) & 15), depth + 1, out, seen)
+        return out
+    if sc == MACL:
+        for jj in range(j - 1, -1, -1):
+            o = T[jj][1]; n_, m_ = (o >> 8) & 15, (o >> 4) & 15
+            if (o & 0xF00F) in (0x0007, 0x200E, 0x200F, 0x300D, 0x3005):      # mul.l, mulu.w, muls.w, dmuls.l, dmulu.l
+                leaves(ctx, jj, ('r', n_), depth + 1, out, seen); return leaves(ctx, jj, ('r', m_), depth + 1, out, seen)
+            if (o & 0xF0FF) == 0x401A: return leaves(ctx, jj, ('r', n_), depth + 1, out, seen)   # lds Rm,macl
         return out
     if sc in (CONST, STOP):
         return out
@@ -371,6 +404,36 @@ def fresh_ptr():
 
 GENERIC = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 16, 0x20, 0x40, 0x80, 0xFF, 0x100, 0x8000, 0xFFFF, M32, 0xFFFFFFFE, 0x80000000, 0x7FFFFFFF]
 FGEN = [0.0, 1.0, -1.0, 0.5, 2.0, 10.0, 100.0, 1000.0, -100.0, 1e6, -1e6, 0.001]
+
+
+def deltas(kind, vals, imm, L, fl):
+    """values for an input whose current value is L, when the compared operand is L plus or minus constants: shift L by what the
+    operand misses (r5 + r7*44 + 12 == 0 wants r5 = -12 - r7*44), on either operand"""
+    if L is None or not vals: return []
+    out = []
+    if kind in ('feq', 'fgt'):
+        if len(vals) < 2 or not fl: return []
+        A, B, x = bitsf(vals[0]), bitsf(vals[1]), bitsf(L)
+        for d in (B - A, A - B):
+            for e in (0.0, 1.0, -1.0, 0.01, -0.01):
+                y = x + d + e
+                if y == y and abs(y) < 1e30: out.append(fbits(y))
+        return out
+    A = vals[0]
+    B = vals[1] if len(vals) > 1 else (imm if imm is not None else 0)
+    if kind in ('eq', 'eqi', 'hs', 'ge', 'hi', 'gt', 'str'):
+        for d in ((B - A), (A - B)):
+            out += [(L + d + e) & M32 for e in (0, 1, -1)]
+    elif kind == 'tst':
+        out += [(L - A) & M32, (L - B) & M32]
+        if A == B: out += [(L - A + 1) & M32]
+    elif kind == 'tsti':
+        out += [L ^ (A & imm), L | imm, (L - (A & imm)) & M32]
+    elif kind in ('pl', 'pz'):
+        out += [(L - A + e) & M32 for e in (1, 0, -1)]
+    elif kind == 'dt':
+        out += [(L - A + 1) & M32, (L - A + 2) & M32]
+    return out
 
 def candidates(kind, vals, imm, leaf_float, cur):
     ints, floats = [], []
@@ -417,6 +480,13 @@ def apply(case, leaf, v, size_hint=4):
         while len(calls) <= k: calls.append({})
         calls[k] = dict(calls[k]); calls[k][leaf[2]] = '%08X' % v
         return c, 'call %d (%s) %s=%08X' % (k + 1, name_at.get(leaf[3] | 0x0C000000 if leaf[3] < 0x0C000000 else leaf[3], '%08X' % leaf[3]), leaf[2], v)
+    if leaf[0] == 'callmem':
+        _, k, a, size, fl = leaf
+        calls = c.setdefault('calls', [])
+        while len(calls) <= k: calls.append({})
+        ans = dict(calls[k]); pm = dict(ans.get('poke_mem', {}))
+        pm['%08X' % a] = (v & ((1 << (8 * size)) - 1)).to_bytes(size, 'little').hex(); ans['poke_mem'] = pm; calls[k] = ans
+        return c, 'call %d writes %08X.%d=%0*X' % (k + 1, a, size, 2 * size, v & ((1 << (8 * size)) - 1))
     if leaf[0] == 'fill':
         _, k, reg, off, size, fl = leaf
         calls = c.setdefault('calls', [])
@@ -477,17 +547,26 @@ def clean(case, r):
     """the original ran to its return, or (a case marked endless: a loop that never returns) to the step limit"""
     return not r['error'] or (case.get('endless') and str(r['error']).startswith('more than'))
 
+def drop_all_fills(mc):
+    """the generated cases fill 32 bytes behind every pointer argument of a mocked call: on a new path such a fill can overrun a
+    smaller buffer (the saved PR on the stack: the run then returns to 0). True when there was a fill to drop"""
+    calls = mc.get('calls') or []
+    had = any(isinstance(a, dict) and any(x in a for x in ('poke_arg', 'poke_stack')) for a in calls)
+    if had:
+        mc['calls'] = [{x: v for x, v in a.items() if x not in ('poke_arg', 'poke_stack')} if isinstance(a, dict) else a for a in calls]
+    return had
+
 def strip_fills(mc, mr, parent_to):
     """the answers' buffer fills (poke_arg, poke_stack) were written for the parent's callees: where the mutant calls another
     function at that position, the fill is dropped (a 32-byte fill meant for one callee overran a stack buffer of another)"""
     calls = mc.get('calls') or []
     changed = False
     for k, ans in enumerate(calls):
-        if not isinstance(ans, dict) or not any(x in ans for x in ('poke_arg', 'poke_stack')): continue
+        if not isinstance(ans, dict) or not any(x in ans for x in ('poke_arg', 'poke_stack', 'poke_mem')): continue
         to_now = mr['calls'][k]['to'] if k < len(mr.get('calls', [])) else None
         to_was = parent_to[k] if k < len(parent_to) else None
         if to_now != to_was:
-            calls[k] = {x: v for x, v in ans.items() if x not in ('poke_arg', 'poke_stack')}; changed = True
+            calls[k] = {x: v for x, v in ans.items() if x not in ('poke_arg', 'poke_stack', 'poke_mem')}; changed = True
     return changed
 
 def explore(fn):
@@ -536,12 +615,13 @@ def explore(fn):
                                'no value worked for %s at %08X on %s' % (kind, ctx.T[j][0], ', '.join(str(l[:2]) for l in lv[:6])))
         return kind, vals, imm, lv
 
-    def values(kind, vals, imm, lf, limit=None):
-        fl = lf[-1] if lf[0] in ('mem', 'reg', 'pfield', 'fill') and isinstance(lf[-1], bool) else (lf[0] == 'call' and lf[2] == 'fr0')
+    def values(kind, vals, imm, lf, limit=None, ctx=None):
+        fl = lf[-1] if lf[0] in ('mem', 'reg', 'pfield', 'fill', 'callmem') and isinstance(lf[-1], bool) else (lf[0] == 'call' and lf[2] == 'fr0')
         out = []
-        for v in candidates(kind, vals, imm, fl, None):
+        L = ctx.leafval.get(str(lf[:3])) if ctx else None
+        for v in deltas(kind, vals, imm, L, fl) + candidates(kind, vals, imm, fl, None):
             if v == 'PTR':
-                if fl or (lf[0] == 'mem' and lf[2] != 4) or (lf[0] == 'pfield' and lf[3] != 4) or (lf[0] == 'fill' and lf[4] != 4): continue
+                if fl or (lf[0] == 'mem' and lf[2] != 4) or (lf[0] == 'pfield' and lf[3] != 4) or (lf[0] == 'fill' and lf[4] != 4) or (lf[0] == 'callmem' and lf[3] != 4): continue
                 v = fresh_ptr()
             out.append(v)
             if limit and len(out) >= limit: break
@@ -561,12 +641,14 @@ def explore(fn):
         kind, vals, imm, lv = got
         n = 0
         for lf in lv[:6]:
-            for v in values(kind, vals, imm, lf):
+            for v in values(kind, vals, imm, lf, ctx=ctx):
                 key = (bpc, tgt, str(lf[:3]), v, id(c))
                 if key in tried: continue
                 tried.add(key)
                 mc, desc = apply(c, lf, v)
                 mr = run(fn, mc, trace=True, steps=steps_lim); state['runs'] += 1; n += 1
+                if not clean(mc, mr) and drop_all_fills(mc):
+                    mr = run(fn, mc, trace=True, steps=steps_lim); state['runs'] += 1
                 if clean(mc, mr) and set(mr['covered']) - S and strip_fills(mc, mr, ctx.call_to):
                     mr = run(fn, mc, trace=True, steps=steps_lim); state['runs'] += 1
                 if clean(mc, mr):
@@ -590,12 +672,14 @@ def explore(fn):
             if not got: continue
             kind, vals, imm, lv = got
             for lf in lv[:3]:
-                for v in values(kind, vals, imm, lf, limit=10):
+                for v in values(kind, vals, imm, lf, limit=10, ctx=ctx):
                     key = ('step', bpc, tgt, pc, str(lf[:3]), v, id(c))
                     if key in tried: continue
                     tried.add(key)
                     m1, d1 = apply(c, lf, v)
                     r1 = run(fn, m1, trace=True, steps=steps_lim); state['runs'] += 1
+                    if not clean(m1, r1) and drop_all_fills(m1):
+                        r1 = run(fn, m1, trace=True, steps=steps_lim); state['runs'] += 1
                     if clean(m1, r1) and strip_fills(m1, r1, ctx.call_to):
                         r1 = run(fn, m1, trace=True, steps=steps_lim); state['runs'] += 1
                     if not clean(m1, r1): continue

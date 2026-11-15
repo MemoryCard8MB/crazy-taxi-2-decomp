@@ -324,6 +324,294 @@
      "r0": "00000001"
     }
    ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CCBC000, 0CCBC08C.4=00000006; 0CCBC1E0.4=0CA5E4BC",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CCBC08C": "06000000",
+    "0CCBC1E0": "bce4a50c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "00c0cb0c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CCE0000, 0CCE00E0.4=0CA5E4BC; 0CCE01E0.4=0CA6187C",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CCE00E0": "bce4a50c",
+    "0CCE01E0": "7c18a60c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "0000ce0c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CC08000, 0CC080E0.4=0CA6187C; 0CC081E0.4=0CA64D50",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CC080E0": "7c18a60c",
+    "0CC081E0": "504da60c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "0080c00c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CC2C000, 0CC2C0E0.4=0CA64D50; 0CC2C1E0.4=0CA68E24",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CC2C0E0": "504da60c",
+    "0CC2C1E0": "248ea60c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "00c0c20c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CC50000, 0CC500E0.4=0CA68E24; 0CC501E0.4=0CA7F534",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CC500E0": "248ea60c",
+    "0CC501E0": "34f5a70c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "0000c50c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CC74000, 0CC740E0.4=0CA7F534; 0CC741E0.4=0CA824A4",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CC740E0": "34f5a70c",
+    "0CC741E0": "a424a80c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "0040c70c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CC98000, 0CC980E0.4=0CA824A4; 0CC981E0.4=0CA85860",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CC980E0": "a424a80c",
+    "0CC981E0": "6058a80c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "0080c90c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CCBC000, 0CCBC0E0.4=0CA85860; 0CCBC1E0.4=0CA889EC",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CCBC0E0": "6058a80c",
+    "0CCBC1E0": "ec89a80c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "00c0cb0c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CCE0000, 0CCE00E0.4=0CA889EC; 0CCE01E0.4=0CAA04B8",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CCE00E0": "ec89a80c",
+    "0CCE01E0": "b804aa0c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "0000ce0c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CC08000, 0CC080E0.4=0CAA04B8; 0CC081E0.4=0CAA3628",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CC080E0": "b804aa0c",
+    "0CC081E0": "2836aa0c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "0080c00c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CC2C000, 0CC2C0E0.4=0CAA3628; 0CC2C1E0.4=0CAA6A60",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CC2C0E0": "2836aa0c",
+    "0CC2C1E0": "606aaa0c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "00c0c20c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CC50000, 0CC500E0.4=0CAA6A60; 0CC501E0.4=0CAAA218",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CC500E0": "606aaa0c",
+    "0CC501E0": "18a2aa0c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "0000c50c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CC74000, 0CC740E0.4=0CAAA218; 0CC741E0.4=0CAC1C60",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CC740E0": "18a2aa0c",
+    "0CC741E0": "601cac0c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "0040c70c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CC98000, 0CC980E0.4=0CAC1C60; 0CC981E0.4=0CAC5458",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CC980E0": "601cac0c",
+    "0CC981E0": "5854ac0c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "0080c90c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CCBC000, 0CCBC0E0.4=0CAC5458; 0CCBC1E0.4=0CAC8C9C",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CCBC0E0": "5854ac0c",
+    "0CCBC1E0": "9c8cac0c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "00c0cb0c"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; call 1 writes 0CCDC000.4=0CCE0000, 0CCE00E0.4=0CAC8C9C; 0CCE01E0.4=0CACD2C0",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CCE00E0": "9c8cac0c",
+    "0CCE01E0": "c0d2ac0c"
+   },
+   "calls": [
+    {
+     "poke_mem": {
+      "0CCDC000": "0000ce0c"
+     }
+    }
+   ]
   }
  ]
 }

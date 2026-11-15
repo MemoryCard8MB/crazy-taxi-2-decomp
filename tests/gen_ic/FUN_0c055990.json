@@ -166,6 +166,25 @@
    "poke": {
     "0C2B31F4": "63000000"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1EC720.4=00000003; call 3 (FUN_0c03f154) r0=0CC54000; call 4 writes 0C2B3110.4=000000B9",
+   "regs": {},
+   "poke": {
+    "0C1EC720": "03000000"
+   },
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "0CC54000"
+    },
+    {
+     "poke_mem": {
+      "0C2B3110": "b9000000"
+     }
+    }
+   ]
   }
  ]
 }

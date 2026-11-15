@@ -162,7 +162,7 @@ int MultiRot4Vec(int);
 int SetAdvCamera(int, int);
 int camSetTarget(int, int);
 int camSnapToCar(int);
-int gdc_CoursePointLoadReq(float);
+void gdc_CoursePointLoadReq(float);
 int kmiConvertUVnum(int);
 int nlAddVector(int, int);
 int nlGetMatrix(int);

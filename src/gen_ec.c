@@ -38,7 +38,7 @@ int FUN_0c073360(void);
 int FUN_0c0739a0(int);
 int SetAdvCamera(int, int);
 int camSnapToCar(int);
-int gdc_CoursePointLoadReq(Stk3, float);
+void gdc_CoursePointLoadReq(Stk3, float);
 int nlLocate(int, int);
 int nlObjPutUseViewMatrix(int);
 int nlPopMatrix(int);

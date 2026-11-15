@@ -201,6 +201,14 @@
      "r0": "0CCD8000"
     }
    ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C0B3D30.4=00000000; 0C2A58BC.4=3ECCCCCD",
+   "regs": {},
+   "poke": {
+    "0C0B3D30": "00000000",
+    "0C2A58BC": "cdcccc3e"
+   }
   }
  ]
 }

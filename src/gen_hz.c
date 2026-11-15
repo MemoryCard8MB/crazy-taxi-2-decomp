@@ -4,7 +4,7 @@
 typedef struct { int w[3]; } Stk3;
 int FUN_0c01422e(int);
 int FUN_0c04b1e6(void);
-int gdc_CoursePointLoadReq(Stk3, float);
+void gdc_CoursePointLoadReq(Stk3, float);
 int FUN_0c01f95a(int a4);
 
 int FUN_0c01f95a(int a4)
@@ -33,7 +33,8 @@ int FUN_0c01f95a(int a4)
     FUN_0c01422e(((int)stk + 12));
     L_C01F982:;
     { struct mv3 { int w[3]; }; *(struct mv3 *)(((int)stk + 0)) = *(struct mv3 *)(((int)stk + 12)); }
-    v0_1 = ((gdc_CoursePointLoadReq(*(Stk3 *)(((int)stk + 0)), (*(float *)0xC01FA9C))));
+    gdc_CoursePointLoadReq(*(Stk3 *)(((int)stk + 0)), (*(float *)0xC01FA9C));
+    v0_1 = 0x0;     /* manual: gdc_CoursePointLoadReq returns nothing; the original returns its leftover r0 here */
     goto L_C01F99E;
     L_C01F972:;
     FUN_0c01422e(((int)stk + 12));

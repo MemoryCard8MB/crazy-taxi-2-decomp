@@ -21,7 +21,8 @@ between two runs of this interpreter is meaningful, never a value against the co
 The case (JSON): {"exe": path, "base": hex, "dump": path, "entry": hex, "end": hex,
 "regs": {"r4": hex, "fr4": float, ...}, "sr": hex (optional, the starting SR), "poke": {hex addr: hex bytes}, "calls": [{"r0": hex,
 "fr0": float, "poke_arg": {"r7": hexbytes}}, ...], "steps": max}. Paths are relative to the case file.
-A call's "poke_arg" writes those bytes at the address the named register holds when the call is made.
+A call's "poke_arg" writes those bytes at the address the named register holds when the call is made; its "poke_mem"
+({hex addr: hex bytes}) writes them at that address when the call returns (a side effect of the callee, such as a global it updates).
 """
 import os as _tp_os, sys as _tp_sys  # noqa: E401  every tools folder on the import path (tools/toolpath.py)
 _tp_sys.path.insert(0, _tp_os.path.normpath(_tp_os.path.join(_tp_os.path.dirname(_tp_os.path.abspath(__file__)), '.')))
@@ -866,8 +867,10 @@ def run(case, case_dir='.', code=None, deep=False, entry=None, end=None, argc=No
             # a structure returned by value: the callee fills the buffer the stack word names (not a callee that takes no stack word and
             # returns no structure, and not a word that is a value: the fill went to page 0 on one side only, playerPut case 4)
             mem.load(sp_word, bytes.fromhex(ret['poke_stack']))
+        for a_, hx in ret.get('poke_mem', {}).items():          # the callee's side effect on memory (a global it updates), at its return
+            mem.load(int(a_, 16), bytes.fromhex(hx))
         for k, v in ret.items():
-            if k in ('poke_arg', 'poke_stack'):
+            if k in ('poke_arg', 'poke_stack', 'poke_mem'):
                 continue
             if k.startswith('fr'):
                 c.fr[int(k[2:])] = f_bits(float(v)) if not isinstance(v, str) else int(v, 16)
