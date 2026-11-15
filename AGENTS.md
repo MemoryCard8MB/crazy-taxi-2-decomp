@@ -308,6 +308,11 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   stk+52 for the vector the original reads at r15+48, its stack argument `p` (now `&p`); it is void now and has no a4, and
   FUN_0c01f95a's cases lost the r0 answers they gave that call (`work/mut/voidanswers.py`). `work/mut/castscan.py` lists casts
   whose return type contradicts the callee's definition: the other hits' results are never read.
+  Batch 7: jump tables. A covered `braf`/`jmp` through a table (mov.w/mov.l @(r0,Rm)) is decoded with its bound check, every
+  case target no case reached is a frontier, and the index's input gets that case number (FUN_0c016cca: case 3 of the camera
+  switch on 0C177D58, 675 instructions). Also tried: a 0xFF-filled fresh block (lists ended by -1), the same answer for every
+  later call of a polled function, and a null pointer's field offset taken from the pointer that becomes the block.
+  `work/mut/gaps.py <fn>` lists the instructions equiv counts that no case runs, in runs, with how covered code enters each.
 - **A left shift by a negative amount.** The generator writes SH-4 shld/shad with a negative count as `x << (int)(-n)`,
   which C leaves undefined. SHC mostly emits the shift by a negated register (correct), but in FUN_0c042ba8 it folded
   `(-1 << k) << -k` away and tested all the bits instead of the low ones: a snapshot case of the game took the other branch

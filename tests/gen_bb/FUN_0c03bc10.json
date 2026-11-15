@@ -36,6 +36,24 @@
    "poke": {
     "0C2AC2F0": "01000000"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0DFFFF04.4=0CDA0000, 0CDA0009.1=52",
+   "regs": {},
+   "poke": {
+    "0DFFFF04": "0000da0c",
+    "0CDA0009": "52"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=00000002; 0DFFFF04.4=0CDC0000, 0CDC0009.1=44",
+   "regs": {
+    "r4": "00000002"
+   },
+   "poke": {
+    "0DFFFF04": "0000dc0c",
+    "0CDC0009": "44"
+   }
   }
  ]
 }

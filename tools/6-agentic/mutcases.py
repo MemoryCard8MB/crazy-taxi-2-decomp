@@ -306,6 +306,12 @@ def leaves(ctx, i, reg, depth=0, out=None, seen=None, path=()):
         if want == have:
             lf = ('call', kidx, have, tgt)
             ctx.leafval.setdefault(str(lf[:3]), rv(T, min(j + 1, len(T) - 1), reg)); out.append(lf)
+            # a polling loop: the same answer for every later call of that function (and for calls past the parent's last one)
+            same = [x for x in range(kidx, len(ctx.call_to)) if int(ctx.call_to[x], 16) & 0x1FFFFFFF == tgt & 0x1FFFFFFF]
+            same += list(range(len(ctx.call_to), len(ctx.call_to) + 32))
+            if len(same) > 1:
+                lf2 = ('callrep', kidx, have, tgt, tuple(same[:64]))
+                ctx.leafval.setdefault(str(lf2[:3]), rv(T, min(j + 1, len(T) - 1), reg)); out.append(lf2)
         return out
     pc, op = T[j][0], T[j][1]
     if not (ctx.lo <= pc < ctx.hi):
@@ -320,8 +326,13 @@ def leaves(ctx, i, reg, depth=0, out=None, seen=None, path=()):
                     base = rv(T, j, r2)
                     if (base & 0x1FFFFFFF) < 0x100000:
                         for bl in leaves(ctx, j, r2, depth + 1, [], set(seen)):
-                            lf = ('pfield', bl, (a - (base & 0x1FFFFFFF)) & 0xFFFFF, size, (op >> 12) == 0xF)
-                            ctx.leafval.setdefault(str(lf[:3]), v); out.append(lf)
+                            # the field's offset from the pointer that becomes the block (r13 in `r13 + i*20 + 4`), not from the
+                            # address register, when that pointer was near 0 itself
+                            Lb = ctx.leafval.get(str(bl[:3]))
+                            off = (a - (Lb & 0x1FFFFFFF)) & 0xFFFFF if Lb is not None and (Lb & 0x1FFFFFFF) < 0x100000 else (a - (base & 0x1FFFFFFF)) & 0xFFFFF
+                            for kind_ in ('pfield', 'pfieldff'):       # a zeroed block, and one of 0xFF (a list ended by -1)
+                                lf = (kind_, bl, off, size, (op >> 12) == 0xF)
+                                ctx.leafval.setdefault(str(lf[:3]), v); out.append(lf)
                 continue
             if CODE_LO <= a < CODE_HI:
                 for r2 in load_addr_regs(op):          # a constant table: follow the index
@@ -396,10 +407,10 @@ def fbits(x):
     except (OverflowError, struct.error): return 0x7F7FFFFF
 def bitsf(b): return struct.unpack('<f', struct.pack('<I', b & M32))[0]
 
-PTR = [0x0CC00000]
+PTR = [0x0CA00000]
 def fresh_ptr():
-    PTR[0] += 0x4000
-    if PTR[0] >= 0x0CD00000: PTR[0] = 0x0CC04000
+    PTR[0] += 0x20000                          # 128 KB apart: a record array indexed from the block stays inside it
+    if PTR[0] >= 0x0CF00000: PTR[0] = 0x0CA20000
     return PTR[0]
 
 GENERIC = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 16, 0x20, 0x40, 0x80, 0xFF, 0x100, 0x8000, 0xFFFF, M32, 0xFFFFFFFE, 0x80000000, 0x7FFFFFFF]
@@ -497,10 +508,20 @@ def apply(case, leaf, v, size_hint=4):
         b[off:off + size] = (v & ((1 << (8 * size)) - 1)).to_bytes(size, 'little')
         pa[reg] = b.hex(); ans['poke_arg'] = pa; calls[k] = ans
         return c, 'call %d fills %s+%d.%d=%0*X' % (k + 1, reg, off, size, 2 * size, v & ((1 << (8 * size)) - 1))
-    if leaf[0] == 'pfield':
+    if leaf[0] == 'callrep':
+        _, k, reg, tgt, idx = leaf
+        calls = c.setdefault('calls', [])
+        while len(calls) <= max(idx): calls.append({})
+        for x in idx:
+            calls[x] = dict(calls[x]); calls[x][reg] = '%08X' % v
+        return c, 'calls %d.. (%s) %s=%08X' % (k + 1, name_at.get(tgt | 0x0C000000 if tgt < 0x0C000000 else tgt, '%08X' % tgt), reg, v)
+    if leaf[0] in ('pfield', 'pfieldff'):
         _, bl, off, size, fl = leaf
         P = fresh_ptr()
+        if leaf[0] == 'pfieldff':
+            c = json.loads(json.dumps(c)); c.setdefault('poke', {})['%08X' % P] = 'ff' * 1024
         c1, d1 = apply(c, bl, P)
+        if leaf[0] == 'pfieldff': d1 += ' (0xFF block)'
         c2, d2 = apply(c1, ('mem', (P + off) & 0x1FFFFFFF, size, fl), v)
         return c2, d1 + ', ' + d2
     _, a, size, fl = leaf
@@ -569,6 +590,57 @@ def strip_fills(mc, mr, parent_to):
             calls[k] = {x: v for x, v in ans.items() if x not in ('poke_arg', 'poke_stack', 'poke_mem')}; changed = True
     return changed
 
+
+EXE = open('1ST_READ.BIN', 'rb').read()
+def exe_word(a, size):
+    o = (a & 0x1FFFFFFF) - (BASE & 0x1FFFFFFF)
+    if 0 <= o <= len(EXE) - size:
+        return int.from_bytes(EXE[o:o + size], 'little')
+    return None
+
+def switches(ctx, S):
+    """[(trace index of the index's bound check, its kind, vals, imm, braf pc, target, case index)] for every case of a jump table
+    (braf through a table of halfword offsets, or jmp through a table of addresses) whose target no case reached"""
+    T = ctx.T; out = []; done = set()
+    for i, (pc, op, _, _) in enumerate(T):
+        if not (ctx.lo <= pc < ctx.hi) or pc in done: continue
+        is_braf, is_jmp = (op & 0xF0FF) == 0x0023, (op & 0xF0FF) == 0x402B
+        if not (is_braf or is_jmp): continue
+        rn = (op >> 8) & 15
+        j = ctx.writer(i, ('r', rn))
+        if j < 0: continue
+        rd = ctx.reads_at(j)
+        if len(rd) != 1: continue
+        _, a, size, v = rd[0]
+        if size not in (2, 4) or not (CODE_LO <= a < CODE_HI or 0x0C000000 <= a < 0x0D000000): continue
+        lop = T[j][1]
+        if (lop & 0xF00F) not in (0x000D, 0x000E): continue        # mov.w/mov.l @(r0,Rm),Rn: table + scaled index
+        m_ = (lop >> 4) & 15
+        idx_off = min(T[j][2][0] & M32, T[j][2][m_] & M32)        # the smaller of r0 / Rm is the scaled index
+        table = a - idx_off
+        ts = None
+        for k in range(j - 1, max(-1, j - 16), -1):                 # the bound check before the table load
+            x = tsetter(T[k][1])
+            if x and x[0] in ('hs', 'hi', 'gt', 'ge') and isinstance(x[1], list):
+                ts = (k,) + x; break
+        if not ts: continue
+        k, kind, sc, imm = ts
+        vals = [rv(T, k, s_) for s_ in sc]
+        bound = min(x for x in vals) if vals else 0
+        if not 1 <= bound <= 64: continue
+        done.add(pc)
+        for ci in range(bound + (1 if kind in ('gt', 'hi') else 0)):
+            e = exe_word(table + ci * size, size)
+            if e is None: continue
+            if size == 2:
+                e = e - 0x10000 if e & 0x8000 else e
+                tgt = (pc + 4 + e) & M32 if is_braf else None
+            else:
+                tgt = e
+            if tgt is None or not (ctx.lo <= tgt < ctx.hi) or tgt in S: continue
+            out.append((k, kind, sc, vals, imm, pc, tgt, ci, None))
+    return out
+
 def explore(fn):
     p = 'tests/%s/%s.json' % (cfile[fn], fn)
     d = json.load(open(p))
@@ -616,12 +688,12 @@ def explore(fn):
         return kind, vals, imm, lv
 
     def values(kind, vals, imm, lf, limit=None, ctx=None):
-        fl = lf[-1] if lf[0] in ('mem', 'reg', 'pfield', 'fill', 'callmem') and isinstance(lf[-1], bool) else (lf[0] == 'call' and lf[2] == 'fr0')
+        fl = lf[-1] if lf[0] in ('mem', 'reg', 'pfield', 'pfieldff', 'fill', 'callmem') and isinstance(lf[-1], bool) else (lf[0] in ('call', 'callrep') and lf[2] == 'fr0')
         out = []
         L = ctx.leafval.get(str(lf[:3])) if ctx else None
         for v in deltas(kind, vals, imm, L, fl) + candidates(kind, vals, imm, fl, None):
             if v == 'PTR':
-                if fl or (lf[0] == 'mem' and lf[2] != 4) or (lf[0] == 'pfield' and lf[3] != 4) or (lf[0] == 'fill' and lf[4] != 4) or (lf[0] == 'callmem' and lf[3] != 4): continue
+                if fl or (lf[0] == 'mem' and lf[2] != 4) or (lf[0] in ('pfield', 'pfieldff') and lf[3] != 4) or (lf[0] == 'fill' and lf[4] != 4) or (lf[0] == 'callmem' and lf[3] != 4): continue
                 v = fresh_ptr()
             out.append(v)
             if limit and len(out) >= limit: break
@@ -640,7 +712,7 @@ def explore(fn):
         if not got: return False
         kind, vals, imm, lv = got
         n = 0
-        for lf in lv[:6]:
+        for lf in lv[:8]:
             for v in values(kind, vals, imm, lf, ctx=ctx):
                 key = (bpc, tgt, str(lf[:3]), v, id(c))
                 if key in tried: continue
@@ -709,6 +781,34 @@ def explore(fn):
                 continue
             if not attack(c, ctx, i, bpc, tgt, about, steps_lim):
                 stuck.append((i, bpc, tgt))
+        for (k, kind, sc, vals, imm, bpc, tgt, ci, _) in switches(ctx, S):
+            if tgt in S or time.time() - t0 > opt['--time']:
+                continue
+            cur_idx = None
+            lv, seen_l = [], set()
+            for s_ in sc:
+                for lf in leaves(ctx, k, s_):
+                    if lf[:3] not in seen_l: seen_l.add(lf[:3]); lv.append(lf)
+            A = min(vals) if vals else 0                                 # the index the parent used: the bound is the larger operand
+            for lf in lv[:8]:
+                L = ctx.leafval.get(str(lf[:3]))
+                cand = [ci] + ([(L + (ci - A)) & M32] if L is not None else [])
+                hit = False
+                for v in cand:
+                    key = ('switch', bpc, tgt, str(lf[:3]), v, id(c))
+                    if key in tried: continue
+                    tried.add(key)
+                    mc, desc = apply(c, lf, v)
+                    mr = run(fn, mc, trace=True, steps=steps_lim); state['runs'] += 1
+                    if not clean(mc, mr) and drop_all_fills(mc):
+                        mr = run(fn, mc, trace=True, steps=steps_lim); state['runs'] += 1
+                    if clean(mc, mr):
+                        new = set(mr['covered']) - S
+                        if new:
+                            keep(mc, mr, about, desc + ' (case %d)' % ci, new); hit = True; break
+                if hit or tgt in S: break
+            if tgt not in S:
+                why[(bpc, tgt)] = 'switch case %d not reached through %s' % (ci, ', '.join(str(l[:2]) for l in lv[:4]) or 'no input')
         if not opt.get('--no-step'):
             for (i, bpc, tgt) in stuck:
                 if tgt in S or time.time() - t0 > opt['--time']:

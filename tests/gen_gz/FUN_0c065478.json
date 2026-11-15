@@ -18,6 +18,36 @@
    "poke": {
     "0CC94008": "02000000"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: r5=0CEE0000, 0CEE003F.1=20",
+   "regs": {
+    "r5": "0CEE0000"
+   },
+   "poke": {
+    "0CEE003F": "20"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r5=0CEE0000, 0CEE003F.1=20; call 8 (FUN_0c073b40) fr0=BF800000",
+   "regs": {
+    "r5": "0CEE0000"
+   },
+   "poke": {
+    "0CEE003F": "20"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "fr0": "BF800000"
+    }
+   ]
   }
  ]
 }

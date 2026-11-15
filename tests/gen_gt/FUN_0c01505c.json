@@ -73,6 +73,36 @@
     "0CC08010": "ff",
     "0C177930": "ff"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (set_event) r0=0CC04000; r4=0CE60000, 0CE60008.4=49742400",
+   "regs": {
+    "r4": "0CE60000"
+   },
+   "calls": [
+    {
+     "r0": "0CC04000"
+    }
+   ],
+   "poke": {
+    "0CE60008": "00247449"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (set_event) r0=0CC04000; r5=0CC08000, 0CC08010.1=FF; r4=0CCE0000, 0CCE0008.4=49742400",
+   "regs": {
+    "r5": "0CC08000",
+    "r4": "0CCE0000"
+   },
+   "calls": [
+    {
+     "r0": "0CC04000"
+    }
+   ],
+   "poke": {
+    "0CC08010": "ff",
+    "0CCE0008": "00247449"
+   }
   }
  ]
 }
