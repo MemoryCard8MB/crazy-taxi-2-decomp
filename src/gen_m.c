@@ -84,7 +84,7 @@ float FUN_0c02806c(int);
 int FUN_0c028196(void);
 int FUN_0c0281a4(int);
 int FUN_0c0281b6(int);
-int FUN_0c0281d4(int);
+int FUN_0c0281d4(int, int);
 int FUN_0c02842e(int);
 int FUN_0c02cc30(int);
 int FUN_0c03346e(int, int, int, int);
@@ -718,12 +718,12 @@ int FUN_0c029458(float f4, float f5, float f6)
         u0 = 0.0f;
     }
     if (!(10000.0f > u0)) {
-        FUN_0c0281d4((int)(u0 / 10000.0f));
+        FUN_0c0281d4((int)(u0 / 10000.0f), 0x0);
         FUN_0c0281a4(0x2E);
-        FUN_0c0281d4(((int)((int)(int)(u0 * 0.00999999978f) % (int)0x64)));
+        FUN_0c0281d4(((int)((int)(int)(u0 * 0.00999999978f) % (int)0x64)), 0x2);
         FUN_0c0281b6(0xC09DCB8);
     } else {
-        FUN_0c0281d4((int)(u0 * 0.100000001f));
+        FUN_0c0281d4((int)(u0 * 0.100000001f), 0x0);
         FUN_0c0281a4(0x6D);
     }
     u0 = FUN_0c02806c((*(int *)0xC09DA20));

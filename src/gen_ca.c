@@ -48,7 +48,7 @@ struct oC_uint { char p[0xC]; unsigned int v; };
 struct oD4_int { char p[0xD4]; int v; };
 int FUN_0c018b22(int, int);
 int FUN_0c01ec7a(int);
-int FUN_0c01eeda(int);
+int FUN_0c01eeda(int, int, int, int);
 int FUN_0c01fc54(int, int);
 int FUN_0c01fcd0(void);
 int FUN_0c01fd5c(void);
@@ -1377,7 +1377,7 @@ int FUN_0c01f214(int a4, int a5, float f4)
         t4 = (t4 + t3);
         if ((int)t1 >= (int)0x120) {
             t1 = t2;
-            t5 = FUN_0c01eeda(t1);
+            t5 = FUN_0c01eeda(t1, t3, 0x120, (((a4 << 2) + a4) << 2));
             t1 = t5;
             if (t5 != -1) {
                 t6 = t1;

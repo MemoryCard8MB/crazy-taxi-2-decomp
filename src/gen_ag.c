@@ -1394,7 +1394,9 @@ int FUN_0c05a8c4(void)
         *(unsigned int *)((t0 + 0x20)) = 0xFFFFFFFF;
         t0 = (t0 + 0x24);
     }
-    (((struct o0_uint *)0xC2B928C)->v) = 0x30E4000;
+    /* manual: the first texture file's load address, 0C390000 (sprPAL and the texture areas), stored in 4-byte units:
+       written as the address so a build that moves the buffers (layout.txt `bss`) moves it too (the original's 0x30E4000) */
+    (((struct o0_uint *)0xC2B928C)->v) = (unsigned int)0xC390000 >> 2;
     (((struct o8_uint *)0xC2B928C)->v) = 0x5DC;
     (((struct o0_uint *)0xC2B967C)->v) = 0x0;
     (((struct o4_uint *)0xC2B967C)->v) = 0x0;

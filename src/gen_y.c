@@ -63,7 +63,7 @@ int FUN_0c027fbe(float, float);
 float FUN_0c02806c(int);
 int FUN_0c028196(void);
 int FUN_0c0281b6(int);
-int FUN_0c0281d4(int);
+int FUN_0c0281d4(int, int);
 int FUN_0c02842e(int);
 int FUN_0c029b12(int, float);
 int FUN_0c0328d8(int, int, int, int, int, int, int);
@@ -1272,7 +1272,7 @@ int pfCrazyBoxRecordComboPut(int a4, int a5, int a6, int a7)
     register float u8;
 
     FUN_0c028196();
-    FUN_0c0281d4(a6);
+    FUN_0c0281d4(a6, 0x0);
     if (a7 != 0) {
         FUN_0c0281b6(0xC10D424);
     }

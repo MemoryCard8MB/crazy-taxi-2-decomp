@@ -15,7 +15,7 @@ int FUN_0c027fbe(float, float);
 float FUN_0c02806c(int);
 int FUN_0c028196(void);
 int FUN_0c0281b6(int);
-int FUN_0c0281d4(int);
+int FUN_0c0281d4(int, int);
 int FUN_0c02842e(int);
 float FUN_0c070c40(float);
 int FUN_0c073a40(int);
@@ -36,12 +36,12 @@ int FUN_0c058aa0(int a4, int a5, int a6, int a7)
     u0 = (((struct o0_float *)0xC058BA4)->v);
     t0 = (int)((int)a6 % (int)0x64);
     FUN_0c028196();
-    FUN_0c0281d4((int)((float)a6 * u0));
+    FUN_0c0281d4((int)((float)a6 * u0), 0x0);
     FUN_0c0281b6(0xC10D418);
     if ((int)t0 < (int)0xA) {
         FUN_0c0281b6(0xC10D410);
     }
-    FUN_0c0281d4(t0);
+    FUN_0c0281d4(t0, 0x0);
     if (a7 == 1) {
         FUN_0c0281b6(0xC10D41C);
     } else {

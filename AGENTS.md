@@ -231,6 +231,22 @@ that still passes fewer than the original sets before its `jsr` (delay slot incl
 a trampoline that jumps through a table (its target is read from memory): its arity is unknown, not zero, so list those too and
 check each caller against the registers the original sets before the call.
 
+## Runtime repairs (step 9) *(equivalent)*
+
+State 2026-11-15: the disc from C (`make disc`) boots, every mode plays, city changes, the Dreamkey browser and VMU save/load work;
+one passenger was drawn untextured once (not seen again). Flycast on this Mac needs `FLYCAST_NO_VMEM=1` (a local patch in the
+Flycast source build: with its fast-memory path on, any disc's boot jumps to 0). Bugs found, each proven again after the fix:
+
+- **An address stored shifted.** `FUN_0c05a8c4` set the texture files' load address 0C390000 in 4-byte units (`0x30E4000`):
+  the build's relocation saw a number, so the address did not move with `bss`, textures loaded at the old place, each load
+  leaked a texture slot and after 3,000 the cache flush on address -1 killed the emulator. Write such a value as the address
+  (`(unsigned int)0xC390000 >> 2`): mbuild moves the literal. A scan of the C for `address >> 2/3/5` found only this one.
+- **The simulator starts every register at 0**, so two things pass `equiv.py` and break on the console: C that reads a local
+  never set (the generator's stand-in for a register the original reads before writing: `FUN_0c01eeda`'s r13, the file loader
+  waited forever), and a call that drops an argument the original sets to 0 (`FUN_0c0281d4`'s width, declared with one
+  parameter in three files: zeros written until the text pointer was overwritten). Check a caller's prototypes against the
+  callee's definition, and rerun the cases with junk in the registers a case leaves unset (both sides, the same junk).
+
 ## Changing the game *(equivalent)*
 The boot block is not free space. The entry stub copies the start of the executable elsewhere and
 runs it there (seen on a game linked at `0x0C010000`: `0x0C010100-0x0C014000` to `0x0C004000`),

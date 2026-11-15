@@ -166,7 +166,7 @@ int mwlSbGetFilter(int, int, int);
 int mwlSbGetFx(int, int, int);
 int mwlSbGetGain(int);
 int mwlSbGetPitch(int, int, int);
-int nlFree(int);
+void nlFree(int, int, int, int);
 float nlLength(int, int);
 int nlObjPutUseViewMatrix(int);
 int nlOuterProduct(int, int, int);
@@ -225,7 +225,7 @@ int kdDevGetStorageInfo(int a4, int a5);
 void hudDrawJudgement2(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8);
 int FUN_0c0583b8(void);
 int FUN_0c058e20(void);
-int FUN_0c05c084(int a4, int a5, int a6);
+int FUN_0c05c084(int a4, int a5, int a6, int a7);
 int FUN_0c06bc8c(void);
 int nl_system_config_init(int a4);
 int buLoadFile(int a4, int a5, int a6, int a7);
@@ -1149,7 +1149,7 @@ int FUN_0c0583b8(void)
 }
 
 
-int FUN_0c05c084(int a4, int a5, int a6)
+int FUN_0c05c084(int a4, int a5, int a6, int a7)
 {
     register int t2;
     register int t3;
@@ -1169,7 +1169,7 @@ int FUN_0c05c084(int a4, int a5, int a6)
         t2 = t6;
         t6 = t4;
         if (t2 != 0) {
-            nlFree(t2);
+            nlFree(t2, t3, t4, a7);
         }
     }
     return (FUN_0c05b3d4(a4, 0xC));

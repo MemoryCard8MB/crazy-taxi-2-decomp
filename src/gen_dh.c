@@ -392,6 +392,10 @@ int FUN_0c01eeda(int a4, int a5, int a6, int a7)
     register int t9;
     register int t10;
 
+    /* manual: the original compares r4 with r13 before setting r13 (0C01EF00): its callers leave r13 = 0 (FUN_0c01f214,
+       FUN_0c01f368) or = r4 (FUN_0c01f4ca), and for a block count of 0 or more both pass that first test. The generated C read
+       t0 unset there, which on the console held a larger value: every free slot was skipped, the loader waited forever. */
+    t0 = 0x0;
     t1 = 0xC26ECC0;
     t2 = 0x0;
     t3 = a7;
