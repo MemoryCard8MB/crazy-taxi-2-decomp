@@ -138,7 +138,7 @@ int vmsio_bank_lock(int a4, int a5);
 int syChainAddHandler(int a4, int a5, int a6, int a7);
 int FUN_0c011d52(int a4, int a5, int a6);
 void FUN_0c05b0dc(void);
-float FUN_0c065170(int a4);
+void FUN_0c065170(int a4);
 int FUN_0c08dad0(int a4, int a5, int a6);
 int FUN_0c04c194(int a4);
 int FUN_0c090c94(int a4, int a5, int a6, int a7, int a8);
@@ -972,7 +972,7 @@ void FUN_0c05b0dc(void)
     }
 }
 
-float FUN_0c065170(int a4)
+void FUN_0c065170(int a4)
 {
     int stk[6];
 
@@ -1020,7 +1020,7 @@ float FUN_0c065170(int a4)
     (((struct oA0_uint *)(v0_1))->v) = v0_0;
     v0_2 = (0xA0);
     L_C065300:;
-    return F0;
+    return;
     L_C0651A8:;
     nlSubVector3op((((int)stk + 0) + 0xC), (v0_1 + 0x70), ((0xB8 + v0_2) + 0x30));
     w0_1 = FUN_0c073b40((((int)stk + 0) + 0xC), ((0xB8 + v0_2) + 0x20));

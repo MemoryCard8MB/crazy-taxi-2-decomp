@@ -130,7 +130,7 @@ int FUN_0c05f470(int, int, float, float);
 int FUN_0c05f6fe(int);
 int FUN_0c05f72a(int);
 int FUN_0c0620ac(int);
-int FUN_0c065170(int);
+void FUN_0c065170(int);
 int FUN_0c06753c(int, int);
 int FUN_0c067f60(int);
 int FUN_0c068166(int, int, int, int, int, int, int, int, int, int, int, int);
@@ -270,7 +270,7 @@ int FUN_0c051dd4(void);
 int Put_Combo_Entry(int a4, int a5);
 int FUN_0c05d858(int a4, int a5);
 int FUN_0c060298(int a4, int a5, int a6);
-int FUN_0c064f20(int a4);
+void FUN_0c064f20(int a4);
 int FUN_0c067804(int a4);
 int FUN_0c07e5f0(int a4);
 int ntInfExit(void);
@@ -1214,7 +1214,7 @@ int FUN_0c060298(int a4, int a5, int a6)
     return t3;
 }
 
-int FUN_0c064f20(int a4)
+void FUN_0c064f20(int a4)
 {
     int stk[2];
     register float t2;
@@ -1227,7 +1227,8 @@ int FUN_0c064f20(int a4)
         (((struct oFE_uchar *)(a4))->v) = ((*(signed char *)(((0xFE + a4) + 0x0))) & 0xFB);
         (((struct oFF_uchar *)(a4))->v) = ((*(signed char *)(((0xFF + a4) + 0x0))) & 0x7F);
     }
-    return FUN_0c065170(a4);
+    (void)(FUN_0c065170(a4));
+    return;
 }
 
 int FUN_0c067804(int a4)

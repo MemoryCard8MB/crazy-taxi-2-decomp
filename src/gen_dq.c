@@ -145,7 +145,7 @@ int pcarRejoinLane(int);
 int pfSize(float, float);
 int FUN_0c0152f0(int a4);
 int FUN_0c0518b8(int a4);
-float FUN_0c0440a4(int a4);
+void FUN_0c0440a4(int a4);
 float FUN_0c044664(int a4);
 float FUN_0c0443ac(int a4);
 int FUN_0c02e604(int a4);

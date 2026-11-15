@@ -121,7 +121,7 @@ int FUN_0c061fba(int, int, int);
 int FUN_0c0621e0(int);
 int FUN_0c062258(int);
 int FUN_0c062270(void);
-int FUN_0c065170(int);
+void FUN_0c065170(int);
 int FUN_0c0673da(int);
 int FUN_0c06753c(int, int);
 int FUN_0c067718(int);

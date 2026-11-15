@@ -52,7 +52,7 @@ int FUN_0c06017e(void);
 int FUN_0c0621e0(int);
 int FUN_0c0636b4(int);
 int FUN_0c064f92(int);
-int FUN_0c065170(int);
+void FUN_0c065170(int);
 int FUN_0c066226(int);
 int FUN_0c067494(int, int);
 int FUN_0c06753c(int, int);
@@ -111,7 +111,7 @@ int FUN_0c06e214(void);
 int FUN_0c060868(int a4, int a5, int a6, int a7);
 int FUN_0c060fa2(void);
 int FUN_0c0610b4(void);
-int FUN_0c064958(int a4);
+void FUN_0c064958(int a4);
 int FUN_0c06bc68(void);
 int FUN_0c060542(void);
 int FUN_0c06c33a(void);
@@ -603,12 +603,13 @@ int FUN_0c0610b4(void)
     return FUN_0c05f98c();
 }
 
-int FUN_0c064958(int a4)
+void FUN_0c064958(int a4)
 {
     FUN_0c06823e(a4, 0xC175930, 0x1, 0x14);
     FUN_0c06753c(a4, 0x1);
     FUN_0c064f92(a4);
-    return FUN_0c065170(a4);
+    (void)(FUN_0c065170(a4));
+    return;
 }
 
 int FUN_0c06bc68(void)

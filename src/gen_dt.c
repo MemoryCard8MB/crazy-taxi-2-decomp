@@ -110,7 +110,7 @@ int FUN_0c05f470(int, int, float, float);
 int FUN_0c05f6fe(int);
 int FUN_0c060354(int, int, int);
 int FUN_0c061bae(void);
-int FUN_0c065170(int);
+void FUN_0c065170(int);
 int FUN_0c067220(int);
 int FUN_0c06753c(int, int);
 int FUN_0c067718(int);
@@ -148,7 +148,7 @@ int FUN_0c0581b8(int a4, int a5);
 int FUN_0c0277a4(void);
 int FUN_0c03d5ce(void);
 int FUN_0c05cb64(int a4);
-int FUN_0c0649b4(int a4);
+void FUN_0c0649b4(int a4);
 int FUN_0c066dd4(int a4, int a5, int a6, int a7);
 int FUN_0c025e94(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8);
 int FUN_0c025a9a(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8);
@@ -446,7 +446,7 @@ int FUN_0c03d5ce(void)
 }
 
 
-int FUN_0c0649b4(int a4)
+void FUN_0c0649b4(int a4)
 {
     int stk[1];
 
@@ -482,7 +482,8 @@ int FUN_0c0649b4(int a4)
     v0_1 = (0x0);
     L_C064AFE:;
     *(unsigned int *)((v0_0 + v0_2)) = v0_1;
-    return FUN_0c065170(v0_0);
+    (void)(FUN_0c065170(v0_0));
+    return;
     L_C064A04:;
     v0_2 = (FUN_0c061bae()) == 0;
     v0_3 = (0xC1EC740);

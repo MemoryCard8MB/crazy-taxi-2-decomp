@@ -267,9 +267,11 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   the full state. Coverage 60.3% -> 63.5%, then 64.0% after six of the nine functions whose C differed on them were fixed: a
   declared result nothing uses (FUN_0c04027a, FUN_0c02e7a6, FUN_0c02be68, FUN_0c04d5fa, FUN_0c028a0c and its caller
   FUN_0c0164fc are void now) or a float parameter the original never reads (FUN_0c0469e2's f4): a leftover register was
-  compared. FUN_0c042ba8 was a real bug (below). Still held back (work/fix9/held_cases/): FUN_0c0440a4 (an event handler,
-  set_event(0x12C, ...): its float result is a leftover, but what the event system reads of it is open) and FUN_0c065170
-  (its result goes up to functions only reached through pointers).
+  compared. FUN_0c042ba8 was a real bug (below). The last two are void now as well (64.2%): FUN_0c0440a4 is an event handler
+  (set_event(0x12C, ...)), and nlExecuteEvent calls every handler as `ev->handler(ev)` and reads neither r0 nor fr0 after it;
+  FUN_0c065170 is tail-called by the handlers FUN_0c064958, FUN_0c0649b4 and FUN_0c064f20 (table 0C10FA80, called by the
+  dispatcher FUN_0c06488c, itself in table 0C10ED40 under FUN_0c06219e and the void FUN_0c0620ac): nothing on the way reads
+  the value, so the three handlers are void too. No cases are held back any more.
 - **A left shift by a negative amount.** The generator writes SH-4 shld/shad with a negative count as `x << (int)(-n)`,
   which C leaves undefined. SHC mostly emits the shift by a negated register (correct), but in FUN_0c042ba8 it folded
   `(-1 << k) << -k` away and tested all the bits instead of the low ones: a snapshot case of the game took the other branch

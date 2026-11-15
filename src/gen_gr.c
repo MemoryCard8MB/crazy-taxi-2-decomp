@@ -154,7 +154,7 @@ int FUN_0c04586c(int a4);
 int FUN_0c0420b0(int a4, int a5);
 int FUN_0c06b930(int a4, int a5);
 int FUN_0c067c2c(int a4, int a5, int a6, int a7);
-float FUN_0c0440a4(int a4);
+void FUN_0c0440a4(int a4);
 int FUN_0c04b73c(void);
 
 
@@ -529,7 +529,7 @@ int FUN_0c06bda4(int a4, int a5)
 
 
 
-float FUN_0c0440a4(int a4)
+void FUN_0c0440a4(int a4)
 {
     int stk[10];
 
@@ -567,7 +567,7 @@ float FUN_0c0440a4(int a4)
     L_C044246:;
     v0_2 = ((FUN_0c0436b8(v0_0)));
     L_C044354:;
-    return F0;
+    return;
     L_C0440E2:;
     FUN_0c042ba8(v0_0, R5, R6, R7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
     v0_1 = (((struct o84_int *)(v0_0))->v);
