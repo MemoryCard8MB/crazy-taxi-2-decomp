@@ -165,7 +165,7 @@ int FUN_0c067220(int a4);
 int FUN_0c07d050(int a4);
 int gdFsStopRd(int a4, int a5, int a6, int a7);
 int FUN_0c055604(void);
-float FUN_0c02806c(int a4, int a5, int a6, int a7);
+float FUN_0c02806c(int a4);
 int FUN_0c033e38(int a4, int a5, int a6);
 int FUN_0c047ab0(int a4);
 int FUN_0c03e81a(void);
@@ -991,7 +991,8 @@ int FUN_0c055604(void)
     return t22;
 }
 
-float FUN_0c02806c(int a4, int a5, int a6, int a7)
+/* manual: one argument (r4): the original sets r5-r7 and fr4/fr5 itself before reading them; the placeholders made callers compare a leftover r6 */
+float FUN_0c02806c(int a4)
 {
     register int t0;
     register int t1;
@@ -1004,7 +1005,6 @@ float FUN_0c02806c(int a4, int a5, int a6, int a7)
     register float u3;
 
     t0 = a4;
-    t1 = a7;
     u0 = 0.0f;
     for (;;) {
         if ((*(signed char *)((t0 + 0x0))) != 0) {

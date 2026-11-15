@@ -9,6 +9,143 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCD8000, 0CCD8004.4=00000003; r5=0CCA0000",
+   "regs": {
+    "r4": "0CCD8000",
+    "r5": "0CCA0000"
+   },
+   "poke": {
+    "0CCD8004": "03000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCD8000, 0CCD8004.4=00000003",
+   "regs": {
+    "r4": "0CCD8000"
+   },
+   "poke": {
+    "0CCD8004": "03000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCD4000, 0CCD4004.4=00000004",
+   "regs": {
+    "r4": "0CCD4000"
+   },
+   "poke": {
+    "0CCD4004": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; 0CCDC000.4=0CCAC000, 0CCAC088.4=00000005",
+   "regs": {
+    "r4": "0CCDC000"
+   },
+   "poke": {
+    "0CCDC004": "02000000",
+    "0CCDC000": "00c0ca0c",
+    "0CCAC088": "05000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC08000, 0CC08004.4=00000001",
+   "regs": {
+    "r4": "0CC08000"
+   },
+   "poke": {
+    "0CC08004": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC08000, 0CC08004.4=00000001; 0CC08014.4=00000001",
+   "regs": {
+    "r4": "0CC08000"
+   },
+   "poke": {
+    "0CC08004": "01000000",
+    "0CC08014": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCD8000, 0CCD8004.4=00000003; r5=0CCA0000; 0CCD8014.4=00000002",
+   "regs": {
+    "r4": "0CCD8000",
+    "r5": "0CCA0000"
+   },
+   "poke": {
+    "0CCD8004": "03000000",
+    "0CCD8014": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCD8000, 0CCD8004.4=00000003; 0CCD8014.4=00000001",
+   "regs": {
+    "r4": "0CCD8000"
+   },
+   "poke": {
+    "0CCD8004": "03000000",
+    "0CCD8014": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCD8000, 0CCD8004.4=00000003; r5=0CCA0000; 0CCD8014.4=00000001",
+   "regs": {
+    "r4": "0CCD8000",
+    "r5": "0CCA0000"
+   },
+   "poke": {
+    "0CCD8004": "03000000",
+    "0CCD8014": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCD4000, 0CCD4004.4=00000004; 0CCD4014.4=00000001",
+   "regs": {
+    "r4": "0CCD4000"
+   },
+   "poke": {
+    "0CCD4004": "04000000",
+    "0CCD4014": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC14000, 0CC14008.4=00000002",
+   "regs": {
+    "r4": "0CC14000"
+   },
+   "poke": {
+    "0CC14008": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; r5=0CCA8000",
+   "regs": {
+    "r4": "0CCDC000",
+    "r5": "0CCA8000"
+   },
+   "poke": {
+    "0CCDC004": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC0C000, 0CC0C014.4=00000001",
+   "regs": {
+    "r4": "0CC0C000"
+   },
+   "poke": {
+    "0CC0C014": "01000000"
+   }
   }
  ]
 }

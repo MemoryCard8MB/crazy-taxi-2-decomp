@@ -51,7 +51,7 @@ int FUN_0c027f28(int);
 int FUN_0c027fbe(float, float);
 int FUN_0c027fdc(float);
 int FUN_0c02803a(int, int, int, int);
-float FUN_0c02806c(int, float, float, float);
+float FUN_0c02806c(int);
 int FUN_0c02842e(int);
 int FUN_0c02877a(int);
 int FUN_0c029b12(int, float);
@@ -1040,7 +1040,7 @@ int FUN_0c034928(int a4, int a5, int a6, int a7, int a8)
     v0_4 = (0xC02806C);
     w0_3 = ((*(float *)((((v0_3 * v0_2) + v0_1) + 0x0))));
     if (((R10 & 0x200) == 0)) goto L_C034B70;
-    w0_2 = FUN_0c02806c((((v0_3 * v0_2) + v0_1) + 0xC), F4, F5, F6);
+    w0_2 = FUN_0c02806c((((v0_3 * v0_2) + v0_1) + 0xC));
     w0_3 = ((w0_3 - ((w0_2 * w0_1))));
     L_C034B86:;
     w0_2 = (0.0f);
@@ -1133,7 +1133,7 @@ int FUN_0c034928(int a4, int a5, int a6, int a7, int a8)
     goto L_C034D04;
     L_C034B70:;
     if (((R10 & 0x400) == 0)) goto L_C034B86;
-    w0_3 = ((w0_3 - (FUN_0c02806c((((v0_3 * v0_2) + v0_1) + 0xC), F4, F5, F6))));
+    w0_3 = ((w0_3 - (FUN_0c02806c((((v0_3 * v0_2) + v0_1) + 0xC)))));
     goto L_C034B86;
     L_C034AD2:;
     if (((((int)R9 << (int)v0_3) & a8) == 0)) goto L_C034AE2;

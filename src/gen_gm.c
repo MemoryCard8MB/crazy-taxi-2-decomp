@@ -47,9 +47,9 @@ int nlPopMatrix(int);
 int nlRotateAY(int);
 int nlScaleUnitVector(int, int, float);
 int nlSubVector(int, int);
-float FUN_0c042ba8(int a4);
+void FUN_0c042ba8(int a4);
 
-float FUN_0c042ba8(int a4)
+void FUN_0c042ba8(int a4)
 {
     int stk[21];
 
@@ -140,7 +140,7 @@ float FUN_0c042ba8(int a4)
     *(float *)((v0_0 + ((v0_4 - 84) + 0x4))) = w0_0;
     v0_4 = (((v0_4 - 84) + 0x4));
     L_C043436:;
-    return F0;
+    return;
     L_C042FDE:;
     if ((((*(int *)((v0_0 + 0x38))) & 0x160001) == 0)) goto L_C042FF0;
     (((struct o88_uint *)(v0_0))->v) = 0x5;

@@ -488,6 +488,354 @@
     }
    ],
    "about": "snapshot title1 #1: the state at its entry in that frame (64 bytes read, 19 call answers)"
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C68.4=00000004",
+   "regs": {},
+   "poke": {
+    "0C175C68": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C11CE70.4=0CC08000",
+   "regs": {},
+   "poke": {
+    "0C11CE70": "0080c00c"
+   }
+  },
+  {
+   "entry": "8C016CCA",
+   "end": "8C018B00",
+   "regs": {
+    "r4": "00000000",
+    "r5": "00007350",
+    "r6": "00000000",
+    "r7": "FFFFFFB0",
+    "r8": "00000007",
+    "r9": "0C1EC744",
+    "r10": "00000003",
+    "r11": "0C1EC83C",
+    "r12": "0C01DADC",
+    "r13": "00000000",
+    "r14": "0C01D044",
+    "fr4": "3F800000",
+    "fr5": "3F800000",
+    "fr6": "3F800000",
+    "fr7": "3F800000",
+    "fr8": "3FD40431",
+    "fr9": "4F000000",
+    "fr10": "3F800000",
+    "fr11": "BF800000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "0cdb010c0000000044d0010cd2b0010c40c71e0c58c71e0c53454741534547412b000900224f062f462f562f05d407d005d50b400900f665f664f660264f2b00",
+    "0C177D58": "0d000000",
+    "0C177D9C": "00007042",
+    "0C177DC4": "02000000",
+    "0C177DDC": "3b1dfcc4d6879642cbf65445",
+    "0C177E08": "fedbf9c4939b7b42cbca5045",
+    "0C177E34": "caf8ffff3ff50000e3ff0000",
+    "0C1EC740": "01000000",
+    "0C1EC7C0": "00000000",
+    "0C1ECD0C": "01000000",
+    "0C2AC2F0": "00000000"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {},
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "0C2BFA40"
+    },
+    {},
+    {
+     "r0": "0C2BFC48"
+    },
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "FFFFFFFC"
+    },
+    {
+     "r0": "FFFFFFFC"
+    },
+    {
+     "r0": "00000004"
+    },
+    {
+     "r0": "0C177D5C"
+    },
+    {
+     "fr0": "3F7FFFFF"
+    },
+    {
+     "r0": "00004000"
+    },
+    {
+     "fr0": "428D875A"
+    },
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "0C2BF980"
+    },
+    {},
+    {
+     "r0": "0C1BFFA0"
+    },
+    {
+     "fr0": "3F7FE6E0"
+    },
+    {
+     "r0": "00000001"
+    }
+   ],
+   "about": "mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C177DC4.4=00000002"
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2AC2F0.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2AC2F0": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175A14.4=BDCCCCCD",
+   "regs": {},
+   "poke": {
+    "0C175A14": "cdccccbd"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C177DC4.4=00000004",
+   "regs": {},
+   "poke": {
+    "0C177DC4": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C68.4=00000004; 0C175A14.4=3F800000",
+   "regs": {},
+   "poke": {
+    "0C175C68": "04000000",
+    "0C175A14": "0000803f"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C177E6C.4=0CC0C000; 0C1759D8.4=0CC1C000",
+   "regs": {},
+   "poke": {
+    "0C177E6C": "00c0c00c",
+    "0C1759D8": "00c0c10c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C68.4=00000004; 0C1759D8.4=0CC14000; 0C175A14.4=BF800000",
+   "regs": {},
+   "poke": {
+    "0C175C68": "04000000",
+    "0C1759D8": "0040c10c",
+    "0C175A14": "000080bf"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C177E6C.4=0CC0C000",
+   "regs": {},
+   "poke": {
+    "0C177E6C": "00c0c00c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C68.4=00000004; 0C177E64.4=3E19999A",
+   "regs": {},
+   "poke": {
+    "0C175C68": "04000000",
+    "0C177E64": "9a99193e"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C68.4=00000004; 0C1759D8.4=0CC14000",
+   "regs": {},
+   "poke": {
+    "0C175C68": "04000000",
+    "0C1759D8": "0040c10c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1EC7C0.4=00000008",
+   "regs": {},
+   "poke": {
+    "0C1EC7C0": "08000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C177D58.4=0000000F",
+   "regs": {},
+   "poke": {
+    "0C177D58": "0f000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c05a3b0) r0=0CC04000",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "0CC04000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175A14.4=3A83126F",
+   "regs": {},
+   "poke": {
+    "0C175A14": "6f12833a"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 8 (FUN_0c05a3b0) r0=0CC10000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CC10000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C68.4=00000004; call 8 (FUN_0c05a3b0) r0=0CC18000",
+   "regs": {},
+   "poke": {
+    "0C175C68": "04000000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CC18000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1759B8.4=3F800000",
+   "regs": {},
+   "poke": {
+    "0C1759B8": "0000803f"
+   }
+  },
+  {
+   "entry": "8C016CCA",
+   "end": "8C018B00",
+   "regs": {
+    "r4": "00000000",
+    "r5": "00007350",
+    "r6": "00000000",
+    "r7": "FFFFFFB0",
+    "r8": "00000007",
+    "r9": "0C1EC744",
+    "r10": "00000003",
+    "r11": "0C1EC83C",
+    "r12": "0C01DADC",
+    "r13": "00000000",
+    "r14": "0C01D044",
+    "fr4": "3F800000",
+    "fr5": "3F800000",
+    "fr6": "3F800000",
+    "fr7": "3F800000",
+    "fr8": "3FD40431",
+    "fr9": "4F000000",
+    "fr10": "3F800000",
+    "fr11": "BF800000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "0cdb010c0000000044d0010cd2b0010c40c71e0c58c71e0c53454741534547412b000900224f062f462f562f05d407d005d50b400900f665f664f660264f2b00",
+    "0C177D58": "0d000000",
+    "0C177D9C": "00007042",
+    "0C177DC4": "03000000",
+    "0C177DDC": "3b1dfcc4d6879642cbf65445",
+    "0C177E08": "fedbf9c4939b7b42cbca5045",
+    "0C177E34": "caf8ffff3ff50000e3ff0000",
+    "0C1EC740": "01000000",
+    "0C1EC7C0": "00000000",
+    "0C1ECD0C": "01000000",
+    "0C2AC2F0": "00000000"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {},
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "0C2BFA40"
+    },
+    {},
+    {
+     "r0": "0C2BFC48"
+    },
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "FFFFFFFC"
+    },
+    {
+     "r0": "FFFFFFFC"
+    },
+    {
+     "r0": "00000004"
+    },
+    {
+     "r0": "0C177D5C"
+    },
+    {
+     "fr0": "3F7FFFFF"
+    },
+    {
+     "r0": "00004000"
+    },
+    {
+     "fr0": "428D875A"
+    },
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "0C2BF980"
+    },
+    {},
+    {
+     "r0": "0C1BFFA0"
+    },
+    {
+     "fr0": "3F7FE6E0"
+    },
+    {
+     "r0": "00000001"
+    }
+   ],
+   "about": "mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C177DC4.4=00000002; 0C177DC4.4=00000003"
   }
  ]
 }

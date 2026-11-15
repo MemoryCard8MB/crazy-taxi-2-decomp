@@ -272,6 +272,18 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   FUN_0c065170 is tail-called by the handlers FUN_0c064958, FUN_0c0649b4 and FUN_0c064f20 (table 0C10FA80, called by the
   dispatcher FUN_0c06488c, itself in table 0C10ED40 under FUN_0c06219e and the void FUN_0c0620ac): nothing on the way reads
   the value, so the three handlers are void too. No cases are held back any more.
+- **Cases by mutation** (2026-11-15, `tools/6-agentic/mutcases.py`, no emulator): for the worst-covered game functions the
+  original runs on its cases with a trace; at each branch with a side no case reached, the T bit is followed back (through
+  registers, stores and constant-table indexes) to a byte the case can poke, an argument register (r4-r7, fr4-fr11, never r8-r14:
+  no C can read them) or a mocked call's answer, and values are tried until the original reaches something new; a null object
+  pointer becomes a fresh zeroed block with the field set; a value the function stored itself is reached in two steps (flip an
+  earlier branch, then the input). First batch (`--top 41`): 732 mutants, game coverage 62.5% -> 72.0%. The C failed on 5, and
+  two were real bugs the proofs and the 13 frame snapshots had missed: `FUN_0c063a2a` (picks a random pointer per object of a
+  group, state 2) stored the pointer at value+0xE0 instead of the field address it had pushed before the call (the generator
+  substituted a stale expression for the pop), and `FUN_0c0108fe` passed 90 instead of 3 or 0 to `FUN_0c057aec` (a `mov #3,r6`
+  just before a shared label and a delay-slot `mov #0,r6` dropped). The others: a leftover float result (FUN_0c042ba8 void), a
+  callee with placeholder parameters (FUN_0c02806c takes only r4), and mutants of r13/r14. Run: `mutcases.py --top N --write`,
+  then `bash work/mut/prove.sh <log>`; `MUTDEBUG=1` prints why each branch left is stuck.
 - **A left shift by a negative amount.** The generator writes SH-4 shld/shad with a negative count as `x << (int)(-n)`,
   which C leaves undefined. SHC mostly emits the shift by a negated register (correct), but in FUN_0c042ba8 it folded
   `(-1 << k) << -k` away and tested all the bits instead of the low ones: a snapshot case of the game took the other branch

@@ -418,7 +418,7 @@ int FUN_0c063a2a(int a4, int a5)
                                 t276 = ((int)((int)t357 % (int)t276));
                                 t276 = (t276 << 2);
                                 t277 = (*(int *)(((*(int *)(((int)stk + 28))) + t276)));
-                                t276 = (0xE0 + t277);
+                                t276 = (*(int *)((int)stk + 0));     /* manual: the original pops the field address it saved before the call (obj + i * 0x100 + 0xE0); the generator had recomputed it from the loaded value (value + 0xE0) */
                                 *(unsigned int *)((t276 + 0x0)) = t277;
                                 t276 = 0xC13B16C;
                                 t278 = (*(int *)((a4 + 0x14)));

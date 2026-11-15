@@ -69,7 +69,7 @@ int FUN_0c041298(int);
 int FUN_0c0415ba(int);
 int FUN_0c041a44(int, int);
 int FUN_0c0423c8(int);
-int FUN_0c042ba8(int, int, int, int, int, int, int, int, int, int, int, int);
+void FUN_0c042ba8(int, int, int, int, int, int, int, int, int, int, int, int);
 int FUN_0c0435e2(int, int);
 int FUN_0c0436b8(int);
 int FUN_0c0436f6(int);

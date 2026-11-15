@@ -4348,7 +4348,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 218 of 230 instructions
 
 ### FUN_0c0108fe (`0C0108FE`, 1236 bytes, `src/gen_aw.c`)
-- equivalent on 18 development and 28 holdout cases, in `tests/gen_aw/FUN_0c0108fe.json`
+- equivalent on 18 development and 46 holdout cases, in `tests/gen_aw/FUN_0c0108fe.json`
 - case 2
 - case 0
 - case 0
@@ -4395,7 +4395,25 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - snapshot small_passenger1 #1: the state at its entry in that frame (32 bytes read, 0 call answers)
 - snapshot small_pickup1 #1: the state at its entry in that frame (32 bytes read, 0 call answers)
 - snapshot title1 #1: the state at its entry in that frame (31 bytes read, 0 call answers)
-- the cases run 211 of 492 instructions
+- mutant of case 2: 0C1EC783.1=02
+- mutant of case 0: 0CF003C0.4=00000004
+- mutant of case 2: 0C1EC783.1=02; 0C1EC786.1=41
+- mutant of case 0: 0CF003B4.4=00000003; 0CF003B8.4=00000001
+- mutant of case 0: 0CF003B4.4=00000001; 0CF003B8.4=00000001; 0CF003B8.4=00000004
+- mutant of case 2: 0C1EC777.1=01
+- mutant of case 0: 0CF003B4.4=00000002
+- mutant of case 2: 0C1EC783.1=02; 0C1EC785.1=41
+- mutant of case 0: 0CF003B4.4=00000001; 0CF003B8.4=00000001
+- mutant of case 0: 0CF003B4.4=00000003
+- mutant of case 0: 0CF003B4.4=00000001
+- mutant of case 0: 0CF003B4.4=00000001; 0CF003B8.4=00000001; 0CF003B8.4=00000004; 0CF0011C.4=3FE66666
+- mutant of case 2: 0CF001A4.4=FFFFFFFF
+- mutant of case 0: 0CF003B4.4=00000003; 0CF003B8.4=00000001; 0C1EC777.1=01
+- mutant of case 2: 0C1EC776.1=01
+- mutant of snapshot title1 #1: the state at its entry in that frame (31: 0C1EC773.1=00
+- mutant of snapshot title1 #1: the state at its entry in that frame (31: 0C1EC773.1=00; 0C1EC774.1=01
+- mutant of case 0: 0CF003C0.4=00000004; 0CF001A4.4=00000002
+- the cases run 391 of 497 instructions
 
 ### FUN_0c010dd2 (`0C010DD2`, 456 bytes, `src/gen_bs.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_bs/FUN_0c010dd2.json`
@@ -4697,10 +4715,20 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 390 of 396 instructions
 
 ### FUN_0c012e78 (`0C012E78`, 3000 bytes, `src/gen_ee.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_ee/FUN_0c012e78.json`
+- equivalent on 1 development and 11 holdout cases, in `tests/gen_ee/FUN_0c012e78.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 847 of 1249 instructions
+- mutant of rescue: empty case: call 33 (FUN_0c0295c0) r0=0CC94000, 0CC94040.4=00000054
+- mutant of rescue: empty case: 0C175CD4.4=3F800000
+- mutant of rescue: empty case: call 33 (FUN_0c0295c0) r0=0CC84000, 0CC84018.4=BF800000
+- mutant of rescue: empty case: call 33 (FUN_0c0295c0) r0=0CC90000, 0CC90040.4=00400000
+- mutant of rescue: empty case: call 33 (FUN_0c0295c0) r0=0CC94000, 0CC94040.4=00000054; r4=0CC54000, 0CC54104.4=3F800000
+- mutant of rescue: empty case: r4=0CC8C000, 0CC8C160.4=3F8CCCCD
+- mutant of rescue: empty case: 0C175CC4.4=BF800000
+- mutant of rescue: empty case: r4=0CC8C000, 0CC8C160.4=3F8CCCCD; call 33 (FUN_0c0295c0) r0=0CCC0000, 0CCC0040.4=00003C57
+- mutant of rescue: empty case: call 33 (FUN_0c0295c0) r0=0CC94000, 0CC94040.4=00000054; r4=0CC4C000, 0CC4C160.4=BF800000
+- mutant of rescue: empty case: r4=0CC8C000, 0CC8C160.4=3F8CCCCD; call 33 (FUN_0c0295c0) r0=0CCC4000, 0CCC4040.4=008003A8
+- the cases run 1161 of 1251 instructions
 
 ### FUN_0c013a30 (`0C013A30`, 226 bytes, `src/gen_cl.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_cl/FUN_0c013a30.json`
@@ -4709,7 +4737,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 113 of 113 instructions
 
 ### FUN_0c013b2c (`0C013B2C`, 1794 bytes, `src/gen_ev.c`)
-- equivalent on 1 development and 11 holdout cases, in `tests/gen_ev/FUN_0c013b2c.json`
+- equivalent on 1 development and 22 holdout cases, in `tests/gen_ev/FUN_0c013b2c.json`
 - rescue: empty case
 - rescue: empty case
 - snapshot apple_drive_empty1 #1: the state at its entry in that frame (54 bytes read, 28 call answers)
@@ -4722,7 +4750,18 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - snapshot small_passenger1 #1: the state at its entry in that frame (54 bytes read, 28 call answers)
 - snapshot small_pickup1 #1: the state at its entry in that frame (54 bytes read, 28 call answers)
 - snapshot title1 #1: the state at its entry in that frame (54 bytes read, 28 call answers)
-- the cases run 368 of 747 instructions
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C270FB8.4=00000002
+- mutant of rescue: empty case: r4=0CC20000, 0CC20160.4=41780000
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C270FB8.4=00000016
+- mutant of rescue: empty case: r4=0CC18000, 0CC18104.4=418C0000
+- mutant of rescue: empty case: call 9 (FUN_0c0297f4) r0=0CC10000, 0CC1001C.4=00000016
+- mutant of rescue: empty case: call 8 (FUN_0c029b12) r0=0CC0C000, 0CC0C01C.4=FFFFFFFF
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C270FB8.4=00000006
+- mutant of rescue: empty case: r4=0CC18000, 0CC18104.4=418C0000; 0CC18104.4=41980000
+- mutant of rescue: empty case: r4=0CC18000, 0CC18104.4=418C0000; 0CC18104.4=C1980000
+- mutant of rescue: empty case: r4=0CC20000, 0CC20160.4=41780000; 0CC20160.4=41980000
+- mutant of rescue: empty case: r4=0CC20000, 0CC20160.4=41780000; 0CC20160.4=C1980000
+- the cases run 542 of 748 instructions
 
 ### FUN_0c01422e (`0C01422E`, 266 bytes, `src/gen_hb.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_hb/FUN_0c01422e.json`
@@ -4765,7 +4804,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 105 of 105 instructions
 
 ### FUN_0c0148f4 (`0C0148F4`, 1788 bytes, `src/gen_as.c`)
-- equivalent on 1 development and 11 holdout cases, in `tests/gen_as/FUN_0c0148f4.json`
+- equivalent on 1 development and 34 holdout cases, in `tests/gen_as/FUN_0c0148f4.json`
 - rescue: empty case
 - rescue: empty case
 - snapshot apple_drive_empty1 #1: the state at its entry in that frame (74 bytes read, 21 call answers)
@@ -4778,7 +4817,30 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - snapshot small_passenger1 #1: the state at its entry in that frame (74 bytes read, 21 call answers)
 - snapshot small_pickup1 #1: the state at its entry in that frame (64 bytes read, 21 call answers)
 - snapshot title1 #1: the state at its entry in that frame (70 bytes read, 20 call answers)
-- the cases run 351 of 716 instructions
+- mutant of rescue: empty case: 0C1758D4.4=80CFFFFE
+- mutant of rescue: empty case: 0C11875C.4=00000005
+- mutant of rescue: empty case: 0C1758D4.4=80CFFFFE; 0C1758C0.4=3F800000; 0C1758D4.4=80000000
+- mutant of rescue: empty case: 0C1758D4.4=80CFFFFE; 0C1758C0.4=3F800000
+- mutant of rescue: empty case: 0C1758D4.4=80CFFFFE; 0C1758C0.4=3F800000; 0C1758D4.4=80000000; 0C175A14.4=40000000
+- mutant of rescue: empty case: 0C1758D4.4=80CFFFFE; 0C1758C0.4=3F800000; 0C1758D4.4=80000000; 0C1758C0.4=40E00000; 0C175A14.4=40400000
+- mutant of rescue: empty case: 0C1EC800.4=BF800000
+- mutant of rescue: empty case: 0C1758D4.4=80CFFFFE; 0C1758C0.4=3F800000; 0C1758D4.4=80000000; call 8 (FUN_0c01b87a) r0=00004001
+- mutant of rescue: empty case: 0C175C80.4=00000008
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C1EC800.4=3A83126F
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C175908.4=00000001
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C11CE4C.4=0CC60000; 0C1EC7C4.4=00000010
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C11CE4C.4=0CC60000
+- mutant of rescue: empty case: 0C1EC800.4=BF800000; 0C1EC800.4=BD23D710
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C11CE4C.4=0CC60000; 0C1EC7C4.4=00000010; 0C11875C.4=00000005
+- mutant of rescue: empty case: 0C175C80.4=00000008; 0C175C80.4=00000010
+- mutant of rescue: empty case: 0C1758D4.4=80CFFFFE; 0C1758C0.4=3F800000; 0C1758D4.4=80000000; 0C1758C0.4=40E00000
+- mutant of rescue: empty case: 0C1758D4.4=80CFFFFE; 0C1758C0.4=3F800000; 0C1758D4.4=80000000; 0C175A14.4=40000000; call 8 (FUN_0c01b87a) r0=00004000
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C1EC800.4=40000000
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C1EC804.4=40000000
+- mutant of rescue: empty case: 0C1EC800.4=BF800000; 0C1EC800.4=41200000
+- mutant of rescue: empty case: 0C1EC800.4=BF800000; 0C1EC800.4=BD23D710; 0C1EC800.4=B2C00000
+- mutant of rescue: empty case: 0C1758D4.4=80CFFFFE; 0C1758C0.4=3F800000; 0C1758C0.4=41600000
+- the cases run 676 of 719 instructions
 
 ### FUN_0c01505c (`0C01505C`, 626 bytes, `src/gen_gt.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_gt/FUN_0c01505c.json`
@@ -4787,7 +4849,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 25 of 277 instructions
 
 ### FUN_0c0152f0 (`0C0152F0`, 3128 bytes, `src/gen_dc.c`)
-- equivalent on 1 development and 19 holdout cases, in `tests/gen_dc/FUN_0c0152f0.json`
+- equivalent on 1 development and 59 holdout cases, in `tests/gen_dc/FUN_0c0152f0.json`
 - rescue: empty case
 - rescue: empty case
 - snapshot apple_drive_empty1 #1: the state at its entry in that frame (45 bytes read, 3 call answers)
@@ -4808,7 +4870,47 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - snapshot small_pickup1 #2: the state at its entry in that frame (72 bytes read, 6 call answers)
 - snapshot title1 #1: the state at its entry in that frame (49 bytes read, 3 call answers)
 - snapshot title1 #2: the state at its entry in that frame (44 bytes read, 3 call answers)
-- the cases run 504 of 1195 instructions
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: call 9 (FUN_0c02d694) r0=0CC54000; 0C177BCC.4=4615369E; 0C175A14.4=3E19999A; 0C175C7C.4=0CC78000
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C175CF4.4=00000004
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: call 6 (FUN_0c0621e0) r0=0CC4C000
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: call 9 (FUN_0c02d694) r0=0CC54000; 0C177BCC.4=4615369E; 0C175A14.4=3E19999A
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: call 3 (FUN_0c0621e0) r0=0CC48000
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C19DE24.4=00000001
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1ECCEC.4=00000000
+- mutant of snapshot small_drive1 #1: the state at its entry in that fra: 0C19E650.4=C3937D27
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C19DE0C.4=00000002
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C1EC720.4=00000002; 0C1EC724.4=00000008
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: call 9 (FUN_0c02d694) r0=0CC54000; 0C177BCC.4=4615369E; 0C175A14.4=3E19999A; 0C175C7C.4=0CC78000; 0C19E62C.4=00000002
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C175A14.4=BFD97FBD
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C19DE0C.4=00000003; call 6 (FUN_0c06221c) r0=0CC5C000
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: call 9 (FUN_0c02d694) r0=0CC54000; 0C177BCC.4=4615369E; 0C175A14.4=3E19999A; 0C175934.4=42A00000
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: call 9 (FUN_0c02d694) r0=0CC54000; 0C177BCC.4=4615369E; 0C175A14.4=3E19999A; 0C175C7C.4=0CC78000; 0C1EC720.4=00000002
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: call 9 (FUN_0c02d694) r0=0CC54000; 0C177BCC.4=4615369E; 0C175A14.4=3E19999A; 0C175C7C.4=0CC78000; 0C1EC720.4=00000002; 0C19E62C.4=00000002
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C19DE1C.4=00000001
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C175CF4.4=00000004; 0C19F498.4=00000001
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: call 5 (FUN_0c02d694) r0=0CC50000
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C19DE0C.4=00000003
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C19DE0C.4=00000005
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C17593E.2=B000; 0C177D2C.4=000000FA
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: call 1 (nlLength) fr0=44962000
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C1EC720.4=00000002; 0C1EC724.4=00000008; 0C177B28.1=01
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C1EC720.4=00000002; 0C1EC724.4=00000008; 0C175914.4=0CC6C000; 0C175914.4=00000001
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C1EC720.4=00000002; 0C1EC724.4=00000008; 0C175914.4=0CC6C000; 0C175914.4=00000002
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: call 9 (FUN_0c02d694) r0=0CC54000
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C17593E.2=B000
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: call 9 (FUN_0c02d694) r0=0CC54000; 0C177BCC.4=4615369E
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C17593E.2=B000; 0C177D2C.4=000000FA; 0C177D2C.4=000000F9
+- mutant of rescue: empty case: r4=0CC44000, 0CC4408C.4=00000001
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C19DE28.4=00000001
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C177D58.4=0CC58000
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: call 9 (FUN_0c02d694) r0=0CC54000; 0C177BCC.4=4615369E; 0C175A14.4=3E19999A; 0C175934.4=42A00000; 0C1EC71C.4=00000000
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: call 9 (FUN_0c02d694) r0=0CC54000; 0C177BCC.4=4615369E; 0C175A14.4=3E19999A; 0C175C7C.4=0CC78000; 0C175C80.4=00000008
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C19DE0C.4=00000005; 0C19DE0C.4=00000006
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C1EC720.4=00000002; 0C1EC724.4=00000008; 0C175914.4=0CC6C000
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C1EC720.4=00000002; 0C1EC724.4=00000008; 0C177B28.1=02
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C1EC720.4=00000002; 0C1EC724.4=00000008; 0C177B28.1=03
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C1EC720.4=00000002
+- the cases run 1167 of 1227 instructions
 
 ### FUN_0c015f28 (`0C015F28`, 792 bytes, `src/gen_ei.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_ei/FUN_0c015f28.json`
@@ -4999,7 +5101,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 12 of 12 instructions
 
 ### FUN_0c016cca (`0C016CCA`, 7734 bytes, `src/gen_fc.c`)
-- equivalent on 1 development and 6 holdout cases, in `tests/gen_fc/FUN_0c016cca.json`
+- equivalent on 1 development and 26 holdout cases, in `tests/gen_fc/FUN_0c016cca.json`
 - rescue: empty case
 - rescue: empty case
 - snapshot apple_dropoff1 #1: the state at its entry in that frame (64 bytes read, 20 call answers)
@@ -5007,7 +5109,27 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - snapshot small_dropoff1 #1: the state at its entry in that frame (64 bytes read, 20 call answers)
 - snapshot small_pickup1 #1: the state at its entry in that frame (64 bytes read, 20 call answers)
 - snapshot title1 #1: the state at its entry in that frame (64 bytes read, 19 call answers)
-- the cases run 738 of 3001 instructions
+- mutant of rescue: empty case: 0C175C68.4=00000004
+- mutant of rescue: empty case: 0C11CE70.4=0CC08000
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C177DC4.4=00000002
+- mutant of rescue: empty case: 0C2AC2F0.4=00000001
+- mutant of rescue: empty case: 0C175A14.4=BDCCCCCD
+- mutant of rescue: empty case: 0C177DC4.4=00000004
+- mutant of rescue: empty case: 0C175C68.4=00000004; 0C175A14.4=3F800000
+- mutant of rescue: empty case: 0C177E6C.4=0CC0C000; 0C1759D8.4=0CC1C000
+- mutant of rescue: empty case: 0C175C68.4=00000004; 0C1759D8.4=0CC14000; 0C175A14.4=BF800000
+- mutant of rescue: empty case: 0C177E6C.4=0CC0C000
+- mutant of rescue: empty case: 0C175C68.4=00000004; 0C177E64.4=3E19999A
+- mutant of rescue: empty case: 0C175C68.4=00000004; 0C1759D8.4=0CC14000
+- mutant of rescue: empty case: 0C1EC7C0.4=00000008
+- mutant of rescue: empty case: 0C177D58.4=0000000F
+- mutant of rescue: empty case: call 2 (FUN_0c05a3b0) r0=0CC04000
+- mutant of rescue: empty case: 0C175A14.4=3A83126F
+- mutant of rescue: empty case: call 8 (FUN_0c05a3b0) r0=0CC10000
+- mutant of rescue: empty case: 0C175C68.4=00000004; call 8 (FUN_0c05a3b0) r0=0CC18000
+- mutant of rescue: empty case: 0C1759B8.4=3F800000
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C177DC4.4=00000002; 0C177DC4.4=00000003
+- the cases run 1138 of 3012 instructions
 
 ### FUN_0c018b00 (`0C018B00`, 28 bytes, `src/gen_am.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_am/FUN_0c018b00.json`
@@ -5721,7 +5843,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 9 of 9 instructions
 
 ### FUN_0c018df2 (`0C018DF2`, 1564 bytes, `src/gen_gl.c`)
-- equivalent on 18 development and 19 holdout cases, in `tests/gen_gl/FUN_0c018df2.json`
+- equivalent on 18 development and 31 holdout cases, in `tests/gen_gl/FUN_0c018df2.json`
 - case 0
 - case 5
 - case 6
@@ -5759,7 +5881,19 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 50
 - case 108
 - snapshot title1 #1: the state at its entry in that frame (29 bytes read, 13 call answers)
-- the cases run 174 of 565 instructions
+- mutant of case 107: 0C11CFA8.4=00000003
+- mutant of case 22: 0C11CFA8.4=00000001
+- mutant of case 98: 0C11CFA8.4=00000002
+- mutant of case 5: 0C11CFA8.4=00000004
+- mutant of case 42: 0C11CFA8.4=00000001; 0C1EC71C.4=00000001
+- mutant of snapshot title1 #1: the state at its entry in that frame (29: 0C177E88.4=447A0000
+- mutant of case 42: 0C11CFA8.4=00000001
+- mutant of case 119: 0C11CFA8.4=00000003
+- mutant of snapshot title1 #1: the state at its entry in that frame (29: call 4 (FUN_0c018cfc) fr0=43FA8000
+- mutant of snapshot title1 #1: the state at its entry in that frame (29: 0C270FD8.4=FFFFFFFF
+- mutant of case 5: 0C11CFA8.4=00000004; call 6 (FUN_0c018cfc) fr0=447A0000
+- mutant of case 119: 0C11CFA8.4=00000003; call 4 (FUN_0c018cfc) fr0=447A0000
+- the cases run 581 of 581 instructions
 
 ### FUN_0c019384 (`0C019384`, 138 bytes, `src/gen_hh.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_hh/FUN_0c019384.json`
@@ -6249,10 +6383,41 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 29 of 29 instructions
 
 ### FUN_0c01a1a0 (`0C01A1A0`, 1500 bytes, `src/gen_ez.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_ez/FUN_0c01a1a0.json`
+- equivalent on 1 development and 32 holdout cases, in `tests/gen_ez/FUN_0c01a1a0.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 246 of 675 instructions
+- mutant of rescue: empty case: 0C1EC688.4=0CCF8000, 0CCF8024.4=0CCF4000, 0CCF400A.1=46
+- mutant of rescue: empty case: 0C28ED9F.1=01
+- mutant of rescue: empty case: 0C1EC688.4=0CCF0000, 0CCF0024.4=0CCEC000, 0CCEC000.1=52
+- mutant of rescue: empty case: 0C28ED9F.1=01; 0C1EC688.4=0CC24000, 0CC24008.4=00000004
+- mutant of rescue: empty case: 0C28ED9F.1=01; 0C1EC688.4=0CC28000, 0CC28008.4=00000002
+- mutant of rescue: empty case: 0C1EC688.4=0CCFC000, 0CCFC008.4=00000040
+- mutant of rescue: empty case: 0C1EC688.4=0CCF0000, 0CCF0024.4=0CCEC000, 0CCEC000.1=52; 0C28ED9F.1=01
+- mutant of rescue: empty case: 0C1EC688.4=0CCF8000, 0CCF8024.4=0CCF4000, 0CCF400A.1=46; 0CCF801C.2=0080
+- mutant of rescue: empty case: 0C1EC688.4=0CCF0000, 0CCF0024.4=0CCEC000, 0CCEC000.1=52; 0CCF0008.4=00000002
+- mutant of rescue: empty case: 0C1EC688.4=0CC08000, 0CC08008.4=00000200
+- mutant of rescue: empty case: 0C1EC688.4=0CC0C000, 0CC0C008.4=00000002
+- mutant of rescue: empty case: 0C1EC688.4=0CC10000, 0CC10008.4=00000004
+- mutant of rescue: empty case: 0C1EC688.4=0CC14000, 0CC14008.4=00000400
+- mutant of rescue: empty case: 0C1EC688.4=0CCF0000, 0CCF0024.4=0CCEC000, 0CCEC000.1=52; 0CCF0008.4=00000010
+- mutant of rescue: empty case: 0C1EC688.4=0CCF0000, 0CCF0024.4=0CCEC000, 0CCEC000.1=52; 0CCF0008.4=00000020
+- mutant of rescue: empty case: 0C1EC688.4=0CCF0000, 0CCF0024.4=0CCEC000, 0CCEC000.1=52; 0CCF0008.4=00000004
+- mutant of rescue: empty case: 0C1EC688.4=0CCF8000, 0CCF8024.4=0CCF4000, 0CCF400A.1=46; 0CCF8018.2=0040
+- mutant of rescue: empty case: 0C1EC688.4=0CCF8000, 0CCF8024.4=0CCF4000, 0CCF400A.1=46; 0CCF801E.2=0040
+- mutant of rescue: empty case: 0C1EC688.4=0CCF8000, 0CCF8024.4=0CCF4000, 0CCF400A.1=46; 0CCF8008.4=00000400
+- mutant of rescue: empty case: 0C1EC688.4=0CCF8000, 0CCF8024.4=0CCF4000, 0CCF400A.1=46; 0CCF8008.4=00000200
+- mutant of rescue: empty case: 0C28ED9F.1=01; 0C1EC688.4=0CC18000, 0CC18008.4=00000200
+- mutant of rescue: empty case: 0C28ED9F.1=01; 0C1EC688.4=0CC1C000, 0CC1C008.4=00010000
+- mutant of rescue: empty case: 0C28ED9F.1=01; 0C1EC688.4=0CC20000, 0CC20008.4=00020000
+- mutant of rescue: empty case: 0C1EC688.4=0CCF0000, 0CCF0024.4=0CCEC000, 0CCEC000.1=52; 0C28ED9F.1=01; 0CCF0008.4=00000004
+- mutant of rescue: empty case: 0C1EC688.4=0CCF0000, 0CCF0024.4=0CCEC000, 0CCEC000.1=52; 0C28ED9F.1=01; 0CCF0008.4=00000002
+- mutant of rescue: empty case: 0C1EC688.4=0CCF0000, 0CCF0024.4=0CCEC000, 0CCEC000.1=52; 0C28ED9F.1=01; 0CCF0008.4=00000010
+- mutant of rescue: empty case: 0C2A464C.4=00000001
+- mutant of rescue: empty case: 0C1EC688.4=0CC04000, 0CC04008.4=00000080
+- mutant of rescue: empty case: 0C1EC688.4=0CCF8000, 0CCF8024.4=0CCF4000, 0CCF400A.1=46; 0CCF801E.2=FFFF
+- mutant of rescue: empty case: 0C1EC688.4=0CCF8000, 0CCF8024.4=0CCF4000, 0CCF400A.1=46; 0CCF8022.1=80
+- mutant of rescue: empty case: 0C1EC688.4=0CCF0000, 0CCF0024.4=0CCEC000, 0CCEC000.1=52; 0C28ED9F.1=01; 0CCF0008.4=00000020
+- the cases run 683 of 683 instructions
 
 ### FUN_0c01a7a4 (`0C01A7A4`, 22 bytes, `src/gen_a.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_a/FUN_0c01a7a4.json`
@@ -9145,18 +9310,60 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 189 of 210 instructions
 
 ### FUN_0c021040 (`0C021040`, 1078 bytes, `src/gen_ba.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_ba/FUN_0c021040.json`
+- equivalent on 1 development and 3 holdout cases, in `tests/gen_ba/FUN_0c021040.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 78 of 512 instructions
+- mutant of rescue: empty case: 0C1EC71C.4=00000002
+- mutant of rescue: empty case: 0C1EC71C.4=0CCE8000
+- the cases run 84 of 512 instructions
 
 ### FUN_0c021476 (`0C021476`, 4794 bytes, `src/gen_hj.c`)
-- equivalent on 1 development and 3 holdout cases, in `tests/gen_hj/FUN_0c021476.json`
+- equivalent on 1 development and 43 holdout cases, in `tests/gen_hj/FUN_0c021476.json`
 - rescue: empty case
 - rescue: empty case
 - snapshot apple_passenger1 #1: the state at its entry in that frame (77 bytes read, 3 call answers)
 - snapshot small_passenger1 #1: the state at its entry in that frame (93 bytes read, 7 call answers)
-- the cases run 849 of 2155 instructions
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C177BB4.1=12
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C177B28.1=13
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C175914.4=00000038
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C177B3C.4=00000023; 0C175918.4=00000000; 0C175918.4=80000000
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C175930.4=44BBA000
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C177B38.4=00000007
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C09BA64.4=0000000D
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C177BB4.1=12; 0C175918.4=00000001
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: call 1 (nlLength) fr0=C615329E
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C177BB4.1=12; 0C177BB4.1=07; 0C175930.4=C5098000
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C177B28.1=05; 0C175930.4=C4F9E000
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC71C.4=00000002; 0C1EC724.4=0000000A
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC71C.4=00000002; 0C1EC724.4=00000008
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C177BB4.1=12; 0C175918.4=00000001; 0C09BA20.4=0000000D
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C09B1EC.4=0000002D
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C09B1F0.4=0000002D
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C09B1F4.4=0000002D
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C177B3C.4=00000023
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C177BC8.4=00000006
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC71C.4=00000002; 0C1EC724.4=00000008; 0C175914.4=00000001
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC71C.4=00000002
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C177BB4.1=12; 0C177BB4.1=07
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC71C.4=00000002; 0C1EC724.4=00000008; 0C175914.4=00000000
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C177BB4.1=12; 0C175938.4=C479C000
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC71C.4=00000002; 0C1EC724.4=0000000A; 0C175934.4=C1200000
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC71C.4=00000002; 0C1EC724.4=0000000A; 0C175934.4=C1200000; 0C175934.4=C3570000
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C177B28.1=05
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C09B1E0.4=0000002D
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C177BB4.1=12; 0C175914.4=0000004E
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C177BB4.1=12; 0C175938.4=C479C000; 0C177BB4.1=19
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC71C.4=00000002; 0C1EC724.4=00000008; 0C175914.4=00000000; 0C177BB4.1=01
+- mutant of rescue: empty case: 0C1EC7C4.4=00020000
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C09B608.4=00000007
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C09B1EC.4=0000002D; 0C09B1E8.4=FFFFFFFF
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C09B1F0.4=0000002D; 0C09B1E8.4=FFFFFFFF
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C177B3C.4=00000023; 0C175918.4=00000000; 0C175918.4=80000000; 0C09B608.4=00000007
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC71C.4=00000002; 0C1EC724.4=00000008; 0C175914.4=00000000; 0C177BB4.1=02
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC71C.4=00000002; 0C1EC724.4=00000008; 0C175914.4=00000000; 0C177BB4.1=03
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC71C.4=00000002; 0C1EC724.4=00000008; 0C175914.4=00000002; 0C177BB4.1=02
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC71C.4=00000002; 0C1EC724.4=0000000A; 0C175934.4=C1200000; 0C175934.4=C3570000; 0C175934.4=C3CF8000
+- the cases run 1916 of 2177 instructions
 
 ### FUN_0c02274c (`0C02274C`, 72 bytes, `src/gen_ac.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_ac/FUN_0c02274c.json`
@@ -9629,10 +9836,25 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 84 of 84 instructions
 
 ### FUN_0c023718 (`0C023718`, 2886 bytes, `src/gen_gl.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_gl/FUN_0c023718.json`
+- equivalent on 1 development and 16 holdout cases, in `tests/gen_gl/FUN_0c023718.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 623 of 1270 instructions
+- mutant of rescue: empty case: r4=0CCF8000, 0CCF8040.4=C1C80000
+- mutant of rescue: empty case: 0C2709AC.4=0CC7C000
+- mutant of rescue: empty case: r4=0CC88000, 0CC88040.4=BF800000
+- mutant of rescue: empty case: r4=0CC88000, 0CC88040.4=BF800000; 0C177D58.4=00000008
+- mutant of rescue: empty case: call 10 (FUN_0c0295c0) r0=0CCC0000, 0CCC0040.4=0CCBC000
+- mutant of rescue: empty case: call 12 (FUN_0c0295c0) r0=0CCCC000, 0CCCC040.4=0CCC8000
+- mutant of rescue: empty case: r4=0CC88000, 0CC88040.4=BF800000; 0C2709BC.4=00000001
+- mutant of rescue: empty case: r4=0CC88000, 0CC88040.4=BF800000; 0C2709BC.4=00000001; 0C177D58.4=00000001
+- mutant of rescue: empty case: call 10 (FUN_0c0295c0) r0=0CCC0000, 0CCC0040.4=0CCBC000; 0CCC0040.4=00000054
+- mutant of rescue: empty case: call 12 (FUN_0c0295c0) r0=0CCCC000, 0CCCC040.4=0CCC8000; 0CCCC040.4=00000054
+- mutant of rescue: empty case: r4=0CC88000, 0CC88040.4=BF800000; 0C2709BC.4=00000001; 0C177D58.4=0CC04000
+- mutant of rescue: empty case: r4=0CCB4000, 0CCB4068.4=C1200000
+- mutant of rescue: empty case: 0C2709B0.4=42C80000
+- mutant of rescue: empty case: call 10 (FUN_0c0295c0) r0=0CCC0000, 0CCC0040.4=0CCBC000; 0C2709B0.4=42C80000
+- mutant of rescue: empty case: call 10 (FUN_0c0295c0) r0=0CCC0000, 0CCC0040.4=0CCBC000; 0CCC0040.4=00000054; r4=0CC28000, 0CC28020.4=C2CA0000
+- the cases run 1103 of 1275 instructions
 
 ### FUN_0c0242fe (`0C0242FE`, 382 bytes, `src/gen_dr.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_dr/FUN_0c0242fe.json`
@@ -9727,10 +9949,29 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 35 of 35 instructions
 
 ### FUN_0c0247a8 (`0C0247A8`, 1092 bytes, `src/gen_dr.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dr/FUN_0c0247a8.json`
+- equivalent on 1 development and 20 holdout cases, in `tests/gen_dr/FUN_0c0247a8.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 150 of 442 instructions
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000003
+- mutant of rescue: empty case: 0C2709A8.4=00000001
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000003; 0C2709AC.4=0CCCC000
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000005
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000003; 0C2709BC.4=00000001; 0C175C74.4=00000004
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000001
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709A8.4=00000002
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709A8.4=00000002; 0C2709A8.4=00000003
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000001; 0C175938.4=C4B9C000
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000003; 0C2709BC.4=00000001
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C175938.4=C4B9A000
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709B0.4=43490000
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000003; 0C2709AC.4=FFFFFFFF
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000003; 0C2709AC.4=0CCCC000; 0C175A58.4=FFFFFFFF
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000003; 0C2709AC.4=0CCCC000; 0C175A58.4=FFFFFFFF; 0C175ADC.4=FFFFFFFF
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000003; 0C2709BC.4=00000001; 0C175C74.4=00000004; 0C2709AC.4=00000005
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000003; 0C2709AC.4=0CCCC000; 0C175A58.4=FFFFFFFF; 0C175ADC.4=FFFFFFFF; 0C175B60.4=FFFFFFFF
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C175C74.4=00000004
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709A8.4=00000002; 0C2709A8.4=00000003; 0C2709A8.4=00000004
+- the cases run 444 of 455 instructions
 
 ### FUN_0c024c6c (`0C024C6C`, 808 bytes, `src/gen_dr.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_dr/FUN_0c024c6c.json`
@@ -10199,16 +10440,35 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 44 of 44 instructions
 
 ### FUN_0c025ffc (`0C025FFC`, 1314 bytes, `src/gen_ds.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_ds/FUN_0c025ffc.json`
+- equivalent on 1 development and 10 holdout cases, in `tests/gen_ds/FUN_0c025ffc.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 167 of 465 instructions
+- mutant of rescue: empty case: 0C2709A8.4=00000001
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000002
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709A8.4=00000002; 0C2709A8.4=00000003
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709A8.4=00000002
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000001; 0C2709BC.4=0000005A
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000001
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C1ECCA8.4=00000001
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709A8.4=00000002; 0C2709A8.4=00000003; 0C2709BC.4=0000003B
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709A8.4=00000002; 0C2709A8.4=00000003; 0C2709A8.4=00000004
+- the cases run 321 of 471 instructions
 
 ### FUN_0c0265e8 (`0C0265E8`, 1338 bytes, `src/gen_dr.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dr/FUN_0c0265e8.json`
+- equivalent on 1 development and 11 holdout cases, in `tests/gen_dr/FUN_0c0265e8.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 146 of 475 instructions
+- mutant of rescue: empty case: 0C2709A8.4=00000001
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000002
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709A8.4=00000002; 0C2709A8.4=00000003
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C270A28.4=00000001
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709A8.4=00000002
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000001
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C1ECCA8.4=00000001
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709AC.4=00000001; 0C2709BC.4=0000005A
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709A8.4=00000002; 0C2709A8.4=00000003; 0C2709BC.4=0000003B
+- mutant of rescue: empty case: 0C2709A8.4=00000001; 0C2709A8.4=00000002; 0C2709A8.4=00000003; 0C2709A8.4=00000004
+- the cases run 341 of 482 instructions
 
 ### FUN_0c026b80 (`0C026B80`, 86 bytes, `src/gen_ab.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_ab/FUN_0c026b80.json`
@@ -11790,7 +12050,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 44 of 44 instructions
 
 ### FUN_0c028a0c (`0C028A0C`, 2504 bytes, `src/gen_gk.c`)
-- equivalent on 18 development and 27 holdout cases, in `tests/gen_gk/FUN_0c028a0c.json`
+- equivalent on 18 development and 67 holdout cases, in `tests/gen_gk/FUN_0c028a0c.json`
 - case 0
 - case 2
 - case 3
@@ -11836,7 +12096,47 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - snapshot small_passenger1 #1: the state at its entry in that frame (38 bytes read, 11 call answers)
 - snapshot small_pickup1 #1: the state at its entry in that frame (36 bytes read, 11 call answers)
 - snapshot title1 #1: the state at its entry in that frame (4 bytes read, 0 call answers)
-- the cases run 408 of 1000 instructions
+- mutant of snapshot apple_pickup1 #1: the state at its entry in that fr: 0C128C28.4=00000002
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C128C28.4=00000002
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C128C28.4=00000002; 0C128BF4.4=00000000
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C128C28.4=00000002
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C270EC0.4=00000005; 0C128BDC.4=C3960000
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C270EC0.4=00000001
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C128BF4.4=00000000
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C128C28.4=00000002; 0C128BF4.4=00000000; 0C128BE4.4=00000000
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C270EC0.4=00000005; 0C128BDC.4=C3960000; 0C128BD4.4=00000006
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C270EC0.4=00000003
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C270EC0.4=00000005; 0C128BDC.4=C3960000; 0C128BD4.4=00000005
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C270EC0.4=00000005
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C128BD4.4=00000002
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C1EC779.1=01
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC779.1=01
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C128C28.4=00000002; 0C128BF4.4=00000000; 0C128BE4.4=00000000; 0C1ECD4C.4=0000001D
+- mutant of snapshot apple_pickup1 #1: the state at its entry in that fr: 0C1EC779.1=01
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C270EC0.4=00000003; 0C128BDC.4=C3960000
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C128BD4.4=00000004
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C128BD4.4=00000006
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C128BF4.4=00000000; 0C128BE4.4=00000000
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C270EC0.4=00000003; 0C128BD4.4=00000001
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C270EC0.4=00000003; 0C128BD4.4=00000001; 0C1EC779.1=01
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C270EC0.4=00000003; 0C128BDC.4=C3960000; 0C128BD4.4=00000003
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C177D58.4=0000000B
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C128BD8.4=00000001
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C128BD8.4=00000001; 0C1EC775.1=01
+- mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C128BD4.4=00000005
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C1EC744.4=00000002
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C177CE8.4=00000000
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C1EC71C.4=00000002
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C128C28.4=00000002; 0C1EC71C.4=0CC2C000
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C128C28.4=00000002; 0C128C28.4=00000000
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C270EC0.4=00000001; 0C128BDC.4=C3B80000
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C270EC0.4=00000005; 0C270EC0.4=00000006
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C177D58.4=0000000B; 0C2AC2F0.4=00000001
+- mutant of snapshot small_passenger1 #1: the state at its entry in that: 0C1EC779.1=01; 0C2AC2F0.4=00000001
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C128C28.4=00000002; 0C128BF4.4=00000000; call 1 (FUN_0c01fb8c) r0=FFFFFFFF
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C128BF4.4=00000000; 0C128BE4.4=00000000; 0C1ECD48.4=00000001
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C270EC0.4=00000005; 0C128BDC.4=C3960000; 0C128C2C.4=00000002
+- the cases run 1020 of 1024 instructions
 
 ### FUN_0c0293d4 (`0C0293D4`, 6 bytes, `src/gen_c.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_c/FUN_0c0293d4.json`
@@ -12447,7 +12747,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 83 of 210 instructions
 
 ### FUN_0c02b3b8 (`0C02B3B8`, 1368 bytes, `src/gen_fe.c`)
-- equivalent on 17 development and 36 holdout cases, in `tests/gen_fe/FUN_0c02b3b8.json`
+- equivalent on 17 development and 38 holdout cases, in `tests/gen_fe/FUN_0c02b3b8.json`
 - case 1
 - case 2
 - case 3
@@ -12501,7 +12801,9 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - snapshot small_pickup1 #2: the state at its entry in that frame (24 bytes read, 2 call answers)
 - snapshot title1 #1: the state at its entry in that frame (32 bytes read, 6 call answers)
 - snapshot title1 #2: the state at its entry in that frame (24 bytes read, 2 call answers)
-- the cases run 291 of 597 instructions
+- mutant of case 83: 0C128DB4.4=3F800000
+- mutant of snapshot small_drive1 #2: the state at its entry in that fra: call 2 (FUN_0c02ae3c) r0=00000000
+- the cases run 318 of 599 instructions
 
 ### FUN_0c02b910 (`0C02B910`, 638 bytes, `src/gen_fd.c`)
 - equivalent on 18 development and 22 holdout cases, in `tests/gen_fd/FUN_0c02b910.json`
@@ -13037,7 +13339,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 4 of 4 instructions
 
 ### FUN_0c02f6e8 (`0C02F6E8`, 1148 bytes, `src/gen_go.c`)
-- equivalent on 1 development and 19 holdout cases, in `tests/gen_go/FUN_0c02f6e8.json`
+- equivalent on 1 development and 27 holdout cases, in `tests/gen_go/FUN_0c02f6e8.json`
 - rescue: empty case
 - rescue: empty case
 - snapshot apple_drive_empty1 #1: the state at its entry in that frame (12 bytes read, 1 call answers)
@@ -13058,7 +13360,15 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - snapshot small_pickup1 #2: the state at its entry in that frame (16 bytes read, 6 call answers)
 - snapshot title1 #1: the state at its entry in that frame (12 bytes read, 1 call answers)
 - snapshot title1 #2: the state at its entry in that frame (12 bytes read, 1 call answers)
-- the cases run 87 of 513 instructions
+- mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000
+- mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000; 0CC34054.4=0CC48000, 0CC48008.4=00000001; 0CC48004.4=0CC5C000, 0CC5C004.4=3F800000
+- mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000; 0CC34054.4=0CC48000, 0CC48008.4=00000001
+- mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000; 0CC34054.4=0CC48000, 0CC48008.4=00000001; 0CC48004.4=0CC5C000, 0CC5C004.4=3F800000; 0CC5C004.4=BF800000
+- mutant of rescue: empty case: r4=0CC38000, 0CC38068.4=00000005
+- mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000; 0CC34020.4=00000001
+- mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000; 0CC34020.4=00000001; 0CC3401C.4=3F8147AE
+- mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000; 0CC34054.4=0CC54000, 0CC54010.4=0CC50000
+- the cases run 356 of 516 instructions
 
 ### FUN_0c02fb94 (`0C02FB94`, 328 bytes, `src/gen_hb.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_hb/FUN_0c02fb94.json`
@@ -16860,10 +17170,33 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 76 of 129 instructions
 
 ### FUN_0c033f62 (`0C033F62`, 764 bytes, `src/gen_be.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_be/FUN_0c033f62.json`
+- equivalent on 1 development and 24 holdout cases, in `tests/gen_be/FUN_0c033f62.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 58 of 350 instructions
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4684.4=00000001
+- mutant of rescue: empty case: 0C2A469C.4=00000004
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000010
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4684.4=00000001; 0C2A4670.4=00000008; 0C2A4684.4=00000002; r6=00000040
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000008
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4684.4=00000001; 0C2A4670.4=00000008
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000010; r6=00010000
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000004
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002; 0C2A46A4.4=0CCC8000, 0CCC8008.4=0CCC4000
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000010; 0C2A4684.4=0CCEC000
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4684.4=00000006
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4684.4=00000001; 0C2A4670.4=00000040
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4684.4=00000001; 0C2A4670.4=00000020
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4684.4=00000001; 0C2A4670.4=00000008; 0C2A4684.4=00000002; r6=00000040; r6=00000240
+- mutant of rescue: empty case: 0C2A46E0.4=00000001
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4684.4=00000001; 0C2A4670.4=00000010
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000008; 0C2A4684.4=00000011
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000010; r6=FFFFFFFF
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4684.4=00000001; 0C2A4670.4=00000040; r6=00000004
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4684.4=00000001; 0C2A4670.4=00000008; 0C2A4684.4=00000010
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4684.4=00000001; 0C2A4670.4=00000040; 0C2A4684.4=00000005
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4684.4=00000001; 0C2A4670.4=00000008; 0C2A4684.4=00000002
+- the cases run 339 of 358 instructions
 
 ### FUN_0c03425e (`0C03425E`, 194 bytes, `src/gen_e.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_e/FUN_0c03425e.json`
@@ -17416,7 +17749,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 36 of 60 instructions
 
 ### FUN_0c0369ec (`0C0369EC`, 760 bytes, `src/gen_eh.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_eh/FUN_0c0369ec.json`
+- equivalent on 18 development and 31 holdout cases, in `tests/gen_eh/FUN_0c0369ec.json`
 - case 1
 - case 2
 - case 3
@@ -17453,7 +17786,20 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 92
 - case 133
 - case 48
-- the cases run 0 of 270 instructions (nothing compared: no case showed a write, a call, a device access or a change of SR, and the C returns nothing)
+- mutant of case 1: 0C2A46E8.4=00000000; 0C2A46C8.4=00000004; 0C2A4F9C.4=00000003
+- mutant of case 1: 0C2A46E8.4=00000000; 0C2A46C8.4=00000004
+- mutant of case 1: 0C2A46E8.4=00000000
+- mutant of case 1: 0C2A46E8.4=00000000; call 3 (FUN_0c034320) r0=00000001
+- mutant of case 1: 0C2A46E8.4=00000000; call 1 (FUN_0c03f154) r0=00000000
+- mutant of case 1: 0C2A46E8.4=00000000; call 4 (FUN_0c0343b8) r0=00000001
+- mutant of case 1: 0C2A46E8.4=00000000; 0C2A46C8.4=00000004; 0C2A4F9C.4=00000000
+- mutant of case 1: 0C2A46E8.4=00000000; 0C2A46C8.4=00000004; 0C2A4F9C.4=00000003; call 9 (FUN_0c03232a) r0=00000000
+- mutant of case 1: 0C2A46E8.4=00000000; call 3 (FUN_0c034320) r0=00000001; call 4 (buIsExistFile) r0=00000000
+- mutant of case 1: 0C2A46E8.4=00000000; 0C2A46C8.4=00000004; 0C2A4F9C.4=00000003; call 7 (FUN_0c03f154) r0=00000000
+- mutant of case 1: 0C2A46E8.4=00000000; 0C2A46C8.4=00000004; 0C2A4F9C.4=00000003; call 8 (FUN_0c03f154) r0=00000001
+- mutant of case 1: 0C2A46E8.4=00000000; 0C2A46C8.4=00000004; 0C2A4F9C.4=00000003; call 10 (FUN_0c03232a) r0=00000000
+- mutant of case 1: 0C2A46E8.4=00000000; call 2 (FUN_0c03f154) r0=00000001
+- the cases run 267 of 277 instructions
 
 ### FUN_0c036ce4 (`0C036CE4`, 668 bytes, `src/gen_bi.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_bi/FUN_0c036ce4.json`
@@ -17496,7 +17842,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 30 of 230 instructions
 
 ### FUN_0c036f80 (`0C036F80`, 800 bytes, `src/gen_eo.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_eo/FUN_0c036f80.json`
+- equivalent on 18 development and 29 holdout cases, in `tests/gen_eo/FUN_0c036f80.json`
 - case 1
 - case 2
 - case 3
@@ -17533,10 +17879,21 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 98
 - case 97
 - case 68
-- the cases run 43 of 314 instructions
+- mutant of case 1: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000
+- mutant of case 1: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000; 0C2A46C8.4=00000005
+- mutant of case 1: 0C2A46E8.4=00000000
+- mutant of case 1: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000; 0C2A46C8.4=00000005; 0C2A4670.4=00000019
+- mutant of case 1: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000001
+- mutant of case 1: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000; 0C2A46C8.4=00000005; 0C2A4670.4=00000005
+- mutant of case 1: 0C2A46E8.4=00000000; call 2 (FUN_0c0343b8) r0=00000000
+- mutant of case 1: 0C2A46E8.4=00000000; call 2 (FUN_0c0343b8) r0=00000001
+- mutant of case 1: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000001; call 2 (buIsExistFile) r0=00000000
+- mutant of case 2: call 1 (buIsReady) r0=00000000
+- mutant of case 1: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000; 0C2A46C8.4=00000005; 0C2A4678.4=00000000
+- the cases run 317 of 320 instructions
 
 ### FUN_0c0372a0 (`0C0372A0`, 1264 bytes, `src/gen_ia.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_ia/FUN_0c0372a0.json`
+- equivalent on 18 development and 37 holdout cases, in `tests/gen_ia/FUN_0c0372a0.json`
 - case 0
 - case 1
 - case 2
@@ -17573,10 +17930,29 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 144
 - case 65
 - case 105
-- the cases run 44 of 465 instructions
+- mutant of case 0: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000
+- mutant of case 0: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000; 0C2A4F9C.4=00000003; call 5 (FUN_0c032150) r0=00000000
+- mutant of case 0: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000; 0C2A4F9C.4=00000003; call 5 (FUN_0c032150) r0=00000000; call 8 (buIsExistFile) r0=00000000; call 9 (FUN_0c032210) r0=00000000; call 10 (FUN_0c07ffbc) r0=00000000
+- mutant of case 0: 0C2A46E8.4=00000000
+- mutant of case 0: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000001
+- mutant of case 0: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000; 0C2A4F9C.4=00000003; call 5 (FUN_0c032150) r0=00000000; call 6 (buIsExistFile) r0=00000000
+- mutant of case 2: call 1 (buIsReady) r0=00000000
+- mutant of case 0: 0C2A46E8.4=00000000; call 2 (FUN_0c0343b8) r0=00000000
+- mutant of case 0: 0C2A46E8.4=00000000; call 2 (FUN_0c0343b8) r0=00000001
+- mutant of case 0: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000; 0C2A4F9C.4=00000003
+- mutant of case 0: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000001; call 2 (buIsExistFile) r0=FFFFFF05
+- mutant of case 0: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000; 0C2A4F9C.4=00000003; call 5 (FUN_0c032150) r0=00000000; call 8 (buIsExistFile) r0=00000000
+- mutant of case 0: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000001; call 2 (buIsExistFile) r0=00000000
+- mutant of case 0: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000; 0C2A4F9C.4=00000003; call 5 (FUN_0c032150) r0=00000000; call 7 (buIsExistFile) r0=00000000
+- mutant of case 0: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000; 0C2A4F9C.4=00000003; call 5 (FUN_0c032150) r0=00000000; call 8 (buIsExistFile) r0=00000000; call 9 (FUN_0c032210) r0=00000000
+- mutant of case 0: 0C2A46E8.4=00000000; 0C2A46E4.4=00000001
+- mutant of case 0: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000; 0C2A4F88.4=0CC60000
+- mutant of case 0: 0C2A46E8.4=00000000; 0C2A46E4.4=00000001; 0C2A46C8.4=00000006
+- mutant of case 0: 0C2A46E8.4=00000000; call 1 (FUN_0c034320) r0=00000000; 0C28EDA7.1=01
+- the cases run 466 of 477 instructions
 
 ### FUN_0c037790 (`0C037790`, 1594 bytes, `src/gen_at.c`)
-- equivalent on 18 development and 19 holdout cases, in `tests/gen_at/FUN_0c037790.json`
+- equivalent on 18 development and 37 holdout cases, in `tests/gen_at/FUN_0c037790.json`
 - case 0
 - case 1
 - case 2
@@ -17614,7 +17990,25 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 53
 - case 102
 - snapshot gameover1 #1: the state at its entry in that frame (12 bytes read, 3 call answers)
-- the cases run 91 of 626 instructions
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 1 (FUN_0c034320) r0=00000000; 0C2A46C8.4=00000004
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 1 (FUN_0c034320) r0=00000000; 0C12B774.4=0CC3C000
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 1 (FUN_0c034320) r0=00000000; 0C12B774.4=0CC3C000; 0C2A4F9C.4=00000003
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 1 (FUN_0c034320) r0=00000000; 0C12B774.4=0CC3C000; 0C2A4F9C.4=00000003; 0C2A4FAC.4=FFFFFFFE
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 1 (FUN_0c034320) r0=00000000; 0C2A46C8.4=00000004; 0C2A4670.4=00000018
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 1 (FUN_0c034320) r0=00000001
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 1 (FUN_0c034320) r0=00000000; 0C2A46C8.4=00000004; 0C2A4670.4=00000004
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 1 (FUN_0c034320) r0=00000000
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 1 (FUN_0c034320) r0=00000001; call 2 (buIsExistFile) r0=0CC40000
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : 0C2A46E4.4=00000001; 0C2A46C8.4=00000006
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 2 (FUN_0c0343b8) r0=0CC38000
+- mutant of case 2: call 1 (buIsReady) r0=00000000
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 1 (FUN_0c034320) r0=00000000; 0C2A46C8.4=00000004; call 2 (buGetFileInfo) r0=0CC44000
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 1 (FUN_0c034320) r0=00000000; 0C2A46C8.4=00000004; call 2 (buGetFileInfo) r0=0CC44000; call 2 (buGetFileInfo) r0=FFFFFF05
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : 0C2A46E4.4=00000001
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 2 (FUN_0c0343b8) r0=0CC38000; call 2 (FUN_0c0343b8) r0=00000001
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : 0C2A46E4.4=00000001; 0C2A46C8.4=00000006; 0C2A4F80.4=00000000
+- mutant of snapshot gameover1 #1: the state at its entry in that frame : call 1 (FUN_0c034320) r0=00000000; 0C12B774.4=0CC3C000; 0C2A4F9C.4=00000003; 0C12B774.4=00000001
+- the cases run 502 of 645 instructions
 
 ### FUN_0c037dca (`0C037DCA`, 584 bytes, `src/gen_bk.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_bk/FUN_0c037dca.json`
@@ -17962,7 +18356,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 343 of 422 instructions
 
 ### FUN_0c0397ec (`0C0397EC`, 1188 bytes, `src/gen_aw.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_aw/FUN_0c0397ec.json`
+- equivalent on 18 development and 27 holdout cases, in `tests/gen_aw/FUN_0c0397ec.json`
 - case 0
 - case 1
 - case 2
@@ -17999,7 +18393,16 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 52
 - case 82
 - case 57
-- the cases run 44 of 464 instructions
+- mutant of case 0: r4=00000000
+- mutant of case 0: r4=00000000; r5=00000000
+- mutant of case 0: r4=00000000; r5=00000004
+- mutant of case 0: r4=00000000; r5=00000002
+- mutant of case 0: r4=00000000; r5=00000003
+- mutant of case 0: r4=00000000; r5=00000001
+- mutant of case 0: r4=00000000; 0C2A5890.4=BF800000
+- mutant of case 0: r4=00000000; r5=00000002; 0C2A5890.4=000000AA
+- mutant of case 0: r4=00000000; r5=00000003; 0C2A5890.4=000000AA
+- the cases run 474 of 474 instructions
 
 ### FUN_0c039c90 (`0C039C90`, 238 bytes, `src/gen_ej.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_ej/FUN_0c039c90.json`
@@ -18014,16 +18417,55 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 134 of 272 instructions
 
 ### FUN_0c03a004 (`0C03A004`, 2114 bytes, `src/gen_dz.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dz/FUN_0c03a004.json`
+- equivalent on 1 development and 19 holdout cases, in `tests/gen_dz/FUN_0c03a004.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 373 of 846 instructions
+- mutant of rescue: empty case: 0C2A4FB0.4=00000001
+- mutant of rescue: empty case: 0C2A4FB0.4=000000FF; 0C2A4F80.4=00000004
+- mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C1EC83C.4=00000018
+- mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000
+- mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C2A4FA8.4=00000001; 0C2A4FA8.4=FFFFFFFF; 0C2A4FAC.4=FFFFFFFF
+- mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A4F80.4=00000001
+- mutant of rescue: empty case: 0C2A4FB0.4=000000FF; 0C2A4F80.4=00000004; 0C2A4F80.4=00000005
+- mutant of rescue: empty case: 0C2A4FB0.4=000000FF; 0C2A4F80.4=00000004; 0C2A4700.4=00000001
+- mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C2A46FC.4=00000001
+- mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C2A4FA8.4=00000001; 0C2A4FA8.4=FFFFFFFF
+- mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A4FAC.4=FFFFFFFE
+- mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C2A4FA8.4=00000001; 0C2A46FC.4=00000001
+- mutant of rescue: empty case: 0C2A4FB0.4=000000FF
+- mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C2A4FA8.4=00000001
+- mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C2A4FA8.4=00000001; 0C2A4FA8.4=FFFFFFFF; 0C2A4FAC.4=FFFFFFFF; 0C2A46F4.4=00000001
+- mutant of rescue: empty case: 0C2A46E8.4=00000001
+- mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A4F80.4=00000003
+- mutant of rescue: empty case: 0C2A4FB0.4=000000FF; 0C2A4F80.4=00000004; 0C2A4F80.4=00000005; 0C2A4F80.4=0CCC0000
+- the cases run 827 of 855 instructions
 
 ### FUN_0c03a870 (`0C03A870`, 1404 bytes, `src/gen_cp.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_cp/FUN_0c03a870.json`
+- equivalent on 1 development and 22 holdout cases, in `tests/gen_cp/FUN_0c03a870.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 78 of 577 instructions
+- mutant of rescue: empty case: 0C2A469C.4=00000004
+- mutant of rescue: empty case: call 4 (FUN_0c035a5e) r0=00000002; 0C2A4FAC.4=FFFFFFFE
+- mutant of rescue: empty case: call 4 (FUN_0c035a5e) r0=00000002
+- mutant of rescue: empty case: call 4 (FUN_0c035a5e) r0=00000002; 0C2A4F80.4=00000005
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000020
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000008
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000004
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000040
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002; 0C2A4F80.4=00000003
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000001; 0C2A4FAC.4=FFFFFFFE
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002; 0C2A4F80.4=00000003; 0C2A4F80.4=00000004
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000008; 0C2A4FA8.4=FFFFFFFF
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000001
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A46E0.4=0CC0C000; call 5 (FUN_0c0343b8) r0=00000003
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000040; 0C2A4FA8.4=00000008
+- mutant of rescue: empty case: 0C2A46D8.4=0C0B38AC
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A46E0.4=0CC0C000
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002; 0C2A4F80.4=00000003; 0C2A4F80.4=00000001
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002; 0C2A4F80.4=00000003; 0C2A4F80.4=FFFFFFFF
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002; 0C2A4F80.4=00000003; 0C2A4F80.4=00000002
+- the cases run 427 of 591 instructions
 
 ### FUN_0c03adec (`0C03ADEC`, 592 bytes, `src/gen_bk.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_bk/FUN_0c03adec.json`
@@ -18222,16 +18664,54 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 284 of 439 instructions
 
 ### FUN_0c03c070 (`0C03C070`, 1362 bytes, `src/gen_ef.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_ef/FUN_0c03c070.json`
+- equivalent on 1 development and 11 holdout cases, in `tests/gen_ef/FUN_0c03c070.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 78 of 578 instructions
+- mutant of rescue: empty case: r4=0CCF0000; r5=FFFFFFFF
+- mutant of rescue: empty case: r4=0CCF0000; r5=FFFFFFFF; r6=FFFFFFFF
+- mutant of rescue: empty case: 0C2A4700.4=00000001
+- mutant of rescue: empty case: r4=0CCF0000; 0C2A4700.4=00000005
+- mutant of rescue: empty case: r4=0CCF0000
+- mutant of rescue: empty case: r4=0CCF0000; r6=00000001
+- mutant of rescue: empty case: r4=0CCF0000; 0C2A4700.4=0CCF4000
+- mutant of rescue: empty case: r4=0CCF0000; r5=FFFFFFFF; r6=FFFFFFFF; 0C2A4700.4=00000001
+- mutant of rescue: empty case: r4=0CCF0000; r5=FFFFFFFF; 0C2A4AD0.4=00000002
+- mutant of rescue: empty case: r4=0CCF0000; r5=FFFFFFFF; r6=FFFFFFFF; 0C2AC5CC.4=00000002
+- the cases run 575 of 582 instructions
 
 ### FUN_0c03c5d8 (`0C03C5D8`, 1732 bytes, `src/gen_dr.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_dr/FUN_0c03c5d8.json`
+- equivalent on 1 development and 29 holdout cases, in `tests/gen_dr/FUN_0c03c5d8.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 178 of 707 instructions
+- mutant of rescue: empty case: 0C2A469C.4=00000004
+- mutant of rescue: empty case: call 9 (FUN_0c035a5e) r0=00000002
+- mutant of rescue: empty case: call 9 (FUN_0c035a5e) r0=00000002; 0C2A46F8.4=FFFFFFFF
+- mutant of rescue: empty case: call 8 (FUN_0c035a5e) r0=00000002
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4F80.4=00000005; 0C2A4700.4=00000001
+- mutant of rescue: empty case: 0C2A4670.4=00000600
+- mutant of rescue: empty case: call 8 (FUN_0c035a5e) r0=00000002; 0C2A4658.4=00000002
+- mutant of rescue: empty case: 0C2A4F80.4=00000004
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002
+- mutant of rescue: empty case: call 2 (FUN_0c034320) r0=00000001
+- mutant of rescue: empty case: 0C2A4F80.4=00000005
+- mutant of rescue: empty case: 0C2A4F80.4=00000006
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4F80.4=00000005
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4F80.4=00000006
+- mutant of rescue: empty case: call 9 (FUN_0c035a5e) r0=00000002; 0C2A4F84.4=00000006
+- mutant of rescue: empty case: 0C2A4F80.4=00000006; call 11 (FUN_0c035a5e) r0=00000002
+- mutant of rescue: empty case: 0C2A4F80.4=00000004; call 11 (FUN_0c035a5e) r0=00000002
+- mutant of rescue: empty case: call 3 (FUN_0c03c070) r0=0CC70000
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000008
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000004
+- mutant of rescue: empty case: 0C2A4670.4=00000600; 0C2A4670.4=00000200
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002; 0C2A4F84.4=00000005
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000010
+- mutant of rescue: empty case: 0C12BA20.4=FFFFFFFF
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A46E0.4=0CC84000
+- mutant of rescue: empty case: 0C2A4F80.4=00000005; 0C2A4F84.4=00000006
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002; 0C2A4F84.4=00000004
+- mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002; 0C2A4F84.4=00000006
+- the cases run 665 of 716 instructions
 
 ### FUN_0c03cc9c (`0C03CC9C`, 226 bytes, `src/gen_cl.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_cl/FUN_0c03cc9c.json`
@@ -19539,7 +20019,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 14 of 14 instructions
 
 ### FUN_0c03fbd8 (`0C03FBD8`, 882 bytes, `src/gen_bg.c`)
-- equivalent on 1 development and 11 holdout cases, in `tests/gen_bg/FUN_0c03fbd8.json`
+- equivalent on 1 development and 19 holdout cases, in `tests/gen_bg/FUN_0c03fbd8.json`
 - rescue: empty case
 - rescue: empty case
 - snapshot apple_drive_empty1 #1: the state at its entry in that frame (20 bytes read, 14 call answers)
@@ -19552,7 +20032,15 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - snapshot small_passenger1 #1: the state at its entry in that frame (20 bytes read, 3 call answers)
 - snapshot small_pickup1 #1: the state at its entry in that frame (20 bytes read, 3 call answers)
 - snapshot title1 #1: the state at its entry in that frame (20 bytes read, 14 call answers)
-- the cases run 96 of 382 instructions
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C2A59BC.4=4644327E
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C2A59BC.4=4644327E; 0C12CF70.4=00000002
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C2A59BC.4=4644327E; 0C12D090.4=00000006
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C2A59BC.4=4644327E; 0C12CFB0.4=00000003
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C2A59BC.4=4644327E; 0C12D090.4=00000008
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C2A59BC.4=4644327E; 0C12D090.4=00000006; 0C12D090.4=0CC08000; 0C12D090.4=00000009
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C2A59BC.4=4644327E; 0C12D090.4=00000006; 0C12D090.4=0CC08000
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C2A59BC.4=4644327E; 0C12CF6C.4=0CC04000
+- the cases run 350 of 401 instructions
 
 ### FUN_0c03ff4a (`0C03FF4A`, 540 bytes, `src/gen_fw.c`)
 - equivalent on 1 development and 11 holdout cases, in `tests/gen_fw/FUN_0c03ff4a.json`
@@ -20431,7 +20919,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 72 of 318 instructions
 
 ### FUN_0c042ba8 (`0C042BA8`, 2218 bytes, `src/gen_gm.c`)
-- equivalent on 1 development and 19 holdout cases, in `tests/gen_gm/FUN_0c042ba8.json`
+- equivalent on 1 development and 42 holdout cases, in `tests/gen_gm/FUN_0c042ba8.json`
 - rescue: empty case
 - rescue: empty case
 - snapshot apple_drive_empty1 #1: the state at its entry in that frame (96 bytes read, 14 call answers)
@@ -20452,7 +20940,30 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - snapshot small_pickup1 #2: the state at its entry in that frame (96 bytes read, 14 call answers)
 - snapshot title1 #1: the state at its entry in that frame (96 bytes read, 14 call answers)
 - snapshot title1 #2: the state at its entry in that frame (96 bytes read, 14 call answers)
-- the cases run 548 of 932 instructions
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C1A0874.4=FFFFFFFF
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C1A0824.4=0000800D
+- mutant of snapshot apple_drive_empty1 #2: the state at its entry in th: 0C1A060C.4=80000000
+- mutant of rescue: empty case: r4=0CC80000, 0CC80084.4=00000C00
+- mutant of rescue: empty case: r4=0CC84000, 0CC84084.4=00008000; 0CC8411C.4=0CC04000
+- mutant of rescue: empty case: r4=0CC50000, 0CC50084.4=00000002
+- mutant of snapshot apple_passenger1 #2: the state at its entry in that: 0C1A0524.4=00000000
+- mutant of rescue: empty case: r4=0CC7C000, 0CC7C084.4=00000200; 0CC7C0CC.4=BE9C71C8
+- mutant of rescue: empty case: r4=0CC7C000, 0CC7C084.4=00000200
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: call 8 (FUN_0c07ffac) r0=00001001
+- mutant of rescue: empty case: r4=0CC84000, 0CC84084.4=00008000
+- mutant of rescue: empty case: r4=0CC88000, 0CC88034.4=00000001
+- mutant of rescue: empty case: r4=0CC8C000, 0CC8C118.4=00000001
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C1A0870.4=3AEFDC9B
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: call 8 (FUN_0c07ffac) r0=00001001; 0C1A086C.4=4018E38E
+- mutant of rescue: empty case: r4=0CC84000, 0CC84084.4=00008000; 0CC8411C.4=0CC04000; 0CC840D4.4=FFFFFFF9
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C1A08B4.4=00000001
+- mutant of rescue: empty case: r4=0CC88000, 0CC88034.4=00000001; 0CC88070.4=3F866666
+- mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C1A0A1C.4=0CCFC000
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C1A08B4.4=FFFFFFFF
+- mutant of snapshot apple_drive_empty1 #1: the state at its entry in th: 0C1A0824.4=0000800D; 0C0F3B60.4=00084372
+- mutant of snapshot apple_drive_empty1 #2: the state at its entry in th: 0C1A060C.4=80000000; 0C1A0608.4=3AF0D844
+- mutant of rescue: empty case: r4=0CC7C000, 0CC7C084.4=00000200; 0CC7C0CC.4=BE9C71C8; 0CC7C0D0.4=3F800000
+- the cases run 914 of 939 instructions
 
 ### FUN_0c0435e2 (`0C0435E2`, 214 bytes, `src/gen_he.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_he/FUN_0c0435e2.json`
@@ -20747,10 +21258,15 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 166 of 166 instructions
 
 ### FUN_0c045284 (`0C045284`, 1512 bytes, `src/gen_hn.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_hn/FUN_0c045284.json`
+- equivalent on 1 development and 6 holdout cases, in `tests/gen_hn/FUN_0c045284.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 61 of 599 instructions
+- mutant of rescue: empty case: r4=0CC34000, 0CC34084.4=00000001; 0CC34084.4=00000005
+- mutant of rescue: empty case: r4=0CC34000, 0CC34084.4=00000001
+- mutant of rescue: empty case: r4=0CC34000, 0CC34084.4=00000001; 0CC34084.4=00000009
+- mutant of rescue: empty case: r4=0CC34000, 0CC34084.4=00000001; 0CC34084.4=00000005; 0CC34110.4=00000001
+- mutant of rescue: empty case: r4=0CC34000, 0CC34084.4=00000001; 0CC340CC.4=3FD8E38E
+- the cases run 529 of 607 instructions
 
 ### FUN_0c04586c (`0C04586C`, 758 bytes, `src/gen_ge.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_ge/FUN_0c04586c.json`
@@ -21730,7 +22246,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 53 of 55 instructions
 
 ### FUN_0c047cb6 (`0C047CB6`, 1452 bytes, `src/gen_gd.c`)
-- equivalent on 18 development and 19 holdout cases, in `tests/gen_gd/FUN_0c047cb6.json`
+- equivalent on 18 development and 59 holdout cases, in `tests/gen_gd/FUN_0c047cb6.json`
 - case 1
 - case 1
 - case 0
@@ -21768,14 +22284,92 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 70
 - case 101
 - snapshot title1 #1: the state at its entry in that frame (12 bytes read, 0 call answers)
-- the cases run 114 of 592 instructions
+- mutant of case 1: r6=00000004
+- mutant of case 1: r6=00000013
+- mutant of case 0: r6=0000000B
+- mutant of case 1: r6=00000014
+- mutant of case 0: r6=0000000C
+- mutant of case 1: r6=00000019
+- mutant of case 0: r6=00000006
+- mutant of case 1: r6=00000008; 0C1EC734.4=00000002
+- mutant of case 1: r6=00000015
+- mutant of case 1: r6=00000009
+- mutant of case 1: r6=0000000A
+- mutant of case 1: r6=0000000E
+- mutant of case 1: r6=00000012
+- mutant of case 1: r6=0000001F
+- mutant of case 0: r6=0000000A
+- mutant of case 0: r6=00000015
+- mutant of case 0: r6=0000001B
+- mutant of case 0: r6=00000008
+- mutant of case 0: r6=00000009
+- mutant of case 0: r6=00000017
+- mutant of case 0: r6=00000018
+- mutant of case 0: r6=0000001C
+- mutant of case 0: r6=00000016; 0C1EC734.4=00000002
+- mutant of case 48: 0C1EC848.4=00000065
+- mutant of case 0: r6=00000016
+- mutant of case 1: r6=00000005
+- mutant of case 1: r6=00000008
+- mutant of case 1: r6=0000001E
+- mutant of case 1: 0C1EC848.4=FFFFFFC4
+- mutant of case 1: r6=00000004; 0C1EC848.4=FFFFFF88
+- mutant of case 1: r6=00000005; 0C1EC848.4=FFFFFFD8
+- mutant of case 1: r6=00000009; 0C1EC848.4=FFFFFFC4
+- mutant of case 1: r6=0000000A; 0C1EC848.4=FFFFFFD8
+- mutant of case 1: r6=0000000E; 0C1EC848.4=FFFFFFC4
+- mutant of case 0: r6=00000006; 0C1EC848.4=FFFFFFC3
+- mutant of case 0: r6=00000008; 0C1EC848.4=FFFFFFE1
+- mutant of case 0: r6=00000009; 0C1EC848.4=FFFFFF87
+- mutant of case 0: r6=0000000A; 0C1EC848.4=FFFFFF3C
+- mutant of case 0: r6=0000000B; 0C1EC848.4=FFFFFFA5
+- mutant of case 0: r6=0000000C; 0C1EC848.4=FFFFFF6A
+- the cases run 615 of 624 instructions
 
 ### FUN_0c048262 (`0C048262`, 2758 bytes, `src/gen_ec.c`)
-- equivalent on 1 development and 2 holdout cases, in `tests/gen_ec/FUN_0c048262.json`
+- equivalent on 1 development and 40 holdout cases, in `tests/gen_ec/FUN_0c048262.json`
 - rescue: empty case
 - rescue: empty case
 - snapshot title1 #1: the state at its entry in that frame (17 bytes read, 2 call answers)
-- the cases run 227 of 1103 instructions
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000200
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001
+- mutant of rescue: empty case: r4=00000002
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C12FDB4.4=00000001
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB8.4=00000001; 0C12FDB8.4=00000002
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB8.4=00000001; 0C12FDB8.4=00000002; 0C12FDB8.4=00000003
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB8.4=00000001; 0C12FDB8.4=00000002; 0C12FDB8.4=00000003; 0C12FDB8.4=00000004
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB4.4=00000001; 0C12FDB8.4=00000001; 0C12FDB8.4=00000002
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB4.4=00000001; 0C12FDB8.4=00000001; 0C12FDB8.4=00000002; 0C1EC790.4=00010080
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; 0C12FDAC.4=0000000B
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB4.4=00000001
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB8.4=00000001
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB4.4=00000001; 0C12FDB8.4=00000001
+- mutant of rescue: empty case: r4=FFFFFFFF
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C2AC614.4=0000001E; 0C1EC78C.4=00000020
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; 0C12FDAC.4=0000000C
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB4.4=00000001; 0C12FDB8.4=00000001; 0C1EC790.4=000000FF
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB4.4=00000001; 0C12FDB8.4=00000001; 0C12FDB8.4=00000002; 0C1EC790.4=000000FF
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB8.4=00000001; 0C12FDB8.4=00000002; 0C12FDB8.4=00000003; 0C12FDB8.4=00000004; 0C1EC790.4=000000FF
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C1EC790.4=000000FF
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB4.4=00000001; 0C1EC790.4=000000FF
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB8.4=00000001; 0C1EC790.4=000000FF
+- mutant of rescue: empty case: r4=00000003
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB8.4=00000001; 0C12FDB8.4=00000002; 0C1EC790.4=000000FF
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB8.4=00000001; 0C12FDB8.4=00000002; 0C12FDB8.4=00000003; 0C1EC790.4=000000FF
+- mutant of rescue: empty case: r4=FFFFFFFE
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000080; 0C12FDB4.4=00000001; 0C1EC790.4=0CC6C000
+- mutant of rescue: empty case: 0C12D298.4=00000001
+- mutant of snapshot title1 #1: the state at its entry in that frame (17: 0C2AC2F4.4=00000001
+- mutant of rescue: empty case: r4=00000002; 0C1EC740.4=0CC3C000
+- mutant of rescue: empty case: r4=00000002; 0C12DF6C.4=FFFFFFFF
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000200; r4=00000001
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000040
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000010
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000200; 0C12FDB4.4=0CC68000
+- mutant of rescue: empty case: 0C2AC2F4.4=00000001; call 1 (FUN_0c0464de) r0=0CC48000; 0C1EC790.4=00000200; r4=00000002
+- the cases run 1044 of 1118 instructions
 
 ### FUN_0c048d70 (`0C048D70`, 24 bytes, `src/gen_a.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_a/FUN_0c048d70.json`
@@ -22052,7 +22646,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 748 of 937 instructions
 
 ### FUN_0c049f58 (`0C049F58`, 4214 bytes, `src/gen_il.c`)
-- equivalent on 3 development and 7 holdout cases, in `tests/gen_il/FUN_0c049f58.json`
+- equivalent on 3 development and 12 holdout cases, in `tests/gen_il/FUN_0c049f58.json`
 - rescue: flips 0C04A7C2
 - rescue: flips 0C04A7C2
 - rescue: flips 0C04A7B8
@@ -22063,7 +22657,12 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - snapshot small_dropoff1 #1: the state at its entry in that frame (44 bytes read, 176 call answers)
 - snapshot small_passenger1 #1: the state at its entry in that frame (42 bytes read, 188 call answers)
 - snapshot small_pickup1 #1: the state at its entry in that frame (44 bytes read, 151 call answers)
-- the cases run 790 of 1679 instructions
+- mutant of rescue: flips 0C04A7B8: call 17 (FUN_0c04ba04) r0=0CC44000
+- mutant of rescue: flips 0C04A7C2: 0C2ADEB4.4=44E73FFF
+- mutant of rescue: flips 0C04A7C2: 0C177D50.2=2001
+- mutant of rescue: flips 0C04A7B8: call 22 (FUN_0c05beca) r0=0CC48000
+- mutant of rescue: flips 0C04A7C2: call 21 (FUN_0c04b12a) r0=0CC40000
+- the cases run 861 of 1681 instructions
 
 ### FUN_0c04afec (`0C04AFEC`, 206 bytes, `src/gen_dh.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_dh/FUN_0c04afec.json`
@@ -24109,10 +24708,24 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 99 of 107 instructions
 
 ### FUN_0c04f826 (`0C04F826`, 960 bytes, `src/gen_ep.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_ep/FUN_0c04f826.json`
+- equivalent on 1 development and 15 holdout cases, in `tests/gen_ep/FUN_0c04f826.json`
 - case 0
 - case 3
-- the cases run 134 of 413 instructions
+- mutant of case 0: 0CF00000.4=00000005
+- mutant of case 0: 0C2B1D90.4=00000002
+- mutant of case 0: 0C131BEC.4=0CC14000, 0CC14000.4=0CC10000
+- mutant of case 3: 0C131BEC.4=0CC20000, 0CC20000.4=0CC1C000
+- mutant of case 3: 0C2B1D90.4=00000001
+- mutant of case 0: 0C2B1CE4.4=BF800000
+- mutant of case 0: 0C2B1D90.4=00000002; 0C2B1CE4.4=3F800000
+- mutant of case 0: 0C2B1D90.4=00000002; 0C2B1CE8.4=3F800000
+- mutant of case 0: 0C2B1D90.4=00000002; 0C2B1CE8.4=BF800000
+- mutant of case 3: 0C2B1D90.4=00000001; 0C2B1CEC.4=BF800000
+- mutant of case 0: 0C2B1D90.4=00000002; 0C2B1CEC.4=BF800000
+- mutant of case 0: 0C2B1D90.4=00000002; 0C2B1CE4.4=BF800000
+- mutant of case 3: 0C2B1D90.4=00000001; 0C2B1CE4.4=00000000
+- mutant of case 3: 0C2B1DB8.4=00000002
+- the cases run 371 of 415 instructions
 
 ### FUN_0c04fbf0 (`0C04FBF0`, 138 bytes, `src/gen_q.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_q/FUN_0c04fbf0.json`
@@ -25177,7 +25790,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 85 of 145 instructions
 
 ### FUN_0c050958 (`0C050958`, 968 bytes, `src/gen_az.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_az/FUN_0c050958.json`
+- equivalent on 18 development and 37 holdout cases, in `tests/gen_az/FUN_0c050958.json`
 - case 2
 - case 1
 - case 3
@@ -25214,7 +25827,26 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 61
 - case 102
 - case 70
-- the cases run 82 of 436 instructions
+- mutant of case 2: 0C2AC2F0.4=00000000; r4=00000073
+- mutant of case 1: 0C2AC2F0.4=00000000; r4=0000004B
+- mutant of case 1: 0C2AC2F0.4=00000000; r4=00000064
+- mutant of case 2: 0C2AC2F0.4=00000000; r4=0000002D
+- mutant of case 1: 0C2AC2F0.4=00000000; r4=00000001
+- mutant of case 1: 0C2AC2F0.4=00000000
+- mutant of case 2: 0C2AC2F0.4=00000000
+- mutant of case 2: 0C2AC2F0.4=00000000; r4=00000073; r4=00000001
+- mutant of case 1: 0C2AC2F0.4=00000000; r4=0000012C; call 1 (FUN_0c03f154) r0=00000003; call 2 (FUN_0c03f154) r0=00000000
+- mutant of case 2: r4=00000064
+- mutant of case 1: r4=000000F0
+- mutant of case 1: 0C2AC2F0.4=00000000; r4=0000014A; call 1 (FUN_0c03f154) r0=00000001
+- mutant of case 1: 0C2AC2F0.4=00000000; r4=0000014A
+- mutant of case 1: 0C2AC2F0.4=00000000; r4=0000012C
+- mutant of case 1: 0C2AC2F0.4=00000000; r4=0000012C; call 1 (FUN_0c03f154) r0=00000003
+- mutant of case 2: 0C2AC2F0.4=00000000; r4=00000073; r4=00000040
+- mutant of case 1: 0C2AC2F0.4=00000000; r4=00000064; r4=00000040
+- mutant of case 1: 0C2AC2F0.4=00000000; r4=00000001; r4=00000028
+- mutant of case 1: 0C2AC2F0.4=00000000; r4=0000014A; r4=00000000
+- the cases run 438 of 442 instructions
 
 ### FUN_0c050d20 (`0C050D20`, 68 bytes, `src/gen_ae.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_ae/FUN_0c050d20.json`
@@ -25366,7 +25998,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 9 of 9 instructions
 
 ### FUN_0c0518b8 (`0C0518B8`, 920 bytes, `src/gen_gq.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/gen_gq/FUN_0c0518b8.json`
+- equivalent on 18 development and 21 holdout cases, in `tests/gen_gq/FUN_0c0518b8.json`
 - case 12
 - case 0
 - case 14
@@ -25403,7 +26035,10 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 81
 - case 121
 - case 149
-- the cases run 69 of 359 instructions
+- mutant of case 0: 0C177CE8.4=0CCC0000
+- mutant of case 0: 0C177CE8.4=0CCC0000; 0C1ECCB4.4=00000001
+- mutant of case 0: 0C177CE8.4=0CCC0000; 0C1ECCB4.4=00000001; 0C2B1E08.4=FFFFFFFF
+- the cases run 123 of 361 instructions
 
 ### FUN_0c051dd4 (`0C051DD4`, 78 bytes, `src/gen_ac.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_ac/FUN_0c051dd4.json`
@@ -26850,7 +27485,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 0 of 61 instructions (nothing compared: no case showed a write, a call, a device access or a change of SR, and the C returns nothing)
 
 ### FUN_0c055e84 (`0C055E84`, 868 bytes, `src/gen_bb.c`)
-- equivalent on 4 development and 3 holdout cases, in `tests/gen_bb/FUN_0c055e84.json`
+- equivalent on 4 development and 7 holdout cases, in `tests/gen_bb/FUN_0c055e84.json`
 - case 0
 - case 2
 - case 4
@@ -26858,7 +27493,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 1
 - case 3
 - case 5
-- the cases run 54 of 383 instructions
+- mutant of case 0: 0C2B3110.4=0000002B
+- mutant of case 0: 0C2B3110.4=0000002B; 0C2B326C.4=00000001; 0C2B326C.4=0000000F
+- mutant of case 0: 0C2B3110.4=0000002B; 0C2B326C.4=00000001
+- mutant of case 0: 0C2B3110.4=0000002B; 0C2B326C.4=00000001; 0C2B326C.4=0000000F; 0C2B326C.4=00000033
+- the cases run 319 of 386 instructions
 
 ### FUN_0c05626c (`0C05626C`, 246 bytes, `src/gen_cj.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_cj/FUN_0c05626c.json`
@@ -30456,10 +31095,18 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 28 of 41 instructions
 
 ### FUN_0c05c2cc (`0C05C2CC`, 1452 bytes, `src/gen_go.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_go/FUN_0c05c2cc.json`
+- equivalent on 1 development and 9 holdout cases, in `tests/gen_go/FUN_0c05c2cc.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 91 of 540 instructions
+- mutant of rescue: empty case: 0C136CB4.4=0CCE4000
+- mutant of rescue: empty case: 0C136CB0.4=00000001; 0C136CB0.4=00000002; 0C136CB0.4=00000003
+- mutant of rescue: empty case: 0C136CB0.4=00000001
+- mutant of rescue: empty case: 0C136CB0.4=00000001; 0C136CB0.4=00000002
+- mutant of rescue: empty case: 0C136CB0.4=00000001; 0C136CB0.4=00000002; 0C136CB0.4=00000003; 0C136CB0.4=00000004
+- mutant of rescue: empty case: 0C136CB0.4=00000001; 0C136CB0.4=00000002; 0C136CB0.4=00000003; 0C136CB0.4=00000004; 0C136CB0.4=00000005
+- mutant of rescue: empty case: r4=0CCE0000
+- mutant of rescue: empty case: 0C136CB0.4=00000001; 0C136CB0.4=00000002; 0C136CB0.4=00000003; 0C136CB0.4=00000004; 0C136CB0.4=00000005; 0C136CB0.4=00000006
+- the cases run 537 of 559 instructions
 
 ### FUN_0c05c878 (`0C05C878`, 170 bytes, `src/gen_i.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_i/FUN_0c05c878.json`
@@ -35313,10 +35960,24 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 125 of 135 instructions
 
 ### FUN_0c063a2a (`0C063A2A`, 3116 bytes, `src/gen_eb.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_eb/FUN_0c063a2a.json`
+- equivalent on 1 development and 15 holdout cases, in `tests/gen_eb/FUN_0c063a2a.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 93 of 1269 instructions
+- mutant of rescue: empty case: r4=0CCD8000, 0CCD8004.4=00000003; r5=0CCA0000
+- mutant of rescue: empty case: r4=0CCD8000, 0CCD8004.4=00000003
+- mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002
+- mutant of rescue: empty case: r4=0CCD4000, 0CCD4004.4=00000004
+- mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; 0CCDC000.4=0CCAC000, 0CCAC088.4=00000005
+- mutant of rescue: empty case: r4=0CC08000, 0CC08004.4=00000001
+- mutant of rescue: empty case: r4=0CC08000, 0CC08004.4=00000001; 0CC08014.4=00000001
+- mutant of rescue: empty case: r4=0CCD8000, 0CCD8004.4=00000003; r5=0CCA0000; 0CCD8014.4=00000002
+- mutant of rescue: empty case: r4=0CCD8000, 0CCD8004.4=00000003; 0CCD8014.4=00000001
+- mutant of rescue: empty case: r4=0CCD8000, 0CCD8004.4=00000003; r5=0CCA0000; 0CCD8014.4=00000001
+- mutant of rescue: empty case: r4=0CCD4000, 0CCD4004.4=00000004; 0CCD4014.4=00000001
+- mutant of rescue: empty case: r4=0CC14000, 0CC14008.4=00000002
+- mutant of rescue: empty case: r4=0CCDC000, 0CCDC004.4=00000002; r5=0CCA8000
+- mutant of rescue: empty case: r4=0CC0C000, 0CC0C014.4=00000001
+- the cases run 923 of 1288 instructions
 
 ### FUN_0c064656 (`0C064656`, 138 bytes, `src/gen_du.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_du/FUN_0c064656.json`

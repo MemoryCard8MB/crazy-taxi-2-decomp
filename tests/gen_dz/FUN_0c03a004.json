@@ -9,6 +9,158 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=000000FF; 0C2A4F80.4=00000004",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "ff000000",
+    "0C2A4F80": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C1EC83C.4=00000018",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "01000000",
+    "0C2A46F4": "0080c80c",
+    "0C1EC83C": "18000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "01000000",
+    "0C2A46F4": "0080c80c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C2A4FA8.4=00000001; 0C2A4FA8.4=FFFFFFFF; 0C2A4FAC.4=FFFFFFFF",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "01000000",
+    "0C2A46F4": "0080c80c",
+    "0C2A4FA8": "ffffffff",
+    "0C2A4FAC": "ffffffff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A4F80.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "01000000",
+    "0C2A4F80": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=000000FF; 0C2A4F80.4=00000004; 0C2A4F80.4=00000005",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "ff000000",
+    "0C2A4F80": "05000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=000000FF; 0C2A4F80.4=00000004; 0C2A4700.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "ff000000",
+    "0C2A4F80": "04000000",
+    "0C2A4700": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C2A46FC.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "01000000",
+    "0C2A46F4": "0080c80c",
+    "0C2A46FC": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C2A4FA8.4=00000001; 0C2A4FA8.4=FFFFFFFF",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "01000000",
+    "0C2A46F4": "0080c80c",
+    "0C2A4FA8": "ffffffff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A4FAC.4=FFFFFFFE",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "01000000",
+    "0C2A4FAC": "feffffff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C2A4FA8.4=00000001; 0C2A46FC.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "01000000",
+    "0C2A46F4": "0080c80c",
+    "0C2A4FA8": "01000000",
+    "0C2A46FC": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=000000FF",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "ff000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C2A4FA8.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "01000000",
+    "0C2A46F4": "0080c80c",
+    "0C2A4FA8": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A46F4.4=0CC88000; 0C2A4FA8.4=00000001; 0C2A4FA8.4=FFFFFFFF; 0C2A4FAC.4=FFFFFFFF; 0C2A46F4.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "01000000",
+    "0C2A46F4": "01000000",
+    "0C2A4FA8": "ffffffff",
+    "0C2A4FAC": "ffffffff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A46E8.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2A46E8": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=00000001; 0C2A4F80.4=00000003",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "01000000",
+    "0C2A4F80": "03000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4FB0.4=000000FF; 0C2A4F80.4=00000004; 0C2A4F80.4=00000005; 0C2A4F80.4=0CCC0000",
+   "regs": {},
+   "poke": {
+    "0C2A4FB0": "ff000000",
+    "0C2A4F80": "0000cc0c"
+   }
   }
  ]
 }

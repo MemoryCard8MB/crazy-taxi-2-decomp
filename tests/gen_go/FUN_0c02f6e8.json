@@ -810,6 +810,91 @@
     }
    ],
    "about": "snapshot title1 #2: the state at its entry in that frame (12 bytes read, 1 call answers)"
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000",
+   "regs": {
+    "r4": "0CC34000"
+   },
+   "poke": {
+    "0CC34020": "0000c30c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000; 0CC34054.4=0CC48000, 0CC48008.4=00000001; 0CC48004.4=0CC5C000, 0CC5C004.4=3F800000",
+   "regs": {
+    "r4": "0CC34000"
+   },
+   "poke": {
+    "0CC34020": "0000c30c",
+    "0CC34054": "0080c40c",
+    "0CC48008": "01000000",
+    "0CC48004": "00c0c50c",
+    "0CC5C004": "0000803f"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000; 0CC34054.4=0CC48000, 0CC48008.4=00000001",
+   "regs": {
+    "r4": "0CC34000"
+   },
+   "poke": {
+    "0CC34020": "0000c30c",
+    "0CC34054": "0080c40c",
+    "0CC48008": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000; 0CC34054.4=0CC48000, 0CC48008.4=00000001; 0CC48004.4=0CC5C000, 0CC5C004.4=3F800000; 0CC5C004.4=BF800000",
+   "regs": {
+    "r4": "0CC34000"
+   },
+   "poke": {
+    "0CC34020": "0000c30c",
+    "0CC34054": "0080c40c",
+    "0CC48008": "01000000",
+    "0CC48004": "00c0c50c",
+    "0CC5C004": "000080bf"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC38000, 0CC38068.4=00000005",
+   "regs": {
+    "r4": "0CC38000"
+   },
+   "poke": {
+    "0CC38068": "05000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000; 0CC34020.4=00000001",
+   "regs": {
+    "r4": "0CC34000"
+   },
+   "poke": {
+    "0CC34020": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000; 0CC34020.4=00000001; 0CC3401C.4=3F8147AE",
+   "regs": {
+    "r4": "0CC34000"
+   },
+   "poke": {
+    "0CC34020": "01000000",
+    "0CC3401C": "ae47813f"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC34000, 0CC34020.4=0CC30000; 0CC34054.4=0CC54000, 0CC54010.4=0CC50000",
+   "regs": {
+    "r4": "0CC34000"
+   },
+   "poke": {
+    "0CC34020": "0000c30c",
+    "0CC34054": "0040c50c",
+    "0CC54010": "0000c50c"
+   }
   }
  ]
 }

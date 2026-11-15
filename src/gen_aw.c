@@ -653,6 +653,7 @@ int FUN_0c0108fe(int a4)
     if (v0_1) goto L_C010D90;
     (((struct o3B4_uint *)(v0_0))->v) = 0x2;
     (((struct o3B8_uint *)(v0_0))->v) = v0_3;
+    v0_3 = (0x3);     /* manual: 0C010D5A mov #3,r6, the instruction just before the shared label: FUN_0c057aec gets 3, not 90 */
     L_C010D5C:;
     v0_0 = *(signed char *)((R13 + 0x2C));
     return FUN_0c057aec((unsigned char)v0_0, 0x100000, v0_3);
@@ -715,6 +716,7 @@ int FUN_0c0108fe(int a4)
     if (v0_6) goto L_C010C66;
     (((struct o3B4_uint *)(v0_0))->v) = 0x2;
     (((struct o3B8_uint *)(v0_0))->v) = v0_3;
+    v0_3 = (0x0);     /* manual: the delay slot of the original's bra (0C010C64 mov #0,r6): FUN_0c057aec gets 0, not 90 */
     goto L_C010D5C;
     L_C010C66:;
     v0_3 = *(signed char *)((R13 + 0x2D));
