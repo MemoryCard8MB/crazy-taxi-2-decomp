@@ -23,7 +23,7 @@ everything game-derived on your machine, and `.gitignore` keeps it out of git.
 
 <!-- progress -->
 ```
-TOTAL TEST COVERAGE          60.2%  the instructions the cases ran, of all instructions, over the 3658 functions that can be C; the 3655 functions that reached the check are measured, the others count 0
+TOTAL TEST COVERAGE          60.3%  the instructions the cases ran, of all instructions, over the 3658 functions that can be C; the 3655 functions that reached the check are measured, the others count 0
 FUNCTIONS LEFT  (99.9% complete) 3  of the 3658 functions that can be C (188 with no C form are counted apart)
 BYTES LEFT    (99.9% complete) 334  of 589190 bytes of code that can be C
 FUNCTIONS                           

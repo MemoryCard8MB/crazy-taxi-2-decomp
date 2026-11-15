@@ -980,63 +980,6 @@ int FUN_0c01c900(void)
     return FUN_0c06cd60();
 }
 
-int FUN_0c02fb94(int a4, int a5)
-{
-    int t0;
-    register int t1;
-    register int t3;
-
-    t0 = *(short *)((a4 + 0x10));
-    t1 = t0;
-    if (t0 == -1) {
-    } else {
-        FUN_0c07ff00();
-        FUN_0c07ff00();
-        (((struct o18_float *)(a5))->v) = 0.0f;
-        FUN_0c073360();
-        nlRotateAY((*(int *)((a4 + 0xC))));
-        t0 = *(short *)((a4 + 0x10));
-        nlRotateAX((*(int *)((0xC1296BC + ((((t0 << 2) << 1) + t0) << 2)))));
-        GetRotVec((a5 + 0x30));
-        nlPopMatrix(0x1);
-        FUN_0c07ff00();
-        *(unsigned int *)((a5 + 0x28)) = (a5 + 0x30);
-        FUN_0c07ff00();
-        t0 = *(short *)((a4 + 0x10));
-        if ((t0 != 17) && ((t0 != 20) && ((t0 != 19) && ((t0 != 7) && (t0 != 16))))) {
-            (((struct o68_uint *)(a5))->v) = 0x1;
-        } else {
-            (((struct o68_uint *)(a5))->v) = 0x0;
-        }
-        t0 = *(short *)((a4 + 0x10));
-        (((struct o54_uint *)(a5))->v) = (((((t0 << 2) << 1) + t0) << 2) + 0xC1296B0);
-        (((struct o6C_uint *)(a5))->v) = (*(short *)((a4 + 0x12)));
-        (((struct o64_uint *)(a5))->v) = (*(int *)(((*(int *)((0xC129CCC + ((*(short *)((a4 + 0x10))) << 2)))) + ((*(short *)((a4 + 0x12))) << 2))));
-        t0 = *(short *)((a4 + 0x10));
-        if ((t0 != 7) && ((t0 != 8) && ((t0 != 10) && (t0 != 14)))) {
-            t0 = *(short *)((a4 + 0x10));
-            if ((t0 != 11) && ((t0 != 12) && ((t0 != 15) && (t0 != 16)))) {
-                t0 = *(short *)((a4 + 0x10));
-                if (t0 == 19) {
-                    t1 = (SetColliObj(a5, 0x18));
-                } else {
-                    t3 = 0x15;
-                    if (t0 == 20) {
-                        t3 = 0x19;
-                    }
-                    t1 = (SetColliObj(a5, t3));
-                }
-                t0 = t1;
-            } else {
-                t0 = (SetColliObj(a5, 0x17));
-            }
-            t1 = t0;
-        } else {
-            t1 = (SetColliObj(a5, 0x16));
-        }
-    }
-    return t1;
-}
 
 void FUN_0c056c46(void)
 {
@@ -1244,61 +1187,6 @@ int FUN_0c01c290(void)
     return t66;
 }
 
-int FUN_0c026d10(void)
-{
-    register int t0;
-    register int t1;
-
-    t0 = *(int *)0xC1EC71C;
-    t1 = *(int *)0xC175C84;
-    switch (t0) {
-    case 0:
-        if (t1 == 1) {
-            *(unsigned int *)0xC270B68 = 0x0;
-            (((struct oC_uint *)0xC270B04)->v) = 0x0;
-            *(unsigned int *)0xC270BB8 = 0x0;
-        } else {
-            *(unsigned int *)0xC270B68 = 0x1;
-            (((struct oC_uint *)0xC270B04)->v) = 0x1;
-            *(unsigned int *)0xC270BB8 = 0x1;
-        }
-        t0 = *(int *)0xC270B68;
-        FUN_0c0272a6((((((t0 << 2) << 1) + t0) << 2) + 0xC09D670));
-        *(volatile int *)0xC270B68;
-        FUN_0c07ff00();
-        break;
-    case 1:
-        if (t1 == 1) {
-            *(unsigned int *)0xC270B68 = 0x5;
-            (((struct oC_uint *)0xC270B04)->v) = 0x5;
-            *(unsigned int *)0xC270BB8 = 0x5;
-            t0 = 0xC09D76C;
-        } else {
-            *(unsigned int *)0xC270B68 = 0x0;
-            (((struct oC_uint *)0xC270B04)->v) = 0x0;
-            *(unsigned int *)0xC270BB8 = 0x0;
-            t0 = 0xC09D6B8;
-        }
-        FUN_0c0272a6(t0);
-        *(volatile int *)0xC270B68;
-        FUN_0c07ff00();
-        break;
-    case 2:
-        *(volatile int *)0xC2ADEB8;
-        *(unsigned int *)0xC270B68 = 0x0;
-        (((struct oC_uint *)0xC270B04)->v) = 0x0;
-        *(unsigned int *)0xC270BB8 = 0x0;
-        t0 = *(int *)0xC270B68;
-        FUN_0c0272a6((((((t0 << 2) << 1) + t0) << 2) + 0xC09D7D8));
-        *(volatile int *)0xC270B68;
-        FUN_0c07ff00();
-        break;
-    }
-    FUN_0c07ff00();
-    (((struct o0_float *)0xC270B04)->v) = 1.0f;
-    (((struct o4_float *)0xC270B04)->v) = 0.0f;
-    return 0xC270B04;
-}
 
 int FUN_0c03baba(int a4, int a5, float f4, float f5)
 {

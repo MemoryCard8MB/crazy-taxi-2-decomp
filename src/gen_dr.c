@@ -1115,67 +1115,6 @@ int FUN_0c03dd80(void)
     return t0;
 }
 
-int FUN_0c04e6bc(void)
-{
-    register int t7;
-
-    nlMatrixMode(0x3);
-    nlUnitMatrix();
-    nlPerspective(0x1D28, 1.33333337f, 0.300000012f, 300.0f);
-    nlMatrixMode(0x1);
-    (((struct o18_ushort *)0xC2B1D48)->v) = 0xEB00;
-    (((struct o1A_ushort *)0xC2B1D48)->v) = 0xF200;
-    (((struct o14_float *)0xC2B1D48)->v) = 0.800000012f;
-    (((struct o24_uint *)0xC2B1D48)->v) = 0x8;
-    FUN_0c04f224();
-    CarSel_SetFog();
-    FUN_0c07ff00();
-    (((struct o0_ushort *)0xC2B1D48)->v) = 0x0;
-    (((struct o2_ushort *)0xC2B1D48)->v) = 0x0;
-    (((struct o4_ushort *)0xC2B1D48)->v) = 0x0;
-    t7 = 0xC2B1D1C;
-    for (;;) {
-        *(unsigned int *)((t7 + 0x0)) = 0x0;
-        t7 = (t7 + 0x4);
-        if ((unsigned int)t7 >= (unsigned int)0xC2B1D3C) {
-            break;
-        }
-    }
-    (((struct o10_uint *)0xC2B1CE4)->v) = 0x0;
-    (((struct o14_uint *)0xC2B1CE4)->v) = 0x0;
-    FUN_0c07ff00();
-    (((struct o2C_ushort *)0xC2B1CE4)->v) = ((((struct o8_short *)0xC131E58)->v));
-    (((struct o30_uint *)0xC2B1CE4)->v) = 0x19;
-    (((struct o34_uint *)0xC2B1CE4)->v) = 0x19;
-    (((struct o2C_uint *)0xC2B1D88)->v) = 0x0;
-    *(float *)0xC131C7C = 0.0f;
-    FUN_0c04fbf0();
-    FUN_0c04f40a();
-    (((struct o28_uint *)0xC2B1D48)->v) = 0x3BF;
-    (((struct o18_uint *)0xC2B1CE4)->v) = 0x0;
-    (((struct o2C_uint *)0xC2B1D48)->v) = 0x0;
-    (((struct o8_uint *)0xC2B1D88)->v) = 0x2;
-    (((struct o3C_uint *)0xC2B1D48)->v) = 0x0;
-    (((struct o0_uint *)0xC2B1D88)->v) = 0x0;
-    (((struct o30_uchar *)0xC2B1D48)->v) = 0x0;
-    (((struct o34_uint *)0xC2B1D48)->v) = 0x0;
-    (((struct o4_uint *)0xC2B1D88)->v) = 0x0;
-    (((struct oC_uint *)0xC2B1D88)->v) = 0x0;
-    (((struct o10_uint *)0xC2B1D88)->v) = 0x0;
-    (((struct o14_uint *)0xC2B1D88)->v) = 0x0;
-    (((struct o18_uint *)0xC2B1D88)->v) = 0x0;
-    (((struct o1C_uint *)0xC2B1D88)->v) = 0x0;
-    (((struct o20_uint *)0xC2B1D88)->v) = (int)(*(float *)0xC1EC800);
-    (((struct o24_uint *)0xC2B1D88)->v) = 0x0;
-    (((struct o28_uint *)0xC2B1D88)->v) = 0x0;
-    (((struct o0_uint *)0xC2B1B9C)->v) = 0x0;
-    (((struct o4_uint *)0xC2B1B9C)->v) = 0x0;
-    (((struct o0_float *)0xC2B1CE4)->v) = 0.0f;
-    (((struct o4_float *)0xC2B1CE4)->v) = 0.0f;
-    (((struct o30_uint *)0xC2B1D88)->v) = 0x0;
-    (((struct o0_uint *)0xC131E58)->v) = 0x1;
-    return 0xC131E58;
-}
 
 int FUN_0c038218(void)
 {

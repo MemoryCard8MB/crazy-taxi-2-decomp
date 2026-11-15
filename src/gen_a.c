@@ -1748,20 +1748,8 @@ int ADXB_CheckSpsd(int a4)
     return (((t0 == 0)) ? 1 : 0);
 }
 
-int FUN_0c010080(void)
-{
-    return (FUN_0c07ff00());
-}
 
-int FUN_0c018c78(int a4)
-{
-    return (FUN_0c07ff00());
-}
 
-int FUN_0c018c18(int a4)
-{
-    return (FUN_0c07ff00());
-}
 
 int FUN_0c018de0(void)
 {
@@ -1780,10 +1768,6 @@ int FUN_0c01efc0(void)
     return FUN_0c01eea6();
 }
 
-int FUN_0c026bd6(int a4)
-{
-    return (FUN_0c07ff00());
-}
 
 void FUN_0c0281a4(int a4)
 {
@@ -1855,15 +1839,7 @@ int FUN_0c051844(int a4, int a5, int a6)
     return 0x14;
 }
 
-int FUN_0c05b3ea(void)
-{
-    return (FUN_0c07ff00());
-}
 
-int FUN_0c05f43a(int a4)
-{
-    return (FUN_0c07ff00());
-}
 
 int FUN_0c061bae(void)
 {

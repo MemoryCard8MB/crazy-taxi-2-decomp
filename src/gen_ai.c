@@ -540,21 +540,6 @@ int syIntAdrChk_getchar(int a4, int a5)
     return t0;
 }
 
-int SetAdvCamera(int a4, int a5)
-{
-    register int t0;
-
-    t0 = 0x3;
-    if (((int)a5 >= 0) && ((int)a5 <= (int)0x4)) {
-        t0 = a5;
-    }
-    *(unsigned int *)0xC11CFA8 = t0;
-    FUN_0c07ff00();
-    FUN_0c018c96(0x0, 0x0, 0x0, 0x0);
-    t0 = FUN_0c018b00(0x8);
-    *(unsigned int *)0xC177E80 = 0x1;
-    return t0;
-}
 
 int pfPutSEGALogo(void)
 {
@@ -1023,19 +1008,6 @@ int carFlipTravelDir(int a4)
     return t5;
 }
 
-int FUN_0c02d826(int a4)
-{
-    register int t2;
-
-    FUN_0c07ff00();
-    (((struct o0_uint *)0xC2777F0)->v) = 0x0;
-    (((struct o8_float *)0xC2777F0)->v) = 0.0f;
-    (((struct oC_float *)0xC2777F0)->v) = 100.0f;
-    (((struct o10_uint *)0xC2777F0)->v) = 0x0;
-    t2 = CheckAreaGrid(0x0, (*(int *)0xC17591C));
-    (((struct o4_uint *)0xC2777F0)->v) = t2;
-    return t2;
-}
 
 int Put2DObj(int a4, float f4, float f5)
 {
@@ -1581,20 +1553,6 @@ void FUN_0c06ac1a(int a4, int a5, int a6, int a7)
     }
 }
 
-int FUN_0c06e5f2(void)
-{
-    (((struct o0_uint *)0xC2BB3AC)->v) = (*(int *)0xC177D58);
-    FUN_0c07ff00();
-    FUN_0c07ff00();
-    (((struct o1C_uchar *)0xC2BB3AC)->v) = (*(signed char *)0xC177D50);
-    (((struct o1D_uchar *)0xC2BB3AC)->v) = (*(signed char *)0xC177D51);
-    (((struct o1E_uchar *)0xC2BB3AC)->v) = (*(signed char *)0xC177D52);
-    (((struct o1F_uchar *)0xC2BB3AC)->v) = (*(signed char *)0xC177D53);
-    (((struct o20_uchar *)0xC2BB3AC)->v) = (*(signed char *)0xC177D54);
-    (((struct o21_uchar *)0xC2BB3AC)->v) = (*(signed char *)0xC177D55);
-    (((struct o24_float *)0xC2BB3AC)->v) = (*(float *)0xC177D9C);
-    return 0xC2BB3D0;
-}
 
 int nlReloadPalette(int a4, int a5)
 {
@@ -2181,14 +2139,6 @@ int FUN_0c046466(void)
     return (((unsigned int)((((struct o0_int *)0xC12FAAC)->v)) >> 16) & 0x7FFF);
 }
 
-int getReplayPoint(Stk4 s)
-{
-
-    *(volatile int *)0xC2ADA60;
-    *(volatile int *)0xC2A59CC;
-    FUN_0c07ff00();
-    return (FUN_0c07ff00());
-}
 
 int HomingPos1(int a4, int a5, int a6, int a7, int a8, float f4)
 {
@@ -2539,12 +2489,6 @@ int FUN_0c01ed38(int a4)
     return (int)((float)t2 * u3);
 }
 
-int GetRotVec(int a4, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11)
-{
-    nlGetMatrix8(0x0, f4, f5, f6, f7, f8, f9, f10, f11);
-    FUN_0c07ff00();
-    return (FUN_0c07ff00());
-}
 
 int FUN_0c054f24(void)
 {

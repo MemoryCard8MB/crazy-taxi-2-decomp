@@ -90,36 +90,6 @@ int FUN_0c055b84(void)
     return FUN_0c026ce6();
 }
 
-int FUN_0c0297f4(int a4, int a5, float f4)
-{
-    int stk[3];
-    register int t0;
-    register float u2;
-    register float u4;
-    register float u7;
-    register float u10;
-
-    *(float *)(((int)stk + 8)) = 1.0f;
-    t0 = FUN_0c029866(a4, a5, ((int)stk + 0), f4);
-    if (t0 != 0) {
-        u2 = *(float *)(((int)stk + 8));
-        u4 = (*(float *)((a4 + 0x0)));
-        u4 = u4 + u2 * (*(float *)((a5 + 0x0)));
-        (((struct o0_float *)0xC270F9C)->v) = u4;
-        u7 = ((((struct o4_float *)(a4))->v));
-        u7 = u7 + u2 * ((((struct o4_float *)(a5))->v));
-        (((struct o4_float *)0xC270F9C)->v) = u7;
-        u10 = ((((struct o8_float *)(a4))->v));
-        u10 = u10 + u2 * ((((struct o8_float *)(a5))->v));
-        (((struct o8_float *)0xC270F9C)->v) = u10;
-        *(volatile int *)(((int)stk + 0));
-        (((struct o18_float *)0xC270F9C)->v) = (FUN_0c07ff00());
-        (((struct o1C_uint *)0xC270F9C)->v) = ((((struct o44_int *)((*(int *)(((int)stk + 0)))))->v));
-    } else {
-        (((struct o1C_uint *)0xC270F9C)->v) = 0xFFFFFFFF;
-    }
-    return 0xC270F9C;
-}
 
 int setObjGroupOpen(int a4)
 {

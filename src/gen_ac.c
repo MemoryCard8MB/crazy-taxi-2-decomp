@@ -1529,56 +1529,7 @@ int FUN_0c01ca48(void)
     return t12;
 }
 
-int FUN_0c01f95a(void)
-{
-    int stk[8];
-    register int t0;
-    register int t16;
 
-    t0 = *(int *)0xC1EC71C;
-    if (t0 != 0) {
-        if (t0 != 1) {
-            t16 = t0;
-            if (t0 != 2) {
-            } else {
-                t16 = (FUN_0c04b1e6());
-            }
-        } else {
-            FUN_0c01422e(((int)stk + 0));
-            FUN_0c07ff00();
-            t16 = (gdc_CoursePointLoadReq((*(float *)0xC01FA9C)));
-        }
-    } else {
-        FUN_0c01422e(((int)stk + 0));
-        FUN_0c07ff00();
-        t16 = (gdc_CoursePointLoadReq((*(float *)0xC01FA9C)));
-    }
-    return t16;
-}
-
-int FUN_0c029574(int a4)
-{
-    register int t2;
-    register int t4;
-    register int t6;
-    register int t7;
-
-    if ((int)a4 < 0) {
-        return FUN_0c029528();
-    }
-    t2 = a4;
-    if ((int)a4 >= (int)(*(int *)0xC09DFA0)) {
-        t2 = 0x0;
-    }
-    t4 = 0xC09DF24;
-    t6 = 0xC270F54;
-    for (;;) { t7 = *(int *)t4; t4 = (t4 + 4); if ((unsigned int)((0xC09DF24 + 68)) < (unsigned int)t4) break; *(unsigned int *)t6 = t7; t6 = (t6 + 4); }
-    (((struct o0_uint *)0xC270F2C)->v) = (*(int *)(((t2 << 2) + 0xC128D78)));
-    *(volatile int *)(((t2 << 2) + 0xC09DF68));
-    FUN_0c07fdc8();
-    (((struct o24_uint *)0xC270F2C)->v) = 0xC113578;
-    return FUN_0c02bcf8();
-}
 
 int FUN_0c02f1bc(void)
 {
@@ -1604,19 +1555,6 @@ int FUN_0c02f1bc(void)
     return t0;
 }
 
-int CarSel_SetLight(void)
-{
-    int stk[3];
-
-    FUN_0c07ff00();
-    FUN_0c073360();
-    nlRotateAY((unsigned short)((((struct o6_short *)0xC2B3190)->v)));
-    nlRotateAX((unsigned short)((((struct o4_short *)0xC2B3190)->v)));
-    FUN_0c072230(((int)stk + 0), 0xC2B3184);
-    nlPopMatrix(0x1);
-    nlObjPutSetLightDirectionV(0xC2B3184);
-    return (FUN_0c076130(((((struct o0_float *)0xC2B3190)->v))));
-}
 
 int FUN_0c068304(int a4, int a5, int a6, int a7)
 {
@@ -2085,14 +2023,6 @@ void sys_init(void)
     }
 }
 
-void nlInitMatrix(int a4, int a5)
-{
-    nlInitMatrixStack(0xC2BF958, 0xC2BF970, 0x3);
-    nlInitMatrixStack(0xC2BF964, 0xC2BFA30, 0x3);
-    nlInitMatrixStack(0xC2BF94C, a4, (a5 + 0x1));
-    *(unsigned char *)0xC2BF93C = 0x1;
-    FUN_0c07ff00();
-}
 
 int buDefragDisk(int a4, int a5)
 {

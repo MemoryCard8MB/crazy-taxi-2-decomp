@@ -674,29 +674,6 @@ void FUN_0c034320(int a4, int a5)
     }
 }
 
-int FUN_0c05ccce(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-
-    if (a4 != 0) {
-        FUN_0c05cd80();
-        (((struct o10_uint *)0xC136D68)->v) = 0x0;
-        FUN_0c07ff00();
-    }
-    if (((((struct o10_int *)0xC136D68)->v)) != 0) {
-        t0 = (((struct oC_int *)0xC136D68)->v);
-        if (((int)t0 >= 0) && ((int)t0 < (int)0x4)) {
-        } else {
-            FUN_0c05cd80();
-        }
-        t0 = (*(int *)(((((((struct oC_int *)0xC136D68)->v)) << 2) + 0xC2B96D8)));
-    } else {
-        t0 = ((((struct o0_int *)0xC136D68)->v));
-    }
-    t1 = ((int (*)(int, int, int, int))((*(int *)(((((t0 << 2) << 1) + 0xC10DBC8) + 0x0)))))(0xC1758B4, (*(int *)(((((t0 << 2) << 1) + 0xC10DBC8) + 0x4))), a6, a7);
-    return (FUN_0c07ff00());
-}
 
 int FUN_0c07d4bc(int a4, int a5, int a6)
 {
@@ -1284,23 +1261,6 @@ int FUN_0c03e792(int a4, int a5)
     return FUN_0c07c5b8(a4, 0x10A0, t4);
 }
 
-int CarSel_Camera(void)
-{
-    int stk[6];
-
-    FUN_0c07ff00();
-    FUN_0c07ff00();
-    nlAddVector((((int)stk + 0) + 0xC), 0xC2B1D3C);
-    nlMatrixMode(0x2);
-    nlUnitMatrix();
-    nlRotateAZ((-(unsigned short)((((struct o4_short *)0xC2B1D48)->v))));
-    nlRotateAX((-(unsigned short)((((struct o0_short *)0xC2B1D48)->v))));
-    nlRotateAY((-(unsigned short)((((struct o2_short *)0xC2B1D48)->v))));
-    FUN_0c073a40((((int)stk + 0) + 0xC));
-    nlMatrixMode(0x1);
-    FUN_0c074070();
-    return (FUN_0c05a338());
-}
 
 int FUN_0c053f6a(void)
 {
@@ -1559,23 +1519,6 @@ int FUN_0c0604d0(void)
     return 0x84;
 }
 
-int FUN_0c067eee(int a4, float f4)
-{
-    register int t13;
-
-    (((struct o1C_float *)(a4))->v) = ((((struct o0_float *)0xC068070)->v));
-    (((struct o20_float *)(a4))->v) = ((((struct o4_float *)0xC068070)->v));
-    *(unsigned int *)((a4 + 0x24)) = 0x0;
-    if (!(0.0f > f4)) {
-        *(volatile float *)0xC068078;
-        
-        t13 = (FUN_0c07ff00());
-    } else {
-        *(volatile int *)((a4 + 0x4));
-        t13 = (FUN_0c07ff00());
-    }
-    return t13;
-}
 
 void nlFatalErrorTrap(int a4)
 {

@@ -121,41 +121,6 @@ int FUN_0c14dcd4(void);
 void FUN_0c150680(int a4);
 void FUN_0c1620dc(int a4);
 
-float FUN_0c019384(void)
-{
-    int stk[3];
-    register float u5;
-    register float t17;
-    register float u18;
-    register float u19;
-    register float u20;
-    register float u22;
-    register float u23;
-
-    FUN_0c07ff00();
-    *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 4))) + ((((struct o18_float *)0xC019550)->v)));
-    if ((*(int *)0xC177E80) != 0) {
-        FUN_0c018b22(0xC177E74, 0x0);
-        u5 = (((struct o28_float *)0xC019550)->v);
-        FUN_0c018c8a(u5, u5);
-        FUN_0c018b1c(0x1);
-        FUN_0c02f698();
-        *(unsigned int *)0xC177E80 = 0x0;
-    }
-    camSetTarget(((int)stk + 0), 0x2);
-    t17 = FUN_0c018cfc();
-    u18 = (((struct o0_float *)0xC019550)->v);
-    u19 = (((struct o4_float *)0xC019550)->v);
-    u20 = (((-t17) + u18) / u19);
-    if (0.0f > (((-t17) + u18) / u19)) {
-        u20 = 0.0f;
-    }
-    u22 = *(float *)0xC019590;
-    u23 = u22;
-    u23 = u23 + u22 * u20;
-    *(float *)0xC177D9C = u23;
-    return u22;
-}
 
 float FUN_0c04e5c0(int a4)
 {

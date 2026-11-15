@@ -1,0 +1,152 @@
+/* Straight-line functions with calls and guards (batch gen_gs): generated from the code and checked by tests. Calls are
+   to the game or library function at the address, with the arguments in r4-r7 and fr4-fr11 as set. */
+
+typedef struct { int w[3]; } Stk3;
+struct o100_float { char p[0x100]; float v; };
+struct o104_float { char p[0x104]; float v; };
+struct o110_int { char p[0x110]; int v; };
+struct o110_uint { char p[0x110]; unsigned int v; };
+struct o18_float { char p[0x18]; float v; };
+struct o4_float { char p[0x4]; float v; };
+struct o68_uint { char p[0x68]; unsigned int v; };
+struct o80_int { char p[0x80]; int v; };
+struct o84_int { char p[0x84]; int v; };
+struct o90_float { char p[0x90]; float v; };
+struct o9C_float { char p[0x9C]; float v; };
+struct oA4_short { char p[0xA4]; short v; };
+struct oA6_short { char p[0xA6]; short v; };
+struct oA8_short { char p[0xA8]; short v; };
+struct oCC_float { char p[0xCC]; float v; };
+struct oD8_int { char p[0xD8]; int v; };
+struct oF8_float { char p[0xF8]; float v; };
+int FUN_0c029b12(int, float);
+int FUN_0c03fbbc(int);
+int FUN_0c041298(int);
+int FUN_0c0415ba(int);
+int FUN_0c041a44(int, int);
+int FUN_0c0423c8(int);
+int FUN_0c0436b8(int);
+int FUN_0c0436f6(int);
+int FUN_0c043706(int);
+int FUN_0c072290(int, int);
+int FUN_0c073360(void);
+float FUN_0c073b40(int, int);
+int FUN_0c073c40(int, int, float);
+int GetRotVec4Ang(int, int, int, int);
+int calcColliCheck(int);
+int nlAddVector(int, int);
+int nlPopMatrix(int);
+int nlRotateAX(int);
+int nlRotateAY(int);
+int nlRotateAZ(int);
+int nlSubVector3op(int, int, int);
+int pcarRejoinLane(int);
+float FUN_0c044664(int a4);
+
+float FUN_0c044664(int a4)
+{
+    int stk[6];
+
+    register int R1;
+    register int R2;
+    register int R3;
+    register int R5;
+    register int R6;
+    register int R7;
+    register float F0;
+    register float F1;
+    register float F2;
+    register float F3;
+    register float F4;
+    register float F14;
+    register float F15;
+    register int T_;
+    register int FPUL_;
+    register int v0_0;
+    register int v0_1;
+    register int v0_2;
+    register int v0_3;
+    register float w0_0;
+    v0_2 = a4;
+    { struct mv3 { int w[3]; }; *(struct mv3 *)(((int)stk + 0)) = *(struct mv3 *)((0x98 + v0_2)); }
+    FUN_0c043706(v0_2);
+    calcColliCheck(v0_2);
+    v0_1 = (FUN_0c03fbbc(((((struct oD8_int *)(v0_2))->v)))) != 0;
+    v0_0 = (v0_2);
+    if (v0_1) goto L_C0446A0;
+    if (((((((struct o84_int *)(v0_0))->v)) & 0x10000) != 0)) goto L_C0446A0;
+    L_C0447E8:;
+    v0_1 = ((FUN_0c0436b8(v0_0)));
+    L_C0448E2:;
+    return F0;
+    L_C0446A0:;
+    if ((((((struct o80_int *)(v0_0))->v)) == 0)) goto L_C0446AE;
+    pcarRejoinLane(v0_0);
+    L_C0446AE:;
+    v0_2 = (((struct o84_int *)(v0_0))->v);
+    v0_1 = (v0_2);
+    if (((v0_2 & 8) == 0)) goto L_C0446E4;
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((0x8C + v0_0)) = *(struct mv3 *)((v0_0 + 0x14)); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((0x98 + v0_0)) = *(struct mv3 *)((v0_0 + 0x20)); }
+    w0_0 = FUN_0c073b40((v0_0 + 0x5C), (v0_0 + 0x44));
+    (((struct o100_float *)(v0_0))->v) = w0_0;
+    F15 = (w0_0);
+    L_C0446E4:;
+    v0_1 = (0xC073C40);
+    if (!(((((((struct o84_int *)(v0_0))->v)) & 4) != 0))) goto L_C044832;
+    (((struct o9C_float *)(v0_0))->v) = (((((struct o9C_float *)(v0_0))->v)) - 0.0734999999f);
+    FPUL_ = (0x3D96872B);
+    if (((int)((((struct o110_int *)(v0_0))->v)) <= 0)) goto L_C044716;
+    (((struct o110_uint *)(v0_0))->v) = (((((struct o110_int *)(v0_0))->v)) - 1);
+    FUN_0c041298(v0_0);
+    goto L_C044716;
+    L_C044832:;
+    FUN_0c073360();
+    nlRotateAZ((-(unsigned short)((((struct oA8_short *)(v0_0))->v))));
+    nlRotateAX((-(unsigned short)((((struct oA4_short *)(v0_0))->v))));
+    nlRotateAY((-(unsigned short)((((struct oA6_short *)(v0_0))->v))));
+    FUN_0c072290((0x98 + v0_0), (((int)stk + 0) + 0xC));
+    (((struct oCC_float *)(v0_0))->v) = (*(float *)(((int)stk + 20)));
+    nlPopMatrix(0x1);
+    FUN_0c0423c8(v0_0);
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_0 + 0x14)) = *(struct mv3 *)((0x8C + v0_0)); }
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_0 + 0x20)) = *(struct mv3 *)((0x98 + v0_0)); }
+    FUN_0c073c40((((int)stk + 0) + 0xC), (v0_0 + 0x44), (((((struct o100_float *)(v0_0))->v)) - F15));
+    nlAddVector((v0_0 + 0x5C), (((int)stk + 0) + 0xC));
+    FUN_0c073c40((v0_0 + 0x5C), (v0_0 + 0x5C), 0.996999979f);
+    GetRotVec4Ang((v0_0 + 0x44), (unsigned short)((((struct oA4_short *)(v0_0))->v)), (unsigned short)((((struct oA6_short *)(v0_0))->v)), (unsigned short)((((struct oA8_short *)(v0_0))->v)));
+    (((struct o68_uint *)(v0_0))->v) = 0x0;
+    v0_1 = (0x68);
+    goto L_C0448E2;
+    L_C044716:;
+    FUN_0c073c40((0x98 + v0_0), (0x98 + v0_0), 0.999800026f);
+    nlAddVector((0x8C + v0_0), (0x98 + v0_0));
+    v0_2 = FUN_0c029b12((0x8C + v0_0), 30.0f);
+    v0_3 = *(int *)((v0_2 + 0x1C));
+    v0_1 = (v0_3);
+    v0_2 = (v0_2);
+    if ((v0_3 == -1)) goto L_C0447DE;
+    { struct mv3 { int w[3]; }; *(struct mv3 *)((0xEC + v0_0)) = *(struct mv3 *)((v0_2 + 0xC)); }
+    (((struct o104_float *)(v0_0))->v) = ((((struct o18_float *)(v0_2))->v));
+    if ((!(((((struct o104_float *)(v0_0))->v)) > ((((struct o90_float *)(v0_0))->v))))) goto L_C0447F2;
+    (((struct o90_float *)(v0_0))->v) = ((((struct o104_float *)(v0_0))->v));
+    FUN_0c0415ba(v0_0);
+    v0_1 = (0x110);
+    FPUL_ = ((int)((float)((((struct o110_int *)(v0_0))->v)) + 5.0f));
+    *(unsigned int *)((v0_0 + v0_1)) = FPUL_;
+    L_C0447F2:;
+    v0_1 = (0x110);
+    v0_2 = (0xA);
+    if (((int)((((struct o110_int *)(v0_0))->v)) <= (int)0xA)) goto L_C0447FE;
+    *(unsigned int *)((v0_0 + v0_1)) = v0_2;
+    L_C0447FE:;
+    nlSubVector3op(((int)stk + 0), (0x98 + v0_0), ((int)stk + 0));
+    (((struct oF8_float *)(v0_0))->v) = (((((struct oF8_float *)(v0_0))->v)) - ((((((struct o4_float *)(((int)stk + 0)))->v)) * (1.0f + 1.0f))));
+    (((struct oF8_float *)(v0_0))->v) = (((((struct oF8_float *)(v0_0))->v)) * 0.800000012f);
+    FUN_0c041a44(v0_0, ((int)stk + 0));
+    goto L_C044832;
+    L_C0447DE:;
+    v0_1 = (FUN_0c0436f6(v0_0)) == 0;
+    if (v0_1) goto L_C0447F2;
+    goto L_C0447E8;
+}

@@ -47,27 +47,3 @@ int FUN_0c046658(int a4, int a5, int a6, float f4)
     return (nlPopMatrix(0x1));
 }
 
-int FUN_0c046814(int a4)
-{
-    int stk[3];
-    register int t1;
-    register float u5;
-    register float u6;
-    register float u7;
-
-    nlPushMatrix(0x0);
-    t1 = nlGetMatrix(0x0);
-    *(unsigned short *)((a4 + 0x2)) = (nlArcTan2(((((struct o20_float *)(t1))->v)), ((((struct o28_float *)(t1))->v))));
-    u5 = (((struct o20_float *)(t1))->v);
-    u6 = (((struct o28_float *)(t1))->v);
-    u7 = (u6 * u6);
-    u7 = u7 + u5 * u5;
-    *(unsigned short *)((a4 + 0x0)) = (-(nlArcTan2(((((struct o24_float *)(t1))->v)), _builtin_sqrtf(u7))));
-    FUN_0c07ff00();
-    nlUnitMatrix();
-    nlRotateAX((-(unsigned short)(*(short *)((a4 + 0x0)))));
-    nlRotateAY((-(unsigned short)(*(short *)((a4 + 0x2)))));
-    FUN_0c072290(((int)stk + 0), ((int)stk + 0));
-    *(unsigned short *)((a4 + 0x4)) = (nlArcTan2((*(float *)(((int)stk + 4))), (*(float *)(((int)stk + 0)))));
-    return (nlPopMatrix(0x1));
-}

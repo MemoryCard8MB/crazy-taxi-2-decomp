@@ -2055,26 +2055,6 @@ int FUN_0c0415ba(int a4)
     return nlPopMatrix(0x1);
 }
 
-int FUN_0c0471c4(int a4, int a5, int a6, int a7)
-{
-    register int t0;
-    register int t1;
-
-    if ((int)a4 < 0) {
-        *(unsigned int *)0xC2AD2A8 = 0x0;
-    } else {
-        t1 = *(int *)0xC2AD2A8;
-        if ((int)t1 < (int)0xC8) {
-            *(unsigned int *)((((t1 << 2) << 2) + 0xC2AC628)) = a4;
-            *(volatile int *)0xC2AD2A8;
-            t1 = FUN_0c07ff00();
-            *(unsigned int *)((t0 + 0x0)) = ((*(int *)((t0 + 0x0))) + 0x1);
-            t0 = t1;
-        }
-        t1 = t0;
-    }
-    return t1;
-}
 
 int FUN_0c04cba6(void)
 {
@@ -2131,29 +2111,6 @@ float FUN_0c05b422(int a4, float f4)
     return u18;
 }
 
-int FUN_0c05c27a(int a4, int a5, int a6)
-{
-    register int t21;
-
-    if ((*(int *)((a5 + 0x0))) == a6) {
-        *(unsigned int *)((a5 + 0x0)) = (*(int *)((a6 + 0x0)));
-        *(unsigned int *)((a6 + 0x4)) = (*(int *)((a5 + 0x4)));
-        *(unsigned int *)((a5 + 0x4)) = a6;
-        *(unsigned int *)((a6 + 0x4)) = a5;
-    } else {
-        if ((*(int *)((a5 + 0x4))) == a6) {
-            *(unsigned int *)((a5 + 0x4)) = (*(int *)((a6 + 0x4)));
-            *(unsigned int *)((a6 + 0x0)) = (*(int *)((a5 + 0x0)));
-            *(unsigned int *)((a5 + 0x0)) = a6;
-            *(unsigned int *)((a6 + 0x4)) = a5;
-        } else {
-            FUN_0c07fdc8();
-            FUN_0c07fdc8();
-            t21 = (FUN_0c07fdc8());
-        }
-    }
-    return t21;
-}
 
 int buMount(int a4)
 {

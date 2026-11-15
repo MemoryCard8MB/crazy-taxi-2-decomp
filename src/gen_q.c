@@ -248,56 +248,6 @@ int buSetFileAttr(int a4, int a5, int a6, int a7);
 int kmResetPointer(void);
 int kmtex_TextureSize_smallVQ(int a4);
 
-float FUN_0c0468aa(int a4, int a5, float f4)
-{
-    int stk[9];
-    register int t1;
-    register int t2;
-    register float u3;
-    register int t17;
-    register float u24;
-    register int t4;
-    register int t5;
-    register float u6;
-    register float t7;
-    register int t10;
-
-    t1 = *(int *)((((((a4 << 1) + a4) << 2) + 0xC0F3530) + 0x8));
-    t2 = *(int *)((((((a4 << 1) + a4) << 2) + 0xC0F3530) + 0x4));
-    u3 = *(float *)0xC046AD4;
-    t17 = 0x0;
-    u24 = u3;
-    if ((int)t2 < (int)(t1 + t2)) {
-        t4 = 0x0;
-        t5 = t2;
-        u6 = u3;
-        for (;;) {
-            *(unsigned int *)(((int)stk + 0)) = 0x0;
-            t7 = getNearCoursePoint(0x0, t5, ((int)stk + 0), a5, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
-            if (u6 > t7) {
-                t4 = t5;
-                t4 = (t4 << 1);
-                t4 = (t4 + t5);
-                t10 = *(int *)(((int)stk + 0));
-                t4 = (t4 << 2);
-                u6 = t7;
-                t4 = (t4 + (*(int *)0xC2ADA7C));
-                t4 = (*(int *)((t4 + 0x0)));
-                t4 = (t4 + (((t10 << 1) + t10) << 2));
-            }
-            t5 = (t5 + 0x1);
-            if ((int)t5 >= (int)(t1 + t2)) {
-                break;
-            }
-        }
-        t17 = t4;
-        u24 = u6;
-    }
-    if (t17 != 0) {
-        FUN_0c07ff00();
-    }
-    return u24;
-}
 
 int FUN_0c06a0c0(void)
 {
@@ -438,33 +388,6 @@ int FUN_0c01d69c(void)
     return 0x54;
 }
 
-int FUN_0c024f94(float f4, float f5, float f6, float f7, float f8, float f9)
-{
-    register int t0;
-    register int t5;
-    register int t2;
-    register int t3;
-
-    t0 = set_event(0x4C, 0xC025088);
-    t5 = t0;
-    if (t0 != 0) {
-        *(unsigned int *)((t0 + 0x14)) = 0x0;
-        (((struct o1C_float *)(t0))->v) = f4;
-        (((struct o20_float *)(t0))->v) = f5;
-        (((struct o24_float *)(t0))->v) = f6;
-        FUN_0c07ff00();
-        (((struct o34_float *)(t2))->v) = 40.0f;
-        (((struct o18_float *)(t2))->v) = 1.0f;
-        (((struct o38_float *)(t2))->v) = f7;
-        (((struct o3C_float *)(t2))->v) = f8;
-        (((struct o40_float *)(t2))->v) = f9;
-        (((struct o46_ushort *)(t2))->v) = t3;
-        (((struct o44_ushort *)(t2))->v) = t3;
-        *(unsigned int *)0xC2709AC = ((*(int *)0xC2709AC) + 0x1);
-        t5 = 0x44;
-    }
-    return t5;
-}
 
 int nlLineCalcFogC(int a4, int a5, int a6, float f4)
 {
@@ -1500,55 +1423,7 @@ int FUN_0c0200f0(int a4)
     return gdc_FileLoad(0xC310000, 0xC09AF8C, 0x8000);
 }
 
-int FUN_0c01d3b4(void)
-{
-    int stk[9];
 
-    (((struct o8_uint *)0xC1EC744)->v) = (((((struct o8_int *)0xC1EC744)->v)) + 0x1);
-    *(float *)(((int)stk + 24)) = 0.0f;
-    *(float *)(((int)stk + 28)) = 1.0f;
-    *(float *)(((int)stk + 32)) = 0.0f;
-    FUN_0c07ff00();
-    FUN_0c07ff00();
-    *(float *)(((int)stk + 8)) = 10.0f;
-    nlLookAtUp((((int)stk + 0) + 0xC), ((int)stk + 0), (((int)stk + 0) + 0x18));
-    FUN_0c04e88e(0xC175C80);
-    if ((*(int *)0xC2B1CFC) == 6) {
-        FUN_0c04e92c();
-        FUN_0c06cbc2();
-        (((struct o0_uint *)0xC1EC744)->v) = 0x0;
-        FUN_0c01e6f0();
-        FUN_0c01c568(0x0, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24), *(int *)((int)stk + 0 + 28));
-        FUN_0c01f95a();
-    }
-    return (gdc_FadeManStreamSong(0x0, 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4)));
-}
-
-int GetAng4Mat(int a4, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11)
-{
-    int stk[3];
-    register int t0;
-    register float u4;
-    register float u5;
-    register float u6;
-    register int t18;
-
-    t0 = nlGetMatrix8(0x0, f4, f5, f6, f7, f8, f9, f10, f11);
-    *(unsigned int *)((a4 + 0x4)) = (nlArcTan2(((((struct o20_float *)(t0))->v)), ((((struct o28_float *)(t0))->v))));
-    u4 = (((struct o20_float *)(t0))->v);
-    u5 = (((struct o28_float *)(t0))->v);
-    u6 = (u5 * u5);
-    u6 = u6 + u4 * u4;
-    *(unsigned int *)((a4 + 0x0)) = (-(nlArcTan2(((((struct o24_float *)(t0))->v)), _builtin_sqrtf(u6))));
-    FUN_0c07ff00();
-    nlUnitMatrix();
-    nlRotateAX((-(*(int *)((a4 + 0x0)))));
-    nlRotateAY((-(*(int *)((a4 + 0x4)))));
-    FUN_0c072290(((int)stk + 0), ((int)stk + 0));
-    t18 = nlArcTan2((*(float *)(((int)stk + 4))), (*(float *)(((int)stk + 0))));
-    *(unsigned int *)((a4 + 0x8)) = t18;
-    return t18;
-}
 
 void FUN_0c0344f6(void)
 {
@@ -1585,102 +1460,8 @@ void FUN_0c0344f6(void)
     for (;;) { t17 = *(int *)t14; t14 = (t14 + 4); if ((unsigned int)t15 < (unsigned int)t14) break; *(unsigned int *)t16 = t17; t16 = (t16 + 4); }
 }
 
-int calcColliCheck(int a4)
-{
 
-    register int R1;
-    register int R2;
-    register int R3;
-    register int R14;
-    register float F2;
-    register float F3;
-    register int T_;
-    register int v0_0;
-    register int v0_1;
-    register int v0_2;
-    register float w0_0;
-    register float w0_1;
-    v0_0 = a4;
-    v0_1 = R14;
-    v0_2 = ((((struct oC4_float *)(v0_0))->v)) != 0.0f;
-    R14 = (v0_0);
-    if (v0_2) goto L_C0434E6;
-    w0_0 = (((struct o0_float *)0xC043530)->v);
-    v0_0 = !(w0_0 > _builtin_fabsf(((((struct oCC_float *)(R14))->v))));
-    w0_0 = (w0_0);
-    if (v0_0) goto L_C0434E6;
-    w0_0 = (((struct o4_float *)0xC043530)->v);
-    v0_0 = !(w0_0 > _builtin_fabsf(((((struct o60_float *)(R14))->v))));
-    w0_0 = (w0_0);
-    if (v0_0) goto L_C0434E6;
-    v0_0 = (int)(FUN_0c07ffac(((((struct oAA_short *)(R14))->v)))) >= (int)0x10;
-    if (v0_0) goto L_C0434E6;
-    v0_0 = !(((((struct o4_float *)0xC043530)->v)) > _builtin_fabsf(((((struct o100_float *)(R14))->v))));
-    if (v0_0) goto L_C0434E6;
-    w0_0 = (((struct o104_float *)(R14))->v);
-    w0_1 = (((struct o90_float *)(R14))->v);
-    v0_0 = !(((((struct oC_float *)0xC043530)->v)) > _builtin_fabsf((w0_1 - w0_0)));
-    w0_0 = (_builtin_fabsf((w0_1 - w0_0)));
-    if (v0_0) goto L_C0434E6;
-    (((struct o84_uint *)(R14))->v) = (((((struct o84_int *)(R14))->v)) & 0xFFFFFFFB);
-    v0_0 = FUN_0c07ff00();
-    v0_0 = (v0_0);
-    L_C0434F0:;
-    return v0_0;
-    L_C0434E6:;
-    (((struct o84_uint *)(R14))->v) = (((((struct o84_int *)(R14))->v)) | 0x4);
-    v0_0 = (0x84);
-    goto L_C0434F0;
-}
 
-int FUN_0c060384(void)
-{
-    int stk[15];
-    register int t1;
-    register int t3;
-    register int t17;
-    register int t15;
-    register int t16;
-
-    FUN_0c07ff00();
-    t1 = (((struct o0_int *)0xC2B9C9C)->v);
-    if (((int)t1 >= 0) && ((int)t1 < (int)0xF)) {
-        t3 = ((int (*)(void))((*(int *)((((t1 << 2) + ((int)stk + 0)) + 0x0)))))();
-    }
-    FUN_0c05fdfc();
-    (((struct oC_uint *)0xC2B9C9C)->v) = (FUN_0c06002a());
-    if ((int)((((struct oC_int *)0xC2B9C9C)->v)) >= 0) {
-        FUN_0c069e78(((((struct oC_int *)0xC2B9C9C)->v)), 0x0, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8));
-    }
-    if (((*(int *)0xC1EC720) != 2) && ((t15 = *(int *)0xC1ECCB4, t15 == 0x258) || (t16 = *(int *)0xC1ECCB4, t16 == 0x12C))) {
-        t17 = FUN_0c061bae();
-        if (t17 == 0) {
-            FUN_0c06032a(0x1);
-        }
-    }
-    return (FUN_0c040bec(0x1, 0x0));
-}
-
-int FUN_0c068f8a(int a4)
-{
-    int stk[4];
-    register float t4;
-    register float t6;
-
-    *(unsigned int *)(((int)stk + 0)) = a4;
-    nlSubVector3op((((int)stk + 0) + 0x4), ((*(int *)((((*(int *)0xC1EC71C) << 2) + 0xC13B108))) + (((a4 << 1) + a4) << 2)), 0xC175930);
-    *(float *)(((int)stk + 8)) = 0.0f;
-    t4 = FUN_0c073e10((((int)stk + 0) + 0x4));
-    if (0.00100000005f > t4) {
-        FUN_0c07ff00();
-        *(float *)(((int)stk + 8)) = 0.0f;
-        t6 = FUN_0c073e10((((int)stk + 0) + 0x4));
-        if (0.00100000005f > t6) {
-            FUN_0c07ff00();
-        }
-    }
-    return (nlArcTan2((-(*(float *)(((int)stk + 4)))), (*(float *)(((int)stk + 12)))));
-}
 
 int nlLineSendQuadA(int a4, int a5, int a6, int a7, float f4, float f5)
 {

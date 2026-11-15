@@ -297,8 +297,11 @@ def flush(items,notdrawn,ri,vi,pt,order,bn):
         done.update(passed)
         final.append((stem,keep,vi,pt))
         if not known: write_batch(keep)
-        for f in ([] if os.environ.get('GEN_KEEP') else glob.glob('src/gen_tmp*p%d.c'%os.getpid())): os.remove(f)      # GEN_KEEP=1 leaves the scratch C to look at
-        for d in glob.glob('tests/gen_tmp*p%d'%os.getpid()): shutil.rmtree(d)
+        # the scratch of this process, also the variants' (<stem>c, <stem>v: the pid followed by a letter); left behind, a variant's
+        # cases came first in a build's tests/*/<name>.json lookup and its C was built (Crazy Taxi 2: CheckColliWallSegment, calcCheck)
+        mine=lambda pat: glob.glob(pat%os.getpid())+glob.glob(pat.replace('%d','%d[a-z]')%os.getpid())
+        for f in ([] if os.environ.get('GEN_KEEP') else mine('src/gen_tmp*p%d.c')): os.remove(f)      # GEN_KEEP=1 leaves the scratch C to look at
+        for d in mine('tests/gen_tmp*p%d'): shutil.rmtree(d)
     finally:
         unlock()
 for ri,(vi,pt) in enumerate(rounds):

@@ -1044,15 +1044,6 @@ int FUN_0c05f6fe(int a4)
     return (t0 << 2);
 }
 
-int FUN_0c05fdac(void)
-{
-    FUN_0c05b3d4(0xC2B9CDC, 0x48);
-    FUN_0c05b3d4(0xC2B9D24, 0x1A4);
-    FUN_0c07ff00();
-    (((struct o0_uint *)0xC13AFF0)->v) = 0x0;
-    (((struct o4_uint *)0xC13AFF0)->v) = 0x0;
-    return 0xC13AFF0;
-}
 
 int FUN_0c068be8(int a4, int a5, int a6)
 {
@@ -1860,12 +1851,6 @@ void FUN_0c068bbe(int a4)
     }
 }
 
-int FUN_0c06bd3c(int a4)
-{
-    *(unsigned int *)((a4 + 0x0)) = ((*(int *)((a4 + 0x0))) + 0x1);
-    *(unsigned int *)((a4 + 0x4)) = (((int)((int)(a4 - 0xC2BA92C) / (int)0x6C)) << 2);
-    return (FUN_0c07fdc8());
-}
 
 int FUN_0c06ce48(int a4)
 {

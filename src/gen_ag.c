@@ -2378,14 +2378,6 @@ int FUN_0c040ec4(int a4, int a5)
     return t1;
 }
 
-int selectLoadAxes(void)
-{
-
-    FUN_0c07ff00();
-    FUN_0c07ff00();
-    FUN_0c07ff00();
-    return (FUN_0c07ff00());
-}
 
 int Put_Remain_Time_Add(int a4, int a5)
 {

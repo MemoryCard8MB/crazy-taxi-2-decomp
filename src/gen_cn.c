@@ -907,35 +907,6 @@ int FUN_0c0360a2(int a4)
     return t40;
 }
 
-int FUN_0c05b596(int a4, int a5, int a6)
-{
-    int stk[7];
-    register float t0;
-    register float u8;
-
-    *(unsigned int *)(((int)stk + 0)) = a5;
-    t0 = FUN_0c073b40(a4, a6);
-    if (t0 == 0.0f) {
-        *(float *)(((int)stk + 24)) = 3.40282347e+38f;
-        *(float *)(((int)stk + 20)) = 3.40282347e+38f;
-        *(float *)(((int)stk + 16)) = 3.40282347e+38f;
-        u8 = 3.40282347e+38f;
-    } else {
-        *(volatile int *)(((int)stk + 0));
-        FUN_0c07ff00();
-        FUN_0c06e700((((int)stk + 0) + 0x4), a6, 0.219999999f);
-        FUN_0c073c40((((int)stk + 0) + 0x10), a6, (1.0f / t0));
-        u8 = ((FUN_0c073b40((((int)stk + 0) + 0x4), a6)) / t0);
-    }
-    FUN_0c073c40(0xC136818, a4, (-(*(float *)(((int)stk + 16)))));
-    FUN_0c073c40(0xC136828, a4, (-(*(float *)(((int)stk + 20)))));
-    FUN_0c073c40(0xC136838, a4, (-(*(float *)(((int)stk + 24)))));
-    FUN_0c073c40(0xC136848, a4, u8);
-    (((struct o0_float *)0xC136818)->v) = (((((struct o0_float *)0xC136818)->v)) + 1.0f);
-    (((struct o14_float *)0xC136818)->v) = (((((struct o14_float *)0xC136818)->v)) + 1.0f);
-    (((struct o28_float *)0xC136818)->v) = (((((struct o28_float *)0xC136818)->v)) + 1.0f);
-    return (nlMultiMatrixRevOrder8(0xC136818));
-}
 
 int buInit(int a4, int a5, int a6, int a7)
 {
@@ -1126,48 +1097,6 @@ int FUN_0c06a754(int a4, int a5, int a6)
 }
 
 
-int SJUNI_GetChunk(int a4, int a5, int a6, int a7)
-{
-    int stk[11];
-    register int t3;
-    register int t46;
-    register int t9;
-
-    *(unsigned int *)(((int)stk + 0)) = a6;
-    if (((int)a5 >= 0) && ((int)a5 < (int)0x4)) {
-        *(unsigned int *)(((int)stk + 4)) = (SJUNI_Lock());
-        t3 = *(int *)((((a4 + 0x18) + (a5 << 2)) + 0x0));
-        if (t3 != 0) {
-            FUN_0c07fdc8();
-            if ((int)(*(int *)(((int)stk + 20))) <= (int)(*(int *)(((int)stk + 0)))) {
-                FUN_0c07fdc8();
-                *(unsigned int *)(((t9 + (a4 + 0x18)) + 0x0)) = (*(int *)((t3 + 0x0)));
-                *(unsigned int *)((t3 + 0x0)) = (*(int *)((a4 + 0x14)));
-                *(unsigned int *)((a4 + 0x14)) = t3;
-            } else {
-                if ((*(signed char *)((a4 + 0x5))) == 1) {
-                    SJ_SplitChunk((((int)stk + 0) + 0x10), (*(int *)(((int)stk + 0))), (((int)stk + 0) + 0x10));
-                    FUN_0c07fdc8();
-                    FUN_0c07fdc8();
-                } else {
-                    *(unsigned int *)((a7 + 0x0)) = 0x0;
-                    *(unsigned int *)((a7 + 0x4)) = 0x0;
-                }
-            }
-        } else {
-            *(unsigned int *)((a7 + 0x0)) = 0x0;
-            *(unsigned int *)((a7 + 0x4)) = 0x0;
-        }
-        t46 = (SJUNI_Unlock(a4, (*(int *)(((int)stk + 4)))));
-    } else {
-        if ((*(int *)((a4 + 0x28))) != 0) {
-            t46 = (((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((a4 + 0x28)))))((*(int *)((a4 + 0x2C))), 0xFFFFFFFD, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24)));
-        }
-        *(unsigned int *)((a7 + 0x0)) = 0x0;
-        *(unsigned int *)((a7 + 0x4)) = 0x0;
-    }
-    return t46;
-}
 
 int ADX_DecodeInfoSpsd(int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14)
 {

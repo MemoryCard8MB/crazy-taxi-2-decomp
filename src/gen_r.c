@@ -1704,25 +1704,6 @@ int FUN_0c01a978(void)
 }
 
 
-int FUN_0c04f224(void)
-{
-    int stk[6];
-
-    FUN_0c07ff00();
-    FUN_0c073360();
-    nlRotateAY((unsigned short)((((struct o6_short *)0xC2B1D5C)->v)));
-    nlRotateAX((unsigned short)((((struct o4_short *)0xC2B1D5C)->v)));
-    FUN_0c072230((((int)stk + 0) + 0xC), 0xC2B1D50);
-    nlPopMatrix(0x1);
-    nlObjPutSetLightDirectionV(0xC2B1D50);
-    FUN_0c076130(((((struct o0_float *)0xC2B1D5C)->v)));
-    FUN_0c073360();
-    nlRotateAY(0xA80);
-    nlRotateAX(0x3000);
-    FUN_0c072290((((int)stk + 0) + 0xC), ((int)stk + 0));
-    FUN_0c05f43a(((int)stk + 0));
-    return (nlPopMatrix(0x1));
-}
 
 int FUN_0c062030(int a4, int a5)
 {

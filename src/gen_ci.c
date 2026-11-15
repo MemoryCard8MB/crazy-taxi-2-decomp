@@ -539,42 +539,6 @@ int FUN_0c034804(int a4, float f4, float f5, float f6, float f7, float f8)
     return FUN_0c0345ec(t2, (((((t0 << 2) + t0) << 1) + a4) + 0x7D), 0x0, ((float)(((t1 << 2) << 2) << 1) + f4), u0, ((*(float *)0xC2A5858) + -0.00999999978f));
 }
 
-int getRootDistance(int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-{
-    int stk[4];
-    register int t0;
-    register int t1;
-    register int t11;
-    register int t22;
-    register float u24;
-    register float u26;
-    int R1000;
-
-    R1000 = *(int *)((int)stk + 0);
-
-    R1000 = a7;
-    t0 = FUN_0c04707e(a7, a9, a5);
-    t1 = FUN_0c07ffac(t0);
-    if ((int)t1 <= (int)0x1) {
-        *(float *)((a10 + 0x0)) = (nlLength(a6, a8));
-    } else {
-        if ((int)t0 < 0) {
-            FUN_0c07ff00();
-        } else {
-            FUN_0c07ff00();
-        }
-        t11 = R1000;
-        *(float *)(((int)stk + 4)) = ((*(float *)(((int)stk + 4))) + ((*(float *)((a6 + 0x0))) - (*(float *)((((((t11 << 1) + t11) << 2) + a4) + 0x0)))));
-        *(float *)(((int)stk + 8)) = ((*(float *)(((int)stk + 8))) + (((((struct o4_float *)(a6))->v)) - ((((struct o4_float *)(((((t11 << 1) + t11) << 2) + a4)))->v))));
-        *(float *)(((int)stk + 12)) = ((*(float *)(((int)stk + 12))) + (((((struct o8_float *)(a6))->v)) - ((((struct o8_float *)(((((t11 << 1) + t11) << 2) + a4)))->v))));
-        t22 = FUN_0c07ffac(t0);
-        u24 = *(float *)0xC0471E0;
-        u26 = (nlLength((((int)stk + 0) + 0x4), a8));
-        u26 = u26 + u24 * ((float)(t22 - 1));
-        *(float *)((a10 + 0x0)) = u26;
-    }
-    return t0;
-}
 
 int ADX_DecodeMonoFloat(int a4, int a5, int a6, int a7, int a8, int a9, float f4, float f5, float f6, float f7, float f8, float f9, float f10)
 {
@@ -1040,103 +1004,6 @@ int ADXB_DecodeHeaderAiff(int a4, int a5, int a6)
     return (*(short *)(((int)stk + 24)));
 }
 
-int FUN_0c029866(int a4, int a5, int a6, float f4)
-{
-    int stk[13];
-    register float t0;
-    register int t39;
-    register float u8;
-    register int t10;
-    register int t11;
-    register int t12;
-    register int t13;
-    register int t15;
-    register int t23;
-    register float t25;
-    register int t9;
-    register int t14;
-    register float u16;
-    register float u17;
-    register int t31;
-    register float u32;
-    register float u33;
-
-    t0 = FUN_0c073c60(a5);
-    t39 = 0x0;
-    if (t0 == 0.0f) {
-    } else {
-        FUN_0c07ff00();
-        FUN_0c07ff00();
-        *(float *)(((int)stk + 44)) = f4;
-        *(float *)(((int)stk + 48)) = (f4 + f4);
-        *(float *)(((int)stk + 40)) = f4;
-        FUN_0c073360();
-        nlUnitVectorsd(a5, (((int)stk + 0) + 0x4));
-        nlRotateV((((int)stk + 0) + 0x4), 0xC09DFA4);
-        FUN_0c073a40(a4);
-        MakeCollisionCellList(a4, a5);
-        u8 = (((struct o8_float *)(a6))->v);
-        *(unsigned int *)(((int)stk + 0)) = 0xC270F04;
-        t10 = 0xC270F04;
-        t11 = 0x0;
-        t12 = 0xC270EDC;
-        t13 = 0xC270F04;
-        t15 = a5;
-        for (;;) {
-            if ((unsigned int)t12 >= (unsigned int)(*(int *)(((int)stk + 0)))) {
-                break;
-            }
-            t10 = (*(int *)((t12 + 0x0)));
-            t12 = (t12 + 0x4);
-            if (t10 != 0) {
-                t23 = *(short *)((t10 + 0x8));
-                t15 = t10;
-                t14 = t23;
-                t15 = (t15 + 0xC);
-                for (;;) {
-                    if (t14 == 0) {
-                        break;
-                    }
-                    t10 = a4;
-                    t25 = nlLength(t10, ((*(int *)((t15 + 0x0))) + 0x14));
-                    t9 = (*(int *)((t15 + 0x0)));
-                    t23 = 0x10;
-                    u17 = (*(float *)((t9 + t23)));
-                    t23 = 0x30;
-                    u16 = (*(float *)((((int)stk + 0) + t23)));
-                    u16 = (u16 + u17);
-                    if (u16 > t25) {
-                        t10 = ((int)stk + 0);
-                        t10 = (t10 + 0x10);
-                        t23 = (FUN_0c029962(t10, (*(int *)((t15 + 0x0))), a6));
-                        t11 = (t11 | t23);
-                    } else {
-                        t31 = t9;
-                        u32 = u16;
-                        u33 = u17;
-                    }
-                    u16 = u32;
-                    u17 = u33;
-                    t15 = (t15 + 0x4);
-                    t9 = t31;
-                    t14 = (t14 - 1);
-                }
-                u17 = (*(float *)((t13 + 0x0)));
-                u16 = ((((struct o8_float *)(a6))->v));
-                u17 = (u17 * u8);
-                if (u16 > u17) {
-                    t13 = (t13 + 0x4);
-                    continue;
-                }
-                break;
-            }
-            break;
-        }
-        nlPopMatrix(0x1);
-        t39 = t11;
-    }
-    return t39;
-}
 
 int FUN_0c060d86(int a4, float f4)
 {
@@ -1525,63 +1392,6 @@ int FUN_0c16137e(int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a1
     return 0x0;
 }
 
-int FUN_0c04ba86(float f4)
-{
-    int stk[6];
-    register int t15;
-
-    register int R1;
-    register int R2;
-    register int R3;
-    register int R6;
-    register int R9;
-    register float F2;
-    register int T_;
-    register int v0_0;
-    register int v0_1;
-    register int v0_2;
-    register float w0_0;
-    register float w0_1;
-    register float w0_2;
-    w0_0 = f4;
-    w0_2 = *(float *)0xC175934;
-    v0_0 = (0xC1758B4);
-    w0_1 = (w0_2);
-    if ((w0_2 > w0_0)) goto L_C04BAA8;
-    if (((*(float *)0xC131610) > w0_0)) goto L_C04BAC0;
-    L_C04BAA8:;
-    v0_1 = (0xC04BB08);
-    w0_2 = (-7.0f);
-    if (((w0_0 + -7.0f) > w0_1)) goto L_C04BB6E;
-    if ((!((w0_0 + w0_2) > (*(float *)0xC131610)))) goto L_C04BB6E;
-    L_C04BAC0:;
-    if ((!(0.0f > ((((struct o104_float *)(v0_0))->v))))) goto L_C04BB10;
-    w0_0 = (1.20000005f);
-    L_C04BB14:;
-    FUN_0c07ff00();
-    v0_0 = ((0x1A4 + t15));
-    v0_1 = (0x4);
-    v0_2 = (0xC02E42A);
-    v0_2 = (t15);
-    w0_1 = ((w0_0 * (1.0f + 1.0f)));
-    L_C04BB62:;
-    if ((v0_1 != 0)) goto L_C04BB34;
-    v0_1 = ((FUN_0c058ca6(0x6A9, 0x0)));
-    L_C04BB6E:;
-    return v0_1;
-    L_C04BB34:;
-    FUN_0c07ff00();
-    *(float *)(((int)stk + 16)) = w0_0;
-    FUN_0c02e42a(((int)stk + 0), (((int)stk + 0) + 0xC), 0x5);
-    *(float *)(((int)stk + 16)) = w0_1;
-    FUN_0c02e42a(((int)stk + 0), (((int)stk + 0) + 0xC), 0x5);
-    v0_0 = ((v0_0 + 0x84));
-    v0_1 = ((v0_1 - 1));
-    goto L_C04BB62;
-    L_C04BB10:;
-    w0_0 = ((*(float *)0xC04BC10));
-    goto L_C04BB14;
-}
 
 int FUN_0c07f7d2(int a4, int a5, int a6)
 {
@@ -1703,16 +1513,6 @@ int gdFsDaPlaySctG(int a4, int a5, int a6, int a7)
     return t0;
 }
 
-int FUN_0c018b22(int a4, int a5)
-{
-    if (a5 != 0) {
-        if (a5 == 1) {
-            FUN_0c07ff00();
-        }
-        return (FUN_0c07ff00());
-    }
-    return FUN_0c02deca(0xC177DDC, a4);
-}
 
 int buFbrExecFiberServer(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11)
 {

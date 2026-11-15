@@ -2180,17 +2180,6 @@ int FUN_0c01b920(int a4, float f4, float f5)
     return t0;
 }
 
-int FUN_0c01e000(int a4)
-{
-    register int t2;
-
-    (((struct o30_float *)0xC1ECCEC)->v) = 0.0f;
-    *(volatile int *)((a4 + 0x18));
-    FUN_0c07ff00();
-    t2 = (((struct o0_int *)0xC1ECCEC)->v);
-    *(unsigned int *)0xC1ECD2C = t2;
-    return t2;
-}
 
 int FUN_0c01e13c(float f4)
 {
@@ -2378,13 +2367,6 @@ int FUN_0c0737d0(float f4)
     return nlRotateXSC(t1, t0);
 }
 
-int FUN_0c076230(float f4, float f5, float f6)
-{
-    (((struct o0_float *)0xC147500)->v) = f4;
-    (((struct o4_float *)0xC147500)->v) = f5;
-    (((struct o8_float *)0xC147500)->v) = f6;
-    return (FUN_0c07ff00());
-}
 
 int FUN_0c078310(void)
 {

@@ -487,40 +487,6 @@ int SJMEM_GetChunk(int a4, int a5, int a6, int a7)
     return SJMEM_Unlock(a4, t0);
 }
 
-int SJUNI_IsGetChunk(int a4, int a5, int a6, int a7)
-{
-    int stk[4];
-    register int t10;
-    register int t18;
-    register int t6;
-    register int t8;
-    register int t13;
-    register int t14;
-
-    *(unsigned int *)((a7 + 0x0)) = 0x0;
-    if (((int)a5 >= 0) && ((int)a5 < (int)0x4)) {
-        if ((*(int *)((((a5 << 2) + (a4 + 0x18)) + 0x0))) != 0) {
-            FUN_0c07fdc8();
-            *(unsigned int *)((t8 + 0x0)) = (*(int *)((t6 + 0x4)));
-            t10 = *(int *)((t6 + 0x4));
-            if ((*(signed char *)((a4 + 0x5))) == 1) {
-                if ((int)t10 < (int)t13) {
-                    return 0x0;
-                }
-                return 0x1;
-            }
-            if (t10 == t14) {
-                return 0x1;
-            }
-            return 0x0;
-        }
-        return 0x0;
-    }
-    if ((*(int *)((a4 + 0x28))) != 0) {
-        t18 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)((a4 + 0x28)))))((*(int *)((a4 + 0x2C))), 0xFFFFFFFD, a6, a7, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8), *(int *)((int)stk + 0 + 12), *(int *)((int)stk + 0 + 16), *(int *)((int)stk + 0 + 20), *(int *)((int)stk + 0 + 24));
-    }
-    return 0x0;
-}
 
 int FUN_0c019dc4(void)
 {
@@ -1995,30 +1961,6 @@ int FUN_0c01b208(void)
     return (FUN_0c07acd0(t0, 0x0));
 }
 
-int SetHelicopter(void)
-{
-    register int t0;
-    register int t11;
-    register int t5;
-    register int t7;
-    register int t9;
-
-    t0 = set_event(0x5C, 0xC02EBF0);
-    *(unsigned int *)0xC277838 = t0;
-    t11 = t0;
-    if (t0 != 0) {
-        (((struct o14_float *)(t0))->v) = ((((struct o0_float *)0xC02F108)->v));
-        (((struct o18_float *)(t0))->v) = ((((struct o4_float *)0xC02F108)->v));
-        (((struct o1C_float *)(t0))->v) = ((((struct o8_float *)0xC02F108)->v));
-        FUN_0c07ff00();
-        (((struct o58_uint *)(t5))->v) = 0x0;
-        FUN_0c07ff00();
-        (((struct o50_float *)(t7))->v) = ((((struct o18_float *)0xC02F108)->v));
-        (((struct o54_uint *)(t7))->v) = t9;
-        t11 = (FUN_0c07ff00());
-    }
-    return t11;
-}
 
 int FUN_0c040e5c(int a4, int a5)
 {

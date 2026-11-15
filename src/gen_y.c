@@ -436,48 +436,7 @@ int FUN_0c027934(void)
     return nlPopMatrix(0x1);
 }
 
-int CalcShadow2Matrix(int a4, float f4, float f5, float f6, float f7, float f8, float f9, float f10, float f11)
-{
-    int stk[3];
-    register float t7;
 
-    nlGetMatrix8(0x0, f4, f5, f6, f7, f8, f9, f10, f11);
-    FUN_0c07ff00();
-    *(float *)(((int)stk + 0)) = (-((((struct o8_float *)(a4))->v)));
-    *(float *)(((int)stk + 8)) = (*(float *)((a4 + 0x0)));
-    *(float *)(((int)stk + 4)) = 0.0f;
-    FUN_0c073e90(((int)stk + 0));
-    FUN_0c07ff00();
-    nlLoadMatrix8(0x0);
-    t7 = FUN_0c073c60(a4);
-    return (FUN_0c074f20(t7));
-}
-
-int SetBubble(int a4, int a5)
-{
-    register int t0;
-    register int t1;
-    register float u0;
-    register float u1;
-
-    t0 = FUN_0c070e60();
-    t1 = (t0 & 0x3);
-    if ((t0 & 0x3) == 1) {
-        t0 = set_event(0x3C, 0xC02E604);
-        t1 = t0;
-        if (t0 != 0) {
-            FUN_0c07ff00();
-            FUN_0c07ff00();
-            u0 = *(float *)0xC02E844;
-            u1 = u0;
-            u1 = u1 + u0 * (FUN_0c070e80());
-            (((struct o2C_float *)(t0))->v) = u1;
-            *(unsigned int *)((t0 + 0x30)) = 0xA0;
-            t1 = 0x2C;
-        }
-    }
-    return t1;
-}
 
 int FUN_0c03e154(void)
 {
@@ -978,21 +937,6 @@ int gdCiIsExistFile(int a4)
     return t16;
 }
 
-int FUN_0c16c338(int a4, int a5, int a6)
-{
-    int stk[13];
-
-    *(unsigned int *)(((int)stk + 8)) = a4;
-    *(unsigned int *)(((int)stk + 4)) = a5;
-    *(unsigned int *)(((int)stk + 0)) = a6;
-    FUN_0c07fdc8();
-    memset(0xC30B6D0, 0x0, 0x81);
-    FUN_0c0800c8(0xC30B6D0, (*(int *)(((int)stk + 8))));
-    strcat(0xC30B6D0, 0xC172204);
-    strcat(0xC30B6D0, (*(int *)(((((*(int *)(((int)stk + 0))) << 2) + (((int)stk + 0) + 0xC)) + 0x0))));
-    strcat(0xC30B6D0, 0xC172208);
-    return (strcat(0xC30B6D0, (*(int *)(((*(int *)(((int)stk + 4))) + 0x4)))));
-}
 
 int FUN_0c16d160(int a4, int a5, int a6, int a7)
 {

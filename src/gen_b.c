@@ -7,13 +7,10 @@ int FUN_0c07ff00(void);
 int FUN_0c05b410(void);
 int FUN_0c071b20(void);
 
-int FUN_0c05b410(void)
-{
-    FUN_0c07ff00();
-    return FUN_0c076230();
-}
 
 int FUN_0c071b20(void)
 {
     return (FUN_0c071b40(0x1));
 }
+
+

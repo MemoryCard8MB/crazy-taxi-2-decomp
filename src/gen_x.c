@@ -349,22 +349,6 @@ int FUN_0c01a7cc(void)
     return 0x0;
 }
 
-int FUN_0c0667cc(int a4)
-{
-    int stk[3];
-
-    (((struct o44_float *)(a4))->v) = 0.0f;
-    FUN_0c073e10((a4 + 0x40));
-    (((struct o64_float *)(a4))->v) = 0.0f;
-    FUN_0c073e10((a4 + 0x60));
-    nlOuterProduct(((a4 + 0x40) + 0x20), (a4 + 0x40), ((a4 + 0x40) + 0x10));
-    FUN_0c067494(a4, 0x1, 0x0, 0x0, *(int *)((int)stk + 0), *(int *)((int)stk + 0 + 4), *(int *)((int)stk + 0 + 8));
-    *(volatile int *)((a4 + 0xAC));
-    FUN_0c07ff00();
-    (((struct oF4_uint *)(a4))->v) = 0x12C;
-    (((struct o80_uint *)(a4))->v) = (((((struct o80_int *)(a4))->v)) + 0x1);
-    return 0x80;
-}
 
 int FUN_0c06cda4(int a4)
 {
@@ -1783,42 +1767,6 @@ int KillColliObj(int a4, int a5, int a6, int a7)
     return t0;
 }
 
-float FUN_0c030a26(int a4)
-{
-
-    register int R1;
-    register int R2;
-    register int R3;
-    register int R5;
-    register float F0;
-    register float F2;
-    register float F3;
-    register float F4;
-    register int T_;
-    register int v0_0;
-    register int v0_1;
-    register float w0_0;
-    register float w0_1;
-    v0_1 = a4;
-    v0_0 = (0xC27909C);
-    v0_0 = (v0_1);
-    if (((*(int *)(((((((struct o6C_int *)(v0_1))->v)) << 2) + 0xC27909C))) != 0)) goto L_C030A80;
-    w0_0 = nlLength((v0_0 + 0xC), (v0_0 + 0x58));
-    F0 = (w0_0);
-    if ((w0_0 > (1.0f + 1.0f))) goto L_C030A5C;
-    w0_0 = (((struct o40_float *)(v0_0))->v);
-    w0_1 = (w0_0);
-    if ((!((*(float *)0xC030AE4) > w0_0))) goto L_C030A72;
-    L_C030A5C:;
-    *(unsigned int *)(((((((struct o6C_int *)(v0_0))->v)) << 2) + 0xC27909C)) = 0x1;
-    *(unsigned int *)0xC2791B8 = ((*(int *)0xC2791B8) - 1);
-    v0_0 = (0xC27909C);
-    L_C030A80:;
-    return F0;
-    L_C030A72:;
-    v0_0 = ((FUN_0c07ff00()));
-    goto L_C030A80;
-}
 
 int FUN_0c03e07c(void)
 {

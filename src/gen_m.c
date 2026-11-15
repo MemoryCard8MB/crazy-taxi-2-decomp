@@ -252,53 +252,6 @@ int FUN_0c05268c(int a4, int a5, int a6, int a7, float f4, float f5, float f6, f
 int FUN_0c055440(void);
 int FUN_0c05cd80(int a4, int a5, int a6, int a7);
 
-int FUN_0c06383e(int a4)
-{
-    int stk[7];
-    register int t0;
-    register float u3;
-    register int t5;
-    register int t6;
-    register int t17;
-    register int t24;
-    register int t7;
-
-    t0 = *(int *)0xC1EC71C;
-    t5 = t0;
-    u3 = 1.0f;
-    if (t0 == 2) {
-        t5 = 0xC063940;
-        u3 = (*(float *)0xC063940);
-    }
-    *(float *)0xC13B004 = u3;
-    t6 = 0x0;
-    for (;;) {
-        if ((int)t6 >= (int)(*(int *)((a4 + 0x4)))) {
-            break;
-        }
-        t7 = t6;
-        t5 = 0x80;
-        t7 = (t7 << 8);
-        t7 = (t7 + (*(int *)((a4 + 0x0))));
-        *(unsigned int *)((t7 + t5)) = 0x0;
-        t5 = (FUN_0c05f72a(t7));
-        t5 = (FUN_0c05f6fe(t7));
-        t6 = (t6 + 0x1);
-    }
-    *(volatile int *)((a4 + 0x18));
-    *(volatile int *)((((*(int *)0xC1EC71C) << 2) + 0xC13B108));
-    FUN_0c07ff00();
-    t17 = FUN_0c0638e6(a4);
-    FUN_0c063a2a(a4, t17, 0x0, 0x0, *(int *)((int)stk + 0));
-    t24 = 0x5A;
-    if ((*(int *)0xC1EC71C) == 2) {
-    } else {
-        t24 = (*(int *)((((*(int *)((a4 + 0x14))) << 2) + 0xC10FA30)));
-    }
-    (((struct o58_uint *)(a4))->v) = t24;
-    *(unsigned int *)((a4 + 0xC)) = ((*(int *)((a4 + 0xC))) + 0x1);
-    return FUN_0c040bec(0x3, (*(int *)((a4 + 0x14))));
-}
 
 float ViewColliWall(float f4, float f5)
 {
@@ -888,76 +841,7 @@ int FUN_0c04be36(int a4)
     return t1;
 }
 
-int FUN_0c05ba98(int a4, int a5, int a6, int a7)
-{
-    int stk[10];
-    register float u0;
-    register float t1;
-    register float t3;
-    register float t5;
-    register float t7;
-    register float t9;
-    register int t26;
 
-    *(unsigned int *)(((int)stk + 0)) = a5;
-    u0 = *(float *)0xC05BBAC;
-    t1 = nlUnitVectorsd(a4, (((int)stk + 0) + 0x1C));
-    if (!(u0 > t1)) {
-        t3 = nlUnitVectorsd((*(int *)(((int)stk + 0))), (((int)stk + 0) + 0x10));
-        if (!(u0 > t3)) {
-            nlOuterProduct((((int)stk + 0) + 0x1C), (((int)stk + 0) + 0x10), a6);
-            t5 = FUN_0c073c60(a6);
-            if (!(u0 > t5)) {
-                nlOuterProduct((((int)stk + 0) + 0x10), a6, (((int)stk + 0) + 0x4));
-                t7 = FUN_0c073b40((((int)stk + 0) + 0x1C), (((int)stk + 0) + 0x10));
-                *(unsigned int *)((a7 + 0x0)) = (FUN_0c070730(t7));
-                t9 = FUN_0c073b40((((int)stk + 0) + 0x4), (((int)stk + 0) + 0x1C));
-                if (0.0f > t9) {
-                    *(unsigned int *)((a7 + 0x0)) = (-(*(int *)((a7 + 0x0))));
-                }
-            } else {
-                t26 = FUN_0c07ff00();
-                *(unsigned int *)((a7 + 0x0)) = 0x0;
-            }
-        } else {
-            t26 = FUN_0c07ff00();
-            *(unsigned int *)((a7 + 0x0)) = 0x0;
-        }
-    } else {
-        t26 = FUN_0c07ff00();
-        *(unsigned int *)((a7 + 0x0)) = 0x0;
-    }
-    return t26;
-}
-
-int FUN_0c06c44a(int a4)
-{
-    register float t3;
-    register float t5;
-    register int t14;
-
-    *(unsigned int *)((a4 + 0x0)) = ((*(int *)((a4 + 0x0))) + 0x1);
-    FUN_0c07fdc8();
-    t3 = nlLength(0xC175930, ((((struct o0_int *)0xC13C2F4)->v)));
-    t5 = nlLength(0xC175930, (((((struct oC_int *)0xC13C2F4)->v)) + 0x24));
-    if (t3 > t5) {
-        *(volatile int *)0xC13C2F4;
-        FUN_0c07ff00();
-        (((struct o4C_float *)(a4))->v) = ((((struct o0_float *)0xC06C5E8)->v));
-        (((struct o50_float *)(a4))->v) = ((((struct o4_float *)0xC06C5E8)->v));
-        t14 = 0x1;
-    } else {
-        *(volatile int *)0xC13C300;
-        FUN_0c07ff00();
-        (((struct o4C_float *)(a4))->v) = ((((struct o8_float *)0xC06C5E8)->v));
-        (((struct o50_float *)(a4))->v) = ((((struct oC_float *)0xC06C5E8)->v));
-        t14 = 0x0;
-    }
-    (((struct o54_uint *)(a4))->v) = t14;
-    (((struct o44_float *)(a4))->v) = 0.0f;
-    (((struct o48_float *)(a4))->v) = ((((struct o10_float *)0xC06C5E8)->v));
-    return 0x48;
-}
 
 int FUN_0c06ec30(int a4)
 {
@@ -1387,24 +1271,6 @@ int FUN_0c06a8f0(int a4, int a5)
     return t0;
 }
 
-int FUN_0c06e300(void)
-{
-    int stk[3];
-    register int t15;
-
-    FUN_0c07ff00();
-    FUN_0c06e700(((int)stk + 0), 0xC17596C, ((((struct o0_float *)0xC112B7C)->v)));
-    FUN_0c06e700(((int)stk + 0), 0xC17597C, ((((struct o4_float *)0xC112B7C)->v)));
-    FUN_0c06e700(((int)stk + 0), 0xC17598C, ((((struct o8_float *)0xC112B7C)->v)));
-    FUN_0c018b22(((int)stk + 0), 0x0);
-    FUN_0c07ff00();
-    FUN_0c06e700(((int)stk + 0), 0xC17596C, ((((struct oC_float *)0xC112B7C)->v)));
-    FUN_0c06e700(((int)stk + 0), 0xC17597C, ((((struct o10_float *)0xC112B7C)->v)));
-    FUN_0c06e700(((int)stk + 0), 0xC17598C, ((((struct o14_float *)0xC112B7C)->v)));
-    t15 = camSetTarget(((int)stk + 0), 0x0);
-    *(unsigned int *)0xC2BB3D8 = ((*(int *)0xC2BB3D8) + 0x1);
-    return t15;
-}
 
 int nlSysInitStripContextVtx(int a4)
 {
@@ -2138,3 +2004,5 @@ int FUN_0c05cd80(int a4, int a5, int a6, int a7)
     (((struct o8_uint *)0xC136D68)->v) = ((t0 & 0x7F) + 0x3C);
     return ((t0 & 0x7F) + 0x3C);
 }
+
+

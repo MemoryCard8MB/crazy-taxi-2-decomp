@@ -57,7 +57,6 @@ int FUN_0c02e7a6(int, int);
 int FUN_0c02f208(void);
 int FUN_0c072150(int, int, int);
 float FUN_0c073c60(int);
-int FUN_0c07ff00(void);
 extern float _builtin_sqrtf(float);
 int carFlipTravelDir(int);
 int getAreaFromPos(int, int);
@@ -94,15 +93,14 @@ int FUN_0c0148f4(void)
     register float u231;
     int t238;
     register int t253;
-    register float u273;
-    register float u274;
-    register float t278;
-    register float t294;
+    register float u278;
+    register float u279;
+    register float t283;
+    register float t297;
     int t82;
     float u95;
-    register int t254;
-    int t255;
-    int t297;
+    int t254;
+    int t300;
     float s1;
     float s2;
 
@@ -300,12 +298,14 @@ int FUN_0c0148f4(void)
     FUN_0c012e78(0xC1758B4);
     FUN_0c013a30(0xC1758B4);
     t253 = *(int *)0xC11875C;
-    if ((((((struct o24_int *)0xC1EC71C)->v)) == 1) && ((t254 = *(int *)0xC11CE4C, t254 != 0) && (t255 = (((struct o0_int *)0xC1EC7C4)->v), (t255 & 16) != 0))) {
-        if ((int)t253 < (int)0x5) {
-            *(unsigned int *)0xC11875C = ((*(int *)0xC11875C) + 0x1);
-        } else {
-            if (1) {
-                *(unsigned int *)0xC11875C = ((*(int *)0xC11875C) - 1);
+    if ((((((struct o24_int *)0xC1EC71C)->v)) == 1) && (t254 = *(int *)0xC11CE4C, t254 != 0)) {
+        if ((((((struct o0_int *)0xC1EC7C4)->v)) & 16) != 0) {
+            if ((int)t253 < (int)0x5) {
+                *(unsigned int *)0xC11875C = ((*(int *)0xC11875C) + 0x1);
+            } else {
+                if (1) {
+                    *(unsigned int *)0xC11875C = ((*(int *)0xC11875C) - 1);
+                }
             }
         }
     }
@@ -313,23 +313,23 @@ int FUN_0c0148f4(void)
         FUN_0c027f28(0x0);
         pfSize(1.20000005f, 1.20000005f);
         FUN_0c028196();
-        u273 = (((((struct o4_float *)0xC175A14)->v)) * ((((struct o38_float *)0xC1759AC)->v)));
-        u274 = _builtin_fabsf((u273 * 0.0376980007f));
-        FUN_0c0281d4((int)(u274 * 0.800000012f), 0x0);
+        u278 = (((((struct o4_float *)0xC175A14)->v)) * ((((struct o38_float *)0xC1759AC)->v)));
+        u279 = _builtin_fabsf((u278 * 0.0376980007f));
+        FUN_0c0281d4((int)(u279 * 0.800000012f), 0x0);
         FUN_0c0281b6(0xC097020);
-        t278 = FUN_0c02806c((*(int *)0xC09DA20));
-        FUN_0c027fbe(((-t278) + 540.0f), 425.0f);
+        t283 = FUN_0c02806c((*(int *)0xC09DA20));
+        FUN_0c027fbe(((-t283) + 540.0f), 425.0f);
         FUN_0c02803a(0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF);
         FUN_0c02842e((*(int *)0xC09DA20));
     }
-    FUN_0c07ff00();
+    { struct mv3 { int w[3]; }; *(struct mv3 *)(0xC1758B4) = *(struct mv3 *)(0xC175930); }
     nlSubVector3op(0xC1758C0, 0xC175930, 0xC175944);
     (((struct o8_float *)0xC1758FC)->v) = 0.0f;
     (((struct o0_float *)0xC1758FC)->v) = 0.0f;
-    FUN_0c07ff00();
-    t294 = FUN_0c073c60(0xC1758C0);
-    FUN_0c01e13c(t294);
-    if ((((((struct o24_int *)0xC1EC71C)->v)) == 1) && (t297 = *(int *)0xC2AC2F4, t297 == 0)) {
+    { struct mv5 { int w[5]; }; *(struct mv5 *)(0xC175944) = *(struct mv5 *)(0xC175930); }
+    t297 = FUN_0c073c60(0xC1758C0);
+    FUN_0c01e13c(t297);
+    if ((((((struct o24_int *)0xC1EC71C)->v)) == 1) && (t300 = *(int *)0xC2AC2F4, t300 == 0)) {
         FUN_0c010fd4(0xC1758B4);
     }
     FUN_0c02e7a6(0xC175A58, 0xC1759B4);

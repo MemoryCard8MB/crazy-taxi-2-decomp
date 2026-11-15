@@ -674,48 +674,6 @@ int kmiProcessVertex_03(int a4)
     return 0x0;
 }
 
-int FUN_0c044f9a(int a4, int a5)
-{
-    register int t0;
-    register int t1;
-    register int t2;
-
-    t0 = nlSetEventNext(0x12C, 0xC04586C, a4);
-    if (t0 == 0) {
-        return t0;
-    }
-    t1 = *(int *)0xC2A59C0;
-    *(unsigned int *)0xC2A59C0 = (t1 + 0x1);
-    (((struct o74_uint *)(t0))->v) = ((t1 + 0x1) - 1);
-    *(unsigned int *)0xC2AB7EC = ((*(int *)0xC2AB7EC) + 0x1);
-    if (a5 == 5) {
-        (((struct o78_uint *)(t0))->v) = (((((struct o78_int *)(a4))->v)) + 0x2);
-    } else {
-        (((struct o78_uint *)(t0))->v) = (((((struct o78_int *)(a4))->v)) + 0x1);
-    }
-    (((struct o80_uint *)(t0))->v) = ((((struct o80_int *)(a4))->v));
-    (((struct oD4_uint *)(t0))->v) = (((((struct oD4_int *)(a4))->v)) - ((a5 << 1) + (a5 << 2)));
-    FUN_0c046fde((0x80 + t0), (0xD4 + t0), 0x0);
-    t1 = (((struct o80_int *)(t0))->v);
-    t2 = *(int *)0xC2ADA7C;
-    *(volatile int *)((t0 + 0xD4));
-    *(volatile int *)((((((t1 << 1) + t1) << 2) + t2) + 0x0));
-    FUN_0c07ff00();
-    FUN_0c0438c0(t0);
-    t1 = (((struct o80_int *)(t0))->v);
-    t2 = (((struct oD4_int *)(t0))->v);
-    (((struct o90_float *)(t0))->v) = (((((struct o4_float *)(((*(int *)((((((t1 << 1) + t1) << 2) + (*(int *)0xC2ADA7C)) + 0x0))) + (((t2 << 1) + t2) << 2))))->v)) + 1.0f);
-    FUN_0c07ff00();
-    (((struct oA4_uchar *)(t0))->v) = (*(signed char *)(((0xA4 + a4) + 0x0)));
-    *(unsigned char *)(((0xA4 + t0) + 0x1)) = (*(signed char *)(((0xA4 + a4) + 0x1)));
-    *(unsigned char *)(((0xA4 + t0) + 0x2)) = (*(signed char *)(((0xA4 + a4) + 0x2)));
-    *(unsigned char *)(((0xA4 + t0) + 0x3)) = (*(signed char *)(((0xA4 + a4) + 0x3)));
-    *(unsigned char *)(((0xA4 + t0) + 0x4)) = (*(signed char *)(((0xA4 + a4) + 0x4)));
-    *(unsigned char *)(((0xA4 + t0) + 0x5)) = (*(signed char *)(((0xA4 + a4) + 0x5)));
-    FUN_0c03f9d0(((((struct o80_int *)(t0))->v)), ((((struct oD4_int *)(t0))->v)));
-    FUN_0c03f9d0(((((struct o80_int *)(t0))->v)), (((((struct oD4_int *)(t0))->v)) + 0x1));
-    return FUN_0c0435e2(t0, ((((struct o84_int *)(t0))->v)));
-}
 
 int FUN_0c04d28a(void)
 {

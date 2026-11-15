@@ -1745,16 +1745,6 @@ int mpdrv_insertnop(int a4)
     return 0x0;
 }
 
-int camSetTarget(int a4, int a5)
-{
-    if (a5 != 0) {
-        if (a5 == 1) {
-            FUN_0c07ff00();
-        }
-        return (FUN_0c07ff00());
-    }
-    return FUN_0c02deca(0xC177E08, a4);
-}
 
 int FUN_0c019d08(int a4, int a5, int a6)
 {
@@ -1837,21 +1827,6 @@ int FUN_0c022cee(void)
     return t1;
 }
 
-void setObjHitBeach(int a4)
-{
-    register float t0;
-
-    t0 = nlLength((a4 + 0xC), (a4 + 0x58));
-    if (!(t0 > (1.0f + 1.0f))) {
-        if (0.699999988f > ((((struct o40_float *)(a4))->v))) {
-            *(unsigned int *)0xC2791BC = 0x1;
-        } else {
-            FUN_0c07ff00();
-        }
-    } else {
-        *(unsigned int *)0xC2791BC = 0x1;
-    }
-}
 
 int FUN_0c04bed2(int a4)
 {
@@ -2382,25 +2357,3 @@ int cvFsOptFn2(int a4, int a5, int a6, int a7)
     return t13;
 }
 
-int FUN_0c018c96(int a4, int a5, int a6, int a7)
-{
-    register int t8;
-    register int t5;
-
-    (((struct o0_uint *)0xC177E4C)->v) = a4;
-    (((struct o4_uint *)0xC177E4C)->v) = a5;
-    (((struct o8_uint *)0xC177E4C)->v) = a6;
-    t8 = a7;
-    if (a7 == 1) {
-        t8 = (FUN_0c07ff00());
-    } else {
-        t5 = a7;
-    }
-    if (t5 == 0) {
-        FUN_0c07ff00();
-        (((struct oC_float *)0xC177E4C)->v) = 1.0f;
-        (((struct o10_float *)0xC177E4C)->v) = 0.0f;
-        t8 = 0x28;
-    }
-    return t8;
-}
