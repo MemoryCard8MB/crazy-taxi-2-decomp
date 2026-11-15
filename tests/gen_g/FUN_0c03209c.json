@@ -9,6 +9,33 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0DFFFF04.4=0CCDC000",
+   "regs": {},
+   "poke": {
+    "0DFFFF04": "00c0cd0c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=0CCD8000",
+   "regs": {
+    "r6": "0CCD8000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0DFFFF00.4=0CCD4000",
+   "regs": {},
+   "poke": {
+    "0DFFFF00": "0040cd0c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0DFFFF00.4=0CCD4000; 0DFFFF00.4=FFFFFFFF",
+   "regs": {},
+   "poke": {
+    "0DFFFF00": "ffffffff"
+   }
   }
  ]
 }

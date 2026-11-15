@@ -13,6 +13,15 @@
    "regs": {
     "r4": "7FFFFFFF"
    }
+  },
+  {
+   "about": "mutant of rescue: flips 0C01EF64: 0C26ED08.1=01",
+   "regs": {
+    "r4": "00000002"
+   },
+   "poke": {
+    "0C26ED08": "01"
+   }
   }
  ]
 }

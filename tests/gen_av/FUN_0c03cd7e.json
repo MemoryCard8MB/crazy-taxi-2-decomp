@@ -167,6 +167,14 @@
    "poke": {
     "0C2A58B8": "6f12833a"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A469C.4=00000004; 0C1EC83C.4=3F7FBE77",
+   "regs": {},
+   "poke": {
+    "0C2A469C": "04000000",
+    "0C1EC83C": "77be7f3f"
+   }
   }
  ]
 }

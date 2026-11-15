@@ -9,6 +9,18 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: r5=0CC88000",
+   "regs": {
+    "r5": "0CC88000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=00000015",
+   "regs": {
+    "r4": "00000015"
+   }
   }
  ]
 }

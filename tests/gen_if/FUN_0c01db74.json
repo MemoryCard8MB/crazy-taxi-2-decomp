@@ -9,6 +9,56 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1ECD14.4=00000002; 0C1ECD14.4=0000002E",
+   "regs": {},
+   "poke": {
+    "0C1ECD14": "2e000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1ECD14.4=00000002",
+   "regs": {},
+   "poke": {
+    "0C1ECD14": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1ECD14.4=00000002; 0C1ECD14.4=0000002E; call 3 (FUN_0c03f154) r0=00000003",
+   "regs": {},
+   "poke": {
+    "0C1ECD14": "2e000000"
+   },
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "00000003"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1ECD14.4=00000002; 0C1ECD14.4=0000014B",
+   "regs": {},
+   "poke": {
+    "0C1ECD14": "4b010000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1ECCA8.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C1ECCA8": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1ECD14.4=00000002; 0C1EC720.4=00000002",
+   "regs": {},
+   "poke": {
+    "0C1ECD14": "02000000",
+    "0C1EC720": "02000000"
+   }
   }
  ]
 }

@@ -2178,6 +2178,85 @@
     }
    ],
    "about": "snapshot title1 #2: the state at its entry in that frame (9 bytes read, 1 call answers)"
+  },
+  {
+   "entry": "8C064F92",
+   "end": "8C065080",
+   "regs": {
+    "r4": "0C19D9F4",
+    "r5": "ACEBCCC0",
+    "r6": "00000000",
+    "r7": "0C1BFFE0",
+    "r8": "0C177D2C",
+    "r9": "00000001",
+    "r10": "0C02897A",
+    "r11": "00000000",
+    "r12": "00000000",
+    "r13": "00000000",
+    "r14": "0C19D9F4",
+    "fr4": "41639DA4",
+    "fr5": "C8862CA7",
+    "fr6": "46664BB2",
+    "fr7": "00000000",
+    "fr8": "C3D7DF08",
+    "fr9": "4041BE42",
+    "fr10": "42806610",
+    "fr11": "3F800000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "2a49060cf4d9190c28e73b0cf0e93b0c28ee3b0c8a21060c000000000000000018db190cfa56010c00000000107a170cb458170cfcda190c888dbc38f9ff7f3f",
+    "0C19DA74": "02000000",
+    "0C19DAA0": "18db190c",
+    "0C19DB7B": "02"
+   },
+   "calls": [
+    {
+     "fr0": "43FDF27A"
+    }
+   ],
+   "about": "mutant of snapshot apple_dropoff1 #1: the state at its entry in that f: 0C19DA74.4=00000002"
+  },
+  {
+   "entry": "8C064F92",
+   "end": "8C065080",
+   "regs": {
+    "r4": "0C1A4630",
+    "r5": "ACEB88C0",
+    "r6": "00000000",
+    "r7": "0C1BFFE0",
+    "r8": "0C177D2C",
+    "r9": "00000001",
+    "r10": "0C02897A",
+    "r11": "00000000",
+    "r12": "00000000",
+    "r13": "00000000",
+    "r14": "0C1A4630",
+    "fr4": "4C00FB51",
+    "fr5": "439A2DBB",
+    "fr6": "43704EBE",
+    "fr7": "32FE0D31",
+    "fr8": "4C00FB51",
+    "fr9": "501B5C72",
+    "fr10": "4FF22691",
+    "fr11": "32FE0D31",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "2a49060c30461a0c28e73b0cf0e93b0c28ee3b0c8a21060c000000000000000054471a0cfa56010c00000000487a170cb458170c38471a0c44c71e0c03000000",
+    "0C1A46B0": "0300000000000000",
+    "0C1A46DC": "54471a0c",
+    "0C1A47B7": "02"
+   },
+   "calls": [
+    {
+     "fr0": "C3AA6CEB"
+    },
+    {
+     "r0": "BFFFFFFF"
+    }
+   ],
+   "about": "mutant of snapshot title1 #1: the state at its entry in that frame (13: call 1 (nlLength) fr0=C3AA6CEB; 0C1A46B0.4=00000003"
   }
  ]
 }

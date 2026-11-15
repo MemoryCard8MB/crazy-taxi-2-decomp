@@ -916,26 +916,34 @@ def main(argv):
             evidence[fn] = (start, size, cfile, counts,
                             [c.get('about', '') for k in ('dev', 'holdout') for c in sets.get(k, [])] + ['the cases run %s' % covtext])
             cache[key] = {'fn': fn, 'why': results[fn][1], 'covtext': covtext}
-    if any(ok for ok, _ in results.values()) and not (stem.startswith('zz_') or fuzz):
-        fresh_cache = load_cache()          # another run may have added keys meanwhile
-        fresh_cache.update(cache)
-        save_cache(fresh_cache)
-    for fn, (ok, why) in results.items():
-        if not quiet or ok is not True:
-            print('%-28s %-11s %s' % (fn, {True: 'EQUIVALENT', False: 'DIFFERS', None: '-'}[ok], why))
-    if quiet:
-        print('%d EQUIVALENT, %d DIFFERS, %d without cases or not compiled' % (
-            sum(1 for ok, _ in results.values() if ok is True), sum(1 for ok, _ in results.values() if ok is False),
-            sum(1 for ok, _ in results.values() if ok is None)))
-    if stem.startswith('zz_') or fuzz:          # a scratch file (an experiment): its results are printed, never recorded
-        return
-    path = os.path.join('tests', 'equivalent.txt')
-    have = set(open(path).read().split()) if os.path.exists(path) else set()
-    have |= {fn for fn, (ok, _) in results.items() if ok}
-    have -= {fn for fn, (ok, _) in results.items() if ok is False}
-    os.makedirs('tests', exist_ok=True)
-    open(path, 'w').write(''.join(f + '\n' for f in sorted(have)))
-    write_evidence(evidence, {fn for fn, (ok, _) in results.items() if ok is False})
+    import fcntl
+    os.makedirs('state', exist_ok=True)
+    lock = open(os.path.join('state', 'equiv.lock'), 'w')
+    fcntl.flock(lock, fcntl.LOCK_EX)      # runs side by side: the cache, tests/equivalent.txt and docs/equivalent.md are read and
+    try:                                  # rewritten by one run at a time, each from the latest version
+        if any(ok for ok, _ in results.values()) and not (stem.startswith('zz_') or fuzz):
+            fresh_cache = load_cache()          # another run may have added keys meanwhile
+            fresh_cache.update(cache)
+            save_cache(fresh_cache)
+        for fn, (ok, why) in results.items():
+            if not quiet or ok is not True:
+                print('%-28s %-11s %s' % (fn, {True: 'EQUIVALENT', False: 'DIFFERS', None: '-'}[ok], why))
+        if quiet:
+            print('%d EQUIVALENT, %d DIFFERS, %d without cases or not compiled' % (
+                sum(1 for ok, _ in results.values() if ok is True), sum(1 for ok, _ in results.values() if ok is False),
+                sum(1 for ok, _ in results.values() if ok is None)))
+        if stem.startswith('zz_') or fuzz:          # a scratch file (an experiment): its results are printed, never recorded
+            return
+        path = os.path.join('tests', 'equivalent.txt')
+        have = set(open(path).read().split()) if os.path.exists(path) else set()
+        have |= {fn for fn, (ok, _) in results.items() if ok}
+        have -= {fn for fn, (ok, _) in results.items() if ok is False}
+        os.makedirs('tests', exist_ok=True)
+        open(path, 'w').write(''.join(f + '\n' for f in sorted(have)))
+        write_evidence(evidence, {fn for fn, (ok, _) in results.items() if ok is False})
+    finally:
+        fcntl.flock(lock, fcntl.LOCK_UN)
+        lock.close()
 
 
 def write_evidence(new, failed):

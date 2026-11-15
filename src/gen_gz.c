@@ -141,7 +141,7 @@ int FUN_0c045bac(int a4, int a5);
 int FUN_0c06d1c4(int a4);
 int FUN_0c05b8ee(int a4, int a5, int a6, float f4);
 int FUN_0c02cf88(int a4);
-int FUN_0c027bfa(int a4);
+int FUN_0c027bfa(void);
 int FUN_0c02e42a(int a4, int a5, int a6);
 float ReflectColliWallBox(int a4, int a5, int a6, int a7, float f4, float f5, float f6, float f7);
 int FUN_0c043b00(int a4, int a5, int a6);
@@ -921,7 +921,8 @@ int FUN_0c05b8ee(int a4, int a5, int a6, float f4)
 }
 
 
-int FUN_0c027bfa(int a4)
+/* manual: no argument: the original sets r4 (mov #6,r4) before reading it; the placeholder a4 made the caller compare a leftover */
+int FUN_0c027bfa(void)
 {
 
     int R0;
@@ -940,7 +941,6 @@ int FUN_0c027bfa(int a4)
     register int v0_4;
     register int v0_5;
     register int v0_6;
-    v0_2 = a4;
     v0_2 = ((((struct oC_int *)0xC270D04)->v)) == 0;
     v0_1 = (0xC270BBC);
     v0_0 = (0xC270D10);

@@ -160,7 +160,7 @@ int FUN_0c030cb4(int a4, int a5, int a6, int a7, float f4);
 int FUN_0c04f050(void);
 int FUN_0c057064(void);
 int vmsfs_c_init(int a4);
-int FUN_0c027bfa(int a4);
+int FUN_0c027bfa(void);
 int vmsio_bank_change(int a4, int a5);
 int FUN_0c08eee0(int a4, int a5, int a6, int a7);
 

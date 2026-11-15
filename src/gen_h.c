@@ -10,7 +10,7 @@ struct o8_float { char p[0x8]; float v; };
 struct oC_int { char p[0xC]; int v; };
 struct oC_uint { char p[0xC]; unsigned int v; };
 int FUN_0c05872e(int, int);
-int FUN_0c058782(int, ...);
+int FUN_0c058782(int, int, int, int, int);
 int lcdSync(int);
 int pdGetPeripheral(int);
 int FUN_0c0585ca(int a4, int a5);
@@ -34,8 +34,9 @@ int FUN_0c0585ca(int a4, int a5)
         *(unsigned int *)0xC2B337C = ((*(int *)0xC2B337C) | 0x2);
     }
     FUN_0c05872e(0x0, a4);
-    
-    FUN_0c058782(a4);
+    /* manual: the original passes five arguments (0C058658-0C05866E): the VMU image (0C10D348 with a5 set, else 0C10D284), 0, 0, 1
+       and the port on the stack; the generated call through a variadic prototype kept only a4 */
+    FUN_0c058782((a5 != 0) ? 0xC10D348 : 0xC10D284, 0x0, 0x0, 0x1, a4);
     return lcdSync(a4);
 }
 

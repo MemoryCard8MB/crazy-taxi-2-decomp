@@ -9,6 +9,25 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 4 (FUN_0c03f154) r0=00000004",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {
+     "r0": "00000004"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2AC2F0.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2AC2F0": "01000000"
+   }
   }
  ]
 }

@@ -229,7 +229,7 @@ int thunk_FUN_0c14b2ec(void);
 int vmsfs_c_getstate(int);
 int vmsfs_c_setfunc(int, int);
 int vmsfs_c_setparam(int, int, int, int, int, int, int);
-int FUN_0c059bf2(int a4, int a5, int a6, int a7);
+void FUN_0c059bf2(int a4, int a5, int a6, int a7);
 int vmsio_isready(int a4);
 int FUN_0c147a9a(void);
 int FUN_0c147aec(void);
@@ -327,7 +327,7 @@ int FUN_0c02274c(void);
 int FUN_0c022884(int a4);
 int Init_Standard(void);
 
-int FUN_0c059bf2(int a4, int a5, int a6, int a7)
+void FUN_0c059bf2(int a4, int a5, int a6, int a7)
 {
     register int t0;
     register int t1;
@@ -349,7 +349,7 @@ int FUN_0c059bf2(int a4, int a5, int a6, int a7)
     } else {
         t1 = t0;
     }
-    return t1;
+    return;
 }
 
 int vmsio_isready(int a4)

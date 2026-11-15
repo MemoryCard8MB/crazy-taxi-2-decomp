@@ -46,6 +46,75 @@
     {}
    ],
    "about": "snapshot menu_options1 #1: the state at its entry in that frame (4 bytes read, 2 call answers)"
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC08000; 0C2A46E0.4=00000001; r4=00000000",
+   "regs": {
+    "r4": "00000000"
+   },
+   "poke": {
+    "0C2A46E0": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC08000",
+   "regs": {
+    "r4": "0CC08000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC08000; 0C2A46E0.4=00000001",
+   "regs": {
+    "r4": "0CC08000"
+   },
+   "poke": {
+    "0C2A46E0": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC08000; 0C2A46E0.4=00000001; call 2 (FUN_0c03425e) r0=00000001; 0C2A46E0.4=00000002",
+   "regs": {
+    "r4": "0CC08000"
+   },
+   "poke": {
+    "0C2A46E0": "02000000"
+   },
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC08000; 0C2A46E0.4=00000001; r4=00000000; call 2 (FUN_0c03e700) r0=00000001",
+   "regs": {
+    "r4": "00000000"
+   },
+   "poke": {
+    "0C2A46E0": "01000000"
+   },
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC08000; 0C2A46E0.4=00000001; call 2 (FUN_0c03425e) r0=00000001",
+   "regs": {
+    "r4": "0CC08000"
+   },
+   "poke": {
+    "0C2A46E0": "01000000"
+   },
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
   }
  ]
 }

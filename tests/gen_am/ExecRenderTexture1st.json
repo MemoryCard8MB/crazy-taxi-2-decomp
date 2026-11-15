@@ -9,6 +9,13 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C12A5EC.4=0CC90000",
+   "regs": {},
+   "poke": {
+    "0C12A5EC": "0000c90c"
+   }
   }
  ]
 }

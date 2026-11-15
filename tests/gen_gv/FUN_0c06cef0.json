@@ -9,6 +9,45 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 8 (FUN_0c029b12) r0=0CC78000, 0CC7801C.4=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CC78000"
+    }
+   ],
+   "poke": {
+    "0CC7801C": "ffffffff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C13C358.4=0CC84000, 0CC84000.4=0CC80000, 0CC80080.4=00000002",
+   "regs": {},
+   "poke": {
+    "0C13C358": "0040c80c",
+    "0CC84000": "0000c80c",
+    "0CC80080": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c05d0d8) r0=0CC70000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "0CC70000"
+    }
+   ]
   }
  ]
 }

@@ -9,6 +9,87 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=FFFFFFFF",
+   "regs": {
+    "r4": "FFFFFFFF"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC20000; 0C2A5898.4=00000014",
+   "regs": {
+    "r4": "0CC20000"
+   },
+   "poke": {
+    "0C2A5898": "14000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC18000; 0C2A5898.4=0000001B; 0C2A5894.4=00000001",
+   "regs": {
+    "r4": "0CC18000"
+   },
+   "poke": {
+    "0C2A5898": "1b000000",
+    "0C2A5894": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC18000; 0C2A5898.4=0000001B; 0C2A589C.4=00000015",
+   "regs": {
+    "r4": "0CC18000"
+   },
+   "poke": {
+    "0C2A5898": "1b000000",
+    "0C2A589C": "15000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC18000; 0C2A5898.4=0000001B; 0C2A5894.4=FFFFFFFF",
+   "regs": {
+    "r4": "0CC18000"
+   },
+   "poke": {
+    "0C2A5898": "1b000000",
+    "0C2A5894": "ffffffff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC18000; 0C2A5898.4=0000001B; 0C2A589C.4=00000015; 0C2A589C.4=00000016",
+   "regs": {
+    "r4": "0CC18000"
+   },
+   "poke": {
+    "0C2A5898": "1b000000",
+    "0C2A589C": "16000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC18000; 0C2A5898.4=0000001B",
+   "regs": {
+    "r4": "0CC18000"
+   },
+   "poke": {
+    "0C2A5898": "1b000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4658.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2A4658": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC18000; 0C2A5898.4=0000001B; 0C2A5894.4=00000001; 0C2A5894.4=00000002",
+   "regs": {
+    "r4": "0CC18000"
+   },
+   "poke": {
+    "0C2A5898": "1b000000",
+    "0C2A5894": "02000000"
+   }
   }
  ]
 }

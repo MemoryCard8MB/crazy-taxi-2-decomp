@@ -421,6 +421,33 @@
     }
    ],
    "about": "snapshot title1 #2: the state at its entry in that frame (20 bytes read, 8 call answers)"
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCE8000, 0CCE8038.4=00000003",
+   "regs": {
+    "r4": "0CCE8000"
+   },
+   "poke": {
+    "0CCE8038": "03000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCF0000, 0CCF0038.4=00000004",
+   "regs": {
+    "r4": "0CCF0000"
+   },
+   "poke": {
+    "0CCF0038": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCE0000, 0CCE0038.4=00000002",
+   "regs": {
+    "r4": "0CCE0000"
+   },
+   "poke": {
+    "0CCE0038": "02000000"
+   }
   }
  ]
 }

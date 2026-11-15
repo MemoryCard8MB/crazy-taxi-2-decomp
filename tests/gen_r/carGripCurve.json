@@ -289,6 +289,30 @@
     "fr4": 1000000000.0,
     "fr6": 2.5
    }
+  },
+  {
+   "about": "mutant of case 1: fr4=3E560418",
+   "poke": {},
+   "regs": {
+    "fr4": "3E560418",
+    "fr6": 0.0
+   }
+  },
+  {
+   "about": "mutant of case 1: fr4=3D75C28F",
+   "poke": {},
+   "regs": {
+    "fr4": "3D75C28F",
+    "fr6": 0.0
+   }
+  },
+  {
+   "about": "mutant of case 2: fr4=3CF5C28F",
+   "poke": {},
+   "regs": {
+    "fr4": "3CF5C28F",
+    "fr6": 0.0
+   }
   }
  ]
 }

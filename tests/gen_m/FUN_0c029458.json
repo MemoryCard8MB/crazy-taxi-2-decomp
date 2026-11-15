@@ -9,6 +9,18 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: fr6=461C4000",
+   "regs": {
+    "fr6": "461C4000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: fr6=BF800000",
+   "regs": {
+    "fr6": "BF800000"
+   }
   }
  ]
 }

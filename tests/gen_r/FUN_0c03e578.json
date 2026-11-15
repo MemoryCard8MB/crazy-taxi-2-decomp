@@ -9,6 +9,18 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A469C.4=0CC14000; call 1 (buIsReady) r0=00000001",
+   "regs": {},
+   "poke": {
+    "0C2A469C": "0040c10c"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
   }
  ]
 }

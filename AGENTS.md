@@ -289,6 +289,12 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   a `bt/s`/`bra` and the generator dropped both); scan for that shape: `if (...) goto L; goto L;` (no other hit is a drop). The
   rest were declarations: leftover results (FUN_0c061bcc and its caller FUN_0c01505c, FUN_0c02a798 void) and placeholder
   parameters (Voice_ShutUp and FUN_0c01ec7a take only r4).
+  Third batch, in parallel (`bash tools/6-agentic/mutpar.sh batch3 10 --max-cov 1.0 --min-gap 5 --time 30`: 10 workers, then
+  10 proofs at a time; `equiv.py` now locks its shared files, `state/equiv.lock`): 594 functions, 1,366 mutants, 7.5 minutes in
+  all, game coverage 82.1% -> 91.1%. One more real bug: `FUN_0c0585ca` called `FUN_0c058782` (the VMU image) with only a4
+  through a variadic prototype `(int, ...)`; the original passes the image (0C10D348 or 0C10D284 by a5), 0, 0, 1 and the port
+  (`work/mut/varscan.py` lists short calls through such prototypes: none is left in game code). Also: FUN_0c027bfa had a
+  placeholder a4, FUN_0c059bf2 (no caller at all) returned a leftover.
 - **A left shift by a negative amount.** The generator writes SH-4 shld/shad with a negative count as `x << (int)(-n)`,
   which C leaves undefined. SHC mostly emits the shift by a negated register (correct), but in FUN_0c042ba8 it folded
   `(-1 << k) << -k` away and tested all the bits instead of the low ones: a snapshot case of the game took the other branch

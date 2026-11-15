@@ -9,6 +9,236 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C277824.4=3F800000",
+   "regs": {},
+   "poke": {
+    "0C277824": "0000803f"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCF8000, 0CCF8018.4=424C0000",
+   "regs": {
+    "r4": "0CCF8000"
+   },
+   "poke": {
+    "0CCF8018": "00004c42"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCFC000, 0CCFC000.4=3C888885",
+   "regs": {
+    "r4": "0CCFC000"
+   },
+   "poke": {
+    "0CCFC000": "8588883c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 37 (nlLength) fr0=457A1000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "fr0": "457A1000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 37 (nlLength) fr0=44FA2000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "fr0": "44FA2000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 37 (nlLength) fr0=44FA2000; 0C27783C.4=0CCA4000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "fr0": "44FA2000"
+    }
+   ],
+   "poke": {
+    "0C27783C": "0040ca0c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 21 (nlArcTan2) r0=00001001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "00001001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 21 (nlArcTan2) r0=FFFFEFFF",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "FFFFEFFF"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC3C000, 0CC3C050.4=BF7BBBBC",
+   "regs": {
+    "r4": "0CC3C000"
+   },
+   "poke": {
+    "0CC3C050": "bcbb7bbf"
+   }
   }
  ]
 }

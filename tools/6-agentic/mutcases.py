@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """mutcases.py: equiv cases by mutation, for the game functions the cases cover worst. Run in the repo. No emulator needed.
 
-    python3 tools/6-agentic/mutcases.py [--max-cov 0.75] [--min-gap 40] [--top 0] [--time 90] [--keep 200] [--write] [-- name ...]
+    python3 tools/6-agentic/mutcases.py [--max-cov 0.75] [--min-gap 40] [--top 0] [--time 90] [--keep 200] [--write] [--list] [-- name ...]
+    (--list: print the targets, worst first, and stop; tools/6-agentic/mutpar.sh runs them in parallel)
 
 For each target function the ORIGINAL runs (in sh4sim, as equiv.py runs it: calls mocked, the compiler's runtime helpers real) on its
 existing cases, with a trace of every instruction and a log of every memory read and write by trace position. Then:
@@ -32,9 +33,11 @@ if '--' in args:
     names = args[args.index('--') + 1:]; args = args[:args.index('--')]
 opt = {'--max-cov': 0.75, '--min-gap': 40, '--top': 0, '--time': 90.0, '--keep': 200}
 write = False
+listonly = False
 while args:
     a = args.pop(0)
     if a == '--write': write = True
+    elif a == '--list': listonly = True
     elif a in opt: opt[a] = type(opt[a])(args.pop(0))
     else: sys.exit(__doc__)
 
@@ -77,6 +80,8 @@ else:
     targets.sort(key=lambda n: -(cov[n][1] - cov[n][0]))
     if opt['--top']:
         targets = targets[:opt['--top']]
+if listonly:
+    print('\n'.join(targets)); sys.exit(0)
 say("%d target functions" % len(targets)) if __name__ == "__main__" else None
 
 # ---------------------------------------------------------------------------------------------------------------- running

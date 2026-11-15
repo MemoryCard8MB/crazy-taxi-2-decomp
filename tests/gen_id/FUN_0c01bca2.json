@@ -54,6 +54,64 @@
     }
    ],
    "about": "snapshot title1 #1: the state at its entry in that frame (16 bytes read, 3 call answers)"
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1EC71C.4=0CC14000",
+   "regs": {},
+   "poke": {
+    "0C1EC71C": "0040c10c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1ECC90.4=00000001; 0C1ECC90.4=00000002",
+   "regs": {},
+   "poke": {
+    "0C1ECC90": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1ECC90.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C1ECC90": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1ECC90.4=00000001; 0C1ECC90.4=00000002; 0C1EC848.4=0000125C",
+   "regs": {},
+   "poke": {
+    "0C1ECC90": "02000000",
+    "0C1EC848": "5c120000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1ECC90.4=00000001; 0C1EC848.4=00001194",
+   "regs": {},
+   "poke": {
+    "0C1ECC90": "01000000",
+    "0C1EC848": "94110000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1EC848.4=00000BB8",
+   "regs": {},
+   "poke": {
+    "0C1EC848": "b80b0000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1ECC90.4=00000001; 0C1ECC90.4=00000002; 0C1ECC90.4=00000003",
+   "regs": {},
+   "poke": {
+    "0C1ECC90": "03000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1ECC90.4=00000001; 0C1ECC90.4=00000002; 0C1ECC90.4=00000003; 0C1ECC90.4=00000004",
+   "regs": {},
+   "poke": {
+    "0C1ECC90": "04000000"
+   }
   }
  ]
 }

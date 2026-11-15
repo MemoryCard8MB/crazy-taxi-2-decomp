@@ -253,6 +253,48 @@
    "regs": {
     "r4": "C0400000"
    }
+  },
+  {
+   "about": "mutant of case 1: r4=000F4240",
+   "poke": {},
+   "regs": {
+    "r4": "000F4240"
+   }
+  },
+  {
+   "about": "mutant of case 1: r4=0007A120",
+   "poke": {},
+   "regs": {
+    "r4": "0007A120"
+   }
+  },
+  {
+   "about": "mutant of case 1: r4=00061A80",
+   "poke": {},
+   "regs": {
+    "r4": "00061A80"
+   }
+  },
+  {
+   "about": "mutant of case 1: r4=000493E0",
+   "poke": {},
+   "regs": {
+    "r4": "000493E0"
+   }
+  },
+  {
+   "about": "mutant of case 1: r4=00030D40",
+   "poke": {},
+   "regs": {
+    "r4": "00030D40"
+   }
+  },
+  {
+   "about": "mutant of case 1: r4=000186A0",
+   "poke": {},
+   "regs": {
+    "r4": "000186A0"
+   }
   }
  ]
 }

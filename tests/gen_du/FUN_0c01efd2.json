@@ -9,6 +9,40 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2707D8.4=FFFFFFFE; call 1 (ADXF_OpenAfs) r0=0CC88000",
+   "regs": {},
+   "poke": {
+    "0C2707D8": "feffffff"
+   },
+   "calls": [
+    {
+     "r0": "0CC88000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C26ECC0.1=01",
+   "regs": {},
+   "poke": {
+    "0C26ECC0": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C26ECC0.1=01; 0C26ECCC.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C26ECC0": "01",
+    "0C26ECCC": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2707D8.4=FFFFFFFF",
+   "regs": {},
+   "poke": {
+    "0C2707D8": "ffffffff"
+   }
   }
  ]
 }

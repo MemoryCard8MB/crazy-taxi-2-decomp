@@ -94,6 +94,18 @@
    "poke": {
     "0C2AC5CC": "02000000"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCF0000; r5=FFFFFFFF; r6=FFFFFFFF; 0C2A4700.4=00000001; 0C2A4708.1=FF",
+   "regs": {
+    "r4": "0CCF0000",
+    "r5": "FFFFFFFF",
+    "r6": "FFFFFFFF"
+   },
+   "poke": {
+    "0C2A4700": "01000000",
+    "0C2A4708": "ff"
+   }
   }
  ]
 }

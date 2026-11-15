@@ -9,6 +9,27 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2B2C54.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2B2C54": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2B2C50.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2B2C50": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2B2C4C.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2B2C4C": "01000000"
+   }
   }
  ]
 }
