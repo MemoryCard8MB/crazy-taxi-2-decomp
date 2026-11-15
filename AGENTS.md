@@ -256,12 +256,12 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   outside its size.
 - **Cases that miss what matters.** `FUN_0c058782` (the VMU screen image) added each column onto the row base: all 36 cases
   passed because none drew a row wider than one byte. Found with `tools/6-agentic/frametest.py` on RAM snapshots taken at the
-  frame loop's scene call (`work/fix9/framesnap.py`, breakpoint 0C01B0CE; 13 frames: menus, both cities driving, pickup,
+  frame loop's scene call (`tools/6-agentic/framesnap.py`, breakpoint 0C01B0CE; 13 frames: menus, both cities driving, pickup,
   passenger, drop-off, Crazy Pyramid, game over): every function of a frame, the original against the C on that state.
   After the fixes no game function differs there except in a leftover r0 nobody reads.
 
 - **Cases from real game state** (2026-11-15): 960 holdout cases ("about": "snapshot <label> #<n>") made by
-  `work/fix9/snapcases.py` from the 13 frame snapshots: the state at a function's first entries in that frame, reduced to the
+  `tools/6-agentic/snapcases.py` from the 13 frame snapshots: the state at a function's first entries in that frame, reduced to the
   bytes the original reads (pokes), the entry registers and stack words, and the real answers of its calls (only the register the
   callee returns: fr0 for float, r0 else, none for void). Kept only when the original takes the same path from the pokes as from
   the full state. Coverage 60.3% -> 63.5%. Held back (work/fix9/held_cases/): 9 functions whose C differs on them, mostly a
