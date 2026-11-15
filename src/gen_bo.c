@@ -138,7 +138,7 @@ int FUN_0c027f28(int);
 int FUN_0c027fdc(float);
 int FUN_0c02803a(int, int, int, int);
 int FUN_0c029b12(int, float);
-int FUN_0c02a798(void);
+void FUN_0c02a798(void);
 int FUN_0c02d37c(void);
 int FUN_0c02fe92(void);
 int FUN_0c030b6c(int);

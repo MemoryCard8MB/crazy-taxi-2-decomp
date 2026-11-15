@@ -9,6 +9,32 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c0343b8) r0=0CC9C000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "0CC9C000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A46C8.4=00000004",
+   "regs": {},
+   "poke": {
+    "0C2A46C8": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A46C8.4=00000004; 0C2A4670.4=00000005",
+   "regs": {},
+   "poke": {
+    "0C2A46C8": "04000000",
+    "0C2A4670": "05000000"
+   }
   }
  ]
 }

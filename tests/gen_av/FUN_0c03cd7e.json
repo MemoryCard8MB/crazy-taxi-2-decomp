@@ -9,6 +9,164 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A469C.4=00000004",
+   "regs": {},
+   "poke": {
+    "0C2A469C": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C0B3D30.4=00000000",
+   "regs": {},
+   "poke": {
+    "0C0B3D30": "00000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4670.4=00000010",
+   "regs": {},
+   "poke": {
+    "0C2A4670": "10000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (FUN_0c034320) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A58B0.4=0000001D",
+   "regs": {},
+   "poke": {
+    "0C2A58B0": "1d000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (FUN_0c034320) r0=0CC70000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC70000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 90 (FUN_0c0343b8) r0=0CC8C000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CC8C000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A4670.4=00000008",
+   "regs": {},
+   "poke": {
+    "0C2A4670": "08000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2A58B8.4=3A83126F",
+   "regs": {},
+   "poke": {
+    "0C2A58B8": "6f12833a"
+   }
   }
  ]
 }

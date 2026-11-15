@@ -46,7 +46,7 @@ struct oC_int { char p[0xC]; int v; };
 struct oC_uint { char p[0xC]; unsigned int v; };
 struct oFF_uchar { char p[0xFF]; unsigned char v; };
 int CheckAreaGrid(int, int);
-int FUN_0c01505c(int, int);
+void FUN_0c01505c(int, int);
 int FUN_0c018b22(int, int);
 int FUN_0c018c2a(float, float);
 int FUN_0c018c8a(float, float);

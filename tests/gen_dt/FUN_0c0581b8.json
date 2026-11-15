@@ -9,6 +9,126 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 10 (pdGetPeripheral) r0=0CC60000, 0CC60030.4=0CC5C000, 0CC5C000.4=00000001; r4=0CC64000, 0CC64000.2=F000",
+   "regs": {
+    "r4": "0CC64000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CC60000"
+    }
+   ],
+   "poke": {
+    "0CC60030": "00c0c50c",
+    "0CC5C000": "01000000",
+    "0CC64000": "00f0"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 10 (pdGetPeripheral) r0=0CC60000, 0CC60030.4=0CC5C000, 0CC5C000.4=00000001; r4=0CC64000, 0CC64000.2=F000; call 11 (pdGetPeripheral) r0=0CC04000, 0CC04030.4=0CCFC000, 0CCFC000.4=00000004",
+   "regs": {
+    "r4": "0CC64000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CC60000"
+    },
+    {
+     "r0": "0CC04000"
+    }
+   ],
+   "poke": {
+    "0CC60030": "00c0c50c",
+    "0CC5C000": "01000000",
+    "0CC64000": "00f0",
+    "0CC04030": "00c0cf0c",
+    "0CCFC000": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 10 (pdGetPeripheral) r0=0CC60000, 0CC60030.4=0CC5C000, 0CC5C000.4=00000001; r4=0CC64000, 0CC64000.2=F000; call 11 (pdGetPeripheral) r0=0CC04000, 0CC04030.4=0CCFC000, 0CCFC000.4=00000004; 0CCFC000.4=00000104",
+   "regs": {
+    "r4": "0CC64000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CC60000"
+    },
+    {
+     "r0": "0CC04000"
+    }
+   ],
+   "poke": {
+    "0CC60030": "00c0c50c",
+    "0CC5C000": "01000000",
+    "0CC64000": "00f0",
+    "0CC04030": "00c0cf0c",
+    "0CCFC000": "04010000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdGetPeripheral) r0=0CC0C000, 0CC0C030.4=0CC08000, 0CC08000.4=00000080",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC0C000"
+    }
+   ],
+   "poke": {
+    "0CC0C030": "0080c00c",
+    "0CC08000": "80000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 10 (pdGetPeripheral) r0=0CCD8000, 0CCD8030.4=0CCD4000, 0CCD4000.4=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCD8000"
+    }
+   ],
+   "poke": {
+    "0CCD8030": "0040cd0c",
+    "0CCD4000": "01000000"
+   }
   }
  ]
 }

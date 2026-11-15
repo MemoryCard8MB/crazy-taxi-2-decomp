@@ -95,7 +95,7 @@ int nlPopMatrix(int);
 int nlQuickInvertMatrix(void);
 int nlRotateAY(int);
 int FUN_0c015f28(float f4);
-float FUN_0c061bcc(int a4, int a5, int a6, int a7);
+void FUN_0c061bcc(int a4, int a5, int a6, int a7);
 int FUN_0c0438c0(int a4);
 void calcCheck(int a4);
 int FUN_0c05ca24(float f4, float f5, float f6);
@@ -103,7 +103,7 @@ int FUN_0c06e300(void);
 int FUN_0c05b410(float f4, float f5, float f6);
 
 
-float FUN_0c061bcc(int a4, int a5, int a6, int a7)
+void FUN_0c061bcc(int a4, int a5, int a6, int a7)
 {
     int stk[13];
 
@@ -234,11 +234,9 @@ float FUN_0c061bcc(int a4, int a5, int a6, int a7)
     FUN_0c067eee(v0_3, ((((struct oC_float *)(v0_0))->v)));
     { struct mv3 { int w[3]; }; *(struct mv3 *)((v0_3 + 0x40)) = *(struct mv3 *)(((*(int *)((v0_3 + 0x0))) + 0x70)); }
     v0_1 = (v0_3);
-    if (!(((*(int *)((v0_0 + 0x10))) == 0))) goto L_C061E30;
-    goto L_C061E30;
-    L_C061E30:;
+    v0_7 = ((*(int *)((v0_0 + 0x10))) != 0) ? 1 : 0;     /* manual: the original's two arms set r0 (0C061E2C mov #1,r0 in the bra's delay slot, 0C061E2E mov #0,r0); the generator dropped both and stored a stale v0_7 */
     (((struct o60_uint *)(v0_1))->v) = ((((((struct o60_int *)(v0_1))->v)) & 0xFDFFFFFF) | ((unsigned int)((int)((unsigned int)v0_7 & 0x1)) << 25));
-    return F0;
+    return;
     L_C061BFE:;
     *(unsigned int *)(((int)stk + 4)) = (*(int *)((v0_0 + 0x0)));
     goto L_C061C02;

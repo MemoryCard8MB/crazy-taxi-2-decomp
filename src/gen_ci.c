@@ -96,7 +96,7 @@ int FUN_0c05f6fe(int);
 int FUN_0c05f72a(int);
 int FUN_0c05ff5c(int);
 int FUN_0c06017e(void);
-int FUN_0c061bcc(int, int);
+void FUN_0c061bcc(int, int);
 int FUN_0c0673da(int);
 int FUN_0c072290(int, int);
 int FUN_0c072b60(int);

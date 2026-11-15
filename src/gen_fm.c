@@ -15,9 +15,9 @@ struct o4_uint { char p[0x4]; unsigned int v; };
 struct oC_float { char p[0xC]; float v; };
 int FUN_0c02c068(int, int, int, float);
 float nlLength(int, int);
-float FUN_0c02a798(int a4, int a5, int a6, int a7, float f4);
+void FUN_0c02a798(int a4, int a5, int a6, int a7, float f4);
 
-float FUN_0c02a798(int a4, int a5, int a6, int a7, float f4)
+void FUN_0c02a798(int a4, int a5, int a6, int a7, float f4)
 {
     register int t3;
     register int t4;
@@ -632,5 +632,5 @@ float FUN_0c02a798(int a4, int a5, int a6, int a7, float f4)
         t277 = ((((struct o0_int *)0xC271E34)->v));
         t277 = (t277 + 0x1);
     }
-    return u115;
+    return;
 }

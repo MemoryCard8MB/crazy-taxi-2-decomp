@@ -117,7 +117,7 @@ int FUN_0c05be5c(int, float);
 int FUN_0c05be8a(int, float);
 int FUN_0c05d0d8(float);
 int FUN_0c05f42e(void);
-int FUN_0c061bcc(int, int);
+void FUN_0c061bcc(int, int);
 int FUN_0c062270(void);
 int FUN_0c0673da(int);
 int FUN_0c067804(int);
@@ -172,7 +172,7 @@ int FUN_0c04dcf0(void);
 int FUN_0c02d3e8(int a4, int a5, int a6, int a7);
 int FUN_0c0423e6(int a4, int a5, int a6, int a7);
 int FUN_0c0668c6(int a4, int a5, int a6, int a7, float f4, float f5, float f6);
-int FUN_0c01505c(int a4, int a5);
+void FUN_0c01505c(int a4, int a5);
 float FUN_0c0443ac(int a4);
 int FUN_0c067898(int a4);
 int PutColliWall(int a4);
@@ -629,7 +629,7 @@ int FUN_0c0668c6(int a4, int a5, int a6, int a7, float f4, float f5, float f6)
     goto L_C066A32;
 }
 
-int FUN_0c01505c(int a4, int a5)
+void FUN_0c01505c(int a4, int a5)
 {
     int stk[10];
     register int t0;
@@ -728,9 +728,9 @@ int FUN_0c01505c(int a4, int a5)
             }
         }
         *(unsigned int *)(((int)stk + 24)) = t72;
-        t77 = (FUN_0c061bcc((t0 + 0x1C), (((int)stk + 0) + 0x8)));
+        FUN_0c061bcc((t0 + 0x1C), (((int)stk + 0) + 0x8));
     }
-    return t77;
+    return;
 }
 
 float FUN_0c0443ac(int a4)

@@ -485,6 +485,75 @@
     }
    ],
    "about": "snapshot title1 #1: the state at its entry in that frame (56 bytes read, 4 call answers)"
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C270B08.4=3F800000",
+   "regs": {},
+   "poke": {
+    "0C270B08": "0000803f"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C270B68.4=00000101",
+   "regs": {},
+   "poke": {
+    "0C270B68": "01010000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C270B6C.4=0CCDC000",
+   "regs": {},
+   "poke": {
+    "0C270B6C": "00c0cd0c"
+   }
+  },
+  {
+   "entry": "8C026E8A",
+   "end": "8C02708A",
+   "regs": {
+    "r4": "0C2B8608",
+    "r5": "0C2B85FC",
+    "r6": "00000000",
+    "r7": "0C2B8814",
+    "r8": "00000007",
+    "r9": "0C1EC744",
+    "r10": "00000003",
+    "r11": "0C1EC83C",
+    "r12": "0C01DADC",
+    "r13": "0C071890",
+    "r14": "0C0702F0",
+    "fr4": "458CF28A",
+    "fr5": "C23DD41C",
+    "fr6": "448FFA8F",
+    "fr7": "39687BDE",
+    "fr8": "458CF28A",
+    "fr9": "C85107B1",
+    "fr10": "3F080001",
+    "fr11": "00000000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "0cdb010c0000000044d0010cd2b0010c40c71e0c58c71e0c53454741534547412b000900224f062f462f562f05d407d005d50b400900f665f664f660264f2b00",
+    "0C1EC71C": "03000000",
+    "0C270B08": "0000000000000000",
+    "0C270B68": "0000000000000000",
+    "0C270B94": "00220000002900000000803f0000803f0000803f0000803f0000803f0000803fcdcccc3e"
+   },
+   "calls": [
+    {
+     "r0": "00000000"
+    },
+    {
+     "r0": "00000020"
+    },
+    {
+     "r0": "00000008"
+    },
+    {
+     "r0": "00000020"
+    }
+   ],
+   "about": "mutant of snapshot pyramid1 #1: the state at its entry in that frame (: 0C1EC71C.4=00000003"
   }
  ]
 }

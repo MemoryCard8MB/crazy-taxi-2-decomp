@@ -76,6 +76,192 @@
      "r0": "7FFFFFFF"
     }
    ]
+  },
+  {
+   "about": "mutant of rescue: flips 0C044C5A: call 10 (FUN_0c03fa18) r0=0CCA8000; r4=0CC94000, 0CC940D0.4=3F800000",
+   "regs": {
+    "r4": "0CC94000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCA8000"
+    }
+   ],
+   "poke": {
+    "0CC940D0": "0000803f"
+   }
+  },
+  {
+   "about": "mutant of rescue: flips 0C044C5A: 0C0F3AD4.4=BE2AAAAC",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0000001F"
+    }
+   ],
+   "poke": {
+    "0C0F3AD4": "acaa2abe"
+   }
+  },
+  {
+   "about": "mutant of rescue: flips 0C044C5A: 0C0F3AD4.4=BF555555",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0000001F"
+    }
+   ],
+   "poke": {
+    "0C0F3AD4": "555555bf"
+   }
+  },
+  {
+   "about": "mutant of rescue: flips 0C044C38: r4=0CCA0000, 0CCA0038.4=000BFFFF; 0CCA0088.4=00000003",
+   "regs": {
+    "r4": "0CCA0000"
+   },
+   "poke": {
+    "00000038": "01000000",
+    "0CCA0038": "ffff0b00",
+    "0CCA0088": "03000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: flips 0C044C5A: call 10 (FUN_0c03fa18) r0=0CCA8000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCA8000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: flips 0C044C5A: call 10 (FUN_0c03fa18) r0=0CCA8000; r4=0CC9C000, 0CC9C0C4.4=3F800000",
+   "regs": {
+    "r4": "0CC9C000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCA8000"
+    }
+   ],
+   "poke": {
+    "0CC9C0C4": "0000803f"
+   }
+  },
+  {
+   "about": "mutant of rescue: flips 0C044C5A: r4=0CCC8000, 0CCC8088.4=0CCAC000",
+   "regs": {
+    "r4": "0CCC8000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0000001F"
+    }
+   ],
+   "poke": {
+    "0CCC8088": "00c0ca0c"
+   }
+  },
+  {
+   "about": "mutant of rescue: flips 0C044C5A: call 10 (FUN_0c03fa18) r0=0CCCC000; r4=0CC90000, 0CC90088.4=00000002",
+   "regs": {
+    "r4": "0CC90000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCCC000"
+    }
+   ],
+   "poke": {
+    "0CC90088": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: flips 0C044C5A: call 10 (FUN_0c03fa18) r0=0CCA8000; r4=0CC94000, 0CC940D0.4=3F800000; 0CC940D0.4=3CF5C28F",
+   "regs": {
+    "r4": "0CC94000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCA8000"
+    }
+   ],
+   "poke": {
+    "0CC940D0": "8fc2f53c"
+   }
   }
  ]
 }

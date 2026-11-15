@@ -253,6 +253,303 @@
     }
    ],
    "about": "snapshot small_pickup1 #1: the state at its entry in that frame (28 bytes read, 8 call answers)"
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C84.4=00000002; call 1 (FUN_0c04ba04) r0=0CC5C000; 0C175934.4=C0400000",
+   "regs": {},
+   "poke": {
+    "0C175C84": "02000000",
+    "0C175934": "000040c0"
+   },
+   "calls": [
+    {
+     "r0": "0CC5C000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C84.4=00000002; call 1 (FUN_0c04ba04) r0=0CC5C000; call 2 (FUN_0c04ba42) r0=0CC04000; 0C131610.4=C1200000; 0C175934.4=C1A00000",
+   "regs": {},
+   "poke": {
+    "0C175C84": "02000000",
+    "0C131610": "000020c1",
+    "0C175934": "0000a0c1"
+   },
+   "calls": [
+    {
+     "r0": "0CC5C000"
+    },
+    {
+     "r0": "0CC04000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C84.4=00000002; call 1 (FUN_0c04ba04) r0=0CC5C000",
+   "regs": {},
+   "poke": {
+    "0C175C84": "02000000"
+   },
+   "calls": [
+    {
+     "r0": "0CC5C000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C84.4=00000002; call 1 (FUN_0c04ba04) r0=0CC5C000; call 2 (FUN_0c04ba42) r0=0CC04000",
+   "regs": {},
+   "poke": {
+    "0C175C84": "02000000"
+   },
+   "calls": [
+    {
+     "r0": "0CC5C000"
+    },
+    {
+     "r0": "0CC04000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 5 (FUN_0c04ba04) r0=0CCCC000; 0C175C84.4=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCCC000"
+    }
+   ],
+   "poke": {
+    "0C175C84": "01000000"
+   }
+  },
+  {
+   "entry": "8C04B73C",
+   "end": "8C04B9E0",
+   "regs": {
+    "r4": "00000000",
+    "r5": "10015E40",
+    "r6": "00000000",
+    "r7": "0C1BFFE0",
+    "r8": "00000007",
+    "r9": "0C1EC744",
+    "r10": "00000003",
+    "r11": "0C1EC83C",
+    "r12": "0C01DADC",
+    "r13": "0C071890",
+    "r14": "0C0702F0",
+    "fr4": "458A0D76",
+    "fr5": "3F800000",
+    "fr6": "49377A37",
+    "fr7": "4A016C9F",
+    "fr8": "C37794D1",
+    "fr9": "C3A7F3DE",
+    "fr10": "C3001369",
+    "fr11": "3F800000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "dad0010cf002070c0cdb010c0000000044d0010cd2b0010c40c71e0c58c71e0c53454741534547412b000900224f062f462f562f05d407d005d50b400900f665",
+    "0C131614": "bc689a41",
+    "0C175934": "cd816440",
+    "0C175C84": "01000000",
+    "0C177D38": "05c0ad44b5619a415b968ac5",
+    "0C2ADF0C": "00000000"
+   },
+   "calls": [
+    {
+     "r0": "00000000"
+    },
+    {
+     "r0": "00000000"
+    },
+    {
+     "r0": "00000000"
+    },
+    {
+     "r0": "00000000"
+    },
+    {
+     "r0": "0CC20000"
+    },
+    {
+     "r0": "00000000"
+    },
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    }
+   ],
+   "about": "mutant of snapshot small_drive1 #1: the state at its entry in that fra: call 5 (FUN_0c04ba04) r0=0CC20000; 0C175C84.4=00000001"
+  },
+  {
+   "about": "mutant of rescue: empty case: call 5 (FUN_0c04ba04) r0=0CC4C000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CC4C000"
+    }
+   ]
+  },
+  {
+   "entry": "8C04B73C",
+   "end": "8C04B9E0",
+   "regs": {
+    "r4": "00000000",
+    "r5": "10015E40",
+    "r6": "00000000",
+    "r7": "0C1BFFE0",
+    "r8": "00000007",
+    "r9": "0C1EC744",
+    "r10": "00000003",
+    "r11": "0C1EC83C",
+    "r12": "0C01DADC",
+    "r13": "0C071890",
+    "r14": "0C0702F0",
+    "fr4": "458A0D76",
+    "fr5": "3F800000",
+    "fr6": "49377A37",
+    "fr7": "4A016C9F",
+    "fr8": "C37794D1",
+    "fr9": "C3A7F3DE",
+    "fr10": "C3001369",
+    "fr11": "3F800000",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "dad0010cf002070c0cdb010c0000000044d0010cd2b0010c40c71e0c58c71e0c53454741534547412b000900224f062f462f562f05d407d005d50b400900f665",
+    "0C131614": "bc689a41",
+    "0C175934": "cd816440",
+    "0C175C84": "00000000",
+    "0C177D38": "05c0ad44b5619a415b968ac5",
+    "0C2ADF0C": "00000000"
+   },
+   "calls": [
+    {
+     "r0": "00000000"
+    },
+    {
+     "r0": "00000000"
+    },
+    {
+     "r0": "00000000"
+    },
+    {
+     "r0": "00000000"
+    },
+    {
+     "r0": "0CC20000"
+    },
+    {
+     "r0": "00000000"
+    },
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    }
+   ],
+   "about": "mutant of snapshot small_drive1 #1: the state at its entry in that fra: call 5 (FUN_0c04ba04) r0=0CC20000"
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2ADF0C.4=0CC54000",
+   "regs": {},
+   "poke": {
+    "0C2ADF0C": "0040c50c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C84.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C175C84": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C84.4=00000002; call 1 (FUN_0c04ba04) r0=0CC5C000; 0C175934.4=C0400000; 0C131610.4=C1300000",
+   "regs": {},
+   "poke": {
+    "0C175C84": "02000000",
+    "0C175934": "000040c0",
+    "0C131610": "000030c1"
+   },
+   "calls": [
+    {
+     "r0": "0CC5C000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C84.4=00000002; call 1 (FUN_0c04ba04) r0=0CC5C000; call 2 (FUN_0c04ba42) r0=0CC04000; 0C131610.4=C1200000; 0C175934.4=C1A00000; 0C131610.4=C1300000",
+   "regs": {},
+   "poke": {
+    "0C175C84": "02000000",
+    "0C131610": "000030c1",
+    "0C175934": "0000a0c1"
+   },
+   "calls": [
+    {
+     "r0": "0CC5C000"
+    },
+    {
+     "r0": "0CC04000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C84.4=00000001; call 7 (FUN_0c04ba04) r0=0CC14000",
+   "regs": {},
+   "poke": {
+    "0C175C84": "01000000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CC14000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2ADF0C.4=0CC54000; 0C175C84.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2ADF0C": "0040c50c",
+    "0C175C84": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C175C84.4=00000002; call 1 (FUN_0c04ba04) r0=0CC5C000; call 2 (FUN_0c04ba42) r0=0CC0C000; call 3 (FUN_0c04ba04) r0=0CC14000",
+   "regs": {},
+   "poke": {
+    "0C175C84": "02000000"
+   },
+   "calls": [
+    {
+     "r0": "0CC5C000"
+    },
+    {
+     "r0": "0CC0C000"
+    },
+    {
+     "r0": "0CC14000"
+    }
+   ]
   }
  ]
 }

@@ -9,6 +9,24 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: r5=FFFFFFFF",
+   "regs": {
+    "r5": "FFFFFFFF"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdGetPeripheral) r0=0CC10000; call 2 (FUN_0c07ffbc) r0=0CC18000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC10000"
+    },
+    {
+     "r0": "0CC18000"
+    }
+   ]
   }
  ]
 }

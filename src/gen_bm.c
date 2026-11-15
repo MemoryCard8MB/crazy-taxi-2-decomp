@@ -92,7 +92,7 @@ int nlPushMatrix(int);
 int nlRotateAX(int);
 int nlRotateAY(int);
 int nlSpriteFreeTexture(int, int);
-float FUN_0c061bcc(int a4, int a5, int a6, int a7);
+void FUN_0c061bcc(int a4, int a5, int a6, int a7);
 int FUN_0c020772(void);
 int FUN_0c044964(int a4, int a5, float f4);
 int kmiProcessVertex_13(int a4);

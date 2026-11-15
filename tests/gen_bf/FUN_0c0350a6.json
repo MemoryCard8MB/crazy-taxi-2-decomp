@@ -9,6 +9,153 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: r7=00000003",
+   "regs": {
+    "r7": "00000003"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001",
+   "regs": {
+    "r6": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r7=00000005",
+   "regs": {
+    "r7": "00000005"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r7=00000006",
+   "regs": {
+    "r7": "00000006"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r7=00000003; r4=0000FFFF",
+   "regs": {
+    "r7": "00000003",
+    "r4": "0000FFFF"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r7=00000005; r4=0000FFFF",
+   "regs": {
+    "r7": "00000005",
+    "r4": "0000FFFF"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r7=00000001",
+   "regs": {
+    "r6": "00000001",
+    "r7": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r7=00000006",
+   "regs": {
+    "r6": "00000001",
+    "r7": "00000006"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r7=00000002",
+   "regs": {
+    "r6": "00000001",
+    "r7": "00000002"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r7=00000003; r7=00000004",
+   "regs": {
+    "r7": "00000004"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r7=00000003; r4=00000400",
+   "regs": {
+    "r7": "00000003",
+    "r4": "00000400"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r7=00000005; r4=00000400",
+   "regs": {
+    "r7": "00000005",
+    "r4": "00000400"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r7=00000003",
+   "regs": {
+    "r6": "00000001",
+    "r7": "00000003"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r5=FFFFFFFF",
+   "regs": {
+    "r6": "00000001",
+    "r5": "FFFFFFFF"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r7=00000001; r6=00000003",
+   "regs": {
+    "r6": "00000003",
+    "r7": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r7=00000001; r6=00000004",
+   "regs": {
+    "r6": "00000004",
+    "r7": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r7=00000002; r6=00000003",
+   "regs": {
+    "r6": "00000003",
+    "r7": "00000002"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r7=00000002; r6=00000005",
+   "regs": {
+    "r6": "00000005",
+    "r7": "00000002"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r7=00000001",
+   "regs": {
+    "r7": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r7=00000001; r6=00000003; r6=00000006",
+   "regs": {
+    "r6": "00000006",
+    "r7": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r7=00000001; r6=00000003; r6=00000006; r7=00000006",
+   "regs": {
+    "r6": "00000006",
+    "r7": "00000006"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r6=00000002",
+   "regs": {
+    "r6": "00000002"
+   }
   }
  ]
 }

@@ -734,6 +734,15 @@
     }
    ],
    "about": "snapshot title1 #2: the state at its entry in that frame (24 bytes read, 1 call answers)"
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (FUN_0c029866) r0=0CCF0000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CCF0000"
+    }
+   ]
   }
  ]
 }

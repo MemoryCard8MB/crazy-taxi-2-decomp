@@ -9,6 +9,29 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCD8000, 0CCD8014.4=00000001",
+   "regs": {
+    "r4": "0CCD8000"
+   },
+   "poke": {
+    "0CCD8014": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1EC83C.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C1EC83C": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1EC83C.4=00000002",
+   "regs": {},
+   "poke": {
+    "0C1EC83C": "02000000"
+   }
   }
  ]
 }

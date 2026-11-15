@@ -305,6 +305,98 @@
     }
    ],
    "about": "snapshot small_pickup1 #2: the state at its entry in that frame (46 bytes read, 15 call answers)"
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCF8000, 0CCF8084.4=00000004",
+   "regs": {
+    "r4": "0CCF8000"
+   },
+   "poke": {
+    "0CCF8084": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCF8000, 0CCF8084.4=00000004; call 6 (FUN_0c029b12) r0=0CCE0000, 0CCE0018.4=3F800000",
+   "regs": {
+    "r4": "0CCF8000"
+   },
+   "poke": {
+    "0CCF8084": "04000000",
+    "0CCE0018": "0000803f"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCE0000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCF8000, 0CCF8084.4=00000004; 0CCF8110.4=00000001",
+   "regs": {
+    "r4": "0CCF8000"
+   },
+   "poke": {
+    "0CCF8084": "04000000",
+    "0CCF8110": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCF8000, 0CCF8084.4=00000004; call 6 (FUN_0c029b12) r0=0CCD8000, 0CCD801C.4=FFFFFFFF",
+   "regs": {
+    "r4": "0CCF8000"
+   },
+   "poke": {
+    "0CCF8084": "04000000",
+    "0CCD801C": "ffffffff"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCD8000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCF8000, 0CCF8084.4=00000004; call 6 (FUN_0c029b12) r0=0CCD8000, 0CCD801C.4=FFFFFFFF; call 7 (FUN_0c0436f6) r0=0CCF0000",
+   "regs": {
+    "r4": "0CCF8000"
+   },
+   "poke": {
+    "0CCF8084": "04000000",
+    "0CCD801C": "ffffffff"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "0CCD8000"
+    },
+    {
+     "r0": "0CCF0000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCF8000, 0CCF8084.4=00000004; 0CCF8110.4=0CCE4000",
+   "regs": {
+    "r4": "0CCF8000"
+   },
+   "poke": {
+    "0CCF8084": "04000000",
+    "0CCF8110": "0040ce0c"
+   }
   }
  ]
 }

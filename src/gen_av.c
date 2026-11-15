@@ -113,7 +113,7 @@ int pfSize(float, float);
 int FUN_0c03cd7e(void);
 int kmRender(void);
 int FUN_0c05c2cc(int a4);
-float FUN_0c02a798(int a4, int a5, int a6, int a7);
+void FUN_0c02a798(int a4, int a5, int a6, int a7);
 int FUN_0c05e88c(int a4, int a5, float f4, float f5, float f6, float f7, float f8);
 int FUN_0c034928(int a4, int a5, int a6, int a7, int a8);
 

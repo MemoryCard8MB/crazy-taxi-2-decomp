@@ -95,6 +95,117 @@
     }
    ],
    "about": "snapshot small_passenger1 #1: the state at its entry in that frame (28 bytes read, 4 call answers)"
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCCC000",
+   "regs": {
+    "r4": "0CCCC000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2777F0.4=00000003",
+   "regs": {},
+   "poke": {
+    "0C2777F0": "03000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCCC000; 0C2777F8.4=3F833333",
+   "regs": {
+    "r4": "0CCCC000"
+   },
+   "poke": {
+    "0C2777F8": "3333833f"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCCC000; 0C2777F0.4=0CCDC000; 0C2777F0.4=00000002",
+   "regs": {
+    "r4": "0CCCC000"
+   },
+   "poke": {
+    "0C2777F0": "02000000"
+   }
+  },
+  {
+   "entry": "8C02D8A8",
+   "end": "8C02DBC2",
+   "regs": {
+    "r4": "00000000",
+    "r5": "0C11CE40",
+    "r6": "0C0A19A8",
+    "r7": "00000000",
+    "r8": "0C11CE3C",
+    "r9": "0C177CEC",
+    "r10": "0C11CDC0",
+    "r11": "0C11CE44",
+    "r12": "0C11CDFC",
+    "r13": "00000000",
+    "r14": "0C19DD8C",
+    "fr4": "45E0C959",
+    "fr5": "3F800000",
+    "fr6": "3EB33333",
+    "fr7": "40C90FDB",
+    "fr8": "3F800000",
+    "fr9": "4799725E",
+    "fr10": "472BDA7C",
+    "fr11": "3B996056",
+    "gbr": "8C000000"
+   },
+   "poke": {
+    "0DFFFF00": "312c1a432c7d170c2d0000000300000000000000000000000000803f3333b33ea856010c59c9e045000000000397a84500a08c452c7d170c010000007a89020c",
+    "0C17591C": "00000000",
+    "0C2777E4": "f5d10ac53d874e42c76d504501000000ffffffff",
+    "0C2777FC": "0000164400000000"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ],
+   "about": "mutant of snapshot apple_passenger1 #1: the state at its entry in that: 0C2777F0.4=00000001"
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2777F0.4=00000003; 0C277800.4=0CCE4000",
+   "regs": {},
+   "poke": {
+    "0C2777F0": "03000000",
+    "0C277800": "0040ce0c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCCC000; 0C2777F0.4=0CCDC000",
+   "regs": {
+    "r4": "0CCCC000"
+   },
+   "poke": {
+    "0C2777F0": "00c0cd0c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2777F0.4=00000003; 0C2777F0.4=00000002",
+   "regs": {},
+   "poke": {
+    "0C2777F0": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: fr4=C9742400",
+   "regs": {
+    "fr4": "C9742400"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2777F4.4=00000002",
+   "regs": {},
+   "poke": {
+    "0C2777F4": "02000000"
+   }
   }
  ]
 }

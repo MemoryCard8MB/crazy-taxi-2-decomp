@@ -43,6 +43,52 @@
    "poke": {
     "0C1EC6BC": "ffffff7f"
    }
+  },
+  {
+   "about": "mutant of rescue: flips 0C01B66E: 0C1EC75C.4=0000004C",
+   "regs": {},
+   "poke": {
+    "0C1EC75C": "4c000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: flips 0C01B66E: 0C2A4658.4=00000002",
+   "regs": {},
+   "poke": {
+    "0C1EC75C": "0c000000",
+    "0C2A4658": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: flips 0C01B66E: 0C2A4658.4=00000003",
+   "regs": {},
+   "poke": {
+    "0C1EC75C": "0c000000",
+    "0C2A4658": "03000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: flips 0C01B66E: 0C2A4658.4=00000004",
+   "regs": {},
+   "poke": {
+    "0C1EC75C": "0c000000",
+    "0C2A4658": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: flips 0C01B66E: 0C1EC75C.4=0000008C",
+   "regs": {},
+   "poke": {
+    "0C1EC75C": "8c000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: flips 0C01B66E: 0C1EC6BC.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C1EC75C": "0c000000",
+    "0C1EC6BC": "01000000"
+   }
   }
  ]
 }

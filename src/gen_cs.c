@@ -63,7 +63,7 @@ int FUN_0c026c02(void);
 int FUN_0c026ce6(void);
 int FUN_0c026e8a(void);
 int FUN_0c0297f4(int, int, float);
-int FUN_0c02a798(void);
+void FUN_0c02a798(void);
 int FUN_0c02d37c(void);
 int FUN_0c02f6e8(int);
 int FUN_0c02fe92(void);

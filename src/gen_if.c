@@ -162,7 +162,7 @@ int FUN_0c14def2(void);
 int FUN_0c14dfa0(int, int);
 int FUN_0c14e02a(int);
 int FUN_0c14e15c(int, int, int);
-int FUN_0c14e8e4(int, int, int, int);
+int FUN_0c14e8e4(int);
 int FUN_0c14edc8(void);
 int FUN_0c165de2(int, int);
 int SetAdvCamera(int, int);
@@ -253,7 +253,7 @@ int FUN_0c062004(int a4, int a5, int a6, int a7, float f4, float f5);
 int ADXRNA_Destroy(int a4);
 int mwlSbGetStreamParam(int a4, int a5, int a6, int a7);
 int FUN_0c14e0be(int a4, int a5, int a6, int a7);
-int FUN_0c01ec7a(int a4, int a5, int a6, int a7);
+int FUN_0c01ec7a(int a4);
 int FUN_0c066cba(int a4);
 int malloc(void);
 int free(void);
@@ -1140,7 +1140,7 @@ int FUN_0c0557f4(int a4, int a5, int a6, int a7)
         t1 = *(int *)0xC1EC75C;
         t2 = t1;
         if (((t1 & 8) != 0) && (t0 = (((struct o38_int *)0xC2B31C4)->v), t0 == 0)) {
-            FUN_0c01ec7a(0x0, a5, a6, a7);
+            FUN_0c01ec7a(0x0);
             t0 = (((struct o0_int *)0xC2B31C4)->v);
             if ((int)(*(int *)0xC2B3110) < (int)t0) {
                 *(unsigned int *)0xC2B3110 = t0;
@@ -1464,7 +1464,7 @@ int Voice_CancelToNext(int a4, int a5, int a6, int a7)
     register int t6;
 
     if ((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0))) != 0) {
-        t6 = FUN_0c01ec7a(a4, a5, a6, a7);
+        t6 = FUN_0c01ec7a(a4);
         *(unsigned int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0)) = ((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0))) + 0xC);
         *(unsigned int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0xC)) = 0x0;
         if ((*(int *)(((*(int *)(((((a4 << 2) << 2) + 0xC2B6770) + 0x0))) + 0x0))) == 0) {
@@ -1661,9 +1661,10 @@ int FUN_0c14e0be(int a4, int a5, int a6, int a7)
     return FUN_0c165de2(((((struct o94_int *)(a4))->v)), a5);
 }
 
-int FUN_0c01ec7a(int a4, int a5, int a6, int a7)
+/* manual: one argument: the original reads only r4 and jumps on to FUN_0c14e8e4, which reads only r4 */
+int FUN_0c01ec7a(int a4)
 {
-    return FUN_0c14e8e4((*(int *)(((a4 << 2) + 0xC1ECD54))), a5, a6, a7);
+    return FUN_0c14e8e4((*(int *)(((a4 << 2) + 0xC1ECD54))));
 }
 
 int FUN_0c066cba(int a4)

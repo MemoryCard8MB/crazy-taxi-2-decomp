@@ -9,6 +9,143 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c03fbbc) r0=0CC74000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "0CC74000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c03fbbc) r0=0CC74000; r4=0CC90000, 0CC90084.4=00000004",
+   "regs": {
+    "r4": "0CC90000"
+   },
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "0CC74000"
+    }
+   ],
+   "poke": {
+    "0CC90084": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c03fbbc) r0=0CC74000; r4=0CC88000, 0CC88084.4=00000008",
+   "regs": {
+    "r4": "0CC88000"
+   },
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "0CC74000"
+    }
+   ],
+   "poke": {
+    "0CC88084": "08000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c03fbbc) r0=0CC74000; r4=0CC90000, 0CC90084.4=00000004; call 6 (FUN_0c029b12) r0=0CCA4000, 0CCA4018.4=3F800000",
+   "regs": {
+    "r4": "0CC90000"
+   },
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "0CC74000"
+    },
+    {},
+    {},
+    {
+     "r0": "0CCA4000"
+    }
+   ],
+   "poke": {
+    "0CC90084": "04000000",
+    "0CCA4018": "0000803f"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c03fbbc) r0=0CC74000; r4=0CC90000, 0CC90084.4=00000004; 0CC90110.4=00000001",
+   "regs": {
+    "r4": "0CC90000"
+   },
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "0CC74000"
+    }
+   ],
+   "poke": {
+    "0CC90084": "04000000",
+    "0CC90110": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c03fbbc) r0=0CC74000; r4=0CC90000, 0CC90084.4=00000004; call 6 (FUN_0c029b12) r0=0CC9C000, 0CC9C01C.4=FFFFFFFF",
+   "regs": {
+    "r4": "0CC90000"
+   },
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "0CC74000"
+    },
+    {},
+    {},
+    {
+     "r0": "0CC9C000"
+    }
+   ],
+   "poke": {
+    "0CC90084": "04000000",
+    "0CC9C01C": "ffffffff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c03fbbc) r0=0CC74000; r4=0CC80000, 0CC80080.4=0CC78000",
+   "regs": {
+    "r4": "0CC80000"
+   },
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "0CC74000"
+    }
+   ],
+   "poke": {
+    "0CC80080": "0080c70c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c03fbbc) r0=0CC74000; r4=0CC90000, 0CC90084.4=00000004; 0CC90110.4=0CCA8000",
+   "regs": {
+    "r4": "0CC90000"
+   },
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "0CC74000"
+    }
+   ],
+   "poke": {
+    "0CC90084": "04000000",
+    "0CC90110": "0080ca0c"
+   }
   }
  ]
 }

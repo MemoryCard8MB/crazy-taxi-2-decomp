@@ -84,7 +84,7 @@ int FUN_0c05f6fe(int);
 int FUN_0c05f72a(int);
 int FUN_0c05f98c(void);
 float FUN_0c05fcf2(void);
-int FUN_0c061bcc(int, int);
+void FUN_0c061bcc(int, int);
 int FUN_0c0673da(int, int, int, int, int, int, int);
 int FUN_0c067718(int);
 int FUN_0c0690f0(void);

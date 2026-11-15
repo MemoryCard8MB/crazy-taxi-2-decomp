@@ -284,6 +284,11 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   just before a shared label and a delay-slot `mov #0,r6` dropped). The others: a leftover float result (FUN_0c042ba8 void), a
   callee with placeholder parameters (FUN_0c02806c takes only r4), and mutants of r13/r14. Run: `mutcases.py --top N --write`,
   then `bash work/mut/prove.sh <log>`; `MUTDEBUG=1` prints why each branch left is stuck.
+  Second batch (`--top 120`, with the two-step search): 772 mutants, game coverage 72.0% -> 82.1%. One more real bug:
+  `FUN_0c061bcc` stored a stale value into bit 25 of its object's +0x60 word (the original sets r0 to 1 or 0 in the two arms of
+  a `bt/s`/`bra` and the generator dropped both); scan for that shape: `if (...) goto L; goto L;` (no other hit is a drop). The
+  rest were declarations: leftover results (FUN_0c061bcc and its caller FUN_0c01505c, FUN_0c02a798 void) and placeholder
+  parameters (Voice_ShutUp and FUN_0c01ec7a take only r4).
 - **A left shift by a negative amount.** The generator writes SH-4 shld/shad with a negative count as `x << (int)(-n)`,
   which C leaves undefined. SHC mostly emits the shift by a negated register (correct), but in FUN_0c042ba8 it folded
   `(-1 << k) << -k` away and tested all the bits instead of the low ones: a snapshot case of the game took the other branch

@@ -9,6 +9,27 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: fr9=3F800000",
+   "regs": {
+    "fr9": "3F800000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=00000001",
+   "regs": {
+    "r4": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=00000001; 0C1EC83C.4=000001F0",
+   "regs": {
+    "r4": "00000001"
+   },
+   "poke": {
+    "0C1EC83C": "f0010000"
+   }
   }
  ]
 }
