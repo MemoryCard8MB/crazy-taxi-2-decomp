@@ -9,6 +9,37 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 fills r5+0.2=0001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "poke_arg": {
+      "r5": "0100"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 fills r5+0.2=0001; r7=0CB00000, 0CB00001.1=01",
+   "regs": {
+    "r7": "0CB00000"
+   },
+   "calls": [
+    {},
+    {},
+    {
+     "poke_arg": {
+      "r5": "0100"
+     }
+    }
+   ],
+   "poke": {
+    "0CB00001": "01"
+   }
   }
  ]
 }

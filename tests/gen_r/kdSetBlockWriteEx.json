@@ -9,6 +9,23 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (mpdrv_set_bwrite_ns) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C30817C.4=0CB80000, 0CB810E8.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C30817C": "0000b80c",
+    "0CB810E8": "01000000"
+   }
   }
  ]
 }

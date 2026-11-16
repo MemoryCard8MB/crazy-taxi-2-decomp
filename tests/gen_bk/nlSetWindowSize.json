@@ -9,6 +9,93 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2BB504.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2BB504": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2BF8F6.2=0001",
+   "regs": {},
+   "poke": {
+    "0C2BF8F6": "0100"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2BB504.4=00000001; 0C2BB520.4=00000004",
+   "regs": {},
+   "poke": {
+    "0C2BB504": "01000000",
+    "0C2BB520": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2BB504.4=00000001; 0C147344.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2BB504": "01000000",
+    "0C147344": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2BB504.4=00000001; 0C147344.4=00000001; 0C147344.4=00000002",
+   "regs": {},
+   "poke": {
+    "0C2BB504": "01000000",
+    "0C147344": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2BB504.4=00000001; 0C147344.4=00000001; 0C147344.4=00000002; 0C147344.4=00000003",
+   "regs": {},
+   "poke": {
+    "0C2BB504": "01000000",
+    "0C147344": "03000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: fr4=FFFFFFFF",
+   "regs": {
+    "fr4": "FFFFFFFF"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: fr5=FFFFFFFF",
+   "regs": {
+    "fr5": "FFFFFFFF"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2BB504.4=00000001; 0C147344.4=00000001; 0C147344.4=00000002; 0C147344.4=00000003; 0C147344.4=00000004",
+   "regs": {},
+   "poke": {
+    "0C2BB504": "01000000",
+    "0C147344": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: fr6=3F800000",
+   "regs": {
+    "fr6": "3F800000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2BB520.4=00000004",
+   "regs": {},
+   "poke": {
+    "0C2BB520": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2BB504.4=00000001; 0C147344.4=00000001; 0C147344.4=00000002; 0C147344.4=00000003; 0C147344.4=00000004; 0C147344.4=00000005",
+   "regs": {},
+   "poke": {
+    "0C2BB504": "01000000",
+    "0C147344": "05000000"
+   }
   }
  ]
 }

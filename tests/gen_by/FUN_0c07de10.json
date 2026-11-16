@@ -9,6 +9,25 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2BB3E8.4=0CE40000, 0CE40000.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C2BB3E8": "0000e40c",
+    "0CE40000": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2BB3E8.4=0CE40000, 0CE40000.4=00000001; r4=0CBC0000, 0CBC0000.4=00000001",
+   "regs": {
+    "r4": "0CBC0000"
+   },
+   "poke": {
+    "0C2BB3E8": "0000e40c",
+    "0CE40000": "01000000",
+    "0CBC0000": "01000000"
+   }
   }
  ]
 }

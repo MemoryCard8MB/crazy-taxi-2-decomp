@@ -9,6 +9,78 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0DFFFF04.4=FFFFFFFF",
+   "regs": {},
+   "poke": {
+    "0DFFFF04": "ffffffff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsfs_diskfree) r0=00000001; r7=00000001",
+   "regs": {
+    "r7": "00000001"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsfs_diskfree) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r7=00000001",
+   "regs": {
+    "r7": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (vmsfs_fcreate) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (vmsfs_fgetsize) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsfs_diskfree) r0=00000001; r7=00000001; call 6 (vmsfs_fwrite1) r0=FFFFFFFF",
+   "regs": {
+    "r7": "00000001"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
   }
  ]
 }

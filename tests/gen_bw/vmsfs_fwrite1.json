@@ -9,6 +9,161 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsio_isready) r0=00000001; call 2 (vmsio_ismount) r0=00000001; 0C2C8D34.1=01",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C2C8D34": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsio_isready) r0=00000001; call 2 (vmsio_ismount) r0=00000001; 0C2C8D34.1=01; call 5 (vmsfs_write_retry) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    },
+    {},
+    {},
+    {
+     "r0": "FFFFFFFF"
+    }
+   ],
+   "poke": {
+    "0C2C8D34": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsio_isready) r0=00000001; call 2 (vmsio_ismount) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsio_isready) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsio_isready) r0=00000001; call 2 (vmsio_ismount) r0=00000001; 0C2C8D34.1=01; r4=0CE80000, 0CE80038.4=0000FFFF",
+   "regs": {
+    "r4": "0CE80000"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C2C8D34": "01",
+    "0CE80038": "ffff0000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsio_isready) r0=00000001; call 2 (vmsio_ismount) r0=00000001; 0C2C8D34.1=01; call 3 (buIsFormat) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "FFFFFFFF"
+    }
+   ],
+   "poke": {
+    "0C2C8D34": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsio_isready) r0=00000001; call 2 (vmsio_ismount) r0=00000001; 0C2C8D34.1=01; call 4 (FUN_0c08f72e) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    },
+    {},
+    {
+     "r0": "FFFFFFFF"
+    }
+   ],
+   "poke": {
+    "0C2C8D34": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsio_isready) r0=00000001; call 2 (vmsio_ismount) r0=00000001; 0C2C8D34.1=01; call 5 (vmsfs_write_retry) r0=FFFFFFFF; call 7 (FUN_0c08f6b4) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    },
+    {},
+    {},
+    {
+     "r0": "FFFFFFFF"
+    },
+    {},
+    {
+     "r0": "FFFFFFFF"
+    }
+   ],
+   "poke": {
+    "0C2C8D34": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsio_isready) r0=00000001; call 2 (vmsio_ismount) r0=00000001; 0C2C8D34.1=01; call 5 (vmsfs_write_retry) r0=FFFFFFFF; call 5 (vmsfs_write_retry) r0=FFFFFF01",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    },
+    {},
+    {},
+    {
+     "r0": "FFFFFF01"
+    }
+   ],
+   "poke": {
+    "0C2C8D34": "01"
+   }
   }
  ]
 }

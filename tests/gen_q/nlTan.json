@@ -253,6 +253,13 @@
    "regs": {
     "r4": "00000025"
    }
+  },
+  {
+   "about": "mutant of case 11: r4=3DCCC000",
+   "poke": {},
+   "regs": {
+    "r4": "3DCCC000"
+   }
   }
  ]
 }

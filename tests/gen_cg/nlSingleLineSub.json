@@ -9,6 +9,68 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 8 (nlLineClipNear) r0=00000001; call 9 (nlLineCalcColor) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 8 (nlLineClipNear) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r7=FFFFFFFE",
+   "regs": {
+    "r7": "FFFFFFFE"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 8 (nlLineClipNear) r0=00000001; call 9 (nlLineCalcColor) r0=00000001; r7=00000001",
+   "regs": {
+    "r7": "00000001"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    }
+   ]
   }
  ]
 }

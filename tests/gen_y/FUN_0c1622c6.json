@@ -9,6 +9,27 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (cvFsOpen) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (cvFsOpen) r0=00000001; call 2 (FUN_0c162178) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    }
+   ]
   }
  ]
 }

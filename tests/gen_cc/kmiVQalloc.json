@@ -9,6 +9,83 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (VQAllocEntry) r0=0CC40000",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "0CC40000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CC20000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000c20c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (VQAllocEntry) r0=0CC40000; 0C3008D4.4=00000004",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "0CC40000"
+    }
+   ],
+   "poke": {
+    "0C3008D4": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CC20000; call 1 fills r4+16.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000c20c"
+   },
+   "calls": [
+    {
+     "poke_arg": {
+      "r4": "0000000000000000000000000000000001000000"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (VQAllocEntry) r0=0CC40000; 0C3008D4.4=00000004; call 4 fills r4+0.4=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "0CC40000"
+    },
+    {},
+    {
+     "poke_arg": {
+      "r4": "ffffffff"
+     }
+    }
+   ],
+   "poke": {
+    "0C3008D4": "04000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (VQAllocEntry) r0=0CC40000; call 4 (VQalloc) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "0CC40000"
+    },
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
   }
  ]
 }

@@ -9,6 +9,62 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 fills r5+0.1=01",
+   "regs": {},
+   "calls": [
+    {
+     "poke_arg": {
+      "r5": "01"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 fills r5+0.1=01; call 1 fills r4+0.1=01",
+   "regs": {},
+   "calls": [
+    {
+     "poke_arg": {
+      "r5": "01",
+      "r4": "01"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 fills r5+0.1=01; call 1 fills r4+0.1=01; call 2 (FUN_0c16c56c) r0=0CDE0000",
+   "regs": {},
+   "calls": [
+    {
+     "poke_arg": {
+      "r5": "01",
+      "r4": "01"
+     }
+    },
+    {
+     "r0": "0CDE0000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 fills r5+0.1=01; call 1 fills r4+0.1=01; call 2 (FUN_0c16c56c) r0=0CDE0000; 0CDE0040.4=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "poke_arg": {
+      "r5": "01",
+      "r4": "01"
+     }
+    },
+    {
+     "r0": "0CDE0000"
+    }
+   ],
+   "poke": {
+    "0CDE0040": "01000000"
+   }
   }
  ]
 }

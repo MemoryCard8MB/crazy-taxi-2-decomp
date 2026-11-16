@@ -9,6 +9,70 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCA0000, 0CCA0000.4=00000001; call 7 (nlLineClipNear) r0=00000001; call 8 (nlLineCalcColor) r0=00000001",
+   "regs": {
+    "r4": "0CCA0000"
+   },
+   "poke": {
+    "0CCA0000": "01000000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCA0000, 0CCA0000.4=00000001",
+   "regs": {
+    "r4": "0CCA0000"
+   },
+   "poke": {
+    "0CCA0000": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CCA0000, 0CCA0000.4=00000001; call 7 (nlLineClipNear) r0=00000001",
+   "regs": {
+    "r4": "0CCA0000"
+   },
+   "poke": {
+    "0CCA0000": "01000000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r5=FFFFFFFE",
+   "regs": {
+    "r5": "FFFFFFFE"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r5=FFFFFFFF",
+   "regs": {
+    "r5": "FFFFFFFF"
+   }
   }
  ]
 }

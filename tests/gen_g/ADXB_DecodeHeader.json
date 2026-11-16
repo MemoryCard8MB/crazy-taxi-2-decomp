@@ -9,6 +9,57 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (ADXB_CheckSpsd) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (ADXB_CheckWav) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (ADXB_CheckAiff) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 4 (ADXB_CheckAu) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r5=0CAE0000, 0CAE0000.2=0080",
+   "regs": {
+    "r5": "0CAE0000"
+   },
+   "poke": {
+    "0CAE0000": "8000"
+   }
   }
  ]
 }

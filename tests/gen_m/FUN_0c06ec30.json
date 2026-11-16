@@ -253,6 +253,20 @@
    "regs": {
     "r4": "FFFFFFFE"
    }
+  },
+  {
+   "about": "mutant of case 0: r4=00000200",
+   "poke": {},
+   "regs": {
+    "r4": "00000200"
+   }
+  },
+  {
+   "about": "mutant of case 0: r4=00000400",
+   "poke": {},
+   "regs": {
+    "r4": "00000400"
+   }
   }
  ]
 }

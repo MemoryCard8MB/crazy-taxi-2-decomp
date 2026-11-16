@@ -9,6 +9,66 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA60000; 0CA60030.4=00000001; 0CA60034.4=00000001",
+   "regs": {
+    "r4": "0CA60000"
+   },
+   "poke": {
+    "0CA60030": "01000000",
+    "0CA60034": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA60000",
+   "regs": {
+    "r4": "0CA60000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA60000; 0CA60030.4=00000001; 0CA60034.4=00000001; 0CA60088.4=00000002",
+   "regs": {
+    "r4": "0CA60000"
+   },
+   "poke": {
+    "0CA60030": "01000000",
+    "0CA60034": "01000000",
+    "0CA60088": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA60000; 0CA60005.1=01",
+   "regs": {
+    "r4": "0CA60000"
+   },
+   "poke": {
+    "0CA60005": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA60000; 0CA60005.1=01; call 2 (mwRnaGetTransSw) r0=00000001",
+   "regs": {
+    "r4": "0CA60000"
+   },
+   "poke": {
+    "0CA60005": "01"
+   },
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA60000; 0CA60030.4=00000001",
+   "regs": {
+    "r4": "0CA60000"
+   },
+   "poke": {
+    "0CA60030": "01000000"
+   }
   }
  ]
 }

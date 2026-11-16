@@ -9,6 +9,84 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 fills r7+4.4=00000010; call 2 (ADXB_DecodeHeader) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "poke_arg": {
+      "r7": "0000000010000000"
+     }
+    },
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 fills r7+4.4=00000010; call 2 (ADXB_DecodeHeader) r0=00000001; call 4 (ADXB_GetFormat) r0=00000002",
+   "regs": {},
+   "calls": [
+    {
+     "poke_arg": {
+      "r7": "0000000010000000"
+     }
+    },
+    {
+     "r0": "00000001"
+    },
+    {},
+    {
+     "r0": "00000002"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 fills r7+4.4=00000010",
+   "regs": {},
+   "calls": [
+    {
+     "poke_arg": {
+      "r7": "0000000010000000"
+     }
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 fills r7+4.4=00000010; call 2 (ADXB_DecodeHeader) r0=00000001; call 3 (ADXB_GetFormat) r0=00000004",
+   "regs": {},
+   "calls": [
+    {
+     "poke_arg": {
+      "r7": "0000000010000000"
+     }
+    },
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000004"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 fills r7+4.4=00000010; call 2 (ADXB_DecodeHeader) r0=00000001; call 4 (ADXB_GetFormat) r0=00000002; call 1 fills r7+4.4=0CA60000",
+   "regs": {},
+   "calls": [
+    {
+     "poke_arg": {
+      "r7": "000000000000a60c"
+     }
+    },
+    {
+     "r0": "00000001"
+    },
+    {},
+    {
+     "r0": "00000002"
+    }
+   ]
   }
  ]
 }

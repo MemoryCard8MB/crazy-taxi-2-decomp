@@ -179,6 +179,16 @@
    "poke": {
     "0000000D": "ff"
    }
+  },
+  {
+   "about": "mutant of rescue: flips 0C095C9C: fr4=FFFF8000",
+   "regs": {
+    "r6": "00000006",
+    "fr4": "FFFF8000"
+   },
+   "poke": {
+    "00000006": "ff"
+   }
   }
  ]
 }

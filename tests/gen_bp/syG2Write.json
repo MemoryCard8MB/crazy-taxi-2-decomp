@@ -9,6 +9,119 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r7=00000001",
+   "regs": {
+    "r6": "00000001",
+    "r7": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000002; r7=00000001",
+   "regs": {
+    "r6": "00000002",
+    "r7": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000004; r7=00000001",
+   "regs": {
+    "r6": "00000004",
+    "r7": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1743EC.4=0CC00000, 0CC000D4.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C1743EC": "0000c00c",
+    "0CC000D4": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000002",
+   "regs": {
+    "r6": "00000002"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000004",
+   "regs": {
+    "r6": "00000004"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001",
+   "regs": {
+    "r6": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000001; r7=00000001; r5=00700000",
+   "regs": {
+    "r6": "00000001",
+    "r7": "00000001",
+    "r5": "00700000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000002; r7=00000001; r5=00700000",
+   "regs": {
+    "r6": "00000002",
+    "r7": "00000001",
+    "r5": "00700000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=00000004; r7=00000001; r5=00700000",
+   "regs": {
+    "r6": "00000004",
+    "r7": "00000001",
+    "r5": "00700000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0DFFFF00.4=00000001",
+   "regs": {},
+   "poke": {
+    "0DFFFF00": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0DFFFF04.4=00000001",
+   "regs": {},
+   "poke": {
+    "0DFFFF04": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0DFFFF00.4=00000001; 0DFFFF00.4=00000002",
+   "regs": {},
+   "poke": {
+    "0DFFFF00": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0DFFFF04.4=00000001; 0DFFFF04.4=00000002",
+   "regs": {},
+   "poke": {
+    "0DFFFF04": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0DFFFF00.4=00000001; 0DFFFF00.4=00000002; 0DFFFF00.4=00000003",
+   "regs": {},
+   "poke": {
+    "0DFFFF00": "03000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0DFFFF04.4=00000001; 0DFFFF04.4=00000002; 0DFFFF04.4=00000003",
+   "regs": {},
+   "poke": {
+    "0DFFFF04": "03000000"
+   }
   }
  ]
 }

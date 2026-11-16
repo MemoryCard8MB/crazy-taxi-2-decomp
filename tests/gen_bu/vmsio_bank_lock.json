@@ -9,6 +9,88 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CBC0000, 0CBC0000.1=01; call 2 (kdGetDeviceInfo) r0=0CC20000, 0CC20000.4=00000002",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CBC0000"
+    },
+    {
+     "r0": "0CC20000"
+    }
+   ],
+   "poke": {
+    "0CBC0000": "01",
+    "0CC20000": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CBC0000, 0CBC0000.1=01",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CBC0000"
+    }
+   ],
+   "poke": {
+    "0CBC0000": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CBC0000, 0CBC0000.1=01; call 2 (kdGetDeviceInfo) r0=0CC20000, 0CC20000.4=00000002; 0CC20014.1=42",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CBC0000"
+    },
+    {
+     "r0": "0CC20000"
+    }
+   ],
+   "poke": {
+    "0CBC0000": "01",
+    "0CC20000": "02000000",
+    "0CC20014": "42"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CBC0000, 0CBC0000.1=01; call 2 (kdGetDeviceInfo) r0=0CC20000, 0CC20000.4=00000002; 0CC20014.1=42; 0CC20015.1=41",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CBC0000"
+    },
+    {
+     "r0": "0CC20000"
+    }
+   ],
+   "poke": {
+    "0CBC0000": "01",
+    "0CC20000": "02000000",
+    "0CC20014": "42",
+    "0CC20015": "41"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CBC0000, 0CBC0000.1=01; call 2 (kdGetDeviceInfo) r0=0CC20000, 0CC20000.4=00000002; 0CC20014.1=42; 0CC20015.1=41; 0CC20016.1=4E",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CBC0000"
+    },
+    {
+     "r0": "0CC20000"
+    }
+   ],
+   "poke": {
+    "0CBC0000": "01",
+    "0CC20000": "02000000",
+    "0CC20014": "42",
+    "0CC20015": "41",
+    "0CC20016": "4e"
+   }
   }
  ]
 }

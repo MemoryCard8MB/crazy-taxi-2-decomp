@@ -9,6 +9,27 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: r5=0000001F",
+   "regs": {
+    "r5": "0000001F"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1737EC.4=0CD00000",
+   "regs": {},
+   "poke": {
+    "0C1737EC": "0000d00c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C1737EC.4=0CD00000; 0CD00038.2=0001",
+   "regs": {},
+   "poke": {
+    "0C1737EC": "0000d00c",
+    "0CD00038": "0100"
+   }
   }
  ]
 }

@@ -9,6 +9,33 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsio_bank_lock) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsio_bank_lock) r0=00000001; call 1 (vmsio_bank_lock) r0=FFFFFF30",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "FFFFFF30"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (vmsio_bank_lock) r0=00000001; call 1 (vmsio_bank_lock) r0=FFFFFF01",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "FFFFFF01"
+    }
+   ]
   }
  ]
 }

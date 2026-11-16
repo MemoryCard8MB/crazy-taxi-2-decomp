@@ -9,6 +9,111 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c14fd82) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c14fd82) r0=00000001; call 4 (FUN_0c14f3b0) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    },
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c14fd82) r0=00000001; call 4 (FUN_0c14f3b0) r0=00000001; 0C2D3648.4=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    },
+    {},
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C2D3648": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c14fd82) r0=00000001; call 4 (FUN_0c14f3b0) r0=00000001; 0C2D3644.4=0CE00000",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    },
+    {},
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C2D3644": "0000e00c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c14fd82) r0=00000001; call 4 (FUN_0c14f3b0) r0=00000001; 0C2D3644.4=00010000; r7=00010000; r6=0CE40000, 0CE40008.4=FFFFFFFF",
+   "regs": {
+    "r7": "00010000",
+    "r6": "0CE40000"
+   },
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    },
+    {},
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C2D3644": "00000100",
+    "0CE40008": "ffffffff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (adxf_ChkPrmPt) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (FUN_0c14fd82) r0=00000001; call 4 (FUN_0c14f3b0) r0=00000001; 0C2D3644.4=00010000",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    },
+    {},
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C2D3644": "00000100"
+   }
   }
  ]
 }

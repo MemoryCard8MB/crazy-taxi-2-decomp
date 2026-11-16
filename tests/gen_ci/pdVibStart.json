@@ -9,6 +9,98 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdVibIsReady) r0=00000001; r6=00000001",
+   "regs": {
+    "r6": "00000001"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdVibIsReady) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdVibIsReady) r0=00000001; r6=00000001; r5=0CBA0000, 0CBA0002.1=01",
+   "regs": {
+    "r6": "00000001",
+    "r5": "0CBA0000"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0CBA0002": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdVibIsReady) r0=00000001; r6=00000001; r5=0CBC0000, 0CBC0002.1=FF",
+   "regs": {
+    "r6": "00000001",
+    "r5": "0CBC0000"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0CBC0002": "ff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdVibIsReady) r0=00000001; r6=00000001; r5=0CC20000, 0CC20001.1=78",
+   "regs": {
+    "r6": "00000001",
+    "r5": "0CC20000"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0CC20001": "78"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdVibIsReady) r0=00000001; call 2 (kdSetSetCondition) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (pdVibIsReady) r0=00000001; r6=00000001; r5=0CBE0000, 0CBE0003.1=0F",
+   "regs": {
+    "r6": "00000001",
+    "r5": "0CBE0000"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0CBE0003": "0f"
+   }
   }
  ]
 }

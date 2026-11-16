@@ -9,6 +9,142 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CC00000, 0CC00000.1=01; call 2 (kdGetDeviceInfo) r0=0CC60000, 0CC60000.4=00000002",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC00000"
+    },
+    {
+     "r0": "0CC60000"
+    }
+   ],
+   "poke": {
+    "0CC00000": "01",
+    "0CC60000": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CC00000, 0CC00000.1=01",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC00000"
+    }
+   ],
+   "poke": {
+    "0CC00000": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CC00000, 0CC00000.1=01; call 2 (kdGetDeviceInfo) r0=0CC60000, 0CC60000.4=00000002; 0CC60014.1=42",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC00000"
+    },
+    {
+     "r0": "0CC60000"
+    }
+   ],
+   "poke": {
+    "0CC00000": "01",
+    "0CC60000": "02000000",
+    "0CC60014": "42"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CC00000, 0CC00000.1=01; call 2 (kdGetDeviceInfo) r0=0CC60000, 0CC60000.4=00000002; r5=0CC80000",
+   "regs": {
+    "r5": "0CC80000"
+   },
+   "calls": [
+    {
+     "r0": "0CC00000"
+    },
+    {
+     "r0": "0CC60000"
+    }
+   ],
+   "poke": {
+    "0CC00000": "01",
+    "0CC60000": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CC00000, 0CC00000.1=01; call 2 (kdGetDeviceInfo) r0=0CC60000, 0CC60000.4=00000002; r6=0CCA0000",
+   "regs": {
+    "r6": "0CCA0000"
+   },
+   "calls": [
+    {
+     "r0": "0CC00000"
+    },
+    {
+     "r0": "0CC60000"
+    }
+   ],
+   "poke": {
+    "0CC00000": "01",
+    "0CC60000": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CC00000, 0CC00000.1=01; call 2 (kdGetDeviceInfo) r0=0CC60000, 0CC60000.4=00000002; r7=0CCC0000",
+   "regs": {
+    "r7": "0CCC0000"
+   },
+   "calls": [
+    {
+     "r0": "0CC00000"
+    },
+    {
+     "r0": "0CC60000"
+    }
+   ],
+   "poke": {
+    "0CC00000": "01",
+    "0CC60000": "02000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CC00000, 0CC00000.1=01; call 2 (kdGetDeviceInfo) r0=0CC60000, 0CC60000.4=00000002; 0CC60014.1=42; 0CC60015.1=41",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC00000"
+    },
+    {
+     "r0": "0CC60000"
+    }
+   ],
+   "poke": {
+    "0CC00000": "01",
+    "0CC60000": "02000000",
+    "0CC60014": "42",
+    "0CC60015": "41"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CC00000, 0CC00000.1=01; call 2 (kdGetDeviceInfo) r0=0CC60000, 0CC60000.4=00000002; 0CC60014.1=42; 0CC60015.1=41; 0CC60016.1=4E",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC00000"
+    },
+    {
+     "r0": "0CC60000"
+    }
+   ],
+   "poke": {
+    "0CC00000": "01",
+    "0CC60000": "02000000",
+    "0CC60014": "42",
+    "0CC60015": "41",
+    "0CC60016": "4e"
+   }
   }
  ]
 }

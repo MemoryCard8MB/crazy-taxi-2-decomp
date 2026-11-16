@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """mutcases.py: equiv cases by mutation, for the game functions the cases cover worst. Run in the repo. No emulator needed.
 
-    python3 tools/6-agentic/mutcases.py [--max-cov 0.75] [--min-gap 40] [--top 0] [--time 90] [--keep 200] [--write] [--list] [-- name ...]
+    python3 tools/6-agentic/mutcases.py [--max-cov 0.75] [--min-gap 40] [--top 0] [--time 90] [--keep 200] [--write] [--list] [--lib|--all] [-- name ...]
     (--list: print the targets, worst first, and stop; tools/6-agentic/mutpar.sh runs them in parallel)
 
 For each target function the ORIGINAL runs (in sh4sim, as equiv.py runs it: calls mocked, the compiler's runtime helpers real) on its
@@ -36,10 +36,13 @@ if '--' in args:
 opt = {'--max-cov': 0.75, '--min-gap': 40, '--top': 0, '--time': 90.0, '--keep': 200}
 write = False
 listonly = False
+part = 'game'
 while args:
     a = args.pop(0)
     if a == '--write': write = True
     elif a == '--list': listonly = True
+    elif a == '--lib': part = 'lib'                 # the library functions (kept as the original bytes in a build from C)
+    elif a == '--all': part = 'all'
     elif a in opt: opt[a] = type(opt[a])(args.pop(0))
     else: sys.exit(__doc__)
 
@@ -78,7 +81,8 @@ if names:
     targets = list(names)
 else:
     targets = [n for n, (r, t) in cov.items() if t and r / t < opt['--max-cov'] and t - r >= opt['--min-gap']
-               and n in FUN and layout.moving(FUN[n][0]) and n in cfile and os.path.exists('tests/%s/%s.json' % (cfile[n], n))]
+               and n in FUN and (part == 'all' or layout.moving(FUN[n][0]) == (part == 'game'))
+               and n in cfile and os.path.exists('tests/%s/%s.json' % (cfile[n], n))]
     targets.sort(key=lambda n: -(cov[n][1] - cov[n][0]))
     if opt['--top']:
         targets = targets[:opt['--top']]
@@ -124,6 +128,25 @@ class CPU(BaseCPU):
                 self.on_call = oc; self._wrapped = True; self.mocks = []
         return BaseCPU.step(self, in_slot=in_slot)
 
+RULES = {}                 # per C file: equiv.py's rules for mocked calls (fills only through the registers a callee reads, stack
+                           # fills only for callees that can write there, the file's runtime helpers run), so a run here is equiv's run
+def equiv_rules(fn):
+    f = cfile.get(fn)
+    if f in RULES: return RULES[f]
+    import equiv
+    if 'table' not in RULES:
+        RULES['table'] = equiv.names(); RULES['fills'] = equiv.fill_regs(RULES['table']); RULES['stackfill'] = equiv.stack_fills(RULES['table'])
+    table = RULES['table']; path = 'src/%s.c' % f
+    canon_ = lambda t: 0x0C000000 | (t & 0x1FFFFFFF) if 0x0C000000 <= (t & 0x1FFFFFFF) < 0x0D000000 else t
+    aliases = equiv.runtime_aliases(path, table)
+    rt = {a for n, a in table.items() if n.startswith('_')} | set(aliases.values())
+    arity, _ = equiv.compared_arity(path, table)
+    arity.update({canon_(a): (0, 0) for a in rt})
+    fills = RULES['fills']
+    argc = lambda t: (fills[canon_(t)] if canon_(t) in fills else arity[canon_(t)][0] if canon_(t) in arity else None)
+    RULES[f] = (argc, RULES['stackfill'], lambda t: t in rt)
+    return RULES[f]
+
 LAST = {}
 DEADLINE = [None]          # explore's end: a run after it returns at once (a single long run must not overrun --time by minutes)
 def run(fn, case, trace=False, steps=None):
@@ -141,7 +164,8 @@ def run(fn, case, trace=False, steps=None):
         orig_init(self, mem, *a_, **k_); holder['cpu'] = self; holder['mem'] = mem
     CPU.__init__ = init
     try:
-        r = sh4sim.run(c, '.', deep=lambda t: (t & 0x1FFFFFFF) in runtime)
+        argc, stackfill, deep = equiv_rules(fn)
+        r = sh4sim.run(c, '.', deep=deep, argc=argc, stackfill=stackfill)
     finally:
         sh4sim.Memory, sh4sim.CPU = B1, B2
         CPU.__init__ = orig_init

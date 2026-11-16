@@ -9,6 +9,23 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (mpdrv_set_dkill_ns) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C30817C.4=0CA60000, 0CA610E8.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C30817C": "0000a60c",
+    "0CA610E8": "01000000"
+   }
   }
  ]
 }

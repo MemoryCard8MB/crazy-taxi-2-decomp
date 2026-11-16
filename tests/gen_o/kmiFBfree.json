@@ -9,6 +9,73 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (SearchUsed) r0=0CDE0000; 0CDE0000.2=0002",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CDE0000"
+    }
+   ],
+   "poke": {
+    "0CDE0000": "0200"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (SearchUsed) r0=0CDE0000; 0CDE0000.2=0002; call 2 (SearchUsed) r0=0CE00000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CDE0000"
+    },
+    {
+     "r0": "0CE00000"
+    }
+   ],
+   "poke": {
+    "0CDE0000": "0200"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (SearchUsed) r0=0CDE0000",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CDE0000"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (SearchUsed) r0=0CDE0000; 0CDE0000.2=0002; call 2 (SearchUsed) r0=0CE00000; 0CE00000.2=0004",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CDE0000"
+    },
+    {
+     "r0": "0CE00000"
+    }
+   ],
+   "poke": {
+    "0CDE0000": "0200",
+    "0CE00000": "0400"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (SearchUsed) r0=0CDE0000; 0CDE0000.2=0002; call 1 fills r5+0.2=0001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CDE0000",
+     "poke_arg": {
+      "r5": "0100"
+     }
+    }
+   ],
+   "poke": {
+    "0CDE0000": "0200"
+   }
   }
  ]
 }

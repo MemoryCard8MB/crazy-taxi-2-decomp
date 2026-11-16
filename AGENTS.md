@@ -316,6 +316,11 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   Batch 8 (400 s per function: 82 minutes for 311 instructions, so the time budget was not what held the rest back): slices
   through the compiler's helpers (_modls/_divls: their r1/r0), two inputs at once, and a deadline so one long run cannot
   overrun the budget. FUN_0c03e81a had a placeholder a4. Game coverage 97.6%.
+  Library (`mutcases.py --lib`, 2026-11-16): one pass over the 832 library functions with a gap: 2,221 mutants, library
+  coverage 66.7% -> 92.0%. 24 functions failed on 56 mutants; those were moved aside (`work/mut/hold.py`, kept in
+  `work/mut/held_lib1/`, not committed) so the rest count: possible library C bugs or inputs the C cannot match, still to
+  triage (library C is not built: the build keeps the original bytes). mutcases.py now runs the original with equiv.py's own
+  rules for mocked calls (fills only through the registers a callee reads), so its runs are equiv's (kmRender: +456).
 - **A left shift by a negative amount.** The generator writes SH-4 shld/shad with a negative count as `x << (int)(-n)`,
   which C leaves undefined. SHC mostly emits the shift by a negated register (correct), but in FUN_0c042ba8 it folded
   `(-1 << k) << -k` away and tested all the bits instead of the low ones: a snapshot case of the game took the other branch

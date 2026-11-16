@@ -9,6 +9,60 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (gdFsReopenHn) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (gdFsReopenHn) r0=00000001; call 1 (gdFsReopenHn) r0=0CBC0000; call 2 (00000000) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CBC0000"
+    },
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (gdFsReopenHn) r0=00000001; call 1 (gdFsReopenHn) r0=0CBC0000; call 2 (00000000) r0=00000001; 0C1737EC.4=0CC60000, 0CC6003A.2=0001; 0CC6002C.4=00010001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CBC0000"
+    },
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C1737EC": "0000c60c",
+    "0CC6003A": "0100",
+    "0CC6002C": "01000100"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (gdFsReopenHn) r0=00000001; call 1 (gdFsReopenHn) r0=0CBC0000; call 2 (00000000) r0=00000001; 0C1737EC.4=0CC60000, 0CC6003A.2=0001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CBC0000"
+    },
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C1737EC": "0000c60c",
+    "0CC6003A": "0100"
+   }
   }
  ]
 }

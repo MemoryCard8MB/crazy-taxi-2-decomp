@@ -9,6 +9,53 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2D3624.4=FFFFFFFF; call 2 (FUN_0c14fd82) r0=00000001",
+   "regs": {},
+   "poke": {
+    "0C2D3624": "ffffffff"
+   },
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2D3624.4=FFFFFFFF",
+   "regs": {},
+   "poke": {
+    "0C2D3624": "ffffffff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2D3624.4=FFFFFFFF; call 2 (FUN_0c14fd82) r0=00000001; call 5 (FUN_0c1500d2) r0=FFFFFFFF",
+   "regs": {},
+   "poke": {
+    "0C2D3624": "ffffffff"
+   },
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    },
+    {},
+    {},
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (adxf_ChkPrmPt) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
   }
  ]
 }

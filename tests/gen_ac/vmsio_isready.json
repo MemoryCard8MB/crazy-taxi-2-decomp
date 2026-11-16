@@ -9,6 +9,34 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CCA0000, 0CCA0000.1=01",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CCA0000"
+    }
+   ],
+   "poke": {
+    "0CCA0000": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (kdGetDevice) r0=0CCA0000, 0CCA0000.1=01; call 2 (kdGetDeviceInfo) r0=0CD00000, 0CD00000.4=00000002",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CCA0000"
+    },
+    {
+     "r0": "0CD00000"
+    }
+   ],
+   "poke": {
+    "0CCA0000": "01",
+    "0CD00000": "02000000"
+   }
   }
  ]
 }

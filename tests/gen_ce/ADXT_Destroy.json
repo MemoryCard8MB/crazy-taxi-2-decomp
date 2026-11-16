@@ -9,6 +9,114 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA40000",
+   "regs": {
+    "r4": "0CA40000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA40000; 0CA40003.1=01",
+   "regs": {
+    "r4": "0CA40000"
+   },
+   "poke": {
+    "0CA40003": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA40000; 0CA40003.1=01; 0CA40018.4=0CB20000",
+   "regs": {
+    "r4": "0CA40000"
+   },
+   "poke": {
+    "0CA40003": "01",
+    "0CA40018": "0000b20c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA40000; 0CA40003.1=01; 0CA40078.4=0CB40000",
+   "regs": {
+    "r4": "0CA40000"
+   },
+   "poke": {
+    "0CA40003": "01",
+    "0CA40078": "0000b40c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA40000; 0CA40003.1=01; 0CA40080.4=0CB60000",
+   "regs": {
+    "r4": "0CA40000"
+   },
+   "poke": {
+    "0CA40003": "01",
+    "0CA40080": "0000b60c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA40000; 0CA40010.4=0CAE0000",
+   "regs": {
+    "r4": "0CA40000"
+   },
+   "poke": {
+    "0CA40010": "0000ae0c"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA40000; 0CA4000C.4=00000001",
+   "regs": {
+    "r4": "0CA40000"
+   },
+   "poke": {
+    "0CA4000C": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA40000; 0CA40004.4=00000001",
+   "regs": {
+    "r4": "0CA40000"
+   },
+   "poke": {
+    "0CA40004": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA40000; 0CA40008.4=00000001",
+   "regs": {
+    "r4": "0CA40000"
+   },
+   "poke": {
+    "0CA40008": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA40000; 0CA40094.4=00000001",
+   "regs": {
+    "r4": "0CA40000"
+   },
+   "poke": {
+    "0CA40094": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA40000; 0CA40074.4=00000001",
+   "regs": {
+    "r4": "0CA40000"
+   },
+   "poke": {
+    "0CA40074": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CA40000; 0CA40000.1=01",
+   "regs": {
+    "r4": "0CA40000"
+   },
+   "poke": {
+    "0CA40000": "01"
+   }
   }
  ]
 }

@@ -9,6 +9,38 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=00000001",
+   "regs": {
+    "r4": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=00000001; r5=0CA20000; r4=0CD20000; r5=00000001",
+   "regs": {
+    "r4": "0CD20000",
+    "r5": "00000001"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=00000001; r4=0CBC0000; call 2 (mwRnaGetPlaySw) r0=00000001",
+   "regs": {
+    "r4": "0CBC0000"
+   },
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=00000001; r5=0CA20000",
+   "regs": {
+    "r4": "00000001",
+    "r5": "0CA20000"
+   }
   }
  ]
 }

@@ -9,6 +9,112 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (kmiGetProfileInt) r0=00000042",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000042"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (kmiGetProfileInt) r0=0000002C",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "0000002C"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (kmiGetProfileInt) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (kmiGetProfileInt) r0=0000002C; call 2 (kmiGetProfileInt) r0=0000006E",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "0000006E"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r5=FFFFFFFF",
+   "regs": {
+    "r5": "FFFFFFFF"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (kmiGetProfileInt) r0=00000042; call 2 (kmiGetProfileInt) r0=00000043",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000043"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (kmiGetProfileInt) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 4 (kmiGetProfileInt) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (kmiGetProfileInt) r0=00000010",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000010"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (kmiGetProfileInt) r0=00000042; call 5 fills r4+4.4=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000042"
+    },
+    {},
+    {},
+    {
+     "poke_arg": {
+      "r4": "00000000ffffffff"
+     }
+    }
+   ]
   }
  ]
 }

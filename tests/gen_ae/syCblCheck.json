@@ -9,6 +9,39 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (syCblCheckCable) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (syCblCheckCable) r0=00000001; call 2 (syCblCheckBroadcast) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (syCblCheckCable) r0=00000001; call 2 (syCblCheckBroadcast) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
   }
  ]
 }

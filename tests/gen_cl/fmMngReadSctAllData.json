@@ -9,6 +9,51 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (fmMngBit2Num) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (fmMngBit2Num) r0=00000001; r4=0CB60000, 0CB60014.4=00000001",
+   "regs": {
+    "r4": "0CB60000"
+   },
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0CB60014": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (FUN_0c16a4d0) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CE40000, 0CE40002.2=0001",
+   "regs": {
+    "r4": "0CE40000"
+   },
+   "poke": {
+    "0CE40002": "0100"
+   }
   }
  ]
 }

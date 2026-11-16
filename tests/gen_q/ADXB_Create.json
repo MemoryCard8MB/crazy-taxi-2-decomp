@@ -9,6 +9,23 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (ADXPD_Create) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C308180.2=0001",
+   "regs": {},
+   "poke": {
+    "0C308180": "0100"
+   }
   }
  ]
 }

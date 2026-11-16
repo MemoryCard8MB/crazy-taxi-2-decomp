@@ -253,6 +253,13 @@
    "regs": {
     "fr4": 100.0
    }
+  },
+  {
+   "about": "mutant of case 2: fr4=BC23D70A",
+   "poke": {},
+   "regs": {
+    "fr4": "BC23D70A"
+   }
   }
  ]
 }

@@ -9,6 +9,176 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CB40000, 0CB40006.1=01",
+   "regs": {
+    "r4": "0CB40000"
+   },
+   "poke": {
+    "0CB40006": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CBE0000, 0CBE0001.1=06",
+   "regs": {
+    "r4": "0CBE0000"
+   },
+   "poke": {
+    "0CBE0001": "06"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 4 (mwRnaGetPlaySw) r0=00000001; r4=0CCA0000, 0CCA0054.4=FFFFFFFF",
+   "regs": {
+    "r4": "0CCA0000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0CCA0054": "ffffffff"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (mwRnaGetTransSw) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (mwRnaGetTransSw) r0=00000001; r4=0CC00000, 0CC00005.1=01",
+   "regs": {
+    "r4": "0CC00000"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0CC00005": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (mwRnaGetTransSw) r0=00000001; r4=0CC00000, 0CC00005.1=01; call 2 (mwlRnaIsCopyEnd) r0=00000001",
+   "regs": {
+    "r4": "0CC00000"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0CC00005": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 4 (mwRnaGetPlaySw) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (mwRnaGetTransSw) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 4 (mwRnaGetPlaySw) r0=00000001; r4=0CCA0000, 0CCA0054.4=FFFFFFFF; 0CCA0005.1=01",
+   "regs": {
+    "r4": "0CCA0000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0CCA0054": "ffffffff",
+    "0CCA0005": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 4 (mwRnaGetPlaySw) r0=00000001; r4=0CCA0000, 0CCA0054.4=FFFFFFFF; 0CCA0005.1=01; call 5 (mwlRnaIsCopyEnd) r0=00000001",
+   "regs": {
+    "r4": "0CCA0000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0CCA0054": "ffffffff",
+    "0CCA0005": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CB00000, 0CB0008C.4=00000001",
+   "regs": {
+    "r4": "0CB00000"
+   },
+   "poke": {
+    "0CB0008C": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 2 (mwRnaGetPlaySw) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (mwRnaGetTransSw) r0=00000001; call 4 (mwlRnaStartTrans) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "00000001"
+    },
+    {
+     "r0": "00000001"
+    }
+   ]
   }
  ]
 }

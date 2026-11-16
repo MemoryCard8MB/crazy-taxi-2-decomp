@@ -9,6 +9,61 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 7 (ADXB_GetNumChan) r0=00000001",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 7 (ADXB_GetNumChan) r0=00000001; r4=0CEA0000, 0CEA0050.4=00000001",
+   "regs": {
+    "r4": "0CEA0000"
+   },
+   "calls": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0CEA0050": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CE40000, 0CE40048.4=00000001",
+   "regs": {
+    "r4": "0CE40000"
+   },
+   "poke": {
+    "0CE40048": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c16a9b2) r0=FFFFFFFF",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
   }
  ]
 }

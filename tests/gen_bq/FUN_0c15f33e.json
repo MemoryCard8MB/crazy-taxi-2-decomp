@@ -9,6 +9,31 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C302724.4=00000001; call 1 (mpdrv_frame_send) r0=FFFFFFFF",
+   "regs": {},
+   "poke": {
+    "0C302724": "01000000"
+   },
+   "calls": [
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C302724.4=00000001; call 1 (mpdrv_frame_send) r0=FFFFFFFF; 0C3024DC.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C302724": "01000000",
+    "0C3024DC": "01000000"
+   },
+   "calls": [
+    {
+     "r0": "FFFFFFFF"
+    }
+   ]
   }
  ]
 }

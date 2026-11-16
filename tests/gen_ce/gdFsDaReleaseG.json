@@ -9,6 +9,100 @@
   {
    "about": "rescue: empty case",
    "regs": {}
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (gdFsReopenHn) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (gdFsReopenHn) r0=00000001; 0C1737EC.4=0CD40000, 0CD4003A.2=0001; 0CD4002C.4=00010001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C1737EC": "0000d40c",
+    "0CD4003A": "0100",
+    "0CD4002C": "01000100"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (gdFsReopenHn) r0=00000001; call 1 (gdFsReopenHn) r0=0CD40000; call 2 (00000000) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CD40000"
+    },
+    {
+     "r0": "00000001"
+    }
+   ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (gdFsReopenHn) r0=00000001; 0C1737EC.4=0CD40000, 0CD4003A.2=0001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C1737EC": "0000d40c",
+    "0CD4003A": "0100"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (gdFsReopenHn) r0=00000001; 0C1737EC.4=0CD40000, 0CD4003A.2=0001; 0CD4002C.4=00010001; call 1 (gdFsReopenHn) r0=0CC00000; call 2 (00000000) r0=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "0CC00000"
+    },
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C1737EC": "0000d40c",
+    "0CD4003A": "0100",
+    "0CD4002C": "01000100"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (gdFsReopenHn) r0=00000001; 0C1737EC.4=0CD40000, 0CD4003A.2=0001; 0C2D0D14.4=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C1737EC": "0000d40c",
+    "0CD4003A": "0100",
+    "0C2D0D14": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: call 1 (gdFsReopenHn) r0=00000001; 0C1737EC.4=0CD40000, 0CD4003A.2=0001; 0CD4002C.4=00010001; 0C2D0D04.4=00000001",
+   "regs": {},
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ],
+   "poke": {
+    "0C1737EC": "0000d40c",
+    "0CD4003A": "0100",
+    "0CD4002C": "01000100",
+    "0C2D0D04": "01000000"
+   }
   }
  ]
 }
