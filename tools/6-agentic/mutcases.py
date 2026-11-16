@@ -432,6 +432,15 @@ def deltas(kind, vals, imm, L, fl):
     operand misses (r5 + r7*44 + 12 == 0 wants r5 = -12 - r7*44), on either operand"""
     if L is None or not vals: return []
     out = []
+    if kind in ('feq', 'fgt') and not fl and len(vals) >= 2:
+        # an integer input converted with `float` (a timer against a window): integers near the float bounds
+        A, B = bitsf(vals[0]), bitsf(vals[1])
+        for x in (A, B):
+            if x == x and abs(x) < 2e9:
+                out += [(int(round(x)) + e) & M32 for e in (0, 1, -1, 2, -2)]
+        if A == A and B == B and abs(B - A) < 2e9:
+            out += [(L + int(round(B - A)) + e) & M32 for e in (0, 1, -1)]
+        return out
     if kind in ('feq', 'fgt'):
         if len(vals) < 2 or not fl: return []
         A, B, x = bitsf(vals[0]), bitsf(vals[1]), bitsf(L)

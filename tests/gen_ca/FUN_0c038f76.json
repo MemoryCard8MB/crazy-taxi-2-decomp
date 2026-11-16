@@ -56,6 +56,28 @@
     "r4": "00000001",
     "r5": "00000001"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=0CCAC000, 0CCAC000.1=01; r4=00000001; r5=0CD40000",
+   "regs": {
+    "r6": "0CCAC000",
+    "r4": "00000001",
+    "r5": "0CD40000"
+   },
+   "poke": {
+    "0CCAC000": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=0CCAC000, 0CCAC000.1=01; r4=00000001; r5=0CD40000; r4=00000002",
+   "regs": {
+    "r6": "0CCAC000",
+    "r4": "00000002",
+    "r5": "0CD40000"
+   },
+   "poke": {
+    "0CCAC000": "01"
+   }
   }
  ]
 }
