@@ -72708,10 +72708,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 16 of 16 instructions
 
 ### _calcnpw (`0C095654`, 222 bytes, `src/gen_cn.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_cn/_calcnpw.json`
+- equivalent on 1 development and 2 holdout cases, in `tests/gen_cn/_calcnpw.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 97 of 110 instructions
+- mutant of rescue: empty case: r6=00000001
+- the cases run 111 of 111 instructions
 
 ### _div64 (`0C095D1C`, 420 bytes, `src/hand_c.c`)
 - equivalent on 4 development and 3 holdout cases, in `tests/hand_c/_div64.json`
@@ -73015,7 +73016,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - rescue: empty case
 - mutant of rescue: empty case: call 1 fills r4+0.1=80
-- the cases run 47 of 47 instructions
+- the cases run 43 of 47 instructions
 
 ### _mvito4b (`0C095FBC`, 28 bytes, `src/gen_am.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_am/_mvito4b.json`
@@ -73238,7 +73239,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - mutant of rescue: empty case: r4=0CEA0000
 - mutant of rescue: empty case: r4=00000001; call 8 (FUN_0c096138) r0=00000001
 - mutant of rescue: empty case: r4=0CEA0000; call 21 (FUN_0c096138) r0=00000001
-- the cases run 147 of 147 instructions
+- the cases run 133 of 147 instructions
 
 ### _rsft (`0C09645C`, 74 bytes, `src/gen_ac.c`)
 - equivalent on 18 development and 9 holdout cases, in `tests/gen_ac/_rsft.json`

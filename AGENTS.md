@@ -325,6 +325,13 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   parent case (a generated case that pokes a neighbour's literal pool) already set, so they were valid and are back. Only a
   code byte the mutant itself introduces makes it invalid (`work/mut/codepokes.py` checks exactly that now); mutcases.py refuses
   to introduce one (any address inside a listed function). Game 97.8%, library 93.5%.
+  Last two held (2026-11-16): `_calcnpw` was the checker, not the C. Under a runtime helper that runs as the original on both
+  sides (`_div64`), memset/memcpy were mocked like any call out, so `_div64`'s 16-byte buffer kept the frame's stale bytes,
+  which differ because the C frame sits 8 bytes lower (a 1 in the 9th mantissa byte). sh4sim now runs `INNER_REAL`
+  (memset, memcpy) for real when the outermost deep callee is in `INNER_UNDER` (equiv.py: the `_` runtime helpers); a call
+  the function itself makes is still compared. `_its` with more than 19 digits (r6=0x20/0x80) is an invalid input: its
+  8-byte digit slot gets 14 bytes, `_sub`/`_rsfts` overwrite the original's saved table pointer (sp+20), and the result
+  depends on the frame layout. Set aside as `*.invalid-buffer-overflow-over-19-digits`; nothing held is left unresolved.
 - **A left shift by a negative amount.** The generator writes SH-4 shld/shad with a negative count as `x << (int)(-n)`,
   which C leaves undefined. SHC mostly emits the shift by a negated register (correct), but in FUN_0c042ba8 it folded
   `(-1 << k) << -k` away and tested all the bits instead of the low ones: a snapshot case of the game took the other branch

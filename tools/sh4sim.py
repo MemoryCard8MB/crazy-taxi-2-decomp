@@ -38,6 +38,9 @@ M32 = 0xFFFFFFFF
 SENTINEL = 0x0EADBEE0          # return address the run ends on (outside RAM, never executed)
 ROM_HI = 0x00220000           # 0x00000000-0x0021FFFF: boot ROM and flash, read-only
 STACK_TOP = 0x0E000000         # a fresh stack page, so its writes are not effects
+INNER_UNDER = set()            # deep callees (the compiler's runtime helpers: _div64, _power...) under which the calls to INNER_REAL
+INNER_REAL = set()             # (memset, memcpy) run too: the helper is the original's code on both sides, and a mocked memset
+                               # leaves its buffer holding the frame's stale bytes, which differ with the caller's frame (_calcnpw)
 RAM_LO, RAM_HI = 0x0C000000, 0x0D000000
 
 
@@ -247,6 +250,7 @@ class CPU:
         self.on_call = None       # callback(cpu, target, kind) -> True when the call was handled
         self.lo = self.hi = 0     # the function's own bytes: branches inside stay inside
         self.inside = []          # return addresses of the callees running now (deep calls)
+        self.inside_to = []       # and their entry addresses
         self.tails = set()        # instructions of another function's epilogue this one branched into (shared_epilogue)
 
     # FPSCR as a word
@@ -559,6 +563,7 @@ class CPU:
         if call == 'rts' or target == SENTINEL:
             if self.inside and target == self.inside[-1]:
                 self.inside.pop()                 # a deep callee returned
+                self.inside_to.pop()
                 self.r.written = 0                # and left r4-r7 undefined: what the caller set before it no longer counts
             self.pc = target
             return
@@ -822,9 +827,12 @@ def run(case, case_dir='.', code=None, deep=False, entry=None, end=None, argc=No
         return out
 
     def on_call(c, target, kind, at):
-        if deep is True or (callable(deep) and deep(target)):   # True: every call; a test: those it accepts
+        canon = lambda t: 0x0C000000 | (t & 0x1FFFFFFF) if 0x0C000000 <= (t & 0x1FFFFFFF) < 0x0D000000 else t & M32
+        if (deep is True or (callable(deep) and deep(target))
+                or (c.inside_to and canon(c.inside_to[0]) in INNER_UNDER and canon(target) in INNER_REAL)):   # True: every call; a test: those it accepts
             if kind in ('call', 'jump'):
                 c.inside.append(c.pr)            # runs until it returns here (a tail jump: to our caller); not a call out
+                c.inside_to.append(target)
             return False
         wrote = c.r.written                      # the registers the function wrote since the last call
         calls.append({'to': '%08X' % (target & M32), 'kind': kind,

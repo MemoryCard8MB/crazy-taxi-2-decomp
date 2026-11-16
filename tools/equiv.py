@@ -20,7 +20,8 @@ A function that byte-matches is Equivalent by definition and needs no cases.
 
 The compiler's own runtime helpers (names starting with `_`: _divls, _quick_odd_mvn...) are not calls out:
 they run, in the original and in the C, so a division the original does through _divls and the C inlines
-agree, and a struct copy is compared by what it writes.
+agree, and a struct copy is compared by what it writes. memset and memcpy called from inside such a helper run too
+(sh4sim INNER_REAL): the helper's buffers then hold what it really put there, not the frame's stale bytes.
 Calls out are compared by target and by the arguments the callee takes, read from the prototype the C
 file declares for it, raised to the callee's own definition in src/ when that takes more (an int or pointer
 takes the next of r4-r7, a float the next of fr4-fr11, past the fourth int the stack): registers a
@@ -835,6 +836,8 @@ def main(argv):
     runtime = {a for n, a in table.items() if n.startswith('_')} | set(aliases.values())        # the compiler's own helpers (_divls,
     arity.update({canon_(a): (0, 0) for a in runtime})                           # _quick_odd_mvn...): run, not compared
     helpers_orig = lambda t: t in runtime
+    sh4sim.INNER_UNDER.clear(); sh4sim.INNER_UNDER.update(canon_(a) for a in runtime)
+    sh4sim.INNER_REAL.clear(); sh4sim.INNER_REAL.update(canon_(table[n]) for n in ('memset', 'memcpy') if n in table)
     fills = fill_regs(table)
     stackfill = stack_fills(table)                                   # a fill through the word at SP only for a callee that can write there
     argc = lambda t: (fills[canon_(t)] if canon_(t) in fills else      # output writes of a mocked call go only through the arguments its
