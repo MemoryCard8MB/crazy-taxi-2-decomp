@@ -138,6 +138,14 @@
      "fr0": "4B742401"
     }
    ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2ADEC4.4=0000004F; 0C2ADFE4.4=00000708; 0C2ADFE4.4=00001E00; 0C2ADFE4.4=00001B57",
+   "regs": {},
+   "poke": {
+    "0C2ADEC4": "4f000000",
+    "0C2ADFE4": "571b0000"
+   }
   }
  ]
 }

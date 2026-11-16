@@ -313,6 +313,9 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   switch on 0C177D58, 675 instructions). Also tried: a 0xFF-filled fresh block (lists ended by -1), the same answer for every
   later call of a polled function, and a null pointer's field offset taken from the pointer that becomes the block.
   `work/mut/gaps.py <fn>` lists the instructions equiv counts that no case runs, in runs, with how covered code enters each.
+  Batch 8 (400 s per function: 82 minutes for 311 instructions, so the time budget was not what held the rest back): slices
+  through the compiler's helpers (_modls/_divls: their r1/r0), two inputs at once, and a deadline so one long run cannot
+  overrun the budget. FUN_0c03e81a had a placeholder a4. Game coverage 97.6%.
 - **A left shift by a negative amount.** The generator writes SH-4 shld/shad with a negative count as `x << (int)(-n)`,
   which C leaves undefined. SHC mostly emits the shift by a negated register (correct), but in FUN_0c042ba8 it folded
   `(-1 << k) << -k` away and tested all the bits instead of the low ones: a snapshot case of the game took the other branch

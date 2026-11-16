@@ -120,6 +120,22 @@
      "fr0": "BF800000"
     }
    ]
+  },
+  {
+   "about": "mutant of rescue: empty case: call 3 (FUN_0c073c60) fr0=3F8CCCCD; call 6 (FUN_0c070730) r0=0CE80000",
+   "regs": {},
+   "calls": [
+    {},
+    {},
+    {
+     "fr0": "3F8CCCCD"
+    },
+    {},
+    {},
+    {
+     "r0": "0CE80000"
+    }
+   ]
   }
  ]
 }

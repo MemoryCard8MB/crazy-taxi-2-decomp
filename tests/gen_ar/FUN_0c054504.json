@@ -1004,6 +1004,13 @@
     }
    ],
    "about": "mutant of snapshot small_dropoff1 #1: the state at its entry in that f: 0C2B2DD8.4=00000001"
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C2B2DC8.4=00000033; 0C2B2DC8.4=000000B3; 0C2B2DC8.4=000000A0",
+   "regs": {},
+   "poke": {
+    "0C2B2DC8": "a0000000"
+   }
   }
  ]
 }

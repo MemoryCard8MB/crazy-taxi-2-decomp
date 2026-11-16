@@ -38,6 +38,24 @@
    "regs": {
     "r4": "FFFFFFFF"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: r6=0CCAC000, 0CCAC000.1=01; r4=00000001, r5=00000001",
+   "regs": {
+    "r6": "0CCAC000",
+    "r4": "00000001",
+    "r5": "00000001"
+   },
+   "poke": {
+    "0CCAC000": "01"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=00000001, r5=00000001",
+   "regs": {
+    "r4": "00000001",
+    "r5": "00000001"
+   }
   }
  ]
 }

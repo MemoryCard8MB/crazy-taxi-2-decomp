@@ -89,6 +89,21 @@
     "0C1EC75C": "0c000000",
     "0C1EC6BC": "01000000"
    }
+  },
+  {
+   "about": "mutant of rescue: flips 0C01B66E: 0C1EC75C.4=0000004C; 0C1EC75C.4=00000000",
+   "regs": {},
+   "poke": {
+    "0C1EC75C": "00000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: flips 0C01B66E: 0C2A4658.4=00000002; 0C1EC75C.4=000000FF",
+   "regs": {},
+   "poke": {
+    "0C1EC75C": "ff000000",
+    "0C2A4658": "02000000"
+   }
   }
  ]
 }

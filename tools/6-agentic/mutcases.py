@@ -125,7 +125,10 @@ class CPU(BaseCPU):
         return BaseCPU.step(self, in_slot=in_slot)
 
 LAST = {}
+DEADLINE = [None]          # explore's end: a run after it returns at once (a single long run must not overrun --time by minutes)
 def run(fn, case, trace=False, steps=None):
+    if DEADLINE[0] and time.time() > DEADLINE[0]:
+        return {'error': 'out of time', 'covered': [], 'calls': [], 'steps': 0, 'trace': None}
     a, s = FUN[fn]
     c = dict(case, exe='1ST_READ.BIN', base='%08X' % BASE, entry='%08X' % a, end='%08X' % (a + s))
     if steps: c['steps'] = steps
@@ -315,7 +318,14 @@ def leaves(ctx, i, reg, depth=0, out=None, seen=None, path=()):
         return out
     pc, op = T[j][0], T[j][1]
     if not (ctx.lo <= pc < ctx.hi):
-        return out                                  # written inside a runtime helper (a copy): not followed
+        # written inside a runtime helper the run executes (_modls, _divls, a copy): its result comes from the registers it got,
+        # so follow r0, r1, r4, r5 at the helper's first instruction
+        k = j
+        while k > 0 and not (ctx.lo <= T[k - 1][0] < ctx.hi): k -= 1
+        if k > 0 and reg[0] == 'r':
+            for r2 in (('r', 1), ('r', 0), ('r', 4), ('r', 5)):
+                leaves(ctx, k, r2, depth + 1, out, seen)
+        return out
     sc = srcs(op)
     if sc == LOAD:
         for (t, a, size, v) in ctx.reads_at(j):
@@ -647,6 +657,7 @@ def explore(fn):
     sets = d if isinstance(d, dict) else {'dev': d}
     base_cases = [c for k in ('dev', 'holdout') for c in sets.get(k, [])]
     t0 = time.time()
+    DEADLINE[0] = None                        # the parents' own runs are not cut
     pool, S = [], set()
     for c in base_cases:
         r = run(fn, c, trace=True)
@@ -657,6 +668,7 @@ def explore(fn):
     if not pool:
         say('%s: no case runs cleanly, skipped' % fn); return []
     start = len(S)
+    DEADLINE[0] = t0 + opt['--time'] + 5
     kept = []
     tried = set()
     why = {}
@@ -728,6 +740,23 @@ def explore(fn):
                     if new:
                         keep(mc, mr, about, desc, new); return True
                 if time.time() - t0 > opt['--time'] or (budget and n >= budget): return False
+        # two inputs at once (a remainder needs both the dividend and a divisor above it): the first values of each pair
+        import itertools
+        for l1, l2 in itertools.combinations(lv[:4], 2):
+            for v1 in values(kind, vals, imm, l1, limit=6, ctx=ctx):
+                for v2 in values(kind, vals, imm, l2, limit=6, ctx=ctx):
+                    key = (bpc, tgt, 'pair', str(l1[:3]), v1, str(l2[:3]), v2, id(c))
+                    if key in tried: continue
+                    tried.add(key)
+                    m1, d1 = apply(c, l1, v1); mc, d2 = apply(m1, l2, v2)
+                    mr = run(fn, mc, trace=True, steps=steps_lim); state['runs'] += 1; n += 1
+                    if not clean(mc, mr) and drop_all_fills(mc):
+                        mr = run(fn, mc, trace=True, steps=steps_lim); state['runs'] += 1
+                    if clean(mc, mr):
+                        new = set(mr['covered']) - S
+                        if new:
+                            keep(mc, mr, about, d1 + ', ' + d2, new); return True
+                    if time.time() - t0 > opt['--time'] or (budget and n >= budget): return False
         return False
 
     def stepping(c, ctx, i, bpc, tgt, about, steps_lim):
@@ -774,7 +803,7 @@ def explore(fn):
         if 'trace' not in r or r['trace'] is None:
             continue
         ctx = Ctx(r, fn)
-        steps_lim = min(max(20 * r['steps'] + 20000, 200000), c.get('steps', 2000000))
+        steps_lim = min(max(8 * r['steps'] + 20000, 100000), c.get('steps', 2000000))
         stuck = []
         for (i, bpc, tgt) in sorted(frontiers(ctx, S), key=lambda x: x[0]):
             if tgt in S or time.time() - t0 > opt['--time']:

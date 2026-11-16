@@ -13,9 +13,10 @@ int FUN_0c0584da(void);
 int FUN_0c058688(int);
 int buStat(int);
 int ndPuru2Reset(int);
-int FUN_0c03e81a(int a4);
+int FUN_0c03e81a(void);
 
-int FUN_0c03e81a(int a4)
+/* manual: no argument: the original sets r4 itself before reading it; the placeholder a4 made callers compare a leftover */
+int FUN_0c03e81a(void)
 {
 
     register int R1;
@@ -31,7 +32,6 @@ int FUN_0c03e81a(int a4)
     register int v0_1;
     register int v0_2;
     register int v0_3;
-    v0_1 = a4;
     v0_0 = R13;
     v0_2 = R12;
     v0_3 = R11;
