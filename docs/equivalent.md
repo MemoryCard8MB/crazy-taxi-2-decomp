@@ -938,7 +938,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 39 of 124 instructions
 
 ### ADXB_ExecOneAuUlaw (`0C16E7FC`, 260 bytes, `src/libs_gen_ao.c`)
-- equivalent on 18 development and 21 holdout cases, in `tests/libs_gen_ao/ADXB_ExecOneAuUlaw.json`
+- equivalent on 18 development and 25 holdout cases, in `tests/libs_gen_ao/ADXB_ExecOneAuUlaw.json`
 - case 2
 - case 0
 - case 4
@@ -978,7 +978,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - mutant of case 18: call 1 (ADXPD_GetStat) r0=00000000; 0C80000E.1=02
 - mutant of case 18: call 1 (ADXPD_GetStat) r0=00000000; 0C80000E.1=02; 0C800074.4=FFFFFFF0
 - mutant of case 18: call 1 (ADXPD_GetStat) r0=00000000; 0C80000E.1=02; 0C800054.4=FFFFFFF0
-- the cases run 89 of 129 instructions
+- mutant of case 18: call 1 (ADXPD_GetStat) r0=00000000
+- mutant of case 18: call 1 (ADXPD_GetStat) r0=00000000; 0C800074.4=FFFFFFF0
+- mutant of case 18: call 1 (ADXPD_GetStat) r0=00000000; 0C800054.4=FFFFFFF0
+- mutant of case 18: call 1 (ADXPD_GetStat) r0=00000000; 0C80000E.1=02; 0C80000E.1=03
+- the cases run 96 of 129 instructions
 
 ### ADXB_ExecOneSpsd (`0C16EAE0`, 246 bytes, `src/libs_gen_ao.c`)
 - equivalent on 19 development and 21 holdout cases, in `tests/libs_gen_ao/ADXB_ExecOneSpsd.json`
@@ -63208,14 +63212,18 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 6 of 6 instructions
 
 ### FUN_0c15f33e (`0C15F33E`, 492 bytes, `src/gen_bq.c`)
-- equivalent on 1 development and 5 holdout cases, in `tests/gen_bq/FUN_0c15f33e.json`
+- equivalent on 1 development and 9 holdout cases, in `tests/gen_bq/FUN_0c15f33e.json`
 - rescue: empty case
 - rescue: empty case
 - mutant of rescue: empty case: 0C302724.4=00000001; call 1 (mpdrv_frame_send) r0=FFFFFFFF
 - mutant of rescue: empty case: 0C302724.4=00000001; call 1 (mpdrv_frame_send) r0=FFFFFFFF; 0C3024DC.4=00000001
 - mutant of rescue: empty case: 0C302724.4=00000001; call 1 (mpdrv_frame_send) r0=FFFFFFFF; 0C302734.4=00000001
 - mutant of rescue: empty case: 0C302724.4=00000001; call 1 (mpdrv_frame_send) r0=FFFFFFFF; 0C302730.4=00000001
-- the cases run 90 of 198 instructions
+- mutant of rescue: empty case: 0C302724.4=00000001
+- mutant of rescue: empty case: 0C302724.4=00000001; 0C302734.4=00000001
+- mutant of rescue: empty case: 0C302724.4=00000001; 0C302730.4=00000001
+- mutant of rescue: empty case: 0C302724.4=00000001; call 1 (mpdrv_frame_send) r0=FFFFFFFF; call 1 (mpdrv_frame_send) r0=00000001
+- the cases run 115 of 199 instructions
 
 ### FUN_0c160444 (`0C160444`, 90 bytes, `src/gen_y.c`)
 - equivalent on 1 development and 2 holdout cases, in `tests/gen_y/FUN_0c160444.json`
@@ -89038,7 +89046,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 24 of 24 instructions
 
 ### kmiFBgetfreemem (`0C153560`, 550 bytes, `src/libs_gen_aph.c`)
-- equivalent on 1 development and 7 holdout cases, in `tests/libs_gen_aph/kmiFBgetfreemem.json`
+- equivalent on 1 development and 31 holdout cases, in `tests/libs_gen_aph/kmiFBgetfreemem.json`
 - rescue: empty case
 - rescue: empty case
 - mutant of rescue: empty case: 0C173E14.4=0CD00000
@@ -89047,7 +89055,31 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - mutant of rescue: empty case: 0C173DF4.4=0CC80000
 - mutant of rescue: empty case: 0C173E08.4=0CCC0000
 - mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00004.4=0CBE0000
-- the cases run 161 of 204 instructions
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=1000
+- mutant of rescue: empty case: 0C173E08.4=0CCC0000; 0CCC0010.4=00000001
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=2000
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=3000
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=5000
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=6000
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=7000
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=8000
+- mutant of rescue: empty case: 0C173DF4.4=0CC80000; 0CC80010.4=00000001
+- mutant of rescue: empty case: 0C173DEC.4=0CCA0000; 0CCA0010.4=00000001
+- mutant of rescue: empty case: 0C173E00.4=0CCE0000; 0CCE0010.4=00000001
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=4000
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=1000
+- mutant of rescue: empty case: 0C173E00.4=0CCE0000; 0CCE0010.4=00000001
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=2000
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=3000
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=5000
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=6000
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=7000
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=8000
+- mutant of rescue: empty case: 0C173DEC.4=0CCA0000; 0CCA0010.4=00000001
+- mutant of rescue: empty case: 0C173DF4.4=0CC80000; 0CC80010.4=00000001
+- mutant of rescue: empty case: 0C173E08.4=0CCC0000; 0CCC0010.4=00000001
+- mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=4000
+- the cases run 207 of 207 instructions
 
 ### kmiFBgetfreememEx (`0C153786`, 136 bytes, `src/gen_q.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_q/kmiFBgetfreememEx.json`
@@ -91097,7 +91129,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 55 of 55 instructions
 
 ### kmtex_ReloadPalettized4MM (`0C159CEE`, 416 bytes, `src/libs_gen_afe.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_afe/kmtex_ReloadPalettized4MM.json`
+- equivalent on 18 development and 20 holdout cases, in `tests/libs_gen_afe/kmtex_ReloadPalettized4MM.json`
 - case 15
 - case 21
 - case 5
@@ -91134,7 +91166,9 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 206
 - case 216
 - case 225
-- the cases run 84 of 187 instructions
+- mutant of case 15: r6=00000005
+- mutant of case 15: r6=00000005
+- the cases run 187 of 187 instructions
 
 ### kmtex_ReloadPalettized8MM (`0C159E8E`, 154 bytes, `src/gen_m.c`)
 - equivalent on 1 development and 3 holdout cases, in `tests/gen_m/kmtex_ReloadPalettized8MM.json`
@@ -92222,7 +92256,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 33 of 33 instructions
 
 ### mpdrv_frame_send (`0C168C72`, 464 bytes, `src/libs_gen_apt.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_apt/mpdrv_frame_send.json`
+- equivalent on 18 development and 28 holdout cases, in `tests/libs_gen_apt/mpdrv_frame_send.json`
 - case 0
 - case 8
 - case 12
@@ -92259,7 +92293,17 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 43
 - case 45
 - case 47
-- the cases run 21 of 190 instructions
+- mutant of case 0: 0C30817C.4=0CCE0000, 0CCE0FC0.4=00000001
+- mutant of case 0: 0C30817C.4=0CCE0000, 0CCE0FC0.4=00000001; 0CCE0FB0.4=00000001
+- mutant of case 0: 0C30817C.4=0CCE0000, 0CCE0FC0.4=00000001; 0CCE0FB0.4=00000001; 0CCE0FAC.4=0CEA0000
+- mutant of case 0: 0C30817C.4=0CCE0000, 0CCE0FC0.4=00000001; 0CCE0F90.1=01
+- mutant of case 0: 0C30817C.4=0CCE0000, 0CCE0FC0.4=00000001; 0CCE10F4.4=0CD40000, 0CD40018.4=FFFFFFFF
+- mutant of case 0: 0C30817C.4=0CA40000, 0CA40FC0.4=00000001
+- mutant of case 0: 0C30817C.4=0CA40000, 0CA40FC0.4=00000001; 0CA40FB0.4=00000001
+- mutant of case 0: 0C30817C.4=0CA40000, 0CA40FC0.4=00000001; 0CA40FB0.4=00000001; 0CA40FAC.4=0CC00000
+- mutant of case 0: 0C30817C.4=0CA40000, 0CA40FC0.4=00000001; 0CA40F90.1=01
+- mutant of case 0: 0C30817C.4=0CA40000, 0CA40FC0.4=00000001; 0CA410F4.4=0CAA0000, 0CAA0018.4=FFFFFFFF
+- the cases run 185 of 191 instructions
 
 ### mpdrv_get_debugmode (`0C169144`, 10 bytes, `src/gen_c.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_c/mpdrv_get_debugmode.json`
@@ -92824,7 +92868,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 127 of 127 instructions
 
 ### mpdrv_make_deviceinfo (`0C169E1E`, 324 bytes, `src/libs_gen_ao.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ao/mpdrv_make_deviceinfo.json`
+- equivalent on 18 development and 20 holdout cases, in `tests/libs_gen_ao/mpdrv_make_deviceinfo.json`
 - case 4
 - case 8
 - case 18
@@ -92861,7 +92905,9 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 80
 - case 84
 - case 89
-- the cases run 140 of 151 instructions
+- mutant of case 4: 0C30817C.4=0CC60000, 0CC610C4.4=00000001
+- mutant of case 4: 0C30817C.4=0CE80000, 0CE810C4.4=00000001
+- the cases run 152 of 152 instructions
 
 ### mpdrv_make_exdevicedata (`0C169CEC`, 306 bytes, `src/gen_cd.c`)
 - equivalent on 18 development and 25 holdout cases, in `tests/gen_cd/mpdrv_make_exdevicedata.json`
@@ -97735,7 +97781,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 35 of 35 instructions
 
 ### nlFloor (`0C070B90`, 70 bytes, `src/libs_gen_ai.c`)
-- equivalent on 18 development and 18 holdout cases, in `tests/libs_gen_ai/nlFloor.json`
+- equivalent on 18 development and 20 holdout cases, in `tests/libs_gen_ai/nlFloor.json`
 - case 4
 - case 1
 - case 3
@@ -97772,7 +97818,9 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 31
 - case 33
 - case 35
-- the cases run 22 of 28 instructions
+- mutant of case 4: fr4=C03F5C29
+- mutant of case 4: fr4=C03F5C29
+- the cases run 28 of 28 instructions
 
 ### nlFogDensityF (`0C071A80`, 66 bytes, `src/gen_ae.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_ae/nlFogDensityF.json`

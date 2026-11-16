@@ -11,43 +11,36 @@ int kmtex_ReloadPalettized4MM(int a4, int a5, int a6);
 
 int kmtex_ReloadPalettized4MM(int a4, int a5, int a6)
 {
-    int t0;
-    int t3;
-    int t5;
-    int t6;
-    int t7;
-    int t8;
-    int t9;
-    int t10;
-    int t30;
-    int t31;
-    int t32;
-    int t33;
-    int t43;
-    int t44;
-    int t45;
-    int t59;
-    int t60;
-    int t61;
-    int t62;
-    int t63;
-    int t70;
-    int stk[15];
-    int R1004;
-    int R1008;
-    int R1012;
+    int stk[7];
+    register int t0;
+    register int t3;
+    register int t5;
+    register int t6;
+    register int t7;
+    register int t8;
+    register int t9;
+    register int t10;
+    register int t30;
+    register int t31;
+    register int t32;
+    register int t33;
+    register int t43;
+    register int t44;
+    register int t45;
+    register int t59;
+    register int t60;
+    register int t61;
+    register int t62;
+    register int t63;
+    register int t70;
 
-    R1004 = *(int *)((int)stk + 0);
-    R1008 = *(int *)((int)stk + 4);
-    R1012 = *(int *)((int)stk + 8);
-
-    R1008 = a5;
+    *(unsigned int *)(((int)stk + 4)) = a5;
     t0 = kmtex_GetTextureLevel(a6, a6);
-    R1004 = (((int)stk + 0) + 0xC);
+    *(unsigned int *)(((int)stk + 0)) = (((int)stk + 0) + 0xC);
     if ((int)a6 <= (int)0x4) {
-        R1004 = (((int)stk + 0) + 0xC);
+        *(unsigned int *)(((int)stk + 0)) = (((int)stk + 0) + 0xC);
         kmiCopyFromFrameBuffer((((int)stk + 0) + 0xC), (*(int *)((a4 + 0x1C))), 0x10);
-        t3 = R1008;
+        t3 = *(int *)(((int)stk + 4));
         if (a6 == 1) {
             *(unsigned char *)(((((int)stk + 0) + 0xC) + 0x1)) = (*(signed char *)((t3 + 0x0)));
         } else {
@@ -77,15 +70,15 @@ int kmtex_ReloadPalettized4MM(int a4, int a5, int a6)
                 }
             }
         }
-        R1008 = (*(int *)((a4 + 0x1C)));
+        *(unsigned int *)(((int)stk + 4)) = (*(int *)((a4 + 0x1C)));
         kmiPurgeCache((((int)stk + 0) + 0xC));
         kmiPurgeCache(((((int)stk + 0) + 0xC) + 0x20));
-        t70 = (R1008);
+        t70 = (*(int *)(((int)stk + 4)));
     } else {
-        R1004 = (((int)stk + 0) + 0xC);
-        kmiCopyFromFrameBuffer((R1004), ((*(int *)((a4 + 0x1C))) + ((*(int *)((0xC175F5C + (t0 << 2)))) - 12)), 0x10);
+        *(unsigned int *)(((int)stk + 0)) = (((int)stk + 0) + 0xC);
+        kmiCopyFromFrameBuffer((*(int *)(((int)stk + 0))), ((*(int *)((a4 + 0x1C))) + ((*(int *)((0xC171048 + (t0 << 2)))) - 12)), 0x10);
         t30 = ((((int)stk + 0) + 0xC) + 0xC);
-        t31 = (R1008);
+        t31 = (*(int *)(((int)stk + 4)));
         for (;;) {
             t32 = *(signed char *)((t31 + 0x0));
             t31 = (t31 + 0x1);
@@ -95,25 +88,25 @@ int kmtex_ReloadPalettized4MM(int a4, int a5, int a6)
                 break;
             }
         }
-        R1004 = (((int)stk + 0) + 0xC);
+        *(unsigned int *)(((int)stk + 0)) = (((int)stk + 0) + 0xC);
         t33 = *(int *)((a4 + 0x1C));
-        R1012 = t33;
-        R1012 = (t33 + ((*(int *)((0xC175F5C + (t0 << 2)))) - 12));
-        kmiPurgeCache((R1004));
-        kmiPurgeCache(((R1004) + 0x20));
-        kmiCopyToFrameBuffer((R1012), (R1004), 0x10);
-        R1004 = 0xC175F88;
-        if ((unsigned int)((*(int *)(((t0 << 2) + 0xC175F88))) - 16) > (unsigned int)0x0) {
-            t43 = *(int *)((0xC175F5C + (t0 << 2)));
-            t44 = R1008;
+        *(unsigned int *)(((int)stk + 8)) = t33;
+        *(unsigned int *)(((int)stk + 8)) = (t33 + ((*(int *)((0xC171048 + (t0 << 2)))) - 12));
+        kmiPurgeCache((*(int *)(((int)stk + 0))));
+        kmiPurgeCache(((*(int *)(((int)stk + 0))) + 0x20));
+        kmiCopyToFrameBuffer((*(int *)(((int)stk + 8))), (*(int *)(((int)stk + 0))), 0x10);
+        *(unsigned int *)(((int)stk + 0)) = 0xC171074;
+        if ((unsigned int)((*(int *)(((t0 << 2) + 0xC171074))) - 16) > (unsigned int)0x0) {
+            t43 = *(int *)((0xC171048 + (t0 << 2)));
+            t44 = *(int *)(((int)stk + 4));
             t45 = *(int *)((a4 + 0x1C));
-            R1012 = (t44 + 0x4);
-            kmiCopyToFrameBuffer((t45 + (t43 + 0x4)), (t44 + 0x4), ((*(int *)(((t0 << 2) + (R1004)))) - 16));
+            *(unsigned int *)(((int)stk + 8)) = (t44 + 0x4);
+            kmiCopyToFrameBuffer((t45 + (t43 + 0x4)), (t44 + 0x4), ((*(int *)(((t0 << 2) + (*(int *)(((int)stk + 0)))))) - 16));
         }
-        R1004 = (((int)stk + 0) + 0xC);
-        kmiCopyFromFrameBuffer((R1004), ((*(int *)((a4 + 0x1C))) + ((*(int *)((0xC175F5C + ((t0 + 0x1) << 2)))) - 12)), 0x10);
+        *(unsigned int *)(((int)stk + 0)) = (((int)stk + 0) + 0xC);
+        kmiCopyFromFrameBuffer((*(int *)(((int)stk + 0))), ((*(int *)((a4 + 0x1C))) + ((*(int *)((0xC171048 + ((t0 + 0x1) << 2)))) - 12)), 0x10);
         t59 = (((int)stk + 0) + 0xC);
-        t60 = (((*(int *)(((t0 << 2) + 0xC175F88))) + (R1008)) - 12);
+        t60 = (((*(int *)(((t0 << 2) + 0xC171074))) + (*(int *)(((int)stk + 4)))) - 12);
         for (;;) {
             t61 = *(signed char *)((t60 + 0x0));
             t60 = (t60 + 0x1);
@@ -124,7 +117,7 @@ int kmtex_ReloadPalettized4MM(int a4, int a5, int a6)
             }
         }
         t62 = *(int *)((a4 + 0x1C));
-        t63 = *(int *)((0xC175F5C + ((t0 + 0x1) << 2)));
+        t63 = *(int *)((0xC171048 + ((t0 + 0x1) << 2)));
         kmiPurgeCache((((int)stk + 0) + 0xC));
         kmiPurgeCache(((((int)stk + 0) + 0xC) + 0x20));
         t70 = (t62 + (t63 - 12));

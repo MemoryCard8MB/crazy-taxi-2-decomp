@@ -5,6 +5,7 @@
 int kmiFBgetfreemem(int a4, int a5, int a6, int a7);
 
 
+/* manual: ported from Crazy Taxi 1 with its addresses; the free-memory list block is at 0C173DEC here (CT1 0C177FBC) */
 int kmiFBgetfreemem(int a4, int a5, int a6, int a7)
 {
     int t0;
@@ -65,9 +66,9 @@ int kmiFBgetfreemem(int a4, int a5, int a6, int a7)
     R1012 = 0x0;
     R1008 = 0x0;
     R1016 = 0x0;
-    t0 = *(int *)0xC177FC4;
+    t0 = *(int *)0xC173DF4;
     R11 = (0x0);
-    R13 = (0xC177FBC);
+    R13 = (0xC173DEC);
     R14 = (t0);
     if ((t0 == 0)) goto L_C156380;
     goto L_C156366;
@@ -147,7 +148,7 @@ int kmiFBgetfreemem(int a4, int a5, int a6, int a7)
     if ((t53 != 0)) goto L_C1563D8;
     goto L_C1563FA;
     L_C1563FA:;
-    t56 = *(int *)0xC177FE4;
+    t56 = *(int *)0xC173E14;
     R10 = (t56);
     if ((t56 != 0)) goto L_C156406;
     goto L_C156402;

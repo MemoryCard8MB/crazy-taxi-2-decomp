@@ -52,6 +52,198 @@
     "0C173E14": "0000d00c",
     "0CD00004": "0000be0c"
    }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=1000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0010"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E08.4=0CCC0000; 0CCC0010.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C173E08": "0000cc0c",
+    "0CCC0010": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=2000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0020"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=3000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0030"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=5000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0050"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=6000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0060"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=7000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0070"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=8000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0080"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173DF4.4=0CC80000; 0CC80010.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C173DF4": "0000c80c",
+    "0CC80010": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173DEC.4=0CCA0000; 0CCA0010.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C173DEC": "0000ca0c",
+    "0CCA0010": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E00.4=0CCE0000; 0CCE0010.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C173E00": "0000ce0c",
+    "0CCE0010": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=4000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0040"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=1000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0010"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E00.4=0CCE0000; 0CCE0010.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C173E00": "0000ce0c",
+    "0CCE0010": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=2000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0020"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=3000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0030"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=5000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0050"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=6000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0060"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=7000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0070"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=8000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0080"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173DEC.4=0CCA0000; 0CCA0010.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C173DEC": "0000ca0c",
+    "0CCA0010": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173DF4.4=0CC80000; 0CC80010.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C173DF4": "0000c80c",
+    "0CC80010": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E08.4=0CCC0000; 0CCC0010.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C173E08": "0000cc0c",
+    "0CCC0010": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C173E14.4=0CD00000; 0CD00000.2=4000",
+   "regs": {},
+   "poke": {
+    "0C173E14": "0000d00c",
+    "0CD00000": "0040"
+   }
   }
  ]
 }

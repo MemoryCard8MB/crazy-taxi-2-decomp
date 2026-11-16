@@ -626,7 +626,7 @@ int FUN_0c15f33e(int a4, int a5, int a6, int a7)
             if ((int)t2 >= 0) {
                 (((struct o30_uint *)0xC302724)->v) = 0x0;
                 *(unsigned short *)((((((((struct o4_int *)0xC302724)->v)) << 1) + 0xC3024D8) + 0x0)) = 0x0;
-                *(unsigned short *)((((((((struct o4_int *)0xC302724)->v)) << 1) + 0xC3024D0) + 0x0)) = ((*(int *)0xA05F810C) & 0x3FF);
+                *(unsigned short *)((((((((struct o4_int *)0xC302724)->v)) << 1) + 0xC3024D0) + 0x0)) = ((*(volatile int *)0xA05F810C) & 0x3FF);     /* manual: a 4-byte read of the register, as the original (SHC narrowed the plain load to mov.w) */
                 copy_device();
                 (((struct o0_uint *)0xC3024A4)->v) = (((((struct o0_int *)0xC3024A4)->v)) + 0x1);
                 (((struct o38_uint *)0xC302724)->v) = 0x0;

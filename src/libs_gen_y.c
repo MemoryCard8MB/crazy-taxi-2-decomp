@@ -62,7 +62,7 @@ int kmiBGPlaneSetPCW(int, int, int);
 int kmiBGPlaneCountWords(int);
 int kmiBGPlanePutWord(int, int, int);
 int kmiBGPlanePutColor(int, int, int);
-int kmiFBallocSub(int, int, int);
+int kmiFBallocSub(int, int);
 int kmytex_ABSalloc(int, int, int, int, int, int);
 int kmiMemCopy4(int, int, int);
 int kmiPurgeCache(int);
@@ -320,31 +320,26 @@ int pdVibSetStopTime(int a4, int a5, int a6, int a7)
 
 int kmiCBalloc(int a4, int a5, int a6)
 {
-    int t0;
-    int t9;
-    int t1;
-    int t7;
-    int t2;
-    int t3;
-    int t4;
+    register int t0;
+    register int t1;
+    register int t2;
 
-    t0 = kmiFBallocSub(a4, a5, a6);
-    t9 = 0x3;
-    if (t0 != -1) {
-        t1 = kmytex_ABSalloc(0x0, t0, a4, a5, 0x1, 0x1);
-        t7 = t1;
-        if (t1 == 0) {
-            t2 = *(int *)0xC177FB0;
-            t3 = kmytex_ABSalloc(0x1, (t2 + t0), a4, a6, 0x1, 0x1);
-            if (t3 != 0) {
-                t4 = *(int *)((a5 + 0x1C));
-                kmiFBfree(t4);
+    t0 = kmiFBallocSub(a4, a5);
+    t1 = 0x3;
+    if (t0 == -1) {
+    } else {
+        t2 = kmytex_ABSalloc(0x0, t0, a4, a5, 0x1, 0x1);
+        t1 = t2;
+        if (t2 != 0) {
+        } else {
+            t2 = kmytex_ABSalloc(0x1, ((*(int *)0xC173DE0) + t0), a4, a6, 0x1, 0x1);
+            if (t2 != 0) {
+                kmiFBfree((*(int *)((a5 + 0x1C))));
             }
-            t7 = t3;
+            t1 = t2;
         }
-        t9 = t7;
     }
-    return t9;
+    return t1;
 }
 
 

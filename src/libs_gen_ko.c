@@ -10,6 +10,7 @@ int gdFsReadWG(int, int, int);
 int gdFsSearchPath_dds(int a4, int a5, int a6, int a7, int a8);
 
 
+/* manual: ported from Crazy Taxi 1 with its addresses: gdFsReadWG 0C14A22C, gdFsGetLE4 0C149F3C and the token table 0C171310 here */
 int gdFsSearchPath_dds(int a4, int a5, int a6, int a7, int a8)
 {
     int t0;
@@ -224,7 +225,7 @@ int gdFsSearchPath_dds(int a4, int a5, int a6, int a7, int a8)
     t35 = t34 != 0;
     t36 = t34;
     t37 = (t30 - ((t29 - R14) + 0x800));
-    t38 = 0xC14D294;
+    t38 = 0xC14A22C;
     t39 = t34;
     t40 = ((t34 == 0));
     R0 = t36;
@@ -325,7 +326,7 @@ int gdFsSearchPath_dds(int a4, int a5, int a6, int a7, int a8)
     goto L_C15FE80;
     L_C15FE80:;
     t82 = gdFsGetLE4((R13 + 0x2));
-    t83 = 0xC14CFBC;
+    t83 = 0xC149F3C;
     R0 = t82;
     R14 = t83;
     goto L_C15FED0;
@@ -344,7 +345,7 @@ int gdFsSearchPath_dds(int a4, int a5, int a6, int a7, int a8)
     R10 = t87;
     goto L_C15FEA8;
     L_C15FEA8:;
-    t89 = gdFsGetTokenSize(R12, 0xC176224);
+    t89 = gdFsGetTokenSize(R12, 0xC171310);
     *(unsigned int *)(((int)stk + 28)) = t89;
     R0 = t89;
     goto L_C15FEB0;

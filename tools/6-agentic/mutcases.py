@@ -619,6 +619,12 @@ def clean(case, r):
     """the original ran to its return, or (a case marked endless: a loop that never returns) to the step limit"""
     return not r['error'] or (case.get('endless') and str(r['error']).startswith('more than'))
 
+def new_devices(parent, mr):
+    """device addresses (hardware registers, unmapped space) the mutant's run touches and its parent's did not: a pointer the
+    mutant aimed at the top of the address space (r4 = FFFFFFFF as a byte buffer), where every access is compared as hardware"""
+    was = {d[1] for d in parent.get('devices', [])}
+    return {d[1] for d in mr.get('devices', [])} - was
+
 def drop_all_fills(mc):
     """the generated cases fill 32 bytes behind every pointer argument of a mocked call: on a new path such a fill can overrun a
     smaller buffer (the saved PR on the stack: the run then returns to 0). True when there was a fill to drop"""
@@ -713,6 +719,7 @@ def explore(fn):
     kept = []
     tried = set()
     why = {}
+    cur_parent = [{}]
     state = {'runs': 0}
 
     def inputs(ctx, i, bpc, tgt, note=True):
@@ -753,11 +760,14 @@ def explore(fn):
         return out
 
     def keep(mc, mr, about, desc, new):
+        if new_devices(cur_parent[0], mr):
+            return False
         S.update(new)
         mab = about + '; ' + desc if about.startswith('mutant of ') else 'mutant of %s: %s' % (about[:60], desc)
         mc['about'] = mab
         pool.append((mc, mr, mab))
         kept.append((len(new), mc))
+        return True
 
     def attack(c, ctx, i, bpc, tgt, about, steps_lim, note=True, budget=None):
         """mutate the inputs of the branch at trace index i until a run reaches something new: True when one did"""
@@ -779,7 +789,7 @@ def explore(fn):
                 if clean(mc, mr):
                     new = set(mr['covered']) - S
                     if new:
-                        keep(mc, mr, about, desc, new); return True
+                        if keep(mc, mr, about, desc, new): return True
                 if time.time() - t0 > opt['--time'] or (budget and n >= budget): return False
         # two inputs at once (a remainder needs both the dividend and a divisor above it): the first values of each pair
         import itertools
@@ -796,7 +806,7 @@ def explore(fn):
                     if clean(mc, mr):
                         new = set(mr['covered']) - S
                         if new:
-                            keep(mc, mr, about, d1 + ', ' + d2, new); return True
+                            if keep(mc, mr, about, d1 + ', ' + d2, new): return True
                     if time.time() - t0 > opt['--time'] or (budget and n >= budget): return False
         return False
 
@@ -827,7 +837,7 @@ def explore(fn):
                     if not clean(m1, r1): continue
                     new = set(r1['covered']) - S
                     if new:
-                        keep(m1, r1, about, d1, new); return True
+                        if keep(m1, r1, about, d1, new): return True
                     if bpc not in r1['covered']: continue
                     c1 = Ctx(r1, fn)
                     i1 = next((x for x, e in enumerate(c1.T) if e[0] == bpc), None)
@@ -841,6 +851,7 @@ def explore(fn):
     qi = 0
     while qi < len(pool) and time.time() - t0 < opt['--time']:
         c, r, about = pool[qi]; qi += 1
+        cur_parent[0] = r
         if 'trace' not in r or r['trace'] is None:
             continue
         ctx = Ctx(r, fn)
@@ -875,7 +886,8 @@ def explore(fn):
                     if clean(mc, mr):
                         new = set(mr['covered']) - S
                         if new:
-                            keep(mc, mr, about, desc + ' (case %d)' % ci, new); hit = True; break
+                            hit = keep(mc, mr, about, desc + ' (case %d)' % ci, new)
+                            if hit: break
                 if hit or tgt in S: break
             if tgt not in S:
                 why[(bpc, tgt)] = 'switch case %d not reached through %s' % (ci, ', '.join(str(l[:2]) for l in lv[:4]) or 'no input')

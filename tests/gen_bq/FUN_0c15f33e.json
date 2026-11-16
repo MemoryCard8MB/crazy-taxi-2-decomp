@@ -60,6 +60,41 @@
      "r0": "FFFFFFFF"
     }
    ]
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C302724.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C302724": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C302724.4=00000001; 0C302734.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C302724": "01000000",
+    "0C302734": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C302724.4=00000001; 0C302730.4=00000001",
+   "regs": {},
+   "poke": {
+    "0C302724": "01000000",
+    "0C302730": "01000000"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: 0C302724.4=00000001; call 1 (mpdrv_frame_send) r0=FFFFFFFF; call 1 (mpdrv_frame_send) r0=00000001",
+   "regs": {},
+   "poke": {
+    "0C302724": "01000000"
+   },
+   "calls": [
+    {
+     "r0": "00000001"
+    }
+   ]
   }
  ]
 }

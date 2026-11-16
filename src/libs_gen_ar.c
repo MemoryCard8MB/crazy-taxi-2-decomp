@@ -103,53 +103,39 @@ struct o8_int { char p[0x8]; int v; };
 struct oC_int { char p[0xC]; int v; };
 
 
-void kmiFBSearchFree(int a4, int a5, int a6)
+int kmiFBSearchFree(int a4, int a5, int a6)
 {
-    int t12;
-    int t3;
-    int t4;
-    int t5;
-    int t7;
-    int t8;
-    int t9;
-    int t10;
-    int t11;
+    register int t0;
+    int t1;
+    register int t2;
+    register int t3;
+    register int t4;
+    register int t5;
+    register int t6;
+    register int t7;
 
-    t4 = *(int *)((((((short)a4 << 2) + (short)a4) << 2) + 0xC177FC4));
-    t12 = 0x0;
-    if (t4 != 0) {
-        t12 = 0x0;
-        t3 = (short)a4;
-        do {
-            t5 = *(int *)((t4 + 0xC));
-            if ((int)t5 <= (int)a5) {
-                t3 = *(int *)((t4 + 0x10));
-                t3 = (t3 + t5);
-                if ((int)t3 > (int)a5) {
-                    if ((int)t5 <= (int)(a5 + a6)) {
-                        t7 = *(int *)((t4 + 0x10));
-                        if ((int)(t7 + t5) >= (int)(a5 + a6)) {
-                            t12 = t4;
-                            t4 = 0x0;
-                        } else {
-                            t8 = *(int *)((t4 + 0x8));
-                            t4 = t8;
-                        }
-                    } else {
-                        t9 = *(int *)((t4 + 0x8));
-                        t4 = t9;
-                    }
-                } else {
-                    t10 = *(int *)((t4 + 0x8));
-                    t4 = t10;
-                }
+    t3 = *(int *)((((((short)a4 << 2) + (short)a4) << 2) + 0xC173DF4));
+    t4 = 0x0;
+    if (t3 != 0) {
+        t5 = 0x0;
+        t6 = (short)a4;
+        t7 = t3;
+        for (;;) {
+            t3 = *(int *)((t7 + 0xC));
+            if (((int)t3 <= (int)a5) && ((t0 = *(int *)((t7 + 0x10)), t6 = t0, t6 = (t6 + t3), (int)t6 > (int)a5) && (((int)t3 <= (int)(a5 + a6)) && (t1 = *(int *)((t7 + 0x10)), t2 = t1, t2 = (t2 + t3), (int)t2 >= (int)(a5 + a6))))) {
+                t5 = t7;
+                t7 = 0x0;
             } else {
-                t11 = *(int *)((t4 + 0x8));
-                t4 = t11;
+                t7 = (*(int *)((t7 + 0x8)));
             }
-        } while (t4 != 0);
+            if (t7 == 0) {
+                break;
+            }
+        }
+        t4 = t5;
     }
-    if (t12 == 0) {
-        return;
+    if (t4 == 0) {
+        return 0x3;
     }
+    return 0x0;
 }
