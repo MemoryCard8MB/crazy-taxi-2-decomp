@@ -50,6 +50,7 @@ struct oC_float { char p[0xC]; float v; };
 struct oC_int { char p[0xC]; int v; };
 struct oC_uint { char p[0xC]; unsigned int v; };
 struct oC_ushort { char p[0xC]; unsigned short v; };
+int thunk_mwRnaSetOutPan(int, int, int);
 int ADXB_ExecOneWav16(int);
 int ADXB_ExecOneWav4(int);
 int ADXB_ExecOneWav8(int);
@@ -2732,8 +2733,7 @@ int FUN_0c14ec14(int a4, int a5, int a6)
 {
     *(unsigned short *)((((a5 << 1) + (a4 + 0x42)) + 0x0)) = a6;
     if ((int)a5 < (int)(*(signed char *)((a4 + 0x3)))) {
-        *(volatile int *)((a4 + 0xC));
-        return thunk_mwRnaSetOutPan();
+        return thunk_mwRnaSetOutPan((*(int *)((a4 + 0xC))), a5, a6);     /* manual: the handle; a5 and a6 pass on unchanged (tail jump) */
     }
     return FUN_0c1616ce(0xC17053C);
 }

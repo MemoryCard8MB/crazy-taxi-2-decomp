@@ -1562,46 +1562,6 @@
    "about": "snapshot title1 #1: the state at its entry in that frame (24 bytes read, 2 call answers)"
   },
   {
-   "about": "mutant of case 20: call 1 (FUN_0c03e4d0) r0=00000000",
-   "poke": {
-    "0C1EC740": "01000000",
-    "0C1EC744": "feffffff",
-    "0C2A5858": "286b6e4e",
-    "0C2A585C": "02000000",
-    "0C1EC748": "00000000",
-    "0C2A4FAC": "feffffff",
-    "0C2A4FB0": "10600b0c",
-    "0C2A46E4": "40000000",
-    "0C2A46E8": "ffffff7f",
-    "0C1EC83C": "20000000",
-    "0C1EC840": "0000803f",
-    "0C03E7AC": "000040c0",
-    "0C03E7B8": "01000000"
-   },
-   "calls": [
-    {
-     "r0": "00000000",
-     "fr0": "C0400000"
-    },
-    {
-     "r0": "40200000",
-     "fr0": "42C80000"
-    },
-    {
-     "r0": "FFFFFFFC",
-     "fr0": "42C80000"
-    },
-    {
-     "r0": "00000100",
-     "fr0": "C0400000"
-    },
-    {
-     "r0": "40000000",
-     "fr0": "C0400000"
-    }
-   ]
-  },
-  {
    "entry": "8C03E5F8",
    "end": "8C03E700",
    "regs": {

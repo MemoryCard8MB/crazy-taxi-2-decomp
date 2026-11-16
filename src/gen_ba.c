@@ -86,7 +86,7 @@ int kmiCopyDummyGlobalData(int);
 int kmiGetDisplayData(int, int, int);
 int kmiGetNativeRegOBPSize(int);
 int kmiGetPackOBPParam(int, int, int, int, int, int);
-int kmiGetVertexBasePointer(int, int, int, int, int);
+int kmiGetVertexBasePointer(int, int, int, int, int, int, int);
 int kmiSetTAEnvironment(int, int, int, int, int);
 int kmiTAallocEx(int, int, int);
 int ndPuru2Check(int);
@@ -1093,7 +1093,7 @@ int kmCreateVertexBuffer(int a4, int a5, int a6, int a7, int a8, float f4, float
         R1012 = (t59);
         R1008 = ((((t33 << 2) << 1) + (((t5 + t28) + t32) + a8)) + 0xA0);
         *(int *)((int)stk + 4) = 0x0;
-        t65 = kmiGetVertexBasePointer((R1016), (R1020), (R1024), t57, 0x0);
+        t65 = kmiGetVertexBasePointer((R1016), (R1020), (R1024), t57, 0x0, (R1008), (R1012));     /* manual: the three stack words the original pushes (r13 = 0, r7 = R1008, r12 = R1012); two had been dropped */
         t116 = t65;
         if (t65 == 0) {
             kmiGetDisplayData(0xFF, ((((struct o18_int *)0xC2D0BC0)->v)), ((((struct o24_int *)0xC2D0BC0)->v)));

@@ -98,7 +98,7 @@ int FUN_0c07ff00(void);
 int FUN_0c08f204(int, int, int);
 int FUN_0c08f87c(int, int);
 int FUN_0c08f9c4(int, int);
-int FUN_0c0905cc(int, int, int, int, int);
+int FUN_0c0905cc(int, int, int, int, int, int);
 int FUN_0c090e4c(int, int, int, int);
 int FUN_0c096138(int, int);
 int FUN_0c1595e8(int, int, int, int);
@@ -346,7 +346,7 @@ int FUN_0c090484(int a4, int a5, int a6, int a7, int a8, int a9)
     if ((a9 & 0x80000000) != 0) {
         *(int *)((int)stk + 4) = a9;
         *(int *)((int)stk + 0) = a8;
-        return (FUN_0c0905cc((*(int *)(((int)stk + 52))), (*(int *)(((int)stk + 48))), (*(int *)(((int)stk + 44))), (*(int *)(((int)stk + 40))), a8));
+        return (FUN_0c0905cc((*(int *)(((int)stk + 52))), (*(int *)(((int)stk + 48))), (*(int *)(((int)stk + 44))), (*(int *)(((int)stk + 40))), a8, a9));     /* manual: both stack words (the original pushes a9, then a8); a9 had been dropped */
     }
     t13 = vmsfs_xcreate((*(int *)(((int)stk + 52))), (*(int *)(((int)stk + 48))), a8, (((int)stk + 8) + 0x4));
     *(unsigned int *)(((int)stk + 32)) = t13;

@@ -56,6 +56,14 @@ for l in open('layout.txt'):
     if len(p) >= 3 and p[0] == 'code':
         CODE_LO, CODE_HI = int(p[1], 16) & 0x1FFFFFFF, int(p[2], 16) & 0x1FFFFFFF
 FUN = {n: (a, s) for a, s, n in layout.functions()}
+_spans = sorted(((a & 0x1FFFFFFF), (a & 0x1FFFFFFF) + s) for a, s, n in layout.functions())
+_starts = [x[0] for x in _spans]
+def in_code(a):
+    """a byte of any listed function (game, library or runtime), pools included: a case may not poke there"""
+    a &= 0x1FFFFFFF
+    if CODE_LO <= a < CODE_HI: return True
+    k = bisect.bisect_right(_starts, a) - 1
+    return k >= 0 and _spans[k][0] <= a < _spans[k][1]
 runtime = {a & 0x1FFFFFFF for a, s, n in layout.functions() if n.startswith('_')}
 for l in open('symbols.txt'):
     p_ = l.split()
@@ -353,7 +361,7 @@ def leaves(ctx, i, reg, depth=0, out=None, seen=None, path=()):
     sc = srcs(op)
     if sc == LOAD:
         for (t, a, size, v) in ctx.reads_at(j):
-            if not (CODE_LO <= a < CODE_HI) and (a < 0x0C000000 or a >= 0x0E000000):
+            if not in_code(a) and (a < 0x0C000000 or a >= 0x0E000000):
                 # a field of a null pointer (an object the case does not give): the pointer becomes a fresh zeroed block and the
                 # field is set there, in one mutant
                 for r2 in load_addr_regs(op):
@@ -368,8 +376,8 @@ def leaves(ctx, i, reg, depth=0, out=None, seen=None, path=()):
                                 lf = (kind_, bl, off, size, (op >> 12) == 0xF)
                                 ctx.leafval.setdefault(str(lf[:3]), v); out.append(lf)
                 continue
-            if CODE_LO <= a < CODE_HI:
-                for r2 in load_addr_regs(op):          # a constant table: follow the index
+            if in_code(a):
+                for r2 in load_addr_regs(op):          # a constant table or a pool word: follow the index
                     leaves(ctx, j, r2, depth + 1, out, seen)
                 continue
             ws = ctx.mem.wlog.get(a)
@@ -718,7 +726,7 @@ def explore(fn):
             if note: why[(bpc, tgt)] = 'T from %s (%04X at %08X)' % (kind, ctx.T[j][1], ctx.T[j][0])
             return None
         if sc == LOAD:
-            lv = [('mem', a, size, False) for (_, a, size, v) in ctx.reads_at(j) if not (CODE_LO <= a < CODE_HI)]
+            lv = [('mem', a, size, False) for (_, a, size, v) in ctx.reads_at(j) if not in_code(a)]
             vals = [v for (_, a, size, v) in ctx.reads_at(j)][:1]
         else:
             vals = [rv(ctx.T, j, s_) for s_ in sc]
