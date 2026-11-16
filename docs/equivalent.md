@@ -17925,7 +17925,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 128 of 128 instructions
 
 ### FUN_0c0336c8 (`0C0336C8`, 182 bytes, `src/gen_g.c`)
-- equivalent on 12 development and 18 holdout cases, in `tests/gen_g/FUN_0c0336c8.json`
+- equivalent on 12 development and 19 holdout cases, in `tests/gen_g/FUN_0c0336c8.json`
 - case 22
 - case 0
 - case 10
@@ -17956,7 +17956,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 58
 - case 154
 - case 99
-- the cases run 75 of 91 instructions
+- mutant of case 22: 0C810000.1=01
+- the cases run 91 of 91 instructions
 
 ### FUN_0c03378c (`0C03378C`, 222 bytes, `src/gen_cm.c`)
 - equivalent on 1 development and 2 holdout cases, in `tests/gen_cm/FUN_0c03378c.json`
@@ -38231,7 +38232,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 10 of 10 instructions
 
 ### FUN_0c063458 (`0C063458`, 276 bytes, `src/gen_hb.c`)
-- equivalent on 18 development and 23 holdout cases, in `tests/gen_hb/FUN_0c063458.json`
+- equivalent on 18 development and 24 holdout cases, in `tests/gen_hb/FUN_0c063458.json`
 - case 4
 - case 0
 - case 8
@@ -38273,7 +38274,8 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - mutant of case 4: 0C800000.4=0CC84000, 0CC840FE.1=01
 - mutant of case 4: 0C800000.4=0CC8C000, 0CC8C080.4=00000005
 - mutant of case 14: 0C800004.4=00000001
-- the cases run 106 of 117 instructions
+- mutant of case 16: 0C800004.4=00000001
+- the cases run 117 of 117 instructions
 
 ### FUN_0c06356c (`0C06356C`, 276 bytes, `src/gen_cg.c`)
 - equivalent on 1 development and 5 holdout cases, in `tests/gen_cg/FUN_0c06356c.json`
@@ -82104,10 +82106,13 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 53 of 53 instructions
 
 ### gdc_FileLoad (`0C01E4A2`, 150 bytes, `src/gen_o.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_o/gdc_FileLoad.json`
+- equivalent on 1 development and 4 holdout cases, in `tests/gen_o/gdc_FileLoad.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 42 of 75 instructions
+- mutant of rescue: empty case: calls 1.. (FUN_0c14fd82) r0=00000003
+- mutant of rescue: empty case: calls 1.. (FUN_0c14fd82) r0=00000003; r6=00000001
+- mutant of rescue: empty case: calls 1.. (FUN_0c14fd82) r0=00000003; call 4 (FUN_0c150460) r0=00000004
+- the cases run 75 of 75 instructions
 
 ### gdc_FileLoadInit (`0C0202B6`, 32 bytes, `src/gen_am.c`)
 - equivalent on 1 development and 1 holdout cases, in `tests/gen_am/gdc_FileLoadInit.json`
