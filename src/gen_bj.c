@@ -150,7 +150,7 @@ int FUN_0c07ff00(void);
 int FUN_0c14e8e4(int);
 int FUN_0c1616f4(int, int);
 int FUN_0c1617e0(int, int, int, int);
-int FUN_0c1618dc(void);
+int FUN_0c1618dc(int, int);
 int FUN_0c161ad0(int);
 int FUN_0c161fd6(int);
 int FUN_0c161fe2(int);
@@ -170,6 +170,11 @@ int mwRnaSetBitPerSmpl(void);
 int mwRnaSetNumChan(void);
 int mwRnaSetOutVol(void);
 int mwRnaSetSfreq(void);
+int thunk_mwRnaSetBitPerSmpl(int, int);
+int thunk_mwRnaSetSfreq(int, int);
+int thunk_mwRnaSetNumChan(int, int);
+int thunk_mwRnaSetOutVol(int, int);
+int thunk_mwRnaSetTransSw(int, int);
 int mwRnaSetTransSw(void);
 int nlAddVector(int, int);
 int nlMultiMatrix(int);
@@ -895,20 +900,13 @@ int adxt_stat_decinfo(int a4)
             t63 = FUN_0c161fe2(t0);
             *(unsigned int *)(((int)stk + 4)) = (FUN_0c161fee(t0));
             *(unsigned int *)(((int)stk + 0)) = (FUN_0c16201e(t0));
-            FUN_0c161ffa(t0);
-            *(volatile int *)((a4 + 0xC));
-            thunk_mwRnaSetBitPerSmpl();
-            *(volatile int *)((a4 + 0xC));
-            thunk_mwRnaSetSfreq();
-            *(volatile int *)(((int)stk + 4));
-            *(volatile int *)((a4 + 0xC));
-            thunk_mwRnaSetNumChan();
-            *(volatile int *)(((int)stk + 0));
-            *(volatile int *)((a4 + 0xC));
-            FUN_0c1618dc();
-            *(volatile short *)((a4 + 0x40));
-            *(volatile int *)((a4 + 0xC));
-            thunk_mwRnaSetOutVol();
+            /* manual: the setters get the RNA handle (a4 + 0xC) and the value the original loads into r5; the generator had dropped
+               both (the thunks were declared void) and kept only the loads */
+            thunk_mwRnaSetBitPerSmpl((*(int *)((a4 + 0xC))), FUN_0c161ffa(t0));
+            thunk_mwRnaSetSfreq((*(int *)((a4 + 0xC))), t63);
+            thunk_mwRnaSetNumChan((*(int *)((a4 + 0xC))), (*(int *)(((int)stk + 4))));
+            FUN_0c1618dc((*(int *)((a4 + 0xC))), (*(int *)(((int)stk + 0))));
+            thunk_mwRnaSetOutVol((*(int *)((a4 + 0xC))), (*(short *)((a4 + 0x40))));
             adxt_set_outpan(a4);
             if (((((struct o74_int *)(a4))->v)) != 0) {
                 ADXAMP_SetSfreq(((((struct o74_int *)(a4))->v)), t63);
@@ -918,8 +916,7 @@ int adxt_stat_decinfo(int a4)
                 t88 = ADXSJD_GetSpsdInfo(t0);
                 ADXRNA_SetStmHdInfo((*(int *)((a4 + 0xC))), t88);
             }
-            *(volatile int *)((a4 + 0xC));
-            thunk_mwRnaSetTransSw();
+            thunk_mwRnaSetTransSw((*(int *)((a4 + 0xC))), 0x1);     /* manual: handle and switch 1 (0C162DF8) */
             *(unsigned char *)((a4 + 0x1)) = 0x2;
             t100 = 0x2;
         }

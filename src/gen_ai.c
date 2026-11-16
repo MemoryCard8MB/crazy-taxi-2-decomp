@@ -182,7 +182,7 @@ int strncpy(int, int, int);
 int syBtCfgSet(int, int, int);
 int syG2DmaResume(int);
 int syG2DmaSuspend(int);
-int syRtcDateToCount(void);
+int syRtcDateToCount(int, int);
 int thunk_FUN_0c0765b0(void);
 int vmsfs_c_getstate(int);
 int vmsfs_diskfree(int, int);
@@ -2242,9 +2242,10 @@ int syRtcCompareDate(int a4, int a5)
     register int t10;
 
     *(unsigned int *)(((int)stk + 8)) = a5;
-    syRtcDateToCount();
-    *(volatile int *)(((int)stk + 8));
-    syRtcDateToCount();
+    /* manual: each date is converted into a count on the stack (the original: a4 -> r15+4, a5 -> r15); the generator had dropped
+       both calls' arguments */
+    syRtcDateToCount(a4, ((int)stk + 4));
+    syRtcDateToCount((*(int *)(((int)stk + 8))), ((int)stk + 0));
     t4 = *(int *)(((int)stk + 0));
     t10 = 0x0;
     if ((*(int *)(((int)stk + 4))) == t4) {

@@ -198,8 +198,8 @@ int kdGetDeviceInfo(int);
 int kdGetDriverMode(int);
 int memset(int, int, int);
 int mpdrv_memset_l(int, int, int);
-int mwRnaSetPlaySw(void);
-int mwRnaSetTransSw(void);
+int mwRnaSetPlaySw(int, int);
+int mwRnaSetTransSw(int, int);
 int mwlRnaClearBuf(void);
 int nlCloseEvent(int);
 int nlInitMatrixStack(int, int, int);
@@ -911,8 +911,8 @@ int mwRnaStop(int a4)
     t8 = t2;
     if (t2 != 0) {
         FUN_0c16ad54(((int)stk + 4));
-        mwRnaSetPlaySw();
-        mwRnaSetTransSw();
+        mwRnaSetPlaySw(a4, 0x0);     /* manual: the handle and the switch the original passes (r4 = r14, r5 = #0/#1) */
+        mwRnaSetTransSw(a4, 0x0);     /* manual: the handle and the switch the original passes (r4 = r14, r5 = #0/#1) */
         mwlRnaClearBuf();
         *(unsigned char *)((a4 + 0x7)) = 0x0;
         *(unsigned char *)((a4 + 0x1)) = 0x0;
@@ -1442,7 +1442,7 @@ int mwRnaStart(int a4)
     }
     *(unsigned char *)((a4 + 0x1)) = 0x4;
     (((struct o40_uint *)(a4))->v) = ((((struct o44_int *)(a4))->v));
-    mwRnaSetTransSw();
+    mwRnaSetTransSw(a4, 0x1);     /* manual: the handle and the switch the original passes (r4 = r14, r5 = #0/#1) */
     return (FUN_0c16ad6c(((int)stk + 4)));
 }
 

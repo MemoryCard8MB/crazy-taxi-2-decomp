@@ -179,6 +179,24 @@
      "r0": "00000001"
     }
    ]
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CBC0000, 0CBC0001.1=05",
+   "regs": {
+    "r4": "0CBC0000"
+   },
+   "poke": {
+    "0CBC0001": "05"
+   }
+  },
+  {
+   "about": "mutant of rescue: empty case: r4=0CC80000, 0CC80001.1=05",
+   "regs": {
+    "r4": "0CC80000"
+   },
+   "poke": {
+    "0CC80001": "05"
+   }
   }
  ]
 }

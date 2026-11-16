@@ -149,7 +149,7 @@ int mpdrv_set_dreset_ns(int);
 int mwRnaAdjustBuf(int);
 int mwRnaGetPlaySw(int);
 int mwRnaGetTransSw(int);
-int mwRnaSetPlaySw(void);
+int mwRnaSetPlaySw(int, int);
 int mwlRnaAddRdPos(int);
 int mwlRnaWaitTransEnd(int);
 int nlGetMatrix(int);
@@ -1576,7 +1576,7 @@ int mwRnaPause(int a4)
             t3 = mwRnaGetPlaySw(a4);
             (((struct o88_uint *)(a4))->v) = ((t3 << 1) | (mwRnaGetTransSw(a4)));
             mwlRnaAddRdPos(a4);
-            mwRnaSetPlaySw();
+            mwRnaSetPlaySw(a4, 0x0);     /* manual: the handle and the switch the original passes (r4 = r14, r5 = #0/#1) */
             *(unsigned char *)((a4 + 0x7)) = 0x1;
             if ((unsigned char)(*(signed char *)((a4 + 0x5))) == 1) {
                 (((struct o8C_uint *)(a4))->v) = 0x1;

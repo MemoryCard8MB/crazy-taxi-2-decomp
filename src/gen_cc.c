@@ -136,8 +136,8 @@ int kmytex_VQFreeEntry(int);
 int memcpy(int, int, int);
 int mwRnaGetPlaySw(int);
 extern int mwRnaGetTransSw();
-int mwRnaSetPlaySw(void);
-int mwRnaSetTransSw(void);
+int mwRnaSetPlaySw(int, int);
+int mwRnaSetTransSw(int, int);
 int mwlRnaAddFlshPos(int);
 int mwlRnaAddRdPos(int);
 int mwlRnaAddWrPos(int);
@@ -1014,7 +1014,7 @@ int mwlRnaExecSvrHndl(int a4, int a5, int a6, int a7)
         t0 = *(int *)((a4 + 0x10));
         t1 = ((int (*)(int, int, int, int))((*(int *)(((*(int *)((t0 + 0x0))) + 0x24)))))(t0, 0x1, a6, a7);
         if ((int)t1 < (int)0x20) {
-            mwRnaSetTransSw();
+            mwRnaSetTransSw(a4, 0x0);     /* manual: the handle and the switch the original passes (r4 = r14, r5 = #0/#1) */
             *(unsigned char *)((a4 + 0x6)) = 0x0;
         }
     }
@@ -1050,12 +1050,12 @@ int mwlRnaExecSvrHndl(int a4, int a5, int a6, int a7)
         }
     }
     if (((unsigned char)(*(signed char *)((a4 + 0x1))) == 5) && ((t4 = *(int *)((a4 + 0x34)), t5 = (((struct o40_int *)(a4))->v), (int)t4 >= (int)t5) && (t6 = *(signed char *)((a4 + 0x7)), t6 == 0))) {
-        mwRnaSetPlaySw();
+        mwRnaSetPlaySw(a4, 0x1);     /* manual: the handle and the switch the original passes (r4 = r14, r5 = #0/#1) */
         (((struct o40_uint *)(a4))->v) = 0x7FFFFFFF;
     }
     t0 = *(signed char *)((a4 + 0x1));
     if (((unsigned char)t0 == 6) && (t7 = *(int *)((a4 + 0x34)), t7 == 0)) {
-        mwRnaSetPlaySw();
+        mwRnaSetPlaySw(a4, 0x0);     /* manual: the handle and the switch the original passes (r4 = r14, r5 = #0/#1) */
         return mwlRnaClearBuf();
     }
     return (unsigned char)t0;

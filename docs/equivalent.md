@@ -61275,14 +61275,22 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 38 of 38 instructions
 
 ### FUN_0c14e3c8 (`0C14E3C8`, 466 bytes, `src/gen_bs.c`)
-- equivalent on 1 development and 5 holdout cases, in `tests/gen_bs/FUN_0c14e3c8.json`
+- equivalent on 1 development and 13 holdout cases, in `tests/gen_bs/FUN_0c14e3c8.json`
 - rescue: empty case
 - rescue: empty case
 - mutant of rescue: empty case: call 2 (SJRBF_Create) r0=00000001; r4=00000001
 - mutant of rescue: empty case: call 2 (SJRBF_Create) r0=00000001
 - mutant of rescue: empty case: 0C173844.1=01
 - mutant of rescue: empty case: call 2 (SJRBF_Create) r0=00000001; r4=00000001; call 3 (SJRBF_Create) r0=00000001
-- the cases run 140 of 217 instructions
+- mutant of rescue: empty case: call 2 (SJRBF_Create) r0=00000001; call 3 (ADXSJD_Create) r0=00000001; call 4 (thunk_mwRnaCreate) r0=00000001; call 5 (FUN_0c1657dc) r0=00000001
+- mutant of rescue: empty case: call 2 (SJRBF_Create) r0=00000001; call 3 (ADXSJD_Create) r0=00000001
+- mutant of rescue: empty case: call 2 (SJRBF_Create) r0=00000001; call 3 (ADXSJD_Create) r0=00000001; call 4 (thunk_mwRnaCreate) r0=00000001
+- mutant of rescue: empty case: call 2 (SJRBF_Create) r0=00000001; call 3 (ADXSJD_Create) r0=00000001; call 4 (thunk_mwRnaCreate) r0=00000001; call 5 (FUN_0c1657dc) r0=00000001; calls 5.. (FUN_0c1657dc) r0=00000001; r4=00000001
+- mutant of rescue: empty case: call 2 (SJRBF_Create) r0=00000001; call 3 (ADXSJD_Create) r0=00000001; call 4 (thunk_mwRnaCreate) r0=00000001; call 5 (FUN_0c1657dc) r0=00000001
+- mutant of rescue: empty case: call 2 (SJRBF_Create) r0=00000001; call 3 (ADXSJD_Create) r0=00000001
+- mutant of rescue: empty case: call 2 (SJRBF_Create) r0=00000001; call 3 (ADXSJD_Create) r0=00000001; call 4 (thunk_mwRnaCreate) r0=00000001
+- mutant of rescue: empty case: call 2 (SJRBF_Create) r0=00000001; call 3 (ADXSJD_Create) r0=00000001; call 4 (thunk_mwRnaCreate) r0=00000001; call 5 (FUN_0c1657dc) r0=00000001; calls 5.. (FUN_0c1657dc) r0=00000001; r4=00000001
+- the cases run 217 of 217 instructions
 
 ### FUN_0c14e6be (`0C14E6BE`, 46 bytes, `src/gen_ak.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_ak/FUN_0c14e6be.json`
@@ -73824,7 +73832,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 17 of 17 instructions
 
 ### adxt_stat_decinfo (`0C162BA8`, 618 bytes, `src/gen_bj.c`)
-- equivalent on 18 development and 19 holdout cases, in `tests/gen_bj/adxt_stat_decinfo.json`
+- equivalent on 18 development and 31 holdout cases, in `tests/gen_bj/adxt_stat_decinfo.json`
 - case 0
 - case 1
 - case 2
@@ -73862,7 +73870,19 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 88
 - case 78
 - mutant of case 0: call 1 (FUN_0c161ad0) r0=00000002
-- the cases run 50 of 260 instructions
+- mutant of case 0: call 1 (FUN_0c161ad0) r0=00000002; call 2 (FUN_0c161fee) r0=00000000
+- mutant of case 0: call 1 (FUN_0c161ad0) r0=00000002; call 2 (FUN_0c161fee) r0=00000000; call 4 (FUN_0c162036) r0=00000000
+- mutant of case 0: call 1 (FUN_0c161ad0) r0=00000002; call 2 (FUN_0c161fee) r0=00000000; call 25 (FUN_0c161fd6) r0=00000002
+- mutant of case 0: call 1 (FUN_0c161ad0) r0=00000002; call 2 (FUN_0c161fee) r0=00000000; 0C800002.1=02
+- mutant of case 0: call 1 (FUN_0c161ad0) r0=00000002; call 2 (FUN_0c161fee) r0=00000000; 0C800074.4=00000001
+- mutant of case 0: call 1 (FUN_0c161ad0) r0=00000002; call 2 (FUN_0c161fee) r0=00000000; call 4 (FUN_0c162036) r0=00000000; 0C800008.4=00000001
+- mutant of case 0: call 1 (FUN_0c161ad0) r0=00000002; call 2 (FUN_0c161fee) r0=00000000
+- mutant of case 0: call 1 (FUN_0c161ad0) r0=00000002; call 2 (FUN_0c161fee) r0=00000000; call 4 (FUN_0c162036) r0=00000000
+- mutant of case 0: call 1 (FUN_0c161ad0) r0=00000002; call 2 (FUN_0c161fee) r0=00000000; call 25 (FUN_0c161fd6) r0=00000002
+- mutant of case 0: call 1 (FUN_0c161ad0) r0=00000002; call 2 (FUN_0c161fee) r0=00000000; 0C800002.1=02
+- mutant of case 0: call 1 (FUN_0c161ad0) r0=00000002; call 2 (FUN_0c161fee) r0=00000000; 0C800074.4=00000001
+- mutant of case 0: call 1 (FUN_0c161ad0) r0=00000002; call 2 (FUN_0c161fee) r0=00000000; call 4 (FUN_0c162036) r0=00000000; 0C800008.4=00000001
+- the cases run 261 of 261 instructions
 
 ### adxt_stat_playing (`0C162F6C`, 102 bytes, `src/libs_gen_atj.c`)
 - equivalent on 18 development and 19 holdout cases, in `tests/libs_gen_atj/adxt_stat_playing.json`
@@ -94355,13 +94375,15 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 3 of 3 instructions
 
 ### mwRnaContinue (`0C16429E`, 110 bytes, `src/gen_v.c`)
-- equivalent on 1 development and 4 holdout cases, in `tests/gen_v/mwRnaContinue.json`
+- equivalent on 1 development and 6 holdout cases, in `tests/gen_v/mwRnaContinue.json`
 - rescue: empty case
 - rescue: empty case
 - mutant of rescue: empty case: r4=00000001
 - mutant of rescue: empty case: r4=00000001; r4=0CB40000, 0CB40007.1=01
 - mutant of rescue: empty case: r4=00000001; r4=0CB40000, 0CB40007.1=01; 0CB40088.4=00000001
-- the cases run 38 of 41 instructions
+- mutant of rescue: empty case: r4=00000001; r4=0CB40000, 0CB40007.1=01; 0CB40088.4=00000001; 0CB40088.4=00000002
+- mutant of rescue: empty case: r4=00000001; r4=0CB40000, 0CB40007.1=01; 0CB40088.4=00000001; 0CB40088.4=00000002
+- the cases run 41 of 41 instructions
 
 ### mwRnaCreate (`0C1637A4`, 238 bytes, `src/gen_cx.c`)
 - equivalent on 18 development and 19 holdout cases, in `tests/gen_cx/mwRnaCreate.json`
@@ -95491,7 +95513,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 54 of 54 instructions
 
 ### mwRnaSetNumChan (`0C164518`, 136 bytes, `src/gen_cy.c`)
-- equivalent on 18 development and 19 holdout cases, in `tests/gen_cy/mwRnaSetNumChan.json`
+- equivalent on 18 development and 23 holdout cases, in `tests/gen_cy/mwRnaSetNumChan.json`
 - case 0
 - case 1
 - case 2
@@ -95529,7 +95551,11 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - case 120
 - case 65
 - mutant of case 0: r4=00000000
-- the cases run 52 of 68 instructions
+- mutant of case 10: r5=807FFFFF
+- mutant of case 24: 0C800002.1=01; r5=00000001
+- mutant of case 10: r5=807FFFFF
+- mutant of case 24: 0C800002.1=01; r5=00000001
+- the cases run 68 of 68 instructions
 
 ### mwRnaSetOutPan (`0C1646AC`, 84 bytes, `src/gen_dd.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_dd/mwRnaSetOutPan.json`
@@ -95768,10 +95794,14 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 5 of 5 instructions
 
 ### mwRnaStart (`0C16392A`, 78 bytes, `src/gen_ac.c`)
-- equivalent on 1 development and 1 holdout cases, in `tests/gen_ac/mwRnaStart.json`
+- equivalent on 1 development and 5 holdout cases, in `tests/gen_ac/mwRnaStart.json`
 - rescue: empty case
 - rescue: empty case
-- the cases run 15 of 39 instructions
+- mutant of rescue: empty case: r4=0CBC0000
+- mutant of rescue: empty case: r4=0CBC0000; 0CBC0001.1=01
+- mutant of rescue: empty case: r4=0CE20000
+- mutant of rescue: empty case: r4=0CE20000; 0CE20001.1=01
+- the cases run 39 of 39 instructions
 
 ### mwRnaStop (`0C16397C`, 80 bytes, `src/gen_ac.c`)
 - equivalent on 18 development and 19 holdout cases, in `tests/gen_ac/mwRnaStop.json`
@@ -96279,7 +96309,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - the cases run 2 of 2 instructions
 
 ### mwlRnaExecSvrHndl (`0C164098`, 314 bytes, `src/gen_cc.c`)
-- equivalent on 1 development and 14 holdout cases, in `tests/gen_cc/mwlRnaExecSvrHndl.json`
+- equivalent on 1 development and 16 holdout cases, in `tests/gen_cc/mwlRnaExecSvrHndl.json`
 - rescue: empty case
 - rescue: empty case
 - mutant of rescue: empty case: r4=0CB40000, 0CB40006.1=01
@@ -96295,7 +96325,9 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - mutant of rescue: empty case: r4=0CB00000, 0CB0008C.4=00000001
 - mutant of rescue: empty case: call 2 (mwRnaGetPlaySw) r0=00000001
 - mutant of rescue: empty case: call 3 (mwRnaGetTransSw) r0=00000001; call 4 (mwlRnaStartTrans) r0=00000001
-- the cases run 133 of 147 instructions
+- mutant of rescue: empty case: r4=0CBC0000, 0CBC0001.1=05
+- mutant of rescue: empty case: r4=0CC80000, 0CC80001.1=05
+- the cases run 147 of 147 instructions
 
 ### mwlRnaInsrtSlntDat (`0C163FDC`, 188 bytes, `src/gen_g.c`)
 - equivalent on 18 development and 20 holdout cases, in `tests/gen_g/mwlRnaInsrtSlntDat.json`
@@ -106606,7 +106638,7 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - rescue: empty case
 - rescue: empty case
 - mutant of rescue: empty case: call 2 fills r5+4.4=00000001
-- the cases run 19 of 25 instructions
+- the cases run 24 of 25 instructions
 
 ### syRtcExecServer (`0C14CA70`, 42 bytes, `src/gen_ak.c`)
 - equivalent on 18 development and 18 holdout cases, in `tests/gen_ak/syRtcExecServer.json`

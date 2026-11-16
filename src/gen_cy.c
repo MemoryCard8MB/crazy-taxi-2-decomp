@@ -5,7 +5,7 @@ struct o64_uint { char p[0x64]; unsigned int v; };
 struct o68_uint { char p[0x68]; unsigned int v; };
 int FUN_0c16ada2(int, int, int, int, int);
 int kmiWriteRegister(int, int, int);
-int mwRnaSetOutPan(void);
+int mwRnaSetOutPan(int, int, int);
 int mwRnaSetNumChan(int a4, int a5, int a6, int a7);
 int kmSetCheapShadowMode(int a4);
 int mwRnaSetBitPerSmpl(int a4, int a5, int a6, int a7);
@@ -39,8 +39,7 @@ int mwRnaSetNumChan(int a4, int a5, int a6, int a7)
                 if ((int)t2 >= (int)(unsigned char)t3) {
                     break;
                 }
-                *(volatile int *)((((t2 << 2) + (a4 + 0x64)) + 0x0));
-                mwRnaSetOutPan();
+                mwRnaSetOutPan(a4, t2, (*(int *)((((t2 << 2) + (a4 + 0x64)) + 0x0))));     /* manual: the arguments the original passes (the generator had dropped them) */
                 t2 = (t2 + 0x1);
             }
             t1 = (unsigned char)t3;

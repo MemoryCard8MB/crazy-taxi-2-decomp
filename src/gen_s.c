@@ -55,6 +55,7 @@ struct oA0_uint { char p[0xA0]; unsigned int v; };
 struct oC_float { char p[0xC]; float v; };
 struct oC_int { char p[0xC]; int v; };
 struct oC_uint { char p[0xC]; unsigned int v; };
+int thunk_mwRnaGetTime(int, int, int);
 int ADXCRS_Lock(void);
 int ADXCRS_Unlock(void);
 int ADXSJD_Start(int);
@@ -1673,8 +1674,7 @@ int FUN_0c14e936(int a4, int a5, int a6)
             *(unsigned int *)((a6 + 0x0)) = 0x1;
         }
     } else {
-        *(volatile int *)((a4 + 0xC));
-        thunk_mwRnaGetTime();
+        thunk_mwRnaGetTime((*(int *)((a4 + 0xC))), a5, a6);     /* manual: the arguments the original passes (the generator had dropped them) */
     }
     *(unsigned int *)((a5 + 0x0)) = ((*(int *)((a5 + 0x0))) + ((((struct o88_int *)(a4))->v)));
     return 0x88;

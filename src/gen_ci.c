@@ -141,6 +141,8 @@ int mpdrv_make_rootdevicedata(int, int, int, int);
 int mwRnaAdjustBuf(int);
 int mwRnaGetTime(void);
 int mwRnaSetPlaySw(void);
+int thunk_mwRnaSetPlaySw(int, int);
+int thunk_mwRnaGetTime(int, int, int);
 int nlGetMatrix(int);
 float nlLength(int, int);
 int nlObjPutSetLightDirectionV(int);
@@ -1188,8 +1190,7 @@ int FUN_0c14ee68(int a4, int a5)
     if ((t0 != 3) && (t0 != 4)) {
     } else {
         if ((*(int *)(((int)stk + 8))) == 1) {
-            *(volatile int *)((a4 + 0xC));
-            thunk_mwRnaSetPlaySw();
+            thunk_mwRnaSetPlaySw((*(int *)((a4 + 0xC))), 0x0);     /* manual: handle and switch 0 (0C14EE92) */
             t7 = 0x7A120;
             for (;;) {
                 t7 = (t7 - 0x1);
@@ -1198,15 +1199,12 @@ int FUN_0c14ee68(int a4, int a5)
                 }
             }
             mwRnaAdjustBuf((*(int *)((a4 + 0xC))));
-            *(volatile int *)((a4 + 0xC));
-            thunk_mwRnaGetTime();
+            thunk_mwRnaGetTime((*(int *)((a4 + 0xC))), ((int)stk + 0), ((int)stk + 4));     /* manual: handle and the two outputs */
             (((struct o9C_uint *)(a4))->v) = (int)(((float)(*(int *)(((int)stk + 0))) / (float)(*(int *)(((int)stk + 4)))) * (float)(*(int *)0xC2D1BEC));
             t29 = 0x9C;
         } else {
-            *(volatile int *)((a4 + 0xC));
-            thunk_mwRnaSetPlaySw();
-            *(volatile int *)((a4 + 0xC));
-            thunk_mwRnaGetTime();
+            thunk_mwRnaSetPlaySw((*(int *)((a4 + 0xC))), 0x1);     /* manual: handle and switch 1 (0C14EF22) */
+            thunk_mwRnaGetTime((*(int *)((a4 + 0xC))), ((int)stk + 0), ((int)stk + 4));     /* manual: handle and the two outputs */
             (((struct o9C_uint *)(a4))->v) = (int)(((float)(*(int *)(((int)stk + 0))) / (float)(*(int *)(((int)stk + 4)))) * (float)(*(int *)0xC2D1BEC));
             (((struct oA0_uint *)(a4))->v) = (*(int *)0xC173D68);
             t29 = 0xA0;

@@ -216,7 +216,7 @@ int mpdrv_setcmd_force(int, int, int, int, int, int);
 int mwGscGetStat(int, int);
 int mwRnaExecServer(void);
 int mwRnaSetOutPan(void);
-int mwRnaSetPlaySw(void);
+int mwRnaSetPlaySw(int, int);
 int nlFree(int);
 int nlGetMatrix(int);
 int nlInitCommonTexture(int, int, int);
@@ -1047,7 +1047,7 @@ int mwRnaContinue(int a4)
     if ((unsigned char)(*(signed char *)((a4 + 0x7))) == 1) {
         t4 = (((struct o88_int *)(a4))->v);
         if ((t4 != 0) && (t4 != 1)) {
-            mwRnaSetPlaySw();
+            mwRnaSetPlaySw(a4, 0x1);     /* manual: the handle and the switch the original passes (r4 = r14, r5 = #0/#1) */
         }
         *(unsigned char *)((a4 + 0x7)) = 0x0;
     }

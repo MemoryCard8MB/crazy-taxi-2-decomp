@@ -25,9 +25,9 @@ int memset(int, int, int);
 int mwRnaDestroy(int, int);
 int mwRnaErrEntryFunc(int, int);
 int mwRnaGetTransSw(int);
-int mwRnaSetBitPerSmpl(void);
-int mwRnaSetNumChan(void);
-int mwRnaSetSfreq(void);
+int mwRnaSetBitPerSmpl(int, int);
+int mwRnaSetNumChan(int, int);
+int mwRnaSetSfreq(int, int);
 int mwRnaStop(int);
 int mwlRnaAddFlshPos(int);
 int mwlRnaAddWrPos(int);
@@ -126,10 +126,9 @@ int mwRnaCreate(int a4, int a5, int a6, int a7)
     goto L_C16387A;
     L_C163850:;
     mwlRnaSetInitMember(v0_4);
-    mwRnaSetBitPerSmpl();
-    mwRnaSetSfreq();
-    *(volatile signed char *)((v0_4 + 0x3));
-    mwRnaSetNumChan();
+    mwRnaSetBitPerSmpl(v0_4, 0x10);     /* manual: the arguments the original passes (the generator had dropped them) */
+    mwRnaSetSfreq(v0_4, 0xAC44);
+    mwRnaSetNumChan(v0_4, (unsigned char)(*(signed char *)((v0_4 + 0x3))));
     v0_0 = *(int *)((v0_4 + 0x38));
     *(unsigned int *)(((int)stk + 8)) = v0_0;
     *(unsigned int *)((v0_4 + 0x28)) = (((int (*)(int, int, int, int, int, int, int, int, int, int, int))((*(int *)(((*(int *)((v0_0 + 0x0))) + 0x18)))))(v0_0, a5, a6, a7, *(int *)((int)stk + 4), *(int *)((int)stk + 4 + 4), *(int *)((int)stk + 4 + 8), *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24)));

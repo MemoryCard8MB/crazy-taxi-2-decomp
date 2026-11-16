@@ -165,6 +165,7 @@ int kmytex_FBDeQueueEntry(int, int, int);
 int kmytex_FBEnQueueTop(int, int, int);
 int memset(int, int, int);
 int mwRnaCreate(void);
+int thunk_mwRnaCreate(int, int);
 int nlCommonTextureGetNextTextureIndex(void);
 int nlCreateTextureParam(int);
 float nlLength(int, int);
@@ -719,7 +720,7 @@ int FUN_0c14e3c8(int a4, int a5, int a6)
     v0_5 = ADXSJD_Create((*(int *)((v0_3 + 0x10))), v0_0, (v0_3 + 0x18));
     *(unsigned int *)((v0_3 + 0x4)) = v0_5;
     if ((v0_5 == 0)) goto L_C14E4E4;
-    v0_5 = thunk_mwRnaCreate();
+    v0_5 = thunk_mwRnaCreate((v0_3 + 0x18), v0_0);     /* manual: the original passes r14 + 24 and r12 (0C14E4C6-0C14E4CC) */
     *(unsigned int *)((v0_3 + 0xC)) = v0_5;
     if ((v0_5 == 0)) goto L_C14E4E4;
     v0_5 = FUN_0c1657dc((*(int *)((v0_3 + 0x10))), v0_2, v0_4);

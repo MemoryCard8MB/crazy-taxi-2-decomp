@@ -21,7 +21,7 @@ int FUN_0c16bab0(int, int, int, int, int);
 int mwRnaGetPlaySw(int);
 int mwRnaGetSfreq(int);
 int mwRnaSetBitPerSmpl(int, int);
-int mwRnaSetSfreq(void);
+int mwRnaSetSfreq(int, int);
 int mwlRnaAddRdPos(int, int, int, int);
 int strncpy(int, int, int);
 int mwRnaSetStmHdInfo(int a4, int a5, int a6, int a7);
@@ -94,8 +94,7 @@ int mwRnaSetStmHdInfo(int a4, int a5, int a6, int a7)
             R1012 = t37;
             t40 = ((int (*)(int, int, int, int, int, int, int, int, int, int, int))(((((struct o48_int *)((*(int *)((t37 + 0x0)))))->v))))(t37, 0x3, (((int)stk + 4) + 0xC), (((int)stk + 4) + 0x10), R1004, R1008, R1012, *(int *)((int)stk + 4 + 12), *(int *)((int)stk + 4 + 16), *(int *)((int)stk + 4 + 20), *(int *)((int)stk + 4 + 24));
             mwRnaSetBitPerSmpl(a4, (R1008));
-            *(volatile int *)(((int)stk + 44));
-            mwRnaSetSfreq();
+            mwRnaSetSfreq(a4, (*(int *)(((int)stk + 44))));     /* manual: the arguments the original passes (the generator had dropped them) */
             (((struct o60_uint *)(a4))->v) = (R1004);
             (((struct o64_uint *)(a4))->v) = (*(int *)(((*(int *)(((int)stk + 32))) + 0x0)));
             (((struct o68_uint *)(a4))->v) = (*(int *)(((*(int *)(((int)stk + 36))) + 0x0)));

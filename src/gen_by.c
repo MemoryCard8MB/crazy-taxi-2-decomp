@@ -65,6 +65,7 @@ struct oAC_uint { char p[0xAC]; unsigned int v; };
 struct oC_float { char p[0xC]; float v; };
 struct oC_int { char p[0xC]; int v; };
 struct oC_uint { char p[0xC]; unsigned int v; };
+int thunk_mwRnaGetTime(int, int, int);
 int FUN_0c027f28(int);
 int FUN_0c027fbe(float, float);
 int FUN_0c02803a(int, int, int, int);
@@ -1500,8 +1501,7 @@ int FUN_0c14e9a8(int a4, int a5, int a6)
             (((struct o4_float *)0xC2D1BEC)->v) = ((((float)(*(int *)(((int)stk + 0))) / (float)(*(int *)(((int)stk + 4)))) - ((float)(*(int *)((a5 + 0x0))) / (float)((((struct o0_int *)0xC2D1BEC)->v)))) * 1000.0f);
             if (!(((((struct o4_float *)0xC2D1BEC)->v)) > 60.0f) && (u46 = (((struct o4_float *)0xC2D1BEC)->v), !(-60.0f > u46))) {
             } else {
-                *(volatile int *)((a4 + 0xC));
-                thunk_mwRnaGetTime();
+                thunk_mwRnaGetTime((*(int *)((a4 + 0xC))), ((int)stk + 0), ((int)stk + 4));     /* manual: the arguments the original passes (the generator had dropped them) */
                 (((struct o9C_uint *)(a4))->v) = (int)(((float)(*(int *)(((int)stk + 0))) / (float)(*(int *)(((int)stk + 4)))) * (float)((((struct o0_int *)0xC2D1BEC)->v)));
                 (((struct oA0_uint *)(a4))->v) = ((((struct o0_int *)0xC173D68)->v));
             }
