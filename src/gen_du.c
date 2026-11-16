@@ -207,7 +207,7 @@ int FUN_0c03db44(void);
 int FUN_0c058518(void);
 int FUN_0c0613d2(int a4);
 int FUN_0c053668(int a4, int a5, int a6, Stk2 s, float f4);
-int FUN_0c03da60(int a4, int a5);
+int FUN_0c03da58(void);
 int FUN_0c0527c4(int a4, int a5);
 int FUN_0c01efd2(void);
 int FUN_0c065a74(int a4, int a5);
@@ -710,14 +710,14 @@ int FUN_0c053668(int a4, int a5, int a6, Stk2 s, float f4)
     return (nlMatrixMode(0x1));
 }
 
-int FUN_0c03da60(int a4, int a5)
+int FUN_0c03da58(void)
 {
     register int t0;
     int t1;
     register int t2;
 
-    FUN_0c034320(t0, a5);
-    t2 = t0;
+    FUN_0c034320(0x0, 0x14);            /* manual: r13 = 0 and r5 = 20 are set by the entry at 0C03DA58, 8 bytes before the old start */
+    t2 = 0x0;
     if (((((struct o30_int *)0xC2A4F80)->v)) == 0) {
         t2 = 0x3;
     }

@@ -20213,15 +20213,15 @@ Functions whose C behaves like the original on every test case (`tools/equiv.py`
 - mutant of rescue: empty case: 0C2A4684.4=00000003
 - the cases run 78 of 78 instructions
 
-### FUN_0c03da60 (`0C03DA60`, 162 bytes, `src/gen_du.c`)
-- equivalent on 1 development and 5 holdout cases, in `tests/gen_du/FUN_0c03da60.json`
+### FUN_0c03da58 (`0C03DA58`, 170 bytes, `src/gen_du.c`)
+- equivalent on 1 development and 5 holdout cases, in `tests/gen_du/FUN_0c03da58.json`
 - rescue: empty case
 - rescue: empty case
 - mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002
 - mutant of rescue: empty case: 0C2A469C.4=00000004
 - mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002; 0C2A4684.4=00000001
 - mutant of rescue: empty case: 0C2A469C.4=00000004; 0C2A4670.4=00000002; 0C2A4684.4=00000001; 0C2A4684.4=00000002
-- the cases run 81 of 81 instructions
+- the cases run 85 of 85 instructions
 
 ### FUN_0c03db44 (`0C03DB44`, 178 bytes, `src/gen_du.c`)
 - equivalent on 1 development and 6 holdout cases, in `tests/gen_du/FUN_0c03db44.json`

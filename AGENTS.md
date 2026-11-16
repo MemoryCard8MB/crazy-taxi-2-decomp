@@ -332,6 +332,14 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   the function itself makes is still compared. `_its` with more than 19 digits (r6=0x20/0x80) is an invalid input: its
   8-byte digit slot gets 14 bytes, `_sub`/`_rsfts` overwrite the original's saved table pointer (sp+20), and the result
   depends on the frame layout. Set aside as `*.invalid-buffer-overflow-over-19-digits`; nothing held is left unresolved.
+- **A function entry before its listed start** (step 9, 2026-11-16: Save / Load from the main menu crashed, "SH4 branch
+  instruction in delay slot"). The menu handler at 0C03DA58 pushes r14/r13 and sets r5 = 20, r13 = 0, then runs into what
+  functions.txt called FUN_0c03da60. Its only reference is a menu table word (0C0B3A74, called through FUN_0c03df88). The
+  build saw a pointer into FUN_0c03d974's trailing bytes, ran a copy of them, and that copy ran on into data. The C had passed
+  because the simulator starts registers at 0 (its unset r13/r5 matched). Fixed: functions.txt `F 0c03da58 170 FUN_0c03da58`.
+  Scan for the class: `python3 work/fix9/gapptrs.py` (words that point between listed functions; "falls into" = code that
+  runs past the gap's end). The other hits were pool constants; the unlisted whole functions it shows end in their own
+  rts/jmp and the build points at exact copies of them (0C051C58 and 0C06CB08 are unreferenced, dead code).
 - **A left shift by a negative amount.** The generator writes SH-4 shld/shad with a negative count as `x << (int)(-n)`,
   which C leaves undefined. SHC mostly emits the shift by a negated register (correct), but in FUN_0c042ba8 it folded
   `(-1 << k) << -k` away and tested all the bits instead of the low ones: a snapshot case of the game took the other branch
