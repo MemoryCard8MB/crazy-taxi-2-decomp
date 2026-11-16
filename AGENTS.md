@@ -321,6 +321,10 @@ Flycast source build: with its fast-memory path on, any disc's boot jumps to 0).
   `work/mut/held_lib1/`, not committed) so the rest count: possible library C bugs or inputs the C cannot match, still to
   triage (library C is not built: the build keeps the original bytes). mutcases.py now runs the original with equiv.py's own
   rules for mocked calls (fills only through the registers a callee reads), so its runs are equiv's (kmRender: +456).
+  Correction (2026-11-16): commit 0aebd32 removed 84 mutants as "changing code bytes"; all of them only inherited bytes their
+  parent case (a generated case that pokes a neighbour's literal pool) already set, so they were valid and are back. Only a
+  code byte the mutant itself introduces makes it invalid (`work/mut/codepokes.py` checks exactly that now); mutcases.py refuses
+  to introduce one (any address inside a listed function). Game 97.8%, library 93.5%.
 - **A left shift by a negative amount.** The generator writes SH-4 shld/shad with a negative count as `x << (int)(-n)`,
   which C leaves undefined. SHC mostly emits the shift by a negated register (correct), but in FUN_0c042ba8 it folded
   `(-1 << k) << -k` away and tested all the bits instead of the low ones: a snapshot case of the game took the other branch
